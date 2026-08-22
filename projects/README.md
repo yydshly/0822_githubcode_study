@@ -4,7 +4,11 @@
 
 ## 当前项目
 
-目前尚未登记研究项目。创建首个项目后，请在这里和仓库顶层 README 中同步加入索引。
+| 项目 | 状态 | 固定版本 | 研究入口 | 当前重点 |
+| --- | --- | --- | --- | --- |
+| Sub2API | `researching` | `67380eaf` | [项目报告](sub2api/README.md) · [产品简报](sub2api/PRODUCT_BRIEF.md) | 能力、原理、场景、产品目标与扩展路线 |
+
+Sub2API 第一阶段已经完成固定版本的源码静态审计和证据脚本。尚未执行需要 Go 1.26.6、Docker、PostgreSQL/Redis 或真实上游凭据的端到端验证，因此暂不标记为 `validated`。
 
 ## 推荐布局
 
@@ -18,4 +22,3 @@ projects/<project-slug>/
 ```
 
 从 [`_template/`](_template/) 复制起步模板，删除不适用的段落即可。
-

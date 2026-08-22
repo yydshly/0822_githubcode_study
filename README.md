@@ -8,7 +8,7 @@
 
 | 项目 | 能力方向 | 状态 | 原项目 | 研究记录 | 在线演示 |
 | --- | --- | --- | --- | --- | --- |
-| 首个研究项目待定 | — | `planned` | — | — | — |
+| Sub2API | AI 订阅额度分发网关 | `researching` | [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) | [详细研究](projects/sub2api/README.md) | [研究摘要](https://yydshly.github.io/0822_githubcode_study/demos/sub2api/) |
 
 状态统一使用：
 
@@ -55,4 +55,3 @@
 - 结论必须有代码、测试、日志、截图或可复现实验支撑。
 - 子项目优先保持独立，避免一个实验的依赖污染其他研究。
 - 不提交密钥、令牌、账号数据、付费素材或不必要的大体积生成文件。
-
