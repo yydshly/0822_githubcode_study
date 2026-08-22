@@ -98,6 +98,8 @@ Sub2API 同时包含三类平面：
 - 使用 HTTP/1.1、HTTP/2、SSE 或 WebSocket；
 - 根据账号代理/TLS fingerprint 建立隔离 transport。
 
+这里不是把订阅账号“转换成官方 API Key”，而是终止下游本地 Key 的认证后，为选中的 Account 重新构造上游请求。以 OpenAI 为例，OAuth/Setup Token 账号使用 ChatGPT Codex 产品后端 `https://chatgpt.com/backend-api/codex/responses`，官方 API Key 账号使用 `https://api.openai.com/v1/responses`；两者共享兼容入口，但上游 endpoint、credential 和客户端协议不同。完整桥接过程与可复用抽象见 [SUBSCRIPTION_BRIDGE.md](SUBSCRIPTION_BRIDGE.md)。
+
 错误分类决定同账号重试、跨账号 failover、临时摘除或直接返回。流式响应已经向客户端写出后，跨账号重试会导致重复/破碎事件，因此 handler 会跟踪 writer 状态并停止不安全 failover。
 
 ### 3.6 用量与落账
@@ -183,4 +185,3 @@ ingress decision
 ```
 
 只记录最终选中账号不足以诊断 sticky、快照和并发问题；需要能解释每个候选为什么被跳过，以及最终费用使用了哪条价格链。
-

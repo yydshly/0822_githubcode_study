@@ -26,6 +26,12 @@
 | E13 | CI 包含 unit/integration、前端检查、lint 与安全扫描 | B/C | `.github/workflows/*.yml` | 未在本机全量执行 |
 | E14 | 两套调度路径带来语义漂移风险 | C/D | 源码重复、Issue #1907/#2990/#5262 | 需故障注入验证 |
 | E15 | 事后计费可能需要预授权/冻结额度 | C/D | 计费时序、历史 Issue #3384 | 旧问题已关闭，需验证现版本边界 |
+| E16 | 下游 API Key 通过 `group_id` 间接关联账号池，而不是直接固定绑定一个上游账号 | B | `ent/schema/api_key.go:44-46`、`ent/schema/account.go:207-214`、`gateway_scheduling.go:960+` | 源码确认 |
+| E17 | OAuth Account 保存 access/refresh token，Token Provider 在请求前缓存并按过期窗口刷新 | B | `ent/schema/account.go:74-81`、`openai_token_provider.go`、`claude_token_provider.go`、`gemini_token_provider.go` | 源码确认 |
+| E18 | OpenAI OAuth 与 API Key 路径使用不同上游：ChatGPT Codex 产品后端与 OpenAI Platform API | B | `openai_gateway_service.go:29-34`、`openai_gateway_forward.go:1202-1232` | 源码确认 |
+| E19 | 出站认证使用被选中账号的凭据，本地 Key 不会原样转发给上游 | B | `api_key_auth.go:58-100`、`openai_agent_identity.go:371-392`、`gateway_upstream_request.go:120-130` | 源码确认 |
+| E20 | OAuth 推理主要模拟官方客户端网络协议，而不是每次执行浏览器 UI 自动化 | B/D | OAuth handler、上游 HTTP request builder、SSE/WS forwarder；未见推理热路径浏览器驱动 | 静态结论，待运行验证 |
+| E21 | “订阅桥接”应建模为 Gateway + Adapter + Credential Broker + Scheduler + Stream Transcoder | D | E16-E20 与模块边界综合推导 | 架构建议 |
 
 产品目标与定位属于基于源码、README、风险和同类项目形成的研究建议，不属于上游已经承诺的功能，详见 [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)。
 

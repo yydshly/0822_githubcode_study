@@ -39,7 +39,7 @@ Sub2API 不是一个简单的 Base URL 反向代理，而是一套面向 AI 账�
 | 扩展 | 优先统一 Provider Profile、调度准入、错误分类和凭据加密，再扩展企业 IAM、FinOps、多地域和更多 Provider |
 | 产品目标 | 建议定位为“可信团队的 AI 账号与 API 容量控制平面”，而不是以公开售卖共享订阅额度为核心目标 |
 
-完整的产品定义、目标用户、非目标和指标见 [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)。
+完整的产品定义、目标用户、非目标和指标见 [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)；订阅账号如何被桥接为下游 API，以及后期自研时可复用的架构边界，见 [SUBSCRIPTION_BRIDGE.md](SUBSCRIPTION_BRIDGE.md)。
 
 ## 产品目标
 
@@ -184,7 +184,7 @@ Client / SDK / Claude Code / Codex / Gemini CLI
  usage log / account stats / balance or subscription quota / API-key quota
 ```
 
-更详细的模块、状态和时序见 [ARCHITECTURE.md](ARCHITECTURE.md)。
+更详细的模块、状态和时序见 [ARCHITECTURE.md](ARCHITECTURE.md)；关于“标准 API 请求如何转换成 Codex/Claude Code/Gemini CLI 产品通道请求”的完整说明见 [SUBSCRIPTION_BRIDGE.md](SUBSCRIPTION_BRIDGE.md)。
 
 ## 调度机制结论
 
