@@ -1,0 +1,53 @@
+name: 研究选题提案
+description: 登记一个准备拆解、复现或验证的开源项目能力
+title: "[Research] "
+labels:
+  - research
+body:
+  - type: input
+    id: upstream
+    attributes:
+      label: 上游项目
+      description: 提供仓库或项目主页地址。
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 为什么值得研究
+      description: 说明能力亮点、使用场景和预期价值。
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: 研究问题
+      description: 列出准备回答的具体问题。
+      placeholder: |
+        1. 核心能力如何实现？
+        2. 有哪些边界和失败模式？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 预期证据
+      description: 计划用哪些测试、日志、截图、数据或演示支持结论。
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: 已知许可证
+      placeholder: MIT / Apache-2.0 / 待确认
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我会保留上游来源与许可信息。
+          required: true
+        - label: 我不会提交密钥、个人数据或未经授权的素材。
+          required: true
+
