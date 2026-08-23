@@ -41,6 +41,7 @@ async function inspect(route, viewport, label) {
     runtimeBoundary: Boolean(document.querySelector("#runtime-boundary")),
     studioHref: document.querySelector(".hero-secondary-link")?.getAttribute("href") || null,
     effectContract: Boolean(document.querySelector("#effect-contract")),
+    contractRouting: document.querySelector("#contract-routing")?.textContent.trim() || null,
     stageCount: document.querySelectorAll("[data-stage-button]").length,
     serviceDetail: document.querySelector("#service-detail")?.textContent.replace(/\s+/g, " ").trim() || null,
   }));
@@ -57,6 +58,7 @@ async function inspect(route, viewport, label) {
     assert(observation.serviceDetail?.includes("不会探测或调用你的本机 API"), `${label}: local API boundary text missing`);
     assert(observation.serviceDetail?.includes("127.0.0.1:8789"), `${label}: local production URL missing`);
     assert(observation.effectContract, `${label}: executable effect contract missing`);
+    assert(observation.contractRouting === "远端静态展示", `${label}: effect contract still claims live model execution`);
     assert(observation.stageCount === 6, `${label}: six-stage production flow missing`);
     await page.click("#service-check");
     assert((await page.locator("#service-label").textContent())?.trim() === "远端静态演示", `${label}: service control left hosted mode`);
@@ -74,6 +76,45 @@ async function inspect(route, viewport, label) {
   await context.close();
 }
 
+async function inspectHostedHandoff() {
+  const label = "research-to-hosted-studio";
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
+  const page = await context.newPage();
+  const loopbackRequests = [];
+  page.on("request", (request) => {
+    if (/^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//.test(request.url())) loopbackRequests.push(request.url());
+  });
+  page.on("console", (message) => {
+    if (message.type() === "error") errors.push(`${label}:console:${message.text()}`);
+  });
+  page.on("pageerror", (error) => errors.push(`${label}:page:${error.message}`));
+  await page.goto(baseUrl, { waitUntil: "networkidle", timeout: 60_000 });
+  await page.click("#knowledge-send-studio");
+  await page.waitForSelector('#incoming-handoff:not([hidden])', { timeout: 15_000 });
+  const observation = await page.evaluate(() => ({
+    pathname: location.pathname,
+    hashCleared: location.hash === "",
+    service: document.querySelector("#service-label")?.textContent.trim(),
+    handoffTitle: document.querySelector("#handoff-title")?.textContent.trim(),
+    topic: document.querySelector("#topic")?.value,
+    generateLabel: document.querySelector("#handoff-generate span")?.textContent.trim(),
+    contractRouting: document.querySelector("#contract-routing")?.textContent.trim(),
+    overflow: Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
+  }));
+  assert(observation.pathname.endsWith("/0822_githubcode_study/demos/story-to-handdrawn-video/studio.html"), `${label}: wrong hosted studio path ${observation.pathname}`);
+  assert(observation.hashCleared, `${label}: handoff fragment was not cleared after receipt`);
+  assert(observation.service === "远端静态演示", `${label}: hosted mode was not preserved`);
+  assert(observation.handoffTitle?.startsWith("已接收："), `${label}: handoff receipt is not visible: ${observation.handoffTitle}`);
+  assert(observation.topic === "为什么天空是蓝色的？", `${label}: brief topic was not transferred`);
+  assert(observation.generateLabel === "远端不执行生成", `${label}: handoff action still claims live model execution`);
+  assert(observation.contractRouting === "远端静态展示", `${label}: received contract still claims live model execution`);
+  assert(observation.overflow <= 1, `${label}: horizontal overflow ${observation.overflow}px`);
+  assert(loopbackRequests.length === 0, `${label}: handoff requested localhost: ${loopbackRequests.join(", ")}`);
+  await page.screenshot({ path: path.join(outputDir, `${label}.png`), fullPage: false });
+  results.push({ label, route: "research → hosted studio", viewport: { width: 1440, height: 1000 }, loopbackRequests, ...observation });
+  await context.close();
+}
+
 await fs.mkdir(outputDir, { recursive: true });
 const browser = await chromium.launch({ executablePath: edgePath, headless: true });
 try {
@@ -81,6 +122,7 @@ try {
   await inspect("./studio.html", { width: 1440, height: 1000 }, "studio-desktop");
   await inspect("./", { width: 390, height: 844 }, "research-mobile");
   await inspect("./studio.html", { width: 390, height: 844 }, "studio-mobile");
+  await inspectHostedHandoff();
   assert(errors.length === 0, `browser errors: ${errors.join(" | ")}`);
   const report = { verifiedAt: new Date().toISOString(), baseUrl, results, errors, pass: true };
   await fs.writeFile(path.join(outputDir, "report.json"), `${JSON.stringify(report, null, 2)}\n`);

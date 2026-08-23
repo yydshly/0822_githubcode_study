@@ -513,7 +513,12 @@
     title.textContent = `已接收：${state.project.topic}`;
     const recommendation = cleanHandoffValue(state.handoff.localPlan?.recommendation?.label || state.handoff.localPlan?.recommendation?.name, 48);
     const contract = state.productionContract;
-    meta.textContent = `${state.project.audience} · ${state.project.duration} 秒 · 七项简报已带入${recommendation ? ` · 本地建议：${recommendation}` : ""}。效果契约 ${contract.id} 已锁定为“${contract.visual.style_label} + ${contract.presentation.label}”，确认后会随简报提交。`;
+    meta.textContent = IS_LOCAL_RUNTIME
+      ? `${state.project.audience} · ${state.project.duration} 秒 · 七项简报已带入${recommendation ? ` · 本地建议：${recommendation}` : ""}。效果契约 ${contract.id} 已锁定为“${contract.visual.style_label} + ${contract.presentation.label}”，确认后会随简报提交。`
+      : `${state.project.audience} · ${state.project.duration} 秒 · 七项简报已带入${recommendation ? ` · 研究建议：${recommendation}` : ""}。当前为远端静态说明，可审阅效果契约；真实生成请在本地生产台执行。`;
+    generate.innerHTML = IS_LOCAL_RUNTIME
+      ? "<span>确认并生成方案</span><small>调用 MiniMax 文本模型</small>"
+      : "<span>远端不执行生成</span><small>真实任务请切换本地</small>";
     generate.disabled = false;
   }
 
@@ -524,7 +529,13 @@
     $("#contract-story").textContent = contract.story.label;
     $("#contract-visual").textContent = contract.visual.style_label;
     $("#contract-presentation").textContent = contract.presentation.label;
-    $("#contract-routing").textContent = "MiniMax 全自动";
+    $("#contract-routing").textContent = IS_LOCAL_RUNTIME ? "MiniMax 全自动" : "远端静态展示";
+    $("#contract-routing-detail").textContent = IS_LOCAL_RUNTIME
+      ? "文本 → 图片 → TTS；本地生产台可完整执行"
+      : "配置可审阅；MiniMax 与 FFmpeg 在本地执行";
+    $("#contract-quality-boundary").textContent = IS_LOCAL_RUNTIME
+      ? "最高质量的 Codex 统一终稿属于 Agent 协作精制路线，网页不能把它伪装成可直接调用的 API；当前选择的是可在本地生产台完整跑通的 MiniMax 自动路线。"
+      : "远端页面只展示可执行效果契约与质量路线，不调用模型；MiniMax 自动链在本地生产台执行，Codex 统一终稿仍属于 Agent 协作精制。";
     $("#contract-palette").textContent = contract.visual.palette_label;
     $("#contract-continuity").textContent = contract.visual.continuity;
     $("#effect-profile").value = EFFECT_PROFILES[contract.story.recipe] ? contract.story.recipe : "knowledge";

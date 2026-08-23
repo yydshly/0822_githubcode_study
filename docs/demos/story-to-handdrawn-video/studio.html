@@ -111,10 +111,10 @@
                 <label><span>故事处方</span><select id="effect-profile" aria-label="故事与视觉处方"><option value="knowledge">知识解释 · 白板讲解</option><option value="technology">技术系统 · 工程线稿</option><option value="classical">古典诗词 · 水墨意境</option><option value="children">儿童成长 · 暖光绘本</option><option value="memory">家庭记忆 · 彩铅日记</option><option value="mystery">悬疑档案 · 木刻社论</option><option value="brand">品牌价值 · 有机轮廓</option><option value="poetic">意境散文 · 淡彩速写</option></select></label>
                 <div class="contract-fact"><span>叙事结构</span><b id="contract-story">知识解释</b><small>五幕学习弧，不由下游模型改写目标</small></div>
                 <div class="contract-fact"><span>最终画风</span><b id="contract-visual">白板讲解动画</b><small id="contract-palette">暖白纸面 + 黑线 + 概念蓝</small></div>
-                <div class="contract-fact"><span>模型路由</span><b id="contract-routing">MiniMax 全自动</b><small>文本 → 图片 → TTS；网页当前可完整执行</small></div>
+                <div class="contract-fact"><span>模型路由</span><b id="contract-routing">MiniMax 全自动</b><small id="contract-routing-detail">文本 → 图片 → TTS；本地生产台可完整执行</small></div>
               </div>
               <fieldset class="presentation-picker"><legend>成片呈现样式 · <span id="contract-presentation">手绘显色</span> · 会真实进入 FFmpeg</legend><button type="button" data-presentation="standard" aria-pressed="false"><b>基础镜头</b><small>全幅运镜 · 通用科普</small></button><button type="button" data-presentation="handdrawn" aria-pressed="true"><b>手绘显色</b><small>纸感起笔 · 逐幕显色</small></button><button type="button" data-presentation="poetic" aria-pressed="false"><b>诗性长卷</b><small>留白画幅 · 意境讲解</small></button></fieldset>
-              <p class="contract-boundary"><b>一致性：</b><span id="contract-continuity">五幕复用同一主体、空间规则、色盘、画材和线条语言。</span><br /><b>质量边界：</b>最高质量的 Codex 统一终稿属于 Agent 协作精制路线，网页不能把它伪装成可直接调用的 API；当前选择的是可在网页完整跑通的 MiniMax 自动路线。</p>
+              <p class="contract-boundary"><b>一致性：</b><span id="contract-continuity">五幕复用同一主体、空间规则、色盘、画材和线条语言。</span><br /><b>质量边界：</b><span id="contract-quality-boundary">最高质量的 Codex 统一终稿属于 Agent 协作精制路线，网页不能把它伪装成可直接调用的 API；当前选择的是可在本地生产台完整跑通的 MiniMax 自动路线。</span></p>
             </section>
 
             <div class="preset-row" id="preset-library" aria-label="完整任务样例">
@@ -260,6 +260,6 @@
 
     <footer class="studio-footer"><p>Knowledge Video Studio 是研究页的产品化入口；返回 <a href="./index.html">能力研究页</a> 查看原库原理、20 种风格、真实样片与扩展证据。</p><span>API keys stay server-side.</span></footer>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-    <script src="./studio.js?revision=9-runtime-boundary"></script>
+    <script src="./studio.js?revision=10-hosted-clarity"></script>
   </body>
 </html>
