@@ -736,7 +736,9 @@ async function openKnowledgeStudio({ handoff = false, fragment = "" } = {}) {
     }
     return;
   }
-  const target = new URL(KNOWLEDGE_STUDIO_PATH, origin);
+  const target = hostedStatic
+    ? new URL("./studio.html", location.href)
+    : new URL(KNOWLEDGE_STUDIO_PATH, origin);
   if (handoff) {
     const plan = knowledgeRuntime.plan;
     const payload = {
