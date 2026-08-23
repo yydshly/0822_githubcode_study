@@ -1,5 +1,5 @@
 {
-  "verifiedAt": "2026-08-23T11:35:58.654Z",
+  "verifiedAt": "2026-08-23T12:07:31.977Z",
   "baseUrl": "https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/",
   "results": [
     {
@@ -9,13 +9,18 @@
         "width": 1440,
         "height": 1000
       },
+      "loopbackRequests": [],
       "title": "知画 · 知识可视化叙事工作台",
       "heading": "把复杂知识，讲成真正能懂的视频。",
       "overflow": 0,
       "service": null,
       "knowledgeStudio": true,
+      "runtimeBoundary": true,
+      "studioHref": "./studio.html",
       "effectContract": false,
-      "stageCount": 0
+      "contractRouting": null,
+      "stageCount": 0,
+      "serviceDetail": null
     },
     {
       "label": "studio-desktop",
@@ -24,13 +29,18 @@
         "width": 1440,
         "height": 1000
       },
+      "loopbackRequests": [],
       "title": "Knowledge Video Studio · 知识视频生产台",
       "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
       "overflow": 0,
-      "service": "演示模式",
+      "service": "远端静态演示",
       "knowledgeStudio": false,
+      "runtimeBoundary": false,
+      "studioHref": null,
       "effectContract": true,
-      "stageCount": 6
+      "contractRouting": "远端静态展示",
+      "stageCount": 6,
+      "serviceDetail": "远端静态演示：这里用于查看样例、效果契约和完整生产流程，不会探测或调用你的本机 API。需要新生成时，请在仓库内运行 node integrations\\studio-server.mjs，再打开 http://127.0.0.1:8789/…/studio.html。查看本地运行说明 ↗"
     },
     {
       "label": "research-mobile",
@@ -39,13 +49,18 @@
         "width": 390,
         "height": 844
       },
+      "loopbackRequests": [],
       "title": "知画 · 知识可视化叙事工作台",
       "heading": "把复杂知识，讲成真正能懂的视频。",
       "overflow": 0,
       "service": null,
       "knowledgeStudio": true,
+      "runtimeBoundary": true,
+      "studioHref": "./studio.html",
       "effectContract": false,
-      "stageCount": 0
+      "contractRouting": null,
+      "stageCount": 0,
+      "serviceDetail": null
     },
     {
       "label": "studio-mobile",
@@ -54,13 +69,35 @@
         "width": 390,
         "height": 844
       },
+      "loopbackRequests": [],
       "title": "Knowledge Video Studio · 知识视频生产台",
       "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
       "overflow": 0,
-      "service": "演示模式",
+      "service": "远端静态演示",
       "knowledgeStudio": false,
+      "runtimeBoundary": false,
+      "studioHref": null,
       "effectContract": true,
-      "stageCount": 6
+      "contractRouting": "远端静态展示",
+      "stageCount": 6,
+      "serviceDetail": "远端静态演示：这里用于查看样例、效果契约和完整生产流程，不会探测或调用你的本机 API。需要新生成时，请在仓库内运行 node integrations\\studio-server.mjs，再打开 http://127.0.0.1:8789/…/studio.html。查看本地运行说明 ↗"
+    },
+    {
+      "label": "research-to-hosted-studio",
+      "route": "research → hosted studio",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "loopbackRequests": [],
+      "pathname": "/0822_githubcode_study/demos/story-to-handdrawn-video/studio.html",
+      "hashCleared": true,
+      "service": "远端静态演示",
+      "handoffTitle": "已接收：为什么天空是蓝色的？",
+      "topic": "为什么天空是蓝色的？",
+      "generateLabel": "远端不执行生成",
+      "contractRouting": "远端静态展示",
+      "overflow": 0
     }
   ],
   "errors": [],

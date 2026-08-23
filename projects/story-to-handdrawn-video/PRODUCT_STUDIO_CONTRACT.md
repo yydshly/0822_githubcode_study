@@ -343,8 +343,17 @@ Observable completion criteria: 远端页面明确显示静态演示与本地真
 
 | 用户意图 | 要求 | 表面 / 状态 | 证据 | 所属阶段 | 状态 | 下一动作 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 远端静态部署 | Pages 保留完整研究、样片和生产流程 | research / studio remote | DOM、截图、资源请求 | 3 / 7 | continue | 补充静态展示说明并验证两页关联 |
-| 本地真实处理 | 页面明确给出本地服务命令和 URL | studio remote / demo | 文案、复制入口 | 4 / 6 | continue | 增加“本地真实生产”说明卡 |
-| 不误调用 localhost | HTTPS 远端不探测、不提交本机 HTTP API | studio remote | network request capture | 5 / 8 | continue | 将远端状态与 API 动作硬分流 |
-| 本地能力不回归 | localhost 同源继续检测服务并运行真实链路 | studio local / live | health、DOM、现有回归 | 5 / 9 | continue | 验证 8791 与远端双环境 |
-| 文档和发布 | README/DEPLOYMENT 与页面一致并进入 Pages | repository / github | diff、Actions、远端浏览器 | 9 | continue | 定向提交并发布 main |
+| 远端静态部署 | Pages 保留完整研究、样片和生产流程 | research / studio remote | DOM、截图、资源请求 | 3 / 7 | pass | 远端两页增加双模式说明并保持 12 条样片、知识规划器和六阶段流程 |
+| 本地真实处理 | 页面明确给出本地服务命令和 URL | studio remote / demo | 文案、复制入口 | 4 / 6 | pass | 首屏展示启动命令、默认 URL 和部署说明；远端按钮明确不执行生成 |
+| 不误调用 localhost | HTTPS 远端不探测、不提交本机 HTTP API | studio remote | network request capture | 5 / 8 | pass | 两页桌面/移动、状态按钮和简报交接的 loopback 请求均为 0 |
+| 本地能力不回归 | localhost 同源继续检测服务并运行真实链路 | studio local / live | health、DOM、现有回归 | 5 / 9 | pass | 8791 health、HTTP→HTTP、file→HTTP、七字段与 plan 请求继续通过 |
+| 文档和发布 | README/DEPLOYMENT 与页面一致并进入 Pages | repository / github | diff、Actions、远端浏览器 | 9 | pass | Pages run `32638350565` 成功，最终远端验收通过 |
+
+### Revision 10 验收证据
+
+- 双模式页面：研究页首屏后新增“远端看完整能力，本地做真实生成”；生产台在 Pages 显示“远端静态演示”和本地启动命令，在 loopback 显示“真实服务在线”。
+- 关联修复：远端研究页直接打开同域、同仓库前缀下的 `./studio.html`，不再探测 8791/8789；七项简报仍通过 URL fragment 交接，到达后立即清除载荷。
+- 远端能力边界：交接按钮显示“远端不执行生成”，效果契约显示“远端静态展示”；MiniMax/FFmpeg 只在本地生产台执行。
+- 正式发布：提交 `ded798e8f6ac5115fc27eb9cf02b247588a4813f`；GitHub Pages run [`32638350565`](https://github.com/yydshly/0822_githubcode_study/actions/runs/32638350565) 成功。
+- 远端浏览器：`browser-evidence/github-pages/report.json`；研究/生产两页 1440×1000、390×844，以及“研究 → 静态生产台”真实交接共五条路线全部通过，0px 溢出、0 浏览器错误、0 loopback 请求。
+- 本地回归：`browser-evidence/studio-handoff/report.json` 与 `browser-evidence/knowledge-product/report.json` 通过；真实服务 health 继续报告 Key 不进入浏览器。
