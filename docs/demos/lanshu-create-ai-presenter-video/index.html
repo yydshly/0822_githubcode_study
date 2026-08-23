@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="lanshu-create-ai-presenter-video 的能力边界、D-ID 与 HeyGen 实测，以及数字人生产工作流的真正价值。"
+    />
+    <title>数字人不是一个模型，而是一条生产链</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23b9f46d'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' font-family='sans-serif' font-weight='700' fill='%23090c0f'%3EAI%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="返回研究展厅">
+        <span class="brand-mark" aria-hidden="true">08·22</span>
+        <span>GitHub 能力研究实验室</span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#evidence">实测</a>
+        <a href="#meaning">意义</a>
+        <a href="#scenarios">场景</a>
+        <a href="https://github.com/cclank/lanshu-create-ai-presenter-video">上游仓库 ↗</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">VALIDATED FINDING · AI PRESENTER PIPELINE</p>
+          <h1 id="hero-title">它不制造数字人，<br /><em>它组织数字人生产。</em></h1>
+          <p class="lede">
+            <code>lanshu-create-ai-presenter-video</code> 不是人物驱动模型，也不是 HeyGen
+            的开源替代品。它真正提供的是任务状态、授权和费用闸门、外部能力槽位、剪辑规范与交付 QA——把一次性的模型调用固化成可重复的生产流程。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#evidence">查看真实样片</a>
+            <a
+              class="button secondary"
+              href="https://github.com/yydshly/0822_githubcode_study/tree/main/projects/lanshu-create-ai-presenter-video"
+            >阅读完整研究</a>
+          </div>
+        </div>
+
+        <aside class="verdict" aria-label="研究结论摘要">
+          <p class="verdict-label">一句话结论</p>
+          <p class="verdict-title">工作流价值高，算法价值低。</p>
+          <dl>
+            <div><dt>仓库自身</dt><dd>编排、预检、QA</dd></div>
+            <div><dt>核心缺口</dt><dd>TTS、数字人、口型、ASR、合成</dd></div>
+            <div><dt>最佳角色</dt><dd>媒体生产控制层</dd></div>
+            <div><dt>当前状态</dt><dd>结论已验证，产品仍早期</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">REAL OUTPUT · HEYGEN DIGITAL TWIN</p>
+            <h2 id="evidence-title">先看结果，再谈架构。</h2>
+          </div>
+          <p>同一研究从程序化代理、D-ID 单图头像，走到 HeyGen 真人 Digital Twin。</p>
+        </div>
+
+        <figure class="video-card">
+          <div class="video-frame">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="./assets/heygen-digital-twin-first-result.jpg"
+              aria-describedby="video-description"
+            >
+              <source src="./assets/heygen-digital-twin-first-result.mp4" type="video/mp4" />
+              你的浏览器不支持视频播放。可
+              <a href="./assets/heygen-digital-twin-first-result.mp4">下载 MP4</a> 查看。
+            </video>
+          </div>
+          <figcaption>
+            <div>
+              <p class="card-kicker">HEYGEN MCP · HANDAPENG DIGITAL TWIN</p>
+              <h3>《AI 数字人的真正价值》</h3>
+              <p id="video-description">
+                中文克隆声音、单一半身镜头、无 B-roll、无字幕。人物和口型明显优于 D-ID 单图头像，但眼睛在整段视频中几乎不眨，仍有明显“假人感”。
+              </p>
+            </div>
+            <dl class="metrics">
+              <div><dt>成片</dt><dd>12.16 秒</dd></div>
+              <div><dt>生成</dt><dd>约 4 分 05 秒</dd></div>
+              <div><dt>规格</dt><dd>1280×720 · 25fps</dd></div>
+              <div><dt>判断</dt><dd class="warn">链路通过，真实感未完全通过</dd></div>
+            </dl>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="comparison" aria-labelledby="comparison-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">THREE LEVELS OF EVIDENCE</p>
+            <h2 id="comparison-title">三次实验，回答三个问题。</h2>
+          </div>
+        </div>
+        <div class="experiment-grid">
+          <article>
+            <span class="step">01</span>
+            <p class="card-kicker">LOCAL MOCK · 54.4S</p>
+            <h3>数据链能不能闭环？</h3>
+            <p>MiniMax 旁白、faster-whisper 词时间、音量驱动嘴部和 FFmpeg 已跑通。证明文件、字幕、音频和编码链可工作，不证明真人效果。</p>
+            <p class="result pass">结论：管线成立</p>
+          </article>
+          <article>
+            <span class="step">02</span>
+            <p class="card-kicker">D-ID V2 · 11.4S</p>
+            <h3>单图头像够不够？</h3>
+            <p>41.7 秒生成、消耗 1 积分。口型和上半身表演不自然，试用水印明显，没有可信手势。</p>
+            <p class="result fail">结论：链路通过，质量不通过</p>
+          </article>
+          <article>
+            <span class="step">03</span>
+            <p class="card-kicker">HEYGEN TWIN · 12.2S</p>
+            <h3>训练型数字人是否更好？</h3>
+            <p>人物稳定、声音和嘴型明显改善，并保留上半身动作；但眨眼不足暴露了训练素材和生成模型仍决定最终自然度。</p>
+            <p class="result mixed">结论：可用，但需质量验收</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="boundary" aria-labelledby="boundary-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">CAPABILITY BOUNDARY</p>
+            <h2 id="boundary-title">仓库负责规则，模型负责表演。</h2>
+          </div>
+        </div>
+        <div class="boundary-grid">
+          <article class="owned">
+            <p class="card-kicker">REPOSITORY-OWNED</p>
+            <h3>它真正提供</h3>
+            <ul>
+              <li>标准任务目录与 <code>job.json</code> 状态</li>
+              <li>人物、声音、远程上传和付费授权闸门</li>
+              <li>外部能力槽位与失败恢复规则</li>
+              <li>响度、编码、黑帧、接触表和交付 QA</li>
+              <li>让每次生成留下可追踪证据</li>
+            </ul>
+          </article>
+          <article class="external">
+            <p class="card-kicker">PROVIDER-OWNED</p>
+            <h3>它无法保证</h3>
+            <ul>
+              <li>人物身份稳定与服装、背景一致性</li>
+              <li>音素级口型、眨眼、表情与手势自然度</li>
+              <li>TTS 音色、语气和多语言质量</li>
+              <li>ASR 词级时间与专有名词准确度</li>
+              <li>单分钟成本、排队时延和供应商可用性</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="pipeline" aria-labelledby="pipeline-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">PRODUCTION CONTROL PLANE</p>
+            <h2 id="pipeline-title">真正可复用的是这条链。</h2>
+          </div>
+        </div>
+        <ol class="flow" aria-label="数字人视频生产流程">
+          <li><span>输入</span><strong>主题、脚本、人物授权</strong><small>确定内容与边界</small></li>
+          <li><span>声音</span><strong>MiniMax / HeyGen TTS</strong><small>旁白成为主时间轴</small></li>
+          <li><span>人物</span><strong>HeyGen / D-ID / 本地模型</strong><small>生成主讲画面</small></li>
+          <li><span>对齐</span><strong>原生词时间 / ASR / 口型修复</strong><small>字幕和音画同步</small></li>
+          <li><span>合成</span><strong>FFmpeg / Remotion</strong><small>B-roll、字幕、版式</small></li>
+          <li><span>交付</span><strong>成本、质量与合规 QA</strong><small>master、share、证据</small></li>
+        </ol>
+      </section>
+
+      <section class="meaning" id="meaning" aria-labelledby="meaning-title">
+        <div class="meaning-quote">
+          <p class="eyebrow">WHY THIS REPOSITORY MATTERS</p>
+          <blockquote id="meaning-title">
+            它的意义不是“比 HeyGen 更会生成”，而是让 HeyGen 不再是一个孤立按钮。
+          </blockquote>
+        </div>
+        <div class="meaning-copy">
+          <p>
+            直接使用 HeyGen，最适合快速得到一条高质量视频；引入这个仓库，则是为了把内容、供应商、授权、成本、失败恢复、字幕、剪辑和验收统一到一套可持续运行的生产协议里。
+          </p>
+          <p>
+            因此它更接近“媒体 CI/CD”或“数字人视频控制平面”：模型可以替换，生产规则、证据和交付标准不能丢。
+          </p>
+        </div>
+      </section>
+
+      <section class="scenarios" id="scenarios" aria-labelledby="scenarios-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">FIT / NOT FIT</p>
+            <h2 id="scenarios-title">什么时候值得使用？</h2>
+          </div>
+        </div>
+        <div class="scenario-grid">
+          <article class="fit">
+            <h3>适合</h3>
+            <ul>
+              <li><strong>批量知识视频：</strong>固定主持人和版式，持续替换脚本与素材。</li>
+              <li><strong>产品更新与培训：</strong>同一内容需要多语言、多渠道和多尺寸版本。</li>
+              <li><strong>多供应商 A/B：</strong>比较 HeyGen、D-ID、本地口型或新模型的成本与质量。</li>
+              <li><strong>有合规要求的生产：</strong>需要肖像、声音、远程上传和费用记录。</li>
+              <li><strong>Agent 媒体工程研究：</strong>研究昂贵异步模型的状态、重试、恢复和验收。</li>
+            </ul>
+          </article>
+          <article class="not-fit">
+            <h3>不适合</h3>
+            <ul>
+              <li><strong>只做一条视频：</strong>直接使用 HeyGen 更快，流程层反而增加成本。</li>
+              <li><strong>数字人算法研究：</strong>仓库没有训练代码、模型权重或人物驱动算法。</li>
+              <li><strong>实时互动数字人：</strong>没有 WebRTC、流式驱动、知识库和对话会话。</li>
+              <li><strong>纯本地一键运行：</strong>默认仍需补齐模型、权重、CUDA 和剪辑依赖。</li>
+              <li><strong>不做人工验收：</strong>眨眼、手势和身份漂移无法仅靠流程规则保证。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="decision" aria-labelledby="decision-title">
+        <p class="eyebrow">FINAL DECISION</p>
+        <h2 id="decision-title">把 HeyGen 当执行器，把这个库当生产协议。</h2>
+        <p>
+          当前最现实的组合是：HeyGen Digital Twin 负责人物、口型和上半身表演；MiniMax 或 HeyGen 负责声音；词时间和 ASR 负责字幕；FFmpeg 或 Remotion 负责最终包装；本仓库负责授权、成本、状态、恢复和 QA。若未来更换为本地模型，生产流程无需重写，只替换对应能力适配器。
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button primary"
+            href="https://github.com/yydshly/0822_githubcode_study/tree/main/projects/lanshu-create-ai-presenter-video"
+          >查看研究与实验代码</a>
+          <a class="button secondary" href="https://developers.heygen.com/mcp/overview">HeyGen MCP 文档</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>研究对象：<a href="https://github.com/cclank/lanshu-create-ai-presenter-video">cclank/lanshu-create-ai-presenter-video</a></p>
+      <p>固定审计版本：<code>04f6bceab888ad923e192fb02542eda06d1fdda8</code> · 实测日期：2026-08-23</p>
+    </footer>
+  </body>
+</html>

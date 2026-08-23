@@ -11,6 +11,7 @@
 | Sub2API | AI 订阅额度分发网关 | `researching` | [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) | [详细研究](projects/sub2api/README.md) | [研究摘要](https://yydshly.github.io/0822_githubcode_study/demos/sub2api/) |
 | story-to-handdrawn-video | Agent 驱动的手绘故事视频流水线 | `researching` | [gnipbao/story-to-handdrawn-video](https://github.com/gnipbao/story-to-handdrawn-video) | [详细研究](projects/story-to-handdrawn-video/README.md) | [交互演示](https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/) |
 | 史境·沉浸式历史阅读 | 通用书籍格式驱动的图文听读产品 | `validated` | [KilledByAPixel/GatelessGate](https://github.com/KilledByAPixel/GatelessGate)（模式启发） | [实现与验证](projects/shijing-dayu-immersive/README.md) | [在线体验](https://yydshly.github.io/0822_githubcode_study/demos/shijing-dayu-immersive/) |
+| lanshu-create-ai-presenter-video | 数字人视频 Agent 编排、预检与交付 QA | `researching` | [cclank/lanshu-create-ai-presenter-video](https://github.com/cclank/lanshu-create-ai-presenter-video) | [研究报告](projects/lanshu-create-ai-presenter-video/README.md) | [在线页面](https://yydshly.github.io/0822_githubcode_study/demos/lanshu-create-ai-presenter-video/) |
 
 状态统一使用：
 
