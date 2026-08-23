@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shijing.local/schema/book-1.0.json",
+  "title": "史境通用书籍格式",
+  "type": "object",
+  "required": ["version", "id", "title", "modes", "chapters"],
+  "properties": {
+    "version": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "subtitle": { "type": "string", "maxLength": 240 },
+    "author": { "type": "string", "maxLength": 120 },
+    "duration": { "type": "string", "maxLength": 40 },
+    "cover": { "type": "string" },
+    "source": { "type": "string", "maxLength": 500 },
+    "sourceNote": { "type": "string", "maxLength": 500 },
+    "modes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1, "maxLength": 24 },
+          "shortLabel": { "type": "string", "maxLength": 12 },
+          "icon": { "type": "string", "maxLength": 40 },
+          "description": { "type": "string", "maxLength": 160 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2000,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "segments"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+          "number": { "type": "string", "maxLength": 40 },
+          "numeral": { "type": "string", "maxLength": 8 },
+          "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "image": { "type": "string" },
+          "summary": { "type": "string", "maxLength": 500 },
+          "takeaway": { "type": "string", "maxLength": 500 },
+          "segments": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "object",
+              "required": ["id", "title", "modes"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,95}$" },
+                "eyebrow": { "type": "string", "maxLength": 80 },
+                "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+                "image": { "type": "string" },
+                "alt": { "type": "string", "maxLength": 300 },
+                "summary": { "type": "string", "maxLength": 500 },
+                "modes": {
+                  "type": "object",
+                  "minProperties": 1,
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                      "text": { "type": "string", "minLength": 1, "maxLength": 20000 },
+                      "audio": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

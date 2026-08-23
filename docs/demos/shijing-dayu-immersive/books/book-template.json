@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "id": "my-book",
+  "title": "我的书",
+  "subtitle": "一句话介绍",
+  "author": "作者",
+  "duration": "约 5 分钟",
+  "cover": "",
+  "source": "内容来源",
+  "sourceNote": "必要的版权或改写说明",
+  "modes": {
+    "original": {
+      "label": "原文阅读",
+      "shortLabel": "原文",
+      "icon": "book-open",
+      "description": "保留导入文件的原始文字。"
+    }
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "number": "第一章",
+      "numeral": "壹",
+      "title": "章节标题",
+      "image": "",
+      "summary": "章节简介",
+      "takeaway": "章节结束时显示的收束文字",
+      "segments": [
+        {
+          "id": "chapter-1-segment-1",
+          "eyebrow": "第一段",
+          "title": "段落标题",
+          "image": "",
+          "alt": "",
+          "summary": "段落摘要",
+          "modes": {
+            "original": {
+              "text": "这里填写正文。",
+              "audio": ""
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

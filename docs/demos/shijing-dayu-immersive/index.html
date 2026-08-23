@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e9e1d2" />
+    <meta name="description" content="按章阅读、聆听并观看响应画面的沉浸式中华历史故事展厅。" />
+    <title>史境 · 沉浸式历史阅读</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./vendor/lucide.min.js"></script>
+    <script defer src="./history-data.js"></script>
+    <script defer src="./book-loader.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#primaryContent">跳至主要内容</a>
+
+    <main class="library-view" id="libraryView" aria-label="史境书籍展厅">
+      <header class="library-header">
+        <a class="brand" href="#library" aria-label="史境书籍展厅首页">
+          <span class="brand-seal" aria-hidden="true">史</span>
+          <span><b>史境</b><small>沉浸阅读</small></span>
+        </a>
+        <div class="library-header-actions">
+          <button class="quiet-button" id="importButton" type="button" aria-label="导入本地书籍"><i data-lucide="file-up"></i><span>导入</span></button>
+          <button class="quiet-button" id="planButton" type="button" aria-label="设置每日阅读计划"><i data-lucide="calendar-clock"></i><span>计划</span></button>
+          <button class="quiet-button" id="libraryThemeButton" type="button" aria-label="切换夜间模式"><i data-lucide="moon"></i><span>夜读</span></button>
+        </div>
+      </header>
+
+      <div class="library-content" id="primaryContent">
+        <section class="library-hero" aria-labelledby="libraryTitle">
+          <div class="hero-copy">
+            <p class="library-eyebrow" id="libraryEyebrow">史境 · 沉浸阅读展厅</p>
+            <h1 id="libraryTitle">让文字有声音，<br />也有景深</h1>
+            <p class="library-deck" id="libraryDeck"></p>
+          </div>
+          <article class="continue-card" id="continueCard">
+            <img id="continueCover" alt="大禹治水洪水场景封面" />
+            <div class="continue-shade" aria-hidden="true"></div>
+            <div class="continue-copy">
+              <span class="continue-label" id="continueLabel">今日推荐</span>
+              <h2 id="continueTitle">大禹治水</h2>
+              <p id="continueMeta">第一章 · 洪水之世</p>
+              <div class="continue-progress" id="continueProgress" hidden><span id="continueProgressFill"></span></div>
+              <button class="primary-button" id="continueButton" type="button">
+                <i data-lucide="book-open"></i><span>开始阅读</span>
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <section class="daily-plan" id="dailyPlan" aria-labelledby="dailyPlanTitle">
+          <span class="plan-mark" aria-hidden="true"><i data-lucide="calendar-check"></i></span>
+          <div class="daily-plan-copy">
+            <p id="dailyPlanEyebrow">每日阅读计划</p>
+            <h2 id="dailyPlanTitle">给今天留一刻钟</h2>
+            <span id="dailyPlanStatus">设置固定时间，让阅读更容易开始。</span>
+            <div class="daily-plan-progress" id="dailyPlanProgress" hidden><span id="dailyPlanProgressFill"></span></div>
+          </div>
+          <div class="daily-plan-actions">
+            <button class="secondary-button" id="planSettingsButton" type="button">设置计划</button>
+            <button class="primary-button" id="planContinueButton" type="button" hidden><i data-lucide="play"></i><span>继续今天阅读</span></button>
+          </div>
+        </section>
+
+        <section class="shelf-section" aria-labelledby="shelfTitle">
+          <div class="section-heading">
+            <div><p>书籍展厅</p><h2 id="shelfTitle">从一个故事，进入一段历史</h2></div>
+            <span id="shelfCount">2 本可读 · 1 本策划中</span>
+          </div>
+          <div class="book-grid" id="bookGrid"></div>
+        </section>
+
+        <section class="history-section" id="historySection" aria-labelledby="historyTitle">
+          <div class="section-heading compact"><div><p>最近阅读</p><h2 id="historyTitle">上次停在这里</h2></div></div>
+          <div class="history-list" id="historyList"></div>
+        </section>
+      </div>
+      <section class="import-overlay" id="importOverlay" role="dialog" aria-modal="true" aria-labelledby="importDialogTitle" hidden>
+        <div class="import-dialog">
+          <header class="import-dialog-heading">
+            <div><p>本地书库</p><h2 id="importDialogTitle">导入一本书</h2></div>
+            <button class="icon-button" id="importCloseButton" type="button" aria-label="关闭导入"><i data-lucide="x"></i></button>
+          </header>
+          <p class="import-intro">选择通用书籍 JSON，或直接导入 TXT、Markdown。原文可以立即阅读，配音和场景可稍后补充。</p>
+          <label class="import-dropzone" id="importDropZone" for="importFileInput" tabindex="0" role="button" aria-label="选择或拖入书籍文件">
+            <input id="importFileInput" type="file" accept=".json,.txt,.md,.markdown,application/json,text/plain,text/markdown" />
+            <span class="import-drop-icon" aria-hidden="true"><i data-lucide="upload-cloud"></i></span>
+            <strong>把文件拖到这里</strong>
+            <span>或点击选择 · 最大 5MB</span>
+            <small>当前支持 JSON、TXT、Markdown</small>
+          </label>
+          <p class="import-status" id="importStatus" role="status" aria-live="polite">文件只在当前浏览器中处理和保存，不会自动上传。</p>
+          <div class="import-format-row">
+            <div><strong>标准格式</strong><span>书籍、章节、段落、模式和媒体引用使用同一份 Book Schema。</span></div>
+            <a class="secondary-button" href="./books/book-template.json" download="shijing-book-template.json"><i data-lucide="download"></i><span>下载模板</span></a>
+          </div>
+          <section class="local-books" aria-labelledby="localBooksTitle">
+            <header><div><p>当前设备</p><h3 id="localBooksTitle">已导入书籍</h3></div><span id="localBooksCount">0 本</span></header>
+            <div class="local-books-list" id="localBooksList"><p>还没有本地导入的书。</p></div>
+          </section>
+          <footer class="import-dialog-actions">
+            <span>EPUB、DOCX 将通过后续解析适配器接入。</span>
+            <button class="primary-button" id="importDoneButton" type="button">完成</button>
+          </footer>
+        </div>
+      </section>
+      <section class="plan-overlay" id="planOverlay" role="dialog" aria-modal="true" aria-labelledby="planDialogTitle" hidden>
+        <form class="plan-dialog" id="planForm">
+          <header class="plan-dialog-heading">
+            <div><p>阅读习惯</p><h2 id="planDialogTitle">每日阅读计划</h2></div>
+            <button class="icon-button" id="planCloseButton" type="button" aria-label="关闭计划设置"><i data-lucide="x"></i></button>
+          </header>
+          <div class="plan-fields">
+            <label><span>提醒时间</span><input id="planTimeInput" name="time" type="time" value="20:30" required /></label>
+            <label><span>阅读日</span><select id="planDaysInput" name="days"><option value="daily">每天</option><option value="weekdays">工作日</option><option value="weekends">周末</option></select></label>
+            <label><span>每日目标</span><select id="planGoalInput" name="goal"><option value="10">10 分钟</option><option value="15" selected>15 分钟</option><option value="30">30 分钟</option></select></label>
+          </div>
+          <div class="notification-row">
+            <div><strong>浏览器提醒</strong><span id="notificationStatus">仅在你明确允许后启用</span></div>
+            <button class="secondary-button" id="notificationButton" type="button">允许提醒</button>
+          </div>
+          <p class="plan-boundary">计划与进度只保存在当前设备。网页打开时可按时提醒；关闭浏览器后的后台推送取决于浏览器能力，本样例不作保证。</p>
+          <div class="plan-dialog-actions">
+            <button class="text-danger" id="disablePlanButton" type="button" hidden>关闭当前计划</button>
+            <span></span>
+            <button class="secondary-button" id="planCancelButton" type="button">取消</button>
+            <button class="primary-button" type="submit">保存计划</button>
+          </div>
+        </form>
+      </section>
+      <footer class="library-footer"><span>史境实验室 · 本地阅读记录只保存在当前设备</span><span>文字 · 声音 · 画面</span></footer>
+    </main>
+
+    <main class="reader-view" id="readerView" hidden>
+      <section class="reader-shell" id="readerShell">
+        <section class="reading-pane" aria-label="文章阅读区">
+          <header class="reading-toolbar">
+            <button class="text-button" id="libraryButton" type="button" aria-label="返回书籍展厅">
+              <i data-lucide="library"></i><span>展厅</span>
+            </button>
+            <button class="text-button" id="tocButton" type="button" aria-expanded="false" aria-controls="tocPanel">
+              <i data-lucide="list"></i><span>章节</span>
+            </button>
+            <div class="toolbar-spacer" aria-hidden="true"></div>
+            <button class="icon-button" id="previousButton" type="button" aria-label="上一章" title="上一章"><i data-lucide="chevron-left"></i></button>
+            <span class="section-count" id="sectionCount" aria-live="polite">01 / 04</span>
+            <button class="icon-button" id="nextButton" type="button" aria-label="下一章" title="下一章"><i data-lucide="chevron-right"></i></button>
+            <button class="icon-button timer-button" id="timerButton" type="button" aria-label="设置朗读定时" aria-expanded="false" aria-controls="timerPanel" title="朗读定时">
+              <i data-lucide="timer"></i><span class="timer-indicator" id="timerIndicator" hidden></span>
+            </button>
+            <button class="icon-button" id="themeButton" type="button" aria-label="切换夜间阅读" title="切换夜间阅读"><i data-lucide="moon"></i></button>
+          </header>
+
+          <aside class="timer-panel" id="timerPanel" aria-label="朗读定时停止" hidden>
+            <div class="timer-panel-heading">
+              <div><span>定时停止</span><small id="timerPanelStatus">选择停止朗读的时间</small></div>
+              <button class="icon-button" id="timerCloseButton" type="button" aria-label="关闭定时设置"><i data-lucide="x"></i></button>
+            </div>
+            <div class="timer-options" role="group" aria-label="定时选项">
+              <button type="button" data-timer-option="15">15 分钟</button>
+              <button type="button" data-timer-option="30">30 分钟</button>
+              <button type="button" data-timer-option="segment">本段结束</button>
+              <button type="button" data-timer-option="chapter">本章结束</button>
+            </div>
+            <button class="timer-cancel" id="timerCancelButton" type="button" hidden>取消当前定时</button>
+            <p>分钟定时结束前 8 秒会柔和渐弱；定时只在本次打开期间有效。</p>
+          </aside>
+
+          <audio id="narrationAudio" preload="metadata" hidden></audio>
+          <p class="sr-only" id="playbackStatus" role="status" aria-live="polite">MiniMax 旁白准备就绪</p>
+
+          <nav class="reader-jump-controls" aria-label="文章快速定位">
+            <button class="reader-jump-button" id="jumpTopButton" type="button" aria-label="回到本章开头" title="本章开头"><i data-lucide="arrow-up-to-line"></i></button>
+            <button class="reader-jump-button" id="jumpCurrentButton" type="button" aria-label="定位当前段落" title="当前段落"><i data-lucide="locate-fixed"></i></button>
+            <button class="reader-jump-button" id="jumpBottomButton" type="button" aria-label="跳到本章末尾" title="本章末尾"><i data-lucide="arrow-down-to-line"></i></button>
+          </nav>
+
+          <aside class="toc-panel" id="tocPanel" aria-label="章节目录" hidden>
+            <div class="toc-heading"><span id="tocBookTitle">大禹治水 · 目录</span><button class="icon-button" id="tocCloseButton" type="button" aria-label="关闭目录"><i data-lucide="x"></i></button></div>
+            <nav id="tocList"></nav>
+          </aside>
+
+          <div class="reading-scroll" id="readingScroll">
+            <article class="story" id="story">
+              <p class="story-kicker" id="storyKicker">中华历史故事</p>
+              <div class="title-row">
+                <span class="chapter-seal" id="chapterSeal" aria-hidden="true">壹</span>
+                <div class="title-copy">
+                  <p class="chapter-overline" id="chapterOverline">第一章</p>
+                  <div class="title-heading-line">
+                    <h1 id="chapterTitle">洪水之世</h1>
+                    <button class="listen-all" id="listenAllButton" type="button" aria-label="播放当前段落"><i data-lucide="play"></i><span>播放当前段落</span></button>
+                  </div>
+                  <p class="story-deck" id="chapterDeck"></p>
+                </div>
+              </div>
+
+              <section class="mode-switcher" aria-labelledby="modeLabel">
+                <div class="mode-heading"><span id="modeLabel">这章怎么听</span><small id="modeDescription"></small></div>
+                <div class="mode-tabs" id="modeTabs" role="radiogroup" aria-label="叙事方式"></div>
+              </section>
+
+              <p class="first-use-hint" id="firstUseHint"><i data-lucide="hand"></i><span>点段落换景，点播放听读；你的选择始终优先。</span><button type="button" aria-label="关闭提示"><i data-lucide="x"></i></button></p>
+              <div class="story-segments" id="storySegments"></div>
+
+              <footer class="source-note">
+                <span id="sourceText"></span><span id="sourceBoundary"></span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="playback-rail" id="playbackRail" aria-hidden="true"><span id="playbackRailFill"></span></div>
+        </section>
+
+        <section class="visual-pane" id="visualPane" aria-label="随文章变化的场景画面">
+          <div class="visual-stack" id="visualStack"></div>
+          <div class="visual-shade" aria-hidden="true"></div><div class="visual-grain" aria-hidden="true"></div>
+          <div class="visual-actions">
+            <button class="glass-button" id="ambientButton" type="button" aria-label="开启环境声" title="环境声"><i data-lucide="volume-2"></i></button>
+            <button class="glass-button" id="focusButton" type="button" aria-label="只看画面" title="只看画面"><i data-lucide="eye"></i></button>
+            <button class="glass-button" id="fullscreenButton" type="button" aria-label="全屏显示" title="全屏显示"><i data-lucide="maximize-2"></i></button>
+          </div>
+          <div class="visual-caption" aria-live="polite"><span class="visual-index" id="visualIndex">一 · 01</span><div><p class="visual-title" id="visualTitle">洪水横流</p><p class="visual-summary" id="visualSummary"></p></div></div>
+          <button class="focus-exit" id="focusExitButton" type="button" hidden><i data-lucide="panel-left-open"></i><span>返回阅读</span></button>
+          <div class="media-fallback" id="mediaFallback" hidden><i data-lucide="image-off"></i><p id="mediaFallbackText">画面暂未载入，正文仍可继续阅读与朗读。</p></div>
+        </section>
+      </section>
+
+      <section class="chapter-end" id="chapterEnd" role="dialog" aria-modal="true" aria-labelledby="chapterEndTitle" hidden>
+        <div class="chapter-end-card">
+          <span class="end-seal" aria-hidden="true"><i data-lucide="check"></i></span>
+          <p class="end-eyebrow" id="chapterEndEyebrow">本章读完</p>
+          <h2 id="chapterEndTitle">洪水之世</h2>
+          <p class="end-takeaway" id="chapterEndTakeaway"></p>
+          <div class="next-chapter-preview" id="nextChapterPreview"><span>下一章</span><strong id="nextChapterTitle"></strong></div>
+          <p class="countdown-copy" id="countdownCopy" aria-live="polite"></p>
+          <div class="end-actions">
+            <button class="secondary-button" id="stayButton" type="button">停在这里</button>
+            <button class="primary-button" id="continueChapterButton" type="button"><span>继续下一章</span><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript>请启用 JavaScript，以体验段落语音、阅读恢复和响应画面。</noscript>
+  </body>
+</html>

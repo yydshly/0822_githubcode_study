@@ -1,0 +1,410 @@
+{
+  "provider": "MiniMax China HTTP T2A",
+  "generatedAt": "2026-08-23T14:36:15.298Z",
+  "model": "speech-2.8-hd",
+  "voice": "female-chengshu",
+  "emotion": "calm",
+  "speed": 0.88,
+  "volume": 1,
+  "pitch": -1,
+  "source": "docs/demos/shijing-dayu-immersive/history-data.js",
+  "requestedMode": "all",
+  "generated": [
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 1,
+      "id": "flood-arrives",
+      "mode": "explain",
+      "file": "flood-arrives.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 1,
+      "id": "flood-arrives",
+      "mode": "story",
+      "file": "flood-arrives-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 1,
+      "id": "flood-arrives",
+      "mode": "source",
+      "file": "flood-arrives-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 2,
+      "id": "flood-refuge",
+      "mode": "explain",
+      "file": "flood-refuge.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 2,
+      "id": "flood-refuge",
+      "mode": "story",
+      "file": "flood-refuge-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 1,
+      "segment": 2,
+      "id": "flood-refuge",
+      "mode": "source",
+      "file": "flood-refuge-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 1,
+      "id": "blocked-dikes",
+      "mode": "explain",
+      "file": "blocked-dikes.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 1,
+      "id": "blocked-dikes",
+      "mode": "story",
+      "file": "blocked-dikes-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 1,
+      "id": "blocked-dikes",
+      "mode": "source",
+      "file": "blocked-dikes-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 2,
+      "id": "blocked-fails",
+      "mode": "explain",
+      "file": "blocked-fails.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 2,
+      "id": "blocked-fails",
+      "mode": "story",
+      "file": "blocked-fails-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 2,
+      "segment": 2,
+      "id": "blocked-fails",
+      "mode": "source",
+      "file": "blocked-fails-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 1,
+      "id": "channel-survey",
+      "mode": "explain",
+      "file": "channel-survey.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 1,
+      "id": "channel-survey",
+      "mode": "story",
+      "file": "channel-survey-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 1,
+      "id": "channel-survey",
+      "mode": "source",
+      "file": "channel-survey-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 2,
+      "id": "channel-open",
+      "mode": "explain",
+      "file": "channel-open.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 2,
+      "id": "channel-open",
+      "mode": "story",
+      "file": "channel-open-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 3,
+      "segment": 2,
+      "id": "channel-open",
+      "mode": "source",
+      "file": "channel-open-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 1,
+      "id": "settled-fields",
+      "mode": "explain",
+      "file": "settled-fields.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 1,
+      "id": "settled-fields",
+      "mode": "story",
+      "file": "settled-fields-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 1,
+      "id": "settled-fields",
+      "mode": "source",
+      "file": "settled-fields-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 2,
+      "id": "settled-memory",
+      "mode": "explain",
+      "file": "settled-memory.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 2,
+      "id": "settled-memory",
+      "mode": "story",
+      "file": "settled-memory-story.mp3",
+      "reused": true
+    },
+    {
+      "book": "dayu",
+      "chapter": 4,
+      "segment": 2,
+      "id": "settled-memory",
+      "mode": "source",
+      "file": "settled-memory-source.mp3",
+      "reused": true
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 1,
+      "id": "silk-call",
+      "mode": "explain",
+      "file": "silk-call.mp3",
+      "audioLengthMs": 29052,
+      "usageCharacters": 232
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 1,
+      "id": "silk-call",
+      "mode": "story",
+      "file": "silk-call-story.mp3",
+      "audioLengthMs": 28116,
+      "usageCharacters": 226
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 1,
+      "id": "silk-call",
+      "mode": "source",
+      "file": "silk-call-source.mp3",
+      "audioLengthMs": 23724,
+      "usageCharacters": 179
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 2,
+      "id": "silk-depart",
+      "mode": "explain",
+      "file": "silk-depart.mp3",
+      "audioLengthMs": 29196,
+      "usageCharacters": 230
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 2,
+      "id": "silk-depart",
+      "mode": "story",
+      "file": "silk-depart-story.mp3",
+      "audioLengthMs": 27432,
+      "usageCharacters": 214
+    },
+    {
+      "book": "silk-road",
+      "chapter": 1,
+      "segment": 2,
+      "id": "silk-depart",
+      "mode": "source",
+      "file": "silk-depart-source.mp3",
+      "audioLengthMs": 23832,
+      "usageCharacters": 178
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 1,
+      "id": "silk-captive",
+      "mode": "explain",
+      "file": "silk-captive.mp3",
+      "audioLengthMs": 28764,
+      "usageCharacters": 235
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 1,
+      "id": "silk-captive",
+      "mode": "story",
+      "file": "silk-captive-story.mp3",
+      "audioLengthMs": 31788,
+      "usageCharacters": 238
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 1,
+      "id": "silk-captive",
+      "mode": "source",
+      "file": "silk-captive-source.mp3",
+      "audioLengthMs": 25416,
+      "usageCharacters": 193
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 2,
+      "id": "silk-yuezhi",
+      "mode": "explain",
+      "file": "silk-yuezhi.mp3",
+      "audioLengthMs": 30600,
+      "usageCharacters": 237
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 2,
+      "id": "silk-yuezhi",
+      "mode": "story",
+      "file": "silk-yuezhi-story.mp3",
+      "audioLengthMs": 32364,
+      "usageCharacters": 255
+    },
+    {
+      "book": "silk-road",
+      "chapter": 2,
+      "segment": 2,
+      "id": "silk-yuezhi",
+      "mode": "source",
+      "file": "silk-yuezhi-source.mp3",
+      "audioLengthMs": 23760,
+      "usageCharacters": 183
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 1,
+      "id": "silk-return",
+      "mode": "explain",
+      "file": "silk-return.mp3",
+      "audioLengthMs": 30420,
+      "usageCharacters": 231
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 1,
+      "id": "silk-return",
+      "mode": "story",
+      "file": "silk-return-story.mp3",
+      "audioLengthMs": 30132,
+      "usageCharacters": 237
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 1,
+      "id": "silk-return",
+      "mode": "source",
+      "file": "silk-return-source.mp3",
+      "audioLengthMs": 23904,
+      "usageCharacters": 184
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 2,
+      "id": "silk-open",
+      "mode": "explain",
+      "file": "silk-open.mp3",
+      "audioLengthMs": 28476,
+      "usageCharacters": 218
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 2,
+      "id": "silk-open",
+      "mode": "story",
+      "file": "silk-open-story.mp3",
+      "audioLengthMs": 28728,
+      "usageCharacters": 242
+    },
+    {
+      "book": "silk-road",
+      "chapter": 3,
+      "segment": 2,
+      "id": "silk-open",
+      "mode": "source",
+      "file": "silk-open-source.mp3",
+      "audioLengthMs": 27216,
+      "usageCharacters": 217
+    }
+  ]
+}

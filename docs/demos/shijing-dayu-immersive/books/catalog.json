@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "books": [
+    "./dayu.json",
+    "./silk-road.json"
+  ]
+}
