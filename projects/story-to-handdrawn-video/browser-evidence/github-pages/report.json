@@ -1,0 +1,68 @@
+{
+  "verifiedAt": "2026-08-23T11:35:58.654Z",
+  "baseUrl": "https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/",
+  "results": [
+    {
+      "label": "research-desktop",
+      "route": "./",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "知画 · 知识可视化叙事工作台",
+      "heading": "把复杂知识，讲成真正能懂的视频。",
+      "overflow": 0,
+      "service": null,
+      "knowledgeStudio": true,
+      "effectContract": false,
+      "stageCount": 0
+    },
+    {
+      "label": "studio-desktop",
+      "route": "./studio.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "overflow": 0,
+      "service": "演示模式",
+      "knowledgeStudio": false,
+      "effectContract": true,
+      "stageCount": 6
+    },
+    {
+      "label": "research-mobile",
+      "route": "./",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": "知画 · 知识可视化叙事工作台",
+      "heading": "把复杂知识，讲成真正能懂的视频。",
+      "overflow": 0,
+      "service": null,
+      "knowledgeStudio": true,
+      "effectContract": false,
+      "stageCount": 0
+    },
+    {
+      "label": "studio-mobile",
+      "route": "./studio.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "overflow": 0,
+      "service": "演示模式",
+      "knowledgeStudio": false,
+      "effectContract": true,
+      "stageCount": 6
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

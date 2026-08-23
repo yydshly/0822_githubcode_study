@@ -308,7 +308,16 @@ Observable completion criteria: 两个正式 URL 可访问且页面无阻断错�
 
 | 交付问题 | 要求 | 表面 / 状态 | 证据 | 所属阶段 | 状态 | 下一动作 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 研究是否可快速理解 | 一份独立总结覆盖结论、架构、增强、场景和边界 | repository docs | 文档审阅 | 8 / 9 | continue | 新增 `PROJECT_SUMMARY.md` 并从 README 建立入口 |
-| 如何复现与发布 | 区分静态 Pages 与真实生产服务，给出安全配置和验证步骤 | repository docs | 命令、工作流、Secret 扫描 | 8 / 9 | continue | 新增 `DEPLOYMENT.md` |
-| 远端页面是否真实可用 | 研究页和生产台在 GitHub Pages 桌面/移动端可打开 | github-pages | 真实 URL、浏览器截图与 DOM | 7 / 9 | continue | 发布 main 后执行远端浏览器验收 |
-| 是否安全提交 | 不提交 `.env`、API Key、生成缓存或其他项目改动 | git | 定向 diff、ignore 与 secret scan | 9 | continue | 只提交本研究路径并复核 commit |
+| 研究是否可快速理解 | 一份独立总结覆盖结论、架构、增强、场景和边界 | repository docs | 文档审阅 | 8 / 9 | pass | `PROJECT_SUMMARY.md` 已建立职责、能力、场景、限制和下一阶段入口 |
+| 如何复现与发布 | 区分静态 Pages 与真实生产服务，给出安全配置和验证步骤 | repository docs | 命令、工作流、Secret 扫描 | 8 / 9 | pass | `DEPLOYMENT.md` 已覆盖本地真实链路、Pages、密钥和云端边界 |
+| 远端页面是否真实可用 | 研究页和生产台在 GitHub Pages 桌面/移动端可打开 | github-pages | 真实 URL、浏览器截图与 DOM | 7 / 9 | pass | Actions `32636919533` 成功；1440px/390px 两页均通过真实远端验收 |
+| 是否安全提交 | 不提交 `.env`、API Key、生成缓存或其他项目改动 | git | 定向 diff、ignore 与 secret scan | 9 | pass | 从 `origin/main` 创建 273 文件的项目级干净发布提交，范围检查与 secret scan 通过 |
+
+### Revision 9 验收证据
+
+- 发布提交：`2990f4e6f9d16e7abd04c496af16be014c8537c4`；同时进入远端 `codex/story-to-handdrawn-video-research` 与 `main`。
+- GitHub Pages：Actions run [`32636919533`](https://github.com/yydshly/0822_githubcode_study/actions/runs/32636919533) 成功完成 checkout、artifact upload 与 deploy。
+- 正式页面：研究页 `https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/`；生产台 `https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/studio.html`。
+- 浏览器验收：`browser-evidence/github-pages/report.json`；研究页与生产台在 1440×1000、390×844 reduced-motion 下均为 HTTP 成功、0px 横向溢出、0 浏览器错误。
+- 边界验收：远端生产台显示“演示模式”、六阶段和 `EXECUTABLE EFFECT CONTRACT`；真实 MiniMax/FFmpeg 仍只由 loopback 或未来受保护后端执行。
+- 安全验收：`.env` 命中 ignore；提交中不存在 MiniMax Key 实值；其他研究项目的本地改动没有进入发布提交。
