@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1216'/%3E%3Cpath d='M7 23 12 9l4 9 4-12 5 17' fill='none' stroke='%23b9f46d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <title>知画 · 知识可视化叙事工作台</title>
     <link rel="stylesheet" href="../../styles.css" />
-    <link rel="stylesheet" href="./demo.css?revision=20-ai-energy" />
+    <link rel="stylesheet" href="./demo.css?revision=22-runtime-boundary" />
     <script>document.documentElement.classList.add('js');</script>
   </head>
   <body>
@@ -52,6 +52,28 @@
         <span><i></i>事实、观点与艺术化表达分层</span>
         <span><i></i>本地规划，不上传输入</span>
         <span><i></i>8 类处方 · 12 条真实媒体验证</span>
+      </section>
+
+      <section class="runtime-bridge" id="runtime-boundary" aria-labelledby="runtime-boundary-title">
+        <header>
+          <p class="eyebrow">REMOTE SHOWCASE ↔ LOCAL PRODUCTION</p>
+          <h2 id="runtime-boundary-title">远端看完整能力，<br />本地做真实生成。</h2>
+        </header>
+        <div class="runtime-bridge__modes">
+          <article>
+            <span>01 · GITHUB PAGES</span>
+            <h3>公开静态研究台</h3>
+            <p>完整展示原理、12 条真实样片、知识规划器和六阶段生产流程。不会探测本机服务，不调用 MiniMax，也不保存任何 API Key。</p>
+            <a href="./studio.html" data-studio-link>打开静态生产台 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <span>02 · LOOPBACK SERVICE</span>
+            <h3>本地真实生产台</h3>
+            <p>需要新生成时，在仓库内启动安全服务；方案、生图、MiniMax TTS 与 FFmpeg 都在本机执行，浏览器只提交审核后的项目。</p>
+            <code>node integrations\studio-server.mjs</code>
+            <small>默认入口 · http://127.0.0.1:8789/demos/story-to-handdrawn-video/studio.html</small>
+          </article>
+        </div>
       </section>
 
       <section class="latest-generation" id="latest-generation" aria-labelledby="latest-generation-title">
@@ -1144,6 +1166,6 @@
       <symbol id="scene-window" viewBox="0 0 800 720"><g class="scene-art" filter="url(#wobble)"><rect class="window-fill" x="329" y="109" width="353" height="375" rx="4"/><path class="window-line" d="M329 109h353v375H329zm176 2v371M331 295h349"/><path class="curtain-fill" d="M303 88c-48 77-54 291-19 430 51-41 67-125 62-218 0-93-5-163-43-212Zm405 0c42 92 47 295 9 430-48-51-59-134-50-226 6-86 14-155 41-204Z"/><circle class="head-fill" cx="241" cy="344" r="92"/><path class="hair-fill" d="M152 334c8-81 46-122 100-118 59 5 83 50 80 116-21-44-57-72-92-67-28 3-57 29-88 69Z"/><path class="face" d="m201 346 5 2m58-2 5-1m-59 51c21 14 43 14 63-2"/><path class="shirt-fill" d="M157 427c37-27 126-28 164 1l37 165H119l38-166Z"/><path class="arm" d="M315 456c43-37 72-62 107-87m-6 2-4-28m4 28 28-7"/></g></symbol>
       <symbol id="scene-rainbow" viewBox="0 0 800 720"><g class="scene-art" filter="url(#wobble)"><path class="rainbow red" d="M105 505c38-344 520-362 594 0"/><path class="rainbow yellow" d="M155 505c36-278 436-287 494 0"/><path class="rainbow blue" d="M207 505c36-208 341-215 391 0"/><path class="hill-fill" d="M47 561c112-103 239-95 329 8 119-117 267-91 375 0v99H47Z"/><path class="hill-line" d="M48 562c111-103 236-94 328 7 121-115 268-90 375 1"/><path class="figure-head" d="M330 455c0-38 29-67 66-67 38 0 68 29 68 67 0 38-30 68-68 68-37 0-66-30-66-68Z"/><path class="figure-hair" d="M331 451c6-53 33-77 70-73 38 3 61 33 63 73-28-29-88-35-133 0Z"/><path class="figure-body" d="M326 514c41-27 99-26 139 0l32 135H293l33-135Z"/><path class="arms" d="m328 543-74 44m208-44 73 44"/></g></symbol>
     </svg>
-    <script src="./demo.js?revision=21-effect-contract"></script>
+    <script src="./demo.js?revision=22-runtime-boundary"></script>
   </body>
 </html>

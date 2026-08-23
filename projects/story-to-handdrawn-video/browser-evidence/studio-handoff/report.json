@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checkedAt": "2026-08-23T11:05:59.875Z",
+  "checkedAt": "2026-08-23T11:50:47.637Z",
   "studioOrigin": "http://127.0.0.1:8791",
   "errors": [],
   "results": {
@@ -16,7 +16,7 @@
       },
       "productionContract": {
         "schema": "knowledge-video-production-contract/v1",
-        "id": "pc-knowledge-mt5pbehm",
+        "id": "pc-knowledge-mt5qx42i",
         "source": "research-page",
         "story": {
           "recipe": "knowledge",
@@ -75,7 +75,7 @@
       },
       "production_contract": {
         "schema": "knowledge-video-production-contract/v1",
-        "id": "pc-knowledge-mt5pbehm",
+        "id": "pc-knowledge-mt5qx42i",
         "source": "research-page",
         "story": {
           "recipe": "knowledge",
@@ -134,7 +134,7 @@
       },
       "productionContract": {
         "schema": "knowledge-video-production-contract/v1",
-        "id": "pc-knowledge-mt5pbh0f",
+        "id": "pc-knowledge-mt5qx4z1",
         "source": "research-page",
         "story": {
           "recipe": "knowledge",

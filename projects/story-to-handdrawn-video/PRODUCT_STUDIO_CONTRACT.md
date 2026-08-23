@@ -321,3 +321,30 @@ Observable completion criteria: 两个正式 URL 可访问且页面无阻断错�
 - 浏览器验收：`browser-evidence/github-pages/report.json`；研究页与生产台在 1440×1000、390×844 reduced-motion 下均为 HTTP 成功、0px 横向溢出、0 浏览器错误。
 - 边界验收：远端生产台显示“演示模式”、六阶段和 `EXECUTABLE EFFECT CONTRACT`；真实 MiniMax/FFmpeg 仍只由 loopback 或未来受保护后端执行。
 - 安全验收：`.env` 命中 ignore；提交中不存在 MiniMax Key 实值；其他研究项目的本地改动没有进入发布提交。
+
+## Revision 10 · 远端静态说明与本地真实生产分流
+
+```text
+Entry mode: revision-led / repair-led
+Request revision: 10
+Target user and context: 用户从 GitHub Pages 浏览研究与生产台，需要立即理解远端只做静态演示，真实生成应在本地完成
+Desired first impression: 远端页面是完整、可信的研究与流程说明，不会诱导用户从 HTTPS 页面直接调用本机 HTTP 服务
+Visual ambition: Functional + Editorial
+Experience architecture: Editorial Flow
+Preserve: 研究页、生产台六阶段、已有样片、效果契约、本地 127.0.0.1 服务和 MiniMax 密钥安全边界
+Observed defect: 远端生产台虽然标注“演示模式”，但仍以本地 API fallback 组织动作；静态展示、本地真实处理及其入口关系不够直接
+Primary journey: 远端查看研究 → 进入静态生产台了解流程 → 看见明确边界与本地启动方式 → 在本地 URL 执行真实生成
+Operation constraints: 远端不得主动探测或调用 localhost；本地同源页面继续检测和提交真实 API；不在远端暴露 Key
+Environment constraints: GitHub Pages/HTTPS = static showcase；127.0.0.1/localhost HTTP = live production
+Required artifacts: studio 页面状态说明、研究页关联说明、README/DEPLOYMENT 同步、桌面和移动浏览器验收、远端重新发布
+Autonomy authorization: 用户明确同意静态部署远端并说明，本地使用时处理真实生成
+Observable completion criteria: 远端页面明确显示静态演示与本地真实生产两种模式且不会请求 localhost；本地 8791 仍可检测真实服务；两页关联、桌面/移动与发布均通过
+```
+
+| 用户意图 | 要求 | 表面 / 状态 | 证据 | 所属阶段 | 状态 | 下一动作 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 远端静态部署 | Pages 保留完整研究、样片和生产流程 | research / studio remote | DOM、截图、资源请求 | 3 / 7 | continue | 补充静态展示说明并验证两页关联 |
+| 本地真实处理 | 页面明确给出本地服务命令和 URL | studio remote / demo | 文案、复制入口 | 4 / 6 | continue | 增加“本地真实生产”说明卡 |
+| 不误调用 localhost | HTTPS 远端不探测、不提交本机 HTTP API | studio remote | network request capture | 5 / 8 | continue | 将远端状态与 API 动作硬分流 |
+| 本地能力不回归 | localhost 同源继续检测服务并运行真实链路 | studio local / live | health、DOM、现有回归 | 5 / 9 | continue | 验证 8791 与远端双环境 |
+| 文档和发布 | README/DEPLOYMENT 与页面一致并进入 Pages | repository / github | diff、Actions、远端浏览器 | 9 | continue | 定向提交并发布 main |

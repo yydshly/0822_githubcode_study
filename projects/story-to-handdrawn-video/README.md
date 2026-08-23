@@ -21,7 +21,7 @@
 - [产品设计与验收契约](PRODUCT_STUDIO_CONTRACT.md)
 - [实验和媒体证据](EVIDENCE.md)
 
-远端 GitHub Pages 是公开静态交付面，可查看研究、播放已生成成片、填写简报和体验流程；它不承载 MiniMax Key、Node 或 FFmpeg。全流程真实生成请按 [`DEPLOYMENT.md`](DEPLOYMENT.md) 启动本地安全服务，或在后续产品化时接入受保护的云后端。
+远端 GitHub Pages 是公开静态交付面，可查看研究、播放已生成成片、填写简报和体验流程；研究页会直接关联同源的远端静态生产台，不再探测访问者的 localhost。它不承载 MiniMax Key、Node 或 FFmpeg。全流程真实生成请按 [`DEPLOYMENT.md`](DEPLOYMENT.md) 启动本地安全服务，或在后续产品化时接入受保护的云后端。
 
 ## 一句话结论
 

@@ -4,9 +4,8 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const STAGES = ["brief", "plan", "storyboard", "voice", "render", "delivery"];
-  const API_BASE = location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname)
-    ? location.origin
-    : "http://127.0.0.1:8789";
+  const IS_LOCAL_RUNTIME = location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname);
+  const API_BASE = IS_LOCAL_RUNTIME ? location.origin : null;
   const STORAGE_KEY = "knowledge-video-studio/v1";
   const VOICE_PROFILES = {
     "female-chengshu": { label: "成熟讲述" },
@@ -765,6 +764,7 @@
   }
 
   async function callAction(action, payload) {
+    if (!IS_LOCAL_RUNTIME || !API_BASE) throw new Error("远端页面只展示流程；请在本地生产台执行真实生成");
     const response = await fetch(`${API_BASE}/api/actions/${action}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -849,6 +849,21 @@
   async function checkService(silent = false) {
     const button = $("#service-check");
     const label = $("#service-label");
+    const hint = $("small", button);
+    if (!IS_LOCAL_RUNTIME) {
+      state.service = "demo";
+      state.serviceMode = "hosted";
+      state.apiKeyConfigured = false;
+      button.dataset.status = "hosted";
+      label.textContent = "远端静态演示";
+      hint.textContent = "运行边界";
+      $("#service-detail").dataset.status = "hosted";
+      $("#service-detail").innerHTML = '<b>远端静态演示：</b>这里用于查看样例、效果契约和完整生产流程，不会探测或调用你的本机 API。需要新生成时，请在仓库内运行 <code>node integrations\\studio-server.mjs</code>，再打开 <code>http://127.0.0.1:8789/…/studio.html</code>。<a href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/story-to-handdrawn-video/DEPLOYMENT.md">查看本地运行说明 ↗</a>';
+      if (!silent) announce("当前是远端静态生产台；真实生成请切换到本地安全服务。" );
+      persist();
+      return;
+    }
+    hint.textContent = "检测服务";
     button.dataset.status = "checking";
     label.textContent = "检测中";
     const controller = new AbortController();
@@ -920,8 +935,10 @@
     const unavailable = state.service !== "online" || (state.serviceMode !== "mock" && !state.apiKeyConfigured);
     if (unavailable) {
       card.dataset.status = "error";
-      meta.textContent = state.service !== "online"
-        ? "没有发现本地生成服务。请启动 studio-server 后重试；简报已经保留，不会退回旧样例。"
+      meta.textContent = state.serviceMode === "hosted"
+        ? "当前是远端静态流程。简报已安全带入，可继续查看方案结构；真实生成请在本地生产台重新打开或导入项目。"
+        : state.service !== "online"
+          ? "没有发现本地生成服务。请启动 studio-server 后重试；简报已经保留，不会退回旧样例。"
         : "本地服务在线，但尚未读取到 MiniMax API Key。请在服务端环境变量中配置后重试。";
       button.disabled = false;
       button.innerHTML = original;
@@ -1529,9 +1546,7 @@
         manifest_url: curated || recordedPreset ? recordedDemo?.manifestUrl : undefined,
       });
     }
-    if (location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname)) {
-      checkService(true);
-    }
+    checkService(true);
   }
 
   init();

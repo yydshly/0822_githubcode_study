@@ -704,7 +704,9 @@ function probeKnowledgeStudioOrigin(origin) {
 }
 
 async function resolveKnowledgeStudioOrigin() {
-  if (location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname)) {
+  const isLoopback = location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname);
+  if (location.protocol !== "file:" && !isLoopback) return location.origin;
+  if (isLoopback) {
     try {
       const response = await fetch(`${location.origin}/api/health`, { cache: "no-store", signal: AbortSignal.timeout(1600) });
       if (response.ok) return location.origin;
@@ -718,10 +720,13 @@ async function resolveKnowledgeStudioOrigin() {
 
 async function openKnowledgeStudio({ handoff = false, fragment = "" } = {}) {
   const status = $("#knowledge-action-status");
+  const hostedStatic = location.protocol !== "file:" && !(location.protocol === "http:" && ["127.0.0.1", "localhost"].includes(location.hostname));
   if (handoff && !generateKnowledgePlan({ announce: false })) return;
   if (status) {
     status.dataset.status = "working";
-    status.textContent = "正在查找本机真实生产服务，并准备安全交接……";
+    status.textContent = hostedStatic
+      ? "正在打开同源静态生产台；简报只通过地址片段交接，不会调用本机 API……"
+      : "正在查找本机真实生产服务，并准备安全交接……";
   }
   const origin = await resolveKnowledgeStudioOrigin();
   if (!origin) {

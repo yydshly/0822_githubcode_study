@@ -7,7 +7,7 @@
     <title>Knowledge Video Studio · 知识视频生产台</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1216'/%3E%3Cpath d='M7 23 12 9l4 9 4-12 5 17' fill='none' stroke='%23b9f46d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="../../styles.css" />
-    <link rel="stylesheet" href="./studio.css?revision=8-effect-contract" />
+    <link rel="stylesheet" href="./studio.css?revision=9-runtime-boundary" />
   </head>
   <body>
     <a class="skip-link" href="#workspace">跳到生产工作区</a>
@@ -23,7 +23,7 @@
         <a href="./index.html#integration">架构说明</a>
       </nav>
       <button class="service-pill" id="service-check" type="button" aria-describedby="service-detail">
-        <i aria-hidden="true"></i><span id="service-label">演示模式</span><small>检测服务</small>
+        <i aria-hidden="true"></i><span id="service-label">远端静态演示</span><small>运行边界</small>
       </button>
     </header>
 
@@ -35,7 +35,7 @@
         </div>
         <div class="studio-intro__aside">
           <p>这里是生产控制面。故事讲解先形成唯一契约，旁白与每幕画面任务都从它派生；Codex 统一最终图片，MiniMax 在画面锁定后负责 TTS，原库与 FFmpeg 完成镜头表达和成片。</p>
-          <p class="service-detail" id="service-detail"><b>当前为演示模式：</b>所有操作保存在本机浏览器，不调用 API。连接安全的本地服务后，同一套按钮会提交真实生成任务。</p>
+          <p class="service-detail" id="service-detail" data-status="hosted"><b>远端静态演示：</b>这里用于查看样例、效果契约和完整生产流程，不会探测或调用你的本机 API。需要新生成时，请在仓库内运行 <code>node integrations\studio-server.mjs</code>，再打开 <code>http://127.0.0.1:8789/…/studio.html</code>。<a href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/story-to-handdrawn-video/DEPLOYMENT.md">查看本地运行说明 ↗</a></p>
         </div>
       </section>
 
@@ -260,6 +260,6 @@
 
     <footer class="studio-footer"><p>Knowledge Video Studio 是研究页的产品化入口；返回 <a href="./index.html">能力研究页</a> 查看原库原理、20 种风格、真实样片与扩展证据。</p><span>API keys stay server-side.</span></footer>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-    <script src="./studio.js?revision=8-effect-contract"></script>
+    <script src="./studio.js?revision=9-runtime-boundary"></script>
   </body>
 </html>
