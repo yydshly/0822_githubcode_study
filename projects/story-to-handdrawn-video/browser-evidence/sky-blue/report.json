@@ -1,0 +1,211 @@
+{
+  "checkedAt": "2026-08-23T03:16:06.317Z",
+  "httpUrl": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+  "fileUrl": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/index.html",
+  "results": [
+    {
+      "label": "desktop-http",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "先不谈功能，直接看生成效果。",
+      "videoReady": 4,
+      "duration": 107.233333,
+      "preload": "metadata",
+      "source": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1",
+      "timeline": 5,
+      "visible": true,
+      "overflow": 0,
+      "videos": 11,
+      "mp4Entries": [
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        }
+      ]
+    },
+    {
+      "label": "mobile-http",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": "先不谈功能，直接看生成效果。",
+      "videoReady": 4,
+      "duration": 107.233333,
+      "preload": "metadata",
+      "source": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1",
+      "timeline": 5,
+      "visible": true,
+      "overflow": 0,
+      "videos": 11,
+      "mp4Entries": [
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        }
+      ]
+    },
+    {
+      "label": "desktop-file",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "title": "先不谈功能，直接看生成效果。",
+      "videoReady": 4,
+      "duration": 107.233333,
+      "preload": "metadata",
+      "source": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1",
+      "timeline": 5,
+      "visible": true,
+      "overflow": 0,
+      "videos": 11,
+      "mp4Entries": []
+    },
+    {
+      "label": "mobile-noscript",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": "先不谈功能，直接看生成效果。",
+      "videoReady": 4,
+      "duration": 107.233333,
+      "preload": "metadata",
+      "source": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1",
+      "timeline": 5,
+      "visible": true,
+      "overflow": 0,
+      "videos": 11,
+      "mp4Entries": [
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        },
+        {
+          "transferSize": 300,
+          "encodedBodySize": 0
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

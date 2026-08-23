@@ -1,0 +1,43 @@
+{
+  "title": "《枫桥夜泊》：夜半钟声如何穿过一首诗",
+  "poem": "张继《枫桥夜泊》",
+  "durationSeconds": 116.3,
+  "videoBytes": 9265077,
+  "sceneStartsSeconds": [
+    0,
+    24.61,
+    47.46,
+    68.87,
+    92.56
+  ],
+  "sceneDurationsSeconds": [
+    24.61,
+    22.85,
+    21.41,
+    23.69,
+    23.74
+  ],
+  "speechDurationsSeconds": [
+    23.46,
+    21.7,
+    20.26,
+    22.54,
+    22.59
+  ],
+  "narrationCharacters": 368,
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "model": "speech-2.8-hd",
+    "voice": "Chinese (Mandarin)_Lyrical_Voice",
+    "emotion": "calm",
+    "usageCharacters": 774
+  },
+  "imageGeneration": "Codex image generation; scene 01 anchor plus four continuity references",
+  "composition": "Deterministic FFmpeg; five slow pans, ASS subtitles, river-bed ambience, final bell cue",
+  "files": {
+    "video": "maple-bridge-night.mp4",
+    "narration": "narration.wav",
+    "ambience": "ambient.wav",
+    "subtitles": "subtitles.ass"
+  }
+}

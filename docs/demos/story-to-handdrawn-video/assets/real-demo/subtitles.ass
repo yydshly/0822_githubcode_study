@@ -1,0 +1,23 @@
+[Script Info]
+Title: 未发生的团聚
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 960
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Microsoft YaHei UI,34,&H00FFFDF8,&H000000FF,&HCC16120F,&H78000000,0,0,0,0,100,100,1,0,1,2,1,2,54,54,68,1
+Style: Title,Microsoft YaHei UI,48,&H00FFFDF8,&H000000FF,&HAA16120F,&H00000000,-1,0,0,0,100,100,3,0,1,2,0,8,50,50,96,1
+Style: Kicker,Microsoft YaHei UI,17,&H00B9F46D,&H000000FF,&HAA10140E,&H00000000,-1,0,0,0,100,100,3,0,1,1,0,8,50,50,64,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.40,Kicker,,0,0,0,,REAL IMAGE + TTS + DETERMINISTIC COMPOSE
+Dialogue: 1,0:00:00.30,0:00:04.80,Title,,0,0,0,,未发生的团聚
+Dialogue: 0,0:00:00.00,0:00:09.42,Default,,0,0,0,,顾岚修复被水浸坏的照片。\N她始终相信，档案不负责安慰，\N只负责让事实留下证据。
+Dialogue: 0,0:00:09.82,0:00:20.34,Default,,0,0,0,,闭馆前，她收到最后一张团聚照。\N照片里的月台早已拆除，\N而合影的日期，却晚了整整二十年。
+Dialogue: 0,0:00:20.74,0:00:30.32,Default,,0,0,0,,何伯承认，女儿离家后再没回来。\N外孙女用两张残片和模型，\N补出了他们从未拥有的合影。
+Dialogue: 0,0:00:30.72,0:00:37.52,Default,,0,0,0,,她问：如果想念是真的，\N那场没有发生的团聚，\N就一点也不真实吗？
+Dialogue: 0,0:00:37.92,0:00:54.36,Default,,0,0,0,,顾岚没有把它写进历史，也没有删除。\N她把残片、生成过程和口述一起保存。\N事实没有被改写，思念也没有被抹去。

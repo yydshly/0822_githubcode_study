@@ -1,0 +1,660 @@
+{
+  "passed": true,
+  "checkedAt": "2026-08-23T00:50:37.302Z",
+  "errors": [],
+  "results": [
+    {
+      "label": "desktop-http",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "selectedStory": "technology",
+        "title": "科技人文 · 停电以后，我看见了电",
+        "outputTitle": "《停电以后，我看见了电》",
+        "recipeCount": 8,
+        "tabCount": 8,
+        "comparisonCount": 8,
+        "videos": [
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "name": "the-reunion-that-never-happened.mp4?revision=minimax-speech-28",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "memory-is-not-a-recording.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "she-learned-to-listen-to-the-wind.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-seal-the-clock-kept-running.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "keep-the-repair-visible.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "tide-returns-the-name.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan-lecture.mp4?revision=poetry-lecture-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "maple-bridge-night.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-power-went-out-i-saw-electricity.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "powered": {
+        "state": "powered",
+        "label": "供电正常",
+        "mapHidden": true
+      },
+      "outage": {
+        "state": "outage",
+        "label": "供电中断",
+        "fan": "paused",
+        "leds": "0"
+      },
+      "sequence": {
+        "phone": {
+          "state": "phone",
+          "beam": "0.947875"
+        },
+        "reveal": {
+          "state": "reveal",
+          "trace": "0.986464"
+        },
+        "ready": "ready"
+      },
+      "readyMap": {
+        "hidden": false,
+        "ariaHidden": "false",
+        "eventCount": 4
+      },
+      "dependency": {
+        "selected": "true",
+        "values": [
+          [
+            "comfort",
+            "false"
+          ],
+          [
+            "router",
+            "false"
+          ],
+          [
+            "mobile",
+            "true"
+          ],
+          [
+            "building",
+            "false"
+          ]
+        ],
+        "map": "mobile",
+        "title": "手机有电，不等于网络永远在线",
+        "boundary": "边界：这里展示依赖关系，不预测某次停电中的具体通信可用时长。"
+      },
+      "film": {
+        "active": "technology-demo-video",
+        "paused": false,
+        "currentTime": 0.703872
+      },
+      "restored": {
+        "state": "powered",
+        "mapHidden": true
+      },
+      "seek": {
+        "currentTime": 41.16,
+        "active": "true"
+      },
+      "fit": {
+        "title": "科技人文 · 停电以后，我看见了电",
+        "first": "科技人文 · 推荐",
+        "count": 8
+      },
+      "switched": {
+        "hidden": true,
+        "paused": true
+      }
+    },
+    {
+      "label": "mobile-http",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "selectedStory": "technology",
+        "title": "科技人文 · 停电以后，我看见了电",
+        "outputTitle": "《停电以后，我看见了电》",
+        "recipeCount": 8,
+        "tabCount": 8,
+        "comparisonCount": 8,
+        "videos": [
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "name": "the-reunion-that-never-happened.mp4?revision=minimax-speech-28",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "memory-is-not-a-recording.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "she-learned-to-listen-to-the-wind.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-seal-the-clock-kept-running.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "keep-the-repair-visible.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "tide-returns-the-name.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan-lecture.mp4?revision=poetry-lecture-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "maple-bridge-night.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-power-went-out-i-saw-electricity.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "powered": {
+        "state": "powered",
+        "label": "供电正常",
+        "mapHidden": true
+      },
+      "outage": {
+        "state": "outage",
+        "label": "供电中断",
+        "fan": "paused",
+        "leds": "0"
+      },
+      "sequence": {
+        "skipped": "ready"
+      },
+      "readyMap": {
+        "hidden": false,
+        "ariaHidden": "false",
+        "eventCount": 4
+      },
+      "dependency": {
+        "selected": "true",
+        "values": [
+          [
+            "comfort",
+            "false"
+          ],
+          [
+            "router",
+            "false"
+          ],
+          [
+            "mobile",
+            "true"
+          ],
+          [
+            "building",
+            "false"
+          ]
+        ],
+        "map": "mobile",
+        "title": "手机有电，不等于网络永远在线",
+        "boundary": "边界：这里展示依赖关系，不预测某次停电中的具体通信可用时长。"
+      },
+      "film": null,
+      "restored": {
+        "state": "powered",
+        "mapHidden": true
+      },
+      "seek": {
+        "currentTime": 41.16,
+        "active": "true"
+      },
+      "fit": {
+        "title": "科技人文 · 停电以后，我看见了电",
+        "first": "科技人文 · 推荐",
+        "count": 8
+      },
+      "switched": {
+        "hidden": true,
+        "paused": true
+      }
+    },
+    {
+      "label": "desktop-file",
+      "url": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "selectedStory": "technology",
+        "title": "科技人文 · 停电以后，我看见了电",
+        "outputTitle": "《停电以后，我看见了电》",
+        "recipeCount": 8,
+        "tabCount": 8,
+        "comparisonCount": 8,
+        "videos": [
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [],
+        "overflow": 0
+      },
+      "powered": {
+        "state": "powered",
+        "label": "供电正常",
+        "mapHidden": true
+      },
+      "outage": {
+        "state": "outage",
+        "label": "供电中断",
+        "fan": "paused",
+        "leds": "0"
+      },
+      "sequence": {
+        "skipped": "ready"
+      },
+      "readyMap": {
+        "hidden": false,
+        "ariaHidden": "false",
+        "eventCount": 4
+      },
+      "dependency": {
+        "selected": "true",
+        "values": [
+          [
+            "comfort",
+            "false"
+          ],
+          [
+            "router",
+            "false"
+          ],
+          [
+            "mobile",
+            "true"
+          ],
+          [
+            "building",
+            "false"
+          ]
+        ],
+        "map": "mobile",
+        "title": "手机有电，不等于网络永远在线",
+        "boundary": "边界：这里展示依赖关系，不预测某次停电中的具体通信可用时长。"
+      },
+      "film": null,
+      "restored": {
+        "state": "powered",
+        "mapHidden": true
+      },
+      "seek": {
+        "currentTime": 41.16,
+        "active": "true"
+      },
+      "fit": {
+        "title": "科技人文 · 停电以后，我看见了电",
+        "first": "科技人文 · 推荐",
+        "count": 8
+      },
+      "switched": {
+        "hidden": true,
+        "paused": true
+      }
+    },
+    {
+      "label": "mobile-reduced",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "initial": {
+        "selectedStory": "technology",
+        "title": "科技人文 · 停电以后，我看见了电",
+        "outputTitle": "《停电以后，我看见了电》",
+        "recipeCount": 8,
+        "tabCount": 8,
+        "comparisonCount": 8,
+        "videos": [
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "name": "the-reunion-that-never-happened.mp4?revision=minimax-speech-28",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "memory-is-not-a-recording.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "she-learned-to-listen-to-the-wind.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-seal-the-clock-kept-running.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "keep-the-repair-visible.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "tide-returns-the-name.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan-lecture.mp4?revision=poetry-lecture-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "remembering-jiangnan.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "maple-bridge-night.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "name": "after-the-power-went-out-i-saw-electricity.mp4?revision=codex-minimax-v1",
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "powered": {
+        "state": "powered",
+        "label": "供电正常",
+        "mapHidden": true
+      },
+      "outage": {
+        "state": "outage",
+        "label": "供电中断",
+        "fan": "paused",
+        "leds": "0"
+      },
+      "sequence": {
+        "reduced": "ready"
+      },
+      "readyMap": {
+        "hidden": false,
+        "ariaHidden": "false",
+        "eventCount": 4
+      },
+      "dependency": {
+        "selected": "true",
+        "values": [
+          [
+            "comfort",
+            "false"
+          ],
+          [
+            "router",
+            "false"
+          ],
+          [
+            "mobile",
+            "true"
+          ],
+          [
+            "building",
+            "false"
+          ]
+        ],
+        "map": "mobile",
+        "title": "手机有电，不等于网络永远在线",
+        "boundary": "边界：这里展示依赖关系，不预测某次停电中的具体通信可用时长。"
+      },
+      "film": null,
+      "restored": {
+        "state": "powered",
+        "mapHidden": true
+      },
+      "seek": {
+        "currentTime": 41.16,
+        "active": "true"
+      },
+      "fit": {
+        "title": "科技人文 · 停电以后，我看见了电",
+        "first": "科技人文 · 推荐",
+        "count": 8
+      },
+      "switched": {
+        "hidden": true,
+        "paused": true
+      }
+    }
+  ]
+}

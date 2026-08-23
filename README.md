@@ -9,6 +9,7 @@
 | 项目 | 能力方向 | 状态 | 原项目 | 研究记录 | 在线演示 |
 | --- | --- | --- | --- | --- | --- |
 | Sub2API | AI 订阅额度分发网关 | `researching` | [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) | [详细研究](projects/sub2api/README.md) | [研究摘要](https://yydshly.github.io/0822_githubcode_study/demos/sub2api/) |
+| story-to-handdrawn-video | Agent 驱动的手绘故事视频流水线 | `researching` | [gnipbao/story-to-handdrawn-video](https://github.com/gnipbao/story-to-handdrawn-video) | [详细研究](projects/story-to-handdrawn-video/README.md) | [交互演示](https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/) |
 
 状态统一使用：
 

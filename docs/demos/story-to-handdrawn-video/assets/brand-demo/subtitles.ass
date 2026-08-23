@@ -1,0 +1,38 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 960
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Microsoft YaHei,32,&H00F4E8CF,&H000000FF,&HCC18352C,&H99000000,0,0,0,0,100,100,0,0,1,2.2,0.8,2,54,54,42,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.20,Default,,0,0,0,,林又第一次看见那道裂缝，\N是在一把卖出去十一个月的弯木椅上。
+Dialogue: 0,0:00:05.20,0:00:10.20,Default,,0,0,0,,对方建议补平、涂白，\N再拍一张像什么都没发生过的照片。
+Dialogue: 0,0:00:10.20,0:00:15.20,Default,,0,0,0,,那是最省事的做法，\N也最像一个刚起步的品牌会做的事。
+Dialogue: 0,0:00:15.20,0:00:20.20,Default,,0,0,0,,保护新，藏起旧。
+Dialogue: 0,0:00:20.20,0:00:25.41,Default,,0,0,0,,如果椅子只能在完美时代表自己，\N所谓价值，不过是一层比木头更薄的漆。
+Dialogue: 0,0:00:25.86,0:00:31.00,Default,,0,0,0,,她暂停当天的新订单，\N拆下开裂的前梁。
+Dialogue: 0,0:00:31.00,0:00:36.20,Default,,0,0,0,,没有把它扔进废料桶，\N也没有选择同色填料伪装完整。
+Dialogue: 0,0:00:36.20,0:00:41.20,Default,,0,0,0,,她从回收木里切出两枚珊瑚色蝴蝶榫，\N跨在裂缝两侧。
+Dialogue: 0,0:00:41.20,0:00:46.20,Default,,0,0,0,,修补变得一眼可见：\N材料曾经失效，有人愿意继续负责。
+Dialogue: 0,0:00:46.20,0:00:51.70,Default,,0,0,0,,第一条品牌原则，不是写在墙上，\N而是留在椅子正面。
+Dialogue: 0,0:00:52.15,0:00:56.80,Default,,0,0,0,,一次选择还不能成为品牌。
+Dialogue: 0,0:00:56.80,0:01:03.20,Default,,0,0,0,,检查受力，匹配材料，先做干装，\N完成连接，再重新测试。
+Dialogue: 0,0:01:03.20,0:01:09.20,Default,,0,0,0,,每次修理留下原来的裂纹，\N也留下材料样本和拆下的部件。
+Dialogue: 0,0:01:09.20,0:01:14.20,Default,,0,0,0,,学徒不需要模仿她的语气，\N只需要能解释修了哪里、什么仍然未知。
+Dialogue: 0,0:01:14.20,0:01:19.24,Default,,0,0,0,,价值从个人审美，\N变成别人能够复查的工艺。
+Dialogue: 0,0:01:19.69,0:01:24.20,Default,,0,0,0,,一年后，那把椅子再次回到工作台。
+Dialogue: 0,0:01:24.20,0:01:29.20,Default,,0,0,0,,珊瑚色榫没有松，\N磨损的是一枚普通脚垫。
+Dialogue: 0,0:01:29.20,0:01:34.50,Default,,0,0,0,,林又只换掉脚垫，\N又让椅子承担了一次重量测试。
+Dialogue: 0,0:01:34.50,0:01:40.20,Default,,0,0,0,,老人重新坐下时，\N没有人请他赞美品牌。
+Dialogue: 0,0:01:40.20,0:01:46.22,Default,,0,0,0,,承诺不是产品永远不坏，\N而是问题出现以后，谁还愿意回来。
+Dialogue: 0,0:01:46.67,0:01:52.20,Default,,0,0,0,,后来，工作室把修理台放到了门口。
+Dialogue: 0,0:01:52.20,0:01:58.20,Default,,0,0,0,,人们可以带回椅子，也可以带来台灯、\N木盒或一只摇晃的小凳。
+Dialogue: 0,0:01:58.20,0:02:04.20,Default,,0,0,0,,先一起判断，再决定\N只修需要修的部分。
+Dialogue: 0,0:02:04.20,0:02:09.20,Default,,0,0,0,,公开痕迹，\N不等于把瑕疵做成装饰。
+Dialogue: 0,0:02:09.20,0:02:14.01,Default,,0,0,0,,让物件继续使用，让责任可以返回，\N也让时间留在正面。

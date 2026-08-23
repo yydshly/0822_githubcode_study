@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Knowledge Video Studio：以故事讲解为核心，由 Codex 统一最终视觉、MiniMax 生成旁白，再确定性合成为知识视频。" />
+    <title>Knowledge Video Studio · 知识视频生产台</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1216'/%3E%3Cpath d='M7 23 12 9l4 9 4-12 5 17' fill='none' stroke='%23b9f46d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./studio.css?revision=8-effect-contract" />
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">跳到生产工作区</a>
+
+    <header class="studio-header">
+      <a class="studio-brand" href="./index.html" aria-label="返回能力研究页">
+        <span class="studio-brand__mark">KVS</span>
+        <span><b>Knowledge Video Studio</b><small>story-to-handdrawn-video · product layer</small></span>
+      </a>
+      <nav aria-label="生产台导航">
+        <a href="./index.html">能力研究</a>
+        <a href="./index.html#narrative-director">真实样片</a>
+        <a href="./index.html#integration">架构说明</a>
+      </nav>
+      <button class="service-pill" id="service-check" type="button" aria-describedby="service-detail">
+        <i aria-hidden="true"></i><span id="service-label">演示模式</span><small>检测服务</small>
+      </button>
+    </header>
+
+    <main id="workspace">
+      <section class="studio-intro" aria-labelledby="studio-title">
+        <div>
+          <p class="eyebrow">STORY CONTRACT × CODEX VISUAL × MINIMAX SPEECH</p>
+          <h1 id="studio-title">从“想让观众学会什么”，<br />推进到一条可交付的知识视频。</h1>
+        </div>
+        <div class="studio-intro__aside">
+          <p>这里是生产控制面。故事讲解先形成唯一契约，旁白与每幕画面任务都从它派生；Codex 统一最终图片，MiniMax 在画面锁定后负责 TTS，原库与 FFmpeg 完成镜头表达和成片。</p>
+          <p class="service-detail" id="service-detail"><b>当前为演示模式：</b>所有操作保存在本机浏览器，不调用 API。连接安全的本地服务后，同一套按钮会提交真实生成任务。</p>
+        </div>
+      </section>
+
+      <ol class="workflow-rail" aria-label="视频生产阶段">
+        <li><button type="button" data-stage-button="brief" aria-current="step"><span>01</span><b>目标</b><small>定义学会什么</small></button></li>
+        <li><button type="button" data-stage-button="plan"><span>02</span><b>方案</b><small>脚本与证据</small></button></li>
+        <li><button type="button" data-stage-button="storyboard"><span>03</span><b>分镜</b><small>生成与锁定</small></button></li>
+        <li><button type="button" data-stage-button="voice"><span>04</span><b>声音</b><small>TTS 与节奏</small></button></li>
+        <li><button type="button" data-stage-button="render"><span>05</span><b>成片</b><small>效果与比例</small></button></li>
+        <li><button type="button" data-stage-button="delivery"><span>06</span><b>交付</b><small>质检与导出</small></button></li>
+      </ol>
+
+      <section class="pipeline-runner" id="pipeline-runner" aria-labelledby="pipeline-runner-title" hidden>
+        <header><div><span>STORY-FIRST · RECORDED REAL BUILD</span><h2 id="pipeline-runner-title">“为什么 AI 那么耗电”完整生产链</h2></div><b id="pipeline-runner-status">等待开始</b></header>
+        <div class="pipeline-runner__progress" aria-hidden="true"><i id="pipeline-runner-bar"></i></div>
+        <ol id="pipeline-runner-steps" aria-label="一键生产进度">
+          <li data-pipeline-step="0"><b>01</b><span>事实与故事</span><small>IEA 边界 + 五幕讲解</small></li>
+          <li data-pipeline-step="1"><b>02</b><span>叙事对齐</span><small>每幕画面任务与禁区</small></li>
+          <li data-pipeline-step="2"><b>03</b><span>最终分镜</span><small>Codex 统一五张图</small></li>
+          <li data-pipeline-step="3"><b>04</b><span>声音</span><small>MiniMax TTS</small></li>
+          <li data-pipeline-step="4"><b>05</b><span>成片</span><small>字幕、混音与编码</small></li>
+          <li data-pipeline-step="5"><b>06</b><span>效果</span><small>播放、下载与溯源</small></li>
+        </ol>
+      </section>
+
+      <div class="workspace-grid">
+        <aside class="project-rail" aria-label="项目概况">
+          <section class="project-card">
+            <header><span>ACTIVE PROJECT</span><em id="project-state">DRAFT</em></header>
+            <h2 id="project-title">为什么天空是蓝色的？</h2>
+            <p id="project-meta">初中生 · 90 秒微课 · 16:9</p>
+            <div class="project-progress" aria-label="项目完成度"><i id="project-progress-bar"></i></div>
+            <div class="project-counts">
+              <span><b id="scene-count">0/5</b>分镜锁定</span>
+              <span><b id="audio-state">未生成</b>旁白</span>
+            </div>
+          </section>
+
+          <section class="pipeline-card">
+            <header><span>PRODUCTION LAYERS</span><b>故事优先</b></header>
+            <ol>
+              <li><i>WHY</i><span><b>事实与学习目标</b><small>先确定观众要学会什么</small></span></li>
+              <li><i>STY</i><span><b>故事讲解总导演</b><small>五幕因果、误解与可信边界</small></span></li>
+              <li><i>IMG</i><span><b>Codex Visual</b><small>由同一故事合同派生并审片</small></span></li>
+              <li><i>TTS</i><span><b>MiniMax Speech</b><small>画面锁定后生成真实时长</small></span></li>
+              <li><i>FX</i><span><b>Handdrawn Renderer</b><small>描边、显色与镜头运动</small></span></li>
+              <li><i>MP4</i><span><b>FFmpeg</b><small>字幕、混音、编码与质检</small></span></li>
+            </ol>
+          </section>
+
+          <section class="cost-card">
+            <span>本次任务估算</span>
+            <dl><div><dt>图片</dt><dd id="estimated-images">5 张</dd></div><div><dt>语音</dt><dd id="estimated-voice">约 401 字</dd></div><div><dt>动态镜头</dt><dd id="estimated-motion">0 段</dd></div></dl>
+            <p>先审核再生成，避免把错误脚本变成昂贵素材。</p>
+          </section>
+        </aside>
+
+        <section class="stage-shell" aria-live="polite">
+          <section class="stage-panel is-active" data-stage="brief" aria-labelledby="brief-title">
+            <header class="stage-heading">
+              <div><span>STEP 01 · LEARNING INTENT</span><h2 id="brief-title">先定义结果，再启动生成。</h2></div>
+              <p>这一步不是写提示词，而是为后续脚本、生图、TTS 和质检建立共同标准。</p>
+            </header>
+
+            <section class="handoff-card" id="incoming-handoff" data-handoff hidden aria-labelledby="handoff-title">
+              <div><span>RESEARCH → PRODUCTION</span><h3 id="handoff-title">已从能力研究页接收新目标</h3><p id="handoff-meta">七项知识简报已带入；请核对后再调用真实模型。</p></div>
+              <div><button class="secondary-action" id="handoff-edit" type="button">先修改内容</button><button class="primary-action" id="handoff-generate" type="button"><span>确认并生成方案</span><small>调用 MiniMax 文本模型</small></button></div>
+            </section>
+
+            <section class="effect-contract" id="effect-contract" aria-labelledby="effect-contract-title">
+              <header><div><span>EXECUTABLE EFFECT CONTRACT</span><h3 id="effect-contract-title">先锁定效果，再让模型执行。</h3></div><code id="contract-id">pc-knowledge-handdrawn</code></header>
+              <div class="effect-contract__grid">
+                <label><span>故事处方</span><select id="effect-profile" aria-label="故事与视觉处方"><option value="knowledge">知识解释 · 白板讲解</option><option value="technology">技术系统 · 工程线稿</option><option value="classical">古典诗词 · 水墨意境</option><option value="children">儿童成长 · 暖光绘本</option><option value="memory">家庭记忆 · 彩铅日记</option><option value="mystery">悬疑档案 · 木刻社论</option><option value="brand">品牌价值 · 有机轮廓</option><option value="poetic">意境散文 · 淡彩速写</option></select></label>
+                <div class="contract-fact"><span>叙事结构</span><b id="contract-story">知识解释</b><small>五幕学习弧，不由下游模型改写目标</small></div>
+                <div class="contract-fact"><span>最终画风</span><b id="contract-visual">白板讲解动画</b><small id="contract-palette">暖白纸面 + 黑线 + 概念蓝</small></div>
+                <div class="contract-fact"><span>模型路由</span><b id="contract-routing">MiniMax 全自动</b><small>文本 → 图片 → TTS；网页当前可完整执行</small></div>
+              </div>
+              <fieldset class="presentation-picker"><legend>成片呈现样式 · <span id="contract-presentation">手绘显色</span> · 会真实进入 FFmpeg</legend><button type="button" data-presentation="standard" aria-pressed="false"><b>基础镜头</b><small>全幅运镜 · 通用科普</small></button><button type="button" data-presentation="handdrawn" aria-pressed="true"><b>手绘显色</b><small>纸感起笔 · 逐幕显色</small></button><button type="button" data-presentation="poetic" aria-pressed="false"><b>诗性长卷</b><small>留白画幅 · 意境讲解</small></button></fieldset>
+              <p class="contract-boundary"><b>一致性：</b><span id="contract-continuity">五幕复用同一主体、空间规则、色盘、画材和线条语言。</span><br /><b>质量边界：</b>最高质量的 Codex 统一终稿属于 Agent 协作精制路线，网页不能把它伪装成可直接调用的 API；当前选择的是可在网页完整跑通的 MiniMax 自动路线。</p>
+            </section>
+
+            <div class="preset-row" id="preset-library" aria-label="完整任务样例">
+              <button type="button" data-preset="sky" aria-pressed="true"><span>SCIENCE</span><b>天空为什么是蓝色</b><small>机制可视化 · 初中</small></button>
+              <button type="button" data-preset="electricity" aria-pressed="false"><span>SYSTEM</span><b>电如何改变现代生活</b><small>发明史 · 公共教育</small></button>
+              <button type="button" data-preset="poetry" aria-pressed="false"><span>CULTURE</span><b>《忆江南》的空间与色彩</b><small>诗词讲解 · 中学</small></button>
+              <button type="button" data-preset="aiEnergy" aria-pressed="false"><span>AI &amp; ENERGY · NEW</span><b>为什么 AI 那么耗电</b><small>故事优先 · Codex 视觉 · MiniMax TTS</small></button>
+            </div>
+            <p class="preset-source" id="preset-source" hidden><b>AI 耗电样例事实边界：</b>AI 训练与部署发生在数据中心；用电来自计算、数据搬运、网络存储与散热，具体能耗随任务和基础设施变化。来源：<a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA · Energy demand from AI</a></p>
+
+            <form id="brief-form" class="brief-form" novalidate>
+              <label class="wide"><span>知识主题 <b>必填</b></span><input id="topic" name="topic" required maxlength="100" value="为什么天空是蓝色的？" /></label>
+              <label><span>目标观众</span><select id="audience" name="audience"><option>小学高年级</option><option selected>初中生</option><option>高中生</option><option>大学生</option><option>普通公众</option><option>职业学习者</option></select></label>
+              <label><span>目标时长</span><select id="duration" name="duration"><option value="60">60 秒</option><option value="90" selected>90 秒</option><option value="180">3 分钟</option></select></label>
+              <label class="wide"><span>学习目标 <b>必填</b></span><textarea id="objective" name="objective" rows="3" required>看完后，观众能够用白光分色与瑞利散射解释蓝天和晚霞为何呈现不同颜色。</textarea></label>
+              <label class="wide"><span>需要纠正的误解</span><input id="misconception" name="misconception" value="天空是蓝色，因为它反射了海水。" /></label>
+              <label class="wide"><span>生活入口</span><input id="entry" name="entry" value="同一天空为什么中午偏蓝、傍晚偏红？" /></label>
+              <label class="wide"><span>事实或原文依据 <b>必填</b></span><textarea id="evidence" name="evidence" rows="4" required>太阳光包含不同波长的可见光；在远小于波长的粒子上，散射强度与波长的四次方成反比；日落时光线穿过更长的大气路径。</textarea></label>
+              <p class="form-error" id="form-error" role="alert" hidden>请补全知识主题、学习目标和事实依据。</p>
+              <div class="form-actions wide"><p><b>安全边界：</b>内容只提交给本地安全服务，API Key 永远不进入网页。完整样例复现已完成的真实任务，不会再次消耗额度。</p><div class="form-action-buttons"><button class="secondary-action full-sample-action" id="run-ai-pipeline" type="button"><span>AI 耗电 · 一键到成片</span><small>复现真实混合生产链</small></button><button class="primary-action" id="generate-plan" type="submit"><span>生成知识方案</span><small>按当前输入逐步审核</small></button></div></div>
+            </form>
+          </section>
+
+          <section class="stage-panel" data-stage="plan" aria-labelledby="plan-title" hidden>
+            <header class="stage-heading">
+              <div><span>STEP 02 · NARRATIVE PLAN</span><h2 id="plan-title">审核知识结构，而不是直接接受模型答案。</h2></div>
+              <p>每一幕都必须说明教学任务、画面任务和事实边界。确认后才进入素材生成。</p>
+            </header>
+            <div class="learning-promise"><span>LEARNING PROMISE</span><p id="learning-promise">观众能够解释蓝天与晚霞的共同机制，并不再用“反射海水”作因果解释。</p></div>
+            <div class="plan-grid">
+              <ol class="act-list" id="act-list"></ol>
+              <article class="act-inspector">
+                <span id="act-label">ACT 01 · 问题进入</span>
+                <h3 id="act-title">同一片天空，颜色为什么会改变？</h3>
+                <p id="act-purpose"></p>
+                <dl><div><dt>画面任务</dt><dd id="act-visual"></dd></div><div><dt>旁白任务</dt><dd id="act-voice"></dd></div><div><dt>可信边界</dt><dd id="act-trust"></dd></div></dl>
+              </article>
+            </div>
+            <section class="trust-strip" aria-label="发布可信边界"><article><span>FACT</span><b>事实进入旁白</b><p>只使用输入材料和经审核来源。</p></article><article><span>MODEL</span><b>解释必须可追问</b><p>区分因果、类比与艺术化表达。</p></article><article><span>REVIEW</span><b>人工批准再生图</b><p>高风险主题不允许无人值守发布。</p></article></section>
+            <footer class="stage-actions"><button class="secondary-action" type="button" data-go="brief">返回修改目标</button><button class="primary-action" id="approve-plan" type="button"><span>批准方案并生成分镜</span><small>5 个镜头 · 可逐幕重做</small></button></footer>
+          </section>
+
+          <section class="stage-panel" data-stage="storyboard" aria-labelledby="storyboard-title" hidden>
+            <header class="stage-heading">
+              <div><span>STEP 03 · STORYBOARD REVIEW</span><h2 id="storyboard-title">逐幕生成，逐幕锁定。</h2></div>
+              <p>锁定满意镜头后，后续重生成不会破坏它。主体参考与风格锁由同一个项目清单传递。</p>
+            </header>
+            <div class="storyboard-toolbar"><p><b id="locked-label">0 / 5 已锁定</b><span>全部锁定后才能进入配音</span></p><button class="secondary-action compact" id="lock-all" type="button">锁定全部样例</button></div>
+            <div class="storyboard-grid" id="storyboard-grid"></div>
+            <footer class="stage-actions"><button class="secondary-action" type="button" id="regenerate-unlocked">重新生成未锁定镜头</button><button class="primary-action" id="approve-storyboard" type="button" disabled><span>进入声音设计</span><small>需要锁定全部 5 幕</small></button></footer>
+          </section>
+
+          <section class="stage-panel" data-stage="voice" aria-labelledby="voice-title" hidden>
+            <header class="stage-heading">
+              <div><span>STEP 04 · VOICE & TIMING</span><h2 id="voice-title">让声音决定真实节奏。</h2></div>
+              <p>旁白生成后读取实际音频时长，再回写镜头和字幕时间；不是先猜 90 秒再把声音强塞进去。</p>
+            </header>
+            <div class="voice-layout">
+              <section class="voice-picker">
+                <span>MINIMAX VOICE</span>
+                <div class="voice-options" role="radiogroup" aria-label="旁白声音">
+                  <button type="button" role="radio" aria-checked="true" data-voice="female-chengshu" data-voice-label="成熟讲述"><b>成熟讲述</b><small>female-chengshu · 稳重</small></button>
+                  <button type="button" role="radio" aria-checked="false" data-voice="male-qn-jingying" data-voice-label="清晰男声"><b>清晰男声</b><small>male-qn-jingying · 清晰</small></button>
+                  <button type="button" role="radio" aria-checked="false" data-voice="female-tianmei" data-voice-label="亲和女声"><b>亲和女声</b><small>female-tianmei · 亲和</small></button>
+                </div>
+                <div class="range-row"><label for="speed">语速 <output id="speed-output">0.92×</output></label><input id="speed" type="range" min="0.75" max="1.2" step="0.01" value="0.92" /></div>
+              </section>
+              <section class="audio-preview">
+                <header><span id="audio-output-label">AUDIO OUTPUT</span><b id="audio-badge">等待生成</b></header>
+                <div class="waveform" id="audio-waveform" aria-hidden="true" hidden></div>
+                <div class="media-empty" id="audio-empty"><b>本项目还没有声音</b><span>确认音色后生成，播放器才会载入本次任务的 MiniMax TTS。</span></div>
+                <audio id="studio-audio" controls preload="metadata" hidden></audio>
+                <p id="voice-preview-note">当前没有借用任何样例声音。点击生成后，播放器会载入本次任务音频并写回真实时长。</p>
+              </section>
+            </div>
+            <div class="script-table" id="script-table" aria-label="旁白分段"></div>
+            <footer class="stage-actions"><button class="secondary-action" type="button" data-go="storyboard">返回分镜</button><button class="primary-action" id="generate-voice" type="button"><span>生成旁白并对齐字幕</span><small>MiniMax Speech 2.8 HD</small></button></footer>
+          </section>
+
+          <section class="stage-panel" data-stage="render" aria-labelledby="render-title" hidden>
+            <header class="stage-heading">
+              <div><span>STEP 05 · COMPOSE & RENDER</span><h2 id="render-title">生成能力与确定性组装，各做擅长的事。</h2></div>
+              <p>模型生成内容素材，原库提供手绘效果；字幕、安全区、混音与编码由可重复的渲染流程完成。</p>
+            </header>
+            <div class="render-layout">
+              <section class="render-preview">
+                <div class="media-empty media-empty--video" id="composition-empty"><b>本项目还没有成片</b><span>分镜与旁白已经准备好；点击右侧按钮后才开始 FFmpeg 合成。</span></div>
+                <video id="composition-preview" controls preload="metadata" hidden>
+                  <source id="composition-source" type="video/mp4" />
+                </video>
+                <div class="render-preview__meta"><span id="composition-label">PREVIEW · CURRENT PROJECT</span><b id="composition-title">等待本项目成片</b><small id="composition-meta">生成后可在此预览，也会进入交付页</small></div>
+              </section>
+              <form class="render-config" id="render-config">
+                <fieldset><legend>效果契约 · <span id="render-contract-id">等待锁定</span></legend><label><input type="radio" name="recipe" value="standard" disabled /><span><b>基础镜头合成 · 已接入</b><small>全幅平移 / 缩放、淡入淡出与字幕对齐</small></span></label><label><input type="radio" name="recipe" value="handdrawn" checked disabled /><span><b>手绘显色 · 已接入</b><small>纸感降饱和、线条增强、显色与缓慢推进</small></span></label><label><input type="radio" name="recipe" value="poetic" disabled /><span><b>诗性长卷 · 已接入</b><small>留白画幅、克制横移、诗词安全区与暖金题签</small></span></label></fieldset>
+                <fieldset><legend>成片比例</legend><div class="ratio-row"><button type="button" data-ratio="16:9" aria-pressed="true">16:9<small>课程 / B站</small></button><button type="button" data-ratio="9:16" aria-pressed="false">9:16<small>短视频</small></button><button type="button" data-ratio="1:1" aria-pressed="false">1:1<small>信息流</small></button></div></fieldset>
+                <label class="check-row is-unavailable"><input id="motion-clips" type="checkbox" disabled /><span><b>MiniMax 图生视频 · 待接入</b><small>当前服务尚未调用图生视频接口；默认使用可控的二维运镜。</small></span></label>
+                <label class="check-row"><input id="burn-subtitles" type="checkbox" checked disabled /><span><b>烧录同步字幕 · 当前固定开启</b><small>服务端始终按真实旁白时长烧录字幕，并导出 ASS 项目字幕。</small></span></label>
+              </form>
+            </div>
+            <footer class="stage-actions"><button class="secondary-action" type="button" data-go="voice">返回声音</button><button class="primary-action" id="start-render" type="button"><span>开始生成正式成片</span><small>素材检查 → 合成 → 自动质检</small></button></footer>
+          </section>
+
+          <section class="stage-panel" data-stage="delivery" aria-labelledby="delivery-title" hidden>
+            <header class="stage-heading">
+              <div><span>STEP 06 · QUALITY & DELIVERY</span><h2 id="delivery-title">任务可观察，结果可追溯。</h2></div>
+              <p>每个阶段留下模型、参数、素材来源和人工批准记录；失败只重跑受影响的场景。</p>
+            </header>
+            <section class="delivery-player" id="delivery-player" hidden aria-labelledby="delivery-player-title">
+              <video id="delivery-video" controls preload="metadata" playsinline><source id="delivery-source" type="video/mp4" /></video>
+              <div><span>FINAL OUTPUT · CURRENT PROJECT</span><h3 id="delivery-player-title">本次生成成片</h3><p id="delivery-player-meta">播放器与下载链接指向同一个项目文件。</p></div>
+            </section>
+            <div class="delivery-grid">
+              <section class="job-console">
+                <header><div><i id="job-dot"></i><span id="job-id">JOB · LOCAL DEMO</span></div><b id="job-status">等待开始</b></header>
+                <div class="job-progress"><i id="job-progress-bar"></i></div>
+                <ol id="job-log" aria-label="任务日志"></ol>
+              </section>
+              <section class="quality-card">
+                <span>QUALITY GATE</span>
+                <h3 id="quality-title">等待正式渲染</h3>
+                <ul><li><i></i><span>知识边界与来源清单</span><b>WAIT</b></li><li><i></i><span>人物、画风与伪文字</span><b>WAIT</b></li><li><i></i><span>字幕安全区与音频峰值</span><b>WAIT</b></li><li><i></i><span>H.264 / AAC 播放兼容性</span><b>WAIT</b></li></ul>
+              </section>
+            </div>
+            <section class="deliverables" id="deliverables" hidden>
+              <article><span>MASTER VIDEO</span><b id="output-video-name">等待本次成片</b><small id="output-video-meta">生成后可直接播放或下载</small><a id="output-video-download" href="#" download>下载本次成片</a></article>
+              <article><span>PROJECT PACKAGE</span><b>knowledge-video-project.json</b><small>简报、脚本、分镜、模型参数与审核记录</small><button id="export-project" type="button">导出项目包</button></article>
+              <article><span>PROVENANCE</span><b>project.json</b><small>媒体来源、模型、状态与任务事件</small><a id="output-manifest" href="./assets/sky-blue-demo/media-manifest.json">查看项目清单</a></article>
+            </section>
+            <p class="delivery-contract">本次成片执行契约：<code id="delivery-contract-id">等待生成</code>。项目清单会保留故事处方、画风、模型路由与渲染配方。</p>
+            <footer class="stage-actions"><button class="secondary-action" type="button" id="new-project">创建新项目</button><button class="primary-action" id="run-demo-job" type="button"><span>运行演示任务</span><small>查看完整状态与交付过程</small></button></footer>
+          </section>
+        </section>
+      </div>
+
+      <section class="api-contract" aria-labelledby="api-title">
+        <div><p class="eyebrow">LAYERED QUALITY CONTRACT</p><h2 id="api-title">不是模型接力，而是所有产物服从同一份故事契约。</h2></div>
+        <div class="api-flow" aria-label="安全生成架构">
+          <span><b>FACT + STORY</b><small>学习目标、五幕因果与可信边界</small></span><i>→</i><span><b>CODEX FINAL VISUAL</b><small>同一视觉圣经、逐幕审片与统一返工</small></span><i>→</i><span><b>MINIMAX SPEECH</b><small>锁稿后 TTS，不改写故事内容</small></span><i>→</i><span><b>DETERMINISTIC RENDER</b><small>Handdrawn · 字幕 · FFmpeg</small></span>
+        </div>
+        <p>故事契约同时包含旁白、画面任务、禁止内容和事实边界，因此更换执行模型也不会改变教学意图。运行 <code>node integrations/studio-server.mjs</code> 后可提交新的 MiniMax 任务；密钥与长任务都留在服务端。直接打开 <code>file://</code> 可复现已完成的真实混合样例，但不会重复调用 API。</p>
+      </section>
+    </main>
+
+    <footer class="studio-footer"><p>Knowledge Video Studio 是研究页的产品化入口；返回 <a href="./index.html">能力研究页</a> 查看原库原理、20 种风格、真实样片与扩展证据。</p><span>API keys stay server-side.</span></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="./studio.js?revision=8-effect-contract"></script>
+  </body>
+</html>

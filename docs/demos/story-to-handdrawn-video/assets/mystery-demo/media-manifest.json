@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "title": "封存之后，钟还在走",
+  "status": "real_generated_codex_minimax_demo",
+  "language": "zh-CN",
+  "storyEffectRecipe": {
+    "storyType": "archival-mystery",
+    "narrativeArc": ["anomaly", "evidence-chain", "credible-misdirection", "rational-reversal", "accountable-resolution"],
+    "visualStyle": "limited-palette-linocut-editorial",
+    "palette": ["charcoal-black", "aged-paper-beige", "warning-rust-red"],
+    "motion": "asymmetric slow pan, hard evidence cut, restrained reveal",
+    "alignmentRule": "Every reversal must be supported by a previously visible object; the resolution preserves conflicting evidence instead of erasing the breach."
+  },
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 5,
+    "sourceSize": "1086x1448",
+    "outputMode": "scene 1 establishes investigator, station, clock, palette, and linocut lock; scenes 2-5 are distinct generations using scene 1 as reference",
+    "commonPromptRecipe": "portrait 3:4 rough linocut editorial print, strict charcoal/beige/rust-red palette, archival railway mystery, subtitle-safe lower area, no text, labels, numbers, logos, watermark, gore, or apparition"
+  },
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voiceId": "male-qn-jingying",
+    "emotion": "calm",
+    "generationSpeed": 0.94,
+    "postTempo": 1.12,
+    "pitch": -1,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 1466,
+    "credentialBoundary": "API key is read from a private environment file at process runtime and is not stored in this repository."
+  },
+  "timeline": [
+    { "scene": 1, "role": "anomaly", "start": 0.0, "voiceDuration": 25.34, "image": "scene-01.png" },
+    { "scene": 2, "role": "evidence-chain", "start": 25.79, "voiceDuration": 23.58, "image": "scene-02.png" },
+    { "scene": 3, "role": "credible-misdirection", "start": 49.82, "voiceDuration": 25.83, "image": "scene-03.png" },
+    { "scene": 4, "role": "rational-reversal", "start": 76.10, "voiceDuration": 29.44, "image": "scene-04.png" },
+    { "scene": 5, "role": "accountable-resolution", "start": 105.99, "voiceDuration": 29.27, "image": "scene-05.png" }
+  ],
+  "output": {
+    "file": "after-the-seal-the-clock-kept-running.mp4",
+    "durationSeconds": 135.262,
+    "sizeBytes": 11016434,
+    "video": "H.264 High, 720x960, 30fps, yuv420p",
+    "audio": "AAC LC stereo, 32000Hz, 128kbps target",
+    "measuredLoudness": "mean -19.5 dBFS, peak -2.0 dBFS",
+    "subtitles": "ASS subtitles burned into picture"
+  }
+}

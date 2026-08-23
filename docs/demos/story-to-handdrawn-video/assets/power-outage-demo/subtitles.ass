@@ -1,0 +1,47 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Microsoft YaHei,27,&H00F4EFE3,&H00FFFFFF,&HB0201723,&HC0000000,0,0,0,0,100,100,1,0,1,1.7,0,2,110,110,38,1
+Style: Kicker,Microsoft YaHei,20,&H00D9C754,&H00FFFFFF,&HAA101A35,&H90000000,1,0,0,0,100,100,2,0,1,1.4,0,7,62,62,42,1
+Style: Title,Microsoft YaHei,43,&H00F4EFE3,&H00FFFFFF,&HAA101A35,&H90000000,1,0,0,0,100,100,1,0,1,2,0,7,62,62,72,1
+Style: Fact,Microsoft YaHei,22,&H005CA8E6,&H00FFFFFF,&HAA101A35,&H90000000,0,0,0,0,100,100,1,0,1,1.5,0,7,62,62,128,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 2,0:00:00.35,0:00:05.80,Kicker,,0,0,0,,01 · 凌晨两点多
+Dialogue: 2,0:00:00.53,0:00:05.80,Title,,0,0,0,,电的缺席
+Dialogue: 2,0:00:00.73,0:00:05.80,Fact,,0,0,0,,空调 / 风扇 / 路由器同时沉默
+Dialogue: 2,0:00:21.24,0:00:26.69,Kicker,,0,0,0,,02 · 今天
+Dialogue: 2,0:00:21.42,0:00:26.69,Title,,0,0,0,,依赖显影
+Dialogue: 2,0:00:21.62,0:00:26.69,Fact,,0,0,0,,制冷 / 通信 / 冷藏 / 泵与电梯
+Dialogue: 2,0:00:41.51,0:00:46.96,Kicker,,0,0,0,,03 · 1800 / 1831
+Dialogue: 2,0:00:41.69,0:00:46.96,Title,,0,0,0,,从现象到电流
+Dialogue: 2,0:00:41.89,0:00:46.96,Fact,,0,0,0,,伏打电堆 → 法拉第电磁感应
+Dialogue: 2,0:01:05.08,0:01:10.53,Kicker,,0,0,0,,04 · 1880s
+Dialogue: 2,0:01:05.26,0:01:10.53,Title,,0,0,0,,电不只是一只灯泡
+Dialogue: 2,0:01:05.46,0:01:10.53,Fact,,0,0,0,,发电 → 配电 → 输电 → 使用
+Dialogue: 2,0:01:30.26,0:01:35.71,Kicker,,0,0,0,,05 · 此刻
+Dialogue: 2,0:01:30.44,0:01:35.71,Title,,0,0,0,,让无数发明同时醒来
+Dialogue: 2,0:01:30.64,0:01:35.71,Fact,,0,0,0,,也让维护系统的人重新可见
+Dialogue: 0,0:00:00.14,0:00:07.48,Narration,,0,0,0,,凌晨两点多，空调先停，风扇的叶片慢下来，\N路由器最后一点绿光也熄了。
+Dialogue: 0,0:00:07.52,0:00:14.19,Narration,,0,0,0,,黑暗并不可怕，可怕的是闷热没有尽头，\N手机电量开始变成倒计时。
+Dialogue: 0,0:00:14.23,0:00:19.99,Narration,,0,0,0,,那一夜，我第一次不是看见电，而是被它的缺席包围。
+Dialogue: 0,0:00:21.03,0:00:32.34,Narration,,0,0,0,,余下的手机光照出一张依赖清单：制冷、通信、冷藏，\N还有一些建筑里的水泵与电梯，\N都可能随着供电中断而退到幕后。
+Dialogue: 0,0:00:32.38,0:00:40.26,Narration,,0,0,0,,平日里，电没有形状；停电以后，\N它却把现代生活背后的连接一条条显影出来。
+Dialogue: 0,0:00:41.30,0:00:45.17,Narration,,0,0,0,,电也不是某个人在某个夜晚突然发明的。
+Dialogue: 0,0:00:45.21,0:00:52.98,Narration,,0,0,0,,十八世纪末，人们已在追问它；一八零零年，\N伏打电堆让连续电流更容易被研究。
+Dialogue: 0,0:00:53.02,0:01:03.83,Narration,,0,0,0,,一八三一年，法拉第用线圈与磁的实验展示电磁感应：\N运动可以被转换为电流，发电机的基本道路由此打开。
+Dialogue: 0,0:01:04.87,0:01:09.23,Narration,,0,0,0,,但能产生电，还不等于千家万户能够使用电。
+Dialogue: 0,0:01:09.27,0:01:14.50,Narration,,0,0,0,,许多人继续改进灯丝、发电机、变压器、配电和计量。
+Dialogue: 0,0:01:14.54,0:01:22.42,Narration,,0,0,0,,十九世纪八十年代，集中供电开始服务街区；\N交流系统又让电更适合远距离传输。
+Dialogue: 0,0:01:22.46,0:01:29.01,Narration,,0,0,0,,真正改变世界的，不只是一只灯泡，\N而是一整套会协作的系统。
+Dialogue: 0,0:01:30.05,0:01:31.81,Narration,,0,0,0,,后来，电回来了。
+Dialogue: 0,0:01:31.85,0:01:39.90,Narration,,0,0,0,,继电器轻响，风扇重新转动，路由器的灯一颗颗亮起，\N窗外的城市恢复低声呼吸。
+Dialogue: 0,0:01:39.94,0:01:50.47,Narration,,0,0,0,,也许电不是唯一的答案，但那一刻我相信：\N它是人类最伟大的发明之一，\N因为它让无数别的发明同时醒来。
+Dialogue: 0,0:01:50.51,0:01:54.95,Narration,,0,0,0,,也让维护这张网络的人，重新变得可见。

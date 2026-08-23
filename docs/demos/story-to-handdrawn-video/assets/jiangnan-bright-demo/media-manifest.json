@@ -1,0 +1,59 @@
+{
+  "title": "《忆江南·江南好》：鲜明颜色如何成为记忆",
+  "poem": "白居易《忆江南·江南好》",
+  "durationSeconds": 116.42,
+  "videoBytes": 14616425,
+  "sceneStartsSeconds": [
+    0,
+    26.53,
+    47.82,
+    71.03,
+    93.28
+  ],
+  "sceneDurationsSeconds": [
+    26.53,
+    21.29,
+    23.21,
+    22.25,
+    23.14
+  ],
+  "speechDurationsSeconds": [
+    25.48,
+    20.24,
+    22.16,
+    21.2,
+    22.09
+  ],
+  "narrationCharacters": 383,
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "model": "speech-2.8-hd",
+    "voice": "Chinese (Mandarin)_Lyrical_Voice",
+    "emotion": "happy",
+    "usageCharacters": 805
+  },
+  "imageGeneration": "Codex built-in image generation; scene 01 anchor plus four continuity references",
+  "composition": "Deterministic FFmpeg; five slow pans, sentence-level ASS subtitles, low river ambience and two restrained morning bird cues",
+  "files": {
+    "video": "remembering-jiangnan.mp4",
+    "narration": "narration.wav",
+    "ambience": "ambient.wav",
+    "subtitles": "subtitles.ass"
+  },
+  "lecture": {
+    "title": "《忆江南》诗卷讲解版",
+    "durationSeconds": 116.42,
+    "videoBytes": 7591258,
+    "layout": "16:9 split teaching canvas; left imagery and right persistent poem scroll",
+    "informationLayers": [
+      "original poem",
+      "active line",
+      "keyword",
+      "interpretation",
+      "visual evidence"
+    ],
+    "captions": "No bottom teaching subtitles; semantic text is deterministically typeset in the scroll panel",
+    "file": "remembering-jiangnan-lecture.mp4",
+    "panelSource": "lecture-panels.ass"
+  }
+}

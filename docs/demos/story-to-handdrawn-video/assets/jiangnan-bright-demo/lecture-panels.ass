@@ -1,0 +1,89 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SceneTag,Microsoft YaHei,16,&H00FFF7DD,&H00FFFFFF,&H002E362F,&H960C2428,-1,0,0,0,100,100,1,0,3,8,0,7,0,0,0,1
+Style: Section,Microsoft YaHei,12,&H00465245,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,2,0,1,0,0,7,0,0,0,1
+Style: Title,KaiTi,32,&H00152F32,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: Author,Microsoft YaHei,15,&H006B7569,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: Poem,KaiTi,27,&H00677768,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: PoemActive,KaiTi,30,&H002A4A52,&H00FFFFFF,&H00F5E6BD,&H00000000,-1,0,0,0,100,100,1,0,1,2.5,0,7,0,0,0,1
+Style: PoemGreen,KaiTi,30,&H003E7051,&H00FFFFFF,&H00F5E6BD,&H00000000,-1,0,0,0,100,100,1,0,1,2.5,0,7,0,0,0,1
+Style: KeyLabel,Microsoft YaHei,13,&H00667767,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: Keyword,Microsoft YaHei,23,&H003843E9,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: KeywordGreen,Microsoft YaHei,23,&H004D8058,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: Note,Microsoft YaHei,18,&H00263F43,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Evidence,Microsoft YaHei,14,&H005E786A,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:26.53,SceneTag,,0,0,0,,{\pos(38,40)}01 · 赞叹
+Dialogue: 0,0:00:00.00,0:00:26.53,Section,,0,0,0,,{\pos(804,40)}READ · SEE · UNDERSTAND
+Dialogue: 0,0:00:00.00,0:00:26.53,Title,,0,0,0,,{\pos(804,72)}忆江南 · 江南好
+Dialogue: 0,0:00:00.00,0:00:26.53,Author,,0,0,0,,{\pos(804,120)}唐 · 白居易
+Dialogue: 0,0:00:00.00,0:00:26.53,PoemActive,,0,0,0,,{\pos(804,176)}江南好，
+Dialogue: 0,0:00:00.00,0:00:26.53,Poem,,0,0,0,,{\pos(804,222)}风景旧曾谙。
+Dialogue: 0,0:00:00.00,0:00:26.53,Poem,,0,0,0,,{\pos(804,268)}日出江花红胜火，
+Dialogue: 0,0:00:00.00,0:00:26.53,Poem,,0,0,0,,{\pos(804,314)}春来江水绿如蓝。
+Dialogue: 0,0:00:00.00,0:00:26.53,Poem,,0,0,0,,{\pos(804,360)}能不忆江南？
+Dialogue: 0,0:00:00.00,0:00:26.53,KeyLabel,,0,0,0,,{\pos(804,430)}本幕关键词
+Dialogue: 0,0:00:00.00,0:00:26.53,Keyword,,0,0,0,,{\pos(804,458)}江南好
+Dialogue: 0,0:00:00.00,0:00:26.53,Note,,0,0,0,,{\pos(804,514)}先用一个“好”打开记忆，\N它表达赞叹，不是地理结论。
+Dialogue: 0,0:00:00.00,0:00:26.53,Evidence,,0,0,0,,{\pos(804,632)}画面证据｜晨光、水路与城镇同时展开
+Dialogue: 0,0:00:26.53,0:00:47.82,SceneTag,,0,0,0,,{\pos(38,40)}02 · 熟悉
+Dialogue: 0,0:00:26.53,0:00:47.82,Section,,0,0,0,,{\pos(804,40)}READ · SEE · UNDERSTAND
+Dialogue: 0,0:00:26.53,0:00:47.82,Title,,0,0,0,,{\pos(804,72)}忆江南 · 江南好
+Dialogue: 0,0:00:26.53,0:00:47.82,Author,,0,0,0,,{\pos(804,120)}唐 · 白居易
+Dialogue: 0,0:00:26.53,0:00:47.82,Poem,,0,0,0,,{\pos(804,176)}江南好，
+Dialogue: 0,0:00:26.53,0:00:47.82,PoemActive,,0,0,0,,{\pos(804,222)}风景旧曾谙。
+Dialogue: 0,0:00:26.53,0:00:47.82,Poem,,0,0,0,,{\pos(804,268)}日出江花红胜火，
+Dialogue: 0,0:00:26.53,0:00:47.82,Poem,,0,0,0,,{\pos(804,314)}春来江水绿如蓝。
+Dialogue: 0,0:00:26.53,0:00:47.82,Poem,,0,0,0,,{\pos(804,360)}能不忆江南？
+Dialogue: 0,0:00:26.53,0:00:47.82,KeyLabel,,0,0,0,,{\pos(804,430)}本幕关键词
+Dialogue: 0,0:00:26.53,0:00:47.82,Keyword,,0,0,0,,{\pos(804,458)}旧曾谙
+Dialogue: 0,0:00:26.53,0:00:47.82,Note,,0,0,0,,{\pos(804,514)}“谙”是熟悉。诗人写的不是初见，\N而是曾经生活过的经验。
+Dialogue: 0,0:00:26.53,0:00:47.82,Evidence,,0,0,0,,{\pos(804,632)}画面证据｜小舟进入水巷，视角由远及近
+Dialogue: 0,0:00:47.82,0:01:11.03,SceneTag,,0,0,0,,{\pos(38,40)}03 · 日出
+Dialogue: 0,0:00:47.82,0:01:11.03,Section,,0,0,0,,{\pos(804,40)}READ · SEE · UNDERSTAND
+Dialogue: 0,0:00:47.82,0:01:11.03,Title,,0,0,0,,{\pos(804,72)}忆江南 · 江南好
+Dialogue: 0,0:00:47.82,0:01:11.03,Author,,0,0,0,,{\pos(804,120)}唐 · 白居易
+Dialogue: 0,0:00:47.82,0:01:11.03,Poem,,0,0,0,,{\pos(804,176)}江南好，
+Dialogue: 0,0:00:47.82,0:01:11.03,Poem,,0,0,0,,{\pos(804,222)}风景旧曾谙。
+Dialogue: 0,0:00:47.82,0:01:11.03,PoemActive,,0,0,0,,{\pos(804,268)}日出江花红胜火，
+Dialogue: 0,0:00:47.82,0:01:11.03,Poem,,0,0,0,,{\pos(804,314)}春来江水绿如蓝。
+Dialogue: 0,0:00:47.82,0:01:11.03,Poem,,0,0,0,,{\pos(804,360)}能不忆江南？
+Dialogue: 0,0:00:47.82,0:01:11.03,KeyLabel,,0,0,0,,{\pos(804,430)}本幕关键词
+Dialogue: 0,0:00:47.82,0:01:11.03,Keyword,,0,0,0,,{\pos(804,458)}日出
+Dialogue: 0,0:00:47.82,0:01:11.03,Note,,0,0,0,,{\pos(804,514)}颜色由时间发生：日轮升起，\N金光沿水面抵近观看者。
+Dialogue: 0,0:00:47.82,0:01:11.03,Evidence,,0,0,0,,{\pos(804,632)}画面证据｜暖色从远山、屋脊进入春水
+Dialogue: 0,0:01:11.03,0:01:33.28,SceneTag,,0,0,0,,{\pos(38,40)}04 · 对照
+Dialogue: 0,0:01:11.03,0:01:33.28,Section,,0,0,0,,{\pos(804,40)}READ · SEE · UNDERSTAND
+Dialogue: 0,0:01:11.03,0:01:33.28,Title,,0,0,0,,{\pos(804,72)}忆江南 · 江南好
+Dialogue: 0,0:01:11.03,0:01:33.28,Author,,0,0,0,,{\pos(804,120)}唐 · 白居易
+Dialogue: 0,0:01:11.03,0:01:33.28,Poem,,0,0,0,,{\pos(804,176)}江南好，
+Dialogue: 0,0:01:11.03,0:01:33.28,Poem,,0,0,0,,{\pos(804,222)}风景旧曾谙。
+Dialogue: 0,0:01:11.03,0:01:33.28,PoemActive,,0,0,0,,{\pos(804,268)}日出江花红胜火，
+Dialogue: 0,0:01:11.03,0:01:33.28,PoemGreen,,0,0,0,,{\pos(804,314)}春来江水绿如蓝。
+Dialogue: 0,0:01:11.03,0:01:33.28,Poem,,0,0,0,,{\pos(804,360)}能不忆江南？
+Dialogue: 0,0:01:11.03,0:01:33.28,KeyLabel,,0,0,0,,{\pos(804,430)}本幕关键词
+Dialogue: 0,0:01:11.03,0:01:33.28,KeywordGreen,,0,0,0,,{\pos(804,458)}红胜火 / 绿如蓝
+Dialogue: 0,0:01:11.03,0:01:33.28,Note,,0,0,0,,{\pos(804,514)}红与绿不是装饰，而是两组比较。\N“蓝”也保留蓼蓝染料的语义边界。
+Dialogue: 0,0:01:11.03,0:01:33.28,Evidence,,0,0,0,,{\pos(804,632)}画面证据｜近景花红与孔雀绿水互为尺度
+Dialogue: 0,0:01:33.28,0:01:56.42,SceneTag,,0,0,0,,{\pos(38,40)}05 · 回望
+Dialogue: 0,0:01:33.28,0:01:56.42,Section,,0,0,0,,{\pos(804,40)}READ · SEE · UNDERSTAND
+Dialogue: 0,0:01:33.28,0:01:56.42,Title,,0,0,0,,{\pos(804,72)}忆江南 · 江南好
+Dialogue: 0,0:01:33.28,0:01:56.42,Author,,0,0,0,,{\pos(804,120)}唐 · 白居易
+Dialogue: 0,0:01:33.28,0:01:56.42,Poem,,0,0,0,,{\pos(804,176)}江南好，
+Dialogue: 0,0:01:33.28,0:01:56.42,Poem,,0,0,0,,{\pos(804,222)}风景旧曾谙。
+Dialogue: 0,0:01:33.28,0:01:56.42,Poem,,0,0,0,,{\pos(804,268)}日出江花红胜火，
+Dialogue: 0,0:01:33.28,0:01:56.42,Poem,,0,0,0,,{\pos(804,314)}春来江水绿如蓝。
+Dialogue: 0,0:01:33.28,0:01:56.42,PoemActive,,0,0,0,,{\pos(804,360)}能不忆江南？
+Dialogue: 0,0:01:33.28,0:01:56.42,KeyLabel,,0,0,0,,{\pos(804,430)}本幕关键词
+Dialogue: 0,0:01:33.28,0:01:56.42,Keyword,,0,0,0,,{\pos(804,458)}能不忆江南
+Dialogue: 0,0:01:33.28,0:01:56.42,Note,,0,0,0,,{\pos(804,514)}反问把视线从风景带回记忆。\N诗没有替读者回答。
+Dialogue: 0,0:01:33.28,0:01:56.42,Evidence,,0,0,0,,{\pos(804,632)}画面证据｜舟已远去，颜色仍留在视野

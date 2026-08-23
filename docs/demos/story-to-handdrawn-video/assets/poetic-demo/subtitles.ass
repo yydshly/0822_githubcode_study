@@ -1,0 +1,33 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Microsoft YaHei,34,&H00352F2B,&H000000FF,&H00F0E9DD,&H88000000,0,0,0,0,100,100,1,0,1,3,0,2,90,90,46,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.50,Default,,0,0,0,,沈慧在地图上找到新桥，\N却找不到旧渡口的名字。
+Dialogue: 0,0:00:05.50,0:00:11.20,Default,,0,0,0,,二十七年后，她沿着堤岸回来，\N石阶还在。
+Dialogue: 0,0:00:11.20,0:00:16.80,Default,,0,0,0,,水位和记忆，\N都不肯替她作证。
+Dialogue: 0,0:00:16.80,0:00:21.88,Default,,0,0,0,,她没有急着说“这里消失了”，\N只让今天的水声先进入空白。
+Dialogue: 0,0:00:22.58,0:00:28.90,Default,,0,0,0,,她把褪色的朱红线系在系船环上，\N另一端贴近录音机。
+Dialogue: 0,0:00:28.90,0:00:35.30,Default,,0,0,0,,线传来细小的颤动，\N使她想起母亲掌心的温度。
+Dialogue: 0,0:00:35.30,0:00:41.60,Default,,0,0,0,,机器收下的是此刻的风和潮，\N不是童年的证词。
+Dialogue: 0,0:00:41.60,0:00:47.63,Default,,0,0,0,,记忆可以指路，\N却不能要求河岸保持原样。
+Dialogue: 0,0:00:48.33,0:00:54.80,Default,,0,0,0,,桥上的车流从雾里掠过，\N桥下的石阶仍旧等待。
+Dialogue: 0,0:00:54.80,0:01:01.30,Default,,0,0,0,,小时候，她嫌渡船太慢；\N后来，桥让上学、看病和归家都更快。
+Dialogue: 0,0:01:01.30,0:01:08.20,Default,,0,0,0,,新的便利没有背叛旧的等待，\N怀念也不该要求别人重新生活在迟缓里。
+Dialogue: 0,0:01:08.20,0:01:15.34,Default,,0,0,0,,速度与停留，\N只是在不同年代里保护人。
+Dialogue: 0,0:01:16.04,0:01:22.50,Default,,0,0,0,,她原本带来一把刻刀，\N想把旧名字留在石面上。
+Dialogue: 0,0:01:22.50,0:01:28.90,Default,,0,0,0,,最后，她把刀收回包里，\N只录下两辆车之间的安静。
+Dialogue: 0,0:01:28.90,0:01:34.80,Default,,0,0,0,,名字能够保存，\N也可能变成占有。
+Dialogue: 0,0:01:34.80,0:01:40.24,Default,,0,0,0,,她不再需要陌生人认出这里，\N才能确认自己曾经等过。
+Dialogue: 0,0:01:40.94,0:01:47.50,Default,,0,0,0,,涨潮慢慢盖住最后一级石阶。\N沈慧解下朱红线，缠回录音机。
+Dialogue: 0,0:01:47.50,0:01:53.80,Default,,0,0,0,,渡口没有被复原，\N桥也没有退场。
+Dialogue: 0,0:01:53.80,0:02:00.20,Default,,0,0,0,,潮水不是把名字洗掉，\N而是把它还给能够承受变化的岸。
+Dialogue: 0,0:02:00.20,0:02:07.64,Default,,0,0,0,,记住一个地方，\N也可以是为它留下继续成为别处的余地。

@@ -1,0 +1,51 @@
+{
+  "title": "《天空为什么是蓝色的？》",
+  "recipe": "日常追问 × 机制显影 × 现象迁移",
+  "durationSeconds": 107.25,
+  "videoBytes": 15337663,
+  "sceneStartsSeconds": [
+    0,
+    18.54,
+    38.66,
+    63.77,
+    85.11
+  ],
+  "sceneDurationsSeconds": [
+    18.54,
+    20.12,
+    25.11,
+    21.34,
+    22.14
+  ],
+  "speechDurationsSeconds": [
+    17.54,
+    19.12,
+    24.11,
+    20.34,
+    21.14
+  ],
+  "narrationCharacters": 401,
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "model": "speech-2.8-hd",
+    "voice": "female-chengshu",
+    "emotion": "calm",
+    "speed": 0.92
+  },
+  "reviewCut": false,
+  "imageGeneration": "Five 16:9 keyframes created with Codex built-in image generation; scene 01 is the character/style anchor and scenes 02–05 reference it for continuity.",
+  "composition": "Deterministic FFmpeg; five slow pans, sentence-level subtitles, scene concept cards, restrained rooftop ambience, H.264/AAC fast-start MP4.",
+  "visualBoundary": "Light paths, molecule sizes and atmospheric thickness are explanatory visualizations and are not drawn to scale.",
+  "sources": [
+    "https://science.nasa.gov/universe/glossary/",
+    "https://spaceplace.nasa.gov/blue-sky/en/",
+    "https://gml.noaa.gov/grad/about/redsky/",
+    "https://science.nasa.gov/earth/earth-observatory/crepuscular-rays-and-light-scattering-150090/"
+  ],
+  "files": {
+    "video": "why-is-the-sky-blue.mp4",
+    "narration": "narration.wav",
+    "ambience": "ambient.wav",
+    "subtitles": "subtitles.ass"
+  }
+}

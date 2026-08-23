@@ -1,0 +1,51 @@
+{
+  "title": "《停电以后，我看见了电》",
+  "recipe": "科技人文：亲历事件 × 发明链 × 系统回望",
+  "durationSeconds": 115.85,
+  "videoBytes": 12479680,
+  "sceneStartsSeconds": [
+    0,
+    20.89,
+    41.16,
+    64.73,
+    89.91
+  ],
+  "sceneDurationsSeconds": [
+    20.89,
+    20.27,
+    23.57,
+    25.18,
+    25.94
+  ],
+  "speechDurationsSeconds": [
+    19.74,
+    19.12,
+    22.42,
+    24.03,
+    24.79
+  ],
+  "narrationCharacters": 494,
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "model": "speech-2.8-hd",
+    "voice": "Chinese (Mandarin)_Sincere_Adult",
+    "emotion": "neutral",
+    "speed": 0.96,
+    "usageCharacters": 1023
+  },
+  "imageGeneration": "Codex built-in image generation; scene 01 modern anchor, scene 02 and 05 continuity references, scene 03 and 04 historical device-to-system pair",
+  "composition": "Deterministic FFmpeg; five slow pans, sentence-level ASS subtitles, scene cards with verified dates, near-silent room tone, restrained grid hum and power-return cue",
+  "historicalBoundary": "The greatness claim is the narrator's viewpoint; the film explicitly rejects a single-inventor account and separates continuous current, electromagnetic induction, practical lighting and power systems.",
+  "sources": [
+    "https://www.energy.gov/articles/history-light-bulb",
+    "https://www.rigb.org/about-us/our-history",
+    "https://www.rigb.org/explore-science/explore/collection/michael-faradays-ring-coil-apparatus",
+    "https://www.energy.gov/sites/prod/files/2017/02/f34/Appendix--Electricity%20System%20Overview.pdf"
+  ],
+  "files": {
+    "video": "after-the-power-went-out-i-saw-electricity.mp4",
+    "narration": "narration.wav",
+    "ambience": "ambient.wav",
+    "subtitles": "subtitles.ass"
+  }
+}

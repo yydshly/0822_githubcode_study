@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="把专业知识转化为愿意看、能够懂、记得住的手绘叙事视频：从教学目标、误解与证据，到五幕方案、效果匹配、理解题和生产包。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1216'/%3E%3Cpath d='M7 23 12 9l4 9 4-12 5 17' fill='none' stroke='%23b9f46d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <title>知画 · 知识可视化叙事工作台</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./demo.css?revision=20-ai-energy" />
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="返回研究展厅首页">
+        <span class="brand-mark" aria-hidden="true">02</span>
+        <span>知画 · 知识叙事工作台</span>
+      </a>
+      <nav class="top-nav" aria-label="页面章节">
+        <a href="#latest-generation">最新效果</a>
+        <a href="./studio.html" data-studio-link>视频生产台</a>
+        <a href="#narrative-director">八类样片</a>
+        <a href="#capability-lab">能力研究</a>
+        <a href="#scenarios">使用场景</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/gnipbao/story-to-handdrawn-video">上游仓库 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="lab-hero">
+        <div>
+          <p class="eyebrow">KNOWLEDGE → UNDERSTANDING → VISUAL STORY</p>
+          <h1>把复杂知识，<br /><em>讲成真正能懂的视频。</em></h1>
+        </div>
+        <div class="hero-copy">
+          <p>面向教师、科普创作者与公共传播团队：从学习目标、常见误解和事实依据出发，生成五幕教学叙事、匹配视觉效果，并用理解题验证观众是否真的学会。</p>
+          <div class="hero-metrics" aria-label="产品闭环摘要">
+            <span><b>4</b> 教学环节</span>
+            <span><b>8</b> 叙事处方</span>
+            <span><b>12</b> 真实成片</span>
+            <span><b>1</b> 可导出生产包</span>
+          </div>
+          <div class="hero-actions">
+            <a class="hero-demo-link" href="#latest-generation">查看最新生成效果 <span aria-hidden="true">↓</span></a>
+            <a class="hero-secondary-link" href="./studio.html" data-studio-link>进入视频生产台 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="coverage-ribbon" aria-label="产品原则">
+        <span><i></i>先定义 <b>学会什么</b></span>
+        <span><i></i>事实、观点与艺术化表达分层</span>
+        <span><i></i>本地规划，不上传输入</span>
+        <span><i></i>8 类处方 · 12 条真实媒体验证</span>
+      </section>
+
+      <section class="latest-generation" id="latest-generation" aria-labelledby="latest-generation-title">
+        <header class="latest-generation__header">
+          <div><p class="eyebrow">LATEST GENERATION · STORY-FIRST × CODEX × MINIMAX</p><h2 id="latest-generation-title">先不谈功能，<br />直接看生成效果。</h2></div>
+          <p>新增“为什么 AI 那么耗电”完整样例：先锁定 IEA 事实和五幕讲解，再由 Codex 统一最终视觉、MiniMax 生成旁白，最后确定性合成。下方同时保留天空科普样片，便于比较两种知识解释。</p>
+        </header>
+        <div class="director-real-output latest-generation__output">
+          <div class="director-real-output__media">
+            <div class="director-real-output__screen director-real-output__screen--landscape">
+              <video id="ai-energy-demo-video" controls playsinline preload="metadata" poster="./assets/ai-energy-demo/scene-01.png">
+                <source src="./assets/ai-energy-demo/why-ai-uses-electricity.mp4" type="video/mp4" />
+                你的浏览器不支持 MP4 播放，可使用下载入口查看。
+              </video>
+              <span>CODEX FINAL VISUAL + MINIMAX TTS · 01:19</span>
+            </div>
+            <div class="knowledge-timeline" aria-label="为什么 AI 那么耗电五个知识节拍">
+              <button type="button" data-ai-energy-time="0" aria-pressed="true"><img src="./assets/ai-energy-demo/scene-01.png" alt="提示词从手机流向数据中心" /><b>01 旅程</b><small>00:00</small></button>
+              <button type="button" data-ai-energy-time="15.32" aria-pressed="false"><img src="./assets/ai-energy-demo/scene-02.png" alt="实体数据中心与冷却系统" /><b>02 实体</b><small>00:15</small></button>
+              <button type="button" data-ai-energy-time="33.34" aria-pressed="false"><img src="./assets/ai-energy-demo/scene-03.png" alt="计算数据搬运与散热三条能量路径" /><b>03 三环</b><small>00:33</small></button>
+              <button type="button" data-ai-energy-time="49.637" aria-pressed="false"><img src="./assets/ai-energy-demo/scene-04.png" alt="不同规模请求带来不同负载" /><b>04 差异</b><small>00:50</small></button>
+              <button type="button" data-ai-energy-time="63.857" aria-pressed="false"><img src="./assets/ai-energy-demo/scene-05.png" alt="效率提升和低碳供电方向" /><b>05 选择</b><small>01:04</small></button>
+            </div>
+          </div>
+          <div class="director-real-output__copy">
+            <p class="micro-label">FACT → STORY CONTRACT → VISUAL ALIGNMENT → TRANSFER</p>
+            <h4>《按下发送键后，AI 在消耗什么》</h4>
+            <p>核心不是罗列能耗数字，而是让观众看懂：AI 的“云”仍是物理系统，用电发生在计算、数据搬运和散热；单次请求与大规模持续调用不能混为一谈。</p>
+            <div class="knowledge-proof" aria-label="AI 耗电样片产物指标">
+              <span><b>5</b>Codex 最终统一生图</span><span><b>79.2s</b>正式成片</span><span><b>MiniMax</b>speech-2.8-hd</span><span><b>16:9</b>H.264 / AAC</span>
+            </div>
+            <ol>
+              <li><b>故事优先</b><span>学习目标、旁白、画面任务、禁区和可信边界来自同一份五幕契约。</span></li>
+              <li><b>视觉统一</b><span>MiniMax 仅用于初稿探索；最终五幕全部由 Codex 重绘，清除伪文字并统一视觉圣经。</span></li>
+              <li><b>声音稳定</b><span>画面锁定后由 MiniMax TTS 生成五段真实时长，再进入字幕与 FFmpeg 合成。</span></li>
+            </ol>
+            <div class="director-real-output__actions">
+              <a class="button primary" href="./studio.html#ai-energy" data-studio-link data-studio-fragment="ai-energy">在生产台一键复现全流程</a>
+              <a class="button secondary" href="./assets/ai-energy-demo/why-ai-uses-electricity.mp4" download="why-ai-uses-electricity.mp4">下载正式成片</a>
+              <a class="button secondary" href="./assets/ai-energy-demo/project.json">查看模型来源与修订清单</a>
+            </div>
+          </div>
+        </div>
+        <div class="director-real-output latest-generation__output">
+          <div class="director-real-output__media">
+            <div class="director-real-output__screen director-real-output__screen--landscape">
+              <video id="sky-blue-demo-video" controls playsinline preload="metadata" poster="./assets/sky-blue-demo/scene-01-thumb.webp">
+                <source src="./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1" type="video/mp4" />
+                你的浏览器不支持 MP4 播放，可使用下载入口查看。
+              </video>
+              <span>CODEX IMAGEGEN + MINIMAX · 01:47</span>
+            </div>
+            <div class="knowledge-timeline" aria-label="天空为什么是蓝色五个知识节拍">
+              <button type="button" data-sky-time="0" aria-pressed="true"><img src="./assets/sky-blue-demo/scene-01-thumb.webp" alt="学生抬头观察蓝天" /><b>01 追问</b><small>00:00</small></button>
+              <button type="button" data-sky-time="18.54" aria-pressed="false"><img src="./assets/sky-blue-demo/scene-02-thumb.webp" alt="棱镜分离白光光谱" /><b>02 光谱</b><small>00:19</small></button>
+              <button type="button" data-sky-time="38.66" aria-pressed="false"><img src="./assets/sky-blue-demo/scene-03-thumb.webp" alt="蓝光在空气分子间散射" /><b>03 机制</b><small>00:39</small></button>
+              <button type="button" data-sky-time="63.77" aria-pressed="false"><img src="./assets/sky-blue-demo/scene-04-thumb.webp" alt="日落时更长的光线路径" /><b>04 迁移</b><small>01:04</small></button>
+              <button type="button" data-sky-time="85.11" aria-pressed="false"><img src="./assets/sky-blue-demo/scene-05-thumb.webp" alt="学生向同伴分享天空知识" /><b>05 收束</b><small>01:25</small></button>
+            </div>
+          </div>
+          <div class="director-real-output__copy">
+            <p class="micro-label">QUESTION → MECHANISM → TRANSFER</p>
+            <h4>《天空为什么是蓝色的？》</h4>
+            <p>这条样片重点验证生成结果本身：蓝黄人物锚点是否稳定、看不见的散射能否被画懂、正午蓝与日落橙能否既形成视觉高潮，又保持同一条科学因果链。</p>
+            <div class="knowledge-proof" aria-label="最新样片产物指标">
+              <span><b>5</b>Codex 连续生图</span><span><b>107.23s</b>正式成片</span><span><b>MiniMax</b>speech-2.8-hd</span><span><b>16:9</b>H.264 / AAC</span>
+            </div>
+            <ol>
+              <li><b>一致性</b><span>同一学生、黄外套、蓝背包、屋顶与城市天际线贯穿五幕。</span></li>
+              <li><b>可解释性</b><span>白光分色、短波散射、长光程晚霞都由画面承担，不靠术语堆砌。</span></li>
+              <li><b>声音生成</b><span>MiniMax 成熟女声、calm、0.92×；五段真实音频决定场景时长，字幕随句子同步，API Key 不进入网页或媒体清单。</span></li>
+            </ol>
+            <div class="director-real-output__actions">
+              <a class="button primary" href="./assets/sky-blue-demo/why-is-the-sky-blue.mp4?revision=minimax-final-v1" download="why-is-the-sky-blue.mp4">下载正式成片</a>
+              <a class="button secondary" href="./assets/sky-blue-demo/SOURCES.md">查看科学来源</a>
+              <a class="button secondary" href="./assets/sky-blue-demo/media-manifest.json">查看媒体清单</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="knowledge-product" id="knowledge-studio" aria-labelledby="knowledge-studio-title">
+        <header class="knowledge-product__header">
+          <div>
+            <p class="eyebrow">01 · KNOWLEDGE STORY STUDIO</p>
+            <h2 id="knowledge-studio-title">不是先选画风，<br />先决定观众要学会什么。</h2>
+          </div>
+          <ol class="knowledge-journey" aria-label="知识视频产品闭环">
+            <li><span>01</span><b>知识意图</b><small>主题与受众</small></li>
+            <li><span>02</span><b>教学设计</b><small>目标与误解</small></li>
+            <li><span>03</span><b>视觉叙事</b><small>五幕与效果</small></li>
+            <li><span>04</span><b>理解验证</b><small>问题与生产包</small></li>
+            <li><span>05</span><b>真实生产</b><small>模型与成片</small></li>
+          </ol>
+        </header>
+
+        <div class="knowledge-workspace">
+          <form class="knowledge-brief" id="knowledge-form" novalidate>
+            <div class="knowledge-pane-heading">
+              <div><span>INPUT 01</span><h3>知识推广任务</h3></div>
+              <em>LOCAL PLANNER</em>
+            </div>
+
+            <fieldset class="knowledge-presets">
+              <legend>从一个完整样例开始</legend>
+              <div>
+                <button type="button" data-knowledge-preset="science" aria-pressed="true"><b>科学原理</b><small>天空为什么是蓝色</small></button>
+                <button type="button" data-knowledge-preset="culture" aria-pressed="false"><b>文化教育</b><small>古诗如何构建空间</small></button>
+                <button type="button" data-knowledge-preset="system" aria-pressed="false"><b>公共系统</b><small>停电为何让依赖显形</small></button>
+              </div>
+            </fieldset>
+
+            <div class="knowledge-field-grid">
+              <label class="knowledge-field knowledge-field--wide" for="knowledge-topic"><span>知识主题 <b>必填</b></span><input id="knowledge-topic" name="topic" maxlength="100" required /></label>
+              <label class="knowledge-field" for="knowledge-audience"><span>目标受众</span><select id="knowledge-audience" name="audience"><option>小学高年级</option><option selected>初中生</option><option>高中生</option><option>大学生</option><option>普通公众</option><option>职业学习者</option></select></label>
+              <label class="knowledge-field" for="knowledge-duration"><span>目标时长</span><select id="knowledge-duration" name="duration"><option value="60">60 秒导入</option><option value="90" selected>90 秒微课</option><option value="180">3 分钟讲解</option></select></label>
+              <label class="knowledge-field knowledge-field--wide" for="knowledge-objective"><span>学习目标 <b>必填</b></span><textarea id="knowledge-objective" name="objective" rows="3" maxlength="320" required></textarea><small>请写“看完后，观众能够……”</small></label>
+              <label class="knowledge-field knowledge-field--wide" for="knowledge-misconception"><span>最需要纠正的误解</span><input id="knowledge-misconception" name="misconception" maxlength="180" /></label>
+              <label class="knowledge-field knowledge-field--wide" for="knowledge-entry"><span>生活化或感官入口</span><input id="knowledge-entry" name="entry" maxlength="180" /></label>
+              <label class="knowledge-field knowledge-field--wide" for="knowledge-evidence"><span>事实、原文或材料依据 <b>必填</b></span><textarea id="knowledge-evidence" name="evidence" rows="4" maxlength="700" required></textarea><small>写入可核验事实、原文、数据或待引用材料；生成后仍需专业审阅。</small></label>
+            </div>
+
+            <p class="knowledge-form-error" id="knowledge-form-error" role="alert" hidden>请至少填写知识主题、学习目标和材料依据。</p>
+            <button class="button primary knowledge-generate" type="submit">先在本地生成教学方案</button>
+            <p class="knowledge-local-note"><b>能力边界：</b>当前页面使用本地确定性规划器，不上传内容、不调用大模型；任意主题的真实生图与 TTS 进入后续生产阶段。</p>
+          </form>
+
+          <section class="knowledge-plan" id="knowledge-plan" aria-live="polite" aria-labelledby="knowledge-plan-title">
+            <header class="knowledge-plan__header">
+              <div><span class="knowledge-plan-status" id="knowledge-plan-status">PLAN READY</span><h3 id="knowledge-plan-title">为什么天空是蓝色的？</h3><p id="knowledge-plan-summary"></p></div>
+              <div class="knowledge-fit-badge"><small>BEST RECIPE</small><b id="knowledge-recipe-name">知识解释</b><span id="knowledge-recipe-score">—</span></div>
+            </header>
+
+            <div class="knowledge-promise"><span>LEARNING PROMISE</span><p id="knowledge-promise"></p></div>
+
+            <div class="knowledge-output-tabs" role="tablist" aria-label="方案输出">
+              <button type="button" role="tab" id="knowledge-story-tab" aria-selected="true" aria-controls="knowledge-story-panel" data-knowledge-view="story">五幕教学</button>
+              <button type="button" role="tab" id="knowledge-trust-tab" aria-selected="false" aria-controls="knowledge-trust-panel" data-knowledge-view="trust">可信边界</button>
+              <button type="button" role="tab" id="knowledge-check-tab" aria-selected="false" aria-controls="knowledge-check-panel" data-knowledge-view="check">理解检测</button>
+              <button type="button" role="tab" id="knowledge-production-tab" aria-selected="false" aria-controls="knowledge-production-panel" data-knowledge-view="production">生产交付</button>
+            </div>
+
+            <div class="knowledge-output-panel" id="knowledge-story-panel" role="tabpanel" aria-labelledby="knowledge-story-tab">
+              <div class="knowledge-beats" id="knowledge-beats" role="tablist" aria-label="五幕教学结构"></div>
+              <article class="knowledge-beat-detail">
+                <div class="knowledge-beat-index"><span id="knowledge-beat-index">01 / 05</span><b id="knowledge-beat-role">问题进入</b></div>
+                <div><small>这一幕让观众完成什么</small><h4 id="knowledge-beat-title"></h4><p id="knowledge-beat-purpose"></p></div>
+                <dl>
+                  <div><dt>画面任务</dt><dd id="knowledge-beat-visual"></dd></div>
+                  <div><dt>旁白任务</dt><dd id="knowledge-beat-narration"></dd></div>
+                  <div><dt>证据位置</dt><dd id="knowledge-beat-evidence"></dd></div>
+                </dl>
+              </article>
+            </div>
+
+            <div class="knowledge-output-panel" id="knowledge-trust-panel" role="tabpanel" aria-labelledby="knowledge-trust-tab" hidden>
+              <div class="knowledge-boundary-grid">
+                <article><span>01 · FACT</span><h4>可核验事实</h4><p id="knowledge-boundary-fact"></p></article>
+                <article><span>02 · VIEWPOINT</span><h4>解释与观点</h4><p id="knowledge-boundary-viewpoint"></p></article>
+                <article><span>03 · VISUALIZATION</span><h4>艺术化表达</h4><p id="knowledge-boundary-art"></p></article>
+                <article><span>04 · REVIEW</span><h4>发布前待审阅</h4><p id="knowledge-boundary-review"></p></article>
+              </div>
+            </div>
+
+            <div class="knowledge-output-panel" id="knowledge-check-panel" role="tabpanel" aria-labelledby="knowledge-check-tab" hidden>
+              <header class="knowledge-check-heading"><div><span>COMPREHENSION CHECK</span><h4>不是“看完了”，而是能够解释和迁移。</h4></div><p>三道题分别检查核心概念、误解修正和新情境应用。</p></header>
+              <div class="knowledge-quiz" id="knowledge-quiz"></div>
+            </div>
+
+            <div class="knowledge-output-panel" id="knowledge-production-panel" role="tabpanel" aria-labelledby="knowledge-production-tab" hidden>
+              <div class="knowledge-production-grid">
+                <div><span>PRODUCTION CHECKLIST</span><h4>从方案进入可审片生产</h4><ul id="knowledge-production-list"></ul></div>
+                <pre id="knowledge-package-preview" aria-label="生产包 JSON 摘要"></pre>
+              </div>
+            </div>
+
+            <footer class="knowledge-plan__actions">
+              <p id="knowledge-action-status" role="status">方案已在本地生成，可继续审阅或导出。</p>
+              <div><button class="button secondary" type="button" id="knowledge-download">下载生产包 JSON</button><button class="button primary" type="button" id="knowledge-open-recipe">用真实样片验证处方</button><button class="button primary knowledge-handoff-action" type="button" id="knowledge-send-studio">送入真实生产台 →</button></div>
+            </footer>
+          </section>
+        </div>
+        <noscript><p class="knowledge-noscript"><b>无脚本说明：</b>知识视频应先明确受众、学习目标、常见误解和事实依据，再组织为“问题进入—建立概念—解释机制—迁移应用—回收验证”五幕。页面仍提供十二条真实 MP4 入口。</p></noscript>
+      </section>
+
+      <section class="lab-section" id="capability-lab" aria-labelledby="lab-title">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow">02 · VERIFIED CAPABILITY</p>
+            <h2 id="lab-title">全能力控制台</h2>
+          </div>
+          <p>改变左侧输入和配置，中间预览、场景时间轴、右侧命令与输出契约会同步更新。它复现的是上游控制面，不会消耗图片额度。</p>
+        </div>
+
+        <div class="capability-console" data-capability-console>
+          <div class="console-bar">
+            <div><span class="live-dot"></span><b>STORY VIDEO LAB</b><small>local simulation</small></div>
+            <div class="console-steps" aria-label="工作流阶段">
+              <span class="active">INPUT</span><span>PLAN</span><span>ASSET</span><span>COMPOSE</span><span>EXPORT</span>
+            </div>
+            <span id="console-status">配置就绪</span>
+          </div>
+
+          <div class="console-grid">
+            <aside class="config-panel" aria-label="输入和渲染配置">
+              <div class="panel-block input-block">
+                <div class="block-title"><span>01</span><b>选择输入</b></div>
+                <div class="input-tabs" role="tablist" aria-label="输入类型">
+                  <button type="button" role="tab" id="text-tab" aria-selected="true" aria-controls="text-input-panel" data-input="text">中文故事</button>
+                  <button type="button" role="tab" id="images-tab" aria-selected="false" aria-controls="images-input-panel" data-input="images">有序图片</button>
+                </div>
+
+                <div id="text-input-panel" role="tabpanel" aria-labelledby="text-tab">
+                  <label class="field-label" for="story-input">故事文案</label>
+                  <textarea id="story-input" rows="6">小雨停了。孩子推开窗，风里还有潮湿的味道。院子上空，出现了一道彩虹。</textarea>
+                  <div class="field-foot"><span id="character-count">39 字</span><span>完整句子 = 默认节拍</span></div>
+                  <button class="action-button" type="button" id="plan-story">重新规划分镜</button>
+                </div>
+
+                <div id="images-input-panel" role="tabpanel" aria-labelledby="images-tab" hidden>
+                  <input id="image-input" type="file" accept="image/*" multiple />
+                  <label class="upload-zone" for="image-input"><b>选择本地图片</b><span>按文件选择顺序播放，不会上传</span></label>
+                  <ol class="page-queue" id="page-queue"></ol>
+                  <button class="ghost-action" type="button" id="restore-pages">恢复 3 张示例页</button>
+                </div>
+              </div>
+
+              <div class="panel-block">
+                <div class="block-title"><span>02</span><b>选择运行模式</b></div>
+                <label class="field-label" for="mode-select">Mode</label>
+                <select id="mode-select">
+                  <option value="plan">plan · 只规划</option>
+                  <option value="generate">generate · 准备/生成素材</option>
+                  <option value="full">full · 生成并渲染</option>
+                  <option value="import">import · 导入 Codex 素材</option>
+                  <option value="render">render · 正式渲染</option>
+                  <option value="preview" selected>preview · 快速预览</option>
+                </select>
+                <p class="field-note" id="mode-note">720×960 快速预览，不改变正式素材。</p>
+              </div>
+
+              <div class="panel-block">
+                <div class="block-title"><span>03</span><b>配置配方</b></div>
+                <div class="field-grid">
+                  <label><span class="field-label">Style · 20 种</span><select id="style-select"></select></label>
+                  <label><span class="field-label">Transition</span><select id="transition-select"><option value="cut">cut · 直接切换</option><option value="page-flip">page-flip · 卷页</option></select></label>
+                  <label data-text-only><span class="field-label">Generator</span><select id="generator-select"><option value="codex">codex · manifest</option><option value="api">api · OpenAI</option></select></label>
+                  <label data-text-only><span class="field-label">Text mode</span><select id="text-mode-select"><option value="font">font · 字体保真</option><option value="image2">image2 · 手写图像</option></select></label>
+                  <label data-images-only hidden><span class="field-label">Layout</span><select id="layout-select"><option value="auto">auto · 自动判断</option><option value="composite">composite · 上字下图</option><option value="full">full · 完整图片</option></select></label>
+                  <label data-images-only hidden><span class="field-label">Page duration</span><select id="duration-select"><option value="4.4">4.4 秒</option><option value="6">6 秒</option><option value="8">8 秒</option></select></label>
+                </div>
+                <button class="style-library-link" type="button" id="open-style-library">浏览完整风格库 <span>↓</span></button>
+              </div>
+            </aside>
+
+            <section class="preview-panel" aria-labelledby="preview-title">
+              <div class="preview-heading">
+                <div><span class="micro-label">LIVE COMPOSITION</span><h3 id="preview-title">PictureSilent</h3></div>
+                <div class="preview-badges"><span id="resolution-badge">720×960</span><span>30 FPS</span><span>MUTED</span></div>
+              </div>
+
+              <div class="preview-shell">
+                <div class="paper-frame style-pencil" id="paper-frame">
+                  <div class="paper-grain" aria-hidden="true"></div>
+                  <div class="caption-window"><p id="scene-caption">小雨停了。</p></div>
+                  <div class="art-window" aria-label="当前场景预览">
+                    <img id="uploaded-preview" alt="当前上传图片预览" hidden />
+                    <div class="art-layer bw-layer" aria-hidden="true"><svg viewBox="0 0 800 720"><use class="scene-use" href="#scene-rain"></use></svg></div>
+                    <div class="art-layer color-layer" aria-hidden="true"><svg viewBox="0 0 800 720"><use class="scene-use" href="#scene-rain"></use></svg></div>
+                  </div>
+                  <div class="page-fold" aria-hidden="true"></div>
+                  <span class="page-number" id="page-number">01 / 03</span>
+                </div>
+              </div>
+
+              <div class="transport">
+                <button class="play-button" type="button" id="play-toggle" aria-pressed="false"><span aria-hidden="true">▶</span><span>播放场景</span></button>
+                <div class="phase-controls" aria-label="图层阶段">
+                  <button type="button" data-phase="0" aria-pressed="false">文字</button>
+                  <button type="button" data-phase="1" aria-pressed="false">黑白稿</button>
+                  <button type="button" data-phase="2" aria-pressed="true">彩色稿</button>
+                </div>
+                <span id="timecode">00:00:04 / 00:00:14</span>
+              </div>
+
+              <div class="timeline-wrap">
+                <div class="timeline-heading"><b>STORYBOARD</b><span id="timeline-summary">3 scenes · 14.0s</span></div>
+                <div class="scene-timeline" id="scene-timeline"></div>
+              </div>
+            </section>
+
+            <aside class="output-panel" aria-label="输出契约与中间产物">
+              <div class="panel-block output-contract">
+                <div class="block-title"><span>04</span><b>输出契约</b></div>
+                <dl>
+                  <div><dt>Composition</dt><dd id="composition-value">PictureSilent</dd></div>
+                  <div><dt>Output</dt><dd id="output-value">picture_silent-preview.mp4</dd></div>
+                  <div><dt>Canvas</dt><dd id="canvas-value">720 × 960</dd></div>
+                  <div><dt>Codec / audio</dt><dd>H.264 / silent</dd></div>
+                </dl>
+              </div>
+
+              <div class="panel-block artifact-block">
+                <div class="artifact-tabs" role="tablist" aria-label="中间产物">
+                  <button type="button" role="tab" data-artifact="command" aria-selected="true">CLI</button>
+                  <button type="button" role="tab" data-artifact="storyboard" aria-selected="false">Storyboard</button>
+                  <button type="button" role="tab" data-artifact="manifest" aria-selected="false">Manifest</button>
+                </div>
+                <pre id="artifact-preview" tabindex="0"></pre>
+                <button class="copy-button" type="button" id="copy-artifact">复制当前内容</button>
+              </div>
+
+              <div class="panel-block dependency-note" id="dependency-note">
+                <span class="note-icon">i</span>
+                <p><b>Codex 路径</b><br />先输出 Image2 job manifest，由 Agent 生成母版，再执行 import 和 render。</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" id="style-library" aria-labelledby="style-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">20 STYLE RECIPES</p><h2 id="style-title">完整风格库</h2></div>
+          <p>下面展示上游随仓库提供的真实风格参考图；统一使用“祖孙过桥”题材，便于直接比较笔触、色彩和造型差异。点击任一风格会同步回控制台。</p>
+        </div>
+        <div class="style-toolbar">
+          <label><span class="sr-only">搜索风格</span><input id="style-search" type="search" placeholder="搜索名称、id 或题材…" /></label>
+          <div class="style-filters" role="group" aria-label="风格家族筛选">
+            <button type="button" data-family="all" aria-pressed="true">全部 20</button>
+            <button type="button" data-family="narrative" aria-pressed="false">叙事绘本</button>
+            <button type="button" data-family="explainer" aria-pressed="false">涂鸦讲解</button>
+            <button type="button" data-family="art" aria-pressed="false">艺术表现</button>
+            <button type="button" data-family="print" aria-pressed="false">印刷拼贴</button>
+          </div>
+          <span id="style-count">显示 20 / 20</span>
+        </div>
+        <article class="style-focus" id="style-focus" aria-live="polite">
+          <div class="style-reference-crop style-reference-crop--large" id="style-focus-preview">
+            <img src="./assets/handdrawn-style-library-contact-sheet.jpg" alt="" />
+            <span>UPSTREAM REFERENCE</span>
+          </div>
+          <div class="style-focus__copy">
+            <p class="micro-label">当前风格 · 上游真实参考</p>
+            <h3 id="style-focus-name">彩铅日记漫画</h3>
+            <code id="style-focus-id">colored-pencil-diary</code>
+            <p id="style-focus-fit">适合家庭故事、生活日记。点击下方卡片切换；中央舞台展示的是合成机制模拟，不等同于模型生成质量。</p>
+          </div>
+        </article>
+        <div class="style-grid" id="style-grid"></div>
+      </section>
+
+      <section class="lab-section" aria-labelledby="matrix-title">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">UPSTREAM COVERAGE</p><h2 id="matrix-title">上游能力，一个不漏</h2></div>
+          <p>控制台与源码契约逐项对应；带“已演示”的项目都能在本页操作或观察。</p>
+        </div>
+        <div class="capability-matrix">
+          <article><span>输入</span><h3>故事文本</h3><p>内联文本或 UTF-8 文件，规则分句、字幕换行、动态时长。</p><b>已演示</b></article>
+          <article><span>输入</span><h3>有序图片</h3><p>原序导入、SHA-256 去重、auto/composite/full 版式。</p><b>已演示</b></article>
+          <article><span>规划</span><h3>角色与视觉锁</h3><p>character lock、visual plan、风格指纹和批次 hash。</p><b>已解释</b></article>
+          <article><span>生成</span><h3>Codex / API</h3><p>manifest 驱动 Agent，或显式使用 OpenAI API。</p><b>已演示</b></article>
+          <article><span>字幕</span><h3>font / image2</h3><p>字体优先保证原文准确，图像字幕追求手写一致性。</p><b>已演示</b></article>
+          <article><span>图层</span><h3>text / bw / color</h3><p>一张母版本地派生对齐黑白层，从左到右揭示。</p><b>已演示</b></article>
+          <article><span>转场</span><h3>cut / page-flip</h3><p>直接串联，或 SVG 曲线与阴影模拟右下角卷页。</p><b>已演示</b></article>
+          <article><span>质量</span><h3>preview / final</h3><p>720×960 快速确认，1080×1440 正式输出。</p><b>已演示</b></article>
+          <article><span>交付</span><h3>4 个固定 MP4</h3><p>文本/图片 × 预览/正式，均为 H.264 静音画面轨。</p><b>已演示</b></article>
+        </div>
+      </section>
+
+      <section class="lab-section" id="integration" aria-labelledby="integration-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">03 · INTEGRATE & EXTEND</p><h2 id="integration-title">从单一 Skill，整合成通用故事媒体引擎</h2></div>
+          <p>先播放家庭记忆案例，再在导演台切换知识解释、儿童成长、悬疑档案、品牌起源与诗性独白。六条样片都包含真实生图、独立 MiniMax TTS、烧录字幕、镜头运动、差异化转场和 H.264/AAC 成片。</p>
+        </div>
+
+        <article class="real-demo" aria-labelledby="real-demo-title">
+          <div class="real-demo__media">
+            <div class="real-demo__screen">
+              <video id="real-demo-video" controls playsinline preload="metadata" poster="./assets/real-demo/scene-01-thumb.webp">
+                <source src="./assets/real-demo/the-reunion-that-never-happened.mp4?revision=minimax-speech-28" type="video/mp4" />
+                你的浏览器不支持 MP4 播放，可使用右侧下载入口查看。
+              </video>
+              <span class="real-output-badge">REAL OUTPUT · 00:54</span>
+            </div>
+            <div class="real-demo-timeline" id="real-demo-timeline" aria-label="真实案例五个叙事节拍">
+              <button type="button" data-demo-time="0" aria-pressed="true"><img src="./assets/real-demo/scene-01-thumb.webp" alt="雨夜档案修复" /><span><b>01 原则</b><small>00:00</small></span></button>
+              <button type="button" data-demo-time="9.82" aria-pressed="false"><img src="./assets/real-demo/scene-02-thumb.webp" alt="发现不可能的照片" /><span><b>02 谜题</b><small>00:10</small></span></button>
+              <button type="button" data-demo-time="20.74" aria-pressed="false"><img src="./assets/real-demo/scene-03-thumb.webp" alt="废弃月台对证" /><span><b>03 供认</b><small>00:21</small></span></button>
+              <button type="button" data-demo-time="30.72" aria-pressed="false"><img src="./assets/real-demo/scene-04-thumb.webp" alt="外孙女展示生成过程" /><span><b>04 质问</b><small>00:31</small></span></button>
+              <button type="button" data-demo-time="37.92" aria-pressed="false"><img src="./assets/real-demo/scene-01-thumb.webp" alt="回到档案馆作出选择" /><span><b>05 选择</b><small>00:38</small></span></button>
+            </div>
+          </div>
+
+          <div class="real-demo__brief">
+            <p class="micro-label">REAL CAPABILITY CASE · 01</p>
+            <h3 id="real-demo-title">《未发生的团聚》</h3>
+            <p class="real-demo__premise">一张由残片和生成模型拼合的团聚照，能否进入历史档案？它不把问题简化成“AI 是好是坏”，而是让事实证据、生成来源和真实思念同时被看见。</p>
+
+            <div class="real-demo__metrics" aria-label="真实成片媒体指标">
+              <span><b>4 + 1</b>真实生图 + 回环终幕</span>
+              <span><b>54.333s</b>真实媒体时长</span>
+              <span><b>720 × 960</b>H.264 · 30fps</span>
+              <span><b>AAC Stereo</b>MiniMax 中文 TTS</span>
+            </div>
+
+            <ol class="production-proof" aria-label="真实生产流水线证据">
+              <li><span>01</span><div><b>Narrative plan</b><p>五节拍：原则 → 谜题 → 供认 → 质问 → 选择。</p></div><em>REAL</em></li>
+              <li><span>02</span><div><b>Image generation</b><p>4 张成人淡彩分镜，锁定顾岚的银发、眼镜、绿衫与锈红围巾。</p></div><em>REAL</em></li>
+              <li><span>03</span><div><b>TTS adapter</b><p>MiniMax Speech 2.8 HD · `female-chengshu` · calm；5 段音频按真实时长拼接。</p></div><em>REAL</em></li>
+              <li><span>04</span><div><b>Compose</b><p>轻微镜头推进、0.4 秒淡化转场、ASS 中文字幕与暖色回环。</p></div><em>REAL</em></li>
+              <li><span>05</span><div><b>Media QC</b><p>ffprobe 验证 H.264、AAC 双声道、720×960、54.333 秒。</p></div><em>PASS</em></li>
+            </ol>
+
+            <p class="adapter-note"><b>MiniMax 实际调用：</b>使用中国区官方同步语音合成 API（<code>api.minimaxi.com/v1/t2a_v2</code>），模型 <code>speech-2.8-hd</code>、成熟女声 <code>female-chengshu</code>、<code>calm</code> 情绪。Token 只在本地进程内读取，没有进入页面或仓库。</p>
+            <div class="real-demo__actions">
+              <a class="button primary" href="./assets/real-demo/the-reunion-that-never-happened.mp4?revision=minimax-speech-28" download="the-reunion-that-never-happened.mp4">下载最终成片</a>
+              <a class="button secondary" href="./assets/real-demo/narration.txt">查看旁白脚本</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="integration-divider"><span>从七条真实案例提炼故事—效果匹配系统</span></div>
+
+        <article class="story-fit-lab" id="story-fit-lab" aria-labelledby="story-fit-title">
+          <header class="story-fit-header">
+            <div>
+              <p class="micro-label">STORY → EFFECT FIT LAB · LOCAL & EXPLAINABLE</p>
+              <h3 id="story-fit-title">把你的故事，送到合适的效果里</h3>
+            </div>
+            <p>输入一段内容，实验台会识别人物关系、解释意图、行动成长、证据链、品牌选择、诗性意象、古诗结构与科技系统，给出八类处方的完整分数和前三推荐。分析在浏览器本地完成，不上传内容，也不冒充大模型判断。</p>
+          </header>
+
+          <div class="story-fit-workspace">
+            <form class="story-fit-input" id="story-fit-form">
+              <div class="story-fit-input__heading">
+                <label for="story-fit-input">故事或内容梗概</label>
+                <span id="story-fit-count">0 / 1200</span>
+              </div>
+              <textarea id="story-fit-input" maxlength="1200" rows="9" aria-describedby="story-fit-help story-fit-error">多年以后，我回到涨潮的旧渡口。新桥已经通车，地图上却没有旧名字。我带着一台录音机，想知道记忆该如何留下，又不把今天变回过去。</textarea>
+              <p id="story-fit-help">建议写清楚主体、关键物件、冲突、变化和希望观众最后留下的感受。</p>
+              <p class="story-fit-error" id="story-fit-error" role="alert" hidden>请至少输入 12 个字符，才能形成可解释的匹配。</p>
+              <fieldset class="story-fit-samples">
+                <legend>快速样例</legend>
+                <div>
+                  <button type="button" data-fit-sample="memory">家庭记忆</button>
+                  <button type="button" data-fit-sample="knowledge">知识解释</button>
+                  <button type="button" data-fit-sample="children">儿童成长</button>
+                  <button type="button" data-fit-sample="mystery">悬疑档案</button>
+                  <button type="button" data-fit-sample="brand">品牌起源</button>
+                  <button type="button" data-fit-sample="poetic">诗性独白</button>
+                  <button type="button" data-fit-sample="classical">古诗词场景</button>
+                  <button type="button" data-fit-sample="technology">科技人文</button>
+                </div>
+              </fieldset>
+              <button class="button primary story-fit-submit" type="submit">分析故事与效果</button>
+              <p class="story-fit-boundary"><b>能力边界</b> · 关键词与结构信号仅用于选择起始处方；真实产品还应由模型细化人物、事实约束与镜头，再交给人工审阅。</p>
+            </form>
+
+            <section class="story-fit-result" id="story-fit-result" aria-live="polite" aria-labelledby="story-fit-result-title">
+              <div class="story-fit-verdict">
+                <span class="micro-label">BEST FIT · <b id="story-fit-score">—</b></span>
+                <h4 id="story-fit-result-title">等待分析</h4>
+                <p id="story-fit-summary">选择一个快速样例，或输入自己的故事。</p>
+              </div>
+              <div class="story-fit-signals">
+                <span>识别信号</span>
+                <div id="story-fit-signal-list"><em>尚未分析</em></div>
+              </div>
+              <div class="story-fit-ranking" id="story-fit-ranking" aria-label="前三匹配处方"></div>
+              <div class="story-fit-route">
+                <span>建议五幕</span>
+                <ol id="story-fit-route"></ol>
+              </div>
+              <div class="story-fit-risk">
+                <span>需要警惕</span>
+                <p id="story-fit-risk">规则推荐只能提供起点，不能替代事实、版权、品牌或专业审阅。</p>
+              </div>
+              <button class="button primary story-fit-open" id="story-fit-open-recipe" type="button" disabled>打开第一推荐的真实样片</button>
+            </section>
+          </div>
+
+          <section class="recipe-comparison" id="recipe-comparison" aria-labelledby="recipe-comparison-title">
+            <header>
+              <div><p class="micro-label">SEVEN REAL RECIPES · SIDE BY SIDE</p><h4 id="recipe-comparison-title">同一个“手绘视频”机制，七种完全不同的叙事责任</h4></div>
+              <p>比较的不只是画风，而是每类故事如何组织证据、节奏、声音和结尾。</p>
+            </header>
+            <div class="recipe-comparison-grid" id="recipe-comparison-grid"></div>
+          </section>
+
+          <noscript>
+            <div class="story-fit-noscript">
+              <b>无 JavaScript 时的选型规则：</b>家庭物件与关系变化选“家庭记忆”；解释机制选“知识解释”；孩子通过行动改变选“儿童成长”；证据逐步改义选“悬疑档案”；真实取舍形成承诺选“品牌起源”；重复意象与留白承载变化选“诗性独白”；原文、意象、空间和朗诵共同推进时选“古诗词场景”；亲历事件需要连接发明史与基础设施时选“科技人文”。下方八套真实样片仍可直接播放。
+            </div>
+          </noscript>
+        </article>
+
+        <div class="integration-divider"><span>查看推荐处方与七条真实成片</span></div>
+
+        <article class="narrative-director" id="narrative-director" aria-labelledby="director-title">
+          <header class="director-header">
+            <div>
+              <p class="micro-label">RULE-BASED NARRATIVE DIRECTOR · PRODUCT PROTOTYPE</p>
+              <h3 id="director-title">先理解故事，再决定效果</h3>
+            </div>
+            <p>选择故事类型，观察视觉风格、色彩、镜头、转场、声音和五段叙事如何一起变化。这里演示的是可检查的导演规则，不是伪装成实时 AI 的随机推荐。</p>
+          </header>
+
+          <div class="recipe-validation" aria-label="八类故事真实媒体完成矩阵">
+            <div><span class="micro-label">REAL MEDIA VALIDATION</span><b>8 / 8 已完成真实成片</b></div>
+            <button type="button" data-recipe-target="memory"><em>REAL</em><span>家庭记忆</span><small>淡彩人物叙事</small></button>
+            <button type="button" data-recipe-target="knowledge"><em>REAL</em><span>知识解释</span><small>白板认知模型</small></button>
+            <button type="button" data-recipe-target="children"><em>REAL</em><span>儿童成长</span><small>暖光绘本行动</small></button>
+            <button type="button" data-recipe-target="mystery"><em>REAL</em><span>悬疑档案</span><small>限色木刻证据链</small></button>
+            <button type="button" data-recipe-target="brand"><em>REAL</em><span>品牌起源</span><small>可见修补责任链</small></button>
+            <button type="button" data-recipe-target="poetic"><em>REAL</em><span>诗性独白</span><small>水墨意象与留白</small></button>
+            <button type="button" data-recipe-target="classical"><em>REAL</em><span>古诗词场景 × 3</span><small>诗卷讲解 / 明亮欣赏 / 夜色诗境</small></button>
+            <button type="button" data-recipe-target="technology"><em>REAL</em><span>科技人文</span><small>停电亲历 / 发明链 / 系统回望</small></button>
+          </div>
+
+          <div class="director-story-tabs" id="director-story-types" role="tablist" aria-label="选择故事类型">
+            <button type="button" role="tab" data-director-story="memory" aria-selected="false">家庭记忆<small>物件承载情感</small></button>
+            <button type="button" role="tab" data-director-story="mystery" aria-selected="false">悬疑档案<small>线索推动认知</small></button>
+            <button type="button" role="tab" data-director-story="knowledge" aria-selected="false">知识解释<small>结构降低理解成本</small></button>
+            <button type="button" role="tab" data-director-story="children" aria-selected="false">儿童成长<small>行动带来变化</small></button>
+            <button type="button" role="tab" data-director-story="brand" aria-selected="false">品牌起源<small>价值来自真实选择</small></button>
+            <button type="button" role="tab" data-director-story="poetic" aria-selected="false">诗性独白<small>意象留下余味</small></button>
+            <button type="button" role="tab" data-director-story="classical" aria-selected="false">古诗词场景<small>原文进入诗境</small></button>
+            <button type="button" role="tab" data-director-story="technology" aria-selected="true">科技人文<small>亲历看见系统</small></button>
+          </div>
+
+          <div class="director-workspace">
+            <aside class="director-prescription" aria-labelledby="director-preset-title">
+              <div class="director-fit-line"><span id="director-fit">高匹配</span><b id="director-runtime">约 54 秒</b></div>
+              <p class="micro-label">EFFECT PRESCRIPTION</p>
+              <h4 id="director-preset-title">家庭记忆 · 证据与思念</h4>
+              <p id="director-logline">用一个有磨损痕迹的物件打开记忆，让“失去”和“仍被保存”同时成立。</p>
+              <dl class="director-recipe" id="director-recipe">
+                <div><dt>画风</dt><dd id="director-style">彩铅日记漫画</dd></div>
+                <div><dt>色彩</dt><dd id="director-palette">雨夜蓝灰 → 灯光暖棕</dd></div>
+                <div><dt>镜头</dt><dd id="director-camera">物件特写，缓慢推进人物关系</dd></div>
+                <div><dt>转场</dt><dd id="director-transition">柔和叠化，终幕回到首幕</dd></div>
+                <div><dt>声音</dt><dd id="director-voice">成熟平静女声 · calm · 0.92×</dd></div>
+                <div><dt>节奏</dt><dd id="director-rhythm">慢—疑问—停顿—温暖回响</dd></div>
+              </dl>
+              <div class="director-rationale"><span>为什么匹配</span><p id="director-rationale">纸张颗粒和不完全上色像正在被修复的记忆；慢镜头让观众先看见证据，再感受人物。</p></div>
+              <button class="ghost-action director-style-link" id="director-open-style" type="button">在 20 种风格中定位</button>
+            </aside>
+
+            <section class="director-scene" id="director-scene" aria-live="polite" aria-labelledby="director-scene-title">
+              <div class="director-scene__visual" aria-hidden="true">
+                <span class="director-scene__index" id="director-scene-index">01 / 05</span>
+                <div class="director-frame director-frame--context"><small>环境</small><b id="director-context">雨夜档案馆</b></div>
+                <div class="director-frame director-frame--subject"><small>主体</small><b id="director-subject">被水浸坏的照片</b></div>
+                <div class="director-frame director-frame--meaning"><small>意义</small><b id="director-meaning">事实需要留下痕迹</b></div>
+                <i></i><i></i><i></i>
+              </div>
+              <div class="director-scene__copy">
+                <div><span id="director-scene-role">钩子 · 建立原则</span><b id="director-scene-duration">9 秒</b></div>
+                <h4 id="director-scene-title">先让观众相信她的原则</h4>
+                <p id="director-scene-purpose">从修复动作进入人物，不先解释背景；“只让事实留下证据”成为后续冲突的尺度。</p>
+                <dl>
+                  <div><dt>画面指导</dt><dd id="director-scene-visual">手部与照片占主要画幅，人物只露侧脸；冷窗光压住暖台灯。</dd></div>
+                  <div><dt>效果动作</dt><dd id="director-scene-motion">黑白线稿先出现，暖色只落在照片和指尖；6% 缓慢推进。</dd></div>
+                  <div><dt>旁白意图</dt><dd id="director-scene-narration">陈述，不煽情；让规则听起来可靠而克制。</dd></div>
+                </dl>
+              </div>
+            </section>
+          </div>
+
+          <div class="director-beats" id="director-beats" role="tablist" aria-label="五段场景叙事">
+            <button type="button" role="tab" data-director-beat="0" aria-selected="true"><span>01</span><b>钩子</b><small>建立原则</small></button>
+            <button type="button" role="tab" data-director-beat="1" aria-selected="false"><span>02</span><b>触发</b><small>证据异常</small></button>
+            <button type="button" role="tab" data-director-beat="2" aria-selected="false"><span>03</span><b>揭示</b><small>看见缺口</small></button>
+            <button type="button" role="tab" data-director-beat="3" aria-selected="false"><span>04</span><b>质问</b><small>价值冲突</small></button>
+            <button type="button" role="tab" data-director-beat="4" aria-selected="false"><span>05</span><b>回响</b><small>选择留下</small></button>
+          </div>
+
+          <section class="director-real-output" id="director-real-output" aria-labelledby="knowledge-output-title" hidden>
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen">
+                <video id="knowledge-demo-video" controls playsinline preload="metadata" poster="./assets/knowledge-demo/scene-01-thumb.webp">
+                  <source src="./assets/knowledge-demo/memory-is-not-a-recording.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>REAL RECIPE OUTPUT · 01:17</span>
+              </div>
+              <div class="knowledge-timeline" aria-label="记忆不是录像带五个知识节拍">
+                <button type="button" data-knowledge-time="0" aria-pressed="true"><img src="./assets/knowledge-demo/scene-01-thumb.webp" alt="把记忆误认为录像" /><b>01 误区</b><small>00:00</small></button>
+                <button type="button" data-knowledge-time="12.299" aria-pressed="false"><img src="./assets/knowledge-demo/scene-02-thumb.webp" alt="编码到提取的三段模型" /><b>02 模型</b><small>00:12</small></button>
+                <button type="button" data-knowledge-time="28.348" aria-pressed="false"><img src="./assets/knowledge-demo/scene-03-thumb.webp" alt="记忆重建与更新边界" /><b>03 机制</b><small>00:28</small></button>
+                <button type="button" data-knowledge-time="44.483" aria-pressed="false"><img src="./assets/knowledge-demo/scene-04-thumb.webp" alt="提问方式影响回忆报告" /><b>04 证据</b><small>00:44</small></button>
+                <button type="button" data-knowledge-time="61.223" aria-pressed="false"><img src="./assets/knowledge-demo/scene-05-thumb.webp" alt="保存原始记录并分层归档" /><b>05 迁移</b><small>01:01</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">PRESCRIPTION → REAL MEDIA</p>
+              <h4 id="knowledge-output-title">《记忆不是录像带》</h4>
+              <p>这不是通用白板模板换了一段文案，而是让故事结构决定效果：误区用“胶片脑袋”，模型固定三节点，机制用碎片重组，证据用两种提问对照，最后把理解迁移成可执行的记录方法。</p>
+              <div class="knowledge-proof" aria-label="知识解释真实产物指标">
+                <span><b>5</b>Codex 生图</span><span><b>77.333s</b>真实时长</span><span><b>690 字符</b>MiniMax TTS</span><span><b>720×960</b>H.264 / AAC</span>
+              </div>
+              <ol>
+                <li><b>单一视觉语法</b><span>暖白纸、炭黑线与概念蓝贯穿五幕，蓝色只追踪当前推理对象。</span></li>
+                <li><b>声音服从认知节奏</b><span><code>speech-2.8-hd</code>、<code>female-chengshu</code>、neutral；句间停顿与画面节点对齐。</span></li>
+                <li><b>科学边界进入脚本</b><span>说明重建、更新与暗示效应，同时避免“每次提取都改写”“所有记忆都不可靠”的过度结论。</span></li>
+              </ol>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/knowledge-demo/memory-is-not-a-recording.mp4?revision=codex-minimax-v1" download="memory-is-not-a-recording.mp4">下载真实成片</a>
+                <a class="button secondary" href="./assets/knowledge-demo/SOURCES.md">查看研究来源</a>
+                <a class="button secondary" href="./assets/knowledge-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--children" id="children-real-output" aria-labelledby="children-output-title" hidden>
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen">
+                <video id="children-demo-video" controls playsinline preload="metadata" poster="./assets/children-demo/scene-01-thumb.webp">
+                  <source src="./assets/children-demo/she-learned-to-listen-to-the-wind.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>REAL RECIPE OUTPUT · 01:47</span>
+              </div>
+              <div class="knowledge-timeline children-timeline" aria-label="她先学会听风五个成长节拍">
+                <button type="button" data-children-time="0" aria-pressed="true"><img src="./assets/children-demo/scene-01-thumb.webp" alt="小满抱着手工纸鸢看向水塔" /><b>01 愿望</b><small>00:00</small></button>
+                <button type="button" data-children-time="20.301" aria-pressed="false"><img src="./assets/children-demo/scene-02-thumb.webp" alt="小满迎风奔跑但纸鸢撞树" /><b>02 受挫</b><small>00:20</small></button>
+                <button type="button" data-children-time="42.124" aria-pressed="false"><img src="./assets/children-demo/scene-03-thumb.webp" alt="小满观察芦苇和麻雀理解风" /><b>03 发现</b><small>00:42</small></button>
+                <button type="button" data-children-time="63.089" aria-pressed="false"><img src="./assets/children-demo/scene-04-thumb.webp" alt="小满用蓝色奖带修补纸鸢" /><b>04 改造</b><small>01:03</small></button>
+                <button type="button" data-children-time="87.022" aria-pressed="false"><img src="./assets/children-demo/scene-05-thumb.webp" alt="修补后的纸鸢飞过水塔" /><b>05 成长</b><small>01:27</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">PRESCRIPTION → REAL MEDIA</p>
+              <h4 id="children-output-title">《她先学会听风》</h4>
+              <p>儿童成长不靠成人说出道理，而靠行动方式真正改变：小满先用蛮力失败，再从芦苇和麻雀理解风，把过去的奖带变成新的尾翼，最后带着可见补丁完成第二次尝试。</p>
+              <div class="knowledge-proof" aria-label="儿童成长真实产物指标">
+                <span><b>5</b>Codex 连续角色生图</span><span><b>107.267s</b>真实时长</span><span><b>923 字符</b>MiniMax TTS</span><span><b>720×960</b>H.264 / AAC</span>
+              </div>
+              <ol>
+                <li><b>角色与道具连续</b><span>黑色短发、黄风衣、蓝绿长裤、红鞋和同一只不对称纸鸢贯穿五幕。</span></li>
+                <li><b>成长由行动证明</b><span>奖带不再只是过去的荣誉，而被剪成解决新问题的材料；修补痕迹在终幕仍然保留。</span></li>
+                <li><b>声音保持克制</b><span><code>speech-2.8-hd</code>、<code>female-tianmei</code>、calm、0.96×；失败段不煽情，结尾不喊口号。</span></li>
+              </ol>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/children-demo/she-learned-to-listen-to-the-wind.mp4?revision=codex-minimax-v1" download="she-learned-to-listen-to-the-wind.mp4">下载真实成片</a>
+                <a class="button secondary" href="./assets/children-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                <a class="button secondary" href="./assets/children-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--mystery" id="mystery-real-output" aria-labelledby="mystery-output-title" hidden>
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen">
+                <video id="mystery-demo-video" controls playsinline preload="metadata" poster="./assets/mystery-demo/scene-01-thumb.webp">
+                  <source src="./assets/mystery-demo/after-the-seal-the-clock-kept-running.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>REAL RECIPE OUTPUT · 02:15</span>
+              </div>
+              <div class="knowledge-timeline mystery-timeline" aria-label="封存之后钟还在走五个悬疑节拍">
+                <button type="button" data-mystery-time="0" aria-pressed="true"><img src="./assets/mystery-demo/scene-01-thumb.webp" alt="封条未断但机械钟仍在走" /><b>01 异常</b><small>00:00</small></button>
+                <button type="button" data-mystery-time="25.79" aria-pressed="false"><img src="./assets/mystery-demo/scene-02-thumb.webp" alt="暗道钥匙鞋印组成证据链" /><b>02 追踪</b><small>00:25</small></button>
+                <button type="button" data-mystery-time="49.82" aria-pressed="false"><img src="./assets/mystery-demo/scene-03-thumb.webp" alt="旧大衣人影制造可信误导" /><b>03 误导</b><small>00:49</small></button>
+                <button type="button" data-mystery-time="76.10" aria-pressed="false"><img src="./assets/mystery-demo/scene-04-thumb.webp" alt="周岚交出钥匙和录音带" /><b>04 翻转</b><small>01:16</small></button>
+                <button type="button" data-mystery-time="105.99" aria-pressed="false"><img src="./assets/mystery-demo/scene-05-thumb.webp" alt="不同证据分层公开归档" /><b>05 余波</b><small>01:45</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">PRESCRIPTION → REAL MEDIA</p>
+              <h4 id="mystery-output-title">《封存之后，钟还在走》</h4>
+              <p>这条悬疑不是用惊吓制造答案，而是让旧钟、暗道、长大衣和磁带逐次改变含义。结尾也不把越界行为浪漫化：原报告、录音、口述证词与维护记录分别进入可核验的证据层。</p>
+              <div class="knowledge-proof" aria-label="悬疑档案真实产物指标">
+                <span><b>5</b>Codex 限色木刻生图</span><span><b>135.262s</b>真实时长</span><span><b>1466 字符</b>MiniMax TTS</span><span><b>720×960</b>H.264 / AAC</span>
+              </div>
+              <ol>
+                <li><b>线索可以回看</b><span>钥匙、旧大衣、磁带与钟都在翻转前出现；反转改变解释，不凭空添加事实。</span></li>
+                <li><b>红色只标证据</b><span>炭黑与旧纸构成遮蔽，铁锈红只连接封条、路线、投影、磁带与分层物证。</span></li>
+                <li><b>真相保留代价</b><span><code>speech-2.8-hd</code>、<code>male-qn-jingying</code>、calm；结尾登记违规进入，不用英雄化覆盖证据责任。</span></li>
+              </ol>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/mystery-demo/after-the-seal-the-clock-kept-running.mp4?revision=codex-minimax-v1" download="after-the-seal-the-clock-kept-running.mp4">下载真实成片</a>
+                <a class="button secondary" href="./assets/mystery-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                <a class="button secondary" href="./assets/mystery-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--brand" id="brand-real-output" aria-labelledby="brand-output-title" hidden>
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen">
+                <video id="brand-demo-video" controls playsinline preload="metadata" poster="./assets/brand-demo/scene-01-thumb.webp">
+                  <source src="./assets/brand-demo/keep-the-repair-visible.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>REAL RECIPE OUTPUT · 02:14</span>
+              </div>
+              <div class="knowledge-timeline brand-timeline" aria-label="把瑕疵留在正面五个品牌节拍">
+                <button type="button" data-brand-time="0" aria-pressed="true"><img src="./assets/brand-demo/scene-01-thumb.webp" alt="林又面对开裂的弯木椅" /><b>01 问题</b><small>00:00</small></button>
+                <button type="button" data-brand-time="25.86" aria-pressed="false"><img src="./assets/brand-demo/scene-02-thumb.webp" alt="珊瑚色蝴蝶榫跨过裂缝" /><b>02 选择</b><small>00:26</small></button>
+                <button type="button" data-brand-time="52.15" aria-pressed="false"><img src="./assets/brand-demo/scene-03-thumb.webp" alt="修理原则成为可复查工艺" /><b>03 工艺</b><small>00:52</small></button>
+                <button type="button" data-brand-time="79.69" aria-pressed="false"><img src="./assets/brand-demo/scene-04-thumb.webp" alt="一年后同一把椅子返回复检" /><b>04 证据</b><small>01:20</small></button>
+                <button type="button" data-brand-time="106.67" aria-pressed="false"><img src="./assets/brand-demo/scene-05-thumb.webp" alt="工作室门口开放修理台" /><b>05 邀请</b><small>01:47</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">PRESCRIPTION → REAL MEDIA</p>
+              <h4 id="brand-output-title">《把瑕疵留在正面》</h4>
+              <p>这不是虚构一组销量数字来证明品牌，而是追踪同一把弯木椅：裂缝提出问题，珊瑚色蝴蝶榫让修补可见，工艺允许别人复查，一年后的普通脚垫复检说明承诺边界，最后把责任变成任何人都能返回的修理台。</p>
+              <div class="knowledge-proof" aria-label="品牌起源真实产物指标">
+                <span><b>5</b>Codex 连续场景生图</span><span><b>134.000s</b>真实时长</span><span><b>1412 字符</b>MiniMax TTS</span><span><b>720×960</b>H.264 / AAC</span>
+              </div>
+              <ol>
+                <li><b>价值来自具体代价</b><span>没有先讲初心；暂停新订单、拒绝遮住裂缝，让原则在一次不省事的选择中成立。</span></li>
+                <li><b>承诺可以被复查</b><span>检查、材料匹配、干装、连接和复测进入流程；终幕仍保留裂纹与蝴蝶榫。</span></li>
+                <li><b>声音拒绝广告腔</b><span><code>speech-2.8-hd</code>、<code>Chinese (Mandarin)_Sincere_Adult</code>、calm、0.98×；不虚构背书，不许诺永远不坏。</span></li>
+              </ol>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/brand-demo/keep-the-repair-visible.mp4?revision=codex-minimax-v1" download="keep-the-repair-visible.mp4">下载真实成片</a>
+                <a class="button secondary" href="./assets/brand-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                <a class="button secondary" href="./assets/brand-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--poetic" id="poetic-real-output" aria-labelledby="poetic-output-title" hidden>
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen director-real-output__screen--landscape">
+                <video id="poetic-demo-video" controls playsinline preload="metadata" poster="./assets/poetic-demo/scene-01-thumb.webp">
+                  <source src="./assets/poetic-demo/tide-returns-the-name.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>REAL RECIPE OUTPUT · 02:08</span>
+              </div>
+              <div class="knowledge-timeline poetic-timeline" aria-label="潮水把名字还给岸五个诗性节拍">
+                <button type="button" data-poetic-time="0" aria-pressed="true"><img src="./assets/poetic-demo/scene-01-thumb.webp" alt="沈慧回到地图上无名的旧渡口" /><b>01 意象</b><small>00:00</small></button>
+                <button type="button" data-poetic-time="22.58" aria-pressed="false"><img src="./assets/poetic-demo/scene-02-thumb.webp" alt="朱红线连接系船环与录音机" /><b>02 回声</b><small>00:23</small></button>
+                <button type="button" data-poetic-time="48.33" aria-pressed="false"><img src="./assets/poetic-demo/scene-03-thumb.webp" alt="新桥影子越过旧石阶" /><b>03 反差</b><small>00:48</small></button>
+                <button type="button" data-poetic-time="76.04" aria-pressed="false"><img src="./assets/poetic-demo/scene-04-thumb.webp" alt="沈慧让石面保持空白" /><b>04 空白</b><small>01:16</small></button>
+                <button type="button" data-poetic-time="100.94" aria-pressed="false"><img src="./assets/poetic-demo/scene-05-thumb.webp" alt="涨潮后沈慧收回红线离开" /><b>05 余味</b><small>01:41</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">PRESCRIPTION → REAL MEDIA</p>
+              <h4 id="poetic-output-title">《潮水把名字还给岸》</h4>
+              <p>诗性不是把逻辑藏起来。渡口、桥、录音机和朱红线在五幕里重复出现，但每次改变含义：从寻找旧名，到承认记忆不是证据，再到承认新桥的便利、放弃在石面刻名，最后带走线索而不强迫地点恢复成童年。</p>
+              <div class="knowledge-proof" aria-label="诗性独白真实产物指标">
+                <span><b>5</b>Codex 水墨连续生图</span><span><b>127.633s</b>真实时长</span><span><b>1007 字符</b>MiniMax TTS</span><span><b>1280×720</b>H.264 / AAC</span>
+              </div>
+              <ol>
+                <li><b>留白承担观点</b><span>竖幅纸上记忆转为横幅现实，大片米白与空水给判断留下时间，不用逐句插图填满。</span></li>
+                <li><b>怀旧保持伦理边界</b><span>新桥带来的上学、看病与归家被明确承认；私人记忆不能要求别人退回迟缓。</span></li>
+                <li><b>声音形成第二空间</b><span><code>speech-2.8-hd</code>、<code>Chinese (Mandarin)_Lyrical_Voice</code>、calm、0.94×，叠加极轻河岸声与段间留白。</span></li>
+              </ol>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/poetic-demo/tide-returns-the-name.mp4?revision=codex-minimax-v1" download="tide-returns-the-name.mp4">下载真实成片</a>
+                <a class="button secondary" href="./assets/poetic-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                <a class="button secondary" href="./assets/poetic-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--classical" id="classical-real-output" aria-labelledby="lecture-output-title" hidden>
+            <div class="classical-variant-switch" role="tablist" aria-label="古诗词讲解与诗境样片切换">
+              <button type="button" role="tab" data-classical-variant="lecture" aria-selected="true"><b>诗卷讲解</b><span>《忆江南》· 原诗、关键词、意象证据同步</span></button>
+              <button type="button" role="tab" data-classical-variant="bright" aria-selected="false"><b>明亮欣赏</b><span>《忆江南》· 日出、花红、春水绿</span></button>
+              <button type="button" role="tab" data-classical-variant="night" aria-selected="false"><b>夜色诗境</b><span>《枫桥夜泊》· 月落、渔火、夜半钟声</span></button>
+            </div>
+
+            <div class="classical-variant-panel classical-variant-panel--lecture" data-classical-panel="lecture">
+              <div class="director-real-output__media">
+                <div class="director-real-output__screen director-real-output__screen--landscape">
+                  <video id="lecture-demo-video" controls playsinline preload="metadata" poster="./assets/jiangnan-bright-demo/scene-01-thumb.webp">
+                    <source src="./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4?revision=poetry-lecture-v1" type="video/mp4" />
+                    你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                  </video>
+                  <span>POEM SCROLL LECTURE · REAL MEDIA</span>
+                </div>
+                <div class="knowledge-timeline lecture-timeline" aria-label="忆江南五个诗卷讲解节拍">
+                  <button type="button" data-lecture-time="0" aria-pressed="true"><img src="./assets/jiangnan-bright-demo/scene-01-thumb.webp" alt="完整江南春晨与诗句江南好" /><b>01 江南好</b><small>赞叹不是结论</small></button>
+                  <button type="button" data-lecture-time="26.53" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-02-thumb.webp" alt="进入水巷解释旧曾谙" /><b>02 旧曾谙</b><small>熟悉来自经验</small></button>
+                  <button type="button" data-lecture-time="47.82" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-03-thumb.webp" alt="日出改变江花和水面颜色" /><b>03 日出</b><small>颜色由时间发生</small></button>
+                  <button type="button" data-lecture-time="71.03" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-04-thumb.webp" alt="花红水绿形成颜色比较" /><b>04 红 / 绿</b><small>比较构成证据</small></button>
+                  <button type="button" data-lecture-time="93.28" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-05-thumb.webp" alt="远舟回望解释反问" /><b>05 能不忆</b><small>从景色回到记忆</small></button>
+                </div>
+              </div>
+              <div class="director-real-output__copy lecture-output-copy">
+                <div>
+                  <p class="micro-label">READ → SEE → UNDERSTAND</p>
+                  <h4 id="lecture-output-title">《忆江南》诗卷讲解版</h4>
+                  <p>这不是把字幕从底部搬到右边。原诗始终在场，五幕依次改变当前句、关键词、释义和画面证据；观看者可以一边听，一边知道“现在解释哪一句、为什么出现这个画面”。</p>
+                </div>
+                <div class="knowledge-proof" aria-label="忆江南诗卷讲解真实产物指标">
+                  <span><b>5 层</b>原诗 / 当前句 / 关键词 / 释义 / 证据</span><span><b>01:56</b>真实媒体时长</span><span><b>805 字符</b>复用 MiniMax 旁白</span><span><b>1280×720</b>确定性诗卷排版</span>
+                </div>
+                <ol class="lecture-principles">
+                  <li><b>原诗是主界面</b><span>标题、作者和全词常驻；当前句以字号、色彩和描边共同高亮，不只依赖颜色。</span></li>
+                  <li><b>画面成为证据</b><span>左侧意象只回答当前解释：日出说明颜色如何发生，花红水绿说明两组比较如何成立。</span></li>
+                  <li><b>字幕退回辅助层</b><span>讲解文字由右侧诗卷确定性排版，成片不再烧录底部长字幕；完整口述仍由音轨承担。</span></li>
+                </ol>
+                <div class="director-real-output__actions">
+                  <a class="button primary" href="./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4?revision=poetry-lecture-v1" download="remembering-jiangnan-lecture.mp4">下载讲解成片</a>
+                  <a class="button secondary" href="./assets/jiangnan-bright-demo/lecture-panels.ass">查看诗卷排版源</a>
+                  <a class="button secondary" href="./assets/jiangnan-bright-demo/media-manifest.json">查看媒体清单</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="classical-variant-panel classical-variant-panel--bright" data-classical-panel="bright" hidden>
+              <div class="director-real-output__media">
+                <div class="director-real-output__screen director-real-output__screen--landscape">
+                  <video id="jiangnan-demo-video" controls playsinline preload="metadata" poster="./assets/jiangnan-bright-demo/scene-01-thumb.webp">
+                    <source src="./assets/jiangnan-bright-demo/remembering-jiangnan.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                    你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                  </video>
+                  <span>BRIGHT RECIPE OUTPUT · REAL MEDIA</span>
+                </div>
+                <div class="knowledge-timeline jiangnan-timeline" aria-label="忆江南五个明亮诗境节拍">
+                  <button type="button" data-jiangnan-time="0" aria-pressed="true"><img src="./assets/jiangnan-bright-demo/scene-01-thumb.webp" alt="明亮春晨中的江南水乡全景" /><b>01 赞叹</b><small>00:00</small></button>
+                  <button type="button" data-jiangnan-time="26.53" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-02-thumb.webp" alt="小舟进入熟悉的白墙黛瓦水巷" /><b>02 熟悉</b><small>00:27</small></button>
+                  <button type="button" data-jiangnan-time="47.82" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-03-thumb.webp" alt="朱红日出与金光沿春水抵近" /><b>03 日出</b><small>00:48</small></button>
+                  <button type="button" data-jiangnan-time="71.03" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-04-thumb.webp" alt="珊瑚红江花与孔雀绿春水形成对照" /><b>04 对照</b><small>01:11</small></button>
+                  <button type="button" data-jiangnan-time="93.28" aria-pressed="false"><img src="./assets/jiangnan-bright-demo/scene-05-thumb.webp" alt="小舟远去并回望鲜明江南" /><b>05 回望</b><small>01:33</small></button>
+                </div>
+              </div>
+              <div class="director-real-output__copy">
+                <p class="micro-label">VIVID COLOR → MEMORY → REAL MEDIA</p>
+                <h4 id="jiangnan-output-title">《忆江南·江南好》</h4>
+                <p class="classical-poem">江南好，风景旧曾谙。<br />日出江花红胜火，春来江水绿如蓝。能不忆江南？</p>
+                <p>鲜明不是把饱和度拉满。五幕让“好”先成为可进入的空间，再用日出解释花红、用春水承接蓝绿，最后让颜色转化为“旧曾谙”的记忆清晰度。</p>
+                <div class="knowledge-proof" aria-label="忆江南真实产物指标">
+                  <span><b>5</b>Codex 连续青绿设色生图</span><span><b>01:56</b>真实媒体时长</span><span><b>805 字符</b>MiniMax happy 旁白</span><span><b>1280×720</b>H.264 / AAC</span>
+                </div>
+                <ol>
+                  <li><b>原文直接控制颜色</b><span>朱红来自日出与江花，孔雀绿、湖蓝来自春水；色彩都有诗句证据，不是模板滤镜。</span></li>
+                  <li><b>记忆控制观看者</b><span>同一艘小舟和青蓝衣回望者贯穿五幕，但不把人物冒充白居易历史肖像。</span></li>
+                  <li><b>鲜明仍有边界</b><span>白墙黛瓦、桥与水巷是诗意综合；蓝绿水色和朝阳不作为某处唐代江南的实景复原。</span></li>
+                </ol>
+                <div class="director-real-output__actions">
+                  <a class="button primary" href="./assets/jiangnan-bright-demo/remembering-jiangnan.mp4?revision=codex-minimax-v1" download="remembering-jiangnan.mp4">下载明亮成片</a>
+                  <a class="button secondary" href="./assets/jiangnan-bright-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                  <a class="button secondary" href="./assets/jiangnan-bright-demo/media-manifest.json">查看媒体清单</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="classical-variant-panel classical-variant-panel--night" data-classical-panel="night" hidden>
+              <div class="director-real-output__media">
+                <div class="director-real-output__screen director-real-output__screen--landscape">
+                  <video id="classical-demo-video" controls playsinline preload="metadata" poster="./assets/classical-poetry-demo/scene-01-thumb.webp">
+                    <source src="./assets/classical-poetry-demo/maple-bridge-night.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                    你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                  </video>
+                  <span>NIGHT RECIPE OUTPUT · REAL MEDIA</span>
+                </div>
+                <div class="knowledge-timeline classical-timeline" aria-label="枫桥夜泊五个诗境节拍">
+                  <button type="button" data-classical-time="0" aria-pressed="true"><img src="./assets/classical-poetry-demo/scene-01-thumb.webp" alt="月落、乌啼与霜气笼罩江面" /><b>01 天时</b><small>00:00</small></button>
+                  <button type="button" data-classical-time="24.61" aria-pressed="false"><img src="./assets/classical-poetry-demo/scene-02-thumb.webp" alt="江枫与两点渔火定位客船" /><b>02 江岸</b><small>00:25</small></button>
+                  <button type="button" data-classical-time="47.46" aria-pressed="false"><img src="./assets/classical-poetry-demo/scene-03-thumb.webp" alt="未眠旅人在船中望向江面" /><b>03 人物</b><small>00:47</small></button>
+                  <button type="button" data-classical-time="68.87" aria-pressed="false"><img src="./assets/classical-poetry-demo/scene-04-thumb.webp" alt="客船、桥与寒山寺形成远近空间" /><b>04 空间</b><small>01:09</small></button>
+                  <button type="button" data-classical-time="92.56" aria-pressed="false"><img src="./assets/classical-poetry-demo/scene-05-thumb.webp" alt="钟声化为水面涟漪抵达客船" /><b>05 抵达</b><small>01:33</small></button>
+                </div>
+              </div>
+              <div class="director-real-output__copy">
+                <p class="micro-label">NIGHT COLOR → DISTANCE → REAL MEDIA</p>
+                <h4 id="classical-output-title">《枫桥夜泊》</h4>
+                <p class="classical-poem">月落乌啼霜满天，江枫渔火对愁眠。<br />姑苏城外寒山寺，夜半钟声到客船。</p>
+                <p>五幕依次建立天时、江岸、人、空间与声音：先感到霜夜，再沿渔火进入未眠者视角，最后让钟声跨过距离完成诗。</p>
+                <div class="knowledge-proof" aria-label="枫桥夜泊真实产物指标">
+                  <span><b>5</b>Codex 连续水墨生图</span><span><b>01:56</b>真实媒体时长</span><span><b>774 字符</b>MiniMax calm 旁白</span><span><b>1280×720</b>H.264 / AAC</span>
+                </div>
+                <ol>
+                  <li><b>原文约束空间</b><span>月、江枫、渔火、客船、城外寺院按观看距离进入，不把意象堆成装饰墙。</span></li>
+                  <li><b>声音完成终幕</b><span>乌啼、江水与钟声保持低幅；夜半钟声只在第五幕跨水抵达。</span></li>
+                  <li><b>艺术化还原有边界</b><span>不虚构“落第”等争议生平；人物、船、桥与寺院不作为唐代历史证据。</span></li>
+                </ol>
+                <div class="director-real-output__actions">
+                  <a class="button primary" href="./assets/classical-poetry-demo/maple-bridge-night.mp4?revision=codex-minimax-v1" download="maple-bridge-night.mp4">下载夜色成片</a>
+                  <a class="button secondary" href="./assets/classical-poetry-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                  <a class="button secondary" href="./assets/classical-poetry-demo/media-manifest.json">查看媒体清单</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="director-real-output director-real-output--technology" id="technology-real-output" aria-labelledby="technology-output-title" hidden>
+            <div class="power-experience" id="power-experience" data-power-state="powered">
+              <header class="power-experience__header">
+                <div>
+                  <p class="micro-label">INTERACTIVE PRELUDE · 约 8 秒 · 随时可恢复</p>
+                  <h4>先让电消失一次</h4>
+                  <p>这不是另一支视频。你会先触发一次局部模拟停电，再从房间里的设备反向看见电力系统。</p>
+                </div>
+                <div class="power-status" aria-label="演示供电状态">
+                  <i aria-hidden="true"></i><span>POWER STATE</span><b id="power-status-label">供电正常</b>
+                </div>
+              </header>
+
+              <div class="power-experience__layout">
+                <div class="power-room" id="power-room" aria-label="可恢复的停电模拟房间">
+                  <img src="./assets/power-outage-demo/scene-01-stage.webp" alt="夜间公寓内有空调、风扇、路由器和窗外城市" />
+                  <div class="power-room__warmth" aria-hidden="true"></div>
+                  <div class="power-room__shade" aria-hidden="true"></div>
+                  <div class="power-phone-beam" aria-hidden="true"></div>
+                  <div class="power-fan-rotor" aria-hidden="true"><i></i></div>
+                  <div class="power-router-leds" aria-hidden="true"><i></i><i></i><i></i></div>
+                  <div class="power-city-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                  <svg class="power-network-trace" viewBox="0 0 1000 562" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M870 203 C730 176 628 206 540 296 S310 382 108 396" />
+                    <path d="M540 296 C486 236 408 190 302 168" />
+                    <path d="M540 296 C566 382 630 431 748 448" />
+                    <path d="M302 168 C210 155 151 123 94 82" />
+                  </svg>
+                  <span class="power-device-callout power-device-callout--cooling">制冷停止</span>
+                  <span class="power-device-callout power-device-callout--network">网络进入倒计时</span>
+                  <span class="power-device-callout power-device-callout--cold">冷藏依赖供电</span>
+                  <span class="power-device-callout power-device-callout--building">泵与电梯可能受影响</span>
+                  <div class="power-room__caption"><span id="power-room-kicker">有电时，系统退到背景</span><b id="power-room-title">房间正在正常运转</b></div>
+                </div>
+
+                <aside class="power-console" aria-label="停电体验控制台">
+                  <div class="power-console__step"><span>01</span><b>触发缺席</b><small>声音与运动先停止</small></div>
+                  <ol class="power-event-log" aria-label="停电事件序列">
+                    <li data-power-event="outage"><i></i><span><b>电器底噪消失</b><small>风扇、空调与路由器同时静止</small></span></li>
+                    <li data-power-event="phone"><i></i><span><b>手机微光接管</b><small>电量从百分比变成倒计时</small></span></li>
+                    <li data-power-event="reveal"><i></i><span><b>依赖逐项显影</b><small>制冷、通信、冷藏与建筑设备</small></span></li>
+                    <li data-power-event="ready"><i></i><span><b>系统路径就绪</b><small>从设备反向追踪电如何抵达</small></span></li>
+                  </ol>
+                  <p class="power-live-status" id="power-live-status" role="status" aria-live="polite">当前供电正常。点击开始后，演示只改变这一块网页，不会影响电脑或网络。</p>
+                  <div class="power-console__actions">
+                    <button class="button primary" id="power-experience-primary" type="button">开始停电体验</button>
+                    <button class="button secondary" id="power-experience-skip" type="button">直接看系统</button>
+                  </div>
+                  <small class="power-sound-note">声音由浏览器即时合成；不录音、不联网。按 Esc 可随时恢复。</small>
+                </aside>
+              </div>
+
+              <section class="power-system-map" id="power-system-map" aria-labelledby="power-system-title" aria-hidden="true" hidden>
+                <header>
+                  <div><span class="micro-label">FROM SOURCE TO USE</span><h5 id="power-system-title">电如何抵达这间房</h5></div>
+                  <p>核心路径共享，但设备的最后一段依赖不同。选择一个设备查看。</p>
+                </header>
+                <div class="power-grid-route" aria-label="发电到家庭的核心供电路径">
+                  <div data-grid-node="generation"><span>01</span><b>发电</b><small>把其他形式的能量转为电能</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div data-grid-node="transmission"><span>02</span><b>升压与输电</b><small>降低远距离传输损耗</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div data-grid-node="substation"><span>03</span><b>城市变电</b><small>改变电压并分配线路</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div data-grid-node="distribution"><span>04</span><b>社区配电</b><small>进入建筑与街区</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div data-grid-node="use"><span>05</span><b>插座与设备</b><small>电最终变成风、光、冷与信息</small></div>
+                </div>
+                <div class="power-dependency-tabs" role="tablist" aria-label="选择要追踪的设备依赖">
+                  <button type="button" role="tab" data-power-dependency="comfort" aria-selected="true"><span>风扇 / 空调</span><small>舒适环境</small></button>
+                  <button type="button" role="tab" data-power-dependency="router" aria-selected="false"><span>家庭路由器</span><small>室内网络</small></button>
+                  <button type="button" role="tab" data-power-dependency="mobile" aria-selected="false"><span>手机网络</span><small>电池 + 基站</small></button>
+                  <button type="button" role="tab" data-power-dependency="building" aria-selected="false"><span>泵与电梯</span><small>建筑系统</small></button>
+                </div>
+                <div class="power-dependency-detail" id="power-dependency-detail" role="tabpanel" tabindex="0">
+                  <span id="power-dependency-index">PATH 01 · COMFORT</span>
+                  <h6 id="power-dependency-title">电在这里变成风与冷</h6>
+                  <p id="power-dependency-copy">供电经过建筑配电与家庭回路抵达风扇和空调。停电后，最先被身体感知的往往不是黑暗，而是空气停止流动、室温开始上升。</p>
+                  <small id="power-dependency-boundary">边界：空调停机后的升温速度受房屋保温、室外温度和通风条件影响。</small>
+                </div>
+                <div class="power-system-actions">
+                  <button class="button secondary" id="power-restore-button" type="button">恢复演示供电</button>
+                  <button class="button primary" id="power-enter-film" type="button">带着这张图进入正片</button>
+                </div>
+              </section>
+            </div>
+
+            <div class="director-real-output__media">
+              <div class="director-real-output__screen director-real-output__screen--landscape">
+                <video id="technology-demo-video" controls playsinline preload="metadata" poster="./assets/power-outage-demo/scene-01-thumb.webp">
+                  <source src="./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4?revision=codex-minimax-v1" type="video/mp4" />
+                  你的浏览器不支持 MP4 播放，可使用下载入口查看。
+                </video>
+                <span>TECHNOLOGY × HUMANITY · REAL MEDIA</span>
+              </div>
+              <div class="knowledge-timeline technology-timeline" aria-label="停电与电力发明史五个叙事节拍">
+                <button type="button" data-technology-time="0" aria-pressed="true"><img src="./assets/power-outage-demo/scene-01-thumb.webp" alt="凌晨停电后人物在闷热公寓中无法入睡" /><b>01 缺席</b><small>00:00</small></button>
+                <button type="button" data-technology-time="20.89" aria-pressed="false"><img src="./assets/power-outage-demo/scene-02-thumb.webp" alt="同一房间向城市依赖网络展开" /><b>02 显影</b><small>00:21</small></button>
+                <button type="button" data-technology-time="41.16" aria-pressed="false"><img src="./assets/power-outage-demo/scene-03-thumb.webp" alt="匿名双手操作伏打电堆和法拉第环形线圈" /><b>03 发现</b><small>00:41</small></button>
+                <button type="button" data-technology-time="64.73" aria-pressed="false"><img src="./assets/power-outage-demo/scene-04-thumb.webp" alt="灯、发电机、配电设备和街区组成供电系统" /><b>04 成网</b><small>01:05</small></button>
+                <button type="button" data-technology-time="89.91" aria-pressed="false"><img src="./assets/power-outage-demo/scene-05-thumb.webp" alt="黎明前复电后同一房间与城市重新亮起" /><b>05 回望</b><small>01:30</small></button>
+              </div>
+            </div>
+            <div class="director-real-output__copy">
+              <p class="micro-label">LIVED EXPERIENCE → INVENTION CHAIN → SYSTEM</p>
+              <h4 id="technology-output-title">《停电以后，我看见了电》</h4>
+              <p>一次闷热、焦虑、无法入睡的停电，让“电”从无形背景变成叙事主角。成片先保留亲历感，再沿可控电流、电磁感应和供电系统回望：伟大的不只是一只灯泡，而是让无数发明彼此协作的网络。</p>
+              <div class="knowledge-proof" aria-label="科技人文真实产物指标">
+                <span><b>5</b>Codex 连续技术人文生图</span><span><b>01:56</b>真实媒体时长</span><span><b>494 字符</b>MiniMax neutral 旁白</span><span><b>1280×720</b>H.264 / AAC</span>
+              </div>
+              <ol class="technology-fact-chain">
+                <li><b>1800 · 连续电流</b><span>伏打电堆让连续电流更容易被研究；不是“电在这一年才存在”。</span></li>
+                <li><b>1831 · 电磁感应</b><span>法拉第的环形线圈实验连接运动、磁与电，为发电机原理打开道路。</span></li>
+                <li><b>1880s · 装置成网</b><span>实用照明、集中发电、配电和交流输电共同把电带入日常，贡献来自许多人。</span></li>
+                <li><b>此刻 · 系统可见</b><span>“最伟大”是主人公的判断；可核验事实与个人顿悟在片中分层表达。</span></li>
+              </ol>
+              <p class="technology-use"><b>最适合：</b>能源与工程史公共教育、城市韧性与家庭应急、基础设施品牌责任、从亲历事件进入知识的科技人文短片。<br /><b>不适合：</b>实时灾害通报、操作型电气安全指导，或把复杂历史压缩成单一英雄传。</p>
+              <div class="technology-sources"><span>史实来源</span><a href="https://www.energy.gov/articles/history-light-bulb">DOE · 灯泡与供电系统</a><a href="https://www.rigb.org/about-us/our-history">Royal Institution · 1831 电磁感应</a><a href="https://www.energy.gov/sites/prod/files/2017/02/f34/Appendix--Electricity%20System%20Overview.pdf">DOE · 电力系统概览</a></div>
+              <div class="director-real-output__actions">
+                <a class="button primary" href="./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4?revision=codex-minimax-v1" download="after-the-power-went-out-i-saw-electricity.mp4">下载科技人文成片</a>
+                <a class="button secondary" href="./assets/power-outage-demo/VISUAL_BIBLE.md">查看视觉锁</a>
+                <a class="button secondary" href="./assets/power-outage-demo/media-manifest.json">查看媒体清单</a>
+              </div>
+            </div>
+          </section>
+
+          <p class="director-boundary"><b>能力边界：</b>当前选择与处方由本地规则表确定，因此离线、无 API 也能操作；接入大模型后，应由模型提取人物、物件、冲突和主题，再落入同一套可审阅处方，而不是让模型直接跳到不可控的成片。</p>
+          <noscript><p class="director-noscript">叙事导演台的八套处方均有真实媒体：<a href="./assets/real-demo/the-reunion-that-never-happened.mp4">《未发生的团聚》</a>、<a href="./assets/knowledge-demo/memory-is-not-a-recording.mp4">《记忆不是录像带》</a>、<a href="./assets/children-demo/she-learned-to-listen-to-the-wind.mp4">《她先学会听风》</a>、<a href="./assets/mystery-demo/after-the-seal-the-clock-kept-running.mp4">《封存之后，钟还在走》</a>、<a href="./assets/brand-demo/keep-the-repair-visible.mp4">《把瑕疵留在正面》</a>、<a href="./assets/poetic-demo/tide-returns-the-name.mp4">《潮水把名字还给岸》</a>、<a href="./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4">《停电以后，我看见了电》</a>；古诗词包含<a href="./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4">《忆江南》诗卷讲解版</a>、<a href="./assets/jiangnan-bright-demo/remembering-jiangnan.mp4">《忆江南》明亮欣赏版</a>和<a href="./assets/classical-poetry-demo/maple-bridge-night.mp4">《枫桥夜泊》夜色版</a>。启用 JavaScript 后可切换处方并联动五段时间轴。</p></noscript>
+        </article>
+
+        <div class="integration-divider"><span>把导演处方接入统一生产架构</span></div>
+
+        <div class="integration-builder">
+          <div class="builder-controls">
+            <fieldset><legend>选择内容源</legend><div class="choice-row" id="source-choices"><button type="button" data-value="story" aria-pressed="true">故事</button><button type="button" data-value="lyrics" aria-pressed="false">歌词 / 情绪 MV</button><button type="button" data-value="images" aria-pressed="false">漫画图片</button><button type="button" data-value="document" aria-pressed="false">PDF / 文档</button></div></fieldset>
+            <fieldset><legend>选择成片模板</legend><div class="choice-row" id="template-choices"><button type="button" data-value="handdrawn" aria-pressed="true">手绘故事</button><button type="button" data-value="mood-mv" aria-pressed="false">情绪 MV</button><button type="button" data-value="whiteboard" aria-pressed="false">白板讲解</button><button type="button" data-value="pagebook" aria-pressed="false">漫画翻页</button></div></fieldset>
+            <fieldset><legend>增加生产能力</legend><div class="toggle-row"><label><input type="checkbox" value="tts" checked /> TTS 与字幕对齐</label><label><input type="checkbox" value="qc" checked /> 视觉自动 QC</label><label><input type="checkbox" value="brand" /> 品牌资产包</label><label><input type="checkbox" value="queue" checked /> 队列与重试</label></div></fieldset>
+          </div>
+          <div class="builder-result">
+            <span class="micro-label">COMPOSED PIPELINE</span>
+            <div class="composed-pipeline" id="composed-pipeline"></div>
+            <p id="integration-summary"></p>
+          </div>
+        </div>
+
+        <div class="architecture-map" aria-label="通用故事媒体引擎架构">
+          <div class="architecture-column source"><span>INPUT ADAPTERS</span><b>故事 · 歌词 · 图片 · PDF · Transcript</b></div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-column"><span>NARRATIVE PLANNER</span><b>beats · cast bible · shot list · audio map</b></div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-column accent"><span>STORYBOARD V2</span><b>上游核心契约 + tracks + provenance</b></div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-column"><span>ASSET & QC</span><b>generator adapters · cache · review · retry</b></div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-column output"><span>RENDER RECIPES</span><b>手绘 · MV · 白板 · 翻页 · 多比例输出</b></div>
+        </div>
+
+        <div class="extension-grid">
+          <article><span>P0</span><h3>可靠性先行</h3><p>跨平台 CLI、schema、干净克隆测试、依赖安全和视觉回归。</p></article>
+          <article><span>P1</span><h3>创作者闭环</h3><p>分镜时间轴、单场重生成、人工批准、TTS/SRT 与多比例。</p></article>
+          <article><span>P1</span><h3>一致性 QC</h3><p>人物、文字、裁边、风格和安全评分，失败场景自动重试。</p></article>
+          <article><span>P2</span><h3>平台化</h3><p>供应商适配器、style pack、队列、对象存储、云渲染和成本观测。</p></article>
+        </div>
+      </section>
+
+      <section class="lab-section" id="scenarios" aria-labelledby="scenario-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">04 · USE SCENARIOS</p><h2 id="scenario-title">什么内容值得用它，什么内容应该换工具</h2></div>
+          <p>最适合的是有明确学习目标、可核验材料和可视觉化关系的内容；生成只是手段，理解、可信与迁移才是结果。</p>
+        </div>
+        <div class="scenario-table" role="table" aria-label="使用场景决策矩阵">
+          <div class="scenario-row header" role="row"><span>场景</span><span>匹配度</span><span>推荐能力</span><span>还需补充</span></div>
+          <div class="scenario-row" role="row"><b>学校微课与通识教育</b><span class="fit high">很高</span><span>学习目标 · 误解修正 · 五幕讲解</span><span>教师审阅与年级适配</span></div>
+          <div class="scenario-row" role="row"><b>科学机构与知识创作者</b><span class="fit high">很高</span><span>机制图解 · 证据卡 · 白板处方</span><span>原始来源与术语校验</span></div>
+          <div class="scenario-row" role="row"><b>博物馆、古诗词与文化传播</b><span class="fit high">很高</span><span>原文常驻 · 空间关系 · 诗卷/水墨</span><span>艺术化还原边界</span></div>
+          <div class="scenario-row" role="row"><b>公共服务与公益科普</b><span class="fit high">很高</span><span>生活入口 · 系统依赖 · 行动建议</span><span>地区差异与专业终审</span></div>
+          <div class="scenario-row" role="row"><b>职业培训与企业知识</b><span class="fit high">很高</span><span>流程、风险、反例与理解检测</span><span>SOP 版本与责任人</span></div>
+          <div class="scenario-row" role="row"><b>技术品牌与产品原理</b><span class="fit medium">中高</span><span>真实选择 · 工艺证据 · 使用边界</span><span>避免把广告主张当事实</span></div>
+          <div class="scenario-row" role="row"><b>纯情绪 MV 与流量广告</b><span class="fit medium">中</span><span>可复用视觉与合成引擎</span><span>不属于知识教育主闭环</span></div>
+          <div class="scenario-row" role="row"><b>连续人物表演、打斗、舞蹈</b><span class="fit low">低</span><span>仅能做概念分镜</span><span>改用视频生成或角色动画</span></div>
+          <div class="scenario-row" role="row"><b>高风险事实与无人值守发布</b><span class="fit low">低</span><span>只能辅助可视化</span><span>事实核验、合规与人工终审</span></div>
+        </div>
+        <div class="decision-rule"><span>一句话选型</span><p><b>有学习目标、有材料依据、关系可以被画出来：</b>适合。<b>依赖实时操作、连续表演或未经审阅的高风险判断：</b>换工具或增加专业工作流。</p></div>
+        <div class="education-expansion" aria-label="产品可扩展方向">
+          <article><span>01 · PEDAGOGY</span><h3>教学层</h3><p>前置知识、分龄难度、常见误解、课堂任务与观看前后测。</p></article>
+          <article><span>02 · TRUST</span><h3>可信层</h3><p>来源引用、版本日期、事实等级、专家审阅与高风险主题审批。</p></article>
+          <article><span>03 · PRODUCTION</span><h3>生产层</h3><p>单幕重生成、角色锁、TTS 供应商、成本、重试、横竖屏和多语言。</p></article>
+          <article><span>04 · EVALUATION</span><h3>评估层</h3><p>理解率、误解减少、知识迁移、教师反馈与版本对比，而非只看播放量。</p></article>
+        </div>
+      </section>
+
+      <section class="lab-section evidence-section">
+        <div><p class="eyebrow">PRODUCT & RESEARCH EVIDENCE</p><h2>规划器、生成模型与真实媒体，明确分层。</h2><p>知识工作台使用可解释的本地规划规则；真实执行证据来自固定上游、Codex 生图、MiniMax TTS、字幕与十二条 H.264/AAC 视频。任意新主题的正式媒体生成仍需进入安全的后端生产任务。</p></div>
+        <div class="evidence-stats"><span><b>4</b> 完整知识预设</span><span><b>8</b> 叙事处方</span><span><b>12</b> 真实 MP4</span><span><b>5</b> 浏览器表面</span></div>
+        <div class="study-actions"><a class="button primary" href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/story-to-handdrawn-video/README.md">完整报告</a><a class="button secondary" href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/story-to-handdrawn-video/EVIDENCE.md">验证证据</a><a class="button secondary" href="https://github.com/yydshly/0822_githubcode_study/tree/main/projects/story-to-handdrawn-video/upstream">固定上游</a></div>
+      </section>
+    </main>
+
+      <footer><p>知识工作台与叙事导演使用可检查的本地规则；整合扩展区包含真实 Codex 生图、MiniMax 中文 TTS、字幕与 H.264/AAC 成片。新主题的真实生成需要后端任务与人工审阅；第三方代码与风格配方遵循各自许可证。</p></footer>
+
+    <svg class="symbol-library" aria-hidden="true">
+      <defs><filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" seed="5" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter></defs>
+      <symbol id="scene-rain" viewBox="0 0 800 720"><g class="scene-art" filter="url(#wobble)"><path class="ground" d="M70 594C210 579 322 606 478 585c117-16 194-2 257-11"/><path class="cloud-fill" d="M143 204c-4-51 54-75 94-46 23-56 115-45 121 21 63-9 85 67 39 94H176c-56-2-71-52-33-69Z"/><path class="rain" d="m171 314-18 44m85-54-16 46m93-47-19 52m91-46-15 43"/><path class="puddle-fill" d="M154 539c78-34 208-20 254 13-65 32-197 37-254-13Z"/><circle class="sun-fill" cx="586" cy="184" r="68"/><path class="sun-rays" d="M586 84V42m0 284v-48m100-94h46m-292 0h48m169-71 32-31M482 289l35-34m140 34 32 30M482 83l34 33"/><path class="plant-stem" d="M627 542c-17-74 0-132 44-176m-41 103c-34-4-57-24-66-52m70 8c28-8 51-28 62-55"/><path class="leaf-fill" d="M565 418c6-35 37-47 64-36-7 32-32 48-64 36Zm72 6c8-35 37-52 66-47-6 34-33 53-66 47Z"/></g></symbol>
+      <symbol id="scene-window" viewBox="0 0 800 720"><g class="scene-art" filter="url(#wobble)"><rect class="window-fill" x="329" y="109" width="353" height="375" rx="4"/><path class="window-line" d="M329 109h353v375H329zm176 2v371M331 295h349"/><path class="curtain-fill" d="M303 88c-48 77-54 291-19 430 51-41 67-125 62-218 0-93-5-163-43-212Zm405 0c42 92 47 295 9 430-48-51-59-134-50-226 6-86 14-155 41-204Z"/><circle class="head-fill" cx="241" cy="344" r="92"/><path class="hair-fill" d="M152 334c8-81 46-122 100-118 59 5 83 50 80 116-21-44-57-72-92-67-28 3-57 29-88 69Z"/><path class="face" d="m201 346 5 2m58-2 5-1m-59 51c21 14 43 14 63-2"/><path class="shirt-fill" d="M157 427c37-27 126-28 164 1l37 165H119l38-166Z"/><path class="arm" d="M315 456c43-37 72-62 107-87m-6 2-4-28m4 28 28-7"/></g></symbol>
+      <symbol id="scene-rainbow" viewBox="0 0 800 720"><g class="scene-art" filter="url(#wobble)"><path class="rainbow red" d="M105 505c38-344 520-362 594 0"/><path class="rainbow yellow" d="M155 505c36-278 436-287 494 0"/><path class="rainbow blue" d="M207 505c36-208 341-215 391 0"/><path class="hill-fill" d="M47 561c112-103 239-95 329 8 119-117 267-91 375 0v99H47Z"/><path class="hill-line" d="M48 562c111-103 236-94 328 7 121-115 268-90 375 1"/><path class="figure-head" d="M330 455c0-38 29-67 66-67 38 0 68 29 68 67 0 38-30 68-68 68-37 0-66-30-66-68Z"/><path class="figure-hair" d="M331 451c6-53 33-77 70-73 38 3 61 33 63 73-28-29-88-35-133 0Z"/><path class="figure-body" d="M326 514c41-27 99-26 139 0l32 135H293l33-135Z"/><path class="arms" d="m328 543-74 44m208-44 73 44"/></g></symbol>
+    </svg>
+    <script src="./demo.js?revision=21-effect-contract"></script>
+  </body>
+</html>

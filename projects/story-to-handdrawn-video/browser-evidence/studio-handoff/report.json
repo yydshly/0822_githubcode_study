@@ -1,0 +1,193 @@
+{
+  "passed": true,
+  "checkedAt": "2026-08-23T11:05:59.875Z",
+  "studioOrigin": "http://127.0.0.1:8791",
+  "errors": [],
+  "results": {
+    "httpReceived": {
+      "brief": {
+        "topic": "为什么冰箱背面会发热？",
+        "audience": "职业学习者",
+        "duration": "60",
+        "objective": "看完后，观众能够说明冰箱不是制造冷量，而是借助制冷循环把箱内热量搬运到室内。",
+        "misconception": "冰箱只会制造冷气，因此背面不应该发热。",
+        "entry": "手摸冰箱背面时，为什么常常比房间更热？",
+        "evidence": "制冷剂在蒸发器吸收箱内热量，压缩机做功后，制冷剂在冷凝器向室内释放吸收的热量以及压缩机输入的能量。"
+      },
+      "productionContract": {
+        "schema": "knowledge-video-production-contract/v1",
+        "id": "pc-knowledge-mt5pbehm",
+        "source": "research-page",
+        "story": {
+          "recipe": "knowledge",
+          "label": "知识解释 · 记忆不是录像带",
+          "structure": "five-act-learning-arc",
+          "rhythm": "误区—模型—机制边界—实验证据—行动迁移"
+        },
+        "visual": {
+          "style_id": "whiteboard-explainer",
+          "style_label": "白板讲解动画",
+          "palette": [
+            "#1e2933",
+            "#2d6cdf",
+            "#f3f4ed"
+          ],
+          "palette_label": "白板黑线 + 单一概念蓝",
+          "camera": "正视结构，局部缩放只服务概念层级",
+          "continuity": "五幕复用同一主体、空间规则、色盘、画材和线条语言；只改变教学所需关系。",
+          "prompt_prefix": "知识解释 · 记忆不是录像带；白板黑线 + 单一概念蓝；正视结构，局部缩放只服务概念层级；统一画材与主体连续性；画面内不得出现文字、水印、标志或伪文字。"
+        },
+        "presentation": {
+          "recipe": "handdrawn",
+          "label": "手绘显色",
+          "transition": "组件保留，新增关系逐步写入",
+          "subtitles": "narration-safe-area"
+        },
+        "routing": {
+          "quality_tier": "automatic",
+          "story_provider": "MiniMax text",
+          "image_provider": "MiniMax Image",
+          "tts_provider": "MiniMax Speech",
+          "renderer": "story-to-handdrawn-video + FFmpeg",
+          "curated_upgrade": "Codex agent-assisted final visual"
+        },
+        "quality": {
+          "consistency_policy": "single-visual-bible",
+          "review_gates": [
+            "story",
+            "visual-continuity",
+            "pseudo-text",
+            "facts",
+            "playback"
+          ]
+        }
+      }
+    },
+    "planRequest": {
+      "project": {
+        "topic": "为什么冰箱背面会发热？",
+        "audience": "职业学习者",
+        "duration": "60",
+        "objective": "看完后，观众能够说明冰箱不是制造冷量，而是借助制冷循环把箱内热量搬运到室内。",
+        "misconception": "冰箱只会制造冷气，因此背面不应该发热。",
+        "entry": "手摸冰箱背面时，为什么常常比房间更热？",
+        "evidence": "制冷剂在蒸发器吸收箱内热量，压缩机做功后，制冷剂在冷凝器向室内释放吸收的热量以及压缩机输入的能量。"
+      },
+      "production_contract": {
+        "schema": "knowledge-video-production-contract/v1",
+        "id": "pc-knowledge-mt5pbehm",
+        "source": "research-page",
+        "story": {
+          "recipe": "knowledge",
+          "label": "知识解释 · 记忆不是录像带",
+          "structure": "five-act-learning-arc",
+          "rhythm": "误区—模型—机制边界—实验证据—行动迁移"
+        },
+        "visual": {
+          "style_id": "whiteboard-explainer",
+          "style_label": "白板讲解动画",
+          "palette": [
+            "#1e2933",
+            "#2d6cdf",
+            "#f3f4ed"
+          ],
+          "palette_label": "白板黑线 + 单一概念蓝",
+          "camera": "正视结构，局部缩放只服务概念层级",
+          "continuity": "五幕复用同一主体、空间规则、色盘、画材和线条语言；只改变教学所需关系。",
+          "prompt_prefix": "知识解释 · 记忆不是录像带；白板黑线 + 单一概念蓝；正视结构，局部缩放只服务概念层级；统一画材与主体连续性；画面内不得出现文字、水印、标志或伪文字。"
+        },
+        "presentation": {
+          "recipe": "handdrawn",
+          "label": "手绘显色",
+          "transition": "组件保留，新增关系逐步写入",
+          "subtitles": "narration-safe-area"
+        },
+        "routing": {
+          "quality_tier": "automatic",
+          "story_provider": "MiniMax text",
+          "image_provider": "MiniMax Image",
+          "tts_provider": "MiniMax Speech",
+          "renderer": "story-to-handdrawn-video + FFmpeg",
+          "curated_upgrade": "Codex agent-assisted final visual"
+        },
+        "quality": {
+          "consistency_policy": "single-visual-bible",
+          "review_gates": [
+            "story",
+            "visual-continuity",
+            "pseudo-text",
+            "facts",
+            "playback"
+          ]
+        }
+      }
+    },
+    "fileReceived": {
+      "brief": {
+        "topic": "为什么保温杯不能永久保温？",
+        "audience": "职业学习者",
+        "duration": "60",
+        "objective": "看完后，观众能够说明冰箱不是制造冷量，而是借助制冷循环把箱内热量搬运到室内。",
+        "misconception": "冰箱只会制造冷气，因此背面不应该发热。",
+        "entry": "同一杯热水放一夜后，热量去了哪里？",
+        "evidence": "制冷剂在蒸发器吸收箱内热量，压缩机做功后，制冷剂在冷凝器向室内释放吸收的热量以及压缩机输入的能量。"
+      },
+      "productionContract": {
+        "schema": "knowledge-video-production-contract/v1",
+        "id": "pc-knowledge-mt5pbh0f",
+        "source": "research-page",
+        "story": {
+          "recipe": "knowledge",
+          "label": "知识解释 · 记忆不是录像带",
+          "structure": "five-act-learning-arc",
+          "rhythm": "误区—模型—机制边界—实验证据—行动迁移"
+        },
+        "visual": {
+          "style_id": "whiteboard-explainer",
+          "style_label": "白板讲解动画",
+          "palette": [
+            "#1e2933",
+            "#2d6cdf",
+            "#f3f4ed"
+          ],
+          "palette_label": "白板黑线 + 单一概念蓝",
+          "camera": "正视结构，局部缩放只服务概念层级",
+          "continuity": "五幕复用同一主体、空间规则、色盘、画材和线条语言；只改变教学所需关系。",
+          "prompt_prefix": "知识解释 · 记忆不是录像带；白板黑线 + 单一概念蓝；正视结构，局部缩放只服务概念层级；统一画材与主体连续性；画面内不得出现文字、水印、标志或伪文字。"
+        },
+        "presentation": {
+          "recipe": "handdrawn",
+          "label": "手绘显色",
+          "transition": "组件保留，新增关系逐步写入",
+          "subtitles": "narration-safe-area"
+        },
+        "routing": {
+          "quality_tier": "automatic",
+          "story_provider": "MiniMax text",
+          "image_provider": "MiniMax Image",
+          "tts_provider": "MiniMax Speech",
+          "renderer": "story-to-handdrawn-video + FFmpeg",
+          "curated_upgrade": "Codex agent-assisted final visual"
+        },
+        "quality": {
+          "consistency_policy": "single-visual-bible",
+          "review_gates": [
+            "story",
+            "visual-continuity",
+            "pseudo-text",
+            "facts",
+            "playback"
+          ]
+        }
+      }
+    },
+    "mobile": {
+      "overflow": 0,
+      "focusAfterEdit": "topic"
+    },
+    "unavailable": {
+      "stayedOnResearchPage": true,
+      "message": "没有发现 8791 或 8789 本地生产服务。请先启动 studio-server，再重试；当前简报仍保留在本页。"
+    }
+  }
+}

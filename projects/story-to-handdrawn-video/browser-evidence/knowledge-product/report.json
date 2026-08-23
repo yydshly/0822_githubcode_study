@@ -1,0 +1,631 @@
+{
+  "passed": true,
+  "checkedAt": "2026-08-23T09:45:17.323Z",
+  "errors": [],
+  "results": [
+    {
+      "label": "desktop-http",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "hero": "把复杂知识，讲成真正能懂的视频。",
+        "topic": "为什么天空是蓝色的？",
+        "planTitle": "为什么天空是蓝色的？",
+        "recipe": "knowledge",
+        "beats": 5,
+        "questions": 3,
+        "boundaries": 4,
+        "recipes": 8,
+        "videos": [
+          {
+            "id": "ai-energy-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "sky-blue-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "culture": {
+        "topic": "一首古诗如何构建空间？——《枫桥夜泊》",
+        "recipe": "classical",
+        "beats": 5
+      },
+      "routed": {
+        "selected": "technology",
+        "outputHidden": false,
+        "focused": "technology-real-output",
+        "powerState": "powered",
+        "overflow": 0
+      }
+    },
+    {
+      "label": "tablet-http",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "hero": "把复杂知识，讲成真正能懂的视频。",
+        "topic": "为什么天空是蓝色的？",
+        "planTitle": "为什么天空是蓝色的？",
+        "recipe": "knowledge",
+        "beats": 5,
+        "questions": 3,
+        "boundaries": 4,
+        "recipes": 8,
+        "videos": [
+          {
+            "id": "ai-energy-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "sky-blue-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "culture": {
+        "topic": "一首古诗如何构建空间？——《枫桥夜泊》",
+        "recipe": "classical",
+        "beats": 5
+      },
+      "routed": {
+        "selected": "technology",
+        "outputHidden": false,
+        "focused": "technology-real-output",
+        "powerState": "powered",
+        "overflow": 0
+      }
+    },
+    {
+      "label": "mobile-http",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "hero": "把复杂知识，讲成真正能懂的视频。",
+        "topic": "为什么天空是蓝色的？",
+        "planTitle": "为什么天空是蓝色的？",
+        "recipe": "knowledge",
+        "beats": 5,
+        "questions": 3,
+        "boundaries": 4,
+        "recipes": 8,
+        "videos": [
+          {
+            "id": "ai-energy-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "sky-blue-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "culture": {
+        "topic": "一首古诗如何构建空间？——《枫桥夜泊》",
+        "recipe": "classical",
+        "beats": 5
+      },
+      "routed": {
+        "selected": "technology",
+        "outputHidden": false,
+        "focused": "technology-real-output",
+        "powerState": "powered",
+        "overflow": 0
+      }
+    },
+    {
+      "label": "desktop-file",
+      "url": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "hero": "把复杂知识，讲成真正能懂的视频。",
+        "topic": "为什么天空是蓝色的？",
+        "planTitle": "为什么天空是蓝色的？",
+        "recipe": "knowledge",
+        "beats": 5,
+        "questions": 3,
+        "boundaries": 4,
+        "recipes": 8,
+        "videos": [
+          {
+            "id": "ai-energy-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "sky-blue-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [],
+        "overflow": 0
+      },
+      "culture": {
+        "topic": "一首古诗如何构建空间？——《枫桥夜泊》",
+        "recipe": "classical",
+        "beats": 5
+      },
+      "routed": {
+        "selected": "technology",
+        "outputHidden": false,
+        "focused": "technology-real-output",
+        "powerState": "powered",
+        "overflow": 0
+      }
+    },
+    {
+      "label": "mobile-reduced",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "initial": {
+        "hero": "把复杂知识，讲成真正能懂的视频。",
+        "topic": "为什么天空是蓝色的？",
+        "planTitle": "为什么天空是蓝色的？",
+        "recipe": "knowledge",
+        "beats": 5,
+        "questions": 3,
+        "boundaries": 4,
+        "recipes": 8,
+        "videos": [
+          {
+            "id": "ai-energy-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "sky-blue-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "real-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "knowledge-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "children-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "mystery-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "brand-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "poetic-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "lecture-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "jiangnan-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "classical-demo-video",
+            "preload": "metadata"
+          },
+          {
+            "id": "technology-demo-video",
+            "preload": "metadata"
+          }
+        ],
+        "mp4Entries": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          },
+          {
+            "transferSize": 300,
+            "encodedBodySize": 0
+          }
+        ],
+        "overflow": 0
+      },
+      "culture": {
+        "topic": "一首古诗如何构建空间？——《枫桥夜泊》",
+        "recipe": "classical",
+        "beats": 5
+      },
+      "routed": {
+        "selected": "technology",
+        "outputHidden": false,
+        "focused": "technology-real-output",
+        "powerState": "powered",
+        "overflow": 0
+      }
+    },
+    {
+      "label": "mobile-no-script",
+      "url": "http://127.0.0.1:8789/demos/story-to-handdrawn-video/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fallback": {
+        "productText": "无脚本说明：知识视频应先明确受众、学习目标、常见误解和事实依据，再组织为“问题进入—建立概念—解释机制—迁移应用—回收验证”五幕。页面仍提供十二条真实 MP4 入口。",
+        "mediaLinks": 10,
+        "overflow": 0
+      }
+    }
+  ]
+}

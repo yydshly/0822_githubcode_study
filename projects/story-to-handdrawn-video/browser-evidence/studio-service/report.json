@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-08-23T11:00:22.117Z",
+  "studioUrl": "http://127.0.0.1:8794/demos/story-to-handdrawn-video/studio.html",
+  "service": {
+    "ok": true,
+    "name": "本地生成服务 · MOCK",
+    "mode": "mock",
+    "apiKeyConfigured": true,
+    "models": {
+      "text": "MiniMax-M3",
+      "image": "image-01",
+      "speech": "speech-2.8-hd"
+    },
+    "productionContract": {
+      "schema": "knowledge-video-production-contract/v1",
+      "renderRecipes": [
+        "standard",
+        "handdrawn",
+        "poetic"
+      ],
+      "qualityRoutes": {
+        "automatic": "executable",
+        "curated": "agent-assisted"
+      }
+    },
+    "security": {
+      "bind": "127.0.0.1:8794",
+      "keyExposedToBrowser": false,
+      "fileOriginAllowed": false
+    }
+  },
+  "projectId": "kv-20260823105954-bbnhze",
+  "journey": {
+    "acts": 5,
+    "generatedImages": 5,
+    "audioSource": "/generated-studio/kv-20260823105954-bbnhze/narration.wav",
+    "outputHref": "/generated-studio/kv-20260823105954-bbnhze/final.mp4",
+    "jobStatus": "测试链路完成 · 未调用 MiniMax",
+    "productionContractId": "pc-knowledge-poetic-mt5p3ri8-ht0er",
+    "renderRecipe": "poetic"
+  },
+  "media": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "codec_name": "aac"
+      }
+    ],
+    "format": {
+      "duration": "106.233333",
+      "size": "6496908"
+    }
+  },
+  "errors": []
+}

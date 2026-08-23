@@ -1,0 +1,6 @@
+# Local credentials and generated MiniMax intermediates
+.env
+.env.*
+!.env.example
+generated-audio/
+generated-studio/

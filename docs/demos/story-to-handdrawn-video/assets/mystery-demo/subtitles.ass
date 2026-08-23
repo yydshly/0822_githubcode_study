@@ -1,0 +1,38 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 960
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Microsoft YaHei,32,&H00F3E5C8,&H000000FF,&HCC171717,&H99000000,0,0,0,0,100,100,0,0,1,2.2,0.8,2,54,54,42,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.00,Default,,0,0,0,,洪水过去二十四年，青岬站的旧候车室\N仍被一条封条隔在档案之外。
+Dialogue: 0,0:00:05.00,0:00:09.50,Default,,0,0,0,,清点那天，调查员沈砚\N却看见墙上的机械钟正在走。
+Dialogue: 0,0:00:09.50,0:00:14.20,Default,,0,0,0,,分针越过三点十七分，\N而门上的蜡印没有断。
+Dialogue: 0,0:00:14.20,0:00:19.50,Default,,0,0,0,,旧报告写得很确定：三点十七分，\N最后一批旅客撤离；随后封门，再无人进入。
+Dialogue: 0,0:00:19.50,0:00:25.34,Default,,0,0,0,,可一只需要每周上弦的钟，\N不会自己替报告守夜。
+Dialogue: 0,0:00:25.79,0:00:29.00,Default,,0,0,0,,封条是真的，异常也是真的。
+Dialogue: 0,0:00:29.00,0:00:34.20,Default,,0,0,0,,沈砚没有先找鬼故事，\N而是沿墙根寻找另一条路径。
+Dialogue: 0,0:00:34.20,0:00:39.00,Default,,0,0,0,,褪色的线路图后藏着维修通道，\N地上有新鞋印，门轴边还有铁钥匙。
+Dialogue: 0,0:00:39.00,0:00:44.00,Default,,0,0,0,,钥匙编号对应末任站长周守义，\N可周守义已经去世八年。
+Dialogue: 0,0:00:44.00,0:00:49.37,Default,,0,0,0,,最容易相信的答案，\N忽然变成最不可能的人。
+Dialogue: 0,0:00:49.82,0:00:55.00,Default,,0,0,0,,修复后的旧监控只留下九秒：\N一个穿长站务大衣的人影穿过暗道。
+Dialogue: 0,0:00:55.00,0:01:00.30,Default,,0,0,0,,他在钟下停留，然后消失。\N肩线、步幅、钥匙，全都像周守义。
+Dialogue: 0,0:01:00.30,0:01:05.80,Default,,0,0,0,,镇上的传言因此复活，\N说站长还在弥补那场洪水。
+Dialogue: 0,0:01:05.80,0:01:10.40,Default,,0,0,0,,沈砚却把画面停在袖口。\N人影继承了大衣，也继承了动作。
+Dialogue: 0,0:01:10.40,0:01:15.65,Default,,0,0,0,,影像能证明有人来过，\N不能证明来者是谁。
+Dialogue: 0,0:01:16.10,0:01:20.70,Default,,0,0,0,,第二天，周守义的女儿周岚\N穿着那件旧大衣出现。
+Dialogue: 0,0:01:20.70,0:01:25.70,Default,,0,0,0,,二十四年来，她一直从暗道进去\N给钟上弦。
+Dialogue: 0,0:01:25.70,0:01:32.00,Default,,0,0,0,,她交出的录音带里，官方撤离时间之后，\N仍有一个孩子在空候车室里唱歌。
+Dialogue: 0,0:01:32.00,0:01:38.20,Default,,0,0,0,,那是一个没有登记姓名、\N被周守义次日清晨带出洪水的孩子。
+Dialogue: 0,0:01:38.20,0:01:45.54,Default,,0,0,0,,报告删去了迟到的救援，父亲便让钟走过三点十七分：\N表格结束的地方，生命没有结束。
+Dialogue: 0,0:01:45.99,0:01:51.80,Default,,0,0,0,,沈砚没有把越过封存线\N写成浪漫的孝心。
+Dialogue: 0,0:01:51.80,0:01:57.20,Default,,0,0,0,,她也没有用一盘磁带\N悄悄改掉原报告。
+Dialogue: 0,0:01:57.20,0:02:04.50,Default,,0,0,0,,她分别登记暗道进入、录音来源、周岚的证词与维护记录，\N让彼此独立的证据接受核验。
+Dialogue: 0,0:02:04.50,0:02:09.60,Default,,0,0,0,,旧报告保留原貌，并附上缺失者的新档案。\N候车室第一次公开开门。
+Dialogue: 0,0:02:09.60,0:02:15.26,Default,,0,0,0,,大衣挂在明处，钟也不再秘密上弦。\N真相让被遗漏的人，拥有可以被追问的位置。

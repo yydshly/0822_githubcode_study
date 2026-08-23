@@ -1,0 +1,29 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Microsoft YaHei,27,&H00F7F0D8,&H00FFFFFF,&H99243F4A,&HB3000000,0,0,0,0,100,100,1,0,1,1.5,0,2,120,120,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.14,0:00:04.96,Narration,,0,0,0,,唐，白居易，《忆江南·江南好》。
+Dialogue: 0,0:00:05.00,0:00:06.17,Narration,,0,0,0,,江南好。
+Dialogue: 0,0:00:06.21,0:00:11.33,Narration,,0,0,0,,开篇只有三个字，却不是空泛的赞美。
+Dialogue: 0,0:00:11.37,0:00:25.73,Narration,,0,0,0,,画面先给出春晨的水乡：天光明亮，水色清透，\N屋舍与拱桥沿河展开，让“好”先成为可以进入的空间。
+Dialogue: 0,0:00:26.67,0:00:28.18,Narration,,0,0,0,,风景旧曾谙。
+Dialogue: 0,0:00:28.22,0:00:32.85,Narration,,0,0,0,,“谙”不是第一次看见，而是曾经熟悉。
+Dialogue: 0,0:00:32.89,0:00:47.02,Narration,,0,0,0,,镜头跟随一叶小舟进入水巷，\N不把舟中人画成白居易的历史肖像，\N只借一个回望者的视角，说明眼前风景为何带着记忆。
+Dialogue: 0,0:00:47.96,0:00:48.89,Narration,,0,0,0,,日出。
+Dialogue: 0,0:00:48.93,0:00:59.18,Narration,,0,0,0,,太阳从远山和白墙黛瓦之后升起，朱红色不是装饰，\N而是下一句的光源。
+Dialogue: 0,0:00:59.22,0:01:10.23,Narration,,0,0,0,,金色反光沿春水靠近小舟，\N江南由安静的轮廓转为有温度、有方向的清晨。
+Dialogue: 0,0:01:11.17,0:01:15.09,Narration,,0,0,0,,江花红胜火，春来江水绿如蓝。
+Dialogue: 0,0:01:15.13,0:01:32.48,Narration,,0,0,0,,这是全词最鲜明的颜色对照：花红不是孤立色块，\N它被日光点燃；水绿也不是一片平涂，\N其中仍有天光的蓝、岸影的深绿和流动的亮面。
+Dialogue: 0,0:01:33.42,0:01:35.00,Narration,,0,0,0,,能不忆江南？
+Dialogue: 0,0:01:35.04,0:01:37.96,Narration,,0,0,0,,结尾不是要求一个答案。
+Dialogue: 0,0:01:38.00,0:01:49.00,Narration,,0,0,0,,小舟渐远，红花、绿水和晨光仍留在视野里；\N正因为风景曾被身体和时间记住，反问才成立。
+Dialogue: 0,0:01:49.04,0:01:55.62,Narration,,0,0,0,,鲜明的颜色最终不是喧闹，而是记忆留下的清晰度。

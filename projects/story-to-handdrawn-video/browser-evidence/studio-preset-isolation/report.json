@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-08-23T11:04:37.962Z",
+  "httpUrl": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+  "fileUrl": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/studio.html",
+  "results": [
+    {
+      "label": "sky-http",
+      "preset": "sky",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+      "images": [
+        "./assets/sky-blue-demo/scene-01-thumb.webp",
+        "./assets/sky-blue-demo/scene-02-thumb.webp",
+        "./assets/sky-blue-demo/scene-03-thumb.webp",
+        "./assets/sky-blue-demo/scene-04-thumb.webp",
+        "./assets/sky-blue-demo/scene-05-thumb.webp"
+      ],
+      "audio": "./assets/sky-blue-demo/narration.wav",
+      "topic": "为什么天空是蓝色的？",
+      "video": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4",
+      "download": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4",
+      "manifest": "./assets/sky-blue-demo/media-manifest.json",
+      "firstTitle": "海洋没有把天空染蓝",
+      "activePreset": "sky",
+      "estimatedVoice": "401 字",
+      "overflow": 0,
+      "restoredVideo": "./assets/sky-blue-demo/why-is-the-sky-blue.mp4"
+    },
+    {
+      "label": "electricity-http",
+      "preset": "electricity",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+      "images": [
+        "./assets/power-outage-demo/scene-01-thumb.webp",
+        "./assets/power-outage-demo/scene-02-thumb.webp",
+        "./assets/power-outage-demo/scene-03-thumb.webp",
+        "./assets/power-outage-demo/scene-04-thumb.webp",
+        "./assets/power-outage-demo/scene-05-thumb.webp"
+      ],
+      "audio": "./assets/power-outage-demo/narration.wav",
+      "topic": "电如何成为现代生活的基础设施？",
+      "video": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4",
+      "download": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4",
+      "manifest": "./assets/power-outage-demo/media-manifest.json",
+      "firstTitle": "电的缺席先被身体感知",
+      "activePreset": "electricity",
+      "estimatedVoice": "494 字",
+      "overflow": 0,
+      "restoredVideo": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4"
+    },
+    {
+      "label": "poetry-http",
+      "preset": "poetry",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+      "images": [
+        "./assets/jiangnan-bright-demo/scene-01-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-02-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-03-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-04-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-05-thumb.webp"
+      ],
+      "audio": "./assets/jiangnan-bright-demo/narration.wav",
+      "topic": "《忆江南》如何用色彩和空间构建记忆？",
+      "video": "./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4",
+      "download": "./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4",
+      "manifest": "./assets/jiangnan-bright-demo/media-manifest.json",
+      "firstTitle": "“江南好”先建立可进入的空间",
+      "activePreset": "poetry",
+      "estimatedVoice": "383 字",
+      "overflow": 0,
+      "restoredVideo": "./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4"
+    },
+    {
+      "label": "ai-energy-http",
+      "preset": "aiEnergy",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+      "images": [
+        "./assets/ai-energy-demo/scene-01.png",
+        "./assets/ai-energy-demo/scene-02.png",
+        "./assets/ai-energy-demo/scene-03.png",
+        "./assets/ai-energy-demo/scene-04.png",
+        "./assets/ai-energy-demo/scene-05.png"
+      ],
+      "audio": "./assets/ai-energy-demo/narration.wav",
+      "topic": "为什么 AI 那么耗电？",
+      "video": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4",
+      "download": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4",
+      "manifest": "./assets/ai-energy-demo/project.json",
+      "firstTitle": "一句提示词的旅程",
+      "activePreset": "aiEnergy",
+      "estimatedVoice": "609 字",
+      "overflow": 0,
+      "restoredVideo": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4"
+    },
+    {
+      "label": "electricity-file",
+      "preset": "electricity",
+      "url": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/studio.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "images": [
+        "./assets/power-outage-demo/scene-01-thumb.webp",
+        "./assets/power-outage-demo/scene-02-thumb.webp",
+        "./assets/power-outage-demo/scene-03-thumb.webp",
+        "./assets/power-outage-demo/scene-04-thumb.webp",
+        "./assets/power-outage-demo/scene-05-thumb.webp"
+      ],
+      "audio": "./assets/power-outage-demo/narration.wav",
+      "topic": "电如何成为现代生活的基础设施？",
+      "video": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4",
+      "download": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4",
+      "manifest": "./assets/power-outage-demo/media-manifest.json",
+      "firstTitle": "电的缺席先被身体感知",
+      "activePreset": "electricity",
+      "estimatedVoice": "494 字",
+      "overflow": 0,
+      "restoredVideo": "./assets/power-outage-demo/after-the-power-went-out-i-saw-electricity.mp4"
+    },
+    {
+      "label": "rapid-switch-mobile",
+      "topic": "《忆江南》如何用色彩和空间构建记忆？",
+      "images": [
+        "./assets/jiangnan-bright-demo/scene-01-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-02-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-03-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-04-thumb.webp",
+        "./assets/jiangnan-bright-demo/scene-05-thumb.webp"
+      ],
+      "audio": "./assets/jiangnan-bright-demo/narration.wav",
+      "video": "./assets/jiangnan-bright-demo/remembering-jiangnan-lecture.mp4",
+      "locked": "0 / 5 已锁定",
+      "overflow": 0
+    }
+  ],
+  "errors": []
+}

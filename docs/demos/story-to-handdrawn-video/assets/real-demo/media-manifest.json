@@ -1,0 +1,41 @@
+{
+  "title": "未发生的团聚",
+  "status": "real_generated_minimax_demo",
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 4,
+    "style": "emotional watercolor sketch",
+    "characterLock": "Gu Lan: silver streak, round glasses, olive cardigan, rust scarf",
+    "finalBeat": "scene 1 deterministic warm-color reprise"
+  },
+  "tts": {
+    "adapter": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voice": "female-chengshu",
+    "emotion": "calm",
+    "speed": 0.92,
+    "pitch": -1,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 438,
+    "credentialBoundary": "Token Plan key was read at runtime from an existing private .env and was not copied into this repository."
+  },
+  "timeline": [
+    { "beat": "原则", "start": 0, "voiceDuration": 9.42 },
+    { "beat": "谜题", "start": 9.82, "voiceDuration": 10.516 },
+    { "beat": "供认", "start": 20.736, "voiceDuration": 9.588 },
+    { "beat": "质问", "start": 30.724, "voiceDuration": 6.8 },
+    { "beat": "选择", "start": 37.924, "voiceDuration": 16.44 }
+  ],
+  "output": {
+    "file": "the-reunion-that-never-happened.mp4",
+    "duration": 54.333333,
+    "width": 720,
+    "height": 960,
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioChannels": 2
+  }
+}

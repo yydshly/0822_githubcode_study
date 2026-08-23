@@ -1,0 +1,33 @@
+[Script Info]
+Title: 她先学会听风
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 960
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Microsoft YaHei UI,31,&H00F7F2E8,&H000000FF,&H002C342E,&HCC202820,0,0,0,0,100,100,1,0,3,9,0,2,54,54,55,1
+Style: Title,Microsoft YaHei UI,46,&H00F9F4E9,&H000000FF,&H00384532,&H00000000,-1,0,0,0,100,100,3,0,1,2,1,8,42,42,90,1
+Style: Kicker,Microsoft YaHei UI,17,&H006FD9F2,&H000000FF,&H00384532,&H00000000,-1,0,0,0,100,100,3,0,1,1,1,8,42,42,57,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.60,Kicker,,0,0,0,,CODEX IMAGEGEN + MINIMAX TTS + STORYBOOK PAGE TURN
+Dialogue: 1,0:00:00.30,0:00:05.00,Title,,0,0,0,,她先学会听风
+Dialogue: 0,0:00:00.00,0:00:06.60,Default,,0,0,0,,春天的第一阵大风来到山坡时，\N小满想让纸鸢飞过旧水塔。
+Dialogue: 0,0:00:06.60,0:00:13.40,Default,,0,0,0,,纸鸢的翅膀一边大、一边小，\N尾巴也是用布头拼的。
+Dialogue: 0,0:00:13.40,0:00:19.85,Default,,0,0,0,,她喜欢这些不整齐的地方，\N因为每一道歪线都出自自己的手。
+Dialogue: 0,0:00:20.30,0:00:27.50,Default,,0,0,0,,她迎着风一直跑，以为跑得更快、\N把线拉得更紧，纸鸢就会听话。
+Dialogue: 0,0:00:27.50,0:00:34.70,Default,,0,0,0,,可是线团越拉越乱，纸鸢撞上杨树，\N翅膀裂开一道口子。
+Dialogue: 0,0:00:34.70,0:00:41.67,Default,,0,0,0,,小满第一次觉得，失败被别人看见时，\N人也会跟着变小。
+Dialogue: 0,0:00:42.12,0:00:48.50,Default,,0,0,0,,她没有立刻回家。\N坡下的芦苇被风压弯，又一根根站起来。
+Dialogue: 0,0:00:48.50,0:00:55.30,Default,,0,0,0,,几只麻雀贴着风转身，\N没有和它硬碰。
+Dialogue: 0,0:00:55.30,0:01:02.64,Default,,0,0,0,,小满发现尾巴太短，急风一来就失去平衡。\N原来风不是在故意为难她。
+Dialogue: 0,0:01:03.09,0:01:10.40,Default,,0,0,0,,小满拿出那条画画比赛的蓝色奖带。\N它曾证明她做成过一件事。
+Dialogue: 0,0:01:10.40,0:01:18.40,Default,,0,0,0,,现在，它也可以帮助她再试一次。\N她把奖带剪成长长的尾翼，补住裂口。
+Dialogue: 0,0:01:18.40,0:01:26.57,Default,,0,0,0,,修好的纸鸢并不崭新，\N却比原来更懂得风。
+Dialogue: 0,0:01:27.02,0:01:34.40,Default,,0,0,0,,下一阵风越过山坡时，\N小满先松线，再轻轻一收。
+Dialogue: 0,0:01:34.40,0:01:40.20,Default,,0,0,0,,纸鸢晃了两下，\N慢慢升到旧水塔上方。
+Dialogue: 0,0:01:40.20,0:01:47.27,Default,,0,0,0,,风并没有变温柔。\N是她学会了什么时候坚持，什么时候松手。

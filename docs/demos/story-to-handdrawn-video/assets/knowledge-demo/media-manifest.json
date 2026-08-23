@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "title": "记忆不是录像带",
+  "status": "real_generated_codex_minimax_demo",
+  "language": "zh-CN",
+  "storyEffectRecipe": {
+    "storyType": "knowledge-explanation",
+    "narrativeArc": ["misconception", "model", "mechanism", "evidence-boundary", "transfer"],
+    "visualStyle": "whiteboard-explainer",
+    "palette": ["charcoal-black", "concept-cobalt-blue", "warm-off-white-paper"],
+    "motion": "grayscale-to-color wipe, subtle pan, 0.4s scene wipe",
+    "alignmentRule": "Use one persistent visual grammar and reserve blue for the currently active concept."
+  },
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 5,
+    "sourceSize": "1086x1448",
+    "outputMode": "one distinct generation per scene; defect-only edits on scenes 4 and 5",
+    "commonPromptRecipe": "portrait 3:4 whiteboard editorial drawing, warm off-white paper, charcoal linework, cobalt-blue concept accent, generous subtitle-safe lower area, no logos or embedded prose"
+  },
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voiceId": "female-chengshu",
+    "emotion": "neutral",
+    "speed": 1.0,
+    "pitch": 0,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 690,
+    "credentialBoundary": "API key is read from a private environment file at process runtime and is not stored in this repository."
+  },
+  "timeline": [
+    { "scene": 1, "role": "misconception", "start": 0.0, "voiceDuration": 11.899, "image": "scene-01.png" },
+    { "scene": 2, "role": "model", "start": 12.299, "voiceDuration": 15.649, "image": "scene-02.png" },
+    { "scene": 3, "role": "mechanism-and-boundary", "start": 28.348, "voiceDuration": 15.735, "image": "scene-03.png" },
+    { "scene": 4, "role": "evidence-and-questioning", "start": 44.483, "voiceDuration": 16.34, "image": "scene-04.png" },
+    { "scene": 5, "role": "transfer-to-action", "start": 61.223, "voiceDuration": 16.111, "image": "scene-05.png" }
+  ],
+  "output": {
+    "file": "memory-is-not-a-recording.mp4",
+    "durationSeconds": 77.333333,
+    "sizeBytes": 5113465,
+    "video": "H.264 High, 720x960, 30fps, yuv420p",
+    "audio": "AAC LC stereo, 32000Hz, 128kbps target",
+    "measuredLoudness": "mean -19.3 dBFS, peak -2.0 dBFS",
+    "subtitles": "ASS subtitles burned into picture"
+  },
+  "research": {
+    "sourcesFile": "SOURCES.md",
+    "guardrail": "The video distinguishes evidence about reconstruction and suggestion from the stronger, unsupported claim that every retrieval changes memory or that all memory is unreliable."
+  }
+}

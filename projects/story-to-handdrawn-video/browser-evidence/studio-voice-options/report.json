@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-08-23T11:05:33.094Z",
+  "studioUrl": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+  "serviceLabel": "真实服务在线",
+  "optionIds": [
+    "female-chengshu",
+    "male-qn-jingying",
+    "female-tianmei"
+  ],
+  "migratedLegacyVoice": "male-qn-jingying",
+  "request": {
+    "project_id": null,
+    "options": {
+      "voice": "male-qn-jingying",
+      "speed": 1.05
+    }
+  },
+  "renderRequest": {
+    "project_id": null,
+    "options": {
+      "ratio": "9:16",
+      "recipe": "handdrawn",
+      "production_contract_id": "pc-technology-handdrawn-mt5pazfg-81ayz",
+      "motion_clips": false
+    }
+  },
+  "controlAudit": {
+    "enabledRecipes": [],
+    "selectedRecipe": "handdrawn",
+    "contractId": "pc-technology-handdrawn-mt5pazfg-81ayz",
+    "motionClipsDisabled": true,
+    "subtitlesFixedOn": true
+  },
+  "feedback": {
+    "beforeGeneration": "已选择清晰男声 · 生成后试听",
+    "afterGeneration": "speech-2.8-hd · 清晰男声 · 5 段"
+  },
+  "errors": []
+}

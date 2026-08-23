@@ -1,0 +1,46 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Microsoft YaHei,28,&H00FFFFFF,&H00FFFFFF,&HB0243851,&HC0000000,0,0,0,0,100,100,1,0,1,1.8,0,2,116,116,34,1
+Style: Kicker,Microsoft YaHei,19,&H0033D9FF,&H00FFFFFF,&HAA123A4D,&H90000000,1,0,0,0,100,100,2,0,1,1.3,0,7,58,58,39,1
+Style: Title,Microsoft YaHei,39,&H00FFFFFF,&H00FFFFFF,&HAA123A4D,&H90000000,1,0,0,0,100,100,1,0,1,2,0,7,58,58,67,1
+Style: Fact,Microsoft YaHei,21,&H00FFF1C2,&H00FFFFFF,&H40143852,&H70143852,0,0,0,0,100,100,1,0,3,5,0,7,58,58,118,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 2,0:00:00.32,0:00:06.20,Kicker,,0,0,0,,01 · QUESTION
+Dialogue: 2,0:00:00.48,0:00:06.20,Title,,0,0,0,,天空不是被涂蓝的
+Dialogue: 2,0:00:00.66,0:00:06.20,Fact,,0,0,0,,误区：海洋反射 → 追问：阳光 × 空气
+Dialogue: 2,0:00:18.86,0:00:24.74,Kicker,,0,0,0,,02 · SPECTRUM
+Dialogue: 2,0:00:19.02,0:00:24.74,Title,,0,0,0,,白光里藏着一整段颜色
+Dialogue: 2,0:00:19.20,0:00:24.74,Fact,,0,0,0,,蓝紫：短波长　｜　橙红：长波长
+Dialogue: 2,0:00:38.98,0:00:44.86,Kicker,,0,0,0,,03 · RAYLEIGH SCATTERING
+Dialogue: 2,0:00:39.14,0:00:44.86,Title,,0,0,0,,空气把蓝光从四面八方送来
+Dialogue: 2,0:00:39.32,0:00:44.86,Fact,,0,0,0,,分子越小于波长，短波散射越明显
+Dialogue: 2,0:01:04.09,0:01:09.97,Kicker,,0,0,0,,04 · LONGER PATH
+Dialogue: 2,0:01:04.25,0:01:09.97,Title,,0,0,0,,同一机制，也写出晚霞
+Dialogue: 2,0:01:04.43,0:01:09.97,Fact,,0,0,0,,路径变长 → 蓝紫散开 → 直达光偏暖
+Dialogue: 2,0:01:25.43,0:01:31.31,Kicker,,0,0,0,,05 · TRANSFER
+Dialogue: 2,0:01:25.59,0:01:31.31,Title,,0,0,0,,用一个解释，预测另一个现象
+Dialogue: 2,0:01:25.77,0:01:31.31,Fact,,0,0,0,,正午蓝天与橙红晚霞，是同一条因果链
+Dialogue: 0,0:00:00.12,0:00:03.92,Narration,,0,0,0,,抬头看，天空为什么是蓝色的？
+Dialogue: 0,0:00:03.96,0:00:07.76,Narration,,0,0,0,,有人说，是海洋把天空染蓝了。
+Dialogue: 0,0:00:07.80,0:00:11.88,Narration,,0,0,0,,可即使远离海岸，晴空依旧蔚蓝。
+Dialogue: 0,0:00:11.92,0:00:17.74,Narration,,0,0,0,,真正的答案，藏在阳光与空气相遇的那一刻。
+Dialogue: 0,0:00:18.66,0:00:26.79,Narration,,0,0,0,,太阳光看起来是白色，却包含从紫、蓝到橙、\N红的一整段可见光。
+Dialogue: 0,0:00:26.83,0:00:37.86,Narration,,0,0,0,,让它穿过棱镜，不同波长就会走向不同方向：\N蓝紫光的波长较短，橙红光的波长较长。
+Dialogue: 0,0:00:38.78,0:00:46.29,Narration,,0,0,0,,当阳光进入大气，\N远小于可见光波长的空气分子会让光发生瑞利散射。
+Dialogue: 0,0:00:46.33,0:00:53.35,Narration,,0,0,0,,短波长的光被散射得更强，\N于是蓝光从四面八方进入我们的眼睛。
+Dialogue: 0,0:00:53.39,0:01:02.97,Narration,,0,0,0,,紫光虽然更短，但太阳光谱、\N大气吸收和人眼敏感度共同作用，\N让我们主要看见蓝色。
+Dialogue: 0,0:01:03.89,0:01:08.87,Narration,,0,0,0,,到了日落，阳光要斜着穿过更长的大气路径。
+Dialogue: 0,0:01:08.91,0:01:16.41,Narration,,0,0,0,,沿途越来越多的蓝紫光被散向别处，\N继续直达眼睛的光便偏向橙红。
+Dialogue: 0,0:01:16.45,0:01:24.31,Narration,,0,0,0,,所以，晚霞的暖色与正午的蓝，\N其实是同一个机制写出的两种答案。
+Dialogue: 0,0:01:25.23,0:01:32.38,Narration,,0,0,0,,天空不是一块被涂蓝的幕布，\N而是一场每秒都在发生的光与空气的相遇。
+Dialogue: 0,0:01:32.42,0:01:41.36,Narration,,0,0,0,,科学的意义，不只是记住“瑞利散射”这个名字，\N而是学会用一个解释，预测另一个现象。
+Dialogue: 0,0:01:41.40,0:01:46.45,Narration,,0,0,0,,下一次看见晚霞，你已经知道它为什么会燃烧。

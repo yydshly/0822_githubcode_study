@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-08-23T03:57:51.766Z",
+  "httpUrl": "http://127.0.0.1:8765/demos/story-to-handdrawn-video/studio.html",
+  "fileUrl": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/studio.html",
+  "results": [
+    {
+      "label": "desktop-http",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "reducedMotion": "no-preference",
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "stageButtons": 6,
+      "visibleStages": [
+        "brief"
+      ],
+      "service": "演示模式",
+      "researchHref": "./index.html",
+      "overflow": 0,
+      "minControlHeight": 47
+    },
+    {
+      "label": "tablet-http",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "stageButtons": 6,
+      "visibleStages": [
+        "brief"
+      ],
+      "service": "演示模式",
+      "researchHref": "./index.html",
+      "overflow": 0,
+      "minControlHeight": 47
+    },
+    {
+      "label": "mobile-http",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "stageButtons": 6,
+      "visibleStages": [
+        "brief"
+      ],
+      "service": "演示模式",
+      "researchHref": "./index.html",
+      "overflow": 0,
+      "minControlHeight": 34
+    },
+    {
+      "label": "desktop-file",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "title": "Knowledge Video Studio · 知识视频生产台",
+      "heading": "从“想让观众学会什么”，推进到一条可交付的知识视频。",
+      "stageButtons": 6,
+      "visibleStages": [
+        "brief"
+      ],
+      "service": "演示模式",
+      "researchHref": "./index.html",
+      "overflow": 0,
+      "minControlHeight": 47
+    },
+    {
+      "label": "desktop-journey",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "jobLines": 6,
+      "jobStatus": "演示完成 · 未调用 API",
+      "outputs": 3,
+      "ratio": "true",
+      "locked": "5 / 5 已锁定",
+      "overflow": 0
+    },
+    {
+      "label": "research-link",
+      "studioLinks": 3
+    }
+  ],
+  "errors": []
+}

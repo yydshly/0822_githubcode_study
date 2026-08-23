@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-08-23T08:17:32.114Z",
+  "httpUrl": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+  "fileUrl": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/studio.html#ai-energy",
+  "results": [
+    {
+      "label": "desktop-http",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html#ai-energy",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "reducedMotion": "no-preference",
+      "topic": "为什么 AI 那么耗电？",
+      "visibleStage": "delivery",
+      "completedPipelineSteps": 6,
+      "completedWorkflowSteps": 6,
+      "finalImages": 5,
+      "codexLabels": 5,
+      "audio": "./assets/ai-energy-demo/narration.wav",
+      "video": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4",
+      "manifest": "./assets/ai-energy-demo/project.json",
+      "quality": "事实、叙事、视觉与技术检查已人工复核",
+      "status": "真实混合样例复现 · 未重复调用 API",
+      "overflow": 0
+    },
+    {
+      "label": "mobile-http-reduced",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html#ai-energy",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "topic": "为什么 AI 那么耗电？",
+      "visibleStage": "delivery",
+      "completedPipelineSteps": 6,
+      "completedWorkflowSteps": 6,
+      "finalImages": 5,
+      "codexLabels": 5,
+      "audio": "./assets/ai-energy-demo/narration.wav",
+      "video": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4",
+      "manifest": "./assets/ai-energy-demo/project.json",
+      "quality": "事实、叙事、视觉与技术检查已人工复核",
+      "status": "真实混合样例复现 · 未重复调用 API",
+      "overflow": 0
+    },
+    {
+      "label": "desktop-file",
+      "url": "file:///E:/0822_codex_project/docs/demos/story-to-handdrawn-video/studio.html#ai-energy",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "topic": "为什么 AI 那么耗电？",
+      "visibleStage": "delivery",
+      "completedPipelineSteps": 6,
+      "completedWorkflowSteps": 6,
+      "finalImages": 5,
+      "codexLabels": 5,
+      "audio": "./assets/ai-energy-demo/narration.wav",
+      "video": "./assets/ai-energy-demo/why-ai-uses-electricity.mp4",
+      "manifest": "./assets/ai-energy-demo/project.json",
+      "quality": "事实、叙事、视觉与技术检查已人工复核",
+      "status": "真实混合样例复现 · 未重复调用 API",
+      "overflow": 0
+    },
+    {
+      "label": "research-sample",
+      "url": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/index.html",
+      "title": "先不谈功能，直接看生成效果。",
+      "currentTime": 49.637,
+      "studioHref": "./studio.html#ai-energy",
+      "manifestHref": "./assets/ai-energy-demo/project.json",
+      "overflow": 0
+    }
+  ],
+  "browserErrors": []
+}

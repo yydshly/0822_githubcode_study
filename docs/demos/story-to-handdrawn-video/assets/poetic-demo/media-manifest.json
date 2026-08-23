@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "title": "潮水把名字还给岸",
+  "status": "real_generated_codex_minimax_demo",
+  "language": "zh-CN",
+  "storyEffectRecipe": {
+    "storyType": "poetic-place-memory-monologue",
+    "narrativeArc": ["image", "echo", "contrast", "blank", "aftertaste"],
+    "visualStyle": "contemporary-chinese-ink-wash",
+    "palette": ["rice-paper-cream", "pale-celadon", "charcoal-gray", "muted-indigo", "faded-vermilion"],
+    "alignmentRule": "The ferry landing, bridge, recorder, and vermilion thread repeat with changed meaning; nostalgia may preserve memory but cannot demand that others return to an older life."
+  },
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 5,
+    "sourceSizes": ["1086x1448", "1672x941"],
+    "outputMode": "scenes 1-2 retain portrait paper compositions; scenes 3-5 open into landscape reality while preserving protagonist, location and vermilion thread",
+    "commonPromptRecipe": "contemporary Chinese ink wash on rice paper, more than half intentional negative space, pale celadon/charcoal/muted indigo with one faded-vermilion accent, no text, calligraphy, logo, extra person, photorealism or supernatural event"
+  },
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voiceId": "Chinese (Mandarin)_Lyrical_Voice",
+    "emotion": "calm",
+    "generationSpeed": 0.94,
+    "postTempo": 1.03,
+    "pitch": -1,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 1007,
+    "credentialBoundary": "API key is read from a private environment file at process runtime and is not stored in this repository."
+  },
+  "soundDesign": {
+    "ambient": "deterministic low-level filtered pink noise and 92Hz tone",
+    "purpose": "create a restrained riverbank bed under speech without representing field-recorded factual audio"
+  },
+  "timeline": [
+    { "scene": 1, "role": "image", "start": 0.0, "duration": 22.58, "image": "scene-01.png" },
+    { "scene": 2, "role": "echo", "start": 22.58, "duration": 25.75, "image": "scene-02.png" },
+    { "scene": 3, "role": "contrast", "start": 48.33, "duration": 27.71, "image": "scene-03.png" },
+    { "scene": 4, "role": "blank", "start": 76.04, "duration": 24.90, "image": "scene-04.png" },
+    { "scene": 5, "role": "aftertaste", "start": 100.94, "duration": 26.69, "image": "scene-05.png" }
+  ],
+  "output": {
+    "file": "tide-returns-the-name.mp4",
+    "durationSeconds": 127.633,
+    "sizeBytes": 6964188,
+    "video": "H.264, 1280x720, 30fps, yuv420p",
+    "audio": "AAC stereo, 32000Hz, 128kbps target",
+    "measuredLoudness": "mean -21.8 dBFS, peak -3.0 dBFS",
+    "subtitles": "ASS subtitles burned into picture"
+  }
+}

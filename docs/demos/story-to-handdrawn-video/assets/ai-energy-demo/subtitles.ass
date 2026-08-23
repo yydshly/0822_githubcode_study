@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Microsoft YaHei,28,&H00FFFFFF,&H00FFFFFF,&HB020252D,&HC0000000,0,0,0,0,100,100,1,0,1,2,0,2,102,102,36,1
+Style: Kicker,Microsoft YaHei,19,&H0033D9FF,&H00FFFFFF,&HAA123A4D,&H90000000,1,0,0,0,100,100,2,0,1,1.5,0,7,64,64,40,1
+Style: Title,Microsoft YaHei,36,&H00FFFFFF,&H00FFFFFF,&HAA123A4D,&H90000000,1,0,0,0,100,100,1,0,1,2,0,7,64,64,61,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.25,0:00:05.80,Kicker,,0,0,0,,01 · 问题进入
+Dialogue: 1,0:00:00.39,0:00:05.80,Title,,0,0,0,,一句提示词的旅程
+Dialogue: 1,0:00:15.57,0:00:21.12,Kicker,,0,0,0,,02 · 拆开误解
+Dialogue: 1,0:00:15.71,0:00:21.12,Title,,0,0,0,,云不是虚无的
+Dialogue: 1,0:00:33.59,0:00:39.14,Kicker,,0,0,0,,03 · 建立模型
+Dialogue: 1,0:00:33.73,0:00:39.14,Title,,0,0,0,,三股电流同时涌动
+Dialogue: 1,0:00:49.89,0:00:55.44,Kicker,,0,0,0,,04 · 证据解释
+Dialogue: 1,0:00:50.03,0:00:55.44,Title,,0,0,0,,不是每次都耗同样的电
+Dialogue: 1,0:01:04.11,0:01:09.66,Kicker,,0,0,0,,05 · 迁移收束
+Dialogue: 1,0:01:04.25,0:01:09.66,Title,,0,0,0,,压低曲线的几种方式
+Dialogue: 0,0:00:00.08,0:00:06.85,Narration,,0,0,0,,你按下发送键的瞬间，提示词穿过终端与网络，\N抵达数据中心。
+Dialogue: 0,0:00:06.88,0:00:14.67,Narration,,0,0,0,,一句简单的话，背后仍需要真实的服务器、\N网络和供电系统协同工作。
+Dialogue: 0,0:00:15.40,0:00:21.69,Narration,,0,0,0,,有人觉得 AI 只是云端软件，\N输入一句话几乎不耗电。
+Dialogue: 0,0:00:21.72,0:00:32.69,Narration,,0,0,0,,但云不是虚无的，它是一座座真实的数据中心，\N里面的服务器、存储、网络与冷却设备都需要电力。
+Dialogue: 0,0:00:33.42,0:00:46.30,Narration,,0,0,0,,电主要消耗在三个地方：\NCPU 和 GPU 拼命做计算，\N存储与网络之间来回搬运数据，\N散热系统则在不停抽走热量。
+Dialogue: 0,0:00:46.33,0:00:48.99,Narration,,0,0,0,,三股电流，同时涌动。
+Dialogue: 0,0:00:49.72,0:00:53.11,Narration,,0,0,0,,但不是每次回答都耗同样的电。
+Dialogue: 0,0:00:53.14,0:01:03.21,Narration,,0,0,0,,模型大小、硬件新旧、问题长短、\N数据中心利用率和电力来源，\N都会让能耗相差非常悬殊。
+Dialogue: 0,0:01:03.94,0:01:08.30,Narration,,0,0,0,,理解这一点不是为了焦虑，而是为了选择。
+Dialogue: 0,0:01:08.33,0:01:18.53,Narration,,0,0,0,,更高效的模型、批处理、提高利用率、转向低碳电力，\N每一项都在悄悄压低 AI 的能耗曲线。

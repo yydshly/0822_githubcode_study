@@ -1,0 +1,28 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Microsoft YaHei,27,&H00F3E7D2,&H00FFFFFF,&HAA101418,&HB5000000,0,0,0,0,100,100,1,0,1,1.4,0,2,120,120,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.14,0:00:03.71,Narration,,0,0,0,,唐，张继，《枫桥夜泊》。
+Dialogue: 0,0:00:03.75,0:00:06.12,Narration,,0,0,0,,月落乌啼霜满天。
+Dialogue: 0,0:00:06.16,0:00:11.84,Narration,,0,0,0,,画面从将沉的月亮和划破夜色的乌啼开始。
+Dialogue: 0,0:00:11.88,0:00:23.74,Narration,,0,0,0,,霜不是一件可数的物体，而是弥漫江面的寒意；\N诗人先让我们听见，并感到这个夜晚。
+Dialogue: 0,0:00:24.75,0:00:27.19,Narration,,0,0,0,,江枫渔火对愁眠。
+Dialogue: 0,0:00:27.23,0:00:34.33,Narration,,0,0,0,,视线从天空降到江岸：枫树是暗的，渔火却很微弱。
+Dialogue: 0,0:00:34.37,0:00:46.59,Narration,,0,0,0,,冷月、霜气和一点暖光，共同标出客船所在的位置；\N景物开始靠近一个尚未入睡的人。
+Dialogue: 0,0:00:47.60,0:00:52.98,Narration,,0,0,0,,镜头进入船舱，却不替诗人编造具体遭遇。
+Dialogue: 0,0:00:53.02,0:01:08.00,Narration,,0,0,0,,对愁眠，是全诗的人物支点：外面的乌啼、江枫与渔火，\N因为被一个清醒的旅人听见和看见，\N才从夜景变成了心境。
+Dialogue: 0,0:01:09.01,0:01:11.41,Narration,,0,0,0,,姑苏城外寒山寺。
+Dialogue: 0,0:01:11.45,0:01:19.03,Narration,,0,0,0,,视线重新离开客船，沿水路越过桥影，抵达远处的寺院。
+Dialogue: 0,0:01:19.07,0:01:31.69,Narration,,0,0,0,,诗只给出地点和距离，画面因此保留大块夜色，让城外、\N寺院与客船形成安静的空间关系。
+Dialogue: 0,0:01:32.70,0:01:34.92,Narration,,0,0,0,,夜半钟声到客船。
+Dialogue: 0,0:01:34.96,0:01:42.83,Narration,,0,0,0,,最后抵达的不是人物，也不是答案，\N而是一阵跨过水面的声音。
+Dialogue: 0,0:01:42.87,0:01:55.43,Narration,,0,0,0,,钟声把远处的寒山寺和近处的未眠者连接起来；\N诗在声音抵达时结束，把没有说明的愁留给夜色。

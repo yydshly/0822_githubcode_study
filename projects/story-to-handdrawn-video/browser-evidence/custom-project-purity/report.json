@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checkedAt": "2026-08-23T11:04:10.479Z",
+  "studioUrl": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+  "errors": [],
+  "result": {
+    "desktop": {
+      "initialMedia": {
+        "audioSrc": "",
+        "compositionSrc": "",
+        "deliverySrc": "",
+        "sceneSources": []
+      },
+      "storyboardMedia": {
+        "audioSrc": "",
+        "compositionSrc": "",
+        "deliverySrc": "",
+        "sceneSources": [
+          "/generated-studio/custom-purity/scene-01.png",
+          "/generated-studio/custom-purity/scene-02.png",
+          "/generated-studio/custom-purity/scene-03.png",
+          "/generated-studio/custom-purity/scene-04.png",
+          "/generated-studio/custom-purity/scene-05.png"
+        ]
+      },
+      "voiceMedia": {
+        "audioSrc": "/generated-studio/custom-purity/narration.wav",
+        "compositionSrc": "",
+        "deliverySrc": "",
+        "sceneSources": [
+          "/generated-studio/custom-purity/scene-01.png",
+          "/generated-studio/custom-purity/scene-02.png",
+          "/generated-studio/custom-purity/scene-03.png",
+          "/generated-studio/custom-purity/scene-04.png",
+          "/generated-studio/custom-purity/scene-05.png"
+        ]
+      },
+      "finalMedia": {
+        "audioSrc": "/generated-studio/custom-purity/narration.wav",
+        "compositionSrc": "/generated-studio/custom-purity/final.mp4",
+        "deliverySrc": "/generated-studio/custom-purity/final.mp4",
+        "sceneSources": [
+          "/generated-studio/custom-purity/scene-01.png",
+          "/generated-studio/custom-purity/scene-02.png",
+          "/generated-studio/custom-purity/scene-03.png",
+          "/generated-studio/custom-purity/scene-04.png",
+          "/generated-studio/custom-purity/scene-05.png"
+        ]
+      },
+      "inlinePlayback": true
+    },
+    "mobile": {
+      "overflow": 0,
+      "blankMedia": {
+        "audioSrc": "",
+        "compositionSrc": "",
+        "deliverySrc": "",
+        "sceneSources": []
+      },
+      "blankProject": true
+    }
+  }
+}

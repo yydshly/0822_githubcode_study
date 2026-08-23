@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "title": "把瑕疵留在正面",
+  "status": "real_generated_codex_minimax_demo",
+  "language": "zh-CN",
+  "storyEffectRecipe": {
+    "storyType": "fictional-brand-origin",
+    "narrativeArc": ["problem", "costly-choice", "repeatable-craft", "bounded-proof", "open-invitation"],
+    "visualStyle": "organic-contour-editorial-gouache",
+    "palette": ["forest-green", "warm-cream", "pale-oak", "coral-repair"],
+    "alignmentRule": "The same chair and visible repair must carry the value claim from failure through process, return inspection, and public repair access."
+  },
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 5,
+    "sourceSize": "1086x1448",
+    "outputMode": "scene 1 establishes founder, chair, workshop and palette; scenes 2-5 preserve the exact character and chair while changing narrative function",
+    "commonPromptRecipe": "portrait editorial illustration, organic ink contour, matte gouache and recycled-paper grain, strict forest-green/cream/pale-oak/coral palette, no text, logo, watermark, fake metric or product claim"
+  },
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voiceId": "Chinese (Mandarin)_Sincere_Adult",
+    "emotion": "calm",
+    "generationSpeed": 0.98,
+    "postTempo": 1.10,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 1412,
+    "credentialBoundary": "API key is read from a private environment file at process runtime and is not stored in this repository."
+  },
+  "timeline": [
+    { "scene": 1, "role": "problem", "start": 0.0, "duration": 25.86, "image": "scene-01.png" },
+    { "scene": 2, "role": "costly-choice", "start": 25.86, "duration": 26.29, "image": "scene-02.png" },
+    { "scene": 3, "role": "repeatable-craft", "start": 52.15, "duration": 27.54, "image": "scene-03.png" },
+    { "scene": 4, "role": "bounded-proof", "start": 79.69, "duration": 26.98, "image": "scene-04.png" },
+    { "scene": 5, "role": "open-invitation", "start": 106.67, "duration": 27.34, "image": "scene-05.png" }
+  ],
+  "output": {
+    "file": "keep-the-repair-visible.mp4",
+    "durationSeconds": 134.0,
+    "sizeBytes": 9778826,
+    "video": "H.264, 720x960, 30fps, yuv420p",
+    "audio": "AAC stereo, 32000Hz, 128kbps target",
+    "measuredLoudness": "mean -20.0 dBFS, peak -1.8 dBFS",
+    "subtitles": "ASS subtitles burned into picture"
+  }
+}

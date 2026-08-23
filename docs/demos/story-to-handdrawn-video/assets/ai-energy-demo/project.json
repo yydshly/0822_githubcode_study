@@ -1,0 +1,348 @@
+{
+  "schema": "knowledge-video-project/v1",
+  "id": "kv-20260823074716-bq4ges",
+  "mode": "live",
+  "status": "complete",
+  "curation": {
+    "architecture": "story-first layered production",
+    "story_contract": "human-reviewed MiniMax-M3 draft",
+    "story_review": "Removed unsupported device-count and anthropomorphic energy claims before media generation.",
+    "draft_visual_provider": "MiniMax Image image-01",
+    "final_visual_provider": "Codex built-in imagegen",
+    "voice_provider": "MiniMax speech-2.8-hd after story and visual lock",
+    "render_provider": "deterministic FFmpeg",
+    "replay_calls_api": false
+  },
+  "sources": [
+    {
+      "title": "IEA · Energy demand from AI",
+      "url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+      "used_for": "data-center components, AI electricity-demand boundary and variability"
+    }
+  ],
+  "created_at": "2026-08-23T07:47:16.389Z",
+  "brief": {
+    "topic": "为什么 AI 那么耗电？",
+    "audience": "普通公众",
+    "duration": 90,
+    "objective": "看完后，观众能够解释 AI 用电发生在计算、数据搬运和散热环节，并理解单次请求与大规模持续调用之间的区别。",
+    "misconception": "AI 只是云端软件，输入一句话几乎不需要真实能源；或者每次 AI 回答都耗费相同电量。",
+    "entry": "当你按下发送键，一句提示词背后有哪些设备同时开始工作？",
+    "evidence": "依据 IEA《Energy and AI》：AI 模型训练与部署主要发生在数据中心；数据中心包含服务器、存储、网络、供电保障和冷却系统。服务器中的 CPU 与 GPU 等加速器执行计算，数据在存储器和网络之间移动也需要电，计算产生的热量需要冷却。实际耗电取决于模型、硬件、任务长度、利用率、数据中心效率和电力来源；不能给所有 AI 请求套用同一个耗电数字。效率更高的模型与硬件、批处理、提高利用率和低碳电力可以降低影响。"
+  },
+  "events": [
+    {
+      "at": "2026-08-23T07:47:16.389Z",
+      "stage": "PLAN",
+      "status": "running",
+      "message": "开始生成知识方案"
+    },
+    {
+      "at": "2026-08-23T07:47:34.804Z",
+      "stage": "PLAN",
+      "status": "ok",
+      "message": "五幕知识方案已生成"
+    },
+    {
+      "at": "2026-08-23T07:49:14.712Z",
+      "stage": "IMAGE",
+      "status": "running",
+      "message": "开始生成五幕分镜"
+    },
+    {
+      "at": "2026-08-23T07:49:39.861Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "第 1 幕图像已生成"
+    },
+    {
+      "at": "2026-08-23T07:50:01.899Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "第 2 幕图像已生成"
+    },
+    {
+      "at": "2026-08-23T07:50:26.860Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "第 3 幕图像已生成"
+    },
+    {
+      "at": "2026-08-23T07:50:52.216Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "第 4 幕图像已生成"
+    },
+    {
+      "at": "2026-08-23T07:51:13.981Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "第 5 幕图像已生成"
+    },
+    {
+      "at": "2026-08-23T07:51:13.981Z",
+      "stage": "IMAGE",
+      "status": "ok",
+      "message": "五幕分镜生成完成"
+    },
+    {
+      "at": "2026-08-23T07:55:50.844Z",
+      "stage": "AUDIO",
+      "status": "running",
+      "message": "开始生成旁白"
+    },
+    {
+      "at": "2026-08-23T07:55:57.543Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "第 1 幕旁白已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:00.703Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "第 2 幕旁白已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:03.823Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "第 3 幕旁白已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:06.633Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "第 4 幕旁白已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:09.562Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "第 5 幕旁白已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:09.743Z",
+      "stage": "AUDIO",
+      "status": "ok",
+      "message": "旁白与真实时长已生成"
+    },
+    {
+      "at": "2026-08-23T07:56:22.567Z",
+      "stage": "RENDER",
+      "status": "running",
+      "message": "开始确定性合成"
+    },
+    {
+      "at": "2026-08-23T07:56:38.841Z",
+      "stage": "RENDER",
+      "status": "ok",
+      "message": "H.264/AAC 成片与字幕已生成"
+    },
+    {
+      "at": "2026-08-23T08:01:10.066Z",
+      "stage": "RENDER",
+      "status": "running",
+      "message": "开始确定性合成"
+    },
+    {
+      "at": "2026-08-23T08:01:24.211Z",
+      "stage": "RENDER",
+      "status": "ok",
+      "message": "H.264/AAC 成片与字幕已生成"
+    }
+  ],
+  "updated_at": "2026-08-23T08:01:24.211Z",
+  "plan": {
+    "schema": "knowledge-video-plan/v1",
+    "title": "按下发送键后，AI 在悄悄消耗什么",
+    "learning_promise": "观众能说出 AI 用电发生在计算、数据搬运和散热三个环节，并理解单次请求与大规模持续调用之间存在显著差异。",
+    "visual_bible": "统一设定为信息图风格的 3D 数字插画。主角是一道发光的光纤信号，从手机屏幕出发，穿越夜空与海底，进入一座可被剖面切开的数据中心。色盘以深夜蓝、电光蓝为底色，GPU 算力区与散热区用暖橙红色表示能量与热量，结尾段引入冷绿与天青代表低碳电力。画材为干净的矢量化 3D 渲染，边缘清晰，无任何真实人物。严格禁止在画面中生成文字、字母、数字、公式或图标内文字。",
+    "facts_boundary": "仅可使用材料中出现的概念：数据中心、服务器、存储、网络、供电保障、冷却系统、CPU、GPU、计算、数据搬运、散热、模型、硬件、任务长度、利用率、数据中心效率、电力来源、批处理、低碳电力。不得给出任何具体耗电数字、机构、人物、年份或地点；能耗差异仅可用'显著不同''相差很大'等定性表述。",
+    "acts": [
+      {
+        "index": 1,
+        "role": "问题进入",
+        "title": "一句提示词的旅程",
+        "purpose": "用一次按下发送键的瞬间，把观众的注意力从手机界面拽向远方的物理基础设施，建立问题感。",
+        "visual": "一只手按亮手机屏幕，提示词变成一道光纤般的光带，飞出屋外，穿过夜空，越过海底光缆，最终汇聚进一座灯火通明的玻璃外壳数据中心。",
+        "narration": "你按下发送键的瞬间，提示词穿过终端与网络，抵达数据中心。一句简单的话，背后仍需要真实的服务器、网络和供电系统协同工作。",
+        "trust": "画面为示意，不对应任何真实位置；只表达'提示词需经网络抵达数据中心'这一关系。",
+        "seconds": 18
+      },
+      {
+        "index": 2,
+        "role": "拆开误解",
+        "title": "云不是虚无的",
+        "purpose": "纠正'AI 只是云端软件，几乎不耗电'的误解，让观众意识到云对应着真实的电力与硬件。",
+        "visual": "同一座数据中心被纵向切开，露出内部一排排真实的服务器机柜，金色的电流像液体在硬件之间循环流动，远处冷却塔喷出水雾，镜头拉近闪烁的指示灯。",
+        "narration": "有人觉得 AI 只是云端软件，输入一句话几乎不耗电。但云不是虚无的，它是一座座真实的数据中心，里面的服务器、存储、网络与冷却设备都需要电力。",
+        "trust": "只表达'AI 服务依赖数据中心中的实体硬件'，不暗示所有数据中心都长这样。",
+        "seconds": 18
+      },
+      {
+        "index": 3,
+        "role": "建立模型",
+        "title": "三股电流同时涌动",
+        "purpose": "建立核心心智模型：AI 用电主要发生在计算、数据搬运与散热三个环节。",
+        "visual": "画面切分为三块相互连通的机柜特写：左侧 GPU 阵列运算喷出橙红热浪，中间数据在存储与交换机之间穿梭成蓝色光带，右侧冷却系统吹出冷雾；三股能量最终汇聚为一根通向城市电网的发光电缆。",
+        "narration": "电主要消耗在三个地方：CPU 和 GPU 拼命做计算，存储与网络之间来回搬运数据，散热系统则在不停抽走热量。三股电流，同时涌动。",
+        "trust": "材料明确列出这三类耗电环节；画面仅作结构化示意，不引入未提及的环节。",
+        "seconds": 18
+      },
+      {
+        "index": 4,
+        "role": "证据解释",
+        "title": "不是每次都耗同样的电",
+        "purpose": "解释单次请求与大规模持续调用之间的差异，破除'每次回答耗电相同'的错觉。",
+        "visual": "一排从小到大、从稀疏到密集的气泡从屏幕左侧飘向数据中心：最小的气泡代表一句问候，仅点亮一排机柜；最大的气泡是密集的并发请求流，整座数据中心灯火全亮、颜色明显更红更亮。",
+        "narration": "但不是每次回答都耗同样的电。模型大小、硬件新旧、问题长短、数据中心利用率和电力来源，都会让能耗相差非常悬殊。",
+        "trust": "结论直接对应材料中列举的影响因素；画面用大小和亮度的相对差异表示，不给具体数字。",
+        "seconds": 18
+      },
+      {
+        "index": 5,
+        "role": "迁移收束",
+        "title": "压低曲线的几种方式",
+        "purpose": "把理解转化为行动方向，让观众带走可迁移的认知：效率、批处理、利用率与电力来源共同决定影响大小。",
+        "visual": "画面回到同一座数据中心：机柜变得整齐紧凑呈批处理阵列，屋顶逐渐被太阳能板和风车覆盖，原本燃烧橙红的能量流变成更冷的青绿色光带，远处城市天际线被清晨冷光笼罩。",
+        "narration": "理解这一点不是为了焦虑，而是为了选择。更高效的模型、批处理、提高利用率、转向低碳电力，每一项都在悄悄压低 AI 的能耗曲线。",
+        "trust": "只复述材料中给出的四种降耗路径，不外推成本、政治或商业后果。",
+        "seconds": 18
+      }
+    ]
+  },
+  "usage": {
+    "text": {
+      "total_tokens": 3109,
+      "total_characters": 0,
+      "prompt_tokens": 595,
+      "completion_tokens": 2514,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1472
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      }
+    }
+  },
+  "storyboard": {
+    "provider": "Codex imagegen · final visual layer",
+    "model": "Codex built-in imagegen",
+    "scenes": [
+      {
+        "index": 1,
+        "file": "scene-01.png",
+        "url": "scene-01.png",
+        "title": "一句提示词的旅程",
+        "status": "generated",
+        "provider": "Codex built-in imagegen",
+        "draft_provider": "MiniMax Image image-01",
+        "revision_reason": "移除 MiniMax 初稿中的伪文字"
+      },
+      {
+        "index": 2,
+        "file": "scene-02.png",
+        "url": "scene-02.png",
+        "title": "云不是虚无的",
+        "status": "generated",
+        "provider": "Codex built-in imagegen",
+        "draft_provider": "MiniMax Image image-01",
+        "revision_reason": "统一视觉圣经并移除水印与伪文字"
+      },
+      {
+        "index": 3,
+        "file": "scene-03.png",
+        "url": "scene-03.png",
+        "title": "三股电流同时涌动",
+        "status": "generated",
+        "provider": "Codex built-in imagegen",
+        "draft_provider": "MiniMax Image image-01",
+        "revision_reason": "移除 MiniMax 初稿中的伪文字"
+      },
+      {
+        "index": 4,
+        "file": "scene-04.png",
+        "url": "scene-04.png",
+        "title": "不是每次都耗同样的电",
+        "status": "generated",
+        "provider": "Codex built-in imagegen",
+        "draft_provider": "MiniMax Image image-01",
+        "revision_reason": "统一视觉圣经并强化大小请求对照"
+      },
+      {
+        "index": 5,
+        "file": "scene-05.png",
+        "url": "scene-05.png",
+        "title": "压低曲线的几种方式",
+        "status": "generated",
+        "provider": "Codex built-in imagegen",
+        "draft_provider": "MiniMax Image image-01",
+        "revision_reason": "移除 MiniMax 初稿中的伪文字"
+      }
+    ]
+  },
+  "voice": {
+    "provider": "MiniMax China HTTP T2A",
+    "model": "speech-2.8-hd",
+    "voice": "female-chengshu",
+    "speed": 0.94,
+    "segments": [
+      {
+        "index": 1,
+        "file": "beat-01.wav",
+        "url": "narration.wav#t=0",
+        "duration": 14.52,
+        "usageCharacters": 120
+      },
+      {
+        "index": 2,
+        "file": "beat-02.wav",
+        "url": "narration.wav#t=15.32",
+        "duration": 17.22,
+        "usageCharacters": 137
+      },
+      {
+        "index": 3,
+        "file": "beat-03.wav",
+        "url": "narration.wav#t=33.34",
+        "duration": 15.497,
+        "usageCharacters": 121
+      },
+      {
+        "index": 4,
+        "file": "beat-04.wav",
+        "url": "narration.wav#t=49.637",
+        "duration": 13.42,
+        "usageCharacters": 110
+      },
+      {
+        "index": 5,
+        "file": "beat-05.wav",
+        "url": "narration.wav#t=63.857",
+        "duration": 14.52,
+        "usageCharacters": 121
+      }
+    ],
+    "sceneDurations": [
+      15.32,
+      18.02,
+      16.297,
+      14.22,
+      15.32
+    ],
+    "file": "narration.wav",
+    "url": "narration.wav"
+  },
+  "render": {
+    "file": "why-ai-uses-electricity.mp4",
+    "url": "why-ai-uses-electricity.mp4",
+    "subtitles": "subtitles.ass",
+    "ratio": "16:9",
+    "width": 1280,
+    "height": 720,
+    "duration": 79.2,
+    "bytes": 4978252,
+    "renderer": "deterministic FFmpeg"
+  }
+}

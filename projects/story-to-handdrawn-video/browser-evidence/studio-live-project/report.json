@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-08-23T05:05:56.504Z",
+  "studioUrl": "http://127.0.0.1:8791/demos/story-to-handdrawn-video/studio.html",
+  "projectId": "kv-20260823045305-flkfex",
+  "service": {
+    "ok": true,
+    "name": "本地生成服务",
+    "mode": "live",
+    "apiKeyConfigured": true,
+    "models": {
+      "text": "MiniMax-M3",
+      "image": "image-01",
+      "speech": "speech-2.8-hd"
+    },
+    "security": {
+      "bind": "127.0.0.1:8791",
+      "keyExposedToBrowser": false,
+      "fileOriginAllowed": false
+    }
+  },
+  "journey": {
+    "generatedImages": 5,
+    "audioSource": "/generated-studio/kv-20260823045305-flkfex/narration.wav",
+    "videoSource": "/generated-studio/kv-20260823045305-flkfex/final.mp4",
+    "outputHref": "/generated-studio/kv-20260823045305-flkfex/final.mp4"
+  },
+  "media": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "codec_name": "aac"
+      }
+    ],
+    "format": {
+      "duration": "81.133333",
+      "size": "4016128"
+    }
+  },
+  "errors": []
+}

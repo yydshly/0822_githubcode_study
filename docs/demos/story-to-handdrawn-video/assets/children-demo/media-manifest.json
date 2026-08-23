@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "title": "她先学会听风",
+  "status": "real_generated_codex_minimax_demo",
+  "language": "zh-CN",
+  "storyEffectRecipe": {
+    "storyType": "children-growth",
+    "narrativeArc": ["wish", "failed-method", "observation", "self-directed-repair", "earned-growth"],
+    "visualStyle": "sunlit-storybook",
+    "palette": ["low-saturation-grass-green", "mustard-yellow", "gray-blue-sky", "cobalt-blue-ribbon"],
+    "motion": "grayscale-to-color reveal, subtle pan, page-slide transition",
+    "alignmentRule": "Growth is shown through changed action and preserved repair marks; adults do not announce the lesson or solve the problem."
+  },
+  "imageGeneration": {
+    "provider": "Codex built-in imagegen",
+    "generatedScenes": 5,
+    "sourceSize": "1086x1448",
+    "outputMode": "scene 1 establishes character and prop lock; scenes 2-5 are distinct generations using scene 1 as reference",
+    "commonPromptRecipe": "portrait 3:4 chalky gouache and colored-pencil children’s storybook, rough paper, child-height viewpoint, consistent Xiaoman and handmade swallow kite, subtitle-safe lower area, no text or logos"
+  },
+  "tts": {
+    "provider": "MiniMax China HTTP T2A",
+    "endpoint": "https://api.minimaxi.com/v1/t2a_v2",
+    "model": "speech-2.8-hd",
+    "voiceId": "female-tianmei",
+    "emotion": "calm",
+    "speed": 0.96,
+    "pitch": 0,
+    "sampleRate": 32000,
+    "segments": 5,
+    "usageCharacters": 923,
+    "credentialBoundary": "API key is read from a private environment file at process runtime and is not stored in this repository."
+  },
+  "timeline": [
+    { "scene": 1, "role": "wish", "start": 0.0, "voiceDuration": 19.851, "image": "scene-01.png" },
+    { "scene": 2, "role": "failed-method", "start": 20.301, "voiceDuration": 21.373, "image": "scene-02.png" },
+    { "scene": 3, "role": "observation", "start": 42.124, "voiceDuration": 20.515, "image": "scene-03.png" },
+    { "scene": 4, "role": "self-directed-repair", "start": 63.089, "voiceDuration": 23.483, "image": "scene-04.png" },
+    { "scene": 5, "role": "earned-growth", "start": 87.022, "voiceDuration": 20.246, "image": "scene-05.png" }
+  ],
+  "output": {
+    "file": "she-learned-to-listen-to-the-wind.mp4",
+    "durationSeconds": 107.266667,
+    "sizeBytes": 8409344,
+    "video": "H.264 High, 720x960, 30fps, yuv420p",
+    "audio": "AAC LC stereo, 32000Hz, 128kbps target",
+    "measuredLoudness": "mean -19.5 dBFS, peak -3.3 dBFS",
+    "subtitles": "ASS subtitles burned into picture"
+  }
+}
