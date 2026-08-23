@@ -6,7 +6,7 @@
 - 固定版本：`04f6bceab888ad923e192fb02542eda06d1fdda8`（2026-08-20）
 - 当前状态：`researching`
 - 上游许可证：MIT
-- 固定源码：[上游固定提交](https://github.com/cclank/lanshu-create-ai-presenter-video/tree/04f6a8f03c15d57cb9fa92093517f9fc7f6fc652)
+- 固定源码：[上游固定提交](https://github.com/cclank/lanshu-create-ai-presenter-video/tree/04f6bceab888ad923e192fb02542eda06d1fdda8)
 - 实验记录：[NOTES.md](NOTES.md)
 
 ## 一句话结论
