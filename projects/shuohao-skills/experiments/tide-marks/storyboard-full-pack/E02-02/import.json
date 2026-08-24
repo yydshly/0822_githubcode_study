@@ -1,0 +1,69 @@
+{
+  "segment": "E02-02",
+  "episode": 2,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 9.5,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-02\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许潮：“七月十九，一点四十七。”（录音，远而破碎）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-02\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "动作：程野靠近扬声器。；动作：规律蜂鸣再次穿过潮声。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-02\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "程野：“这是货仓防潮报警器。”（确认，语气发沉）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-02\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-02\\UPLOAD-ORDER.md",
+  "promptCharacters": 1966,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E02-01→E02-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "她按下播放。",
+      "nextStartState": "许潮：“七月十九，一点四十七。”（录音，远而破碎）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E02-02→E02-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野：“这是货仓防潮报警器。”（确认，语气发沉）",
+      "nextStartState": "许知遥：“不是船上的？”（迅速追问）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

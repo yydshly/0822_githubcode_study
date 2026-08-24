@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cold blue-gray palette. Matching @Image1, the young archivist sets the tin box on the bench and opens it in a static shot.
+[Shot 2] At 00:03.500, the camera cuts to the object layout in @Image2; a slow push in reveals the fire-scarred orange radio beside the blackened brass key.
+[Shot 3] At 00:07.000, the camera cuts to @Image3 and holds a static shot on her face and the open box as the restrained young woman (S1) asks softly: <d>[Chinese] 爸，你就留下这些？</d>
+
+overall_soundscape: The tin box lands on old wood, its hinges creak, cloth shifts, and distant river wind moves through the hall.
+
+non_diegetic_music: Muted piano notes over a restrained low string drone.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-01→E01-02 (待链路验证): The previous segment has already ended with: 许知遥：“连他的东西也等不到明天。”（低声，压着不满） Start only from this segment's declared opening action: 许知遥把铁皮箱放到长椅上。；她掀开箱盖。 Do not repeat, reverse or contradict the completed prior action. Contract: 重做 E01-01：明确门原本打开、关门完成、人物转身离开门口并朝长椅方向运动；用最终离门状态连接 E01-02。
+OUT E01-02→E01-03 (可按现有切点): Complete this segment's declared end state: 许知遥：“爸，你就留下这些？”（冷淡中带失望） Do not prematurely perform the next segment action: 她拿起电台检查烧融的外壳。；电台扬声器又挤出一声短促喘息。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

@@ -1,0 +1,78 @@
+{
+  "segment": "E04-04",
+  "episode": 4,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "单灯夜戏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 15,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：高嵩转身拍了拍锈蚀的钢门。；高嵩：“他后来签了字，因为他知道许潮上了船。”（替死者下结论）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\f2.png",
+      "startSeconds": 5,
+      "exists": true,
+      "chineseDescription": "许知遥：“我哥为什么会在货仓？”（不让他绕开）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "高嵩：“他偷了电台，想学大人报险。”（语气里带着轻蔑）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\f4.png",
+      "startSeconds": 11.5,
+      "exists": true,
+      "chineseDescription": "高嵩：“最后，他把自己送上了船。”（刻意放慢）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-04\\UPLOAD-ORDER.md",
+  "promptCharacters": 2866,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E04-03→E04-04",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥：“我爸被锁在这儿。”（压住怒意）",
+      "nextStartState": "高嵩转身拍了拍锈蚀的钢门。；高嵩：“他后来签了字，因为他知道许潮上了船。”（替死者下结论）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E04-04→E04-05",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“最后，他把自己送上了船。”（刻意放慢）",
+      "nextStartState": "门外的程野抬起手机，把收音口贴近门缝。；许知遥：“你连一个不能开口的孩子都要推过去。”（声线更低）",
+      "contract": "锁定门内/门外轴线：E04-04 结束时高嵩在内侧，E04-05 从外侧同一扇门开始，保留门缝光和人物接近方向。"
+    }
+  },
+  "ready": true
+}

@@ -1,0 +1,13 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the controlled middle-aged male investor in a charcoal coat exits the damp abandoned riverside warehouse through the open doorway while answering his phone. As he leaves, the broad-shouldered male diver in dark weathered workwear urgently crouches again at the old fire cabinet and begins searching it. The camera uses a tracking shot and keeps the diver as the primary subject.
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the broad-shouldered male diver in dark weathered workwear pulls an oil-paper-wrapped list from a concealed inner compartment beside the battered orange emergency radio. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 他怕的不是电台，是这个。</d>
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper shifts, boots scrape concrete, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E03-04→E03-05 (待链路验证): The previous segment has already ended with: 高嵩：“我给你们十分钟。”（平静施压）；高嵩：“遗物交给我，旧事到此为止。”（像谈交易） Start only from this segment's declared opening action: 他走出货仓接起电话。；程野重新蹲到消防柜前。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E03-05→E03-06 (待链路验证): Complete this segment's declared end state: 他从夹层抽出油纸包裹的清单。；程野：“他怕的不是电台，是这个。”（压低声音） Do not prematurely perform the next segment action: 许知遥把高嵩私章与六行数量拍进手机。；许知遥：“先留副本。”（恢复专业冷静） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

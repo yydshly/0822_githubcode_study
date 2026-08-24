@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+Time transition: the story advances from the previous overcast morning through that night into the following predawn hours; it never moves backward in time.
+[Shot 1] Cinematic, live-action, mixed amber and cyan midnight light. The static shot follows @Image1 as the young technician places the orange radio on the steel bench and gently brushes salt from the open battery compartment.
+[Shot 2] At 00:03.500, the camera cuts to @Image2; a pan right travels from the connected power leads to two monitors as dense waveforms jump alive.
+[Shot 3] At 00:07.000, the camera cuts to @Image3 and holds a static shot as the clear-voiced technician (S1) says with measured precision: <d>[Chinese] 先保原始轨，再做副本。</d>
+
+overall_soundscape: Soft brush strokes scrape salt crystals, power relays click, cooling fans start, and a low electrical hum fills the cramped room.
+
+non_diegetic_music: Sparse glassy tones over a quiet bass pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-03→E01-04 (待链路验证): The previous segment has already ended with: 许知遥把黄铜钥匙装进口袋。；她抱起电台走出候船厅。 Start only from this segment's declared opening action: 时间转场：当晚直到次日凌晨。动作：许知遥回到临时修复室，把电台放在灰绿修复台中央；她用软刷清掉电池仓里的盐霜。 Do not repeat, reverse or contradict the completed prior action. Contract: 用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。
+OUT E01-04→E01-05 (可按现有切点): Complete this segment's declared end state: 许知遥：“先保原始轨，再做副本。”（专业，语速稳定） Do not prematurely perform the next segment action: 她戴上耳机。；连续爆音盖住整条音轨。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

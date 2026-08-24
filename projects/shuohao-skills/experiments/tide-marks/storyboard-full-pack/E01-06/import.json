@@ -1,0 +1,78 @@
+{
+  "segment": "E01-06",
+  "episode": 1,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "凌晨修复"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10.5,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：她把右声道单独放大。；动作：一个模糊男声从噪声里露出半句。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "许潮：“开船的……”（录音，急促喘息）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\f3.png",
+      "startSeconds": 5.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥猛地按下暂停。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\f4.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "许知遥：“这个声音……”（失神，尾音发紧）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 1895,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E01-05→E01-06",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥：“潮声太满，人声在下面。”（专注，自言自语）",
+      "nextStartState": "她把右声道单独放大。；一个模糊男声从噪声里露出半句。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E01-06→E01-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥：“这个声音……”（失神，尾音发紧）",
+      "nextStartState": "她从抽屉里取出一张兄妹旧照。；许知遥把旧照立在屏幕边。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

@@ -1,0 +1,69 @@
+{
+  "segment": "E06-01",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 14.5,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-01\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：高嵩冲向唯一一根现场音响线；程野侧身阻挡，并把装有同一张联单的封闭透明保护袋护在胸前。两人都闭口，此镜不出现电台或备份盘。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-01\\f2.png",
+      "startSeconds": 4.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥按下无字实体播放键，潮声从现场音响涌出；她说：‘你拔一根线，我还有三份备份。’三份备份留在场外，不在画面中出现。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-01\\f3.png",
+      "startSeconds": 9.5,
+      "exists": true,
+      "chineseDescription": "高嵩：“这是拆迁仪式，不是你的修复室。”（努力维持体面）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-01\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-01\\UPLOAD-ORDER.md",
+  "promptCharacters": 2889,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-10→E06-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥拿同一台未修复的摔裂电台，黑色熔痕、右侧裂开结构、盐霜擦痕和弯天线保持不变；程野拿已完全装入且袋口完全封闭的唯一一袋联单，绝不打开。两人闭口快步走向门口；出发前，程野已把同一部裂屏残录手机完全收入内侧口袋并随身带走，手机不出画；恰好三个存储盘留在台面。距九点一分钟只由画外闹钟声提示，不显示手机、数字或界面。",
+      "nextStartState": "高嵩冲向唯一一根现场音响线；程野侧身阻挡，并把装有同一张联单的封闭透明保护袋护在胸前。两人都闭口，此镜不出现电台或备份盘。",
+      "contract": "增加仪式现场建立与落位契约：许知遥到音响台并携带摔裂电台，程野只护住封闭联单，三份备份盘保持场外；随后才发生抢线。"
+    },
+    "outgoing": {
+      "id": "E06-01→E06-02",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“这是拆迁仪式，不是你的修复室。”（努力维持体面）",
+      "nextStartState": "程野保持透明保护袋封闭，把装有联单的保护袋平举给围观者看；手指隔着塑料沿六行模糊编号移动。程野说：‘六桶编号，都在这儿。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

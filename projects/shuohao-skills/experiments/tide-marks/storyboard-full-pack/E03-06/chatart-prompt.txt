@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the slim female audio archivist in a navy rain jacket and headphones uses her smartphone to photograph the recovered oil-paper evidence list, capturing its six-row layout and one private seal while all written content remains unreadable. Gao Song is not physically present. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 先留副本。</d>
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the slim female audio archivist places an old brass boat key beside the oil-paper list while the broad-shouldered male diver in dark weathered workwear lifts and turns its oval ring to inspect two parallel pressure marks. The camera uses a tracking shot.
+[Shot 3] At 00:07.000, the camera cuts to @Image3: the broad-shouldered male diver holds the same brass key near eye level, examining exactly two short irregular compression dents in the oval ring. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 这不像普通磨损。</d>
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper shifts, boots scrape concrete, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E03-05→E03-06 (待链路验证): The previous segment has already ended with: 他从夹层抽出油纸包裹的清单。；程野：“他怕的不是电台，是这个。”（压低声音） Start only from this segment's declared opening action: 许知遥把高嵩私章与六行数量拍进手机。；许知遥：“先留副本。”（恢复专业冷静） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E03-06→E03-07 (待链路验证): Complete this segment's declared end state: 程野：“这不像普通磨损。”（低声确认） Do not prematurely perform the next segment action: 许知遥抱着电台快步回到修复台前。；她插入已经保存的原始副本。 Contract: 用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。

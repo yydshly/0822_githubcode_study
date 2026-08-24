@@ -1,0 +1,69 @@
+{
+  "segment": "E06-08",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 13,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-08\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许知遥：“对。接下来每一项，都公开核验。”（把同一台摔裂电台放到始终封闭的透明袋旁）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-08\\f2.png",
+      "startSeconds": 4.5,
+      "exists": true,
+      "chineseDescription": "画外信息：“此前提交的七一九事故材料已受理，启动复查。”（电话扩音里的正式通知；仅表示进入复查流程，不代表结论）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-08\\f3.png",
+      "startSeconds": 9.5,
+      "exists": true,
+      "chineseDescription": "短暂时间跳切后，程野双手把封闭的联单保护袋交给按受理流程赶到现场的一双中性手套，开始受控登记交接；接收人员的脸和身体不入画。",
+      "postProductionZh": "在交接动作稳定后，后期可补一张虚构的无机构标识接收回执；不得在生图或 H3 阶段生成可读编号，也不得声称证据链已经完成法律认证。"
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-08\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-08\\UPLOAD-ORDER.md",
+  "promptCharacters": 2548,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E06-07→E06-08",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "拆迁设备依次熄火，候船厅前安静下来。；高嵩：“暂停不等于翻案。”（握着手机，声音发紧）",
+      "nextStartState": "许知遥：“对。接下来每一项，都公开核验。”（把同一台摔裂电台放到始终封闭的透明袋旁）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-08→E06-09",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "短暂时间跳切后，程野双手把封闭的联单保护袋交给按受理流程赶到现场的一双中性手套，开始受控登记交接；接收人员的脸和身体不入画。",
+      "nextStartState": "黄昏时，许知遥把同一台摔裂电台固定进救生圈档案夹层的公开透明支架；这不是隐藏藏匿。程野站在两级石阶上说：‘至少今天，他们停了。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

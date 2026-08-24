@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the archivist raises one unlabeled physical fader beside the same cracked orange radio and states that the timestamp, not the noise, is what frightens him. No timestamp, label or digits appear. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你怕的不是噪声，是时间。</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the investor listens as engine-start noise rises and the teenage recorded allegation plays only through the loudspeakers. This recorded witness allegation awaits verification and is not an on-screen finding. The visible investor's mouth remains completely closed. The teenage male witness says in a rapid off-screen recorded voice (S5): <d>[Chinese] 高嵩拿了备用钥匙，亲自开船。</d> The witness is not visible. The camera uses a static shot.
+[Shot 3] At 00:08.500, the camera cuts to @Image3: the investor points at the loudspeaker and abandons restraint to attack the recorded witness. Only he speaks and the teenage witness never appears. The controlled middle-aged investor speaks sharply in a raised polished voice (S3): <d>[Chinese] 那是个孩子胡说！</d> The camera uses a static shot.
+
+overall_soundscape: River wind crosses the public-address speakers, camera shutters and restrained phone clicks punctuate the forecourt, the sealed evidence sleeve rustles softly, and all demolition machinery continues idling without shutting down.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-03→E06-04 (可按现有切点): The previous segment has already ended with: 高嵩后退一步，回头看向停在场边的拆迁设备。；高嵩：“关掉！”（控制第一次崩开） Start only from this segment's declared opening action: 许知遥：“你怕的不是噪声，是时间。”（把音量推高） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-04→E06-05 (待链路验证): Complete this segment's declared end state: 高嵩：“那是个孩子胡说！”（指向音响） Do not prematurely perform the next segment action: 程野把装有同一张联单的封闭透明保护袋平举到现场摄像设备前，隔袋指过六行模糊结构；他说：‘六桶，不是两桶。’ Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

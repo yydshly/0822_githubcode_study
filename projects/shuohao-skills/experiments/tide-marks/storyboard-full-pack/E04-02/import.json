@@ -1,0 +1,69 @@
+{
+  "segment": "E04-02",
+  "episode": 4,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "单灯夜戏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 14,
+  "chatartSeconds": 14,
+  "estimatedDiamonds": 210,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-02\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "高嵩：“城里一套房，换电台和清单。今晚就签。”（音量不高，句句留出逼人答应的停顿）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-02\\f2.png",
+      "startSeconds": 5,
+      "exists": true,
+      "chineseDescription": "许知遥：“你买得这么急，说明六桶不是笔误。”（盯着他，不接资料）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-02\\f3.png",
+      "startSeconds": 10,
+      "exists": true,
+      "chineseDescription": "动作：高嵩收回资料，反手把货仓门关上。；高嵩：“多出来的溶剂，我没否认。”（笑意不变）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-02\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-02\\UPLOAD-ORDER.md",
+  "promptCharacters": 2507,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E04-01→E04-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥把电台收进外套内侧，转身走向门口。；高嵩从文件夹里抽出一页房产资料，递到她面前。",
+      "nextStartState": "高嵩：“城里一套房，换电台和清单。今晚就签。”（音量不高，句句留出逼人答应的停顿）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E04-02→E04-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "高嵩收回资料，反手把货仓门关上。；高嵩：“多出来的溶剂，我没否认。”（笑意不变）",
+      "nextStartState": "许知遥：“那晚是谁开的船？”（追问得很快）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

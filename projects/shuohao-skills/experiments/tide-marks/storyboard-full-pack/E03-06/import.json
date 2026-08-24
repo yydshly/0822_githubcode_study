@@ -1,0 +1,69 @@
+{
+  "segment": "E03-06",
+  "episode": 3,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把高嵩私章与六行数量拍进手机。；许知遥：“先留副本。”（恢复专业冷静）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-06\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把黄铜钥匙放到清单旁。；动作：程野查看钥匙环上的两道压痕。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-06\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "程野：“这不像普通磨损。”（低声确认）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 2314,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-05→E03-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "他从夹层抽出油纸包裹的清单。；程野：“他怕的不是电台，是这个。”（压低声音）",
+      "nextStartState": "许知遥把高嵩私章与六行数量拍进手机。；许知遥：“先留副本。”（恢复专业冷静）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-06→E03-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野：“这不像普通磨损。”（低声确认）",
+      "nextStartState": "许知遥抱着电台快步回到修复台前。；她插入已经保存的原始副本。",
+      "contract": "用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。"
+    }
+  },
+  "ready": true
+}

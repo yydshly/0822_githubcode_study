@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "archiveDate": "2026-08-24",
+  "releaseTag": "shuohao-skills-research-archive-2026-08-24",
+  "releaseUrl": "https://github.com/yydshly/0822_githubcode_study/releases/tag/shuohao-skills-research-archive-2026-08-24",
+  "asset": {
+    "name": "shuohao-skills-research-workspace-2026-08-24.zip",
+    "bytes": 1131463673,
+    "sha256": "01f726d6b934d1d91812759f07fb8d4cf482a0f8a4fb8a3a2a32faf1ebc48f4a"
+  },
+  "contents": {
+    "files": 1804,
+    "uncompressedBytes": 1146857347,
+    "secretFindings": 0,
+    "localUserPathFindings": 0
+  },
+  "authority": {
+    "researchConclusion": "RESEARCH-SUMMARY.zh-CN.md",
+    "webManifest": "WEB-ARCHIVE-MANIFEST.json",
+    "webInventory": "WEB-ARCHIVE-INVENTORY.csv",
+    "fullInventoryInsideAsset": "archive-metadata/FULL-ARCHIVE-INVENTORY.csv"
+  }
+}

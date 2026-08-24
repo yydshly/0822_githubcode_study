@@ -1,0 +1,60 @@
+{
+  "segment": "E03-05",
+  "episode": 3,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 7,
+  "chatartSeconds": 7,
+  "estimatedDiamonds": 105,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-05\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：他走出货仓接起电话。；动作：程野重新蹲到消防柜前。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-05\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：他从夹层抽出油纸包裹的清单。；程野：“他怕的不是电台，是这个。”（压低声音）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-05\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-05\\UPLOAD-ORDER.md",
+  "promptCharacters": 1952,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-04→E03-05",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“我给你们十分钟。”（平静施压）；高嵩：“遗物交给我，旧事到此为止。”（像谈交易）",
+      "nextStartState": "他走出货仓接起电话。；程野重新蹲到消防柜前。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-05→E03-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "他从夹层抽出油纸包裹的清单。；程野：“他怕的不是电台，是这个。”（压低声音）",
+      "nextStartState": "许知遥把高嵩私章与六行数量拍进手机。；许知遥：“先留副本。”（恢复专业冷静）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

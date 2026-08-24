@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 9.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, single-lamp night warehouse. Following @Image1, the slim female audio archivist speaks from inside while the broad-shouldered male diver remains outside the closed steel door and holds a smartphone microphone close to the narrow seam at chest height. The camera stays static across the door boundary, keeping her accusation and his covert recording readable. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你连一个不能开口的孩子都要推过去。</d> The camera uses a static shot.
+[Shot 2] At 00:04.500, the camera cuts to @Image2: the controlled middle-aged investor faces the archivist off-screen, his polite surface thinning as he threatens her last remaining home. The camera holds his eyes and nearly vanished smile. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 我是在提醒你，查下去，你连最后的家也保不住。</d> The camera uses a static shot.
+[Shot 3] At 00:09.500, the camera cuts to @Image3: the investor notices a moving shadow beneath the door seam, grabs the steel handle and yanks the door open in one abrupt motion. The camera tracks the handle and swinging door without revealing a new person before the cut. The camera uses a tracking shot.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper shifts, boots scrape wet concrete, the steel door groans, and distant demolition machinery vibrates through the walls. A phone microphone brushes the door seam before the latch snaps open.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E04-04→E04-05 (待链路验证): The previous segment has already ended with: 高嵩：“最后，他把自己送上了船。”（刻意放慢） Start only from this segment's declared opening action: 门外的程野抬起手机，把收音口贴近门缝。；许知遥：“你连一个不能开口的孩子都要推过去。”（声线更低） Do not repeat, reverse or contradict the completed prior action. Contract: 锁定门内/门外轴线：E04-04 结束时高嵩在内侧，E04-05 从外侧同一扇门开始，保留门缝光和人物接近方向。
+OUT E04-05→E04-06 (待链路验证): Complete this segment's declared end state: 高嵩低头看见门缝下晃动的人影。；高嵩一把拉开货仓门。 Do not prematurely perform the next segment action: 程野后退两步，手机仍举在胸前。；高嵩：“录到了什么？”（笑意已经消失） Contract: 共享开门终态；E04-06 从高嵩仍在门内、程野位于门外并后退开始，固定左右关系与视线。

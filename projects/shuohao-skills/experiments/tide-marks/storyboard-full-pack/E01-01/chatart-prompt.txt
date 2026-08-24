@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cold blue-gray palette. Following @Image1, a slim young audio archivist rushes through the abandoned ferry waiting hall while hugging a tin box freshly retrieved from the demolition inventory of her late father's sealed belongings; a tracking shot moves with her as a faint adolescent breath leaks repeatedly from inside the box. She is already crossing into the hall, not running toward a closed door.
+[Shot 2] At 00:03.500, the camera cuts to @Image2. The old door is visibly open about forty degrees with exterior daylight in the gap. Holding the tin box under her left arm, she presses the inside face of the door with her right palm and pushes it toward the jamb until it closes. Her body then turns away from the door toward the bench. This motion is only OPEN DOOR TO CLOSED DOOR; never reach for a knob, never pull the door open, never run toward a closed door. The demolition notice flutters against the ticket window. The camera uses a static shot.
+[Shot 3] At 00:07.000, the camera cuts to @Image3: she has completed closing the door and is no longer reaching toward it. A slow push in approaches her controlled face as the young woman with a clear, cool, restrained voice (S1) says: <d>[Chinese] 连他的东西也等不到明天。</d> End with her attention and body direction oriented away from the door and toward the bench/work area, ready for the next segment.
+
+overall_soundscape: Hurried footsteps cross damp concrete, the already-open old door scrapes shut once, paper flaps against metal, and a faint recorded breath leaks from the box.
+
+non_diegetic_music: A low sustained cello tone with sparse muted piano notes.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN: This is the opening segment; no previous segment state.
+OUT E01-01→E01-02 (待链路验证): Complete this segment's declared end state: 许知遥：“连他的东西也等不到明天。”（低声，压着不满） Do not prematurely perform the next segment action: 许知遥把铁皮箱放到长椅上。；她掀开箱盖。 Contract: 重做 E01-01：明确门原本打开、关门完成、人物转身离开门口并朝长椅方向运动；用最终离门状态连接 E01-02。

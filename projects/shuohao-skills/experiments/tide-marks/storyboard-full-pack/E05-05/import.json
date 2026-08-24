@@ -1,0 +1,69 @@
+{
+  "segment": "E05-05",
+  "episode": 5,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "退潮前夜"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11.5,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-05\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥闭口按下一个无字播放控件；同一台摔裂电台保持未修复状态，屏幕只出现发动机声带和一个沉闷爆音尖峰，不显示文字或时间码。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-05\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "许潮：“高嵩开的船，他要赶在检查前运走六桶。”（来自旧录音，压低声音快速报告）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-05\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "动作：镜头开始时许知遥已经戴好薄手套；程野放下唯一一张潮湿卷曲的联单，她开始慢慢展开。联单尚未装袋。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-05\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-05\\UPLOAD-ORDER.md",
+  "promptCharacters": 2499,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-04→E05-05",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野已把唯一联单完整放回筒内并旋紧同一只筒盖；画面外无纸张。他抱筒沿消波块向岸上奔跑。",
+      "nextStartState": "许知遥闭口按下一个无字播放控件；同一台摔裂电台保持未修复状态，屏幕只出现发动机声带和一个沉闷爆音尖峰，不显示文字或时间码。",
+      "contract": "加入到达修复室的建立镜或清楚时间切；先让金属筒和联单落到工作台，再开始电台播放，保持证物未被替换。"
+    },
+    "outgoing": {
+      "id": "E05-05→E05-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "镜头开始时许知遥已经戴好薄手套；程野放下唯一一张潮湿卷曲的联单，她开始慢慢展开。联单尚未装袋。",
+      "nextStartState": "许知遥：“六行编号，和货仓清单一模一样。”（逐行核对）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

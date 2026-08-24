@@ -1,0 +1,69 @@
+{
+  "segment": "E06-03",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11.5,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-03\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：防潮报警蜂鸣从音响里连续响起。；许潮：“七月十九日，一点四十七分。”（旧录音里的少年声音，紧张但清楚）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-03\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "许潮：“我还在货仓外。”（急促喘息中报出位置）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-03\\f3.png",
+      "startSeconds": 7.5,
+      "exists": true,
+      "chineseDescription": "动作：高嵩后退一步，回头看向停在场边的拆迁设备。；高嵩：“关掉！”（控制第一次崩开）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-03\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-03\\UPLOAD-ORDER.md",
+  "promptCharacters": 2473,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E06-02→E06-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥：“所以请所有人一起核对。”（不与他争吵）",
+      "nextStartState": "防潮报警蜂鸣从音响里连续响起。；许潮：“七月十九日，一点四十七分。”（旧录音里的少年声音，紧张但清楚）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-03→E06-04",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "高嵩后退一步，回头看向停在场边的拆迁设备。；高嵩：“关掉！”（控制第一次崩开）",
+      "nextStartState": "许知遥：“你怕的不是噪声，是时间。”（把音量推高）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

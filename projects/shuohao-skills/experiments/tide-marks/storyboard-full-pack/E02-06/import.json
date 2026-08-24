@@ -1,0 +1,78 @@
+{
+  "segment": "E02-06",
+  "episode": 2,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥快步走到货仓钢门前。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "动作：她把黄铜钥匙插进新挂锁。；动作：钥匙无法转动。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\f3.png",
+      "startSeconds": 6.5,
+      "exists": true,
+      "chineseDescription": "许知遥：“锁是后来换的。”（迅速判断）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\f4.png",
+      "startSeconds": 8.5,
+      "exists": true,
+      "chineseDescription": "动作：程野推开虚掩的侧门。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 1923,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E02-05→E02-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥抓起黄铜钥匙。；许知遥：“去货仓。现在。”（果断）",
+      "nextStartState": "许知遥快步走到货仓钢门前。",
+      "contract": "用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。"
+    },
+    "outgoing": {
+      "id": "E02-06→E02-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野推开虚掩的侧门。",
+      "nextStartState": "两人进入昏暗货仓。",
+      "contract": "两段共享同一扇半开侧门和同一人物站位；E02-06 终帧作为 E02-07 的连续性参考，锁定程野先推门、许知遥随后进入。"
+    }
+  },
+  "ready": true
+}

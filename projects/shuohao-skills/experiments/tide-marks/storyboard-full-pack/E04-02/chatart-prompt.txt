@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 5.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 10.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, single-lamp night warehouse. Following @Image1, the controlled middle-aged investor extends one real-estate document toward the archivist off-screen while the scorched orange radio remains on the wet table beyond it. The camera slowly pushes toward the page and his coercively calm face. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 城里一套房，换电台和清单。今晚就签。</d> The camera uses a push in.
+[Shot 2] At 00:05.000, the camera cuts to @Image2: the slim female audio archivist refuses to touch the offered document, holds the investor's gaze and identifies his urgency as proof that six barrels were deliberate. The camera remains static on her controlled refusal. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你买得这么急，说明六桶不是笔误。</d> The camera uses a static shot.
+[Shot 3] At 00:10.000, the camera cuts to @Image3: the investor retracts the document and pulls the heavy steel door shut with his free hand, enclosing the confrontation without losing his smile. The camera holds his face, hand and closing door. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 多出来的溶剂，我没否认。</d> The camera uses a static shot.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper shifts, boots scrape wet concrete, the steel door groans, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E04-01→E04-02 (可按现有切点): The previous segment has already ended with: 许知遥把电台收进外套内侧，转身走向门口。；高嵩从文件夹里抽出一页房产资料，递到她面前。 Start only from this segment's declared opening action: 高嵩：“城里一套房，换电台和清单。今晚就签。”（音量不高，句句留出逼人答应的停顿） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E04-02→E04-03 (可按现有切点): Complete this segment's declared end state: 高嵩收回资料，反手把货仓门关上。；高嵩：“多出来的溶剂，我没否认。”（笑意不变） Do not prematurely perform the next segment action: 许知遥：“那晚是谁开的船？”（追问得很快） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

@@ -1,0 +1,78 @@
+{
+  "segment": "E02-01",
+  "episode": 2,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 13,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野收到许知遥连夜发来的报时片段和时间疑点后，带着事故记录快步推门进来，把记录压到滚动的报时波形旁。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "程野：“官方写一点二十分离岸。”（低沉，直接进入正题）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\f3.png",
+      "startSeconds": 6,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把电台录音拉回蜂鸣处。；许知遥：“这段报时在一点四十七。”（逐字核对）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\f4.png",
+      "startSeconds": 10.5,
+      "exists": true,
+      "chineseDescription": "动作：她按下播放。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-01\\UPLOAD-ORDER.md",
+  "promptCharacters": 2334,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E01-10→E02-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "黄铜钥匙随震动滑到未修复的波形屏下。",
+      "nextStartState": "程野收到许知遥连夜发来的报时片段和时间疑点后，带着事故记录快步推门进来，把记录压到滚动的报时波形旁。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E02-01→E02-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "她按下播放。",
+      "nextStartState": "许潮：“七月十九，一点四十七。”（录音，远而破碎）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

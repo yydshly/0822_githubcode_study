@@ -1,0 +1,53 @@
+{
+  "segment": "E06-10",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "退潮黄昏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 7.5,
+  "chatartSeconds": 8,
+  "estimatedDiamonds": 120,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-10\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：公开透明归档支架里的摔裂电台保持烧痕、未补漆；许知遥收回双手。潮水退下，最低两级石阶露出深浅两道水线。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-10\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：许知遥自己的普通手机震动；生图只显示模糊空白通知卡。受理文案和虚构编号仅在后期叠加，不把任何具体文字交给生图或 H3 模型。",
+      "postProductionZh": "在手机屏幕四角跟踪后叠加 1.0～1.5 秒：第一行‘七一九旧案复查材料已受理’，第二行‘受理编号：FC-0719-01’。该编号为纯剧情虚构格式；不得使用机关徽标、真实单位名、法院或公安 UI，也不得出现‘立案成功’‘许德海无罪’‘高嵩有罪’或‘案件已翻案’。声音只用一次轻震与克制提示音。"
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-10\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-10\\UPLOAD-ORDER.md",
+  "promptCharacters": 1822,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E06-09→E06-10",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥整理电台的透明归档支架并贴上空白标签，说：‘不是为了赢。是让每一件证据，都能被核验。’标签文字后期处理，生图不生成可读内容。",
+      "nextStartState": "公开透明归档支架里的摔裂电台保持烧痕、未补漆；许知遥收回双手。潮水退下，最低两级石阶露出深浅两道水线。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": null
+  },
+  "ready": true
+}

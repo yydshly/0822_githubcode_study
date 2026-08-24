@@ -1,0 +1,13 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, at low-tide dusk, the archivist secures the cracked orange radio inside a publicly visible transparent archival cradle integrated into the life-ring display; this is not a hidden cache and she does not open or alter the cracked shell. The diver stands exactly two steps above and looks toward the silent worksite. The archivist keeps her mouth closed while the broad-shouldered male diver alone speaks in a rough low baritone (S2): <d>[Chinese] 至少今天，他们停了。</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the archivist straightens the transparent support around the exact cracked radio and applies one new blank archive label. No readable label, case number, repainting or second radio appears. The slim female audio archivist speaks both lines in a clear, steady voice (S1): <d>[Chinese] 不是为了赢。</d> She continues in the same voice (S1): <d>[Chinese] 是让每一件证据，都能被核验。</d> The camera uses a static shot.
+
+overall_soundscape: Low-tide water moves below the exposed steps, river wind touches the secured damaged radio shell, small archival fittings click, and the pier settles into evening quiet.
+
+non_diegetic_music: Sparse piano and a soft sustained cello harmonic leave the ending open but steady.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-08→E06-09 (待链路验证): The previous segment has already ended with: 短暂时间跳切后，程野双手把封闭的联单保护袋交给按受理流程赶到现场的一双中性手套，开始受控登记交接；接收人员的脸和身体不入画。 Start only from this segment's declared opening action: 黄昏时，许知遥把同一台摔裂电台固定进救生圈档案夹层的公开透明支架；这不是隐藏藏匿。程野站在两级石阶上说：‘至少今天，他们停了。’ Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-09→E06-10 (可按现有切点): Complete this segment's declared end state: 许知遥整理电台的透明归档支架并贴上空白标签，说：‘不是为了赢。是让每一件证据，都能被核验。’标签文字后期处理，生图不生成可读内容。 Do not prematurely perform the next segment action: 公开透明归档支架里的摔裂电台保持烧痕、未补漆；许知遥收回双手。潮水退下，最低两级石阶露出深浅两道水线。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

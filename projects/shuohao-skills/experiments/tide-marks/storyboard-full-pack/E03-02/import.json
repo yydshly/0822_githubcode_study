@@ -1,0 +1,69 @@
+{
+  "segment": "E03-02",
+  "episode": 3,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11.5,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-02\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：高嵩整理被碰皱的袖口。；高嵩：“十五年前的纸，能说明什么？”（保持笑意）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-02\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把电台放到日志旁。；许知遥：“能说明你急着清掉这里。”（观察他的反应）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-02\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "高嵩：“我是在替你父亲留体面。”（替她定义利害）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-02\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-02\\UPLOAD-ORDER.md",
+  "promptCharacters": 2486,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E03-01→E03-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野的手指在值班日志与事故记录的时间栏之间移动。；程野：“可事故记录写他一点二十已经开船。”（简短，指出记录冲突）",
+      "nextStartState": "高嵩整理被碰皱的袖口。；高嵩：“十五年前的纸，能说明什么？”（保持笑意）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-02→E03-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "高嵩：“我是在替你父亲留体面。”（替她定义利害）",
+      "nextStartState": "他把责任书推到许知遥面前。；高嵩：“签名是他的，责任也是他的。”（音量不高，句句压人）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

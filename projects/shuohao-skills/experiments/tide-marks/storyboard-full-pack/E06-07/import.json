@@ -1,0 +1,69 @@
+{
+  "segment": "E06-07",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12.5,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-07\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野把同一部裂屏残录手机放到封闭联单保护袋旁，说：‘还有你的原话，一份不少。’他说完闭口后，手机残录才继续播放。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-07\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "高嵩：“断断续续的东西，证明不了什么。”（急着替自己定性）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-07\\f3.png",
+      "startSeconds": 8.5,
+      "exists": true,
+      "chineseDescription": "动作：拆迁设备依次熄火，候船厅前安静下来。；高嵩：“暂停不等于翻案。”（握着手机，声音发紧）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-07\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-07\\UPLOAD-ORDER.md",
+  "promptCharacters": 2461,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E06-06→E06-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "围观者的现场视频传到项目方后，高嵩的手机连续震动；他低头接起项目主管的电话。；画外信息：“现场拆迁暂停，所有材料原地封存。”（项目方的即时风险控制指令，不是司法结论）",
+      "nextStartState": "程野把同一部裂屏残录手机放到封闭联单保护袋旁，说：‘还有你的原话，一份不少。’他说完闭口后，手机残录才继续播放。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-07→E06-08",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "拆迁设备依次熄火，候船厅前安静下来。；高嵩：“暂停不等于翻案。”（握着手机，声音发紧）",
+      "nextStartState": "许知遥：“对。接下来每一项，都公开核验。”（把同一台摔裂电台放到始终封闭的透明袋旁）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

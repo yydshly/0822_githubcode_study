@@ -1,0 +1,78 @@
+{
+  "segment": "E01-08",
+  "episode": 1,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "凌晨修复"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥攥紧耳机线。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\f2.png",
+      "startSeconds": 2.5,
+      "exists": true,
+      "chineseDescription": "许知遥：“再说一遍。”（压住颤抖）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\f3.png",
+      "startSeconds": 4.5,
+      "exists": true,
+      "chineseDescription": "动作：她提高人声频段。；动作：波形里的最后两个音节变得清楚。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\f4.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "许潮：“是高嵩。”（录音，清楚而急迫）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-08\\UPLOAD-ORDER.md",
+  "promptCharacters": 1817,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E01-07→E01-08",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“开船的不是爸。”（录音，气息短促）",
+      "nextStartState": "许知遥攥紧耳机线。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E01-08→E01-09",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“是高嵩。”（录音，清楚而急迫）",
+      "nextStartState": "许知遥摘下耳机站起来。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

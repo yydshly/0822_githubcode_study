@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the archivist keeps her mouth closed and presses one unlabeled playback control beside the same cracked, unrepaired orange radio. The cyan screen shows only a dense engine waveform band followed by one blunt overload spike, without text, digits, timecode or readable UI. The camera uses a static shot.
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the archivist listens with her mouth completely closed beside the unchanged cracked radio as the teenage witness speaks only from the damaged old recording. The teenage male witness says in a fast, low, off-screen recorded voice (S5): <d>[Chinese] 高嵩开的船，他要赶在检查前运走六桶。</d> Do not show the witness, investor, child, portrait, reflection or reenactment. The camera uses a static shot.
+[Shot 3] At 00:08.000, the camera cuts to @Image3: with her thin conservation gloves already on, the archivist begins unfolding exactly one damp curled manifest as the diver places it beside the monitor. The sheet is not sealed or bagged; keep hands natural and show no duplicate paper, readable writing, phone or responsibility statement. The camera uses a static shot.
+
+overall_soundscape: Monitor fans hum in the pre-dawn lab. The cracked radio reproduces tide hiss, engine noise, recovered teenage speech and distant child crying; controls click and damp paper shifts. No present-day person speaks except for the explicitly scripted dialogue.
+
+non_diegetic_music: Sparse piano notes sit over a low electronic drone and a restrained ticking pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E05-04→E05-05 (待链路验证): The previous segment has already ended with: 程野已把唯一联单完整放回筒内并旋紧同一只筒盖；画面外无纸张。他抱筒沿消波块向岸上奔跑。 Start only from this segment's declared opening action: 许知遥闭口按下一个无字播放控件；同一台摔裂电台保持未修复状态，屏幕只出现发动机声带和一个沉闷爆音尖峰，不显示文字或时间码。 Do not repeat, reverse or contradict the completed prior action. Contract: 加入到达修复室的建立镜或清楚时间切；先让金属筒和联单落到工作台，再开始电台播放，保持证物未被替换。
+OUT E05-05→E05-06 (待链路验证): Complete this segment's declared end state: 镜头开始时许知遥已经戴好薄手套；程野放下唯一一张潮湿卷曲的联单，她开始慢慢展开。联单尚未装袋。 Do not prematurely perform the next segment action: 许知遥：“六行编号，和货仓清单一模一样。”（逐行核对） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

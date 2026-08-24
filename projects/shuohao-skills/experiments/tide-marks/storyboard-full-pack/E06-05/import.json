@@ -1,0 +1,69 @@
+{
+  "segment": "E06-05",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-05\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野把装有同一张联单的封闭透明保护袋平举到现场摄像设备前，隔袋指过六行模糊结构；他说：‘六桶，不是两桶。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-05\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "许知遥：“编号连续，私章也在。”（逐项对账）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-05\\f3.png",
+      "startSeconds": 7.5,
+      "exists": true,
+      "chineseDescription": "动作：围观者纷纷举起手机对准联单。；高嵩：“责任书还在，许德海洗不干净。”（退回最后一道旧结论）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-05\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-05\\UPLOAD-ORDER.md",
+  "promptCharacters": 2557,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E06-04→E06-05",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“那是个孩子胡说！”（指向音响）",
+      "nextStartState": "程野把装有同一张联单的封闭透明保护袋平举到现场摄像设备前，隔袋指过六行模糊结构；他说：‘六桶，不是两桶。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-05→E06-06",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "围观者纷纷举起手机对准联单。；高嵩：“责任书还在，许德海洗不干净。”（退回最后一道旧结论）",
+      "nextStartState": "许知遥：“责任书也会进鉴定。”（没有回避）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

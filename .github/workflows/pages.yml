@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "projects/shuohao-skills/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -26,14 +27,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Assemble static site
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp -a docs/. _site/
+          mkdir -p _site/demos/shuohao-skills/research
+          cp -a projects/shuohao-skills/. _site/demos/shuohao-skills/research/
+          rm -rf _site/demos/shuohao-skills/research/upstream/.git
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

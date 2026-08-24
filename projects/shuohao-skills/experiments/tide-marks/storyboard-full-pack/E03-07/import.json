@@ -1,0 +1,78 @@
+{
+  "segment": "E03-07",
+  "episode": 3,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 13,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥抱着电台快步回到修复台前。；动作：她插入已经保存的原始副本。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "许知遥：“蜂鸣之后还有人声。”（盯住波形）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\f3.png",
+      "startSeconds": 6.5,
+      "exists": true,
+      "chineseDescription": "动作：程野关上房门。；动作：许知遥提高蜂鸣后的低频人声。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\f4.png",
+      "startSeconds": 10,
+      "exists": true,
+      "chineseDescription": "许潮：“爸被他们按在货仓里。”（录音，压低声音）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-07\\UPLOAD-ORDER.md",
+  "promptCharacters": 2700,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-06→E03-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野：“这不像普通磨损。”（低声确认）",
+      "nextStartState": "许知遥抱着电台快步回到修复台前。；她插入已经保存的原始副本。",
+      "contract": "用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。"
+    },
+    "outgoing": {
+      "id": "E03-07→E03-08",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“爸被他们按在货仓里。”（录音，压低声音）",
+      "nextStartState": "许知遥的手停在播放键上。；许知遥：“他在货仓。”（确认事实，气息发紧）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, after receiving the archivist's overnight message about the 01:47 discrepancy, a broad-shouldered male diver pushes through the lab door and plants the accident record he brought beside the rolling waveform as the female archivist turns toward him. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to @Image2: the male diver pins the accident record to the bench and states the official departure time without preamble. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 官方写一点二十分离岸。</d>
+[Shot 3] At 00:06.000, the camera cuts to @Image3: the female archivist scrubs the radio recording back to an alarm spike while the male diver studies the waveform across from her. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 这段报时在一点四十七。</d>
+[Shot 4] At 00:10.500, the camera cuts to @Image4: her fingertip presses play beside the scorched orange radio and the waveform begins to move. The camera uses a push in.
+
+overall_soundscape: The door opens sharply, paper lands on steel, monitor fans hum, and the damaged radio emits a faint alarm pulse beneath room tone.
+
+non_diegetic_music: Low bowed cello with a restrained ticking pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-10→E02-01 (待链路验证): The previous segment has already ended with: 黄铜钥匙随震动滑到未修复的波形屏下。 Start only from this segment's declared opening action: 程野收到许知遥连夜发来的报时片段和时间疑点后，带着事故记录快步推门进来，把记录压到滚动的报时波形旁。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-01→E02-02 (可按现有切点): Complete this segment's declared end state: 她按下播放。 Do not prematurely perform the next segment action: 许潮：“七月十九，一点四十七。”（录音，远而破碎） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

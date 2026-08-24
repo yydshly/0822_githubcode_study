@@ -1,0 +1,69 @@
+{
+  "segment": "E04-06",
+  "episode": 4,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "单灯夜戏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 9.5,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野后退两步，手机仍举在胸前。；高嵩：“录到了什么？”（笑意已经消失）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-06\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "程野：“够你解释很久。”（短促，转身前回答）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-06\\f3.png",
+      "startSeconds": 6.5,
+      "exists": true,
+      "chineseDescription": "动作：程野转身跑向候船厅，高嵩立即追了出去。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 2256,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E04-05→E04-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩低头看见门缝下晃动的人影。；高嵩一把拉开货仓门。",
+      "nextStartState": "程野后退两步，手机仍举在胸前。；高嵩：“录到了什么？”（笑意已经消失）",
+      "contract": "共享开门终态；E04-06 从高嵩仍在门内、程野位于门外并后退开始，固定左右关系与视线。"
+    },
+    "outgoing": {
+      "id": "E04-06→E04-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野转身跑向候船厅，高嵩立即追了出去。",
+      "nextStartState": "程野跑下石阶，许知遥抱着电台紧跟在后。；高嵩转身夺过电台，用力摔在石阶上。",
+      "contract": "建立单一运动轴：程野先向候船厅方向跑，高嵩同向追赶；E04-07 沿同方向进入台阶争抢，明确电台先在许知遥手中。"
+    }
+  },
+  "ready": true
+}

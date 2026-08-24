@@ -1,0 +1,78 @@
+{
+  "segment": "E02-03",
+  "episode": 2,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 13,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许知遥：“不是船上的？”（迅速追问）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\f2.png",
+      "startSeconds": 2,
+      "exists": true,
+      "chineseDescription": "动作：程野摇头。；程野：“每三十秒一次，我从小听到大。”（笃定）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\f3.png",
+      "startSeconds": 6,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把两条时间写在同一张纸上。；许知遥：“哥哥那时还在岸上。”（压住激动）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\f4.png",
+      "startSeconds": 10,
+      "exists": true,
+      "chineseDescription": "程野：“至少有一份记录是假的。”（简短，回避她的目光）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-03\\UPLOAD-ORDER.md",
+  "promptCharacters": 2344,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E02-02→E02-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野：“这是货仓防潮报警器。”（确认，语气发沉）",
+      "nextStartState": "许知遥：“不是船上的？”（迅速追问）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E02-03→E02-04",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野：“至少有一份记录是假的。”（简短，回避她的目光）",
+      "nextStartState": "许知遥注意到他的回避。；许知遥：“你还知道什么？”（冷下来）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

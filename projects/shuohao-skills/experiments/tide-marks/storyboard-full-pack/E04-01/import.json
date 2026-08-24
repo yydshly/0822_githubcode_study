@@ -1,0 +1,69 @@
+{
+  "segment": "E04-01",
+  "episode": 4,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "单灯夜戏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12.5,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-01\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "因果转场：为抢在次日九点拆迁前复核并转移剩余湿纸，许知遥与程野连夜返回货仓；程野留在门外备份取证。动作：高嵩快步穿过门口，张开手臂拦住抱着电台离开的许知遥。；高嵩：“跑这么急，是怕我先找到那张清单？”（语气从容，像在谈一笔普通生意）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-01\\f2.png",
+      "startSeconds": 5,
+      "exists": true,
+      "chineseDescription": "许知遥：“我怕的是你把货仓推平。”（站定，声音冷静）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-01\\f3.png",
+      "startSeconds": 8.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把电台收进外套内侧，转身走向门口。；动作：高嵩从文件夹里抽出一页房产资料，递到她面前。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-01\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-01\\UPLOAD-ORDER.md",
+  "promptCharacters": 2899,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-10→E04-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "她把音轨继续拖向许潮登船前的空白段。；耳机里突然传来许潮奔向栈桥的脚步声。",
+      "nextStartState": "因果转场：为抢在次日九点拆迁前复核并转移剩余湿纸，许知遥与程野连夜返回货仓；程野留在门外备份取证。动作：高嵩快步穿过门口，张开手臂拦住抱着电台离开的许知遥。；高嵩：“跑这么急，是怕我先找到那张清单？”（语气从容，像在谈一笔普通生意）",
+      "contract": "明确章回/时间地点跳转：先给货仓外景或门口建立镜，再进入高嵩阻拦许知遥；禁止把两段当成同一秒连续动作。"
+    },
+    "outgoing": {
+      "id": "E04-01→E04-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥把电台收进外套内侧，转身走向门口。；高嵩从文件夹里抽出一页房产资料，递到她面前。",
+      "nextStartState": "高嵩：“城里一套房，换电台和清单。今晚就签。”（音量不高，句句留出逼人答应的停顿）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

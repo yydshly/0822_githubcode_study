@@ -1,0 +1,62 @@
+{
+  "segment": "E01-01",
+  "episode": 1,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "阴天上午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10.5,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-01\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥刚从拆迁清点处领回父亲封存多年的旧物箱，抱着铁皮箱快步冲进候船厅，箱里反复漏出少年喘息。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-01\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：她回身推紧候船厅的旧门。；动作：拆迁通知在售票窗上被风吹起。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-01\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "许知遥：“连他的东西也等不到明天。”（低声，压着不满）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-01\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-01\\UPLOAD-ORDER.md",
+  "promptCharacters": 2300,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": null,
+    "outgoing": {
+      "id": "E01-01→E01-02",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥：“连他的东西也等不到明天。”（低声，压着不满）",
+      "nextStartState": "许知遥把铁皮箱放到长椅上。；她掀开箱盖。",
+      "contract": "重做 E01-01：明确门原本打开、关门完成、人物转身离开门口并朝长椅方向运动；用最终离门状态连接 E01-02。"
+    }
+  },
+  "ready": true
+}

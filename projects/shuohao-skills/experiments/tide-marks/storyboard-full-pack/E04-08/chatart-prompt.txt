@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 5.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, wet pier steps at night. Following @Image1, the broad-shouldered male diver steps firmly beside the slim female audio archivist and faces the investor off-screen while she keeps the cracked orange radio low in her hands. The camera remains static on their united position. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 你毁掉的，只是我们愿意让你看见的那份。</d> The camera uses a static shot.
+[Shot 2] At 00:05.000, the camera cuts to @Image2: the controlled middle-aged investor turns and points toward the dark warehouse behind him, abandoning polite ambiguity as he announces the demolition time. The camera holds his pointing line and the warehouse silhouette. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 明早九点，拆迁启动。</d> The camera uses a static shot.
+[Shot 3] At 00:08.500, the camera cuts to @Image3: the investor's eyes lower toward the diver's smartphone just outside the frame as he warns that every wet paper inside will be destroyed. The camera pushes toward his unsmiling face. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 里面的湿纸，一张都留不住。</d> The camera uses a push in.
+
+overall_soundscape: Night river wind crosses the stone steps and old pier, wet shoes strike concrete, the damaged radio shell scrapes stone, and distant machinery idles beside the dark warehouse.
+
+non_diegetic_music: Low bowed cello and restrained percussion build toward an unresolved pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E04-07→E04-08 (待链路验证): The previous segment has already ended with: 高嵩停在石阶上，没有再往前走。；许知遥：“档案修复，从来不在原介质上做。”（把断裂存储板装回外壳） Start only from this segment's declared opening action: 程野：“你毁掉的，只是我们愿意让你看见的那份。”（站到许知遥身边） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E04-08→E04-09 (待链路验证): Complete this segment's declared end state: 高嵩：“里面的湿纸，一张都留不住。”（目光落在程野的手机上） Do not prematurely perform the next segment action: 程野：“你越急，水下那份东西越值得找。”（故意把水下两个字说重） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

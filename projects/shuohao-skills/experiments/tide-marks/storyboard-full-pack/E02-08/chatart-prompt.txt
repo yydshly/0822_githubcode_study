@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 2.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the female archivist crosses toward the embedded fire cabinet while the diver watches the alarm behind her. The camera uses a tracking shot.
+[Shot 2] At 00:02.500, the camera cuts to @Image2: the same brass key fits the old cabinet lock, turns, and releases the spring-loaded door. The camera uses a push in.
+[Shot 3] At 00:06.000, the camera cuts to @Image3: the female archivist realizes that the inherited key was meant for this cabinet. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 它开的是这里。</d>
+[Shot 4] At 00:08.000, the camera cuts to @Image4: the male diver removes a mold-stained duty log while the female archivist holds the cabinet open. The camera uses a pan right.
+
+overall_soundscape: Footsteps approach the wall cabinet, brass enters an old lock, the latch snaps, and the cabinet door springs outward.
+
+non_diegetic_music: Muted piano notes brighten slightly over sustained low strings.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-07→E02-08 (待链路验证): The previous segment has already ended with: 程野：“就是这个声音。”（确认） Start only from this segment's declared opening action: 许知遥走到嵌墙消防柜前。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-08→E02-09 (可按现有切点): Complete this segment's declared end state: 程野取出发霉的值班日志。 Do not prematurely perform the next segment action: 许知遥翻到七月十九日。；许知遥：“一点二十分，许德海当班。”（读出记录） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

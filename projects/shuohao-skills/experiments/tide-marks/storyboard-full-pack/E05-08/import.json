@@ -1,0 +1,78 @@
+{
+  "segment": "E05-08",
+  "episode": 5,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "退潮前夜"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 14.5,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把同一台摔裂电台放在联单旁；联单只铺在保育衬纸上，尚未装进透明袋。程野说：‘他留下证据，又回去救人。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "许知遥：“高嵩把他的选择，改成了罪。”（重新稳住声音）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：程野打开手机里的残缺录音。；高嵩：“她的学籍和住处，都在我手里。”（手机残录，断续但可辨）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\f4.png",
+      "startSeconds": 11,
+      "exists": true,
+      "chineseDescription": "高嵩：“要想保住女儿，就让他签。”（手机残录，尾句被杂音切断）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-08\\UPLOAD-ORDER.md",
+  "promptCharacters": 3188,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-07→E05-08",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“我不是跟爸赌气跑掉的。”（声音被潮声逐渐淹没）",
+      "nextStartState": "许知遥把同一台摔裂电台放在联单旁；联单只铺在保育衬纸上，尚未装进透明袋。程野说：‘他留下证据，又回去救人。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E05-08→E05-09",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“要想保住女儿，就让他签。”（手机残录，尾句被杂音切断）",
+      "nextStartState": "许知遥把唯一一张父亲责任书放在同一张尚未装袋的联单旁，眼睛停在模糊签名上，说：‘爸不是认罪。他是在替我挡。’P05 右下角必须完整入画，蓝黑模糊签名和褪色椭圆印可辨但不可读；两张纸分别裸放在中性衬纸上。只有许知遥入画并开口；程野、P06 手机、摔裂电台、金属文件筒、三个备份盘和透明保护袋均不出现。她表达的是个人判断，不是已核实结论或免责认定。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

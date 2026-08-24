@@ -1,0 +1,78 @@
+{
+  "segment": "E05-06",
+  "episode": 5,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "退潮前夜"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 15,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许知遥：“六行编号，和货仓清单一模一样。”（逐行核对）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "程野指向同一张联单右下角缺一角、向左带短晕尾的暗紫方章：‘右下角，是他的私章。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：许知遥用无字回拨控件执行一次倒回操作，随后闭口听录音；画面只显示抽象波形，不显示数字、时间码或按钮文字。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\f4.png",
+      "startSeconds": 11.5,
+      "exists": true,
+      "chineseDescription": "动作：录音深处传来孩子连续的哭声。；许潮：“舱里还有孩子。”（一边跑一边说）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 2992,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-05→E05-06",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "镜头开始时许知遥已经戴好薄手套；程野放下唯一一张潮湿卷曲的联单，她开始慢慢展开。联单尚未装袋。",
+      "nextStartState": "许知遥：“六行编号，和货仓清单一模一样。”（逐行核对）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E05-06→E05-07",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "录音深处传来孩子连续的哭声。；许潮：“舱里还有孩子。”（一边跑一边说）",
+      "nextStartState": "许潮：“我回去带他出来。”（没有犹豫）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

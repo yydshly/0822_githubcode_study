@@ -1,0 +1,78 @@
+{
+  "segment": "E03-09",
+  "episode": 3,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 14,
+  "chatartSeconds": 14,
+  "estimatedDiamonds": 210,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥从修复台前站起来。；许知遥：“他签字，不等于他开船。”（克制而确定）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：录音远处传来高嵩的喊声。；高嵩：“拿备用钥匙！”（录音远声，命令）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：发动机声盖过报警蜂鸣。；许潮：“船开了。爸还在这里。”（录音，恐惧却清楚）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\f4.png",
+      "startSeconds": 10.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥摘下耳机。；许知遥：“开船的是高嵩。”（结论落定）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-09\\UPLOAD-ORDER.md",
+  "promptCharacters": 2453,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-08→E03-09",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“爸咬着正钥匙，抱着栏杆。”（录音，急促喘息）",
+      "nextStartState": "许知遥从修复台前站起来。；许知遥：“他签字，不等于他开船。”（克制而确定）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-09→E03-10",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥摘下耳机。；许知遥：“开船的是高嵩。”（结论落定）",
+      "nextStartState": "程野把油纸清单摊在责任书旁。；程野：“六桶溶剂，私章也在。”（指向清单）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

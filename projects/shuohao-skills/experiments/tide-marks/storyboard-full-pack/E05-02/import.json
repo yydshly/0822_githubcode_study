@@ -1,0 +1,69 @@
+{
+  "segment": "E05-02",
+  "episode": 5,
+  "scene": {
+    "id": "S04",
+    "name": "沉船点外侧防波堤",
+    "lighting": "夜间退潮"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11.5,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-02\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "程野：“十五年前，我已经退过一次。”（短暂停顿后说完）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-02\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：程野戴好面镜，转身滑入黑色江水。；动作：安全绳沿着湿滑混凝土不断向水里移动。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-02\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "画外信息：“程野，回话。”（许知遥从耳机里呼叫）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-02\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-02\\UPLOAD-ORDER.md",
+  "promptCharacters": 2439,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-01→E05-02",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "画外信息：“退潮只剩十二分钟，别逞强。”（许知遥从电话里传来，克制而急促）",
+      "nextStartState": "程野：“十五年前，我已经退过一次。”（短暂停顿后说完）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E05-02→E05-03",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "画外信息：“程野，回话。”（许知遥从耳机里呼叫）",
+      "nextStartState": "程野突然浮出水面，双臂抱住一只锈死的金属筒。；程野：“找到了。”（喘息很重）",
+      "contract": "增加水下抓住金属筒或绳索拉升的桥接状态；锁定头灯、绳索、湿衣和同一锈蚀筒体。"
+    }
+  },
+  "ready": true
+}

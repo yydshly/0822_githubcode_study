@@ -1,0 +1,69 @@
+{
+  "segment": "E01-04",
+  "episode": 1,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "凌晨修复"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-04\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "时间转场：当晚直到次日凌晨。动作：许知遥回到临时修复室，把电台放在灰绿修复台中央；她用软刷清掉电池仓里的盐霜。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-04\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：她接上实验电源。；动作：两层屏幕同时跳出密集波形。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-04\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "许知遥：“先保原始轨，再做副本。”（专业，语速稳定）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-04\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-04\\UPLOAD-ORDER.md",
+  "promptCharacters": 1816,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E01-03→E01-04",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥把黄铜钥匙装进口袋。；她抱起电台走出候船厅。",
+      "nextStartState": "时间转场：当晚直到次日凌晨。动作：许知遥回到临时修复室，把电台放在灰绿修复台中央；她用软刷清掉电池仓里的盐霜。",
+      "contract": "用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。"
+    },
+    "outgoing": {
+      "id": "E01-04→E01-05",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥：“先保原始轨，再做副本。”（专业，语速稳定）",
+      "nextStartState": "她戴上耳机。；连续爆音盖住整条音轨。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

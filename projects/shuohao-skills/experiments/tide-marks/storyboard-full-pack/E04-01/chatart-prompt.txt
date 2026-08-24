@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 5.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+Causal premise: Xu Zhiyao and Cheng Ye returned overnight to verify and move remaining wet evidence before the 09:00 demolition; Cheng Ye stays immediately outside the door as a backup recorder.
+[Shot 1] Cinematic, live-action, single-lamp night warehouse, cool grey-green and oxidized orange palette. Following @Image1, Xu Zhiyao moves toward the open doorway while cradling the scorched orange radio against her chest. Gao Song quickly steps across the doorway and raises one arm horizontally to block her path without grabbing or touching her. The camera slowly pushes in. Gao Song speaks in a measured, polished low voice (S3): <d>[Chinese] 跑这么急，是怕我先找到那张清单？</d> Xu Zhiyao stops and keeps her lips closed. The camera uses a push in.
+[Shot 2] At 00:05.000, the camera cuts to @Image2: Xu Zhiyao stands firm with the orange radio protected against her chest and looks toward Gao Song off-screen. The camera remains static. Xu Zhiyao speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 我怕的是你把货仓推平。</d> Gao Song is not visible in this shot. The camera uses a static shot.
+[Shot 3] At 00:08.500, the camera cuts to @Image3: Xu Zhiyao tucks the orange radio securely inside her rain jacket and turns toward the exit. Gao Song lowers his blocking arm, opens a slim dark folder, withdraws one real-estate document and extends it into her path. Both people keep their mouths closed. The page has no legible writing. Preserve the doorway axis and do not introduce a table, cyan waveform or extra evidence. The camera uses a static shot.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp fabric shifts, boots scrape wet concrete, a folder opens, one sheet of paper slides free, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E03-10→E04-01 (待链路验证): The previous segment has already ended with: 她把音轨继续拖向许潮登船前的空白段。；耳机里突然传来许潮奔向栈桥的脚步声。 Start only from this segment's declared opening action: 因果转场：为抢在次日九点拆迁前复核并转移剩余湿纸，许知遥与程野连夜返回货仓；程野留在门外备份取证。动作：高嵩快步穿过门口，张开手臂拦住抱着电台离开的许知遥。；高嵩：“跑这么急，是怕我先找到那张清单？”（语气从容，像在谈一笔普通生意） Do not repeat, reverse or contradict the completed prior action. Contract: 明确章回/时间地点跳转：先给货仓外景或门口建立镜，再进入高嵩阻拦许知遥；禁止把两段当成同一秒连续动作。
+OUT E04-01→E04-02 (可按现有切点): Complete this segment's declared end state: 许知遥把电台收进外套内侧，转身走向门口。；高嵩从文件夹里抽出一页房产资料，递到她面前。 Do not prematurely perform the next segment action: 高嵩：“城里一套房，换电台和清单。今晚就签。”（音量不高，句句留出逼人答应的停顿） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

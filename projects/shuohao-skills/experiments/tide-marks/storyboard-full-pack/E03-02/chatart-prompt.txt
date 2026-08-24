@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, damp warehouse under cool overcast light. Following @Image1, the controlled middle-aged investor calmly straightens the wrinkled cuff of his charcoal coat while preserving a faint patronizing smile. The camera slowly pushes toward his fingers, watch and composed face. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 十五年前的纸，能说明什么？</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the slim female audio archivist deliberately places the scorched orange emergency radio beside the separate mold-stained duty log and watches the investor off-screen for a reaction. The camera holds her hand, both objects and her analytical face. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 能说明你急着清掉这里。</d> The camera uses a static shot.
+[Shot 3] At 00:08.000, the camera cuts to @Image3: the controlled middle-aged investor keeps his faint smile while his eyes harden, defining the threat as protection of her father's dignity. The camera remains static on his face. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 我是在替你父亲留体面。</d> The camera uses a static shot.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, coat fabric shifts, the radio touches the wet table, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E03-01→E03-02 (可按现有切点): The previous segment has already ended with: 程野的手指在值班日志与事故记录的时间栏之间移动。；程野：“可事故记录写他一点二十已经开船。”（简短，指出记录冲突） Start only from this segment's declared opening action: 高嵩整理被碰皱的袖口。；高嵩：“十五年前的纸，能说明什么？”（保持笑意） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E03-02→E03-03 (可按现有切点): Complete this segment's declared end state: 高嵩：“我是在替你父亲留体面。”（替她定义利害） Do not prematurely perform the next segment action: 他把责任书推到许知遥面前。；高嵩：“签名是他的，责任也是他的。”（音量不高，句句压人） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

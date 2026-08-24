@@ -1,0 +1,69 @@
+{
+  "segment": "E02-10",
+  "episode": 2,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10.5,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-10\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野蹲在消防柜边。；程野：“许叔那天不是怕我找到船。”（终于直面记忆）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-10\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "许知遥：“那他怕什么？”（逼问）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-10\\f3.png",
+      "startSeconds": 6,
+      "exists": true,
+      "chineseDescription": "动作：程野抬头看向货仓深处。；程野：“他当时盯着这里，只说谁都不要再找。”（低声，留下疑点）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-10\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-10\\UPLOAD-ORDER.md",
+  "promptCharacters": 2186,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E02-09→E02-10",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥把日志放到电台旁。；许知遥：“哥哥在这儿，爸却被写在船上。”（愤怒渐起）",
+      "nextStartState": "程野蹲在消防柜边。；程野：“许叔那天不是怕我找到船。”（终于直面记忆）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E02-10→E03-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野抬头看向货仓深处。；程野：“他当时盯着这里，只说谁都不要再找。”（低声，留下疑点）",
+      "nextStartState": "货仓侧门被巡场人员发现开启后，高嵩接到通知快步赶来，一把按住刚从消防柜取出的发霉值班日志。；高嵩：“旧纸受潮，碰坏了没人负责。”（温和，手没有松开）",
+      "contract": "给 E03-01 增加高嵩从既定入口闯入的宽镜或门响声桥，再切按住清单；保持电台、日志和人物相对位置。"
+    }
+  },
+  "ready": true
+}

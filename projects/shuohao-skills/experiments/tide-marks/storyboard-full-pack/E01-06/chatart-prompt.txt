@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 5.50-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cold cyan monitor glow. A slow push in follows @Image1 as the technician enlarges the right channel and a human-shaped waveform begins to emerge.
+[Shot 2] At 00:03.000, the camera cuts to @Image2 and holds a static shot on her listening face while a breathless adolescent male voice (S5) speaks from the radio in off-screen voiceover, with the visible woman's lips completely closed: <d>[Chinese] 开船的……</d>
+[Shot 3] At 00:05.500, the camera cuts to @Image3; the static shot catches her hand pressing pause in one abrupt motion.
+[Shot 4] At 00:08.000, the camera cuts to @Image4; a slow push in closes on her recognition as the young woman (S1) whispers: <d>[Chinese] 这个声音……</d>
+
+overall_soundscape: Filtered tide hiss narrows into a human breath, a broken syllable emerges, the pause key clicks, and the room drops to electrical silence.
+
+non_diegetic_music: A single bowed harmonic rises and stops abruptly.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-05→E01-06 (可按现有切点): The previous segment has already ended with: 许知遥：“潮声太满，人声在下面。”（专注，自言自语） Start only from this segment's declared opening action: 她把右声道单独放大。；一个模糊男声从噪声里露出半句。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E01-06→E01-07 (待链路验证): Complete this segment's declared end state: 许知遥：“这个声音……”（失神，尾音发紧） Do not prematurely perform the next segment action: 她从抽屉里取出一张兄妹旧照。；许知遥把旧照立在屏幕边。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

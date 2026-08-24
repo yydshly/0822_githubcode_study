@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 9.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the archivist places the same post-impact cracked orange radio beside the same sealed manifest sleeve and commits every item to open verification. P05 and P06 remain secured outside the crop; all three P07 drives remain secured off-site and do not appear. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 对。接下来每一项，都公开核验。</d> The camera uses a push in.
+[Shot 2] At 00:04.500, the camera cuts to @Image2: the archivist and diver listen with both mouths completely closed while a procedural notice says only through an off-screen phone speaker: <d>[Chinese] 此前提交的七一九事故材料已受理，启动复查。</d> This is intake status only, not a verdict, finding of guilt or exoneration; no phone, official person or case number is shown. The camera uses a static shot.
+[Shot 3] At 00:09.500, after a brief explicit time ellipsis, the camera cuts to @Image3: the diver transfers the single closed manifest sleeve with both hands to one pair of neutral-gloved receiving hands, beginning a controlled, documented handoff. Any receipt and identifier will be added only in post-production; the receiving technician's face and body stay outside the crop. The camera uses a static shot.
+
+overall_soundscape: The forecourt stays quiet after shutdown; an off-screen procedural phone notice is heard, followed by soft glove and sleeve sounds during the controlled handoff.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-07→E06-08 (待链路验证): The previous segment has already ended with: 拆迁设备依次熄火，候船厅前安静下来。；高嵩：“暂停不等于翻案。”（握着手机，声音发紧） Start only from this segment's declared opening action: 许知遥：“对。接下来每一项，都公开核验。”（把同一台摔裂电台放到始终封闭的透明袋旁） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-08→E06-09 (待链路验证): Complete this segment's declared end state: 短暂时间跳切后，程野双手把封闭的联单保护袋交给按受理流程赶到现场的一双中性手套，开始受控登记交接；接收人员的脸和身体不入画。 Do not prematurely perform the next segment action: 黄昏时，许知遥把同一台摔裂电台固定进救生圈档案夹层的公开透明支架；这不是隐藏藏匿。程野站在两级石阶上说：‘至少今天，他们停了。’ Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

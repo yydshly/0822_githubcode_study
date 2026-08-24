@@ -1,0 +1,78 @@
+{
+  "segment": "E01-10",
+  "episode": 1,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "凌晨修复"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 11,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥保存刚刚修出的三段音频副本。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "动作：她继续向后拖动未修复的音轨。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\f3.png",
+      "startSeconds": 6,
+      "exists": true,
+      "chineseDescription": "动作：电台突然爆出规律蜂鸣。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\f4.png",
+      "startSeconds": 8.5,
+      "exists": true,
+      "chineseDescription": "动作：黄铜钥匙随震动滑到未修复的波形屏下。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E01-10\\UPLOAD-ORDER.md",
+  "promptCharacters": 1905,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E01-09→E01-10",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥：“你们谁在撒谎？”（盯着父亲签名）",
+      "nextStartState": "许知遥保存刚刚修出的三段音频副本。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E01-10→E02-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "黄铜钥匙随震动滑到未修复的波形屏下。",
+      "nextStartState": "程野收到许知遥连夜发来的报时片段和时间疑点后，带着事故记录快步推门进来，把记录压到滚动的报时波形旁。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

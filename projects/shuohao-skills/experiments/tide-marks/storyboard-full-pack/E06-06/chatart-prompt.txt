@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the archivist stands beside the same responsibility statement on neutral support and accepts that it must enter formal examination; no legal conclusion has yet been reached. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 责任书也会进鉴定。</d> The camera uses a push in.
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the investor reaches toward the single sealed manifest sleeve without making contact and the diver pulls it firmly back against his chest. The investor's mouth stays closed. The broad-shouldered male diver alone speaks in a rough low baritone (S2): <d>[Chinese] 这一次，谁也扔不回水里。</d> The camera uses a static shot.
+[Shot 3] At 00:07.500, the camera cuts to @Image3: after attendee phone videos have reached the project company, the investor answers his own plain unbranded phone, not Cheng Ye's cracked P06, and listens with his mouth completely closed while an urgent project-manager voice issues an immediate risk-control instruction only through the speaker: <d>[Chinese] 现场拆迁暂停，所有材料原地封存。</d> This is a project-manager operational instruction only, not a verdict or exoneration. The camera uses a static shot.
+
+overall_soundscape: The public-address recording continues under river wind, two nearby phones capture the evidence, the sealed sleeve shifts without opening, and demolition engines remain idling until the project-manager call arrives.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-05→E06-06 (可按现有切点): The previous segment has already ended with: 围观者纷纷举起手机对准联单。；高嵩：“责任书还在，许德海洗不干净。”（退回最后一道旧结论） Start only from this segment's declared opening action: 许知遥：“责任书也会进鉴定。”（没有回避） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-06→E06-07 (待链路验证): Complete this segment's declared end state: 围观者的现场视频传到项目方后，高嵩的手机连续震动；他低头接起项目主管的电话。；画外信息：“现场拆迁暂停，所有材料原地封存。”（项目方的即时风险控制指令，不是司法结论） Do not prematurely perform the next segment action: 程野把同一部裂屏残录手机放到封闭联单保护袋旁，说：‘还有你的原话，一份不少。’他说完闭口后，手机残录才继续播放。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

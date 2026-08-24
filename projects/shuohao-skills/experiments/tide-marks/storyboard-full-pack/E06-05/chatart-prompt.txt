@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the diver holds the same closed transparent sleeve flat before the event camera and moves one fingertip down exactly six blurred ruled rows through the plastic. The manifest stays sealed and supported. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 六桶，不是两桶。</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the archivist indicates the six continuous blurred rows and the dark-purple square seal with one chipped corner and a short leftward bleed through the closed sleeve. The mark is consistent with the private seal, but authenticity remains pending examination. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 编号连续，私章也在。</d> The camera uses a static shot.
+[Shot 3] At 00:07.500, the camera cuts to @Image3: exactly two anonymous spectators seen only from behind hold one phone each toward the evidence while the investor falls back on the still-operative responsibility statement as his argument. The statement has not yet been invalidated or authenticated. The controlled middle-aged investor speaks in a measured but tightening voice (S3): <d>[Chinese] 责任书还在，许德海洗不干净。</d> The camera uses a static shot.
+
+overall_soundscape: The public-address recording continues under river wind, two nearby phones capture the evidence, the sealed sleeve shifts without opening, and demolition engines remain idling until the project-manager call arrives.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-04→E06-05 (待链路验证): The previous segment has already ended with: 高嵩：“那是个孩子胡说！”（指向音响） Start only from this segment's declared opening action: 程野把装有同一张联单的封闭透明保护袋平举到现场摄像设备前，隔袋指过六行模糊结构；他说：‘六桶，不是两桶。’ Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-05→E06-06 (可按现有切点): Complete this segment's declared end state: 围观者纷纷举起手机对准联单。；高嵩：“责任书还在，许德海洗不干净。”（退回最后一道旧结论） Do not prematurely perform the next segment action: 许知遥：“责任书也会进鉴定。”（没有回避） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

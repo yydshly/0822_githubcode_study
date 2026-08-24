@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, tense cyan-and-amber palette. A slow push in follows @Image1 as the young technician puts on studio headphones and a wall of explosive static fills her hearing.
+[Shot 2] At 00:03.500, the camera cuts to the interface detail in @Image2; the static shot holds while her fingers drag a noise-reduction control.
+[Shot 3] At 00:07.000, the camera cuts to @Image3 and holds a static shot on her listening profile as the young technician (S1) says quietly: <d>[Chinese] 潮声太满，人声在下面。</d>
+
+overall_soundscape: Headphone pads settle, dense static crackles, mouse and keyboard clicks stay dry and close, and a faint tide-like hiss remains beneath the processing.
+
+non_diegetic_music: N/A
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-04→E01-05 (可按现有切点): The previous segment has already ended with: 许知遥：“先保原始轨，再做副本。”（专业，语速稳定） Start only from this segment's declared opening action: 她戴上耳机。；连续爆音盖住整条音轨。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E01-05→E01-06 (可按现有切点): Complete this segment's declared end state: 许知遥：“潮声太满，人声在下面。”（专注，自言自语） Do not prematurely perform the next segment action: 她把右声道单独放大。；一个模糊男声从噪声里露出半句。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

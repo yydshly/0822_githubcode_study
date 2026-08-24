@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 5.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 11.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, single-lamp night warehouse. Following @Image1, the controlled middle-aged investor turns and pats the rusted steel door with an open hand while imposing his conclusion on the dead father. The camera slowly pushes toward his hand and profile. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 他后来签了字，因为他知道许潮上了船。</d> The camera uses a push in.
+[Shot 2] At 00:05.000, the camera cuts to @Image2: the slim female audio archivist refuses his diversion and asks why her brother was inside the warehouse. The camera holds her direct eyeline toward him off-screen. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 我哥为什么会在货仓？</d> The camera uses a static shot.
+[Shot 3] At 00:08.000, the camera cuts to @Image3: the investor gestures dismissively toward the scorched orange radio on the wet table and describes the teenage witness with open contempt. The camera remains static on his face and the radio below. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 他偷了电台，想学大人报险。</d> The camera uses a static shot.
+[Shot 4] At 00:11.500, the camera cuts to @Image4: the investor leans a fraction toward the archivist off-screen and deliberately slows the accusation that the teenager put himself aboard. The camera pushes closer as his expression hardens. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 最后，他把自己送上了船。</d> The camera uses a push in.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper shifts, boots scrape wet concrete, the steel door groans, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E04-03→E04-04 (待链路验证): The previous segment has already ended with: 许知遥：“我爸被锁在这儿。”（压住怒意） Start only from this segment's declared opening action: 高嵩转身拍了拍锈蚀的钢门。；高嵩：“他后来签了字，因为他知道许潮上了船。”（替死者下结论） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E04-04→E04-05 (待链路验证): Complete this segment's declared end state: 高嵩：“最后，他把自己送上了船。”（刻意放慢） Do not prematurely perform the next segment action: 门外的程野抬起手机，把收音口贴近门缝。；许知遥：“你连一个不能开口的孩子都要推过去。”（声线更低） Contract: 锁定门内/门外轴线：E04-04 结束时高嵩在内侧，E04-05 从外侧同一扇门开始，保留门缝光和人物接近方向。

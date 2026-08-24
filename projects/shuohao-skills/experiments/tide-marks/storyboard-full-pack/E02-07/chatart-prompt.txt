@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the pair enter the dim warehouse together and spread their attention across the unfamiliar interior. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to @Image2: the rear alarm lamp blinks in exact rhythm with the damaged radio playback as the camera pushes toward the matching pulses. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to @Image3: the male diver confirms that this is the sound preserved in the recording. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 就是这个声音。</d>
+
+overall_soundscape: The side door echoes shut, a moisture alarm beeps through the cavernous warehouse, and the radio playback overlaps it exactly.
+
+non_diegetic_music: A subdued low-frequency drone with a faint ticking motif.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-06→E02-07 (待链路验证): The previous segment has already ended with: 程野推开虚掩的侧门。 Start only from this segment's declared opening action: 两人进入昏暗货仓。 Do not repeat, reverse or contradict the completed prior action. Contract: 两段共享同一扇半开侧门和同一人物站位；E02-06 终帧作为 E02-07 的连续性参考，锁定程野先推门、许知遥随后进入。
+OUT E02-07→E02-08 (待链路验证): Complete this segment's declared end state: 程野：“就是这个声音。”（确认） Do not prematurely perform the next segment action: 许知遥走到嵌墙消防柜前。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

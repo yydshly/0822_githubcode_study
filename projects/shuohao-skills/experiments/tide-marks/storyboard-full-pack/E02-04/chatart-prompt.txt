@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the female archivist catches his evasive glance and presses him for what else he knows. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你还知道什么？</d>
+[Shot 2] At 00:03.500, the camera cuts to @Image2: his hand tightens around the chair back before he can answer. The camera uses a static shot.
+[Shot 3] At 00:06.000, the camera cuts to @Image3: the male diver finally looks up and admits that he found half a burned boat plate the next day. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 事故第二天，我捡到过半块船牌。</d>
+
+overall_soundscape: A chair creaks under tightening fingers, distant traffic fades behind wired glass, and the radio hiss continues at low level.
+
+non_diegetic_music: Low sustained strings with a single muted heartbeat-like drum.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-03→E02-04 (可按现有切点): The previous segment has already ended with: 程野：“至少有一份记录是假的。”（简短，回避她的目光） Start only from this segment's declared opening action: 许知遥注意到他的回避。；许知遥：“你还知道什么？”（冷下来） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-04→E02-05 (可按现有切点): Complete this segment's declared end state: 程野：“事故第二天，我捡到过半块船牌。”（停顿后承认） Do not prematurely perform the next segment action: 许知遥：“船牌呢？”（立刻追问） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

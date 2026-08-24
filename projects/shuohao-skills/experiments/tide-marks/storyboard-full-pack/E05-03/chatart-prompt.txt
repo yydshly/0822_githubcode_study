@@ -1,0 +1,13 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the diver bursts through the black surface with heavy breath and locks both arms around one sealed dark-brown steel canister with two low ribs, a fixed left base and a thick closed threaded lid at frame-right. No paper is visible. The broad-shouldered male diver speaks through strained breath in a rough low baritone (S2): <d>[Chinese] 找到了。</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the soaked diver pushes the mask onto his forehead, braces the exact same canister between his knees and loosens the frame-right threaded lid by only about one centimetre. The lid remains attached and no paper appears; the diver stays silent. The camera uses a pan right.
+
+overall_soundscape: Low-tide water pulls through concrete blocks, a safety line strains and scrapes wet stone, breathing stays close, and the black river moves under cold night wind.
+
+non_diegetic_music: Sub-bass swells and distant bowed metal rise slowly beneath the night water.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E05-02→E05-03 (待链路验证): The previous segment has already ended with: 画外信息：“程野，回话。”（许知遥从耳机里呼叫） Start only from this segment's declared opening action: 程野突然浮出水面，双臂抱住一只锈死的金属筒。；程野：“找到了。”（喘息很重） Do not repeat, reverse or contradict the completed prior action. Contract: 增加水下抓住金属筒或绳索拉升的桥接状态；锁定头灯、绳索、湿衣和同一锈蚀筒体。
+OUT E05-03→E05-04 (待链路验证): Complete this segment's declared end state: 他拖着金属筒爬上混凝土坡面。；程野拧开筒盖。 Do not prematurely perform the next segment action: 同一只文件筒的筒盖已经完全旋下；唯一一卷湿联单只滑出一部分，仍留在筒内。程野闭口听许知遥画外下令：‘别展开，马上带回来。’ Contract: 让 E05-03 结束在盖子已松但未脱离；E05-04 从同一角度完成开盖，纸张只能在盖子完全离开后部分滑出。

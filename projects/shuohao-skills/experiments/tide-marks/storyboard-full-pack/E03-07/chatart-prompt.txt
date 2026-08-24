@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.50-second mark of the target video; @Image4 (from Shot 4) aligns with the 10.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the slim female audio archivist in a navy rain jacket and headphones urgently sets the battered orange emergency radio on the restoration bench and inserts one saved-source storage card into an external audio reader beside it. The camera uses a tracking shot.
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the slim female audio archivist presses one headphone cup to her ear and locks her gaze on a cyan waveform where a large beep peak is followed by a faint low-frequency voice trace. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 蜂鸣之后还有人声。</d>
+[Shot 3] At 00:06.500, the camera cuts to @Image3: the broad-shouldered male diver in dark weathered workwear quietly closes the room door in the background while the slim female audio archivist raises one low-frequency gain control and the faint voice trace strengthens after the beep. The camera uses a static shot.
+[Shot 4] At 00:10.000, the camera cuts to @Image4: the slim female audio archivist and the broad-shouldered male diver hold completely still and silently react to the recovered recording, both visible mouths firmly closed while they stare at the strengthened waveform. The camera uses a push in. The teenage male witness says only in an off-screen recorded voice in a bright, strained tone (S5): <d>[Chinese] 爸被他们按在货仓里。</d> No teenage boy is visible.
+
+overall_soundscape: Monitor fans hum, tide hiss moves through the recording, controls click, and the damaged radio pulses beneath the dialogue.
+
+non_diegetic_music: Sparse piano notes sit over a low electronic drone and restrained ticking pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E03-06→E03-07 (待链路验证): The previous segment has already ended with: 程野：“这不像普通磨损。”（低声确认） Start only from this segment's declared opening action: 许知遥抱着电台快步回到修复台前。；她插入已经保存的原始副本。 Do not repeat, reverse or contradict the completed prior action. Contract: 用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。
+OUT E03-07→E03-08 (可按现有切点): Complete this segment's declared end state: 许潮：“爸被他们按在货仓里。”（录音，压低声音） Do not prematurely perform the next segment action: 许知遥的手停在播放键上。；许知遥：“他在货仓。”（确认事实，气息发紧） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

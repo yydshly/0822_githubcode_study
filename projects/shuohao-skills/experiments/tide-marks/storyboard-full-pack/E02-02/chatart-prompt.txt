@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the scorched radio speaker carries a distant teenage time report through salt noise. The camera uses a static shot. A distant teenage male recording speaks in an off-screen voiceover with a bright strained voice (S5), while all visible lips remain completely closed: <d>[Chinese] 七月十九，一点四十七。</d>
+[Shot 2] At 00:03.000, the camera cuts to @Image2: the male diver bends toward the speaker as the regular alarm pulse cuts through the tide recording; the camera pushes in between both listeners. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to @Image3: recognition settles across the male diver's face as he identifies the warehouse moisture alarm. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 这是货仓防潮报警器。</d>
+
+overall_soundscape: A brittle teenage recording emerges through tide hiss; a regular moisture alarm pulse repeats while clothing brushes the steel bench.
+
+non_diegetic_music: Sparse muted piano over a low electronic drone.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-01→E02-02 (可按现有切点): The previous segment has already ended with: 她按下播放。 Start only from this segment's declared opening action: 许潮：“七月十九，一点四十七。”（录音，远而破碎） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-02→E02-03 (可按现有切点): Complete this segment's declared end state: 程野：“这是货仓防潮报警器。”（确认，语气发沉） Do not prematurely perform the next segment action: 许知遥：“不是船上的？”（迅速追问） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

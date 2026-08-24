@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 7.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 11.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the archivist traces exactly six aligned blurred row structures on the only damp, unfolded but not fully flattened manifest. She alone speaks with natural lip movement in a clear, cool, restrained voice (S1): <d>[Chinese] 六行编号，和货仓清单一模一样。</d> Keep every row unreadable and do not create a second sheet. The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the diver points to the dark-purple chipped-corner square seal with its short leftward bleed at the lower-right corner of the same manifest. He alone speaks with natural lip movement in a rough low baritone (S2): <d>[Chinese] 右下角，是他的私章。</d> Do not turn the seal red or make text readable. The camera uses a static shot.
+[Shot 3] At 00:07.000, the camera cuts to @Image3: the archivist makes one rewind action using an unlabeled backward control and then keeps her mouth completely closed while the teenage witness speaks only from the old recording. The teenage male witness says in a breathless off-screen recorded voice (S5): <d>[Chinese] 电台藏在救生圈里，位置我报过了。</d> Keep the waveform abstract and show no digits, timecode, readable UI or teenage witness. The camera uses a static shot.
+[Shot 4] At 00:11.500, the camera cuts to @Image4: the archivist and diver remain silent with both mouths fully closed as continuous child crying appears beneath the teenage witness's running voice. The teenage male witness says only in the off-screen recording (S5): <d>[Chinese] 舱里还有孩子。</d> Show exactly two present-day adults and no child, witness, portrait, reflection or reenactment. The camera uses a push in.
+
+overall_soundscape: Monitor fans hum in the pre-dawn lab. The cracked radio reproduces tide hiss, engine noise, recovered teenage speech and distant child crying; controls click and damp paper shifts. No present-day person speaks except for the explicitly scripted dialogue.
+
+non_diegetic_music: Sparse piano notes sit over a low electronic drone and a restrained ticking pulse.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E05-05→E05-06 (待链路验证): The previous segment has already ended with: 镜头开始时许知遥已经戴好薄手套；程野放下唯一一张潮湿卷曲的联单，她开始慢慢展开。联单尚未装袋。 Start only from this segment's declared opening action: 许知遥：“六行编号，和货仓清单一模一样。”（逐行核对） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E05-06→E05-07 (可按现有切点): Complete this segment's declared end state: 录音深处传来孩子连续的哭声。；许潮：“舱里还有孩子。”（一边跑一边说） Do not prematurely perform the next segment action: 许潮：“我回去带他出来。”（没有犹豫） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

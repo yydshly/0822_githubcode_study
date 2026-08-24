@@ -1,0 +1,69 @@
+{
+  "segment": "E03-01",
+  "episode": 3,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-01\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：货仓侧门被巡场人员发现开启后，高嵩接到通知快步赶来，一把按住刚从消防柜取出的发霉值班日志。；高嵩：“旧纸受潮，碰坏了没人负责。”（温和，手没有松开）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-01\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把值班日志从他手下抽走，并与程野带来的事故记录并排。；许知遥：“一点二十仍值班，一点四十七仍报警。”（冷静核对两条时间）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-01\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "动作：程野的手指在值班日志与事故记录的时间栏之间移动。；程野：“可事故记录写他一点二十已经开船。”（简短，指出记录冲突）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-01\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-01\\UPLOAD-ORDER.md",
+  "promptCharacters": 2802,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E02-10→E03-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野抬头看向货仓深处。；程野：“他当时盯着这里，只说谁都不要再找。”（低声，留下疑点）",
+      "nextStartState": "货仓侧门被巡场人员发现开启后，高嵩接到通知快步赶来，一把按住刚从消防柜取出的发霉值班日志。；高嵩：“旧纸受潮，碰坏了没人负责。”（温和，手没有松开）",
+      "contract": "给 E03-01 增加高嵩从既定入口闯入的宽镜或门响声桥，再切按住清单；保持电台、日志和人物相对位置。"
+    },
+    "outgoing": {
+      "id": "E03-01→E03-02",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野的手指在值班日志与事故记录的时间栏之间移动。；程野：“可事故记录写他一点二十已经开船。”（简短，指出记录冲突）",
+      "nextStartState": "高嵩整理被碰皱的袖口。；高嵩：“十五年前的纸，能说明什么？”（保持笑意）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

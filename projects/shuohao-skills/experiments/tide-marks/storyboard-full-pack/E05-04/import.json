@@ -1,0 +1,69 @@
+{
+  "segment": "E05-04",
+  "episode": 5,
+  "scene": {
+    "id": "S04",
+    "name": "沉船点外侧防波堤",
+    "lighting": "夜间退潮"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10,
+  "chatartSeconds": 10,
+  "estimatedDiamonds": 150,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-04\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：同一只文件筒的筒盖已经完全旋下；唯一一卷湿联单只滑出一部分，仍留在筒内。程野闭口听许知遥画外下令：‘别展开，马上带回来。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-04\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "程野把同一只独立筒盖举到右侧头灯下，辨认无字的半月划痕：‘筒盖上有许潮的潮记。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-04\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：程野已把唯一联单完整放回筒内并旋紧同一只筒盖；画面外无纸张。他抱筒沿消波块向岸上奔跑。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-04\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-04\\UPLOAD-ORDER.md",
+  "promptCharacters": 2596,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-03→E05-04",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "他拖着金属筒爬上混凝土坡面。；程野拧开筒盖。",
+      "nextStartState": "同一只文件筒的筒盖已经完全旋下；唯一一卷湿联单只滑出一部分，仍留在筒内。程野闭口听许知遥画外下令：‘别展开，马上带回来。’",
+      "contract": "让 E05-03 结束在盖子已松但未脱离；E05-04 从同一角度完成开盖，纸张只能在盖子完全离开后部分滑出。"
+    },
+    "outgoing": {
+      "id": "E05-04→E05-05",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野已把唯一联单完整放回筒内并旋紧同一只筒盖；画面外无纸张。他抱筒沿消波块向岸上奔跑。",
+      "nextStartState": "许知遥闭口按下一个无字播放控件；同一台摔裂电台保持未修复状态，屏幕只出现发动机声带和一个沉闷爆音尖峰，不显示文字或时间码。",
+      "contract": "加入到达修复室的建立镜或清楚时间切；先让金属筒和联单落到工作台，再开始电台播放，保持证物未被替换。"
+    }
+  },
+  "ready": true
+}

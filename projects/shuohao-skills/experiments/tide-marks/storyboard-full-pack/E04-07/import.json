@@ -1,0 +1,78 @@
+{
+  "segment": "E04-07",
+  "episode": 4,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "夜间逼问"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 14.5,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野跑下石阶，许知遥抱着电台紧跟在后。；动作：高嵩转身夺过电台，用力摔在石阶上。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：橙色外壳裂开，存储板从缝里滑了出来。；高嵩：“现在，你还剩什么？”（呼吸略乱，重新挤出笑）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：许知遥蹲下捡起裂开的电台。；许知遥：“三份备份。”（平静得没有停顿）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\f4.png",
+      "startSeconds": 10.5,
+      "exists": true,
+      "chineseDescription": "动作：高嵩停在石阶上，没有再往前走。；许知遥：“档案修复，从来不在原介质上做。”（把断裂存储板装回外壳）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-07\\UPLOAD-ORDER.md",
+  "promptCharacters": 2916,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E04-06→E04-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野转身跑向候船厅，高嵩立即追了出去。",
+      "nextStartState": "程野跑下石阶，许知遥抱着电台紧跟在后。；高嵩转身夺过电台，用力摔在石阶上。",
+      "contract": "建立单一运动轴：程野先向候船厅方向跑，高嵩同向追赶；E04-07 沿同方向进入台阶争抢，明确电台先在许知遥手中。"
+    },
+    "outgoing": {
+      "id": "E04-07→E04-08",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩停在石阶上，没有再往前走。；许知遥：“档案修复，从来不在原介质上做。”（把断裂存储板装回外壳）",
+      "nextStartState": "程野：“你毁掉的，只是我们愿意让你看见的那份。”（站到许知遥身边）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

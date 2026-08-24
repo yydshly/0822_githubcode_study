@@ -1,0 +1,16 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 2.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 5.50-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.50-second mark of the target video; @Image5 (from Shot 5) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the female archivist demands to know where the boat plate is. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 船牌呢？</d>
+[Shot 2] At 00:02.000, the camera cuts to @Image2: his hand releases the chair and the camera pulls out as he admits throwing the plate back into the water. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 被我扔回水里了。</d>
+[Shot 3] At 00:05.500, the camera cuts to @Image3: she asks who ordered him to discard it, and he turns toward the old father photograph. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 谁让你扔的？</d>
+[Shot 4] At 00:08.500, the camera cuts to @Image4: the male diver gives the father's familiar title in a voice barely above the room tone. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 许叔。</d>
+[Shot 5] At 00:10.500, the camera cuts to @Image5: the female archivist grabs the blackened brass key and strides for the door, ordering an immediate trip to the warehouse as the diver follows. The camera uses a tracking shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 去货仓。现在。</d>
+
+overall_soundscape: The chair releases with a metal tick, paper shifts under a hand, and the brass key scrapes sharply across the bench.
+
+non_diegetic_music: A tense cello line rises, then cuts to a held low note.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-04→E02-05 (可按现有切点): The previous segment has already ended with: 程野：“事故第二天，我捡到过半块船牌。”（停顿后承认） Start only from this segment's declared opening action: 许知遥：“船牌呢？”（立刻追问） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-05→E02-06 (待链路验证): Complete this segment's declared end state: 许知遥抓起黄铜钥匙。；许知遥：“去货仓。现在。”（果断） Do not prematurely perform the next segment action: 许知遥快步走到货仓钢门前。 Contract: 用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。

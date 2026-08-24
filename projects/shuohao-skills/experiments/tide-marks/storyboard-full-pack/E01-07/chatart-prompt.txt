@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, intimate cyan-and-amber light. A pan right follows @Image1 as the young woman takes a worn sibling photograph from a drawer and sets it beside the monitor.
+[Shot 2] At 00:03.500, the camera cuts to @Image2; a slow push in closes on her vulnerable face as the young woman (S1) asks: <d>[Chinese] 哥，是你吗？</d>
+[Shot 3] At 00:06.000, the camera cuts to @Image3 and holds a static shot as one finger presses replay beside the fire-scarred radio.
+[Shot 4] At 00:08.500, the camera cuts to @Image4; the static shot stays on her silent reaction while the breathless adolescent male voice (S5) says in an off-screen voiceover and her lips remain completely closed: <d>[Chinese] 开船的不是爸。</d>
+
+overall_soundscape: A drawer slides, old paper touches the desk, the replay control clicks, tide hiss returns, and the recorded adolescent breath stays close and damaged.
+
+non_diegetic_music: Soft piano enters on one unresolved minor interval.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-06→E01-07 (待链路验证): The previous segment has already ended with: 许知遥：“这个声音……”（失神，尾音发紧） Start only from this segment's declared opening action: 她从抽屉里取出一张兄妹旧照。；许知遥把旧照立在屏幕边。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E01-07→E01-08 (可按现有切点): Complete this segment's declared end state: 许潮：“开船的不是爸。”（录音，气息短促） Do not prematurely perform the next segment action: 许知遥攥紧耳机线。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

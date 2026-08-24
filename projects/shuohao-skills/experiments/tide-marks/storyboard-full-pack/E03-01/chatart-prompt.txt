@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, damp warehouse under cool overcast light. Following @Image1, after receiving a patrol report that the side door is open, the controlled middle-aged investor enters quickly and plants one hand firmly on the mold-stained old duty log, preventing anyone from taking it. This is a blurred ruled duty log only: no private seal, no red stamp and no freight or six-drum list exists in this shot. The camera slowly pushes toward his anchored hand and controlled expression. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 旧纸受潮，碰坏了没人负责。</d> The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the slim female audio archivist pulls the duty log decisively out from beneath his hand and places it beside a plain grey accident record, comparing the two time entries. Neither paper has a seal or stamp, and the hidden freight list has not yet been discovered. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 一点二十仍值班，一点四十七仍报警。</d> The camera uses a static shot.
+[Shot 3] At 00:08.000, the camera cuts to @Image3: the broad-shouldered male diver leans toward the table and points between a blurred time row on the mold-stained duty log and the plain accident record. There is absolutely no red mark, private seal or six-drum form. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 可事故记录写他一点二十已经开船。</d> The camera uses a static shot.
+
+overall_soundscape: Moisture alarms repeat through the cavernous warehouse, damp paper drags across the wet table, boots scrape concrete, and distant demolition machinery vibrates through the walls.
+
+non_diegetic_music: Tight cello ostinato and muted metallic percussion sustain investigative tension.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-10→E03-01 (待链路验证): The previous segment has already ended with: 程野抬头看向货仓深处。；程野：“他当时盯着这里，只说谁都不要再找。”（低声，留下疑点） Start only from this segment's declared opening action: 货仓侧门被巡场人员发现开启后，高嵩接到通知快步赶来，一把按住刚从消防柜取出的发霉值班日志。；高嵩：“旧纸受潮，碰坏了没人负责。”（温和，手没有松开） Do not repeat, reverse or contradict the completed prior action. Contract: 给 E03-01 增加高嵩从既定入口闯入的宽镜或门响声桥，再切按住清单；保持电台、日志和人物相对位置。
+OUT E03-01→E03-02 (可按现有切点): Complete this segment's declared end state: 程野的手指在值班日志与事故记录的时间栏之间移动。；程野：“可事故记录写他一点二十已经开船。”（简短，指出记录冲突） Do not prematurely perform the next segment action: 高嵩整理被碰皱的袖口。；高嵩：“十五年前的纸，能说明什么？”（保持笑意） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

@@ -1,0 +1,78 @@
+{
+  "segment": "E04-09",
+  "episode": 4,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "夜间逼问"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 15,
+  "chatartSeconds": 15,
+  "estimatedDiamonds": 225,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "程野：“你越急，水下那份东西越值得找。”（故意把水下两个字说重）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：高嵩沿着栈桥快步离开。；许知遥：“刚才录到了多少？”（立刻转向程野）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\f3.png",
+      "startSeconds": 7.5,
+      "exists": true,
+      "chineseDescription": "动作：程野点开手机里的残缺录音。；动作：爆音过后，手机里挤出三个断续词组。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\f4.png",
+      "startSeconds": 11,
+      "exists": true,
+      "chineseDescription": "高嵩：“她的学籍……住处……让他签。”（来自手机残录，失真而断裂）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E04-09\\UPLOAD-ORDER.md",
+  "promptCharacters": 3002,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E04-08→E04-09",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“里面的湿纸，一张都留不住。”（目光落在程野的手机上）",
+      "nextStartState": "程野：“你越急，水下那份东西越值得找。”（故意把水下两个字说重）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E04-09→E05-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "高嵩：“她的学籍……住处……让他签。”（来自手机残录，失真而断裂）",
+      "nextStartState": "程野根据十五年前自己丢下半块船牌的位置，并结合许潮录音里奔向栈桥的脚步方向，沿防波堤快步跑下消波块，冲向退潮后露出的水线；他把安全绳扣在坡面的锈环上。",
+      "contract": "使用明确的低潮夜外景与准备镜作为章回转场；保留同一远岸三灯方位，但不要假装与上一段无缝连续。"
+    }
+  },
+  "ready": true
+}

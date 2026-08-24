@@ -50,6 +50,8 @@ shuohao-skills 不是小说创作器或视频生成器，而是一套基于**已
 ## 样例入口
 
 - [GitHub Pages 样例源文件](../../docs/demos/shuohao-skills/tide-marks/)
+- [完整远端归档说明](REMOTE-ARCHIVE.zh-CN.md)
+- [网页依赖与文件校验清单](WEB-ARCHIVE-REPORT.zh-CN.md)
 - [失败复盘](experiments/tide-marks/offline-production/library-exploration-conclusion.html)
 - [修正版冻结归档](experiments/tide-marks/archive/2026-08-24-capability-exploration-failure-review/index.html)
 - [原库《渡口》复现页](../../docs/demos/shuohao-skills/index.html)

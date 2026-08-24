@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cold cyan-and-amber palette. The static shot follows @Image1 as the technician saves three separate copies of the restored audio.
+[Shot 2] At 00:03.000, the camera cuts to @Image2; a slow push in follows her dragging the recording deeper into the unrepaired waveform.
+[Shot 3] At 00:06.000, the camera cuts to @Image3 and holds a static shot as a regular alarm pulse suddenly bursts from the orange radio speaker.
+[Shot 4] At 00:08.500, the camera cuts to @Image4; a slow push in follows the blackened brass key sliding under the cyan waveform screen with each vibration, ending before its purpose is explained.
+
+overall_soundscape: Save confirmations click softly, the timeline scrub produces filtered tide hiss, a regular electronic alarm bursts through, and metal scrapes lightly across the steel bench in rhythm.
+
+non_diegetic_music: A restrained sub-bass pulse begins matching the unexplained alarm interval.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-09→E01-10 (待链路验证): The previous segment has already ended with: 许知遥：“你们谁在撒谎？”（盯着父亲签名） Start only from this segment's declared opening action: 许知遥保存刚刚修出的三段音频副本。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E01-10→E02-01 (待链路验证): Complete this segment's declared end state: 黄铜钥匙随震动滑到未修复的波形屏下。 Do not prematurely perform the next segment action: 程野收到许知遥连夜发来的报时片段和时间疑点后，带着事故记录快步推门进来，把记录压到滚动的报时波形旁。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

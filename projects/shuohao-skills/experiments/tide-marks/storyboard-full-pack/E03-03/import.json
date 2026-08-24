@@ -1,0 +1,69 @@
+{
+  "segment": "E03-03",
+  "episode": 3,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12,
+  "chatartSeconds": 12,
+  "estimatedDiamonds": 180,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-03\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：他把责任书推到许知遥面前。；高嵩：“签名是他的，责任也是他的。”（音量不高，句句压人）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-03\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：许知遥拿起责任书。；许知遥：“一点四十七，他不在船上。”（逐字核对）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-03\\f3.png",
+      "startSeconds": 8,
+      "exists": true,
+      "chineseDescription": "高嵩：“录音修出来什么，全凭你说。”（轻描淡写）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-03\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-03\\UPLOAD-ORDER.md",
+  "promptCharacters": 2587,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E03-02→E03-03",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "高嵩：“我是在替你父亲留体面。”（替她定义利害）",
+      "nextStartState": "他把责任书推到许知遥面前。；高嵩：“签名是他的，责任也是他的。”（音量不高，句句压人）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-03→E03-04",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "高嵩：“录音修出来什么，全凭你说。”（轻描淡写）",
+      "nextStartState": "程野挡在电台前。；程野：“报警器不会替她撒谎。”（低沉）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

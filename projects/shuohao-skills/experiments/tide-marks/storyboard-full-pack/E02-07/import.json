@@ -1,0 +1,69 @@
+{
+  "segment": "E02-07",
+  "episode": 2,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 9,
+  "chatartSeconds": 9,
+  "estimatedDiamonds": 135,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-07\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：两人进入昏暗货仓。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-07\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "动作：后墙报警器亮起琥珀灯。；动作：蜂鸣与电台录音重叠。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-07\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "程野：“就是这个声音。”（确认）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-07\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-07\\UPLOAD-ORDER.md",
+  "promptCharacters": 1754,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E02-06→E02-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野推开虚掩的侧门。",
+      "nextStartState": "两人进入昏暗货仓。",
+      "contract": "两段共享同一扇半开侧门和同一人物站位；E02-06 终帧作为 E02-07 的连续性参考，锁定程野先推门、许知遥随后进入。"
+    },
+    "outgoing": {
+      "id": "E02-07→E02-08",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "程野：“就是这个声音。”（确认）",
+      "nextStartState": "许知遥走到嵌墙消防柜前。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

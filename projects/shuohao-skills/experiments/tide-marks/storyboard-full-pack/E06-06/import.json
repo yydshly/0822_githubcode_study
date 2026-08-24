@@ -1,0 +1,69 @@
+{
+  "segment": "E06-06",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "仪式清晨"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12.5,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-06\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许知遥：“责任书也会进鉴定。”（没有回避）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-06\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "动作：高嵩伸手去抓封闭透明袋，程野把袋装联单收回身前，全程没有开袋。；程野：“这一次，谁也扔不回水里。”（直视高嵩）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-06\\f3.png",
+      "startSeconds": 7.5,
+      "exists": true,
+      "chineseDescription": "动作：围观者的现场视频传到项目方后，高嵩的手机连续震动；他低头接起项目主管的电话。；画外信息：“现场拆迁暂停，所有材料原地封存。”（项目方的即时风险控制指令，不是司法结论）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-06\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-06\\UPLOAD-ORDER.md",
+  "promptCharacters": 2570,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E06-05→E06-06",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "围观者纷纷举起手机对准联单。；高嵩：“责任书还在，许德海洗不干净。”（退回最后一道旧结论）",
+      "nextStartState": "许知遥：“责任书也会进鉴定。”（没有回避）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-06→E06-07",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "围观者的现场视频传到项目方后，高嵩的手机连续震动；他低头接起项目主管的电话。；画外信息：“现场拆迁暂停，所有材料原地封存。”（项目方的即时风险控制指令，不是司法结论）",
+      "nextStartState": "程野把同一部裂屏残录手机放到封闭联单保护袋旁，说：‘还有你的原话，一份不少。’他说完闭口后，手机残录才继续播放。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.50-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, both investigators cross the wet yard toward the warehouse steel door, the camera tracking their urgent approach. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to @Image2: the brass key enters the new padlock but stops against the unfamiliar mechanism. The camera uses a push in.
+[Shot 3] At 00:06.500, the camera cuts to @Image3: the female archivist identifies the lock as a later replacement. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 锁是后来换的。</d>
+[Shot 4] At 00:08.500, the camera cuts to @Image4: the male diver finds the partly open side door and pushes it inward. The camera uses a pan right.
+
+overall_soundscape: Boots cross wet concrete, brass scrapes inside a new padlock, and a heavy side door groans open.
+
+non_diegetic_music: Low tremolo strings with sparse metallic percussion.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-05→E02-06 (待链路验证): The previous segment has already ended with: 许知遥抓起黄铜钥匙。；许知遥：“去货仓。现在。”（果断） Start only from this segment's declared opening action: 许知遥快步走到货仓钢门前。 Do not repeat, reverse or contradict the completed prior action. Contract: 用明确离场/到达或建立镜交代场景变化，不把时空跳转伪装成同一秒连续动作。
+OUT E02-06→E02-07 (待链路验证): Complete this segment's declared end state: 程野推开虚掩的侧门。 Do not prematurely perform the next segment action: 两人进入昏暗货仓。 Contract: 两段共享同一扇半开侧门和同一人物站位；E02-06 终帧作为 E02-07 的连续性参考，锁定程野先推门、许知遥随后进入。

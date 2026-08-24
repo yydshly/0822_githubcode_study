@@ -1,0 +1,78 @@
+{
+  "segment": "E05-07",
+  "episode": 5,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "退潮前夜"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 13,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "许潮：“我回去带他出来。”（没有犹豫）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\f2.png",
+      "startSeconds": 3,
+      "exists": true,
+      "chineseDescription": "动作：急促脚步声远去，爆音随即盖过录音。；许知遥：“哥。”（第一次失去平稳）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\f3.png",
+      "startSeconds": 6.5,
+      "exists": true,
+      "chineseDescription": "画面采用动作终态：耳机已经摘下并放在台面，许知遥双手撑住修复台、半起身、闭口；‘摘下再撑住’的过程留给后期视频运动。",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image4",
+      "file": "f4.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\f4.png",
+      "startSeconds": 10,
+      "exists": true,
+      "chineseDescription": "许潮：“我不是跟爸赌气跑掉的。”（声音被潮声逐渐淹没）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-07\\UPLOAD-ORDER.md",
+  "promptCharacters": 2935,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E05-06→E05-07",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "录音深处传来孩子连续的哭声。；许潮：“舱里还有孩子。”（一边跑一边说）",
+      "nextStartState": "许潮：“我回去带他出来。”（没有犹豫）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E05-07→E05-08",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许潮：“我不是跟爸赌气跑掉的。”（声音被潮声逐渐淹没）",
+      "nextStartState": "许知遥把同一台摔裂电台放在联单旁；联单只铺在保育衬纸上，尚未装进透明袋。程野说：‘他留下证据，又回去救人。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

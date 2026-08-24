@@ -1,0 +1,60 @@
+{
+  "segment": "E05-03",
+  "episode": 5,
+  "scene": {
+    "id": "S04",
+    "name": "沉船点外侧防波堤",
+    "lighting": "夜间退潮"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 8,
+  "chatartSeconds": 8,
+  "estimatedDiamonds": 120,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-03\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野突然浮出水面，双臂抱住一只锈死的金属筒。；程野：“找到了。”（喘息很重）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-03\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "动作：他拖着金属筒爬上混凝土坡面。；动作：程野拧开筒盖。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-03\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E05-03\\UPLOAD-ORDER.md",
+  "promptCharacters": 1886,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E05-02→E05-03",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "画外信息：“程野，回话。”（许知遥从耳机里呼叫）",
+      "nextStartState": "程野突然浮出水面，双臂抱住一只锈死的金属筒。；程野：“找到了。”（喘息很重）",
+      "contract": "增加水下抓住金属筒或绳索拉升的桥接状态；锁定头灯、绳索、湿衣和同一锈蚀筒体。"
+    },
+    "outgoing": {
+      "id": "E05-03→E05-04",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "他拖着金属筒爬上混凝土坡面。；程野拧开筒盖。",
+      "nextStartState": "同一只文件筒的筒盖已经完全旋下；唯一一卷湿联单只滑出一部分，仍留在筒内。程野闭口听许知遥画外下令：‘别展开，马上带回来。’",
+      "contract": "让 E05-03 结束在盖子已松但未脱离；E05-04 从同一角度完成开盖，纸张只能在盖子完全离开后部分滑出。"
+    }
+  },
+  "ready": true
+}

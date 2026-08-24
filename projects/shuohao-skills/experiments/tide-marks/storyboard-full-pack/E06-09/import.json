@@ -1,0 +1,60 @@
+{
+  "segment": "E06-09",
+  "episode": 6,
+  "scene": {
+    "id": "S01",
+    "name": "南堤旧渡口候船厅与栈桥",
+    "lighting": "退潮黄昏"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 9,
+  "chatartSeconds": 9,
+  "estimatedDiamonds": 135,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-09\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：黄昏时，许知遥把同一台摔裂电台固定进救生圈档案夹层的公开透明支架；这不是隐藏藏匿。程野站在两级石阶上说：‘至少今天，他们停了。’",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-09\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "许知遥整理电台的透明归档支架并贴上空白标签，说：‘不是为了赢。是让每一件证据，都能被核验。’标签文字后期处理，生图不生成可读内容。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-09\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E06-09\\UPLOAD-ORDER.md",
+  "promptCharacters": 2224,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E06-08→E06-09",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "短暂时间跳切后，程野双手把封闭的联单保护袋交给按受理流程赶到现场的一双中性手套，开始受控登记交接；接收人员的脸和身体不入画。",
+      "nextStartState": "黄昏时，许知遥把同一台摔裂电台固定进救生圈档案夹层的公开透明支架；这不是隐藏藏匿。程野站在两级石阶上说：‘至少今天，他们停了。’",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E06-09→E06-10",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥整理电台的透明归档支架并贴上空白标签，说：‘不是为了赢。是让每一件证据，都能被核验。’标签文字后期处理，生图不生成可读内容。",
+      "nextStartState": "公开透明归档支架里的摔裂电台保持烧痕、未补漆；许知遥收回双手。潮水退下，最低两级石阶露出深浅两道水线。",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

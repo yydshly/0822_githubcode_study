@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, night exterior at the warehouse door. Following @Image1, the broad-shouldered male diver steps back two paces but keeps the smartphone upright at his chest as the controlled middle-aged investor fills the doorway with his smile gone. The camera remains static between them. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 录到了什么？</d> The camera uses a static shot.
+[Shot 2] At 00:03.500, the camera cuts to @Image2: the diver gives one clipped reply while shifting his weight to turn, keeping the phone secure. The camera holds his face and compact preparation to run. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 够你解释很久。</d> The camera uses a static shot.
+[Shot 3] At 00:06.500, the camera cuts to @Image3: the diver turns and sprints across the wet yard toward the waiting hall; the investor immediately runs after him from the warehouse doorway. The tracking camera follows both men without changing their screen direction. The camera uses a tracking shot.
+
+overall_soundscape: The steel door bangs open, wet shoes scrape and accelerate across concrete, the phone shifts against fabric, and the warehouse alarm recedes behind them.
+
+non_diegetic_music: Fast muted percussion joins the tight cello pulse without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E04-05→E04-06 (待链路验证): The previous segment has already ended with: 高嵩低头看见门缝下晃动的人影。；高嵩一把拉开货仓门。 Start only from this segment's declared opening action: 程野后退两步，手机仍举在胸前。；高嵩：“录到了什么？”（笑意已经消失） Do not repeat, reverse or contradict the completed prior action. Contract: 共享开门终态；E04-06 从高嵩仍在门内、程野位于门外并后退开始，固定左右关系与视线。
+OUT E04-06→E04-07 (待链路验证): Complete this segment's declared end state: 程野转身跑向候船厅，高嵩立即追了出去。 Do not prematurely perform the next segment action: 程野跑下石阶，许知遥抱着电台紧跟在后。；高嵩转身夺过电台，用力摔在石阶上。 Contract: 建立单一运动轴：程野先向候船厅方向跑，高嵩同向追赶；E04-07 沿同方向进入台阶争抢，明确电台先在许知遥手中。

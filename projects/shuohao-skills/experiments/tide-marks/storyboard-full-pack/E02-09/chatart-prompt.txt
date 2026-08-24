@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following @Image1, the female archivist opens the log to the accident date and reads the official duty time while the diver follows the page. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 一点二十分，许德海当班。</d>
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the male diver compares the log with the radio recording and states that the alarm was still sounding twenty-seven minutes later. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 可一点四十七，报警器还在录音里。</d>
+[Shot 3] At 00:08.500, the camera cuts to @Image3: she places the log beside the radio and voices the impossible split between her brother ashore and her father written aboard. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 哥哥在这儿，爸却被写在船上。</d>
+
+overall_soundscape: Damp pages separate with soft tearing sounds, the alarm continues at fixed intervals, and the radio hiss fills the spaces between voices.
+
+non_diegetic_music: A tightening cello ostinato with restrained low piano.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E02-08→E02-09 (可按现有切点): The previous segment has already ended with: 程野取出发霉的值班日志。 Start only from this segment's declared opening action: 许知遥翻到七月十九日。；许知遥：“一点二十分，许德海当班。”（读出记录） Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E02-09→E02-10 (可按现有切点): Complete this segment's declared end state: 许知遥把日志放到电台旁。；许知遥：“哥哥在这儿，爸却被写在船上。”（愤怒渐起） Do not prematurely perform the next segment action: 程野蹲在消防柜边。；程野：“许叔那天不是怕我找到船。”（终于直面记忆） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

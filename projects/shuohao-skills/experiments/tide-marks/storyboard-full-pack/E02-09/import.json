@@ -1,0 +1,69 @@
+{
+  "segment": "E02-09",
+  "episode": 2,
+  "scene": {
+    "id": "S03",
+    "name": "旧渡口货仓",
+    "lighting": "阴天下午"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 12.5,
+  "chatartSeconds": 13,
+  "estimatedDiamonds": 195,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-09\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：许知遥翻到七月十九日。；许知遥：“一点二十分，许德海当班。”（读出记录）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-09\\f2.png",
+      "startSeconds": 4,
+      "exists": true,
+      "chineseDescription": "程野：“可一点四十七，报警器还在录音里。”（盯住两条时间）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-09\\f3.png",
+      "startSeconds": 8.5,
+      "exists": true,
+      "chineseDescription": "动作：许知遥把日志放到电台旁。；许知遥：“哥哥在这儿，爸却被写在船上。”（愤怒渐起）",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-09\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E02-09\\UPLOAD-ORDER.md",
+  "promptCharacters": 2124,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "可直连",
+    "incoming": {
+      "id": "E02-08→E02-09",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "程野取出发霉的值班日志。",
+      "nextStartState": "许知遥翻到七月十九日。；许知遥：“一点二十分，许德海当班。”（读出记录）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E02-09→E02-10",
+      "risk": "低",
+      "status": "可按现有切点",
+      "previousEndState": "许知遥把日志放到电台旁。；许知遥：“哥哥在这儿，爸却被写在船上。”（愤怒渐起）",
+      "nextStartState": "程野蹲在消防柜边。；程野：“许叔那天不是怕我找到船。”（终于直面记忆）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    }
+  },
+  "ready": true
+}

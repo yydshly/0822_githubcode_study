@@ -1,0 +1,14 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. Following @Image1, the diver sets the exact damaged P06 recording phone beside the sealed manifest sleeve. Its screen contains only one dim cyan waveform. The broad-shouldered male diver first speaks in a rough low baritone (S2): <d>[Chinese] 还有你的原话，一份不少。</d> After he closes his mouth, the broken off-screen recording resumes; the investor never appears in this shot. The camera uses a push in.
+[Shot 2] At 00:04.000, the camera cuts to @Image2: the investor rushes to define the broken recording as meaningless before the public can interpret it. P06 and the manifest remain off-screen. The controlled middle-aged investor speaks in a tightening polished voice (S3): <d>[Chinese] 断断续续的东西，证明不了什么。</d> The camera uses a static shot.
+[Shot 3] At 00:08.500, the camera cuts to @Image3: the demolition machines power down one after another and the forecourt becomes quiet; the investor grips his own ordinary phone, not P06, and narrows the significance of the order. No legal result, arrest or official insignia appears. The controlled middle-aged investor speaks with visible strain (S3): <d>[Chinese] 暂停不等于翻案。</d> The camera uses a static shot.
+
+overall_soundscape: The broken phone recording crackles, then demolition engines power down one by one; the final engine dies into a quiet forecourt.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E06-06→E06-07 (待链路验证): The previous segment has already ended with: 围观者的现场视频传到项目方后，高嵩的手机连续震动；他低头接起项目主管的电话。；画外信息：“现场拆迁暂停，所有材料原地封存。”（项目方的即时风险控制指令，不是司法结论） Start only from this segment's declared opening action: 程野把同一部裂屏残录手机放到封闭联单保护袋旁，说：‘还有你的原话，一份不少。’他说完闭口后，手机残录才继续播放。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E06-07→E06-08 (待链路验证): Complete this segment's declared end state: 拆迁设备依次熄火，候船厅前安静下来。；高嵩：“暂停不等于翻案。”（握着手机，声音发紧） Do not prematurely perform the next segment action: 许知遥：“对。接下来每一项，都公开核验。”（把同一台摔裂电台放到始终封闭的透明袋旁） Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

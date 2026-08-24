@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 3.00-second mark of the target video; @Image3 (from Shot 3) aligns with the 6.00-second mark of the target video; @Image4 (from Shot 4) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, divided amber and cyan light. A pull out follows @Image1 as the young woman removes her headphones and stands abruptly from the bench.
+[Shot 2] At 00:03.000, the camera cuts to @Image2 and holds a static shot as the young woman (S1) looks toward the old signed document and says: <d>[Chinese] 责任书上写的是爸。</d>
+[Shot 3] At 00:06.000, the camera cuts to @Image3; the static shot isolates her hand pressing the document beside the damaged radio.
+[Shot 4] At 00:08.000, the camera cuts to @Image4; a slow push in closes on her demanding face as the young woman (S1) asks: <d>[Chinese] 你们谁在撒谎？</d>
+
+overall_soundscape: Headphones hit the bench softly, the chair scrapes back, old paper slaps onto steel, and the monitor fan continues under the tense silence.
+
+non_diegetic_music: Low strings sustain with two distant piano strikes.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E01-08→E01-09 (可按现有切点): The previous segment has already ended with: 许潮：“是高嵩。”（录音，清楚而急迫） Start only from this segment's declared opening action: 许知遥摘下耳机站起来。 Do not repeat, reverse or contradict the completed prior action. Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。
+OUT E01-09→E01-10 (待链路验证): Complete this segment's declared end state: 许知遥：“你们谁在撒谎？”（盯着父亲签名） Do not prematurely perform the next segment action: 许知遥保存刚刚修出的三段音频副本。 Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

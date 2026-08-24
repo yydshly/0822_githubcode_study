@@ -1,0 +1,15 @@
+How the reference pictures align with the target video — @Image1 (from Shot 1) aligns with the 0.00-second mark of the target video; @Image2 (from Shot 2) aligns with the 4.50-second mark of the target video; @Image3 (from Shot 3) aligns with the 9.50-second mark of the target video.
+
+integrated_multimodal_description:
+Continuity premise: all three independent storage drives remain secured together at the restoration lab outside the demolition venue; disconnecting one loudspeaker cable can interrupt only the live playback, not erase the copies.
+[Shot 1] Cinematic, live-action. Following @Image1, the investor lunges for one active public-address cable while the diver blocks the path and keeps the single sealed manifest sleeve protected against his chest. The investor never touches the sleeve; the diver maintains his hold, neither man opens it, and both men keep their mouths fully closed. The camera uses a tracking shot.
+[Shot 2] At 00:04.500, the camera cuts to @Image2: the archivist presses one unlabeled play control and recorded tide sound fills the public loudspeakers; she faces the investor off-screen without wavering. The three independent backup copies remain off-site and no storage drives appear in frame. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你拔一根线，我还有三份备份。</d> The camera uses a static shot.
+[Shot 3] At 00:09.500, the camera cuts to @Image3: the investor restores a thin layer of public composure and attempts to reclaim the ceremony. Only he speaks and no crowd or evidence object enters the crop. The controlled middle-aged investor speaks in a measured, polished low voice (S3): <d>[Chinese] 这是拆迁仪式，不是你的修复室。</d> The camera uses a static shot.
+
+overall_soundscape: River wind crosses the public-address speakers, camera shutters and restrained phone clicks punctuate the forecourt, the sealed evidence sleeve rustles softly, and all demolition machinery continues idling without shutting down.
+
+non_diegetic_music: Low bowed cello and restrained percussion rise beneath the public evidence confrontation without resolving it.
+
+CROSS-SEGMENT CONTINUITY GATES:
+IN E05-10→E06-01 (待链路验证): The previous segment has already ended with: 许知遥拿同一台未修复的摔裂电台，黑色熔痕、右侧裂开结构、盐霜擦痕和弯天线保持不变；程野拿已完全装入且袋口完全封闭的唯一一袋联单，绝不打开。两人闭口快步走向门口；出发前，程野已把同一部裂屏残录手机完全收入内侧口袋并随身带走，手机不出画；恰好三个存储盘留在台面。距九点一分钟只由画外闹钟声提示，不显示手机、数字或界面。 Start only from this segment's declared opening action: 高嵩冲向唯一一根现场音响线；程野侧身阻挡，并把装有同一张联单的封闭透明保护袋护在胸前。两人都闭口，此镜不出现电台或备份盘。 Do not repeat, reverse or contradict the completed prior action. Contract: 增加仪式现场建立与落位契约：许知遥到音响台并携带摔裂电台，程野只护住封闭联单，三份备份盘保持场外；随后才发生抢线。
+OUT E06-01→E06-02 (待链路验证): Complete this segment's declared end state: 高嵩：“这是拆迁仪式，不是你的修复室。”（努力维持体面） Do not prematurely perform the next segment action: 程野保持透明保护袋封闭，把装有联单的保护袋平举给围观者看；手指隔着塑料沿六行模糊编号移动。程野说：‘六桶编号，都在这儿。’ Contract: 保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。

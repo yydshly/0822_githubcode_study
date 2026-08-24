@@ -1,0 +1,69 @@
+{
+  "segment": "E03-10",
+  "episode": 3,
+  "scene": {
+    "id": "S02",
+    "name": "许知遥临时声音修复室",
+    "lighting": "阴天工作日"
+  },
+  "model": "MiniMax H3",
+  "mode": "全能模式",
+  "quality": "768P",
+  "ratio": "16:9",
+  "designSeconds": 10.5,
+  "chatartSeconds": 11,
+  "estimatedDiamonds": 165,
+  "uploadOrder": [
+    {
+      "token": "@Image1",
+      "file": "f1.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-10\\f1.png",
+      "startSeconds": 0,
+      "exists": true,
+      "chineseDescription": "动作：程野把油纸清单摊在责任书旁。；程野：“六桶溶剂，私章也在。”（指向清单）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image2",
+      "file": "f2.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-10\\f2.png",
+      "startSeconds": 3.5,
+      "exists": true,
+      "chineseDescription": "许知遥：“还差事故船上的原始联单。”（不被胜利冲昏）",
+      "postProductionZh": ""
+    },
+    {
+      "token": "@Image3",
+      "file": "f3.png",
+      "absolutePath": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-10\\f3.png",
+      "startSeconds": 7,
+      "exists": true,
+      "chineseDescription": "动作：她把音轨继续拖向许潮登船前的空白段。；动作：耳机里突然传来许潮奔向栈桥的脚步声。",
+      "postProductionZh": ""
+    }
+  ],
+  "promptFile": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-10\\chatart-prompt.txt",
+  "uploadGuide": "E:\\0822_codex_project\\projects\\shuohao-skills\\experiments\\tide-marks\\storyboard-full-pack\\E03-10\\UPLOAD-ORDER.md",
+  "promptCharacters": 2843,
+  "withinChatArtPromptLimit": true,
+  "continuity": {
+    "state": "待验证",
+    "incoming": {
+      "id": "E03-09→E03-10",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "许知遥摘下耳机。；许知遥：“开船的是高嵩。”（结论落定）",
+      "nextStartState": "程野把油纸清单摊在责任书旁。；程野：“六桶溶剂，私章也在。”（指向清单）",
+      "contract": "保持人物位置、朝向、手中物品、运动轴和物体开合状态；生成后连播接点两侧各 2 秒。"
+    },
+    "outgoing": {
+      "id": "E03-10→E04-01",
+      "risk": "中",
+      "status": "待链路验证",
+      "previousEndState": "她把音轨继续拖向许潮登船前的空白段。；耳机里突然传来许潮奔向栈桥的脚步声。",
+      "nextStartState": "因果转场：为抢在次日九点拆迁前复核并转移剩余湿纸，许知遥与程野连夜返回货仓；程野留在门外备份取证。动作：高嵩快步穿过门口，张开手臂拦住抱着电台离开的许知遥。；高嵩：“跑这么急，是怕我先找到那张清单？”（语气从容，像在谈一笔普通生意）",
+      "contract": "明确章回/时间地点跳转：先给货仓外景或门口建立镜，再进入高嵩阻拦许知遥；禁止把两段当成同一秒连续动作。"
+    }
+  },
+  "ready": true
+}
