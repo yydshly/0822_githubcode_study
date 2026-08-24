@@ -1,0 +1,1429 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>潮痕 · 美术设定集</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3,h4{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px}
+.kpi.accent{border-top:2px solid var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+.mono{font:400 11.5px/1.7 var(--mono);color:var(--ink-2);word-break:break-word}
+
+/* 场景设定卡：一排两张（方便截图宣传），卡内纵排、设定图占满卡宽 */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:1100px){.cards{grid-template-columns:1fr}}
+.scene{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 20px}
+.sc-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px}
+.sc-id{font:500 12px/1 var(--mono);color:var(--seal)}
+.sc-h h3{font:400 20px/1.2 var(--serif);letter-spacing:.04em}
+.badge{font:500 10.5px/1 var(--sans);padding:2px 8px;border-radius:99px;border:1px solid var(--seal);color:var(--seal)}
+.badge.once{border-color:var(--seal-2);color:var(--seal-2)}
+.sc-use{margin-left:auto;font-size:12px;color:var(--ink-2)}
+.sc-sum{margin:10px 0 12px;font:400 14.5px/1.9 var(--serif)}
+.scene .blk{margin-top:16px}
+.scene .pgroup{margin-top:16px}
+
+.plate{margin:0;background:#fff;border:1px solid var(--rule-2);border-radius:2px;overflow:hidden}
+.plate .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.plate .zoom:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.plate img{display:block;width:100%;height:auto}
+/* 图片弹层 */
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;
+  background:#191d21e6;padding:32px;cursor:zoom-out}
+.lightbox.on{display:grid}
+.lightbox img{max-width:100%;max-height:100%;background:#fff;border-radius:2px;
+  box-shadow:0 8px 40px #0006}
+.lightbox-x{position:absolute;top:18px;right:22px;font:500 13px/1 var(--sans);color:#fff;
+  background:none;border:1px solid #fff6;border-radius:3px;padding:8px 12px;cursor:pointer}
+.lightbox-x:hover{border-color:#fff}
+.plate figcaption{font-size:11px;letter-spacing:.08em;color:var(--ink-3);padding:6px 10px;border-top:1px solid var(--rule)}
+.plate-empty{display:grid;place-items:center;min-height:180px;text-align:center;
+  border:1px dashed var(--rule-2);background:var(--paper);color:var(--ink-3);font-size:13px}
+.plate-empty em{font-style:normal;font-size:12px;opacity:.8}
+.variant{margin:10px 0 0;font-size:12.5px;color:var(--seal);background:var(--seal-soft);padding:7px 10px;border-radius:2px}
+.variant b{font-family:var(--mono);font-weight:500}
+
+.blk{margin-bottom:16px}
+.blk h4{font:500 11px/1.6 var(--sans);letter-spacing:.18em;color:var(--seal);margin-bottom:8px}
+.blk h4 small{display:block;letter-spacing:0;font-weight:400;color:var(--ink-3);font-size:11px}
+.anchors{margin:0;padding:0 0 0 2px;list-style:none;counter-reset:an}
+/* ::before 序号也是网格项，desc 必须显式钉在第二列，否则会掉进 22px 窄列一字一行 */
+.anchors li{counter-increment:an;display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:8px;
+  padding:6px 0;border-top:1px solid var(--rule);font-size:13px}
+.anchors li:first-child{border-top:0}
+.anchors li::before{content:counter(an,decimal-leading-zero);grid-column:1;grid-row:1;
+  font:500 11px/1.9 var(--mono);color:var(--seal)}
+.anchors b{grid-column:2;font-weight:500}
+.anchors span{grid-column:2;display:block;font-size:12px;color:var(--ink-2)}
+.lights{display:flex;flex-direction:column;gap:6px}
+.light{display:flex;align-items:baseline;gap:10px;background:var(--paper);border:1px solid var(--rule);
+  border-radius:2px;padding:7px 10px}
+.light i{flex:none;font-style:normal;font:500 12px/1.6 var(--sans);color:var(--ink)}
+.light .mono{flex:1;min-width:0}
+
+.pgroup{border:1px solid var(--rule);border-radius:2px;background:var(--paper);padding:4px 12px 8px;margin-top:12px}
+.pr{border-bottom:1px solid var(--rule)}
+.pgroup .pr:last-of-type{border-bottom:0}
+.pr summary{display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer;list-style:none;
+  font:500 12px/1 var(--sans);letter-spacing:.04em}
+.pr summary::-webkit-details-marker{display:none}
+.pr summary::before{content:"▸";color:var(--seal);font-size:11px;transition:transform .15s}
+.pr[open] summary::before{transform:rotate(90deg)}
+.pr summary span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr p{margin:0 0 10px;padding:10px 12px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:2px;font:400 12px/1.75 var(--mono);white-space:pre-wrap;word-break:break-word}
+.pgroup-f{padding:10px 0 4px}
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.wide{width:100%;padding:9px}
+.copy.mini{padding:2px 7px;font-size:10.5px}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy{display:none!important}
+  .pr p{display:block!important}
+  .pr summary::before{content:""}
+  .page{max-width:none;padding:0}
+  section.top-sec,.scene{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style><!-- production-hub-return-css:start --><style>.production-hub-return{position:fixed;right:16px;bottom:16px;z-index:99999;padding:9px 12px;border:1px solid #3b6670;border-radius:9px;background:#0b151bea;color:#67e0e6!important;font:700 13px/1.2 system-ui,"Microsoft YaHei",sans-serif;text-decoration:none!important;box-shadow:0 8px 30px #0007;backdrop-filter:blur(10px)}.production-hub-return:focus-visible{outline:3px solid #67e0e6;outline-offset:3px}@media(max-width:560px){.production-hub-return{display:grid;place-items:center;right:10px;bottom:10px;width:44px;height:44px;padding:0;overflow:hidden;font-size:0}.production-hub-return::before{content:"⌂";font-size:22px}}</style><!-- production-hub-return-css:end --></head><body><!-- production-hub-return:start --><a class="production-hub-return" href="../index.html" aria-label="返回潮痕小说视频生产总控">⌂ 返回生产总控</a><!-- production-hub-return:end -->
+<div class="page">
+
+<header class="hd">
+  <h1>潮痕</h1>
+  <span class="sub">美术设定集 · 画风：半写实厚涂</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 11 / 11</span>
+    <button class="expo" data-name="潮痕-art.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">场景</div><div class="v">4</div><div class="d">主场景 4 · 变体 1</div></div>
+  <div class="kpi"><div class="l">叙事道具</div><div class="v">7</div><div class="d">19 个状态变体</div></div>
+  <div class="kpi"><div class="l">一致性锚点</div><div class="v">45</div><div class="d">生成镜头的核对表（场景 + 道具）</div></div>
+  <div class="kpi"><div class="l">光照状态</div><div class="v">10</div><div class="d">换时段 = 重新生成</div></div>
+</div>
+
+
+<section class="top-sec" id="sec-list">
+  <div class="sec-h"><span class="no">01</span><h2>场景清单</h2></div>
+  <table><thead><tr><th>ID</th><th>场景</th><th>类型</th><th>出现集</th><th>锚点</th><th>光照</th><th>变体</th></tr></thead>
+<tbody><tr><td>S01</td><td>南堤旧渡口候船厅与栈桥</td><td>主场景</td><td>1、4、6</td><td>4</td><td>阴天上午、夜间逼问、仪式清晨、退潮黄昏</td><td>—</td></tr>
+<tr><td>S02</td><td>许知遥临时声音修复室</td><td>主场景</td><td>1、2、3、5</td><td>4</td><td>凌晨修复、阴天工作日、退潮前夜</td><td>—</td></tr>
+<tr><td>S03</td><td>旧渡口货仓</td><td>主场景</td><td>2、3、4</td><td>4</td><td>阴天下午、单灯夜戏</td><td>—</td></tr>
+<tr><td>S04</td><td>沉船点外侧防波堤</td><td>变体 ← S01</td><td>5</td><td>4</td><td>夜间退潮</td><td>沿用 S01 的灰蓝水岸、旧混凝土材质、双潮痕语言与远岸灯光方位；改为夜间退潮并降低水位，以交叠消波块和锈环固定点替换候船厅与栈桥前景。</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-cards">
+  <div class="sec-h"><span class="no">02</span><h2>场景设定卡</h2></div>
+  <div class="cards">
+<article class="scene" id="sc-S01">
+  <header class="sc-h">
+    <span class="sc-id">S01</span>
+    <h3>南堤旧渡口候船厅与栈桥</h3>
+    <span class="badge">主场景</span>
+    <span class="sc-use">出现集 1、4、6　承载爽点 亡兄录音反转 · 反派反制落空 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">作为旧案从私人伤口转为公共证词的主舞台，空间必须同时容纳废弃感、拆除倒计时和最终公开对峙；候船厅的封闭阴影与伸向水面的栈桥形成从压抑走向揭露的视觉路径。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/南堤旧渡口候船厅与栈桥-sheet.png" aria-label="放大查看">
+    <img src="images/南堤旧渡口候船厅与栈桥-sheet.png" alt="南堤旧渡口候船厅与栈桥 主视角＋底部与右侧细节条" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条</figcaption>
+</figure>
+  
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>锈蓝售票窗</b><span>候船厅正墙中央是一扇褪成灰蓝色的金属售票窗，卷帘漆皮大片翘起，左下角留有矩形告示撕痕。</span></li><li><b>双潮痕石阶</b><span>通往水面的旧混凝土台阶最低两级各留一道深浅不同的盐白水线，边缘被潮水磨圆。</span></li><li><b>断口栈桥板</b><span>灰黑木栈桥靠岸第七块踏板右缘断去三角缺口，缺口下露出锈红钢梁。</span></li><li><b>歪斜系缆柱</b><span>栈桥外侧立着一根向江面倾斜的矮铸铁系缆柱，顶部覆有青绿锈斑，基座周围结着盐霜。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>光照与时段</h4>
+    <div class="lights"><div class="light"><i>阴天上午</i><span class="mono">Cold overcast morning at an abandoned riverside ferry terminal, broad soft light from the water, muted blue-grey concrete, damp timber, low contrast, an empty scene with no people.</span><button class="copy mini" data-copy="Cold overcast morning at an abandoned riverside ferry terminal, broad soft light from the water, muted blue-grey concrete, damp timber, low contrast, an empty scene with no people.">复制</button></div><div class="light"><i>夜间逼问</i><span class="mono">Deep blue night at the abandoned ferry terminal, one weak amber utility lamp above the ticket window, wet stone steps reflecting a narrow strip of light, dark river beyond, empty scene, no people or silhouettes.</span><button class="copy mini" data-copy="Deep blue night at the abandoned ferry terminal, one weak amber utility lamp above the ticket window, wet stone steps reflecting a narrow strip of light, dark river beyond, empty scene, no people or silhouettes.">复制</button></div><div class="light"><i>仪式清晨</i><span class="mono">Clear pale morning at the old ferry terminal, hard lateral sunlight revealing chipped paint and salt stains, a brighter open forecourt against the shadowed waiting hall, empty scene without people.</span><button class="copy mini" data-copy="Clear pale morning at the old ferry terminal, hard lateral sunlight revealing chipped paint and salt stains, a brighter open forecourt against the shadowed waiting hall, empty scene without people.">复制</button></div><div class="light"><i>退潮黄昏</i><span class="mono">Quiet blue-gold dusk at low tide, warm last light grazing the two tide marks on the concrete steps, cool river haze and distant shore lights emerging, empty scene with no human presence.</span><button class="copy mini" data-copy="Quiet blue-gold dusk at low tide, warm last light grazing the two tide marks on the concrete steps, cool river haze and distant shore lights emerging, empty scene with no human presence.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Master wide view of an abandoned small-town riverside ferry terminal combining a weathered waiting hall and a short timber jetty. Center the chipped blue-grey metal ticket window, lead the eye down concrete steps marked by two distinct tide lines, across the seventh jetty plank with a triangular broken edge, toward a leaning patinated mooring bollard. Cold overcast morning, grey-blue river, distant shore haze. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded architectural perspective and weathered materials.">复制</button></summary>
+  <p>Master wide view of an abandoned small-town riverside ferry terminal combining a weathered waiting hall and a short timber jetty. Center the chipped blue-grey metal ticket window, lead the eye down concrete steps marked by two distinct tide lines, across the seventh jetty plank with a triangular broken edge, toward a leaning patinated mooring bollard. Cold overcast morning, grey-blue river, distant shore haze. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded architectural perspective and weathered materials.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 environment design sheet for one abandoned riverside ferry terminal. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view shows the waiting hall and short jetty in a cold overcast morning: the chipped blue-grey ticket window, concrete steps with two tide lines, the seventh plank with a triangular broken edge, and the leaning patinated mooring bollard. Every detail panel must be a close crop from this exact master space. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 environment design sheet for one abandoned riverside ferry terminal. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view shows the waiting hall and short jetty in a cold overcast morning: the chipped blue-grey ticket window, concrete steps with two tide lines, the seventh plank with a triangular broken edge, and the leaning patinated mooring bollard. Every detail panel must be a close crop from this exact master space. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, vehicles, construction machinery, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, silhouettes of people, vehicles, construction machinery, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S01&quot;,
+  &quot;name&quot;: &quot;南堤旧渡口候船厅与栈桥&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;作为旧案从私人伤口转为公共证词的主舞台，空间必须同时容纳废弃感、拆除倒计时和最终公开对峙；候船厅的封闭阴影与伸向水面的栈桥形成从压抑走向揭露的视觉路径。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;锈蓝售票窗&quot;,
+      &quot;desc&quot;: &quot;候船厅正墙中央是一扇褪成灰蓝色的金属售票窗，卷帘漆皮大片翘起，左下角留有矩形告示撕痕。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;双潮痕石阶&quot;,
+      &quot;desc&quot;: &quot;通往水面的旧混凝土台阶最低两级各留一道深浅不同的盐白水线，边缘被潮水磨圆。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;断口栈桥板&quot;,
+      &quot;desc&quot;: &quot;灰黑木栈桥靠岸第七块踏板右缘断去三角缺口，缺口下露出锈红钢梁。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;歪斜系缆柱&quot;,
+      &quot;desc&quot;: &quot;栈桥外侧立着一根向江面倾斜的矮铸铁系缆柱，顶部覆有青绿锈斑，基座周围结着盐霜。&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;阴天上午&quot;,
+      &quot;prompt&quot;: &quot;Cold overcast morning at an abandoned riverside ferry terminal, broad soft light from the water, muted blue-grey concrete, damp timber, low contrast, an empty scene with no people.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;夜间逼问&quot;,
+      &quot;prompt&quot;: &quot;Deep blue night at the abandoned ferry terminal, one weak amber utility lamp above the ticket window, wet stone steps reflecting a narrow strip of light, dark river beyond, empty scene, no people or silhouettes.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;仪式清晨&quot;,
+      &quot;prompt&quot;: &quot;Clear pale morning at the old ferry terminal, hard lateral sunlight revealing chipped paint and salt stains, a brighter open forecourt against the shadowed waiting hall, empty scene without people.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;退潮黄昏&quot;,
+      &quot;prompt&quot;: &quot;Quiet blue-gold dusk at low tide, warm last light grazing the two tide marks on the concrete steps, cool river haze and distant shore lights emerging, empty scene with no human presence.&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Master wide view of an abandoned small-town riverside ferry terminal combining a weathered waiting hall and a short timber jetty. Center the chipped blue-grey metal ticket window, lead the eye down concrete steps marked by two distinct tide lines, across the seventh jetty plank with a triangular broken edge, toward a leaning patinated mooring bollard. Cold overcast morning, grey-blue river, distant shore haze. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded architectural perspective and weathered materials.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, vehicles, construction machinery, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 environment design sheet for one abandoned riverside ferry terminal. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view shows the waiting hall and short jetty in a cold overcast morning: the chipped blue-grey ticket window, concrete steps with two tide lines, the seventh plank with a triangular broken edge, and the leaning patinated mooring bollard. Every detail panel must be a close crop from this exact master space. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      4,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;亡兄录音反转&quot;,
+      &quot;反派反制落空&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/南堤旧渡口候船厅与栈桥-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S02">
+  <header class="sc-h">
+    <span class="sc-id">S02</span>
+    <h3>许知遥临时声音修复室</h3>
+    <span class="badge">主场景</span>
+    <span class="sc-use">出现集 1、2、3、5　承载爽点 亡兄录音反转 · 时间线破绽 · 父亲清白中段揭破 · 事故与哥哥选择双重真相</span>
+  </header>
+  <p class="sc-sum">这是把听不见的真相转化为可见证据的高压工作舱；狭窄台面、老旧隔音材料和被潮气侵入的设备让每一次修复都像在与拆迁时限抢时间。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/许知遥临时声音修复室-sheet.png" aria-label="放大查看">
+    <img src="images/许知遥临时声音修复室-sheet.png" alt="许知遥临时声音修复室 主视角＋底部与右侧细节条" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条</figcaption>
+</figure>
+  
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>灰绿修复台</b><span>房间中央是一张窄长灰绿色钢制工作台，前缘漆面磨出连续银亮露底，电缆从右侧圆孔整齐下垂。</span></li><li><b>错格吸音毡</b><span>后墙贴着十二块深灰吸音毡，其中右上两块错位下坠并带褐色水渍，形成固定的不规则轮廓。</span></li><li><b>双层波形屏</b><span>工作台左后方叠放两台不同年代的显示器，上屏窄而厚、下屏宽而薄，屏面只显示无文字的青色波形线。</span></li><li><b>铁丝玻璃窗</b><span>右墙高处是一扇方形铁丝夹层玻璃窗，左下角有蛛网状裂纹，窗框积着盐白粉末。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>光照与时段</h4>
+    <div class="lights"><div class="light"><i>凌晨修复</i><span class="mono">A cramped empty audio restoration room after midnight, cool cyan waveform glow from stacked monitors, one warm articulated desk lamp on a worn grey-green steel bench, deep blue wired-glass window, no people.</span><button class="copy mini" data-copy="A cramped empty audio restoration room after midnight, cool cyan waveform glow from stacked monitors, one warm articulated desk lamp on a worn grey-green steel bench, deep blue wired-glass window, no people.">复制</button></div><div class="light"><i>阴天工作日</i><span class="mono">Soft overcast daylight filtering through cracked wired glass into an empty temporary audio lab, neutral grey-green work surfaces, restrained monitor glow, every water stain readable, no human figures.</span><button class="copy mini" data-copy="Soft overcast daylight filtering through cracked wired glass into an empty temporary audio lab, neutral grey-green work surfaces, restrained monitor glow, every water stain readable, no human figures.">复制</button></div><div class="light"><i>退潮前夜</i><span class="mono">Predawn blue darkness in an empty audio restoration room, concentrated amber task light across the steel bench, cyan waveforms reflected faintly in cracked wired glass, tense low-key contrast, no people or silhouettes.</span><button class="copy mini" data-copy="Predawn blue darkness in an empty audio restoration room, concentrated amber task light across the steel bench, cyan waveforms reflected faintly in cracked wired glass, tense low-key contrast, no people or silhouettes.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Master three-quarter wide view of a cramped temporary audio restoration room. A worn grey-green steel workbench faces twelve dark acoustic felt squares with two water-stained panels sagging out of alignment. Two stacked monitors of different eras display abstract cyan waveforms with no readable text. A high wired-glass window has a spider crack in its lower left corner. Midnight lighting from one warm articulated desk lamp and cool screens. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art, grounded perspective, aged technical equipment and damp lived-in surfaces.">复制</button></summary>
+  <p>Master three-quarter wide view of a cramped temporary audio restoration room. A worn grey-green steel workbench faces twelve dark acoustic felt squares with two water-stained panels sagging out of alignment. Two stacked monitors of different eras display abstract cyan waveforms with no readable text. A high wired-glass window has a spider crack in its lower left corner. Midnight lighting from one warm articulated desk lamp and cool screens. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art, grounded perspective, aged technical equipment and damp lived-in surfaces.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 environment design sheet for one cramped temporary audio restoration room. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses midnight lighting from a warm articulated desk lamp and cool cyan monitor glow. It must show the worn grey-green steel bench, twelve dark acoustic felt panels with two sagging water-stained squares, two stacked monitors of different eras with abstract waveforms, and the cracked wired-glass window. Every detail panel is a crop of the same room and the same objects. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 environment design sheet for one cramped temporary audio restoration room. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses midnight lighting from a warm articulated desk lamp and cool cyan monitor glow. It must show the worn grey-green steel bench, twelve dark acoustic felt panels with two sagging water-stained squares, two stacked monitors of different eras with abstract waveforms, and the cracked wired-glass window. Every detail panel is a crop of the same room and the same objects. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, hands, faces, readable text, duplicate monitors, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, silhouettes of people, hands, faces, readable text, duplicate monitors, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S02&quot;,
+  &quot;name&quot;: &quot;许知遥临时声音修复室&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;这是把听不见的真相转化为可见证据的高压工作舱；狭窄台面、老旧隔音材料和被潮气侵入的设备让每一次修复都像在与拆迁时限抢时间。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;灰绿修复台&quot;,
+      &quot;desc&quot;: &quot;房间中央是一张窄长灰绿色钢制工作台，前缘漆面磨出连续银亮露底，电缆从右侧圆孔整齐下垂。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;错格吸音毡&quot;,
+      &quot;desc&quot;: &quot;后墙贴着十二块深灰吸音毡，其中右上两块错位下坠并带褐色水渍，形成固定的不规则轮廓。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;双层波形屏&quot;,
+      &quot;desc&quot;: &quot;工作台左后方叠放两台不同年代的显示器，上屏窄而厚、下屏宽而薄，屏面只显示无文字的青色波形线。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;铁丝玻璃窗&quot;,
+      &quot;desc&quot;: &quot;右墙高处是一扇方形铁丝夹层玻璃窗，左下角有蛛网状裂纹，窗框积着盐白粉末。&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;凌晨修复&quot;,
+      &quot;prompt&quot;: &quot;A cramped empty audio restoration room after midnight, cool cyan waveform glow from stacked monitors, one warm articulated desk lamp on a worn grey-green steel bench, deep blue wired-glass window, no people.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;阴天工作日&quot;,
+      &quot;prompt&quot;: &quot;Soft overcast daylight filtering through cracked wired glass into an empty temporary audio lab, neutral grey-green work surfaces, restrained monitor glow, every water stain readable, no human figures.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;退潮前夜&quot;,
+      &quot;prompt&quot;: &quot;Predawn blue darkness in an empty audio restoration room, concentrated amber task light across the steel bench, cyan waveforms reflected faintly in cracked wired glass, tense low-key contrast, no people or silhouettes.&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Master three-quarter wide view of a cramped temporary audio restoration room. A worn grey-green steel workbench faces twelve dark acoustic felt squares with two water-stained panels sagging out of alignment. Two stacked monitors of different eras display abstract cyan waveforms with no readable text. A high wired-glass window has a spider crack in its lower left corner. Midnight lighting from one warm articulated desk lamp and cool screens. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art, grounded perspective, aged technical equipment and damp lived-in surfaces.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, hands, faces, readable text, duplicate monitors, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 environment design sheet for one cramped temporary audio restoration room. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses midnight lighting from a warm articulated desk lamp and cool cyan monitor glow. It must show the worn grey-green steel bench, twelve dark acoustic felt panels with two sagging water-stained squares, two stacked monitors of different eras with abstract waveforms, and the cracked wired-glass window. Every detail panel is a crop of the same room and the same objects. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      2,
+      3,
+      5
+    ],
+    &quot;beats&quot;: [
+      &quot;亡兄录音反转&quot;,
+      &quot;时间线破绽&quot;,
+      &quot;父亲清白中段揭破&quot;,
+      &quot;事故与哥哥选择双重真相&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/许知遥临时声音修复室-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S03">
+  <header class="sc-h">
+    <span class="sc-id">S03</span>
+    <h3>旧渡口货仓</h3>
+    <span class="badge">主场景</span>
+    <span class="sc-use">出现集 2、3、4　承载爽点 时间线破绽 · 父亲清白中段揭破 · 反派反制落空</span>
+  </header>
+  <p class="sc-sum">货仓是被人为封住的证据腔室，设计重点不是堆满货物，而是让新换的门锁、嵌墙消防柜和周期报警器共同证明这里曾困住人，也仍藏着未被清理干净的记录。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/旧渡口货仓-sheet.png" aria-label="放大查看">
+    <img src="images/旧渡口货仓-sheet.png" alt="旧渡口货仓 主视角＋底部与右侧细节条" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条</figcaption>
+</figure>
+  
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>新锁旧门</b><span>入口是盐蚀斑驳的深褐钢门，却装着一只明显较新的银色方形挂锁，新旧反差一眼可辨。</span></li><li><b>嵌墙消防柜</b><span>左侧混凝土墙脚嵌着矮小红色消防柜，柜门褪成暗砖红，右下铰链变形并留有一圈水泥补痕。</span></li><li><b>琥珀报警器</b><span>后墙横梁下固定着圆角方形防潮报警器，乳白外壳发黄，中央只有一粒琥珀色指示灯。</span></li><li><b>弧形排水沟</b><span>水泥地面有一道从消防柜前绕向门口的浅弧排水沟，沟底积着黑色淤泥和盐白结晶。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>光照与时段</h4>
+    <div class="lights"><div class="light"><i>阴天下午</i><span class="mono">Dim overcast afternoon inside an empty riverside warehouse, cold diffuse light entering through the partly open steel door, a weak amber moisture-alarm indicator, deep grey concrete and readable salt deposits, no people.</span><button class="copy mini" data-copy="Dim overcast afternoon inside an empty riverside warehouse, cold diffuse light entering through the partly open steel door, a weak amber moisture-alarm indicator, deep grey concrete and readable salt deposits, no people.">复制</button></div><div class="light"><i>单灯夜戏</i><span class="mono">Night inside an empty abandoned warehouse, one harsh utility lamp above the old steel door casting long angular shadows toward the embedded fire cabinet, tiny amber alarm light, no human figures or silhouettes.</span><button class="copy mini" data-copy="Night inside an empty abandoned warehouse, one harsh utility lamp above the old steel door casting long angular shadows toward the embedded fire cabinet, tiny amber alarm light, no human figures or silhouettes.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Master wide interior of a nearly empty abandoned ferry warehouse. Frame a salt-corroded dark brown steel door fitted with a conspicuously new square silver padlock, a faded brick-red fire cabinet embedded low in the left concrete wall, a yellowed moisture alarm with one amber indicator beneath the rear beam, and a shallow curved drainage channel carrying black silt and white salt crystals toward the door. Cold overcast afternoon light enters from the doorway. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded industrial perspective and damp weathered surfaces.">复制</button></summary>
+  <p>Master wide interior of a nearly empty abandoned ferry warehouse. Frame a salt-corroded dark brown steel door fitted with a conspicuously new square silver padlock, a faded brick-red fire cabinet embedded low in the left concrete wall, a yellowed moisture alarm with one amber indicator beneath the rear beam, and a shallow curved drainage channel carrying black silt and white salt crystals toward the door. Cold overcast afternoon light enters from the doorway. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded industrial perspective and damp weathered surfaces.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 environment design sheet for one nearly empty abandoned riverside warehouse. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses cold overcast afternoon light through a dark steel door and shows the new square silver padlock, the embedded faded red fire cabinet, the yellowed moisture alarm with one amber light, and the shallow curved floor drain with black silt and salt crystals. Every detail panel must be a close crop from the same master view. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 environment design sheet for one nearly empty abandoned riverside warehouse. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses cold overcast afternoon light through a dark steel door and shows the new square silver padlock, the embedded faded red fire cabinet, the yellowed moisture alarm with one amber light, and the shallow curved floor drain with black silt and salt crystals. Every detail panel must be a close crop from the same master view. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, stacked cargo, barrels, readable text, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, silhouettes of people, stacked cargo, barrels, readable text, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S03&quot;,
+  &quot;name&quot;: &quot;旧渡口货仓&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;货仓是被人为封住的证据腔室，设计重点不是堆满货物，而是让新换的门锁、嵌墙消防柜和周期报警器共同证明这里曾困住人，也仍藏着未被清理干净的记录。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;新锁旧门&quot;,
+      &quot;desc&quot;: &quot;入口是盐蚀斑驳的深褐钢门，却装着一只明显较新的银色方形挂锁，新旧反差一眼可辨。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;嵌墙消防柜&quot;,
+      &quot;desc&quot;: &quot;左侧混凝土墙脚嵌着矮小红色消防柜，柜门褪成暗砖红，右下铰链变形并留有一圈水泥补痕。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;琥珀报警器&quot;,
+      &quot;desc&quot;: &quot;后墙横梁下固定着圆角方形防潮报警器，乳白外壳发黄，中央只有一粒琥珀色指示灯。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;弧形排水沟&quot;,
+      &quot;desc&quot;: &quot;水泥地面有一道从消防柜前绕向门口的浅弧排水沟，沟底积着黑色淤泥和盐白结晶。&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;阴天下午&quot;,
+      &quot;prompt&quot;: &quot;Dim overcast afternoon inside an empty riverside warehouse, cold diffuse light entering through the partly open steel door, a weak amber moisture-alarm indicator, deep grey concrete and readable salt deposits, no people.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;单灯夜戏&quot;,
+      &quot;prompt&quot;: &quot;Night inside an empty abandoned warehouse, one harsh utility lamp above the old steel door casting long angular shadows toward the embedded fire cabinet, tiny amber alarm light, no human figures or silhouettes.&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Master wide interior of a nearly empty abandoned ferry warehouse. Frame a salt-corroded dark brown steel door fitted with a conspicuously new square silver padlock, a faded brick-red fire cabinet embedded low in the left concrete wall, a yellowed moisture alarm with one amber indicator beneath the rear beam, and a shallow curved drainage channel carrying black silt and white salt crystals toward the door. Cold overcast afternoon light enters from the doorway. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded industrial perspective and damp weathered surfaces.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, stacked cargo, barrels, readable text, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 environment design sheet for one nearly empty abandoned riverside warehouse. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses cold overcast afternoon light through a dark steel door and shows the new square silver padlock, the embedded faded red fire cabinet, the yellowed moisture alarm with one amber light, and the shallow curved floor drain with black silt and salt crystals. Every detail panel must be a close crop from the same master view. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      2,
+      3,
+      4
+    ],
+    &quot;beats&quot;: [
+      &quot;时间线破绽&quot;,
+      &quot;父亲清白中段揭破&quot;,
+      &quot;反派反制落空&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/旧渡口货仓-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S04">
+  <header class="sc-h">
+    <span class="sc-id">S04</span>
+    <h3>沉船点外侧防波堤</h3>
+    <span class="badge">变体</span>
+    <span class="sc-use">出现集 5　承载爽点 事故与哥哥选择双重真相</span>
+  </header>
+  <p class="sc-sum">作为 S01 水岸资产的危险侧面变体，这里把公共渡口的可见秩序压低到夜间退潮后的湿滑边界，让打捞行动发生在熟悉水色与远岸灯火下，却被消波块前景推向未知深处。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/沉船点外侧防波堤-sheet.png" aria-label="放大查看">
+    <img src="images/沉船点外侧防波堤-sheet.png" alt="沉船点外侧防波堤 主视角＋底部与右侧细节条" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条</figcaption>
+</figure>
+  <p class="variant">变体来源：<b>S01</b>　改动：沿用 S01 的灰蓝水岸、旧混凝土材质、双潮痕语言与远岸灯光方位；改为夜间退潮并降低水位，以交叠消波块和锈环固定点替换候船厅与栈桥前景。</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>双潮痕混凝土</b><span>沿用 S01 深浅两道盐白潮线，但落在防波堤倾斜的旧混凝土坡面上，退潮后完整露出。</span></li><li><b>交叠消波块</b><span>前景三枚灰黑四脚消波块交错叠放，中间一枚右上角崩缺并露出浅色骨料。</span></li><li><b>锈环固定点</b><span>坡面左下嵌着一只厚重圆形铁环，锈迹向下拖成扇形，作为下水绳索的固定位置。</span></li><li><b>远岸三灯</b><span>灰蓝江面远处固定排列三点暖黄岸灯，中间一盏略低，保持与 S01 相同的远岸方位。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>光照与时段</h4>
+    <div class="lights"><div class="light"><i>夜间退潮</i><span class="mono">Low-tide night at a deserted breakwater, deep cobalt ambient light, wet concrete and interlocking wave breakers catching narrow silver highlights, three fixed warm lights on the far shore, black receded water, no people or silhouettes.</span><button class="copy mini" data-copy="Low-tide night at a deserted breakwater, deep cobalt ambient light, wet concrete and interlocking wave breakers catching narrow silver highlights, three fixed warm lights on the far shore, black receded water, no people or silhouettes.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Variant master view derived from the same grey-blue riverbank, aged concrete, tide-line pattern and far-shore lighting as the old ferry terminal asset. Change to night at low tide and replace the waiting hall and timber jetty foreground with layered dark concrete wave breakers. Show two exposed salt-white tide lines on the sloped concrete, three interlocking tetrapods with one chipped upper corner, a heavy rusted rope ring at lower left, and three warm far-shore lights with the middle light slightly lower. Empty scene, no people, no human figures, no silhouettes. Keep the materials, wear language and shore orientation identical to the parent environment.">复制</button></summary>
+  <p>Variant master view derived from the same grey-blue riverbank, aged concrete, tide-line pattern and far-shore lighting as the old ferry terminal asset. Change to night at low tide and replace the waiting hall and timber jetty foreground with layered dark concrete wave breakers. Show two exposed salt-white tide lines on the sloped concrete, three interlocking tetrapods with one chipped upper corner, a heavy rusted rope ring at lower left, and three warm far-shore lights with the middle light slightly lower. Empty scene, no people, no human figures, no silhouettes. Keep the materials, wear language and shore orientation identical to the parent environment.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 environment design sheet for one low-tide night breakwater variant, using the parent ferry-terminal image as structural and material reference. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. Preserve the grey-blue water, aged concrete, salt-white tide-line language and three far-shore lights from the parent asset. Replace the hall and jetty foreground with three interlocking dark wave breakers, one chipped corner, and a rusted rope ring. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Keep the structure, materials and wear identical to the reference image. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 environment design sheet for one low-tide night breakwater variant, using the parent ferry-terminal image as structural and material reference. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. Preserve the grey-blue water, aged concrete, salt-white tide-line language and three far-shore lights from the parent asset. Replace the hall and jetty foreground with three interlocking dark wave breakers, one chipped corner, and a rusted rope ring. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Keep the structure, materials and wear identical to the reference image. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, boats, divers, waiting hall, timber jetty, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, silhouettes of people, boats, divers, waiting hall, timber jetty, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S04&quot;,
+  &quot;name&quot;: &quot;沉船点外侧防波堤&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;作为 S01 水岸资产的危险侧面变体，这里把公共渡口的可见秩序压低到夜间退潮后的湿滑边界，让打捞行动发生在熟悉水色与远岸灯火下，却被消波块前景推向未知深处。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;双潮痕混凝土&quot;,
+      &quot;desc&quot;: &quot;沿用 S01 深浅两道盐白潮线，但落在防波堤倾斜的旧混凝土坡面上，退潮后完整露出。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;交叠消波块&quot;,
+      &quot;desc&quot;: &quot;前景三枚灰黑四脚消波块交错叠放，中间一枚右上角崩缺并露出浅色骨料。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;锈环固定点&quot;,
+      &quot;desc&quot;: &quot;坡面左下嵌着一只厚重圆形铁环，锈迹向下拖成扇形，作为下水绳索的固定位置。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;远岸三灯&quot;,
+      &quot;desc&quot;: &quot;灰蓝江面远处固定排列三点暖黄岸灯，中间一盏略低，保持与 S01 相同的远岸方位。&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;夜间退潮&quot;,
+      &quot;prompt&quot;: &quot;Low-tide night at a deserted breakwater, deep cobalt ambient light, wet concrete and interlocking wave breakers catching narrow silver highlights, three fixed warm lights on the far shore, black receded water, no people or silhouettes.&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Variant master view derived from the same grey-blue riverbank, aged concrete, tide-line pattern and far-shore lighting as the old ferry terminal asset. Change to night at low tide and replace the waiting hall and timber jetty foreground with layered dark concrete wave breakers. Show two exposed salt-white tide lines on the sloped concrete, three interlocking tetrapods with one chipped upper corner, a heavy rusted rope ring at lower left, and three warm far-shore lights with the middle light slightly lower. Empty scene, no people, no human figures, no silhouettes. Keep the materials, wear language and shore orientation identical to the parent environment.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, boats, divers, waiting hall, timber jetty, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 environment design sheet for one low-tide night breakwater variant, using the parent ferry-terminal image as structural and material reference. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. Preserve the grey-blue water, aged concrete, salt-white tide-line language and three far-shore lights from the parent asset. Replace the hall and jetty foreground with three interlocking dark wave breakers, one chipped corner, and a rusted rope ring. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Keep the structure, materials and wear identical to the reference image. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;seedNote&quot;: &quot;outline 的复用方案：复用 S01 的灰蓝水岸、旧混凝土与远岸灯光资产，改为夜间退潮状态，并用消波块前景替换栈桥结构。——已落实为 S01 变体。&quot;,
+  &quot;variantOf&quot;: &quot;S01&quot;,
+  &quot;changes&quot;: &quot;沿用 S01 的灰蓝水岸、旧混凝土材质、双潮痕语言与远岸灯光方位；改为夜间退潮并降低水位，以交叠消波块和锈环固定点替换候船厅与栈桥前景。&quot;,
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      5
+    ],
+    &quot;beats&quot;: [
+      &quot;事故与哥哥选择双重真相&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/沉船点外侧防波堤-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-prop-list">
+  <div class="sec-h"><span class="no">03</span><h2>道具清单</h2></div>
+  <table><thead><tr><th>ID</th><th>道具</th><th>尺度</th><th>状态</th><th>关联场景</th><th>出现集</th><th>锚点</th></tr></thead>
+<tbody><tr><td>P01</td><td>橙色应急电台</td><td>手持级</td><td>烧损待修复、摔裂毁证、归档保存</td><td>S01、S02、S03</td><td>1、2、3、4、5、6</td><td>4</td></tr>
+<tr><td>P02</td><td>黄铜船钥匙</td><td>手持级</td><td>遗物原状</td><td>S01、S02、S03</td><td>1、2、3</td><td>4</td></tr>
+<tr><td>P03</td><td>真正的载货联单</td><td>桌面级</td><td>水下取回、修复展平、现场公开</td><td>S01、S02、S04</td><td>5、6</td><td>4</td></tr>
+<tr><td>P04</td><td>锈蚀金属文件筒</td><td>桌面级</td><td>水下密封取回、开盖取证、重新封好运回</td><td>S04、S02</td><td>5</td><td>5</td></tr>
+<tr><td>P05</td><td>许德海事故责任书</td><td>桌面级</td><td>遗物折叠、证据对照、送鉴准备</td><td>S01、S02、S03</td><td>1、3、5、6</td><td>4</td></tr>
+<tr><td>P06</td><td>程野残录手机</td><td>手持级</td><td>门外收音、残录播放、闹钟背屏</td><td>S01、S02、S03</td><td>3、4、5、6</td><td>4</td></tr>
+<tr><td>P07</td><td>三份独立备份盘</td><td>桌面级</td><td>复制前摆放、三份完成、留在台面</td><td>S02</td><td>4、5、6</td><td>4</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-prop-cards">
+  <div class="sec-h"><span class="no">04</span><h2>道具设定卡</h2></div>
+  <div class="cards">
+<article class="scene" id="pr-P01">
+  <header class="sc-h">
+    <span class="sc-id">P01</span>
+    <h3>橙色应急电台</h3>
+    <span class="badge">手持级</span>
+    <span class="sc-use">出现集 1、2、3、4、5、6　承载爽点 亡兄录音反转 · 父亲清白中段揭破 · 事故与哥哥选择双重真相 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">保存许潮现场录音，是逐集解锁真相、承受反派毁证并在结尾转入永久档案的核心证据。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/橙色应急电台-sheet.png" aria-label="放大查看">
+    <img src="images/橙色应急电台-sheet.png" alt="橙色应急电台 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S01、S02、S03</b>　关联角色：许知遥、高嵩、许潮</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>烧融黑痕</b><span>橙色外壳左上角有一道向扬声器边缘流下的焦黑熔痕，边界呈不规则泪滴状。</span></li><li><b>盐霜电池仓</b><span>背面电池仓盖缺失，仓内触点和边缘覆盖颗粒明显的白色盐霜。</span></li><li><b>斜纹扬声格</b><span>正面下半部为黑色斜纹扬声器格栅，其中第三道横格在右侧断开。</span></li><li><b>弯顶天线</b><span>银色伸缩天线只剩两节，顶端向左弯出约二十度并带暗褐氧化圈。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>烧损待修复</i><span class="mono">A compact orange emergency radio at handheld scale, fire-scarred but still assembled, black melted streak on the upper left shell, open battery compartment packed with white salt frost, broken grille line and bent two-section antenna, isolated with no hands.</span><button class="copy mini" data-copy="A compact orange emergency radio at handheld scale, fire-scarred but still assembled, black melted streak on the upper left shell, open battery compartment packed with white salt frost, broken grille line and bent two-section antenna, isolated with no hands.">复制</button></div><div class="light"><i>摔裂毁证</i><span class="mono">The same compact orange emergency radio at handheld scale after a hard impact, shell split along the right seam, storage board broken into two aligned fragments, original black melt scar and salt-frost battery compartment unchanged, isolated with no hands.</span><button class="copy mini" data-copy="The same compact orange emergency radio at handheld scale after a hard impact, shell split along the right seam, storage board broken into two aligned fragments, original black melt scar and salt-frost battery compartment unchanged, isolated with no hands.">复制</button></div><div class="light"><i>归档保存</i><span class="mono">The same damaged orange emergency radio at handheld scale preserved without cosmetic repair, cracked shell held in archival supports, black melt scar and salt frost fully visible, no added restoration, isolated with no hands or labels.</span><button class="copy mini" data-copy="The same damaged orange emergency radio at handheld scale preserved without cosmetic repair, cracked shell held in archival supports, black melt scar and salt frost fully visible, no added restoration, isolated with no hands or labels.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Three-quarter product reference of one compact orange emergency radio at handheld scale, fire-scarred but assembled. Show the black teardrop-shaped melt streak on the upper left shell, open battery compartment with granular white salt frost, black diagonal speaker grille with the third bar broken at right, and a two-section silver antenna bent left at the tip. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise aged materials.">复制</button></summary>
+  <p>Three-quarter product reference of one compact orange emergency radio at handheld scale, fire-scarred but assembled. Show the black teardrop-shaped melt streak on the upper left shell, open battery compartment with granular white salt frost, black diagonal speaker grille with the third bar broken at right, and a two-section silver antenna bent left at the tip. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise aged materials.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 prop design sheet for one compact orange emergency radio at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the fire-scarred assembled state in the upper left, two anchor close-ups in the right column, and bottom panels for the cracked impact state, archival support state, and one side orthographic view. Keep the black melt streak, salt-frost battery compartment, broken third grille bar and bent two-section antenna identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 prop design sheet for one compact orange emergency radio at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the fire-scarred assembled state in the upper left, two anchor close-ups in the right column, and bottom panels for the cracked impact state, archival support state, and one side orthographic view. Keep the black melt streak, salt-frost battery compartment, broken third grille bar and bent two-section antenna identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate object, extra antenna, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate object, extra antenna, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P01&quot;,
+  &quot;name&quot;: &quot;橙色应急电台&quot;,
+  &quot;summary&quot;: &quot;保存许潮现场录音，是逐集解锁真相、承受反派毁证并在结尾转入永久档案的核心证据。&quot;,
+  &quot;scale&quot;: &quot;手持级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;烧融黑痕&quot;,
+      &quot;desc&quot;: &quot;橙色外壳左上角有一道向扬声器边缘流下的焦黑熔痕，边界呈不规则泪滴状。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;盐霜电池仓&quot;,
+      &quot;desc&quot;: &quot;背面电池仓盖缺失，仓内触点和边缘覆盖颗粒明显的白色盐霜。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;斜纹扬声格&quot;,
+      &quot;desc&quot;: &quot;正面下半部为黑色斜纹扬声器格栅，其中第三道横格在右侧断开。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;弯顶天线&quot;,
+      &quot;desc&quot;: &quot;银色伸缩天线只剩两节，顶端向左弯出约二十度并带暗褐氧化圈。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;烧损待修复&quot;,
+      &quot;prompt&quot;: &quot;A compact orange emergency radio at handheld scale, fire-scarred but still assembled, black melted streak on the upper left shell, open battery compartment packed with white salt frost, broken grille line and bent two-section antenna, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;摔裂毁证&quot;,
+      &quot;prompt&quot;: &quot;The same compact orange emergency radio at handheld scale after a hard impact, shell split along the right seam, storage board broken into two aligned fragments, original black melt scar and salt-frost battery compartment unchanged, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;归档保存&quot;,
+      &quot;prompt&quot;: &quot;The same damaged orange emergency radio at handheld scale preserved without cosmetic repair, cracked shell held in archival supports, black melt scar and salt frost fully visible, no added restoration, isolated with no hands or labels.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;,
+    &quot;S03&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;许知遥&quot;,
+    &quot;高嵩&quot;,
+    &quot;许潮&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Three-quarter product reference of one compact orange emergency radio at handheld scale, fire-scarred but assembled. Show the black teardrop-shaped melt streak on the upper left shell, open battery compartment with granular white salt frost, black diagonal speaker grille with the third bar broken at right, and a two-section silver antenna bent left at the tip. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise aged materials.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate object, extra antenna, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 prop design sheet for one compact orange emergency radio at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the fire-scarred assembled state in the upper left, two anchor close-ups in the right column, and bottom panels for the cracked impact state, archival support state, and one side orthographic view. Keep the black melt streak, salt-frost battery compartment, broken third grille bar and bent two-section antenna identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;亡兄录音反转&quot;,
+      &quot;父亲清白中段揭破&quot;,
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/橙色应急电台-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P02">
+  <header class="sc-h">
+    <span class="sc-id">P02</span>
+    <h3>黄铜船钥匙</h3>
+    <span class="badge">手持级</span>
+    <span class="sc-use">出现集 1、2、3　承载爽点 时间线破绽 · 父亲清白中段揭破</span>
+  </header>
+  <p class="sc-sum">既开启隐藏值班日志，又以正钥匙被父亲夺走这一事实证明他曾阻止开船，是父亲清白从声音证词转为实体证据的枢纽。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/黄铜船钥匙-sheet.png" aria-label="放大查看">
+    <img src="images/黄铜船钥匙-sheet.png" alt="黄铜船钥匙 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S01、S02、S03</b>　关联角色：许德海、许知遥</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>椭圆船环</b><span>钥匙头是厚实的扁椭圆黄铜环，内孔下缘被长期摩擦磨成偏亮的平直段。</span></li><li><b>发黑盐斑</b><span>钥匙柄大面积氧化为黑褐色，靠近齿部残留三片不规则盐白斑。</span></li><li><b>偏心三角缺口</b><span>钥匙齿列中央有一个向左偏的深三角缺口，是与消防柜锁芯匹配的主要识别特征。</span></li><li><b>横向咬痕</b><span>椭圆环外缘相对位置留有两道浅而平行的横向压痕，特写中可辨但不夸张。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>遗物原状</i><span class="mono">One old brass boat key at handheld scale in its inherited evidence state, heavily darkened by oxidation, three salt-white patches near the teeth, thick oval bow with two subtle parallel pressure marks, and one off-center triangular notch in the bit, isolated with no hands.</span><button class="copy mini" data-copy="One old brass boat key at handheld scale in its inherited evidence state, heavily darkened by oxidation, three salt-white patches near the teeth, thick oval bow with two subtle parallel pressure marks, and one off-center triangular notch in the bit, isolated with no hands.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Three-quarter macro product reference of one old brass boat key at handheld scale. Show a thick flattened oval bow with a polished lower inner edge, black-brown oxidation across the shaft, three irregular salt-white patches near the teeth, one off-center triangular notch in the bit, and two subtle parallel pressure marks on the outer bow. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise patina and worn metal.">复制</button></summary>
+  <p>Three-quarter macro product reference of one old brass boat key at handheld scale. Show a thick flattened oval bow with a polished lower inner edge, black-brown oxidation across the shaft, three irregular salt-white patches near the teeth, one off-center triangular notch in the bit, and two subtle parallel pressure marks on the outer bow. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise patina and worn metal.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 prop design sheet for one old brass boat key at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view in the upper left, two macro anchor close-ups in the right column, and bottom panels for the bit profile, oval bow profile and one side orthographic view. Keep the polished lower inner bow edge, black-brown oxidation, three salt-white patches, off-center triangular tooth notch and two subtle pressure marks identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 prop design sheet for one old brass boat key at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view in the upper left, two macro anchor close-ups in the right column, and bottom panels for the bit profile, oval bow profile and one side orthographic view. Keep the polished lower inner bow edge, black-brown oxidation, three salt-white patches, off-center triangular tooth notch and two subtle pressure marks identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, key ring, duplicate keys, modern chrome key, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, key ring, duplicate keys, modern chrome key, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P02&quot;,
+  &quot;name&quot;: &quot;黄铜船钥匙&quot;,
+  &quot;summary&quot;: &quot;既开启隐藏值班日志，又以正钥匙被父亲夺走这一事实证明他曾阻止开船，是父亲清白从声音证词转为实体证据的枢纽。&quot;,
+  &quot;scale&quot;: &quot;手持级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;椭圆船环&quot;,
+      &quot;desc&quot;: &quot;钥匙头是厚实的扁椭圆黄铜环，内孔下缘被长期摩擦磨成偏亮的平直段。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;发黑盐斑&quot;,
+      &quot;desc&quot;: &quot;钥匙柄大面积氧化为黑褐色，靠近齿部残留三片不规则盐白斑。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;偏心三角缺口&quot;,
+      &quot;desc&quot;: &quot;钥匙齿列中央有一个向左偏的深三角缺口，是与消防柜锁芯匹配的主要识别特征。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;横向咬痕&quot;,
+      &quot;desc&quot;: &quot;椭圆环外缘相对位置留有两道浅而平行的横向压痕，特写中可辨但不夸张。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;遗物原状&quot;,
+      &quot;prompt&quot;: &quot;One old brass boat key at handheld scale in its inherited evidence state, heavily darkened by oxidation, three salt-white patches near the teeth, thick oval bow with two subtle parallel pressure marks, and one off-center triangular notch in the bit, isolated with no hands.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;,
+    &quot;S03&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;许德海&quot;,
+    &quot;许知遥&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Three-quarter macro product reference of one old brass boat key at handheld scale. Show a thick flattened oval bow with a polished lower inner edge, black-brown oxidation across the shaft, three irregular salt-white patches near the teeth, one off-center triangular notch in the bit, and two subtle parallel pressure marks on the outer bow. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise patina and worn metal.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, key ring, duplicate keys, modern chrome key, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 prop design sheet for one old brass boat key at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view in the upper left, two macro anchor close-ups in the right column, and bottom panels for the bit profile, oval bow profile and one side orthographic view. Keep the polished lower inner bow edge, black-brown oxidation, three salt-white patches, off-center triangular tooth notch and two subtle pressure marks identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      2,
+      3
+    ],
+    &quot;beats&quot;: [
+      &quot;时间线破绽&quot;,
+      &quot;父亲清白中段揭破&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/黄铜船钥匙-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P03">
+  <header class="sc-h">
+    <span class="sc-id">P03</span>
+    <h3>真正的载货联单</h3>
+    <span class="badge">桌面级</span>
+    <span class="sc-use">出现集 5、6　承载爽点 事故与哥哥选择双重真相 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">把事故船上的六桶溶剂编号与高嵩的私章连接起来，和录音互相印证后构成能够公开展示并进入正式鉴定的实体证据。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/真正的载货联单-sheet.png" aria-label="放大查看">
+    <img src="images/真正的载货联单-sheet.png" alt="真正的载货联单 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S01、S02、S04</b>　关联角色：程野</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>六格编号栏</b><span>纸面中部纵向排列六个等宽货桶编号格，墨色由上至下逐渐晕开，但六行结构始终清楚。</span></li><li><b>暗紫私章</b><span>右下角盖着边缘缺一角的暗紫色方章，水浸后向左拖出短小晕尾。</span></li><li><b>半月水线</b><span>纸张下半部有一道从左边缘跨至中线的褐灰半月形水渍，内外色阶明显。</span></li><li><b>三折卷痕</b><span>纸面保留三道平行横折和向内卷曲的短边记忆，展开后仍形成固定起伏。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>水下取回</i><span class="mono">One waterlogged cargo manifest at tabletop scale just after recovery, tightly curled short edges, dark wet paper, three parallel fold ridges, six visible ruled serial rows, a blurred dark-purple square seal and a crescent water stain, isolated with no hands.</span><button class="copy mini" data-copy="One waterlogged cargo manifest at tabletop scale just after recovery, tightly curled short edges, dark wet paper, three parallel fold ridges, six visible ruled serial rows, a blurred dark-purple square seal and a crescent water stain, isolated with no hands.">复制</button></div><div class="light"><i>修复展平</i><span class="mono">The same aged cargo manifest at tabletop scale after conservation flattening, dampness reduced but the three fold ridges, six ruled serial rows, chipped-corner purple seal and crescent water stain remain identical, isolated with no hands.</span><button class="copy mini" data-copy="The same aged cargo manifest at tabletop scale after conservation flattening, dampness reduced but the three fold ridges, six ruled serial rows, chipped-corner purple seal and crescent water stain remain identical, isolated with no hands.">复制</button></div><div class="light"><i>现场公开</i><span class="mono">The same conserved cargo manifest at tabletop scale in its public evidence state, fully spread flat with all six ruled serial rows visible, the dark-purple square seal and crescent water stain unchanged, isolated with no hands or display holder.</span><button class="copy mini" data-copy="The same conserved cargo manifest at tabletop scale in its public evidence state, fully spread flat with all six ruled serial rows visible, the dark-purple square seal and crescent water stain unchanged, isolated with no hands or display holder.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Top-down three-quarter product reference of one aged cargo manifest at tabletop scale, conserved but visibly water-damaged. Show six evenly spaced ruled serial rows with abstract non-legible marks, a dark-purple square seal missing one corner and bleeding slightly left, a brown-grey crescent water stain across the lower half, three parallel fold ridges and inward-curling short edges. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise wet-paper texture.">复制</button></summary>
+  <p>Top-down three-quarter product reference of one aged cargo manifest at tabletop scale, conserved but visibly water-damaged. Show six evenly spaced ruled serial rows with abstract non-legible marks, a dark-purple square seal missing one corner and bleeding slightly left, a brown-grey crescent water stain across the lower half, three parallel fold ridges and inward-curling short edges. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise wet-paper texture.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 prop design sheet for one aged cargo manifest at tabletop scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the conserved flattened state in the upper left, two anchor close-ups in the right column, and bottom panels for the wet curled recovery state, the fully spread public-evidence state, and one side profile showing the fold ridges. Keep the six ruled serial rows with non-legible marks, chipped-corner dark-purple seal, crescent water stain, three parallel folds and curling short edges identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.">复制</button></summary>
+  <p>Create a 16:9 prop design sheet for one aged cargo manifest at tabletop scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the conserved flattened state in the upper left, two anchor close-ups in the right column, and bottom panels for the wet curled recovery state, the fully spread public-evidence state, and one side profile showing the fold ridges. Keep the six ruled serial rows with non-legible marks, chipped-corner dark-purple seal, crescent water stain, three parallel folds and curling short edges identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, clipboard, frame, duplicate document, fully readable writing, extra seals, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, clipboard, frame, duplicate document, fully readable writing, extra seals, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P03&quot;,
+  &quot;name&quot;: &quot;真正的载货联单&quot;,
+  &quot;summary&quot;: &quot;把事故船上的六桶溶剂编号与高嵩的私章连接起来，和录音互相印证后构成能够公开展示并进入正式鉴定的实体证据。&quot;,
+  &quot;scale&quot;: &quot;桌面级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;六格编号栏&quot;,
+      &quot;desc&quot;: &quot;纸面中部纵向排列六个等宽货桶编号格，墨色由上至下逐渐晕开，但六行结构始终清楚。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;暗紫私章&quot;,
+      &quot;desc&quot;: &quot;右下角盖着边缘缺一角的暗紫色方章，水浸后向左拖出短小晕尾。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;半月水线&quot;,
+      &quot;desc&quot;: &quot;纸张下半部有一道从左边缘跨至中线的褐灰半月形水渍，内外色阶明显。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;三折卷痕&quot;,
+      &quot;desc&quot;: &quot;纸面保留三道平行横折和向内卷曲的短边记忆，展开后仍形成固定起伏。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;水下取回&quot;,
+      &quot;prompt&quot;: &quot;One waterlogged cargo manifest at tabletop scale just after recovery, tightly curled short edges, dark wet paper, three parallel fold ridges, six visible ruled serial rows, a blurred dark-purple square seal and a crescent water stain, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;修复展平&quot;,
+      &quot;prompt&quot;: &quot;The same aged cargo manifest at tabletop scale after conservation flattening, dampness reduced but the three fold ridges, six ruled serial rows, chipped-corner purple seal and crescent water stain remain identical, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;现场公开&quot;,
+      &quot;prompt&quot;: &quot;The same conserved cargo manifest at tabletop scale in its public evidence state, fully spread flat with all six ruled serial rows visible, the dark-purple square seal and crescent water stain unchanged, isolated with no hands or display holder.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;,
+    &quot;S04&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;程野&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Top-down three-quarter product reference of one aged cargo manifest at tabletop scale, conserved but visibly water-damaged. Show six evenly spaced ruled serial rows with abstract non-legible marks, a dark-purple square seal missing one corner and bleeding slightly left, a brown-grey crescent water stain across the lower half, three parallel fold ridges and inward-curling short edges. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise wet-paper texture.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, clipboard, frame, duplicate document, fully readable writing, extra seals, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 prop design sheet for one aged cargo manifest at tabletop scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the conserved flattened state in the upper left, two anchor close-ups in the right column, and bottom panels for the wet curled recovery state, the fully spread public-evidence state, and one side profile showing the fold ridges. Keep the six ruled serial rows with non-legible marks, chipped-corner dark-purple seal, crescent water stain, three parallel folds and curling short edges identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;weathered materials&quot;,
+      &quot;cinematic&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      5,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/真正的载货联单-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P04">
+  <header class="sc-h">
+    <span class="sc-id">P04</span>
+    <h3>锈蚀金属文件筒</h3>
+    <span class="badge">桌面级</span>
+    <span class="sc-use">出现集 5　承载爽点 事故与哥哥选择双重真相 · 半月潮记实物锚点</span>
+  </header>
+  <p class="sc-sum">程野从沉船点取回载货联单时使用的密封文件筒；筒盖上的半月潮记把实物证据与许潮本人连接起来。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/锈蚀金属文件筒-sheet.png" aria-label="放大查看">
+    <img src="images/锈蚀金属文件筒-sheet.png" alt="锈蚀金属文件筒 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S04、S02</b>　关联角色：程野</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>固定长径</b><span>暗褐锈钢圆筒约长四十五厘米、直径十八厘米，筒身只有两道低矮环形加强筋。</span></li><li><b>左端固定底</b><span>左端是不可拆的圆形封底，没有把手、铰链、标签或额外卡扣。</span></li><li><b>右端螺纹盖</b><span>右端为一只粗厚可分离圆盖，盖缘恰有两个相对的短矩形防滑凸耳，筒口外螺纹清楚。</span></li><li><b>半月潮记</b><span>盖面只有一道小而不规则的手刻半月弧线，不是完整圆、文字、数字、图标或印刷标志。</span></li><li><b>黑水锈蚀</b><span>全筒保留暗褐锈斑、黑色水垢和湿润粗糙钢面，不得清洁成新金属。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>水下密封取回</i><span class="mono">The same dark-brown rusted steel document canister, 45 by 18 centimetres, two low reinforcing ribs, fixed left base and thick right threaded lid fully closed, two rectangular grip tabs and one shallow half-moon scratch, wet from black river water, exactly one canister, no paper or hands.</span><button class="copy mini" data-copy="The same dark-brown rusted steel document canister, 45 by 18 centimetres, two low reinforcing ribs, fixed left base and thick right threaded lid fully closed, two rectangular grip tabs and one shallow half-moon scratch, wet from black river water, exactly one canister, no paper or hands.">复制</button></div><div class="light"><i>开盖取证</i><span class="mono">The exact same canister with its single right threaded lid fully removed and kept beside the mouth, one wet cargo-manifest roll only partly sliding out, two ribs and fixed left base unchanged, no second lid, no duplicate canister, no readable text.</span><button class="copy mini" data-copy="The exact same canister with its single right threaded lid fully removed and kept beside the mouth, one wet cargo-manifest roll only partly sliding out, two ribs and fixed left base unchanged, no second lid, no duplicate canister, no readable text.">复制</button></div><div class="light"><i>重新封好运回</i><span class="mono">The exact same canister after the only manifest has been returned inside and the same right lid tightened closed again, no paper visible outside, two ribs, fixed left base, grip tabs and half-moon scratch unchanged.</span><button class="copy mini" data-copy="The exact same canister after the only manifest has been returned inside and the same right lid tightened closed again, no paper visible outside, two ribs, fixed left base, grip tabs and half-moon scratch unchanged.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Three-quarter product reference of one old dark-brown rusted cylindrical steel document canister at tabletop scale, about 45 cm long and 18 cm diameter, two low annular reinforcing ribs, fixed round base at left, thick removable threaded circular lid at right with exactly two short rectangular grip tabs, and one shallow irregular hand-scratched half-moon tide mark on the lid face. Pure white background, no people, hands, paper, labels or duplicate object. Semi-realistic painterly prop concept art with precise aged materials.">复制</button></summary>
+  <p>Three-quarter product reference of one old dark-brown rusted cylindrical steel document canister at tabletop scale, about 45 cm long and 18 cm diameter, two low annular reinforcing ribs, fixed round base at left, thick removable threaded circular lid at right with exactly two short rectangular grip tabs, and one shallow irregular hand-scratched half-moon tide mark on the lid face. Pure white background, no people, hands, paper, labels or duplicate object. Semi-realistic painterly prop concept art with precise aged materials.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 professional prop reference sheet for one rusted steel document canister at tabletop scale on a clean pure white background. Use one large three-quarter closed-canister master view and smaller separated panels for side profile, fixed left base, empty threaded mouth, and the same detached right lid from front and side. Keep the 45:18 proportion, two low ribs, fixed base, two grip tabs, dark-brown river patina and single shallow half-moon scratch identical in every panel. No people, hands, paper, text or extra objects. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with water stains, metal patina and nothing factory-new.">复制</button></summary>
+  <p>Create a 16:9 professional prop reference sheet for one rusted steel document canister at tabletop scale on a clean pure white background. Use one large three-quarter closed-canister master view and smaller separated panels for side profile, fixed left base, empty threaded mouth, and the same detached right lid from front and side. Keep the 45:18 proportion, two low ribs, fixed base, two grip tabs, dark-brown river patina and single shallow half-moon scratch identical in every panel. No people, hands, paper, text or extra objects. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with water stains, metal patina and nothing factory-new.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, hands, fingers, paper, manifest, readable text, labels, logo, power icon, full circle symbol, duplicate canister, extra lid, handle, strap, hinge, latch, glass, new polished metal, coloured background, watermark, signature">复制</button></summary>
+  <p>people, hands, fingers, paper, manifest, readable text, labels, logo, power icon, full circle symbol, duplicate canister, extra lid, handle, strap, hinge, latch, glass, new polished metal, coloured background, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P04&quot;,
+  &quot;name&quot;: &quot;锈蚀金属文件筒&quot;,
+  &quot;summary&quot;: &quot;程野从沉船点取回载货联单时使用的密封文件筒；筒盖上的半月潮记把实物证据与许潮本人连接起来。&quot;,
+  &quot;scale&quot;: &quot;桌面级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;固定长径&quot;,
+      &quot;desc&quot;: &quot;暗褐锈钢圆筒约长四十五厘米、直径十八厘米，筒身只有两道低矮环形加强筋。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;左端固定底&quot;,
+      &quot;desc&quot;: &quot;左端是不可拆的圆形封底，没有把手、铰链、标签或额外卡扣。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;右端螺纹盖&quot;,
+      &quot;desc&quot;: &quot;右端为一只粗厚可分离圆盖，盖缘恰有两个相对的短矩形防滑凸耳，筒口外螺纹清楚。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;半月潮记&quot;,
+      &quot;desc&quot;: &quot;盖面只有一道小而不规则的手刻半月弧线，不是完整圆、文字、数字、图标或印刷标志。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;黑水锈蚀&quot;,
+      &quot;desc&quot;: &quot;全筒保留暗褐锈斑、黑色水垢和湿润粗糙钢面，不得清洁成新金属。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;水下密封取回&quot;,
+      &quot;prompt&quot;: &quot;The same dark-brown rusted steel document canister, 45 by 18 centimetres, two low reinforcing ribs, fixed left base and thick right threaded lid fully closed, two rectangular grip tabs and one shallow half-moon scratch, wet from black river water, exactly one canister, no paper or hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;开盖取证&quot;,
+      &quot;prompt&quot;: &quot;The exact same canister with its single right threaded lid fully removed and kept beside the mouth, one wet cargo-manifest roll only partly sliding out, two ribs and fixed left base unchanged, no second lid, no duplicate canister, no readable text.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;重新封好运回&quot;,
+      &quot;prompt&quot;: &quot;The exact same canister after the only manifest has been returned inside and the same right lid tightened closed again, no paper visible outside, two ribs, fixed left base, grip tabs and half-moon scratch unchanged.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S04&quot;,
+    &quot;S02&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;程野&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Three-quarter product reference of one old dark-brown rusted cylindrical steel document canister at tabletop scale, about 45 cm long and 18 cm diameter, two low annular reinforcing ribs, fixed round base at left, thick removable threaded circular lid at right with exactly two short rectangular grip tabs, and one shallow irregular hand-scratched half-moon tide mark on the lid face. Pure white background, no people, hands, paper, labels or duplicate object. Semi-realistic painterly prop concept art with precise aged materials.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, hands, fingers, paper, manifest, readable text, labels, logo, power icon, full circle symbol, duplicate canister, extra lid, handle, strap, hinge, latch, glass, new polished metal, coloured background, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 professional prop reference sheet for one rusted steel document canister at tabletop scale on a clean pure white background. Use one large three-quarter closed-canister master view and smaller separated panels for side profile, fixed left base, empty threaded mouth, and the same detached right lid from front and side. Keep the 45:18 proportion, two low ribs, fixed base, two grip tabs, dark-brown river patina and single shallow half-moon scratch identical in every panel. No people, hands, paper, text or extra objects. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with water stains, metal patina and nothing factory-new.&quot;,
+    &quot;tags&quot;: [
+      &quot;photorealistic&quot;,
+      &quot;prop sheet&quot;,
+      &quot;rusted steel&quot;,
+      &quot;evidence continuity&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      5
+    ],
+    &quot;beats&quot;: [
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;半月潮记实物锚点&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/锈蚀金属文件筒-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P05">
+  <header class="sc-h">
+    <span class="sc-id">P05</span>
+    <h3>许德海事故责任书</h3>
+    <span class="badge">桌面级</span>
+    <span class="sc-use">出现集 1、3、5、6　承载爽点 亡兄录音反转 · 父亲清白中段揭破 · 事故与哥哥选择双重真相 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">贯穿旧案误解与翻案程序的父亲签字文件；纸张本身不能直接证明清白，但与胁迫残录、联单和录音并置后揭示签字原因。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/许德海事故责任书-sheet.png" aria-label="放大查看">
+    <img src="images/许德海事故责任书-sheet.png" alt="许德海事故责任书 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S01、S02、S03</b>　关联角色：许知遥、高嵩</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>灰黄单页</b><span>只有一张纵向灰黄色旧纸，四边磨毛，左上角保留两枚相邻的锈色装订孔，不得生成第二页。</span></li><li><b>双横一竖折痕</b><span>纸面有两道平行横折和一道偏左竖折，三条折痕在所有状态保持同一位置。</span></li><li><b>斜向水渍</b><span>下半部从左下向中部延伸一块浅褐斜向水渍，边界不规则但不遮住右下签名区。</span></li><li><b>右下模糊签名</b><span>右下角只有一道深蓝黑色、不可辨认的旧签名笔迹和一枚褪色椭圆墨印，不出现可读姓名或正文。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>遗物折叠</i><span class="mono">One weathered accident responsibility statement at tabletop scale, a single grey-yellow vertical sheet folded along two horizontal lines and one left-offset vertical line, two rusted binding holes at upper left, shallow brown diagonal water stain, blurred blue-black signature area at lower right, no readable writing and no hands.</span><button class="copy mini" data-copy="One weathered accident responsibility statement at tabletop scale, a single grey-yellow vertical sheet folded along two horizontal lines and one left-offset vertical line, two rusted binding holes at upper left, shallow brown diagonal water stain, blurred blue-black signature area at lower right, no readable writing and no hands.">复制</button></div><div class="light"><i>证据对照</i><span class="mono">The exact same single responsibility statement at tabletop scale laid open for evidence comparison, frayed edges, two upper-left rusted holes, identical two horizontal and one vertical fold lines, diagonal brown water stain, one unreadable blue-black signature trace and faded oval ink impression at lower right, no duplicate page or hands.</span><button class="copy mini" data-copy="The exact same single responsibility statement at tabletop scale laid open for evidence comparison, frayed edges, two upper-left rusted holes, identical two horizontal and one vertical fold lines, diagonal brown water stain, one unreadable blue-black signature trace and faded oval ink impression at lower right, no duplicate page or hands.">复制</button></div><div class="light"><i>送鉴准备</i><span class="mono">The exact same single responsibility statement at tabletop scale resting flat on neutral conservation support before forensic examination, all holes, folds, water stain and blurred lower-right signature area unchanged, no transparent bag, label, readable writing or hands.</span><button class="copy mini" data-copy="The exact same single responsibility statement at tabletop scale resting flat on neutral conservation support before forensic examination, all holes, folds, water stain and blurred lower-right signature area unchanged, no transparent bag, label, readable writing or hands.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Top-down three-quarter product reference of one weathered accident responsibility statement at tabletop scale: a single grey-yellow vertical sheet with frayed edges, two adjacent rusted binding holes at upper left, two horizontal folds and one left-offset vertical fold, a pale brown diagonal water stain across the lower half, and one blurred blue-black signature trace with a faded oval ink impression at lower right. All writing is abstract and unreadable. Pure white background, no people, hands, clips, folders or duplicate paper. Semi-realistic painterly prop concept art with precise aged-paper texture.">复制</button></summary>
+  <p>Top-down three-quarter product reference of one weathered accident responsibility statement at tabletop scale: a single grey-yellow vertical sheet with frayed edges, two adjacent rusted binding holes at upper left, two horizontal folds and one left-offset vertical fold, a pale brown diagonal water stain across the lower half, and one blurred blue-black signature trace with a faded oval ink impression at lower right. All writing is abstract and unreadable. Pure white background, no people, hands, clips, folders or duplicate paper. Semi-realistic painterly prop concept art with precise aged-paper texture.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 professional prop reference sheet for exactly one weathered accident responsibility statement at tabletop scale on a pure white background. Use one large top-down master view and small close crops of the two rusted upper-left holes, fixed fold pattern, diagonal water stain and blurred lower-right signature area. Keep the same single grey-yellow sheet, frayed edges, two horizontal folds, one left-offset vertical fold, pale brown stain and unreadable blue-black signature trace identical in every crop. No people, hands, duplicate pages, transparent sleeve or readable writing. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with paper fibres, faded ink, water staining and nothing factory-new.">复制</button></summary>
+  <p>Create a 16:9 professional prop reference sheet for exactly one weathered accident responsibility statement at tabletop scale on a pure white background. Use one large top-down master view and small close crops of the two rusted upper-left holes, fixed fold pattern, diagonal water stain and blurred lower-right signature area. Keep the same single grey-yellow sheet, frayed edges, two horizontal folds, one left-offset vertical fold, pale brown stain and unreadable blue-black signature trace identical in every crop. No people, hands, duplicate pages, transparent sleeve or readable writing. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with paper fibres, faded ink, water staining and nothing factory-new.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate page, second document, readable text, legible name, printed paragraph, clipboard, folder, transparent sleeve, label, coloured background, grey background, watermark, signature artist mark">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate page, second document, readable text, legible name, printed paragraph, clipboard, folder, transparent sleeve, label, coloured background, grey background, watermark, signature artist mark</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P05&quot;,
+  &quot;name&quot;: &quot;许德海事故责任书&quot;,
+  &quot;summary&quot;: &quot;贯穿旧案误解与翻案程序的父亲签字文件；纸张本身不能直接证明清白，但与胁迫残录、联单和录音并置后揭示签字原因。&quot;,
+  &quot;scale&quot;: &quot;桌面级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;灰黄单页&quot;,
+      &quot;desc&quot;: &quot;只有一张纵向灰黄色旧纸，四边磨毛，左上角保留两枚相邻的锈色装订孔，不得生成第二页。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;双横一竖折痕&quot;,
+      &quot;desc&quot;: &quot;纸面有两道平行横折和一道偏左竖折，三条折痕在所有状态保持同一位置。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;斜向水渍&quot;,
+      &quot;desc&quot;: &quot;下半部从左下向中部延伸一块浅褐斜向水渍，边界不规则但不遮住右下签名区。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;右下模糊签名&quot;,
+      &quot;desc&quot;: &quot;右下角只有一道深蓝黑色、不可辨认的旧签名笔迹和一枚褪色椭圆墨印，不出现可读姓名或正文。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;遗物折叠&quot;,
+      &quot;prompt&quot;: &quot;One weathered accident responsibility statement at tabletop scale, a single grey-yellow vertical sheet folded along two horizontal lines and one left-offset vertical line, two rusted binding holes at upper left, shallow brown diagonal water stain, blurred blue-black signature area at lower right, no readable writing and no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;证据对照&quot;,
+      &quot;prompt&quot;: &quot;The exact same single responsibility statement at tabletop scale laid open for evidence comparison, frayed edges, two upper-left rusted holes, identical two horizontal and one vertical fold lines, diagonal brown water stain, one unreadable blue-black signature trace and faded oval ink impression at lower right, no duplicate page or hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;送鉴准备&quot;,
+      &quot;prompt&quot;: &quot;The exact same single responsibility statement at tabletop scale resting flat on neutral conservation support before forensic examination, all holes, folds, water stain and blurred lower-right signature area unchanged, no transparent bag, label, readable writing or hands.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;,
+    &quot;S03&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;许知遥&quot;,
+    &quot;高嵩&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Top-down three-quarter product reference of one weathered accident responsibility statement at tabletop scale: a single grey-yellow vertical sheet with frayed edges, two adjacent rusted binding holes at upper left, two horizontal folds and one left-offset vertical fold, a pale brown diagonal water stain across the lower half, and one blurred blue-black signature trace with a faded oval ink impression at lower right. All writing is abstract and unreadable. Pure white background, no people, hands, clips, folders or duplicate paper. Semi-realistic painterly prop concept art with precise aged-paper texture.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate page, second document, readable text, legible name, printed paragraph, clipboard, folder, transparent sleeve, label, coloured background, grey background, watermark, signature artist mark&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 professional prop reference sheet for exactly one weathered accident responsibility statement at tabletop scale on a pure white background. Use one large top-down master view and small close crops of the two rusted upper-left holes, fixed fold pattern, diagonal water stain and blurred lower-right signature area. Keep the same single grey-yellow sheet, frayed edges, two horizontal folds, one left-offset vertical fold, pale brown stain and unreadable blue-black signature trace identical in every crop. No people, hands, duplicate pages, transparent sleeve or readable writing. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with paper fibres, faded ink, water staining and nothing factory-new.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;prop sheet&quot;,
+      &quot;aged document&quot;,
+      &quot;evidence continuity&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      3,
+      5,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;亡兄录音反转&quot;,
+      &quot;父亲清白中段揭破&quot;,
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/许德海事故责任书-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P06">
+  <header class="sc-h">
+    <span class="sc-id">P06</span>
+    <h3>程野残录手机</h3>
+    <span class="badge">手持级</span>
+    <span class="sc-use">出现集 3、4、5、6　承载爽点 反派反制落空 · 事故与哥哥选择双重真相 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">程野在门外留下高嵩胁迫话语的断续录音，并在第五、六集把残录接入完整证据链；屏幕内容始终应由后期控制。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/程野残录手机-sheet.png" aria-label="放大查看">
+    <img src="images/程野残录手机-sheet.png" alt="程野残录手机 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S01、S02、S03</b>　关联角色：程野</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>石墨黑厚壳</b><span>手机装在无品牌的石墨黑厚边防摔壳内，四角略高，机身大小和比例固定。</span></li><li><b>左上蛛裂</b><span>前玻璃左上角只有一簇短小蛛网裂纹，裂纹不跨过屏幕中央。</span></li><li><b>右下橙擦痕</b><span>保护壳右下角有一道指甲长的暗橙色擦痕，是辨认同一部手机的固定标记。</span></li><li><b>双镜头竖槽</b><span>背面左上为无品牌窄竖槽双镜头，镜头周围有银灰磨损圈，不得增加第三镜头或商标。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>门外收音</i><span class="mono">One old graphite-black smartphone at handheld scale in a thick unbranded bumper case, upper-left glass spider crack, dark-orange abrasion on the lower-right case corner, narrow vertical two-camera slot on the back, screen dark and unreadable, isolated with no hands.</span><button class="copy mini" data-copy="One old graphite-black smartphone at handheld scale in a thick unbranded bumper case, upper-left glass spider crack, dark-orange abrasion on the lower-right case corner, narrow vertical two-camera slot on the back, screen dark and unreadable, isolated with no hands.">复制</button></div><div class="light"><i>残录播放</i><span class="mono">The exact same graphite-black smartphone at handheld scale playing damaged audio, only one abstract dim cyan waveform on the otherwise dark cracked screen, no icons, text, digits, portrait or timecode, lower-right orange abrasion unchanged, isolated with no hands.</span><button class="copy mini" data-copy="The exact same graphite-black smartphone at handheld scale playing damaged audio, only one abstract dim cyan waveform on the otherwise dark cracked screen, no icons, text, digits, portrait or timecode, lower-right orange abrasion unchanged, isolated with no hands.">复制</button></div><div class="light"><i>闹钟背屏</i><span class="mono">The exact same smartphone at handheld scale lying face down or with the screen completely turned away while an alarm is implied, graphite bumper case, upper-left crack and lower-right orange abrasion unchanged, no visible time, digits, labels or hands.</span><button class="copy mini" data-copy="The exact same smartphone at handheld scale lying face down or with the screen completely turned away while an alarm is implied, graphite bumper case, upper-left crack and lower-right orange abrasion unchanged, no visible time, digits, labels or hands.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Three-quarter product reference of one old graphite-black smartphone at handheld scale in a thick unbranded bumper case. Show one small spider crack confined to the upper-left front glass, one dark-orange abrasion on the lower-right case corner, and a narrow vertical two-camera slot with worn silver rings on the back. The front screen is nearly black with one abstract dim cyan waveform only, no icons, letters, digits, portrait or timecode. Pure white background, no people, hands, cables, brand marks or duplicate phone. Semi-realistic painterly prop concept art with precise worn glass and rubber texture.">复制</button></summary>
+  <p>Three-quarter product reference of one old graphite-black smartphone at handheld scale in a thick unbranded bumper case. Show one small spider crack confined to the upper-left front glass, one dark-orange abrasion on the lower-right case corner, and a narrow vertical two-camera slot with worn silver rings on the back. The front screen is nearly black with one abstract dim cyan waveform only, no icons, letters, digits, portrait or timecode. Pure white background, no people, hands, cables, brand marks or duplicate phone. Semi-realistic painterly prop concept art with precise worn glass and rubber texture.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create a 16:9 professional prop reference sheet for one old graphite-black smartphone at handheld scale on a pure white background. Use one large three-quarter master view and smaller front, back, side and anchor-detail panels. Keep the thick unbranded bumper case, small upper-left glass spider crack, lower-right dark-orange abrasion and narrow vertical two-camera slot identical in every panel. The only visible screen content is one abstract dim cyan waveform on black; no icons, letters, digits, portraits, clock or timecode. No people, hands, cables, logos or duplicate phones. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with scuffed rubber, worn glass and nothing factory-new.">复制</button></summary>
+  <p>Create a 16:9 professional prop reference sheet for one old graphite-black smartphone at handheld scale on a pure white background. Use one large three-quarter master view and smaller front, back, side and anchor-detail panels. Keep the thick unbranded bumper case, small upper-left glass spider crack, lower-right dark-orange abrasion and narrow vertical two-camera slot identical in every panel. The only visible screen content is one abstract dim cyan waveform on black; no icons, letters, digits, portraits, clock or timecode. No people, hands, cables, logos or duplicate phones. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with scuffed rubber, worn glass and nothing factory-new.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate phone, third camera, readable text, logo, brand, clock digits, timecode, app icons, portrait, chat screen, bright UI, cable, coloured background, grey background, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate phone, third camera, readable text, logo, brand, clock digits, timecode, app icons, portrait, chat screen, bright UI, cable, coloured background, grey background, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P06&quot;,
+  &quot;name&quot;: &quot;程野残录手机&quot;,
+  &quot;summary&quot;: &quot;程野在门外留下高嵩胁迫话语的断续录音，并在第五、六集把残录接入完整证据链；屏幕内容始终应由后期控制。&quot;,
+  &quot;scale&quot;: &quot;手持级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;石墨黑厚壳&quot;,
+      &quot;desc&quot;: &quot;手机装在无品牌的石墨黑厚边防摔壳内，四角略高，机身大小和比例固定。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;左上蛛裂&quot;,
+      &quot;desc&quot;: &quot;前玻璃左上角只有一簇短小蛛网裂纹，裂纹不跨过屏幕中央。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;右下橙擦痕&quot;,
+      &quot;desc&quot;: &quot;保护壳右下角有一道指甲长的暗橙色擦痕，是辨认同一部手机的固定标记。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;双镜头竖槽&quot;,
+      &quot;desc&quot;: &quot;背面左上为无品牌窄竖槽双镜头，镜头周围有银灰磨损圈，不得增加第三镜头或商标。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;门外收音&quot;,
+      &quot;prompt&quot;: &quot;One old graphite-black smartphone at handheld scale in a thick unbranded bumper case, upper-left glass spider crack, dark-orange abrasion on the lower-right case corner, narrow vertical two-camera slot on the back, screen dark and unreadable, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;残录播放&quot;,
+      &quot;prompt&quot;: &quot;The exact same graphite-black smartphone at handheld scale playing damaged audio, only one abstract dim cyan waveform on the otherwise dark cracked screen, no icons, text, digits, portrait or timecode, lower-right orange abrasion unchanged, isolated with no hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;闹钟背屏&quot;,
+      &quot;prompt&quot;: &quot;The exact same smartphone at handheld scale lying face down or with the screen completely turned away while an alarm is implied, graphite bumper case, upper-left crack and lower-right orange abrasion unchanged, no visible time, digits, labels or hands.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;,
+    &quot;S03&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;程野&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Three-quarter product reference of one old graphite-black smartphone at handheld scale in a thick unbranded bumper case. Show one small spider crack confined to the upper-left front glass, one dark-orange abrasion on the lower-right case corner, and a narrow vertical two-camera slot with worn silver rings on the back. The front screen is nearly black with one abstract dim cyan waveform only, no icons, letters, digits, portrait or timecode. Pure white background, no people, hands, cables, brand marks or duplicate phone. Semi-realistic painterly prop concept art with precise worn glass and rubber texture.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate phone, third camera, readable text, logo, brand, clock digits, timecode, app icons, portrait, chat screen, bright UI, cable, coloured background, grey background, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create a 16:9 professional prop reference sheet for one old graphite-black smartphone at handheld scale on a pure white background. Use one large three-quarter master view and smaller front, back, side and anchor-detail panels. Keep the thick unbranded bumper case, small upper-left glass spider crack, lower-right dark-orange abrasion and narrow vertical two-camera slot identical in every panel. The only visible screen content is one abstract dim cyan waveform on black; no icons, letters, digits, portraits, clock or timecode. No people, hands, cables, logos or duplicate phones. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with scuffed rubber, worn glass and nothing factory-new.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;prop sheet&quot;,
+      &quot;damaged smartphone&quot;,
+      &quot;audio evidence&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      3,
+      4,
+      5,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;反派反制落空&quot;,
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/程野残录手机-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P07">
+  <header class="sc-h">
+    <span class="sc-id">P07</span>
+    <h3>三份独立备份盘</h3>
+    <span class="badge">桌面级</span>
+    <span class="sc-use">出现集 4、5、6　承载爽点 反派反制落空 · 事故与哥哥选择双重真相 · 公开证据链</span>
+  </header>
+  <p class="sc-sum">许知遥把修复录音保存为三份彼此独立的副本，既解释高嵩摔毁原介质为何无效，也保证公开前仍有可核验备份。</p>
+  <figure class="plate">
+  <button class="zoom" data-src="images/三份独立备份盘-sheet.png" aria-label="放大查看">
+    <img src="images/三份独立备份盘-sheet.png" alt="三份独立备份盘 主视角＋底部与右侧细节条 · 纯白背景" loading="lazy">
+  </button>
+  <figcaption>主视角＋底部与右侧细节条 · 纯白背景</figcaption>
+</figure>
+  <p class="variant">关联场景：<b>S02</b>　关联角色：许知遥</p>
+  <section class="blk">
+    <h4>一致性锚点<small>每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors"><li><b>固定三件</b><span>资产始终恰好由三只彼此分离的小型固态存储盘组成，不增减、不叠放、不连接线缆。</span></li><li><b>左侧石墨盘</b><span>左盘为石墨黑磨砂长方体，左上角削去一小段斜角。</span></li><li><b>中间锈橙盘</b><span>中盘为暗锈橙色橡胶包边，四角各有一粒低矮黑色防撞点。</span></li><li><b>右侧银灰盘</b><span>右盘为拉丝银灰金属壳，右下角留一道短黑擦痕；三盘都无标签、编号或品牌。</span></li></ol>
+  </section>
+  <section class="blk">
+    <h4>状态变体</h4>
+    <div class="lights"><div class="light"><i>复制前摆放</i><span class="mono">Exactly three separate small storage drives at tabletop scale arranged left to right with clear gaps: one matte graphite drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black bumpers, and one brushed silver-grey drive with a short black lower-right scuff, all plain and unlabeled, no cables or hands.</span><button class="copy mini" data-copy="Exactly three separate small storage drives at tabletop scale arranged left to right with clear gaps: one matte graphite drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black bumpers, and one brushed silver-grey drive with a short black lower-right scuff, all plain and unlabeled, no cables or hands.">复制</button></div><div class="light"><i>三份完成</i><span class="mono">The exact same three separate storage drives at tabletop scale after copying, still arranged graphite, dark orange and silver-grey from left to right with clear gaps, no indicator text, labels, numbers, cables, extra drive or hands.</span><button class="copy mini" data-copy="The exact same three separate storage drives at tabletop scale after copying, still arranged graphite, dark orange and silver-grey from left to right with clear gaps, no indicator text, labels, numbers, cables, extra drive or hands.">复制</button></div><div class="light"><i>留在台面</i><span class="mono">The exact same trio of three storage drives at tabletop scale remaining together on a steel bench, graphite clipped-corner drive, dark-orange bumper drive and silver-grey scuffed drive unchanged, exactly three, no labels, cables or hands.</span><button class="copy mini" data-copy="The exact same trio of three storage drives at tabletop scale remaining together on a steel bench, graphite clipped-corner drive, dark-orange bumper drive and silver-grey scuffed drive unchanged, exactly three, no labels, cables or hands.">复制</button></div></div>
+  </section>
+  <div class="pgroup">
+    <details class="pr">
+  <summary><span>主视角 EN</span><button class="copy" data-copy="Clean top-down three-quarter product reference of exactly three separate small storage drives at tabletop scale arranged left to right with clear white gaps: one matte graphite rectangular drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black corner bumpers, and one brushed silver-grey metal drive with one short black scuff at lower right. All three are plain and unlabeled, with no ports facing camera. Pure white background, no people, hands, cables, cases, labels, numbers, logos or extra device. Semi-realistic painterly prop concept art with precise worn material texture.">复制</button></summary>
+  <p>Clean top-down three-quarter product reference of exactly three separate small storage drives at tabletop scale arranged left to right with clear white gaps: one matte graphite rectangular drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black corner bumpers, and one brushed silver-grey metal drive with one short black scuff at lower right. All three are plain and unlabeled, with no ports facing camera. Pure white background, no people, hands, cables, cases, labels, numbers, logos or extra device. Semi-realistic painterly prop concept art with precise worn material texture.</p>
+</details>
+    <details class="pr">
+  <summary><span>设定图 EN</span><button class="copy" data-copy="Create one clean 16:9 prop reference composition, not a collage, showing exactly three separate small storage drives at tabletop scale on a pure white background. Arrange them left to right with clear gaps: matte graphite with one clipped corner, dark oxidized-orange with four black bumpers, and brushed silver-grey with one short black scuff. Keep all three plain, unlabeled and disconnected; no detail panels, repeated objects, cables, adapters, hands, people, text, digits or logos. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with restrained scuffs and nothing factory-new.">复制</button></summary>
+  <p>Create one clean 16:9 prop reference composition, not a collage, showing exactly three separate small storage drives at tabletop scale on a pure white background. Arrange them left to right with clear gaps: matte graphite with one clipped corner, dark oxidized-orange with four black bumpers, and brushed silver-grey with one short black scuff. Keep all three plain, unlabeled and disconnected; no detail panels, repeated objects, cables, adapters, hands, people, text, digits or logos. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with restrained scuffs and nothing factory-new.</p>
+</details>
+    <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, one drive, two drives, four drives, extra device, duplicate drive, stacked objects, cables, adapters, memory cards, readable text, label, number, logo, bright LEDs, coloured background, grey background, watermark, signature">复制</button></summary>
+  <p>people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, one drive, two drives, four drives, extra device, duplicate drive, stacked objects, cables, adapters, memory cards, readable text, label, number, logo, bright LEDs, coloured background, grey background, watermark, signature</p>
+</details>
+    <div class="pgroup-f"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P07&quot;,
+  &quot;name&quot;: &quot;三份独立备份盘&quot;,
+  &quot;summary&quot;: &quot;许知遥把修复录音保存为三份彼此独立的副本，既解释高嵩摔毁原介质为何无效，也保证公开前仍有可核验备份。&quot;,
+  &quot;scale&quot;: &quot;桌面级&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;固定三件&quot;,
+      &quot;desc&quot;: &quot;资产始终恰好由三只彼此分离的小型固态存储盘组成，不增减、不叠放、不连接线缆。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;左侧石墨盘&quot;,
+      &quot;desc&quot;: &quot;左盘为石墨黑磨砂长方体，左上角削去一小段斜角。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;中间锈橙盘&quot;,
+      &quot;desc&quot;: &quot;中盘为暗锈橙色橡胶包边，四角各有一粒低矮黑色防撞点。&quot;
+    },
+    {
+      &quot;name&quot;: &quot;右侧银灰盘&quot;,
+      &quot;desc&quot;: &quot;右盘为拉丝银灰金属壳，右下角留一道短黑擦痕；三盘都无标签、编号或品牌。&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;复制前摆放&quot;,
+      &quot;prompt&quot;: &quot;Exactly three separate small storage drives at tabletop scale arranged left to right with clear gaps: one matte graphite drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black bumpers, and one brushed silver-grey drive with a short black lower-right scuff, all plain and unlabeled, no cables or hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;三份完成&quot;,
+      &quot;prompt&quot;: &quot;The exact same three separate storage drives at tabletop scale after copying, still arranged graphite, dark orange and silver-grey from left to right with clear gaps, no indicator text, labels, numbers, cables, extra drive or hands.&quot;
+    },
+    {
+      &quot;state&quot;: &quot;留在台面&quot;,
+      &quot;prompt&quot;: &quot;The exact same trio of three storage drives at tabletop scale remaining together on a steel bench, graphite clipped-corner drive, dark-orange bumper drive and silver-grey scuffed drive unchanged, exactly three, no labels, cables or hands.&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S02&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;许知遥&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;Clean top-down three-quarter product reference of exactly three separate small storage drives at tabletop scale arranged left to right with clear white gaps: one matte graphite rectangular drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black corner bumpers, and one brushed silver-grey metal drive with one short black scuff at lower right. All three are plain and unlabeled, with no ports facing camera. Pure white background, no people, hands, cables, cases, labels, numbers, logos or extra device. Semi-realistic painterly prop concept art with precise worn material texture.&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, one drive, two drives, four drives, extra device, duplicate drive, stacked objects, cables, adapters, memory cards, readable text, label, number, logo, bright LEDs, coloured background, grey background, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Create one clean 16:9 prop reference composition, not a collage, showing exactly three separate small storage drives at tabletop scale on a pure white background. Arrange them left to right with clear gaps: matte graphite with one clipped corner, dark oxidized-orange with four black bumpers, and brushed silver-grey with one short black scuff. Keep all three plain, unlabeled and disconnected; no detail panels, repeated objects, cables, adapters, hands, people, text, digits or logos. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with restrained scuffs and nothing factory-new.&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;prop reference&quot;,
+      &quot;three storage drives&quot;,
+      &quot;backup continuity&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      4,
+      5,
+      6
+    ],
+    &quot;beats&quot;: [
+      &quot;反派反制落空&quot;,
+      &quot;事故与哥哥选择双重真相&quot;,
+      &quot;公开证据链&quot;
+    ]
+  },
+  &quot;sheetImage&quot;: &quot;images/三份独立备份盘-sheet.png&quot;
+}">复制整个场景 JSON</button></div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-gates">
+  <div class="sec-h"><span class="no">05</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>一致性锚点 3–5 个</span></li>
+  <li class="ok"><span class="m">✓</span><span>光照状态至少 1 个且落成提示词</span></li>
+  <li class="ok"><span class="m">✓</span><span>参考图无人：反向提示词禁人（场景与道具都查）</span></li>
+  <li class="ok"><span class="m">✓</span><span>出图提示词全部英文</span></li>
+  <li class="ok"><span class="m">✓</span><span>提示词不含角色名<small>未提供 cast.json，本门跳过（视为通过）</small></span></li>
+  <li class="ok"><span class="m">✓</span><span>变体引用完整（variantOf 存在且带 changes）</span></li>
+  <li class="ok"><span class="m">✓</span><span>风格与反向提示词匹配</span></li>
+  <li class="ok"><span class="m">✓</span><span>道具状态至少 1 个且落成提示词</span></li>
+  <li class="ok"><span class="m">✓</span><span>道具尺度参照写进提示词</span></li>
+  <li class="ok"><span class="m">✓</span><span>道具参考图无手：反向提示词禁手</span></li>
+  <li class="ok"><span class="m">✓</span><span>道具设定图纯白背景可抠</span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">设定与提示词由模型依据大纲/原文生成，质量门由脚本确定性检查。参考图一律无人——人是另一层资产；道具参考图另加无手、纯白背景。</p>
+</div>
+
+<div class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-x" aria-label="关闭">关闭</button>
+  <img alt="">
+</div>
+
+<script type="application/json" id="art-data">{"source":"潮痕","style":"realistic","scenes":[{"id":"S01","name":"南堤旧渡口候船厅与栈桥","primary":true,"summary":"作为旧案从私人伤口转为公共证词的主舞台，空间必须同时容纳废弃感、拆除倒计时和最终公开对峙；候船厅的封闭阴影与伸向水面的栈桥形成从压抑走向揭露的视觉路径。","anchors":[{"name":"锈蓝售票窗","desc":"候船厅正墙中央是一扇褪成灰蓝色的金属售票窗，卷帘漆皮大片翘起，左下角留有矩形告示撕痕。"},{"name":"双潮痕石阶","desc":"通往水面的旧混凝土台阶最低两级各留一道深浅不同的盐白水线，边缘被潮水磨圆。"},{"name":"断口栈桥板","desc":"灰黑木栈桥靠岸第七块踏板右缘断去三角缺口，缺口下露出锈红钢梁。"},{"name":"歪斜系缆柱","desc":"栈桥外侧立着一根向江面倾斜的矮铸铁系缆柱，顶部覆有青绿锈斑，基座周围结着盐霜。"}],"lighting":[{"state":"阴天上午","prompt":"Cold overcast morning at an abandoned riverside ferry terminal, broad soft light from the water, muted blue-grey concrete, damp timber, low contrast, an empty scene with no people."},{"state":"夜间逼问","prompt":"Deep blue night at the abandoned ferry terminal, one weak amber utility lamp above the ticket window, wet stone steps reflecting a narrow strip of light, dark river beyond, empty scene, no people or silhouettes."},{"state":"仪式清晨","prompt":"Clear pale morning at the old ferry terminal, hard lateral sunlight revealing chipped paint and salt stains, a brighter open forecourt against the shadowed waiting hall, empty scene without people."},{"state":"退潮黄昏","prompt":"Quiet blue-gold dusk at low tide, warm last light grazing the two tide marks on the concrete steps, cool river haze and distant shore lights emerging, empty scene with no human presence."}],"image":{"prompt":"Master wide view of an abandoned small-town riverside ferry terminal combining a weathered waiting hall and a short timber jetty. Center the chipped blue-grey metal ticket window, lead the eye down concrete steps marked by two distinct tide lines, across the seventh jetty plank with a triangular broken edge, toward a leaning patinated mooring bollard. Cold overcast morning, grey-blue river, distant shore haze. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded architectural perspective and weathered materials.","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, vehicles, construction machinery, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Create a 16:9 environment design sheet for one abandoned riverside ferry terminal. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view shows the waiting hall and short jetty in a cold overcast morning: the chipped blue-grey ticket window, concrete steps with two tide lines, the seventh plank with a triangular broken edge, and the leaning patinated mooring bollard. Every detail panel must be a close crop from this exact master space. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[1,4,6],"beats":["亡兄录音反转","反派反制落空","公开证据链"]},"sheetImage":"images/南堤旧渡口候船厅与栈桥-sheet.png"},{"id":"S02","name":"许知遥临时声音修复室","primary":true,"summary":"这是把听不见的真相转化为可见证据的高压工作舱；狭窄台面、老旧隔音材料和被潮气侵入的设备让每一次修复都像在与拆迁时限抢时间。","anchors":[{"name":"灰绿修复台","desc":"房间中央是一张窄长灰绿色钢制工作台，前缘漆面磨出连续银亮露底，电缆从右侧圆孔整齐下垂。"},{"name":"错格吸音毡","desc":"后墙贴着十二块深灰吸音毡，其中右上两块错位下坠并带褐色水渍，形成固定的不规则轮廓。"},{"name":"双层波形屏","desc":"工作台左后方叠放两台不同年代的显示器，上屏窄而厚、下屏宽而薄，屏面只显示无文字的青色波形线。"},{"name":"铁丝玻璃窗","desc":"右墙高处是一扇方形铁丝夹层玻璃窗，左下角有蛛网状裂纹，窗框积着盐白粉末。"}],"lighting":[{"state":"凌晨修复","prompt":"A cramped empty audio restoration room after midnight, cool cyan waveform glow from stacked monitors, one warm articulated desk lamp on a worn grey-green steel bench, deep blue wired-glass window, no people."},{"state":"阴天工作日","prompt":"Soft overcast daylight filtering through cracked wired glass into an empty temporary audio lab, neutral grey-green work surfaces, restrained monitor glow, every water stain readable, no human figures."},{"state":"退潮前夜","prompt":"Predawn blue darkness in an empty audio restoration room, concentrated amber task light across the steel bench, cyan waveforms reflected faintly in cracked wired glass, tense low-key contrast, no people or silhouettes."}],"image":{"prompt":"Master three-quarter wide view of a cramped temporary audio restoration room. A worn grey-green steel workbench faces twelve dark acoustic felt squares with two water-stained panels sagging out of alignment. Two stacked monitors of different eras display abstract cyan waveforms with no readable text. A high wired-glass window has a spider crack in its lower left corner. Midnight lighting from one warm articulated desk lamp and cool screens. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art, grounded perspective, aged technical equipment and damp lived-in surfaces.","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, hands, faces, readable text, duplicate monitors, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature","sheet":"Create a 16:9 environment design sheet for one cramped temporary audio restoration room. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses midnight lighting from a warm articulated desk lamp and cool cyan monitor glow. It must show the worn grey-green steel bench, twelve dark acoustic felt panels with two sagging water-stained squares, two stacked monitors of different eras with abstract waveforms, and the cracked wired-glass window. Every detail panel is a crop of the same room and the same objects. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[1,2,3,5],"beats":["亡兄录音反转","时间线破绽","父亲清白中段揭破","事故与哥哥选择双重真相"]},"sheetImage":"images/许知遥临时声音修复室-sheet.png"},{"id":"S03","name":"旧渡口货仓","primary":true,"summary":"货仓是被人为封住的证据腔室，设计重点不是堆满货物，而是让新换的门锁、嵌墙消防柜和周期报警器共同证明这里曾困住人，也仍藏着未被清理干净的记录。","anchors":[{"name":"新锁旧门","desc":"入口是盐蚀斑驳的深褐钢门，却装着一只明显较新的银色方形挂锁，新旧反差一眼可辨。"},{"name":"嵌墙消防柜","desc":"左侧混凝土墙脚嵌着矮小红色消防柜，柜门褪成暗砖红，右下铰链变形并留有一圈水泥补痕。"},{"name":"琥珀报警器","desc":"后墙横梁下固定着圆角方形防潮报警器，乳白外壳发黄，中央只有一粒琥珀色指示灯。"},{"name":"弧形排水沟","desc":"水泥地面有一道从消防柜前绕向门口的浅弧排水沟，沟底积着黑色淤泥和盐白结晶。"}],"lighting":[{"state":"阴天下午","prompt":"Dim overcast afternoon inside an empty riverside warehouse, cold diffuse light entering through the partly open steel door, a weak amber moisture-alarm indicator, deep grey concrete and readable salt deposits, no people."},{"state":"单灯夜戏","prompt":"Night inside an empty abandoned warehouse, one harsh utility lamp above the old steel door casting long angular shadows toward the embedded fire cabinet, tiny amber alarm light, no human figures or silhouettes."}],"image":{"prompt":"Master wide interior of a nearly empty abandoned ferry warehouse. Frame a salt-corroded dark brown steel door fitted with a conspicuously new square silver padlock, a faded brick-red fire cabinet embedded low in the left concrete wall, a yellowed moisture alarm with one amber indicator beneath the rear beam, and a shallow curved drainage channel carrying black silt and white salt crystals toward the door. Cold overcast afternoon light enters from the doorway. Empty scene, no people, no human figures, no silhouettes. Semi-realistic painterly environment concept art with grounded industrial perspective and damp weathered surfaces.","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, stacked cargo, barrels, readable text, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature","sheet":"Create a 16:9 environment design sheet for one nearly empty abandoned riverside warehouse. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. The master view uses cold overcast afternoon light through a dark steel door and shows the new square silver padlock, the embedded faded red fire cabinet, the yellowed moisture alarm with one amber light, and the shallow curved floor drain with black silt and salt crystals. Every detail panel must be a close crop from the same master view. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[2,3,4],"beats":["时间线破绽","父亲清白中段揭破","反派反制落空"]},"sheetImage":"images/旧渡口货仓-sheet.png"},{"id":"S04","name":"沉船点外侧防波堤","primary":true,"summary":"作为 S01 水岸资产的危险侧面变体，这里把公共渡口的可见秩序压低到夜间退潮后的湿滑边界，让打捞行动发生在熟悉水色与远岸灯火下，却被消波块前景推向未知深处。","anchors":[{"name":"双潮痕混凝土","desc":"沿用 S01 深浅两道盐白潮线，但落在防波堤倾斜的旧混凝土坡面上，退潮后完整露出。"},{"name":"交叠消波块","desc":"前景三枚灰黑四脚消波块交错叠放，中间一枚右上角崩缺并露出浅色骨料。"},{"name":"锈环固定点","desc":"坡面左下嵌着一只厚重圆形铁环，锈迹向下拖成扇形，作为下水绳索的固定位置。"},{"name":"远岸三灯","desc":"灰蓝江面远处固定排列三点暖黄岸灯，中间一盏略低，保持与 S01 相同的远岸方位。"}],"lighting":[{"state":"夜间退潮","prompt":"Low-tide night at a deserted breakwater, deep cobalt ambient light, wet concrete and interlocking wave breakers catching narrow silver highlights, three fixed warm lights on the far shore, black receded water, no people or silhouettes."}],"image":{"prompt":"Variant master view derived from the same grey-blue riverbank, aged concrete, tide-line pattern and far-shore lighting as the old ferry terminal asset. Change to night at low tide and replace the waiting hall and timber jetty foreground with layered dark concrete wave breakers. Show two exposed salt-white tide lines on the sloped concrete, three interlocking tetrapods with one chipped upper corner, a heavy rusted rope ring at lower left, and three warm far-shore lights with the middle light slightly lower. Empty scene, no people, no human figures, no silhouettes. Keep the materials, wear language and shore orientation identical to the parent environment.","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, boats, divers, waiting hall, timber jetty, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Create a 16:9 environment design sheet for one low-tide night breakwater variant, using the parent ferry-terminal image as structural and material reference. Use an L-shaped layout with a master view in the upper left taking about 72 percent width and 70 percent height, two detail panels in the right column, and three detail panels along the bottom. Preserve the grey-blue water, aged concrete, salt-white tide-line language and three far-shore lights from the parent asset. Replace the hall and jetty foreground with three interlocking dark wave breakers, one chipped corner, and a rusted rope ring. THE SPACE MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Keep the structure, materials and wear identical to the reference image. Absolutely no people anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"seedNote":"outline 的复用方案：复用 S01 的灰蓝水岸、旧混凝土与远岸灯光资产，改为夜间退潮状态，并用消波块前景替换栈桥结构。——已落实为 S01 变体。","variantOf":"S01","changes":"沿用 S01 的灰蓝水岸、旧混凝土材质、双潮痕语言与远岸灯光方位；改为夜间退潮并降低水位，以交叠消波块和锈环固定点替换候船厅与栈桥前景。","usage":{"episodes":[5],"beats":["事故与哥哥选择双重真相"]},"sheetImage":"images/沉船点外侧防波堤-sheet.png"}],"props":[{"id":"P01","name":"橙色应急电台","summary":"保存许潮现场录音，是逐集解锁真相、承受反派毁证并在结尾转入永久档案的核心证据。","scale":"手持级","anchors":[{"name":"烧融黑痕","desc":"橙色外壳左上角有一道向扬声器边缘流下的焦黑熔痕，边界呈不规则泪滴状。"},{"name":"盐霜电池仓","desc":"背面电池仓盖缺失，仓内触点和边缘覆盖颗粒明显的白色盐霜。"},{"name":"斜纹扬声格","desc":"正面下半部为黑色斜纹扬声器格栅，其中第三道横格在右侧断开。"},{"name":"弯顶天线","desc":"银色伸缩天线只剩两节，顶端向左弯出约二十度并带暗褐氧化圈。"}],"states":[{"state":"烧损待修复","prompt":"A compact orange emergency radio at handheld scale, fire-scarred but still assembled, black melted streak on the upper left shell, open battery compartment packed with white salt frost, broken grille line and bent two-section antenna, isolated with no hands."},{"state":"摔裂毁证","prompt":"The same compact orange emergency radio at handheld scale after a hard impact, shell split along the right seam, storage board broken into two aligned fragments, original black melt scar and salt-frost battery compartment unchanged, isolated with no hands."},{"state":"归档保存","prompt":"The same damaged orange emergency radio at handheld scale preserved without cosmetic repair, cracked shell held in archival supports, black melt scar and salt frost fully visible, no added restoration, isolated with no hands or labels."}],"relatedScenes":["S01","S02","S03"],"carriedBy":["许知遥","高嵩","许潮"],"image":{"prompt":"Three-quarter product reference of one compact orange emergency radio at handheld scale, fire-scarred but assembled. Show the black teardrop-shaped melt streak on the upper left shell, open battery compartment with granular white salt frost, black diagonal speaker grille with the third bar broken at right, and a two-section silver antenna bent left at the tip. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise aged materials.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate object, extra antenna, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature","sheet":"Create a 16:9 prop design sheet for one compact orange emergency radio at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the fire-scarred assembled state in the upper left, two anchor close-ups in the right column, and bottom panels for the cracked impact state, archival support state, and one side orthographic view. Keep the black melt streak, salt-frost battery compartment, broken third grille bar and bent two-section antenna identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[1,2,3,4,5,6],"beats":["亡兄录音反转","父亲清白中段揭破","事故与哥哥选择双重真相","公开证据链"]},"sheetImage":"images/橙色应急电台-sheet.png"},{"id":"P02","name":"黄铜船钥匙","summary":"既开启隐藏值班日志，又以正钥匙被父亲夺走这一事实证明他曾阻止开船，是父亲清白从声音证词转为实体证据的枢纽。","scale":"手持级","anchors":[{"name":"椭圆船环","desc":"钥匙头是厚实的扁椭圆黄铜环，内孔下缘被长期摩擦磨成偏亮的平直段。"},{"name":"发黑盐斑","desc":"钥匙柄大面积氧化为黑褐色，靠近齿部残留三片不规则盐白斑。"},{"name":"偏心三角缺口","desc":"钥匙齿列中央有一个向左偏的深三角缺口，是与消防柜锁芯匹配的主要识别特征。"},{"name":"横向咬痕","desc":"椭圆环外缘相对位置留有两道浅而平行的横向压痕，特写中可辨但不夸张。"}],"states":[{"state":"遗物原状","prompt":"One old brass boat key at handheld scale in its inherited evidence state, heavily darkened by oxidation, three salt-white patches near the teeth, thick oval bow with two subtle parallel pressure marks, and one off-center triangular notch in the bit, isolated with no hands."}],"relatedScenes":["S01","S02","S03"],"carriedBy":["许德海","许知遥"],"image":{"prompt":"Three-quarter macro product reference of one old brass boat key at handheld scale. Show a thick flattened oval bow with a polished lower inner edge, black-brown oxidation across the shaft, three irregular salt-white patches near the teeth, one off-center triangular notch in the bit, and two subtle parallel pressure marks on the outer bow. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise patina and worn metal.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, key ring, duplicate keys, modern chrome key, readable text, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature","sheet":"Create a 16:9 prop design sheet for one old brass boat key at handheld scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view in the upper left, two macro anchor close-ups in the right column, and bottom panels for the bit profile, oval bow profile and one side orthographic view. Keep the polished lower inner bow edge, black-brown oxidation, three salt-white patches, off-center triangular tooth notch and two subtle pressure marks identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[1,2,3],"beats":["时间线破绽","父亲清白中段揭破"]},"sheetImage":"images/黄铜船钥匙-sheet.png"},{"id":"P03","name":"真正的载货联单","summary":"把事故船上的六桶溶剂编号与高嵩的私章连接起来，和录音互相印证后构成能够公开展示并进入正式鉴定的实体证据。","scale":"桌面级","anchors":[{"name":"六格编号栏","desc":"纸面中部纵向排列六个等宽货桶编号格，墨色由上至下逐渐晕开，但六行结构始终清楚。"},{"name":"暗紫私章","desc":"右下角盖着边缘缺一角的暗紫色方章，水浸后向左拖出短小晕尾。"},{"name":"半月水线","desc":"纸张下半部有一道从左边缘跨至中线的褐灰半月形水渍，内外色阶明显。"},{"name":"三折卷痕","desc":"纸面保留三道平行横折和向内卷曲的短边记忆，展开后仍形成固定起伏。"}],"states":[{"state":"水下取回","prompt":"One waterlogged cargo manifest at tabletop scale just after recovery, tightly curled short edges, dark wet paper, three parallel fold ridges, six visible ruled serial rows, a blurred dark-purple square seal and a crescent water stain, isolated with no hands."},{"state":"修复展平","prompt":"The same aged cargo manifest at tabletop scale after conservation flattening, dampness reduced but the three fold ridges, six ruled serial rows, chipped-corner purple seal and crescent water stain remain identical, isolated with no hands."},{"state":"现场公开","prompt":"The same conserved cargo manifest at tabletop scale in its public evidence state, fully spread flat with all six ruled serial rows visible, the dark-purple square seal and crescent water stain unchanged, isolated with no hands or display holder."}],"relatedScenes":["S01","S02","S04"],"carriedBy":["程野"],"image":{"prompt":"Top-down three-quarter product reference of one aged cargo manifest at tabletop scale, conserved but visibly water-damaged. Show six evenly spaced ruled serial rows with abstract non-legible marks, a dark-purple square seal missing one corner and bleeding slightly left, a brown-grey crescent water stain across the lower half, three parallel fold ridges and inward-curling short edges. Pure white background, cut-out ready, no people, no hands, no fingers. Semi-realistic painterly prop concept art with precise wet-paper texture.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, clipboard, frame, duplicate document, fully readable writing, extra seals, coloured background, grey background, transparent background, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, watermark, signature","sheet":"Create a 16:9 prop design sheet for one aged cargo manifest at tabletop scale. Every panel must use a pure white background and remain cut-out ready. Use an L-shaped layout: a three-quarter master view of the conserved flattened state in the upper left, two anchor close-ups in the right column, and bottom panels for the wet curled recovery state, the fully spread public-evidence state, and one side profile showing the fold ridges. Keep the six ruled serial rows with non-legible marks, chipped-corner dark-purple seal, crescent water stain, three parallel folds and curling short edges identical in every panel. THE OBJECT MUST BE IDENTICAL ACROSS ALL PANELS. Nothing invented that is not present in the master view. Absolutely no people, hands or fingers anywhere. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows.","tags":["semi-realistic","environment sheet","painterly","weathered materials","cinematic"]},"usage":{"episodes":[5,6],"beats":["事故与哥哥选择双重真相","公开证据链"]},"sheetImage":"images/真正的载货联单-sheet.png"},{"id":"P04","name":"锈蚀金属文件筒","summary":"程野从沉船点取回载货联单时使用的密封文件筒；筒盖上的半月潮记把实物证据与许潮本人连接起来。","scale":"桌面级","anchors":[{"name":"固定长径","desc":"暗褐锈钢圆筒约长四十五厘米、直径十八厘米，筒身只有两道低矮环形加强筋。"},{"name":"左端固定底","desc":"左端是不可拆的圆形封底，没有把手、铰链、标签或额外卡扣。"},{"name":"右端螺纹盖","desc":"右端为一只粗厚可分离圆盖，盖缘恰有两个相对的短矩形防滑凸耳，筒口外螺纹清楚。"},{"name":"半月潮记","desc":"盖面只有一道小而不规则的手刻半月弧线，不是完整圆、文字、数字、图标或印刷标志。"},{"name":"黑水锈蚀","desc":"全筒保留暗褐锈斑、黑色水垢和湿润粗糙钢面，不得清洁成新金属。"}],"states":[{"state":"水下密封取回","prompt":"The same dark-brown rusted steel document canister, 45 by 18 centimetres, two low reinforcing ribs, fixed left base and thick right threaded lid fully closed, two rectangular grip tabs and one shallow half-moon scratch, wet from black river water, exactly one canister, no paper or hands."},{"state":"开盖取证","prompt":"The exact same canister with its single right threaded lid fully removed and kept beside the mouth, one wet cargo-manifest roll only partly sliding out, two ribs and fixed left base unchanged, no second lid, no duplicate canister, no readable text."},{"state":"重新封好运回","prompt":"The exact same canister after the only manifest has been returned inside and the same right lid tightened closed again, no paper visible outside, two ribs, fixed left base, grip tabs and half-moon scratch unchanged."}],"relatedScenes":["S04","S02"],"carriedBy":["程野"],"image":{"prompt":"Three-quarter product reference of one old dark-brown rusted cylindrical steel document canister at tabletop scale, about 45 cm long and 18 cm diameter, two low annular reinforcing ribs, fixed round base at left, thick removable threaded circular lid at right with exactly two short rectangular grip tabs, and one shallow irregular hand-scratched half-moon tide mark on the lid face. Pure white background, no people, hands, paper, labels or duplicate object. Semi-realistic painterly prop concept art with precise aged materials.","negativePrompt":"people, hands, fingers, paper, manifest, readable text, labels, logo, power icon, full circle symbol, duplicate canister, extra lid, handle, strap, hinge, latch, glass, new polished metal, coloured background, watermark, signature","sheet":"Create a 16:9 professional prop reference sheet for one rusted steel document canister at tabletop scale on a clean pure white background. Use one large three-quarter closed-canister master view and smaller separated panels for side profile, fixed left base, empty threaded mouth, and the same detached right lid from front and side. Keep the 45:18 proportion, two low ribs, fixed base, two grip tabs, dark-brown river patina and single shallow half-moon scratch identical in every panel. No people, hands, paper, text or extra objects. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with water stains, metal patina and nothing factory-new.","tags":["photorealistic","prop sheet","rusted steel","evidence continuity","white background"]},"usage":{"episodes":[5],"beats":["事故与哥哥选择双重真相","半月潮记实物锚点"]},"sheetImage":"images/锈蚀金属文件筒-sheet.png"},{"id":"P05","name":"许德海事故责任书","summary":"贯穿旧案误解与翻案程序的父亲签字文件；纸张本身不能直接证明清白，但与胁迫残录、联单和录音并置后揭示签字原因。","scale":"桌面级","anchors":[{"name":"灰黄单页","desc":"只有一张纵向灰黄色旧纸，四边磨毛，左上角保留两枚相邻的锈色装订孔，不得生成第二页。"},{"name":"双横一竖折痕","desc":"纸面有两道平行横折和一道偏左竖折，三条折痕在所有状态保持同一位置。"},{"name":"斜向水渍","desc":"下半部从左下向中部延伸一块浅褐斜向水渍，边界不规则但不遮住右下签名区。"},{"name":"右下模糊签名","desc":"右下角只有一道深蓝黑色、不可辨认的旧签名笔迹和一枚褪色椭圆墨印，不出现可读姓名或正文。"}],"states":[{"state":"遗物折叠","prompt":"One weathered accident responsibility statement at tabletop scale, a single grey-yellow vertical sheet folded along two horizontal lines and one left-offset vertical line, two rusted binding holes at upper left, shallow brown diagonal water stain, blurred blue-black signature area at lower right, no readable writing and no hands."},{"state":"证据对照","prompt":"The exact same single responsibility statement at tabletop scale laid open for evidence comparison, frayed edges, two upper-left rusted holes, identical two horizontal and one vertical fold lines, diagonal brown water stain, one unreadable blue-black signature trace and faded oval ink impression at lower right, no duplicate page or hands."},{"state":"送鉴准备","prompt":"The exact same single responsibility statement at tabletop scale resting flat on neutral conservation support before forensic examination, all holes, folds, water stain and blurred lower-right signature area unchanged, no transparent bag, label, readable writing or hands."}],"relatedScenes":["S01","S02","S03"],"carriedBy":["许知遥","高嵩"],"image":{"prompt":"Top-down three-quarter product reference of one weathered accident responsibility statement at tabletop scale: a single grey-yellow vertical sheet with frayed edges, two adjacent rusted binding holes at upper left, two horizontal folds and one left-offset vertical fold, a pale brown diagonal water stain across the lower half, and one blurred blue-black signature trace with a faded oval ink impression at lower right. All writing is abstract and unreadable. Pure white background, no people, hands, clips, folders or duplicate paper. Semi-realistic painterly prop concept art with precise aged-paper texture.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate page, second document, readable text, legible name, printed paragraph, clipboard, folder, transparent sleeve, label, coloured background, grey background, watermark, signature artist mark","sheet":"Create a 16:9 professional prop reference sheet for exactly one weathered accident responsibility statement at tabletop scale on a pure white background. Use one large top-down master view and small close crops of the two rusted upper-left holes, fixed fold pattern, diagonal water stain and blurred lower-right signature area. Keep the same single grey-yellow sheet, frayed edges, two horizontal folds, one left-offset vertical fold, pale brown stain and unreadable blue-black signature trace identical in every crop. No people, hands, duplicate pages, transparent sleeve or readable writing. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with paper fibres, faded ink, water staining and nothing factory-new.","tags":["semi-realistic","prop sheet","aged document","evidence continuity","white background"]},"usage":{"episodes":[1,3,5,6],"beats":["亡兄录音反转","父亲清白中段揭破","事故与哥哥选择双重真相","公开证据链"]},"sheetImage":"images/许德海事故责任书-sheet.png"},{"id":"P06","name":"程野残录手机","summary":"程野在门外留下高嵩胁迫话语的断续录音，并在第五、六集把残录接入完整证据链；屏幕内容始终应由后期控制。","scale":"手持级","anchors":[{"name":"石墨黑厚壳","desc":"手机装在无品牌的石墨黑厚边防摔壳内，四角略高，机身大小和比例固定。"},{"name":"左上蛛裂","desc":"前玻璃左上角只有一簇短小蛛网裂纹，裂纹不跨过屏幕中央。"},{"name":"右下橙擦痕","desc":"保护壳右下角有一道指甲长的暗橙色擦痕，是辨认同一部手机的固定标记。"},{"name":"双镜头竖槽","desc":"背面左上为无品牌窄竖槽双镜头，镜头周围有银灰磨损圈，不得增加第三镜头或商标。"}],"states":[{"state":"门外收音","prompt":"One old graphite-black smartphone at handheld scale in a thick unbranded bumper case, upper-left glass spider crack, dark-orange abrasion on the lower-right case corner, narrow vertical two-camera slot on the back, screen dark and unreadable, isolated with no hands."},{"state":"残录播放","prompt":"The exact same graphite-black smartphone at handheld scale playing damaged audio, only one abstract dim cyan waveform on the otherwise dark cracked screen, no icons, text, digits, portrait or timecode, lower-right orange abrasion unchanged, isolated with no hands."},{"state":"闹钟背屏","prompt":"The exact same smartphone at handheld scale lying face down or with the screen completely turned away while an alarm is implied, graphite bumper case, upper-left crack and lower-right orange abrasion unchanged, no visible time, digits, labels or hands."}],"relatedScenes":["S01","S02","S03"],"carriedBy":["程野"],"image":{"prompt":"Three-quarter product reference of one old graphite-black smartphone at handheld scale in a thick unbranded bumper case. Show one small spider crack confined to the upper-left front glass, one dark-orange abrasion on the lower-right case corner, and a narrow vertical two-camera slot with worn silver rings on the back. The front screen is nearly black with one abstract dim cyan waveform only, no icons, letters, digits, portrait or timecode. Pure white background, no people, hands, cables, brand marks or duplicate phone. Semi-realistic painterly prop concept art with precise worn glass and rubber texture.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, duplicate phone, third camera, readable text, logo, brand, clock digits, timecode, app icons, portrait, chat screen, bright UI, cable, coloured background, grey background, watermark, signature","sheet":"Create a 16:9 professional prop reference sheet for one old graphite-black smartphone at handheld scale on a pure white background. Use one large three-quarter master view and smaller front, back, side and anchor-detail panels. Keep the thick unbranded bumper case, small upper-left glass spider crack, lower-right dark-orange abrasion and narrow vertical two-camera slot identical in every panel. The only visible screen content is one abstract dim cyan waveform on black; no icons, letters, digits, portraits, clock or timecode. No people, hands, cables, logos or duplicate phones. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with scuffed rubber, worn glass and nothing factory-new.","tags":["semi-realistic","prop sheet","damaged smartphone","audio evidence","white background"]},"usage":{"episodes":[3,4,5,6],"beats":["反派反制落空","事故与哥哥选择双重真相","公开证据链"]},"sheetImage":"images/程野残录手机-sheet.png"},{"id":"P07","name":"三份独立备份盘","summary":"许知遥把修复录音保存为三份彼此独立的副本，既解释高嵩摔毁原介质为何无效，也保证公开前仍有可核验备份。","scale":"桌面级","anchors":[{"name":"固定三件","desc":"资产始终恰好由三只彼此分离的小型固态存储盘组成，不增减、不叠放、不连接线缆。"},{"name":"左侧石墨盘","desc":"左盘为石墨黑磨砂长方体，左上角削去一小段斜角。"},{"name":"中间锈橙盘","desc":"中盘为暗锈橙色橡胶包边，四角各有一粒低矮黑色防撞点。"},{"name":"右侧银灰盘","desc":"右盘为拉丝银灰金属壳，右下角留一道短黑擦痕；三盘都无标签、编号或品牌。"}],"states":[{"state":"复制前摆放","prompt":"Exactly three separate small storage drives at tabletop scale arranged left to right with clear gaps: one matte graphite drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black bumpers, and one brushed silver-grey drive with a short black lower-right scuff, all plain and unlabeled, no cables or hands."},{"state":"三份完成","prompt":"The exact same three separate storage drives at tabletop scale after copying, still arranged graphite, dark orange and silver-grey from left to right with clear gaps, no indicator text, labels, numbers, cables, extra drive or hands."},{"state":"留在台面","prompt":"The exact same trio of three storage drives at tabletop scale remaining together on a steel bench, graphite clipped-corner drive, dark-orange bumper drive and silver-grey scuffed drive unchanged, exactly three, no labels, cables or hands."}],"relatedScenes":["S02"],"carriedBy":["许知遥"],"image":{"prompt":"Clean top-down three-quarter product reference of exactly three separate small storage drives at tabletop scale arranged left to right with clear white gaps: one matte graphite rectangular drive with a clipped upper-left corner, one dark oxidized-orange rubber-edged drive with four low black corner bumpers, and one brushed silver-grey metal drive with one short black scuff at lower right. All three are plain and unlabeled, with no ports facing camera. Pure white background, no people, hands, cables, cases, labels, numbers, logos or extra device. Semi-realistic painterly prop concept art with precise worn material texture.","negativePrompt":"people, human figures, characters, crowds, hands, fingers, arms, faces, holding pose, one drive, two drives, four drives, extra device, duplicate drive, stacked objects, cables, adapters, memory cards, readable text, label, number, logo, bright LEDs, coloured background, grey background, watermark, signature","sheet":"Create one clean 16:9 prop reference composition, not a collage, showing exactly three separate small storage drives at tabletop scale on a pure white background. Arrange them left to right with clear gaps: matte graphite with one clipped corner, dark oxidized-orange with four black bumpers, and brushed silver-grey with one short black scuff. Keep all three plain, unlabeled and disconnected; no detail panels, repeated objects, cables, adapters, hands, people, text, digits or logos. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials with restrained scuffs and nothing factory-new.","tags":["semi-realistic","prop reference","three storage drives","backup continuity","white background"]},"usage":{"episodes":[4,5,6],"beats":["反派反制落空","事故与哥哥选择双重真相","公开证据链"]},"sheetImage":"images/三份独立备份盘-sheet.png"}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败"};
+
+// 图片弹层：点图放大，点背景或 Esc 关闭
+const lb = document.querySelector('.lightbox');
+const lbImg = lb.querySelector('img');
+function closeLb() { lb.classList.remove('on'); lbImg.removeAttribute('src'); }
+document.addEventListener('click', (e) => {
+  const z = e.target.closest('.zoom');
+  if (z) { lbImg.src = z.dataset.src; lb.classList.add('on'); return; }
+  if (e.target.closest('.lightbox')) closeLb();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+// 复制按钮
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// 导出：报告自己带着完整的 art.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('art-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

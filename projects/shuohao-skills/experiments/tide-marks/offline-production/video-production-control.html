@@ -1,0 +1,1394 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>《潮痕》全片视频生产控制台</title>
+  <link rel="stylesheet" href="video-production-control.css">
+</head>
+<body>
+<main>
+  <header>
+    <span class="tag">叙事前置质量门失败 · 停止扩大视频生成</span>
+    <h1>《潮痕》全片视频生产控制台</h1>
+    <p><strong>当前页面只作为失败实验资料台账，不再指导继续生成。</strong> 59 段、193 镜和 682.0 秒只表示资料被生成；小说原型、因果推进与改编连续性尚未通过前置验收。</p>
+  </header>
+
+  <section class="kpis" aria-label="项目准备与视频进度">
+    <div><small>单段素材齐备</small><b>59/59</b></div>
+    <div><small>逐镜图片已备</small><b>193/193</b></div>
+    <div><small>衔接已审计</small><b>58/58</b></div>
+    <div><small>衔接阻断</small><b>0</b></div>
+    <div class="dynamic"><small>已登记视频</small><b id="generated-count">0/59</b></div>
+    <div class="dynamic"><small>视频 QC 通过</small><b id="qc-count">0/59</b></div>
+    <div class="dynamic"><small>需要返工</small><b id="rework-count">0</b></div>
+    <div class="dynamic"><small>建议下一段</small><button id="next-segment" class="subtle" type="button">E01-01</button></div>
+  </section>
+
+  <section class="workflow" aria-labelledby="workflow-title">
+    <div class="workflow-head">
+      <div><span class="tag">生成后如何驱动页面</span><h2 id="workflow-title">文件名就是自动匹配钥匙</h2></div>
+      <p>本页不会监控你的下载目录。生成后把文件命名为 <strong>E01-01-v01.mp4</strong>，再选择它；页面按段号登记并更新进度。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>1 · 先看段间衔接</strong><small>阻断段先补共享状态、转场镜或提示词约束，不能直接继续批量生成。</small></div>
+      <div class="step"><strong>2 · 按顺序生成并规范命名</strong><small>按 @Image 顺序上传；返工版本使用 v02、v03，禁止覆盖旧版。</small></div>
+      <div class="step"><strong>3 · 相邻两段连播 QC</strong><small>至少检查上一段尾 2 秒和下一段首 2 秒，再判断人物、道具、轴线和时空跳转。</small></div>
+      <div class="step"><strong>4 · 登记结果并备份</strong><small>段内和接点都通过后才采用；每轮结束导出 JSON。</small></div>
+    </div>
+    <div class="action-bar">
+      <button id="pick-videos" class="primary" type="button">选择已生成视频</button>
+      <button id="export-progress" type="button">导出进度备份</button>
+      <button id="import-progress" type="button">导入进度备份</button>
+      <span class="muted">支持文件名：E01-01-v01.mp4 或 E01_01_v01.mp4</span>
+      <input id="video-picker" type="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.mov,.webm" multiple hidden>
+      <input id="progress-picker" type="file" accept="application/json,.json" hidden>
+    </div>
+  </section>
+
+  <section class="guide" aria-label="相关资料">
+    <a href="foundational-capability-architecture.html">好故事到好视频架构</a>
+    <a href="capability-evaluation.html">能力归属与最终评估</a>
+    <a href="story-logic-audit.html">全剧故事逻辑审计</a>
+    <a href="continuity-audit.html">58 个段间衔接审计</a>
+    <a href="media-demo.html">现有图片与视频演示</a>
+    <a href="VIDEO-PRODUCTION-CONTROL.zh-CN.md">完整中文说明</a>
+    <a href="video-production-tracker.csv">项目 CSV 台账</a>
+    <a href="MASTER-EDIT-TIMELINE.csv">193 镜剪辑表</a>
+    <a href="POST-PRODUCTION-OVERLAYS.csv">后期叠加表</a>
+    <a href="../index.html">返回主入口</a>
+  </section>
+  <p class="progress-note"><strong>停止条件已经触发：</strong>两个连续视频暴露人物目标、位置和动作因果回退。后补的故事逻辑与衔接审计不能替代投产前的小说和改编验收；在重做上游以前，不继续提交 H3。</p>
+
+  <section class="filters" aria-label="筛选视频段">
+    <input id="q" type="search" placeholder="搜索段号、场景、上传顺序或视频名" aria-label="搜索">
+    <select id="ep" aria-label="按集数筛选"><option value="all">全部集数</option><option value="1">第 1 集</option><option value="2">第 2 集</option><option value="3">第 3 集</option><option value="4">第 4 集</option><option value="5">第 5 集</option><option value="6">第 6 集</option></select>
+    <select id="priority" aria-label="按优先级筛选"><option value="all">全部优先级</option><option>0-已有演示</option><option>1-试产校准</option><option>2-按集正片</option></select>
+    <select id="status-filter" aria-label="按状态筛选"><option value="all">全部状态</option><option>待生成</option><option>生成中</option><option>待质检</option><option>QC通过</option><option>需返工</option><option>已有H3演示</option></select>
+    <span id="count" class="count">59 段</span>
+  </section>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>段 / 场景</th><th>优先级</th><th>设计 / H3</th><th>上传顺序</th><th>段间衔接</th><th>生成状态</th><th>视频 QC</th><th>采用视频</th><th>操作</th></tr></thead>
+      <tbody>
+<tr
+  data-segment="E01-01"
+  data-episode="1"
+  data-priority="1-试产校准"
+  data-continuity="待验证"
+  data-base-status="需返工"
+  data-base-qc="需返工"
+  data-base-rework="1"
+  data-base-video="generated-videos/E01-01/E01-01-v01.mp4"
+  data-base-updated="2026-08-24"
+  data-base-notes="v01 衔接不合格：模型生成成奔向门准备开门，无法连接下一段回长椅开箱。保留为失败证据；先补明确的开门初态→关门完成→转身离门状态，重做文件使用 E01-01-v02.mp4。"
+>
+  <td><b class="segment-id">E01-01</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>1-试产校准</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">需返工</span></td>
+  <td><span class="status-pill" data-field="qc">需返工</span></td>
+  <td class="file-name"><span data-field="video">generated-videos/E01-01/E01-01-v01.mp4</span><small data-field="updated">更新：2026-08-24</small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-02"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待质检"
+  data-base-qc="待检查"
+  data-base-rework="0"
+  data-base-video="generated-videos/E01-02/E01-02-v01.mp4"
+  data-base-updated="2026-08-24"
+  data-base-notes="首个 H3 候选；源文件 01-02.mp4；11.55s，1344x768，24fps，H.264/AAC 32kHz 双声道；待按 10.5s 设计时长 QC/回切"
+>
+  <td><b class="segment-id">E01-02</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待质检</span></td>
+  <td><span class="status-pill" data-field="qc">待检查</span></td>
+  <td class="file-name"><span data-field="video">generated-videos/E01-02/E01-02-v01.mp4</span><small data-field="updated">更新：2026-08-24</small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-03"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-03</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-04"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-04</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-05"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-05</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-06"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-06</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-07"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-07</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>11s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-08"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-08</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-09"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-09</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E01-10"
+  data-episode="1"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E01-10</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>11s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E01-10/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E01-10/chatart-prompt.txt">提示词</a><button type="button" data-edit="E01-10">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-01"
+  data-episode="2"
+  data-priority="0-已有演示"
+  data-continuity="待验证"
+  data-base-status="已有H3演示"
+  data-base-qc="待按正式标准复核"
+  data-base-rework="0"
+  data-base-video="storyboard-ep2-pack/E02-01/e02-01-generated-chatart-h3-768p.mp4"
+  data-base-updated="2026-08-24"
+  data-base-notes="历史 ChatArt H3 演示，不自动视为正式采用版本"
+>
+  <td><b class="segment-id">E02-01</b><small>许知遥临时声音修复室</small></td>
+  <td>0-已有演示</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">已有H3演示</span></td>
+  <td><span class="status-pill" data-field="qc">待按正式标准复核</span></td>
+  <td class="file-name"><span data-field="video">storyboard-ep2-pack/E02-01/e02-01-generated-chatart-h3-768p.mp4</span><small data-field="updated">更新：2026-08-24</small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-02"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-02</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>9.5s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-03"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-03</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-04"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-04</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-05"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-05</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>14s / 14s<small>210 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png → @Image5=f5.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-06"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-06</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>11s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-07"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-07</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>9s / 9s<small>135 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-08"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-08</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>11s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-09"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-09</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>12.5s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E02-10"
+  data-episode="2"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E02-10</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E02-10/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E02-10/chatart-prompt.txt">提示词</a><button type="button" data-edit="E02-10">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-01"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-01</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>12s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-02"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-02</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-03"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-03</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>12s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-04"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-04</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>12.5s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-05"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-05</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>7s / 7s<small>105 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-06"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-06</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-07"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-07</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-08"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-08</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>13.5s / 14s<small>210 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-09"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-09</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>14s / 14s<small>210 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E03-10"
+  data-episode="3"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E03-10</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E03-10/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E03-10/chatart-prompt.txt">提示词</a><button type="button" data-edit="E03-10">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-01"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-01</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>12.5s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-02"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-02</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>14s / 14s<small>210 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-03"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-03</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>10.5s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-04"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-04</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>15s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-05"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-05</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-06"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-06</b><small>旧渡口货仓</small></td>
+  <td>2-按集正片</td>
+  <td>9.5s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-07"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-07</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>14.5s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-08"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-08</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>12s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E04-09"
+  data-episode="4"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E04-09</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>15s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E04-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E04-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E04-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-01"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-01</b><small>沉船点外侧防波堤</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-02"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-02</b><small>沉船点外侧防波堤</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-03"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-03</b><small>沉船点外侧防波堤</small></td>
+  <td>2-按集正片</td>
+  <td>8s / 8s<small>120 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-04"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-04</b><small>沉船点外侧防波堤</small></td>
+  <td>2-按集正片</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-05"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-05</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-06"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-06</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>15s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-07"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-07</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-08"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-08</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>14.5s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png → @Image4=f4.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-09"
+  data-episode="5"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-09</b><small>许知遥临时声音修复室</small></td>
+  <td>2-按集正片</td>
+  <td>11s / 11s<small>165 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E05-10"
+  data-episode="5"
+  data-priority="1-试产校准"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E05-10</b><small>许知遥临时声音修复室</small></td>
+  <td>1-试产校准</td>
+  <td>10s / 10s<small>150 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E05-10/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E05-10/chatart-prompt.txt">提示词</a><button type="button" data-edit="E05-10">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-01"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-01</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>14.5s / 15s<small>225 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-01/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-01/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-01">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-02"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-02</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-02/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-02/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-02">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-03"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-03</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>11.5s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-03/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-03/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-03">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-04"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-04</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>12s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-04/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-04/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-04">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-05"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-05</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>12s / 12s<small>180 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-05/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-05/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-05">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-06"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-06</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>12.5s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-06/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-06/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-06">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-07"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-07</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>12.5s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-07/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-07/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-07">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-08"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-08</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>13s / 13s<small>195 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png → @Image3=f3.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-08/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-08/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-08">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-09"
+  data-episode="6"
+  data-priority="2-按集正片"
+  data-continuity="待验证"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-09</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>2-按集正片</td>
+  <td>9s / 9s<small>135 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png</td>
+  <td><span class="status-pill" data-tone="warn">待验证</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-09/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-09/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-09">登记</button></div></td>
+</tr>
+<tr
+  data-segment="E06-10"
+  data-episode="6"
+  data-priority="1-试产校准"
+  data-continuity="可直连"
+  data-base-status="待生成"
+  data-base-qc="未开始"
+  data-base-rework="0"
+  data-base-video=""
+  data-base-updated=""
+  data-base-notes=""
+>
+  <td><b class="segment-id">E06-10</b><small>南堤旧渡口候船厅与栈桥</small></td>
+  <td>1-试产校准</td>
+  <td>7.5s / 8s<small>120 钻</small></td>
+  <td class="upload-sequence">@Image1=f1.png → @Image2=f2.png</td>
+  <td><span class="status-pill" data-tone="pass">可直连</span></td>
+  <td><span class="status-pill" data-field="status">待生成</span></td>
+  <td><span class="status-pill" data-field="qc">未开始</span></td>
+  <td class="file-name"><span data-field="video">尚未登记</span><small data-field="updated"></small></td>
+  <td><div class="row-actions"><a href="../storyboard-full-pack/E06-10/UPLOAD-ORDER.md">上传顺序</a><a href="../storyboard-full-pack/E06-10/chatart-prompt.txt">提示词</a><button type="button" data-edit="E06-10">登记</button></div></td>
+</tr></tbody>
+    </table>
+  </div>
+</main>
+
+<dialog id="record-dialog" aria-labelledby="dialog-title">
+  <form id="record-form" method="dialog">
+    <div class="dialog-head"><h2 id="dialog-title">登记生成结果</h2><button id="dialog-close" type="button" aria-label="关闭">×</button></div>
+    <div class="dialog-body dialog-grid">
+      <label>生成状态<select name="status"><option>待生成</option><option>生成中</option><option>待质检</option><option>QC通过</option><option>需返工</option><option>已有H3演示</option></select></label>
+      <label>视频 QC<select name="qc"><option>未开始</option><option>待检查</option><option>通过</option><option>需返工</option><option>不采用</option><option>待按正式标准复核</option></select></label>
+      <label>返工次数<input name="rework" type="number" min="0" step="1" value="0"></label>
+      <label>采用视频文件名<input name="video" type="text" placeholder="E01-01-v01.mp4"></label>
+      <label class="full">备注<textarea name="notes" placeholder="记录人物漂移、动作问题、声音问题或返工要求"></textarea></label>
+    </div>
+    <div class="dialog-actions"><button id="dialog-cancel" type="button">取消</button><button class="primary" type="submit">保存更新</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="video-production-control.js"></script>
+</body>
+</html>

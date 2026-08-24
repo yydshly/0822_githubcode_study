@@ -1,0 +1,2348 @@
+[
+  {
+    "segment": "E01-02",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E01-02-f2.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E01-02/actual-generation/qc-repair-2026-08-24.md",
+    "output": "storyboard-full-pack/E01-02/f2.png",
+    "qc": "通过：钥匙已修复为统一椭圆环、固定叉形齿与磨损特征；铁盒、电台和俯拍构图连续"
+  },
+  {
+    "segment": "E01-03",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·精确物体编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E01-03-f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E01-03/actual-generation/qc-repair-2026-08-24.md",
+    "output": "storyboard-full-pack/E01-03/f1.png",
+    "qc": "通过：非必要错误钥匙已移除，许知遥、电台与候船厅动作和空间连续"
+  },
+  {
+    "segment": "E01-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E01-07-f2.png",
+      "storyboard-full-pack/E01-07/f1.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E01-07/actual-generation/qc-repair-2026-08-24.md",
+    "output": "storyboard-full-pack/E01-07/f2.png",
+    "qc": "通过：相框已恢复为与 f1 相同的兄妹双人旧照，许知遥身份和修复室构图连续"
+  },
+  {
+    "segment": "E01-08",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·身份保持编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E01-08-f4.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E01-08/actual-generation/qc-repair-2026-08-24.md",
+    "output": "storyboard-full-pack/E01-08/f4.png",
+    "qc": "通过：许潮录音镜头中许知遥嘴唇已完全闭合，人物、电台、声波屏幕和眼神反应连续"
+  },
+  {
+    "segment": "E01-10",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E01-10-f4.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E01-10/actual-generation/qc-repair-2026-08-24.md",
+    "output": "storyboard-full-pack/E01-10/f4.png",
+    "qc": "通过：钥匙近景已统一为椭圆环、固定叉形齿、黑化磨损与环部压力痕；电台和声波屏幕构图保留"
+  },
+  {
+    "segment": "E02-04",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f1.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-04/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-04/f1-qc-v3.png",
+    "output": "storyboard-full-pack/E02-04/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f1.png",
+    "qc": "通过：删除港景与大窗，恢复统一修复室、官方电台和双人对话轴线"
+  },
+  {
+    "segment": "E02-04",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f2.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-04/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-04/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-04/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f2.png",
+    "qc": "通过：握椅背动作、手表、官方电台和修复室背景连续"
+  },
+  {
+    "segment": "E02-04",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f3.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-04/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-04/f3-qc-v2.png",
+    "output": "storyboard-full-pack/E02-04/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-04-f3.png",
+    "qc": "通过：程野供述近景、人物身份、波形屏和官方电台连续"
+  },
+  {
+    "segment": "E02-05",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f1.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-05/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-05/f1-qc-v2.png",
+    "output": "storyboard-full-pack/E02-05/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f1.png",
+    "qc": "通过：许知遥追问近景、统一修复室和官方电台连续"
+  },
+  {
+    "segment": "E02-05",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f2.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-05/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-05/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-05/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f2.png",
+    "qc": "通过：程野松开椅背的动作、人物身份和官方电台连续"
+  },
+  {
+    "segment": "E02-05",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f3.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-05/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-05/f3-qc-v3.png",
+    "output": "storyboard-full-pack/E02-05/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f3.png",
+    "qc": "通过：双人转向父亲照片，修复室空间统一且只保留一台官方电台"
+  },
+  {
+    "segment": "E02-05",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f4.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-05/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-05/f4-qc-v2.png",
+    "output": "storyboard-full-pack/E02-05/f4.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f4.png",
+    "qc": "通过：程野说出许叔时的视线、照片、波形屏和官方电台连续"
+  },
+  {
+    "segment": "E02-05",
+    "frame": 5,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f5.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-01/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-05/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-05/f5-qc-v2.png",
+    "output": "storyboard-full-pack/E02-05/f5.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-05-f5.png",
+    "qc": "通过：许知遥持统一叉形双齿钥匙到达门边，双人、修复室和官方电台连续"
+  },
+  {
+    "segment": "E02-06",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f1.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-06/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-06/f1-qc-v9.png",
+    "output": "storyboard-full-pack/E02-06/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f1.png",
+    "qc": "通过：宽景安全露出厚椭圆环和黑化长柄，不再出现错误侧齿；完整双叉由后续镜头建立"
+  },
+  {
+    "segment": "E02-06",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f2.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-06/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-06/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-06/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f2.png",
+    "qc": "通过：钥匙正确插入银色新挂锁锁芯并无法转动，动作对象已修正"
+  },
+  {
+    "segment": "E02-06",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f3.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-06/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-06/f3-qc-v3.png",
+    "output": "storyboard-full-pack/E02-06/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-06-f3.png",
+    "qc": "通过：官方厚椭圆环、黑化长柄和完整叉形双齿清楚，许知遥与仓门连续"
+  },
+  {
+    "segment": "E02-07",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f1.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-07/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-07/f1-qc-v5.png",
+    "output": "storyboard-full-pack/E02-07/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f1.png",
+    "qc": "通过：双人进入货仓，官方钥匙全轮廓与官方橙色电台同时可读"
+  },
+  {
+    "segment": "E02-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f2.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-07/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-07/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-07/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f2.png",
+    "qc": "通过：官方斜栅电台与墙上琥珀报警器同镜连续"
+  },
+  {
+    "segment": "E02-07",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f3.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-06/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-07/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-07/f3-qc-v3.png",
+    "output": "storyboard-full-pack/E02-07/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-07-f3.png",
+    "qc": "通过：程野反应近景与官方矩形电台连续，错误圆形大喇叭已移除"
+  },
+  {
+    "segment": "E02-08",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f1.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-08/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-08/f1-qc-v2.png",
+    "output": "storyboard-full-pack/E02-08/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f1.png",
+    "qc": "通过：许知遥持统一钥匙接近消防柜，程野和货仓轴线连续"
+  },
+  {
+    "segment": "E02-08",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f2.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-08/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-08/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-08/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f2.png",
+    "qc": "通过：厚椭圆环和黑化轴正确，叉齿按物理关系进入锁芯，柜门开始弹开"
+  },
+  {
+    "segment": "E02-08",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f3.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-08/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-08/f3-qc-v2.png",
+    "output": "storyboard-full-pack/E02-08/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f3.png",
+    "qc": "通过：柜门打开、日志可见、许知遥反应和统一钥匙连续"
+  },
+  {
+    "segment": "E02-08",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f4.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/黄铜船钥匙-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-08/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-08/f4-qc-v2.png",
+    "output": "storyboard-full-pack/E02-08/f4.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-08-f4.png",
+    "qc": "通过：许知遥扶门持钥匙、程野取出霉变日志，双人和道具连续"
+  },
+  {
+    "segment": "E02-09",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-09-f2.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-09/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-09/f2-qc-v2.png",
+    "output": "storyboard-full-pack/E02-09/f2.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-09-f2.png",
+    "qc": "通过：程野对照日志与官方斜栅电台，人物、手表和证据桌连续"
+  },
+  {
+    "segment": "E02-09",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-09-f3.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-09/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-09/f3-qc-v2.png",
+    "output": "storyboard-full-pack/E02-09/f3.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-09-f3.png",
+    "qc": "通过：许知遥把日志置于官方电台旁，双人对峙与开柜背景连续"
+  },
+  {
+    "segment": "E02-10",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/rejected-originals/2026-08-24/E02-10-f1.png",
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-09/f3.png",
+      "storyboard-full-pack/E02-10/f2.png",
+      "storyboard-full-pack/E02-10/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E02-10/actual-generation/qc-repair-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E02-10/f1-qc-v2.png",
+    "output": "storyboard-full-pack/E02-10/f1.png",
+    "archivedOriginal": "storyboard-full-pack/rejected-originals/2026-08-24/E02-10-f1.png",
+    "qc": "通过：程野蹲在开柜旁、许知遥站在证据桌边，日志与官方电台连续"
+  },
+  {
+    "segment": "E03-01",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-01/actual-generation/f1.md",
+    "output": "storyboard-full-pack/E03-01/f1.png",
+    "qc": "通过：高嵩脸型/服装/手表、仓库红色消防柜、湿台面、压住纸张动作一致"
+  },
+  {
+    "segment": "E03-01",
+    "frame": 2,
+    "generatedAt": "2026-08-23",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E03-01/rejected-originals/f3-premature-private-seal.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-01/actual-generation/f2.md",
+    "output": "storyboard-full-pack/E03-01/f2.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、湿台面、旧纸证据和空间锚点连续"
+  },
+  {
+    "segment": "E03-01",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·参考图条件编辑",
+    "references": [
+      "storyboard-full-pack/E03-01/rejected-originals/f3-premature-private-seal.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-01/actual-generation/f3.md",
+    "output": "storyboard-full-pack/E03-01/f3.png",
+    "qc": "通过：已移除提前出现的私章与六桶清单；程野在发霉值班日志和事故记录之间核对时间冲突，人物、湿台面和仓库空间连续"
+  },
+  {
+    "segment": "E03-02",
+    "frame": 1,
+    "generatedAt": "2026-08-23",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-02/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-02/f1.png",
+    "qc": "通过：高嵩身份/西装/手表、整理袖口动作、货仓红色消防柜连续"
+  },
+  {
+    "segment": "E03-02",
+    "frame": 2,
+    "generatedAt": "2026-08-23",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E03-02/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-02/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-02/f2.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、橙色电台烧蚀外观、霉变日志和货仓连续"
+  },
+  {
+    "segment": "E03-02",
+    "frame": 3,
+    "generatedAt": "2026-08-23",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E03-02/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-02/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-02/f3.png",
+    "qc": "通过：高嵩跨镜身份、服装和货仓空间一致，表情从温和转为隐性威胁"
+  },
+  {
+    "segment": "E03-03",
+    "frame": 1,
+    "generatedAt": "2026-08-23",
+    "mode": "Codex 内置图像生成·参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E03-02/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-03/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-03/f1.png",
+    "qc": "通过：许知遥与高嵩双人身份、服装、湿台面、责任书推送动作和货仓空间连续"
+  },
+  {
+    "segment": "E03-03",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-03/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-03/actual-generation/README.md#f2-最终成功版本",
+    "output": "storyboard-full-pack/E03-03/f2.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、责任书、湿台面和红色消防柜连续；多图接口失败后使用本段 f1 单锚点成功"
+  },
+  {
+    "segment": "E03-03",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E02-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-03/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-03/f3.png",
+    "qc": "通过：许知遥/程野双人身份、工装与耳机、橙色电台和货仓连续；电台以既有 E02-07 合并镜头为锚点"
+  },
+  {
+    "segment": "E03-04",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-03/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-04/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-04/f1.png",
+    "qc": "通过：程野身份/胡茬/工装、护住电台动作、橙色电台及湿台面连续"
+  },
+  {
+    "segment": "E03-04",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-03/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-04/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-04/f2.png",
+    "qc": "通过：高嵩身份/西装、转身走向门口动作、红色消防柜/门洞/湿地面连续"
+  },
+  {
+    "segment": "E03-04",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-04/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-04/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-04/f3.png",
+    "qc": "通过：高嵩跨镜身份/服装、门口回望姿态和冷静威胁表情连续"
+  },
+  {
+    "segment": "E03-05",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-05/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-05/f1.png",
+    "qc": "通过：程野身份/工装、消防柜、仓库门洞连续；高嵩作为远处背影接电话离场，双人动作关系清晰"
+  },
+  {
+    "segment": "E03-05",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-05/actual-generation/README.md#f2-最终接受版本",
+    "output": "storyboard-full-pack/E03-05/f2.png",
+    "qc": "通过：程野身份/工装、箱式橙色应急电台、消防柜夹层和油纸清单连续；首个候选因误画成手持对讲机未采用"
+  },
+  {
+    "segment": "E03-06",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-03/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-06/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-06/f1.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、手机留存证据动作、六行表格结构和单枚私章清晰；高嵩本人未入镜"
+  },
+  {
+    "segment": "E03-06",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-03/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-06/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-06/f2.png",
+    "qc": "通过：许知遥/程野双人身份、黄铜钥匙、油纸清单和湿台面连续；交接与检查动作清楚"
+  },
+  {
+    "segment": "E03-06",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-06/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-06/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-06/f3.png",
+    "qc": "通过：程野身份/工装和黄铜钥匙连续；压痕改为局部夹压变形，强化不是普通磨损的视觉信息"
+  },
+  {
+    "segment": "E03-07",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E01-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-07/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-07/f1.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、箱式橙色电台、修复室和外接读取器连续；副本插入位置正确"
+  },
+  {
+    "segment": "E03-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-07/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-07/f2.png",
+    "qc": "通过：许知遥单耳监听姿态、电台和修复台连续；蜂鸣峰值后微弱人声波形关系清楚"
+  },
+  {
+    "segment": "E03-07",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E02-01/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-07/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-07/f3.png",
+    "qc": "通过：许知遥/程野双人身份、修复室门、控制台和电台连续；关门与调低频双层动作清楚"
+  },
+  {
+    "segment": "E03-07",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-07/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-07/actual-generation/README.md#f4-最终接受版本",
+    "output": "storyboard-full-pack/E03-07/f4.png",
+    "qc": "通过：许知遥/程野身份和修复室连续；两人闭口静默聆听，许潮只作为画外录音；首个候选因程野嘴唇略张未采用"
+  },
+  {
+    "segment": "E03-08",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-07/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-08/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-08/f1.png",
+    "qc": "通过：许知遥身份、播放键悬停动作、单耳监听、电台与波形连续"
+  },
+  {
+    "segment": "E03-08",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E02-01/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-08/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-08/f2.png",
+    "qc": "通过：程野身份/工装、修复室和波形屏连续；证据链判断与说话口型清楚"
+  },
+  {
+    "segment": "E03-08",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-07/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-08/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-08/f3.png",
+    "qc": "通过：许知遥/程野闭口反应、电台、铁门撞击峰值和后续人声波形清楚；许德海不入镜"
+  },
+  {
+    "segment": "E03-08",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-08/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-08/actual-generation/README.md#f4",
+    "output": "storyboard-full-pack/E03-08/f4.png",
+    "qc": "通过：双人闭口聆听、电台/波形连续；黄铜钥匙落在控制台形成证据关联，许潮仅为画外录音"
+  },
+  {
+    "segment": "E03-09",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-08/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-09/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-09/f1.png",
+    "qc": "通过：许知遥身份、修复室、电台与波形连续；起身陈述动作明确"
+  },
+  {
+    "segment": "E03-09",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-08/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-09/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-09/f2.png",
+    "qc": "通过：双人闭口、钥匙/电台和远处命令波形连续；高嵩仅为录音"
+  },
+  {
+    "segment": "E03-09",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-09/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-09/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-09/f3.png",
+    "qc": "通过：发动机低频覆盖报警峰值的波形层次、双人闭口和画外许潮录音明确"
+  },
+  {
+    "segment": "E03-09",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·单张合并参考锚点",
+    "references": [
+      "storyboard-full-pack/E03-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-09/actual-generation/README.md#f4",
+    "output": "storyboard-full-pack/E03-09/f4.png",
+    "qc": "通过：许知遥独自摘下耳机并说出结论；高嵩未被错误生成到修复室"
+  },
+  {
+    "segment": "E03-10",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "storyboard-full-pack/E03-09/f4.png",
+      "characters/images/程野-sheet.png",
+      "art/images/许知遥临时声音修复室-阴天工作日-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-10/actual-generation/README.md#f1",
+    "output": "storyboard-full-pack/E03-10/f1.png",
+    "qc": "通过：程野身份/工装、双份受潮证据、私章指向动作和修复室波形锚点清楚；仅程野出镜"
+  },
+  {
+    "segment": "E03-10",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "storyboard-full-pack/E03-10/f1.png",
+      "storyboard-full-pack/E03-09/f4.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-10/actual-generation/README.md#f2",
+    "output": "storyboard-full-pack/E03-10/f2.png",
+    "qc": "通过：许知遥身份/雨衣/耳机、两份证据和修复室连续；克制审慎口型清楚，程野保持画外"
+  },
+  {
+    "segment": "E03-10",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "storyboard-full-pack/E03-10/f2.png",
+      "storyboard-full-pack/E03-10/f1.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E03-10/actual-generation/README.md#f3",
+    "output": "storyboard-full-pack/E03-10/f3.png",
+    "qc": "通过：许知遥/程野闭口监听、耳机/控制台/电台和波形连续；空白段后的脚步峰值清楚，许潮不入镜"
+  },
+  {
+    "segment": "E04-01",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-01/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-01/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥抱住官方电台，高嵩横臂拦路但未触碰；双人身份、门口轴线和说话者正确"
+  },
+  {
+    "segment": "E04-01",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-01/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-01/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-01/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜并护住官方电台，冷静拒绝的讲话口型与单灯货仓连续"
+  },
+  {
+    "segment": "E04-01",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-01/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-01/actual-generation/candidates-2026-08-24/f3-v2.png",
+    "output": "storyboard-full-pack/E04-01/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥把电台收进雨衣，高嵩递出无字资料；双人闭口、耳机和门口轴线连续"
+  },
+  {
+    "segment": "E04-02",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-02/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-02/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，空白房产资料与台上官方电台关系清楚，报价讲话口型正确"
+  },
+  {
+    "segment": "E04-02",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E04-02/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-02/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-02/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜且没有接资料，官方电台位于后景，拒绝动作与视线正确"
+  },
+  {
+    "segment": "E04-02",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-02/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-02/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-02/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，一手收回资料、一手拉门；无字页面、手部和轻微笑意正确"
+  },
+  {
+    "segment": "E04-03",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-03/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E04-03/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜，追问驾驶者的近景、讲话口型和关闭钢门背景正确"
+  },
+  {
+    "segment": "E04-03",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-03/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-03/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E04-03/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，轻微耸肩、淡笑与轻描淡写的讲话口型正确"
+  },
+  {
+    "segment": "E04-03",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E04-03/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-03/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-03/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜，压住怒意说父亲被锁，人物身份与关闭钢门连续"
+  },
+  {
+    "segment": "E04-04",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-04/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-04/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，开掌拍锈蚀钢门，手部、讲话口型和单灯夜戏正确"
+  },
+  {
+    "segment": "E04-04",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E04-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-04/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E04-04/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜并向画外追问，前景无第二人暗影，证物桌和门轴连续"
+  },
+  {
+    "segment": "E04-04",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-04/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-04/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜并指向官方橙色电台，轻蔑讲话口型与道具几何正确"
+  },
+  {
+    "segment": "E04-04",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-04/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-04/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E04-04/f4.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，放慢语速后的冷硬近景与人物身份连续"
+  },
+  {
+    "segment": "E04-05",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-05/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E04-05/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野在冷蓝门外把手机收音端贴近中央门缝，许知遥在暖灰门内讲话；恰好两人"
+  },
+  {
+    "segment": "E04-05",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-05/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-05/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-05/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，以几乎消失的笑意威胁；关闭钢门、口型和空间连续"
+  },
+  {
+    "segment": "E04-05",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-05/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-05/actual-generation/candidates-2026-08-24/f3-v2.png",
+    "output": "storyboard-full-pack/E04-05/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜，先低看门槛移动阴影再猛拉钢门，动作因果与手部正确"
+  },
+  {
+    "segment": "E04-06",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/高嵩-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-06/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E04-06/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：全景清楚显示程野退开两步持手机、高嵩站在右侧门洞发问；冷外暖内和人物口型正确"
+  },
+  {
+    "segment": "E04-06",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E04-06/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-06/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-06/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野出镜，手机贴胸、短促回答并向左转身蓄力，画面方向连续"
+  },
+  {
+    "segment": "E04-06",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/旧渡口货仓-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-06/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-06/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-06/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野向左奔跑、高嵩从右侧仓门追出；双人跑姿、手机和追逐轴线正确"
+  },
+  {
+    "segment": "E04-07",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-07/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-07/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野、许知遥、高嵩三人身份分离，高嵩夺取单台官方电台并处于撞击前状态"
+  },
+  {
+    "segment": "E04-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-07/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E04-07/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩站立俯身，破裂外壳明显张开，单块绿色存储板正从缝中滑出"
+  },
+  {
+    "segment": "E04-07",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-07/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-07/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥出镜，蹲下分别拾起裂壳和同一块存储板，回答口型与手部正确"
+  },
+  {
+    "segment": "E04-07",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E04-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-07/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E04-07/f4.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥在下方把存储板装回裂壳，高嵩停在高处；双人位置和损坏状态连续"
+  },
+  {
+    "segment": "E04-08",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-08/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-08/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野站到许知遥身边讲话，许知遥低位持裂壳；双人身份、口型和道具状态连续"
+  },
+  {
+    "segment": "E04-08",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-08/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-08/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-08/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩出镜并自然指向暗处货仓，拆迁威胁的说话者与指向正确"
+  },
+  {
+    "segment": "E04-08",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E04-08/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-08/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E04-08/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅高嵩极近景，视线明确落向画外手机，无纸张、手机或其他人物误入"
+  },
+  {
+    "segment": "E04-09",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-09/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E04-09/f1.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野出镜，手机稳在胸前并指向水面，强调水下证据的讲话口型正确"
+  },
+  {
+    "segment": "E04-09",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E04-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-09/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E04-09/f2.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥前景转向画外程野，高嵩沿栈桥远离；恰好两人且景深方向正确"
+  },
+  {
+    "segment": "E04-09",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E04-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-09/actual-generation/candidates-2026-08-24/f3-v2.png",
+    "output": "storyboard-full-pack/E04-09/f3.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野闭口聆听，手机无文字界面并显示一个爆音岛加三个词组岛"
+  },
+  {
+    "segment": "E04-09",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E04-09/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E04-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E04-09/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E04-09/f4.png",
+    "qcApproval": "offline-production/E04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥与程野闭口聆听同一无字波形手机，高嵩只作为画外录音且没有出镜"
+  },
+  {
+    "segment": "E05-01",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-01/f1.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野出镜；固定潜水装备、安全绳、黄铜登山扣与唯一锈环关系正确，闭口且无金属筒"
+  },
+  {
+    "segment": "E05-01",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E05-01/f2.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野讲话；面镜仍在额头，检查右耳通信耳机，单灯位置与安全绳连续"
+  },
+  {
+    "segment": "E05-01",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-01/f3.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野闭口听许知遥画外音；无字计时器、水线、单灯与同一安全绳成立"
+  },
+  {
+    "segment": "E05-02",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-01/actual-generation/candidates-2026-08-24/f3-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-02/f1.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野完成告白；面镜尚未拉下，朝右侧黑水准备入水，金属筒未提前出现"
+  },
+  {
+    "segment": "E05-02",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-02/f2.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：面镜密封且单灯不换边；程野由左上湿坡向右下黑水侧滑，同一安全绳连回岸上"
+  },
+  {
+    "segment": "E05-02",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-02/f3.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野完全潜入；仅绷紧安全绳、一个水下暗影和一个灯点，无错误口型或第二人"
+  },
+  {
+    "segment": "E05-03",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-02/actual-generation/candidates-2026-08-24/f2-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-03/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-03/f1.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野破水喘息并张口说话；恰好一个完全密封金属筒，联单和纸张均未露出"
+  },
+  {
+    "segment": "E05-03",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·多参考图条件生成（个别候选做无重采样边缘尺寸规范化）",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-03/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-03/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-03/f2.png",
+    "qcApproval": "offline-production/E05-01-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：同一金属筒和右端盖仅松开窄缝；程野闭口，联单未提前出现"
+  },
+  {
+    "segment": "E05-04",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "art/images/锈蚀金属文件筒-sheet.png",
+      "storyboard-full-pack/E05-03/f2.png",
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-04/f1.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野闭口听画外音；唯一筒盖已完全旋下并在筒口近旁，唯一湿联单仅部分滑出且仍留在同一文件筒内"
+  },
+  {
+    "segment": "E05-04",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E05-03/f1.png",
+      "storyboard-full-pack/E05-03/f2.png",
+      "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-04/f2.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅程野自然开口并举同一只独立筒盖；单灯、双凸耳、半月潮记和手部成立，无第二只盖或纸张"
+  },
+  {
+    "segment": "E05-04",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "art/images/沉船点外侧防波堤-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-03/f1.png",
+      "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-04/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-04/f3.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：同一文件筒已重新旋紧，联单完整收回且画面无外露纸张；上坡跑动、安全绳与岸坡方向清楚"
+  },
+  {
+    "segment": "E05-05",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E02-03/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E05-05/f1.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥闭口按无字实体控制；摔裂电台保持未修复阶段，屏幕只有发动机声带与单一爆音峰，无文字或时间码"
+  },
+  {
+    "segment": "E05-05",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-05/f2.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥完全闭口听旧录音；同一摔裂电台与上一镜连续，许潮和高嵩均未被实体化或显示为屏幕头像"
+  },
+  {
+    "segment": "E05-05",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/精确修订",
+    "references": [
+      "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f3-v1.png",
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f3-v2.png",
+    "output": "storyboard-full-pack/E05-05/f3.png",
+    "qcApproval": "offline-production/E05-04-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：两人闭口，许知遥双手套、程野裸手；唯一湿联单仍大部卷曲且刚开始展开，无透明袋、手机或责任书"
+  },
+  {
+    "segment": "E05-06",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/rejected/f1-row-fix1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E05-06/f1.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥戴手套并独自开口；唯一联单已展开但未完全压平，恰有六行模糊结构，无透明袋、可读文字或重复纸张"
+  },
+  {
+    "segment": "E05-06",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-06/f2.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有程野开口；同一联单右下角暗紫私章保留缺角和向左晕尾，未误变为红章，无额外证物"
+  },
+  {
+    "segment": "E05-06",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "storyboard-full-pack/E05-05/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-06/f3.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥闭口并单指完成无字实体控制；电台损伤连续，屏幕仅抽象波形，无数字、时间码或录音人物实体"
+  },
+  {
+    "segment": "E05-06",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f3-v1.png",
+      "characters/images/程野-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E05-06/f4.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两位现时成人且均闭口；唯一摔裂电台状态连续，许潮与孩子只存在于录音中"
+  },
+  {
+    "segment": "E05-07",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-06/actual-generation/candidates-2026-08-24/f4-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E05-07/f1.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：人物、站位、灯光、电台损伤与上一段连续；两人闭口，无许潮、孩子、肖像、倒影或回忆重演"
+  },
+  {
+    "segment": "E05-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-07/f2.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥小幅开口说“哥”，程野闭口；过载尖峰保持抽象、无可读界面，录音人物未出现"
+  },
+  {
+    "segment": "E05-07",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-07/f3.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：唯一耳机已摘下并落在台面，许知遥闭口、双手自然撑台；无多余手、悬浮耳机或回忆重演"
+  },
+  {
+    "segment": "E05-07",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-07/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E05-07/f4.png",
+    "qcApproval": "offline-production/E05-06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：两位现时成人闭口凝听；摔裂橙色电台唯一、损伤连续，波形抽象，所有录音人物均未实体化"
+  },
+  {
+    "segment": "E05-08",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-07/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E05-08/f1.png",
+    "qcApproval": "offline-production/E05-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两位现时成人；只有程野开口。唯一联单裸放在中性保育衬纸上且尚未进入透明保护袋，同一摔裂橙色电台保持唯一"
+  },
+  {
+    "segment": "E05-08",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-08/f2.png",
+    "qcApproval": "offline-production/E05-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥本人出镜并自然开口；程野在画外，高嵩未以人物、肖像、倒影、屏幕或回忆重演实体化"
+  },
+  {
+    "segment": "E05-08",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f3-v2.png",
+      "art/images/程野残录手机-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f3-v3.png",
+    "output": "storyboard-full-pack/E05-08/f3.png",
+    "qcApproval": "offline-production/E05-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有闭口的程野；P06 石墨黑厚壳、左上小蛛裂与右下暗橙擦痕清楚可辨，屏幕仅抽象青色波形且无文字、数字、头像或时间码"
+  },
+  {
+    "segment": "E05-08",
+    "frame": 4,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/程野残录手机-sheet.png",
+      "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-08/actual-generation/candidates-2026-08-24/f4-v1.png",
+    "output": "storyboard-full-pack/E05-08/f4.png",
+    "qcApproval": "offline-production/E05-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：许知遥与程野均闭口听残录；P06 屏幕完全背向镜头，高嵩只留在音轨意图中，无人物、肖像、倒影、重演或可读界面"
+  },
+  {
+    "segment": "E05-09",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "art/images/许德海事故责任书-sheet.png",
+      "art/images/真正的载货联单-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-09/f1.png",
+    "qcApproval": "offline-production/E05-09-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥入画并自然开口；恰好一张裸放 P03 与一张裸放 P05，P05 完整右下角、蓝黑模糊签名和褪色椭圆印可辨但不可读；所有禁物均未串入"
+  },
+  {
+    "segment": "E05-09",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f2-v2.png",
+      "art/images/许德海事故责任书-sheet.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f2-v3.png",
+    "output": "storyboard-full-pack/E05-09/f2.png",
+    "qcApproval": "offline-production/E05-09-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两人且只有程野自然开口；唯一 P01 保留黑熔痕、右侧裂开结构、盐霜擦痕和弯天线，P03/P05 各一张裸放且辨识锚点完整"
+  },
+  {
+    "segment": "E05-09",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f3-v1.png",
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "storyboard-full-pack/E05-08/f4.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-09/actual-generation/candidates-2026-08-24/f3-v2.png",
+    "output": "storyboard-full-pack/E05-09/f3.png",
+    "qcApproval": "offline-production/E05-09-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥入画并自然开口；同一铁丝玻璃窗左下区域的固定放射状蛛裂恢复且未复制，所有人物外证物、屏幕、文字与界面均未出现"
+  },
+  {
+    "segment": "E05-10",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "art/images/三份独立备份盘-sheet.png",
+      "art/images/真正的载货联单-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-10/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E05-10/f1.png",
+    "qcApproval": "offline-production/E05-10-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两位成人且均闭口；许知遥操作黑/橙/银三个 P07，程野把唯一 P03 滑入唯一透明袋；动作职责、物件计数与全部排除项正确"
+  },
+  {
+    "segment": "E05-10",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/许知遥临时声音修复室-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-10/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E05-10/f2.png",
+    "qcApproval": "offline-production/E05-10-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有程野入画并自然开口；唯一 P03 完全位于唯一透明保护袋内，袋口闭合且纸张四边无外露；无散纸、重复证物、人物或禁物"
+  },
+  {
+    "segment": "E05-10",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f1-v2.png",
+      "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f2-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E05-10/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E05-10/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E05-10/f3.png",
+    "qcApproval": "offline-production/E05-10-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好两位成人闭口离场；许知遥拿唯一未修复 P01，程野拿唯一封闭袋装 P03；恰好三个 P07 留台，P06 与倒计时界面完全不出画"
+  },
+  {
+    "segment": "E06-01",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "characters/images/高嵩-sheet.png",
+      "characters/images/程野-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E06-01/f1.png",
+    "qcApproval": "offline-production/E06-01-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩在左侧伸手向唯一音响线，程野在右侧护住唯一封闭联单袋；两人闭口，高嵩未碰袋；无 P01、P07、群众或散纸"
+  },
+  {
+    "segment": "E06-01",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-01/f2.png",
+    "qcApproval": "offline-production/E06-01-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥入画并自然开口，按一个无字实体键；唯一 P01 保留右裂、黑熔痕、盐蚀与弯折天线；零 P07、零联单、零群众"
+  },
+  {
+    "segment": "E06-01",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-01/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-01/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-01/f3.png",
+    "qcApproval": "offline-production/E06-01-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有高嵩入画并自然开口；没有群众、证物、控制台、线缆、手机或备份盘，人物身份与清晨外景连续"
+  },
+  {
+    "segment": "E06-02",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f1-v1.png",
+      "art/images/真正的载货联单-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f1-v2.png",
+    "output": "storyboard-full-pack/E06-02/f1.png",
+    "qcApproval": "offline-production/E06-02-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有程野开口；唯一 P03 完全位于封闭袋内，隔塑料指向六条横向模糊行带，右下单枚暗紫私章带缺损边缘"
+  },
+  {
+    "segment": "E06-02",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f2-v1.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E06-02/f2.png",
+    "qcApproval": "offline-production/E06-02-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩开口且双手不持证物；恰好两名匿名成人只见背影、两张空白板；密封袋仅在最左边缘且与高嵩分离"
+  },
+  {
+    "segment": "E06-02",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f1-v2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-02/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-02/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-02/f3.png",
+    "qcApproval": "offline-production/E06-02-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥入画并克制开口；所有观众、证物、备份盘、效果板与文字内容均不入画"
+  },
+  {
+    "segment": "E06-03",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-03/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-03/f1.png",
+    "qcApproval": "offline-production/E06-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥与程野两位成人双双闭口；音响无文字/UI；少年、日期和时间完全不入画"
+  },
+  {
+    "segment": "E06-03",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E06-03/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-03/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-03/f2.png",
+    "qcApproval": "offline-production/E06-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：同一双人近景且继续双闭口；无少年、照片、倒影、重演、地图、地点标签或时间码"
+  },
+  {
+    "segment": "E06-03",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-03/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-03/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-03/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-03/f3.png",
+    "qcApproval": "offline-production/E06-03-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有高嵩自然开口并作空手制止手势；两台机械工作灯亮且有怠速排气，未提前停机"
+  },
+  {
+    "segment": "E06-04",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-04/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-04/f1.png",
+    "qcApproval": "offline-production/E06-04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥开口并推动一个无字推子；唯一 P01 四项损伤锚点完整；无时间码、数字或 UI"
+  },
+  {
+    "segment": "E06-04",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-04/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-04/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-04/f2.png",
+    "qcApproval": "offline-production/E06-04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩单人闭口监听；没有少年、船、钥匙、驾驶重演或指控文字，录音仍是待核验陈述"
+  },
+  {
+    "segment": "E06-04",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-04/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-04/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-04/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-04/f3.png",
+    "qcApproval": "offline-production/E06-04-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有高嵩开口并指向明确的现场音响；少年、其他人物与证物不入画"
+  },
+  {
+    "segment": "E06-05",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/真正的载货联单-sheet.png",
+      "storyboard-full-pack/E06-02/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-05/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-05/f1.png",
+    "qcApproval": "offline-production/E06-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有程野开口；同一 P03 完全位于封闭袋内，六行结构清楚；摄像机屏幕不可读"
+  },
+  {
+    "segment": "E06-05",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "storyboard-full-pack/E06-05/actual-generation/candidates-2026-08-24/f2-v1.png",
+      "art/images/真正的载货联单-sheet.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-05/actual-generation/candidates-2026-08-24/f2-v2.png",
+    "output": "storyboard-full-pack/E06-05/f2.png",
+    "qcApproval": "offline-production/E06-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥开口；同一封闭 P03、六行和单枚暗紫缺角章连续，左向晕染为局部短痕；无鉴定结论"
+  },
+  {
+    "segment": "E06-05",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成/定向修订",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "art/images/许德海事故责任书-sheet.png",
+      "storyboard-full-pack/E06-05/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-05/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-05/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-05/f3.png",
+    "qcApproval": "offline-production/E06-05-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩空手指向独立 P05，不碰封闭 P03；恰好两名匿名背影、每人一部黑屏手机；两份文件清楚分离"
+  },
+  {
+    "segment": "E06-06",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/许德海事故责任书-sheet.png",
+      "storyboard-full-pack/E06-05/f3.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-06/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-06/f1.png",
+    "qcApproval": "offline-production/E06-06-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥开口；P05 两锈孔、折线、签名区完整且平放；无作废、鉴真或洗清结论"
+  },
+  {
+    "segment": "E06-06",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-05/f1.png",
+      "storyboard-full-pack/E06-06/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-06/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-06/f2.png",
+    "qcApproval": "offline-production/E06-06-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩闭口伸手但与证物有空气间隙；程野护住同一封闭 P03 并单独开口；无开袋、撕纸或手部重叠"
+  },
+  {
+    "segment": "E06-06",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-06/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-06/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-06/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-06/f3.png",
+    "qcApproval": "offline-production/E06-06-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有高嵩闭口监听自己的完好普通手机，屏幕背向；无 P06 损伤特征和司法结论符号"
+  },
+  {
+    "segment": "E06-07",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/程野残录手机-sheet.png",
+      "storyboard-full-pack/E06-06/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-07/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-07/f1.png",
+    "qcApproval": "offline-production/E06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有程野开口；摔裂 P06 与封闭 P03 分离，P06 黑屏仅一条暗青波形，无 UI/时间码"
+  },
+  {
+    "segment": "E06-07",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-07/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-07/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-07/f2.png",
+    "qcApproval": "offline-production/E06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有高嵩开口和空手防御手势；P06、P03、其他人物与文字全在画外"
+  },
+  {
+    "segment": "E06-07",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/高嵩-sheet.png",
+      "storyboard-full-pack/E06-07/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-07/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-07/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-07/f3.png",
+    "qcApproval": "offline-production/E06-07-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：高嵩握自己的完好普通手机开口；恰好两台机械完全静止、灯灭、无排气；无司法结果符号"
+  },
+  {
+    "segment": "E06-08",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E06-07/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-08/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-08/f1.png",
+    "qcApproval": "offline-production/E06-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：只有许知遥开口；摔裂 P01 与封闭 P03 分离；P05/P06/P07 不入画"
+  },
+  {
+    "segment": "E06-08",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E06-08/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-08/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-08/f2.png",
+    "qcApproval": "offline-production/E06-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两人双闭口；无电话、机构人员、编号、证物或判决图形"
+  },
+  {
+    "segment": "E06-08",
+    "frame": 3,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "storyboard-full-pack/E06-08/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-08/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-08/actual-generation/candidates-2026-08-24/f3-v1.png",
+    "output": "storyboard-full-pack/E06-08/f3.png",
+    "qcApproval": "offline-production/E06-08-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：程野双手开始移交封闭 P03；接收方只有一双中性手套；无脸、身体、回执、编号或标签"
+  },
+  {
+    "segment": "E06-09",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "characters/images/程野-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E06-08/f1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-09/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-09/f1.png",
+    "qcApproval": "offline-production/E06-09-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：恰好许知遥、程野两人；P01 位于救生圈展示装置的公开透明托架内；程野处于更高石阶并开口，许知遥闭口"
+  },
+  {
+    "segment": "E06-09",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E06-09/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-09/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-09/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-09/f2.png",
+    "qcApproval": "offline-production/E06-09-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥一人开口；透明支架、单张空白标签和未修复 P01 均清楚；无可读文字或第二台电台"
+  },
+  {
+    "segment": "E06-10",
+    "frame": 1,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "art/images/橙色应急电台-sheet.png",
+      "storyboard-full-pack/E06-09/f2.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-10/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-10/actual-generation/candidates-2026-08-24/f1-v1.png",
+    "output": "storyboard-full-pack/E06-10/f1.png",
+    "qcApproval": "offline-production/E06-10-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥一人且双手离开；公开透明托架、未修复 P01、救生圈装置与最低两级石阶潮线同框可辨"
+  },
+  {
+    "segment": "E06-10",
+    "frame": 2,
+    "generatedAt": "2026-08-24",
+    "mode": "Codex 内置图像生成·最多 5 张真实参考图的条件生成",
+    "references": [
+      "art/images/南堤旧渡口候船厅与栈桥-sheet.png",
+      "characters/images/许知遥-sheet.png",
+      "storyboard-full-pack/E06-10/actual-generation/candidates-2026-08-24/f1-v1.png"
+    ],
+    "promptFile": "storyboard-full-pack/E06-10/actual-generation/initial-generation-candidates-2026-08-24.md",
+    "candidate": "storyboard-full-pack/E06-10/actual-generation/candidates-2026-08-24/f2-v1.png",
+    "output": "storyboard-full-pack/E06-10/f2.png",
+    "qcApproval": "offline-production/E06-10-IMAGE-QC-APPROVAL.zh-CN.md",
+    "qc": "通过：仅许知遥闭口；她自己的完整普通手机只显示一张不可读空白卡；无 P06 裂屏/波形、机构 UI 或第二部手机"
+  }
+]

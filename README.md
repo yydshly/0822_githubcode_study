@@ -10,6 +10,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Sub2API | AI 订阅额度分发网关 | `researching` | [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) | [详细研究](projects/sub2api/README.md) | [研究摘要](https://yydshly.github.io/0822_githubcode_study/demos/sub2api/) |
 | story-to-handdrawn-video | Agent 驱动的手绘故事视频流水线 | `researching` | [gnipbao/story-to-handdrawn-video](https://github.com/gnipbao/story-to-handdrawn-video) | [详细研究](projects/story-to-handdrawn-video/README.md) | [交互演示](https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/) |
+| shuohao-skills | 已有小说到结构化短剧资料的五阶段工作流 | `archived` | [eternityspring/shuohao-skills](https://github.com/eternityspring/shuohao-skills) | [研究总结](projects/shuohao-skills/RESEARCH-SUMMARY.zh-CN.md) | [《潮痕》失败复盘](https://yydshly.github.io/0822_githubcode_study/demos/shuohao-skills/tide-marks/) · [《渡口》夹具](https://yydshly.github.io/0822_githubcode_study/demos/shuohao-skills/) |
 
 状态统一使用：
 

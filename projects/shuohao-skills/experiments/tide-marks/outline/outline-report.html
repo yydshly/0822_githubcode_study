@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>潮痕 · 短剧改编大纲</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-3:#e0a98c; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .v.mode{font-size:21px;padding-top:5px}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* beat-rhythm chart/table tabs */
+.tabs{display:flex;width:max-content;margin-bottom:12px;border:1px solid var(--rule-2);
+  border-radius:2px;overflow:hidden}
+.tab{font:500 12px/1 var(--sans);letter-spacing:.06em;padding:7px 16px;background:var(--panel);
+  border:0;cursor:pointer;color:var(--ink-2);transition:.15s}
+.tab + .tab{border-left:1px solid var(--rule-2)}
+.tab.on{background:var(--seal);color:#fff}
+.tab:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.tabpane{display:none}
+.tabpane.on{display:block}
+
+/* episode overview: first three cards, fade-out + expand */
+.epswrap{position:relative}
+.eps{position:relative}
+.epswrap.clip .eps .ep:nth-child(n+4){display:none}
+.epswrap.clip .eps::after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;
+  background:linear-gradient(180deg,transparent,var(--paper));pointer-events:none}
+.epsmore{display:block;margin:10px auto 0;font:500 12px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--panel);border:1px solid var(--rule-2);border-radius:2px;
+  padding:8px 18px;cursor:pointer;transition:.15s}
+.epsmore:hover{border-color:var(--seal);color:var(--seal)}
+.epsmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+/* key decisions: the three sign-off items */
+.dec3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start}
+@media(max-width:1080px){.dec3{grid-template-columns:1fr}}
+.dcol{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:4px 18px 14px}
+.dhead{margin:8px 0 0;font-size:12.5px;color:var(--ink-2)}
+.dlist{list-style:none;margin:8px 0 0;padding:0}
+.dlist li{padding:7px 0;border-top:1px solid var(--rule)}
+.dlist li:first-child{border-top:0}
+.dlist b{display:block;font:400 13.5px/1.6 var(--serif)}
+.dlist small{display:block;font-size:11.5px;color:var(--ink-2);line-height:1.6}
+.dnote{margin:10px 0 0;font-size:12px;color:var(--ink-2);line-height:1.7}
+.dnote.seal{color:var(--seal);background:var(--seal-soft);padding:7px 10px;border-radius:2px}
+.dmaj{list-style:none;margin:8px 0 0;padding:0}
+.dmaj li{display:flex;gap:9px;align-items:baseline;padding:5.5px 0;border-top:1px solid var(--rule);font-size:12.5px}
+.dmaj li:first-child{border-top:0}
+.dmaj i{flex:none;font:500 11px/1 var(--mono);color:var(--seal);font-style:normal;min-width:38px}
+.dmaj b{font:400 12.5px var(--serif)}
+.dmaj span{min-width:0}
+.dmaj em{flex:none;margin-left:auto;font:500 10px/1 var(--sans);letter-spacing:.1em;font-style:normal;
+  color:var(--seal);border:1px solid var(--seal);border-radius:99px;padding:2px 7px}
+
+/* beat-rhythm timeline */
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.chart .legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin-bottom:2px}
+.chart .legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.dotk{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--seal-2)}
+.dotk.major{width:12px;height:12px;background:var(--seal)}
+.rhythm svg{display:block;width:100%;height:auto}
+.rhythm .axis{stroke:var(--rule-2);stroke-width:1.5}
+.rhythm .tick{font:400 10.5px var(--mono);fill:var(--ink-3);paint-order:stroke;stroke:var(--panel);stroke-width:3px}
+.rhythm .stem{stroke:var(--seal-2);stroke-width:1.5}
+.rhythm .stem.major{stroke:var(--seal)}
+.rhythm .bdot{fill:var(--seal-2);stroke:var(--panel);stroke-width:2}
+.rhythm .bdot.major{fill:var(--seal)}
+.rhythm .blabel{font:500 12px var(--sans);fill:var(--ink)}
+.rhythm .bsub{font:400 10.5px var(--sans);fill:var(--ink-2)}
+.rhythm .gapnote{font:400 10.5px var(--sans);fill:var(--ink-3)}
+.rhythm .gapnote.bad{fill:var(--seal);font-weight:500}
+
+/* beat detail table + generic tables */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+q{quotes:"「" "」";font-family:var(--serif);border-left:2px solid var(--seal);padding-left:8px;display:inline-block}
+
+/* episode cards */
+.eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:13px}
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 16px 12px;position:relative}
+.ep .num{position:absolute;top:10px;right:14px;font:400 30px/1 var(--serif);color:var(--rule-2)}
+.ep header{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-right:44px;flex-wrap:wrap}
+.ep header b{font:500 15px var(--serif);letter-spacing:.04em}
+.bt{font-style:normal;font-size:11px;padding:2px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal)}
+.bt.major{background:var(--seal);color:#fff}
+.ep .syn{margin:0 0 8px;font-size:13px;line-height:1.75}
+.hk{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px;font-size:12.5px;padding:6px 0;border-top:1px solid var(--rule)}
+.hk b{font:500 11px/1.8 var(--sans);letter-spacing:.14em;color:var(--seal);white-space:nowrap}
+:root[lang="en"] .hk b,html[lang="en"] .hk b{letter-spacing:.06em}
+.ep .meta{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.ep .meta i{font-style:normal;font:400 10.5px/1.5 var(--mono);border:1px solid var(--rule-2);
+  border-radius:2px;padding:0 5px;background:var(--paper);color:var(--ink-2)}
+.ep .meta .warn{border-color:var(--seal);color:var(--seal);background:var(--seal-soft)}
+
+/* dispatch matrix */
+.matrix{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 18px;overflow-x:auto}
+.matrix table{border-collapse:separate;border-spacing:3px;font-size:12px;background:none;border:0;width:auto}
+.matrix th,.matrix td{border:0;padding:0}
+.matrix th{font:500 10px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:none;
+  text-align:left;padding:0 8px 5px 0;white-space:nowrap}
+.matrix th.ep-h{text-align:center;padding:0 0 5px;font-family:var(--mono)}
+.matrix td.name{padding-right:10px;white-space:nowrap;font-family:var(--serif);font-size:13px}
+.matrix td.tier{padding-right:10px;color:var(--ink-3);font-size:11px;white-space:nowrap}
+.matrix td.mc{width:var(--cw,26px);min-width:var(--cw,26px);height:22px;border-radius:2px;
+  background:var(--paper);border:1px solid var(--rule)}
+.matrix td.mc.on{background:var(--seal);border-color:var(--seal)}
+.matrix td.mc.on.sc{background:var(--seal-2);border-color:var(--seal-2)}
+.matrix td.mc.on.pp{background:var(--seal-3);border-color:var(--seal-3)}
+.matrix td.n{padding-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap}
+.matrix tr.div td{padding:8px 0 3px;font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.matrix .mnote{font-size:11px;color:var(--ink-3);margin:10px 0 0}
+
+/* scene overview cards: full-width multi-column grid */
+.scenes{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:13px;align-items:start}
+.scard{position:relative;background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 16px}
+.snum{position:absolute;top:10px;right:16px;font:400 26px/1 var(--serif);color:var(--rule-2);letter-spacing:.04em}
+.scard h3{font:400 16px/1.3 var(--serif);letter-spacing:.03em;display:flex;align-items:center;gap:8px;
+  padding-right:90px;flex-wrap:wrap}
+.scard h3 .id{font:400 10.5px var(--mono);color:var(--ink-3)}
+.badge{font:500 10.5px/1 var(--sans);padding:2px 8px;border-radius:99px;border:1px solid var(--seal);color:var(--seal)}
+.badge.once{border-color:var(--seal-2);color:var(--seal-2)}
+.strip{display:flex;flex-wrap:wrap;gap:3px;margin:7px 0 6px}
+.strip i{width:16px;height:10px;border-radius:2px;background:var(--paper);border:1px solid var(--rule)}
+.strip i.on{background:var(--seal);border-color:var(--seal)}
+.strip i.on.lt{background:var(--seal-2);border-color:var(--seal-2)}
+.srow{font-size:11.5px;color:var(--ink-2);display:flex;gap:6px;flex-wrap:wrap;align-items:baseline;margin-top:3px}
+.srow b{font:500 10px/1.8 var(--sans);letter-spacing:.12em;color:var(--ink-3);flex:none}
+.srow i{font-style:normal;font:400 10.5px/1.5 var(--mono);border:1px solid var(--rule-2);
+  border-radius:2px;padding:0 5px;background:var(--paper)}
+.srow .reuse{color:var(--seal)}
+
+/* asset conversion */
+.plan{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 18px}
+.plan table{background:none;border:0}
+.plan th{background:none;padding-left:0}
+.plan td{padding-left:0;border-top:1px solid var(--rule);border-bottom:0}
+.plan tr:first-child td{border-top:0}
+.plan td:first-child{font-family:var(--serif);font-size:13px;color:var(--ink)}
+
+/* adaptation notes */
+.core{font:400 17px/1.9 var(--serif);margin:0 0 6px}
+h3.sub{font:500 12px/1 var(--sans);letter-spacing:.18em;color:var(--seal);margin:20px 0 8px}
+
+/* quality gates */
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate .ok .m,.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* print: expand everything — both tab panes, all episode cards */
+@media print{
+  .expo,.tabs,.epsmore{display:none!important}
+  .tabpane{display:block!important;margin-bottom:14px}
+  .epswrap.clip .eps .ep{display:block!important}
+  .epswrap.clip .eps::after{display:none}
+  .page{max-width:none;padding:0}
+  section,.ep,.scard{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style><!-- production-hub-return-css:start --><style>.production-hub-return{position:fixed;right:16px;bottom:16px;z-index:99999;padding:9px 12px;border:1px solid #3b6670;border-radius:9px;background:#0b151bea;color:#67e0e6!important;font:700 13px/1.2 system-ui,"Microsoft YaHei",sans-serif;text-decoration:none!important;box-shadow:0 8px 30px #0007;backdrop-filter:blur(10px)}.production-hub-return:focus-visible{outline:3px solid #67e0e6;outline-offset:3px}@media(max-width:560px){.production-hub-return{display:grid;place-items:center;right:10px;bottom:10px;width:44px;height:44px;padding:0;overflow:hidden;font-size:0}.production-hub-return::before{content:"⌂";font-size:22px}}</style><!-- production-hub-return-css:end --></head><body><!-- production-hub-return:start --><a class="production-hub-return" href="../index.html" aria-label="返回潮痕小说视频生产总控">⌂ 返回生产总控</a><!-- production-hub-return:end -->
+<div class="page">
+
+<header class="hd">
+  <h1>潮痕</h1>
+  <span class="sub">短剧改编大纲 · 6 集 × 2 分钟 · 现实情感悬疑 · 抽核改编</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 14 / 14</span>
+    <button class="expo" data-name="潮痕-outline.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">总集数</div><div class="v">6 <small>× 2 分钟</small></div><div class="d">正片约 12 分钟</div></div>
+  <div class="kpi"><div class="l">爽点</div><div class="v">6</div><div class="d">2 大爆点 · 最大间隔 1 集</div></div>
+  <div class="kpi"><div class="l">角色</div><div class="v">5</div><div class="d">主角 3 · 配角 2 · 功能 0</div></div>
+  <div class="kpi"><div class="l">主场景</div><div class="v">4</div><div class="d">一次性场景 1，需复用方案</div></div>
+  <div class="kpi"><div class="l">生成难点</div><div class="v">4</div><div class="d">手部特写 ×3（第 1、2、3 集） · 人群 …</div></div>
+  <div class="kpi"><div class="l">改编幅度</div><div class="v mode">抽核</div><div class="d">砍 3 线 · 合 1 组</div></div>
+</div>
+
+
+<section id="sec-rhythm">
+  <div class="sec-h"><span class="no">01</span><h2>爽点节奏</h2></div>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-pane="pane-timeline">时间轴</button>
+    <button class="tab" data-pane="pane-table">明细表</button>
+  </div>
+  <div class="tabpane on" id="pane-timeline"><div class="chart rhythm">
+  <div class="legend">
+    <i><span class="dotk major"></span>大爆点</i>
+    <i><span class="dotk"></span>常规爽点</i>
+  </div>
+  <svg viewBox="0 0 1520 176" role="img" aria-label="爽点节奏">
+    <line class="axis" x1="30" y1="92" x2="1490" y2="92"/>
+    <line class="axis" x1="151.7" y1="88" x2="151.7" y2="96"/>
+    <line class="axis" x1="395" y1="88" x2="395" y2="96"/>
+    <line class="axis" x1="638.3" y1="88" x2="638.3" y2="96"/>
+    <line class="axis" x1="881.7" y1="88" x2="881.7" y2="96"/>
+    <line class="axis" x1="1125" y1="88" x2="1125" y2="96"/>
+    <line class="axis" x1="1368.3" y1="88" x2="1368.3" y2="96"/>
+    <line class="stem" x1="151.7" y1="92" x2="151.7" y2="62"/>
+    <circle class="bdot" cx="151.7" cy="56" r="6"><title>B01 亡兄录音反转｜父亲留下无法播放的烧损电台，旧案一直认定父亲违规开船。 → 知遥从潮声下修出许潮的第一句话，点名开船者是高嵩。</title></circle>
+    <text class="blabel" x="151.7" y="34" text-anchor="middle">亡兄录音反转</text>
+    <text class="bsub" x="151.7" y="20" text-anchor="middle">父亲留下无法播放的烧损电台，…</text>
+    <line class="stem" x1="395" y1="92" x2="395" y2="122"/>
+    <circle class="bdot" cx="395" cy="128" r="6"><title>B02 时间线破绽｜官方记录把离岸时间写成一点二十分，并标注许德海当班。 → 电台自动报时与货仓报警声证明一点四十七分许潮仍在岸上，至少一份记录造假。</title></circle>
+    <text class="blabel" x="395" y="150" text-anchor="middle">时间线破绽</text>
+    <text class="bsub" x="395" y="164" text-anchor="middle">官方记录把离岸时间写成一点二…</text>
+    <line class="stem major" x1="638.3" y1="92" x2="638.3" y2="57"/>
+    <circle class="bdot major" cx="638.3" cy="48" r="9"><title>B03 父亲清白中段揭破｜黄铜钥匙和父亲签名长期被理解为其掌船与认责。 → 录音还原父亲被锁货仓、咬住正钥匙阻止开船，高嵩取备用钥匙发动船。</title></circle>
+    <text class="blabel" x="638.3" y="26" text-anchor="middle">父亲清白中段…</text>
+    <text class="bsub" x="638.3" y="12" text-anchor="middle">黄铜钥匙和父亲签名长期被理解…</text>
+    <line class="stem" x1="881.7" y1="92" x2="881.7" y2="122"/>
+    <circle class="bdot" cx="881.7" cy="128" r="6"><title>B04 反派反制落空｜高嵩抢走并摔毁唯一看得见的录音介质。 → 知遥说明自己从不在原介质上操作，完整录音已有三份备份。</title></circle>
+    <text class="blabel" x="881.7" y="150" text-anchor="middle">反派反制落空</text>
+    <text class="bsub" x="881.7" y="164" text-anchor="middle">高嵩抢走并摔毁唯一看得见的录…</text>
+    <line class="stem major" x1="1125" y1="92" x2="1125" y2="57"/>
+    <circle class="bdot major" cx="1125" cy="48" r="9"><title>B05 事故与哥哥选择双重真相｜许潮仍被高嵩描述成偷电台、赌气登船的肇事少年。 → 完整录音与打捞联单共同证明高嵩私运溶剂，许潮留下证据后返回火场救人。</title></circle>
+    <text class="blabel" x="1125" y="26" text-anchor="middle">事故与哥哥选…</text>
+    <text class="bsub" x="1125" y="12" text-anchor="middle">许潮仍被高嵩描述成偷电台、赌…</text>
+    <line class="stem" x1="1368.3" y1="92" x2="1368.3" y2="122"/>
+    <circle class="bdot" cx="1368.3" cy="128" r="6"><title>B06 公开证据链｜高嵩准备借拆迁仪式永久覆盖旧渡口与旧案。 → 知遥公开播放录音，程野展示联单，拆迁停止且旧案重启调查。</title></circle>
+    <text class="blabel" x="1368.3" y="150" text-anchor="middle">公开证据链</text>
+    <text class="bsub" x="1368.3" y="164" text-anchor="middle">高嵩准备借拆迁仪式永久覆盖旧…</text>
+    <text class="tick" x="151.7" y="112" text-anchor="middle">1</text>
+    <text class="tick" x="395" y="112" text-anchor="middle">2</text>
+    <text class="tick" x="638.3" y="112" text-anchor="middle">3</text>
+    <text class="tick" x="881.7" y="112" text-anchor="middle">4</text>
+    <text class="tick" x="1125" y="112" text-anchor="middle">5</text>
+    <text class="tick" x="1368.3" y="112" text-anchor="middle">6</text>
+  </svg>
+</div></div>
+  <div class="tabpane" id="pane-table">
+  <table><thead><tr><th>ID</th><th>类型</th><th>量级</th><th>集</th><th>铺垫</th><th>兑现</th></tr></thead>
+<tbody><tr><td>B01</td><td>亡兄录音反转</td><td>常规</td><td>1</td><td>父亲留下无法播放的烧损电台，旧案一直认定父亲违规开船。</td><td>知遥从潮声下修出许潮的第一句话，点名开船者是高嵩。</td></tr>
+<tr><td>B02</td><td>时间线破绽</td><td>常规</td><td>2</td><td>官方记录把离岸时间写成一点二十分，并标注许德海当班。</td><td>电台自动报时与货仓报警声证明一点四十七分许潮仍在岸上，至少一份记录造假。</td></tr>
+<tr><td>B03</td><td>父亲清白中段揭破</td><td>大爆点</td><td>3</td><td>黄铜钥匙和父亲签名长期被理解为其掌船与认责。</td><td>录音还原父亲被锁货仓、咬住正钥匙阻止开船，高嵩取备用钥匙发动船。</td></tr>
+<tr><td>B04</td><td>反派反制落空</td><td>常规</td><td>4</td><td>高嵩抢走并摔毁唯一看得见的录音介质。</td><td>知遥说明自己从不在原介质上操作，完整录音已有三份备份。</td></tr>
+<tr><td>B05</td><td>事故与哥哥选择双重真相</td><td>大爆点</td><td>5</td><td>许潮仍被高嵩描述成偷电台、赌气登船的肇事少年。</td><td>完整录音与打捞联单共同证明高嵩私运溶剂，许潮留下证据后返回火场救人。</td></tr>
+<tr><td>B06</td><td>公开证据链</td><td>常规</td><td>6</td><td>高嵩准备借拆迁仪式永久覆盖旧渡口与旧案。</td><td>知遥公开播放录音，程野展示联单，拆迁停止且旧案重启调查。</td></tr></tbody></table>
+  </div>
+</section>
+
+<section id="sec-episodes">
+  <div class="sec-h"><span class="no">02</span><h2>分集概览</h2><span class="note">核心交付 · 每集三栏齐全</span></div>
+  <div class="epswrap clip">
+    <div class="eps">
+<article class="ep" id="ep-1">
+  <span class="num">1</span>
+  <header><b>第 1 集</b><i class="bt">亡兄录音反转</i></header>
+  <p class="syn">南堤旧渡口即将拆除，许知遥赶回候船厅整理父亲许德海的遗物，从铁皮箱里取出烧损的橙色应急电台和发黑的黄铜船钥匙。她把电台带到临时声音修复室，接入实验电源，逐层清理盐霜造成的爆音与潮声。父亲签下的事故责任书仍让她认定他曾违规开船，但修复出的第一段有效录音却来自失踪十五年的哥哥许潮，并明确指出当年开船的人是高嵩。</p>
+  <div class="hk"><b>钩子</b><span>亡兄为何能在事故现场留下点名高嵩的录音，父亲当年的责任书又掩盖了什么？</span></div>
+  <div class="hk"><b>悬念</b><span>电台里尚未修复的噪声下仍藏着后续内容，黄铜船钥匙的用途也无人知晓。</span></div>
+  <div class="meta"><i>S01</i><i>S02</i><i>C01</i><i>C04</i><i>C05</i><i class="warn">手部特写</i><i class="warn" title="许知遥承担现在时画面，许德海仅通过遗物与旧照建立存在，许潮仅通过电台录音出现，三人不同时同框。">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-2">
+  <span class="num">2</span>
+  <header><b>第 2 集</b><i class="bt">时间线破绽</i></header>
+  <p class="syn">程野听过修复录音后承认，事故次日他曾在防波堤下捡到半块烧焦船牌，却被许德海要求扔回水里。知遥因此更加怀疑父亲主动掩埋真相，程野则从录音右声道辨认出每三十秒一次的旧货仓防潮报警声。两人带黄铜船钥匙进入货仓，钥匙虽打不开新门锁，却打开墙角的旧消防柜，并找到发霉的值班日志。官方日志记载事故船在一点二十分离岸且由许德海当班，电台自动报时却证明一点四十七分时许潮仍在货仓附近，直接击穿官方时间线。</p>
+  <div class="hk"><b>钩子</b><span>同一场事故出现两套无法并存的时间记录，究竟是谁改写了值班日志？</span></div>
+  <div class="hk"><b>悬念</b><span>许德海明知船牌可能是证据却要求程野丢弃，他是在保护谁，还是受到了胁迫？</span></div>
+  <div class="meta"><i>S02</i><i>S03</i><i>C01</i><i>C02</i><i class="warn">手部特写</i><i class="warn" title="许知遥与程野双人推进调查，以双人中景和物证反打完成信息交接。">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-3">
+  <span class="num">3</span>
+  <header><b>第 3 集</b><i class="bt major">父亲清白中段揭破</i></header>
+  <p class="syn">高嵩得知两人进入货仓后赶到现场，以责任书上的亲笔签名压制翻案，并试图高价收走许德海留下的物品。程野趁高嵩转身处理拆迁事务，从消防柜夹层取出油纸包裹的货物清单，发现六桶工业溶剂被红笔改成两桶，签收栏留有高嵩当年的私章。知遥继续修复电台，录音还原许德海被人按在货仓内、咬住黄铜正钥匙并抱住栏杆阻止开船的经过；随后高嵩命人取来备用钥匙，发动机在防潮报警声后启动。黄铜钥匙由父亲掌船的疑点转化为他阻止事故的物证，知遥确认父亲从未站在驾驶台上。</p>
+  <div class="hk"><b>钩子</b><span>父亲已经被证明困在岸上的货仓里，那么高嵩为何必须让那艘装有超量溶剂的船连夜离岸？</span></div>
+  <div class="hk"><b>悬念</b><span>货物清单虽指向高嵩，却仍缺少能与事故船直接对应的原始载货凭证，许潮登船的原因也没有揭开。</span></div>
+  <div class="meta"><i>S02</i><i>S03</i><i>C01</i><i>C02</i><i>C03</i><i>C04</i><i>C05</i><i class="warn">手部特写</i><i class="warn" title="现在时只安排许知遥、程野与高嵩短暂三人同场，以高嵩正面、知遥近景和程野过肩拆拍；许德海与许潮仅在录音触发的局部闪回中分开出现，不与现在时角色同框。">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-4">
+  <span class="num">4</span>
+  <header><b>第 4 集</b><i class="bt">反派反制落空</i></header>
+  <p class="syn">当晚，高嵩在旧渡口拦住许知遥，以城里住房交换电台和货物清单，并承认当年船上存在违规溶剂，却把事故归咎于雷击和许潮私自登船。他声称许德海签下责任书，是为了避免儿子牵连家人。程野在门外尝试记录这段谈话，只留下断续词句。高嵩察觉门外动静，夺过橙色应急电台摔断存储板，自以为毁掉唯一录音。许知遥随即说明修复工作从不直接改动原介质，完整录音已经保存三份，高嵩的反制当场落空。失去从容的高嵩转而宣布次日上午九点启动拆迁，要让货仓和残存旧纸一并消失。</p>
+  <div class="hk"><b>钩子</b><span>距离拆迁只剩一夜，许知遥和程野必须在货仓被推平前找到能独立印证录音的实体证据。</span></div>
+  <div class="hk"><b>悬念</b><span>程野录下的零碎词句能否还原高嵩的自认内容，以及许德海当年究竟受到了怎样的胁迫仍未查清。</span></div>
+  <div class="meta"><i>S01</i><i>S03</i><i>C01</i><i>C02</i><i>C03</i><i>C05</i><i class="warn" title="许知遥与高嵩的交锋放在候船厅内，程野始终位于门外以影子和录音设备建立存在；许潮只通过旧录音进入叙事，四人不做实体同框。">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-5">
+  <span class="num">5</span>
+  <header><b>第 5 集</b><i class="bt major">事故与哥哥选择双重真相</i></header>
+  <p class="syn">退潮后，程野前往沉船点，从水下带回一只锈死的金属筒；许知遥则在临时修复室拼接橙色应急电台最后二十秒的备份录音。声音证据还原高嵩为赶在检查前转走超量溶剂而亲自开船，许潮提前把电台藏进救生圈并报告位置，随后因听见货舱中有孩子哭喊而返回火场。录音留下他并非赌气离家的最后说明。与此同时，金属筒中的真正载货联单记录了六桶溶剂，编号与货仓清单一致，筒盖上的潮汐刻痕也符合兄妹的寻物标记。录音与联单互相印证，证明高嵩私运溶剂，也恢复了许潮留下证据后救人的真实选择。许知遥进一步拼出父亲受胁迫签字的原因，高嵩曾以她的学籍、住处和许德海可能承担的刑责逼迫父亲接受伪造记录。</p>
+  <div class="hk"><b>钩子</b><span>天色转亮，拆迁仪式即将开始，这条刚刚闭合的证据链能否赶在推土设备启动前公开。</span></div>
+  <div class="hk"><b>悬念</b><span>载货联单经历十五年浸水后是否仍能通过正式鉴定，以及现场公开后高嵩会怎样阻断传播尚未可知。</span></div>
+  <div class="meta"><i>S02</i><i>S04</i><i>C01</i><i>C02</i><i>C03</i><i>C04</i><i>C05</i><i class="warn" title="程野的水下取证与许知遥的室内修复平行交叉；高嵩、许德海和许潮只通过录音内容及短促局部回忆出现，不安排五人同框，也不完整重演沉船。">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-6">
+  <span class="num">6</span>
+  <header><b>第 6 集</b><i class="bt">公开证据链</i></header>
+  <p class="syn">拆迁仪式在候船厅前开始，高嵩借新的文旅效果图把七一九事故定义为应被告别的旧伤。许知遥将修复后的电台录音接入现场音响，潮声、防潮报警、发动机和许潮的证言依次公开；高嵩试图拔断连接时，程野同步展示真正的载货联单，让连续六桶溶剂编号与录音中的私运事实形成可复核证据链。围观者转而核对联单，拆迁被迫停止，旧案重新启动调查。许德海签下的责任书并未因此立即失效，高嵩也尚未在当天得到最终裁决，但南堤第一次拥有了足以挑战旧结论的声音证据和实体物证。黄昏，许知遥把裂开的橙色应急电台重新归入救生圈夹层，保留外壳烧痕并建立事故现场录音档案，让父亲与哥哥被遮蔽十五年的选择进入永久核验。</p>
+  <div class="hk"><b>钩子</b><span>旧案正式重启后，声音鉴定、联单来源与责任书将如何共同改写最终调查结论。</span></div>
+  <div class="hk"><b>悬念</b><span>证据链已经打开复查入口，但高嵩的法律责任、许德海责任书的效力和事故全貌仍需正式程序确认。</span></div>
+  <div class="meta"><i>S01</i><i>C01</i><i>C02</i><i>C03</i><i>C04</i><i>C05</i><i class="warn">人群</i><i class="warn" title="现场对峙拆成许知遥播音、程野展示联单和高嵩阻断连接三组近景，围观者只用背影与局部反应带过；许德海和许潮仅以档案证据存在，不与现场人物同框。">同框拆解 ✓</i></div>
+</article>
+    </div>
+    <button class="epsmore">▾ 展开全部 6 集</button>
+  </div>
+</section>
+
+<section id="sec-scenes">
+  <div class="sec-h"><span class="no">03</span><h2>场景概览</h2><span class="note">右上 = 出现集</span></div>
+  <div class="scenes">
+<article class="scard">
+  <span class="snum">1 · 4 · 6</span>
+  <h3><span class="id">S01</span>南堤旧渡口候船厅与栈桥<span class="badge">主场景</span></h3>
+  <div class="strip"><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i></div>
+  <div class="srow"><b>承载爽点</b><span>亡兄录音反转 · 反派反制落空 · 公开证据链</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C04</i><i>C05</i><i>C02</i><i>C03</i></div>
+</article>
+<article class="scard">
+  <span class="snum">1 · 2 · 3 · 5</span>
+  <h3><span class="id">S02</span>许知遥临时声音修复室<span class="badge">主场景</span></h3>
+  <div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>亡兄录音反转 · 时间线破绽 · 父亲清白中段揭破 · 事故与哥哥选择双重真相</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C04</i><i>C05</i><i>C02</i><i>C03</i></div>
+</article>
+<article class="scard">
+  <span class="snum">2–4</span>
+  <h3><span class="id">S03</span>旧渡口货仓<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>时间线破绽 · 父亲清白中段揭破 · 反派反制落空</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C02</i><i>C03</i><i>C04</i><i>C05</i></div>
+</article>
+<article class="scard">
+  <span class="snum">5</span>
+  <h3><span class="id">S04</span>沉船点外侧防波堤<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>事故与哥哥选择双重真相</span></div>
+  <div class="srow"><b>复用方案</b><span class="reuse">复用 S01 的灰蓝水岸、旧混凝土与远岸灯光资产，改为夜间退潮状态，并用消波块前景替换栈桥结构。</span></div>
+</article>
+  </div>
+</section>
+
+<section id="sec-decisions">
+  <div class="sec-h"><span class="no">04</span><h2>关键决策</h2><span class="note">拍板过的三件事，落进纸面</span></div>
+  <div class="dec3">
+  <div class="dcol">
+    <h3 class="sub">砍了哪条线</h3>
+    <ul class="dlist"><li><b>删去父亲十五年测潮与病重过程的展开描写</b><small>压缩为遗物与程野证言，避免当前调查主线被父亲晚年支线打断</small></li><li><b>压缩电台修复和潜水打捞的技术过程</b><small>只保留能产生新证据的关键动作，避免技术说明挤占两分钟单集</small></li><li><b>删去围观者、拆迁人员和旧案办案人员的独立人物线</b><small>制度反应只作为结尾结果，不额外维护功能重复的人物资产</small></li></ul>
+    <p class="dnote seal">这意味着：全剧终点不是完整重演事故，而是在拆迁截止时拼出足以重启调查的证据链。</p>
+  </div>
+  <div class="dcol">
+    <h3 class="sub">合了哪些人</h3>
+    <p class="dhead">5 个角色位（主角组 3 · 重要配角 2 · 功能性 0）</p>
+    <p class="dhead">主角组：许知遥、程野、高嵩</p>
+    <ul class="dlist"><li><b>把原文中的拆迁主持、现场保安和投资方随员合并为高嵩的现场行动</b><small>所有阻挠功能由反派本人完成，冲突更集中且减少脸资产</small></li></ul>
+    <p class="dnote seal">主角组只保留调查者许知遥、行动搭档程野与直接阻挠者高嵩；父亲和哥哥作为证词来源归重要配角。</p>
+  </div>
+  <div class="dcol">
+    <h3 class="sub">大爆点落在第几集</h3>
+    <ul class="dmaj"><li><i>ep3</i><span><b>父亲清白中段揭破</b> 录音还原父亲被锁货仓、咬住正钥匙阻止开船…</span><em>首个</em></li><li><i>ep5</i><span><b>事故与哥哥选择双重真相</b> 完整录音与打捞联单共同证明高嵩私运溶剂，…</span><em>终局</em></li></ul>
+  </div>
+</div>
+</section>
+
+<section id="sec-matrix">
+  <div class="sec-h"><span class="no">05</span><h2>每集调度矩阵</h2><span class="note">一列 = 这一集要谁、在哪拍</span></div>
+  <div class="matrix" style="--cw:26px">
+  <table>
+    <tr><th>角色 / 场景 / 道具</th><th>层级</th><th class="ep-h">1</th><th class="ep-h">2</th><th class="ep-h">3</th><th class="ep-h">4</th><th class="ep-h">5</th><th class="ep-h">6</th><th>合计</th></tr>
+    <tr><td class="name">许知遥</td><td class="tier">主角组</td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="n">6</td></tr>
+<tr><td class="name">程野</td><td class="tier">主角组</td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="n">5</td></tr>
+<tr><td class="name">高嵩</td><td class="tier">主角组</td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="n">4</td></tr>
+<tr><td class="name">许德海</td><td class="tier">重要配角</td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="n">4</td></tr>
+<tr><td class="name">许潮</td><td class="tier">重要配角</td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="n">5</td></tr>
+<tr class="div"><td colspan="9">场　景</td></tr>
+<tr><td class="name">南堤旧渡口候船厅与栈桥</td><td class="tier">主场景</td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="n">3</td></tr>
+<tr><td class="name">许知遥临时声音修复室</td><td class="tier">主场景</td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="n">4</td></tr>
+<tr><td class="name">旧渡口货仓</td><td class="tier">主场景</td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="n">3</td></tr>
+<tr><td class="name">沉船点外侧防波堤</td><td class="tier">主场景</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="n">1 ⚠</td></tr>
+<tr class="div"><td colspan="9">道　具</td></tr>
+<tr><td class="name">橙色应急电台</td><td class="tier">B01、B03、B05、B06</td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="n">6</td></tr>
+<tr><td class="name">黄铜船钥匙</td><td class="tier">B02、B03</td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">3</td></tr>
+<tr><td class="name">真正的载货联单</td><td class="tier">B05、B06</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on pp"></td><td class="mc on pp"></td><td class="n">2</td></tr>
+  </table>
+  <p class="mnote">⚠ 沉船点外侧防波堤 · 复用方案：复用 S01 的灰蓝水岸、旧混凝土与远岸灯光资产，改为夜间退潮状态，并用消波块前景替换栈桥结构。</p>
+</div>
+</section>
+
+<section id="sec-plan">
+  <div class="sec-h"><span class="no">06</span><h2>资产量折算</h2><span class="note">按档自动折算 · 不让模型写</span></div>
+  <div class="plan">
+  <table><thead><tr><th>层级</th><th>人数</th><th>角色</th><th>资产量</th></tr></thead>
+<tbody><tr><td>主角组</td><td>3</td><td>许知遥、程野、高嵩</td><td>全套角色设定图 + 逐镜一致性核对</td></tr>
+<tr><td>重要配角</td><td>2</td><td>许德海、许潮</td><td>半身参考图，关键戏核对</td></tr>
+<tr><td>功能性角色</td><td>0</td><td>—</td><td>提示词直出，松散一致即可</td></tr>
+<tr><td>场景环境</td><td>4+1</td><td>南堤旧渡口候船厅与栈桥、许知遥临时声音修复室、旧渡口货仓、沉船点外侧防波堤（+沉船点外侧防波堤复用）</td><td>主场景各一套环境参考 + 光照基调</td></tr>
+<tr><td>叙事道具</td><td>3</td><td>橙色应急电台、黄铜船钥匙、真正的载货联单</td><td>每件一套白底设定图 + 状态变体，跨集要长一样</td></tr>
+<tr><td>生成难点</td><td>4</td><td>手部特写 ×3（第 1、2、3 集） · 人群 ×1（第 6 集）</td><td>拍摄前逐条过预警清单</td></tr></tbody></table>
+  </div>
+</section>
+
+<section id="sec-characters">
+  <div class="sec-h"><span class="no">07</span><h2>人物表</h2></div>
+  <table><thead><tr><th>ID</th><th>角色</th><th>层级</th><th>定位</th><th>人物弧</th><th>← 改动记录</th></tr></thead>
+<tbody><tr><td>C01</td><td>许知遥</td><td>主角组</td><td>女主，声音修复师与旧案调查者</td><td>从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。</td><td>原著许知遥</td></tr>
+<tr><td>C02</td><td>程野</td><td>主角组</td><td>男主，潜水员与迟到的证人</td><td>从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。</td><td>原著程野</td></tr>
+<tr><td>C03</td><td>高嵩</td><td>主角组</td><td>主反派，文旅投资人与当年渡运公司经理</td><td>从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。</td><td>原著高嵩；合并：拆迁主持、现场保安和投资方随员的阻挠功能</td></tr>
+<tr><td>C04</td><td>许德海</td><td>重要配角</td><td>重要配角，已故渡工与被改写责任的父亲</td><td>从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。</td><td>原著许德海</td></tr>
+<tr><td>C05</td><td>许潮</td><td>重要配角</td><td>重要配角，录音留下者与失踪哥哥</td><td>从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。</td><td>原著许潮</td></tr></tbody></table>
+</section>
+
+<section id="sec-adaptation">
+  <div class="sec-h"><span class="no">08</span><h2>改编说明</h2><span class="note">为什么这么改 · 附原文依据</span></div>
+  <p class="core">一名声音修复师在旧渡口拆除前，从亡兄留下的损坏电台中拼出父亲蒙冤与沉船事故的真实证据链。</p>
+  <h3 class="sub">保留</h3><table><thead><tr><th>内容</th><th>理由</th><th>原文依据</th></tr></thead>
+<tbody><tr><td>电台录音从噪声中逐层显形的调查机制</td><td>声音证据既提供逐集悬念，也能转化为明确的视听动作</td><td><q>录音里，他喘着气说：开船的不是爸，是高嵩。</q></td></tr>
+<tr><td>黄铜钥匙证明父亲曾阻止开船</td><td>让父亲清白从口头解释变成可拍、可核验的物证</td><td><q>爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。</q></td></tr>
+<tr><td>许潮返回火场救人的人物结局</td><td>把失踪谜团落到兄妹情感与人物主动选择，而不是单纯事故信息</td><td><q>知遥要是长大了，告诉她，我不是跟爸赌气跑掉的。</q></td></tr></tbody></table>
+  <h3 class="sub">砍掉</h3><table><thead><tr><th>内容</th><th>理由</th></tr></thead>
+<tbody><tr><td>删去父亲十五年测潮与病重过程的展开描写</td><td>压缩为遗物与程野证言，避免当前调查主线被父亲晚年支线打断</td></tr>
+<tr><td>压缩电台修复和潜水打捞的技术过程</td><td>只保留能产生新证据的关键动作，避免技术说明挤占两分钟单集</td></tr>
+<tr><td>删去围观者、拆迁人员和旧案办案人员的独立人物线</td><td>制度反应只作为结尾结果，不额外维护功能重复的人物资产</td></tr></tbody></table>
+  <h3 class="sub">合并</h3><table><thead><tr><th>内容</th><th>理由</th></tr></thead>
+<tbody><tr><td>把原文中的拆迁主持、现场保安和投资方随员合并为高嵩的现场行动</td><td>所有阻挠功能由反派本人完成，冲突更集中且减少脸资产</td></tr></tbody></table>
+  <h3 class="sub">风险与对策</h3><table><thead><tr><th>内容</th><th>对策</th></tr></thead>
+<tbody><tr><td>录音修复容易拍成静态操作界面</td><td>用波形、耳机反应、物证切换和声音内容驱动动作，不长时间拍屏幕</td></tr>
+<tr><td>十五年前事故若大量闪回会增加服装、天气和群演一致性成本</td><td>旧事主要由录音、物证和极短局部闪回表达，不完整重演沉船</td></tr>
+<tr><td>潜水和爆炸属于高难生成内容</td><td>潜水只拍入水、绳索和出水带回金属筒；爆炸只存在于录音与物证痕迹</td></tr></tbody></table>
+</section>
+
+<section id="sec-gates">
+  <div class="sec-h"><span class="no">09</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>主角组 1–3 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>重要配角 ≤ 2 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>功能性角色 ≤ 2 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>主场景 ≤ 4</span></li>
+  <li class="ok"><span class="m">✓</span><span>叙事道具 ≤ 3 件</span></li>
+  <li class="ok"><span class="m">✓</span><span>一次性场景已标注规避方案</span></li>
+  <li class="ok"><span class="m">✓</span><span>爽点间隔 ≤ 2 集，无真空区</span></li>
+  <li class="ok"><span class="m">✓</span><span>第 1 集有钩子</span></li>
+  <li class="ok"><span class="m">✓</span><span>大爆点不在最后一集才首次出现</span></li>
+  <li class="ok"><span class="m">✓</span><span>每集梗概三栏齐全（含【钩子】【悬念】）</span></li>
+  <li class="ok"><span class="m">✓</span><span>三人以上同框已标注拆解方案</span></li>
+  <li class="ok"><span class="m">✓</span><span>生成难点已进预警清单</span></li>
+  <li class="ok"><span class="m">✓</span><span>场景/角色/道具引用完整，无失业角色、无空转场景、无零集道具</span></li>
+  <li class="ok"><span class="m">✓</span><span>梗概是叙述体，无引号对白</span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">大纲由模型依据原文生成，质量门由脚本确定性检查。</p>
+</div>
+
+<script type="application/json" id="outline-data">{"source":"潮痕","lang":"zh","params":{"episodes":6,"minutesPerEpisode":2,"genre":"现实情感悬疑","adaptMode":"抽核","preferences":["保留声音修复作为调查手段","保留橙色应急电台、黄铜船钥匙与载货联单组成的证据链","第 1 集先兑现哥哥录音这一核心钩子"],"thresholds":{"maxLeads":3,"maxSupport":2,"maxFunctional":2,"maxBeatGap":2,"maxProps":3,"maxPrimaryScenes":4}},"adaptation":{"core":"一名声音修复师在旧渡口拆除前，从亡兄留下的损坏电台中拼出父亲蒙冤与沉船事故的真实证据链。","keep":[{"what":"电台录音从噪声中逐层显形的调查机制","why":"声音证据既提供逐集悬念，也能转化为明确的视听动作","evidence":"录音里，他喘着气说：开船的不是爸，是高嵩。"},{"what":"黄铜钥匙证明父亲曾阻止开船","why":"让父亲清白从口头解释变成可拍、可核验的物证","evidence":"爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。"},{"what":"许潮返回火场救人的人物结局","why":"把失踪谜团落到兄妹情感与人物主动选择，而不是单纯事故信息","evidence":"知遥要是长大了，告诉她，我不是跟爸赌气跑掉的。"}],"cut":[{"what":"删去父亲十五年测潮与病重过程的展开描写","why":"压缩为遗物与程野证言，避免当前调查主线被父亲晚年支线打断"},{"what":"压缩电台修复和潜水打捞的技术过程","why":"只保留能产生新证据的关键动作，避免技术说明挤占两分钟单集"},{"what":"删去围观者、拆迁人员和旧案办案人员的独立人物线","why":"制度反应只作为结尾结果，不额外维护功能重复的人物资产"}],"merge":[{"what":"把原文中的拆迁主持、现场保安和投资方随员合并为高嵩的现场行动","why":"所有阻挠功能由反派本人完成，冲突更集中且减少脸资产"}],"risks":[{"what":"录音修复容易拍成静态操作界面","plan":"用波形、耳机反应、物证切换和声音内容驱动动作，不长时间拍屏幕"},{"what":"十五年前事故若大量闪回会增加服装、天气和群演一致性成本","plan":"旧事主要由录音、物证和极短局部闪回表达，不完整重演沉船"},{"what":"潜水和爆炸属于高难生成内容","plan":"潜水只拍入水、绳索和出水带回金属筒；爆炸只存在于录音与物证痕迹"}],"cutNote":"这意味着：全剧终点不是完整重演事故，而是在拆迁截止时拼出足以重启调查的证据链。","mergeNote":"主角组只保留调查者许知遥、行动搭档程野与直接阻挠者高嵩；父亲和哥哥作为证词来源归重要配角。"},"characters":[{"id":"C01","name":"许知遥","role":"女主，声音修复师与旧案调查者","tier":"lead","arc":"从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。","from":["原著许知遥"]},{"id":"C02","name":"程野","role":"男主，潜水员与迟到的证人","tier":"lead","arc":"从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。","from":["原著程野"]},{"id":"C03","name":"高嵩","role":"主反派，文旅投资人与当年渡运公司经理","tier":"lead","arc":"从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。","from":["原著高嵩","合并：拆迁主持、现场保安和投资方随员的阻挠功能"]},{"id":"C04","name":"许德海","role":"重要配角，已故渡工与被改写责任的父亲","tier":"support","arc":"从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。","from":["原著许德海"]},{"id":"C05","name":"许潮","role":"重要配角，录音留下者与失踪哥哥","tier":"support","arc":"从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。","from":["原著许潮"]}],"scenes":[{"id":"S01","name":"南堤旧渡口候船厅与栈桥","primary":true},{"id":"S02","name":"许知遥临时声音修复室","primary":true},{"id":"S03","name":"旧渡口货仓","primary":true},{"id":"S04","name":"沉船点外侧防波堤","primary":true,"reusePlan":"复用 S01 的灰蓝水岸、旧混凝土与远岸灯光资产，改为夜间退潮状态，并用消波块前景替换栈桥结构。"}],"props":[{"id":"P01","name":"橙色应急电台","function":"保存许潮现场录音，是逐集解锁真相与公开播放的核心证据。","beatIds":["B01","B03","B05","B06"]},{"id":"P02","name":"黄铜船钥匙","function":"打开消防柜并证明许德海曾取走正钥匙阻止开船。","beatIds":["B02","B03"]},{"id":"P03","name":"真正的载货联单","function":"把六桶溶剂、事故船与高嵩私章连接成可复核的实体证据链。","beatIds":["B05","B06"]}],"beats":[{"id":"B01","type":"亡兄录音反转","weight":"minor","episode":1,"setup":"父亲留下无法播放的烧损电台，旧案一直认定父亲违规开船。","payoff":"知遥从潮声下修出许潮的第一句话，点名开船者是高嵩。"},{"id":"B02","type":"时间线破绽","weight":"minor","episode":2,"setup":"官方记录把离岸时间写成一点二十分，并标注许德海当班。","payoff":"电台自动报时与货仓报警声证明一点四十七分许潮仍在岸上，至少一份记录造假。"},{"id":"B03","type":"父亲清白中段揭破","weight":"major","episode":3,"setup":"黄铜钥匙和父亲签名长期被理解为其掌船与认责。","payoff":"录音还原父亲被锁货仓、咬住正钥匙阻止开船，高嵩取备用钥匙发动船。"},{"id":"B04","type":"反派反制落空","weight":"minor","episode":4,"setup":"高嵩抢走并摔毁唯一看得见的录音介质。","payoff":"知遥说明自己从不在原介质上操作，完整录音已有三份备份。"},{"id":"B05","type":"事故与哥哥选择双重真相","weight":"major","episode":5,"setup":"许潮仍被高嵩描述成偷电台、赌气登船的肇事少年。","payoff":"完整录音与打捞联单共同证明高嵩私运溶剂，许潮留下证据后返回火场救人。"},{"id":"B06","type":"公开证据链","weight":"minor","episode":6,"setup":"高嵩准备借拆迁仪式永久覆盖旧渡口与旧案。","payoff":"知遥公开播放录音，程野展示联单，拆迁停止且旧案重启调查。"}],"episodes":[{"ep":1,"synopsis":"南堤旧渡口即将拆除，许知遥赶回候船厅整理父亲许德海的遗物，从铁皮箱里取出烧损的橙色应急电台和发黑的黄铜船钥匙。她把电台带到临时声音修复室，接入实验电源，逐层清理盐霜造成的爆音与潮声。父亲签下的事故责任书仍让她认定他曾违规开船，但修复出的第一段有效录音却来自失踪十五年的哥哥许潮，并明确指出当年开船的人是高嵩。","hook":"亡兄为何能在事故现场留下点名高嵩的录音，父亲当年的责任书又掩盖了什么？","suspense":"电台里尚未修复的噪声下仍藏着后续内容，黄铜船钥匙的用途也无人知晓。","sceneIds":["S01","S02"],"characterIds":["C01","C04","C05"],"propIds":["P01","P02"],"crowdPlan":"许知遥承担现在时画面，许德海仅通过遗物与旧照建立存在，许潮仅通过电台录音出现，三人不同时同框。","warnings":["手部特写"]},{"ep":2,"synopsis":"程野听过修复录音后承认，事故次日他曾在防波堤下捡到半块烧焦船牌，却被许德海要求扔回水里。知遥因此更加怀疑父亲主动掩埋真相，程野则从录音右声道辨认出每三十秒一次的旧货仓防潮报警声。两人带黄铜船钥匙进入货仓，钥匙虽打不开新门锁，却打开墙角的旧消防柜，并找到发霉的值班日志。官方日志记载事故船在一点二十分离岸且由许德海当班，电台自动报时却证明一点四十七分时许潮仍在货仓附近，直接击穿官方时间线。","hook":"同一场事故出现两套无法并存的时间记录，究竟是谁改写了值班日志？","suspense":"许德海明知船牌可能是证据却要求程野丢弃，他是在保护谁，还是受到了胁迫？","sceneIds":["S02","S03"],"characterIds":["C01","C02"],"propIds":["P01","P02"],"crowdPlan":"许知遥与程野双人推进调查，以双人中景和物证反打完成信息交接。","warnings":["手部特写"]},{"ep":3,"synopsis":"高嵩得知两人进入货仓后赶到现场，以责任书上的亲笔签名压制翻案，并试图高价收走许德海留下的物品。程野趁高嵩转身处理拆迁事务，从消防柜夹层取出油纸包裹的货物清单，发现六桶工业溶剂被红笔改成两桶，签收栏留有高嵩当年的私章。知遥继续修复电台，录音还原许德海被人按在货仓内、咬住黄铜正钥匙并抱住栏杆阻止开船的经过；随后高嵩命人取来备用钥匙，发动机在防潮报警声后启动。黄铜钥匙由父亲掌船的疑点转化为他阻止事故的物证，知遥确认父亲从未站在驾驶台上。","hook":"父亲已经被证明困在岸上的货仓里，那么高嵩为何必须让那艘装有超量溶剂的船连夜离岸？","suspense":"货物清单虽指向高嵩，却仍缺少能与事故船直接对应的原始载货凭证，许潮登船的原因也没有揭开。","sceneIds":["S02","S03"],"characterIds":["C01","C02","C03","C04","C05"],"propIds":["P01","P02"],"crowdPlan":"现在时只安排许知遥、程野与高嵩短暂三人同场，以高嵩正面、知遥近景和程野过肩拆拍；许德海与许潮仅在录音触发的局部闪回中分开出现，不与现在时角色同框。","warnings":["手部特写"]},{"ep":4,"synopsis":"当晚，高嵩在旧渡口拦住许知遥，以城里住房交换电台和货物清单，并承认当年船上存在违规溶剂，却把事故归咎于雷击和许潮私自登船。他声称许德海签下责任书，是为了避免儿子牵连家人。程野在门外尝试记录这段谈话，只留下断续词句。高嵩察觉门外动静，夺过橙色应急电台摔断存储板，自以为毁掉唯一录音。许知遥随即说明修复工作从不直接改动原介质，完整录音已经保存三份，高嵩的反制当场落空。失去从容的高嵩转而宣布次日上午九点启动拆迁，要让货仓和残存旧纸一并消失。","hook":"距离拆迁只剩一夜，许知遥和程野必须在货仓被推平前找到能独立印证录音的实体证据。","suspense":"程野录下的零碎词句能否还原高嵩的自认内容，以及许德海当年究竟受到了怎样的胁迫仍未查清。","sceneIds":["S01","S03"],"characterIds":["C01","C02","C03","C05"],"propIds":["P01"],"crowdPlan":"许知遥与高嵩的交锋放在候船厅内，程野始终位于门外以影子和录音设备建立存在；许潮只通过旧录音进入叙事，四人不做实体同框。","warnings":[]},{"ep":5,"synopsis":"退潮后，程野前往沉船点，从水下带回一只锈死的金属筒；许知遥则在临时修复室拼接橙色应急电台最后二十秒的备份录音。声音证据还原高嵩为赶在检查前转走超量溶剂而亲自开船，许潮提前把电台藏进救生圈并报告位置，随后因听见货舱中有孩子哭喊而返回火场。录音留下他并非赌气离家的最后说明。与此同时，金属筒中的真正载货联单记录了六桶溶剂，编号与货仓清单一致，筒盖上的潮汐刻痕也符合兄妹的寻物标记。录音与联单互相印证，证明高嵩私运溶剂，也恢复了许潮留下证据后救人的真实选择。许知遥进一步拼出父亲受胁迫签字的原因，高嵩曾以她的学籍、住处和许德海可能承担的刑责逼迫父亲接受伪造记录。","hook":"天色转亮，拆迁仪式即将开始，这条刚刚闭合的证据链能否赶在推土设备启动前公开。","suspense":"载货联单经历十五年浸水后是否仍能通过正式鉴定，以及现场公开后高嵩会怎样阻断传播尚未可知。","sceneIds":["S02","S04"],"characterIds":["C01","C02","C03","C04","C05"],"propIds":["P01","P03"],"crowdPlan":"程野的水下取证与许知遥的室内修复平行交叉；高嵩、许德海和许潮只通过录音内容及短促局部回忆出现，不安排五人同框，也不完整重演沉船。","warnings":[]},{"ep":6,"synopsis":"拆迁仪式在候船厅前开始，高嵩借新的文旅效果图把七一九事故定义为应被告别的旧伤。许知遥将修复后的电台录音接入现场音响，潮声、防潮报警、发动机和许潮的证言依次公开；高嵩试图拔断连接时，程野同步展示真正的载货联单，让连续六桶溶剂编号与录音中的私运事实形成可复核证据链。围观者转而核对联单，拆迁被迫停止，旧案重新启动调查。许德海签下的责任书并未因此立即失效，高嵩也尚未在当天得到最终裁决，但南堤第一次拥有了足以挑战旧结论的声音证据和实体物证。黄昏，许知遥把裂开的橙色应急电台重新归入救生圈夹层，保留外壳烧痕并建立事故现场录音档案，让父亲与哥哥被遮蔽十五年的选择进入永久核验。","hook":"旧案正式重启后，声音鉴定、联单来源与责任书将如何共同改写最终调查结论。","suspense":"证据链已经打开复查入口，但高嵩的法律责任、许德海责任书的效力和事故全貌仍需正式程序确认。","sceneIds":["S01"],"characterIds":["C01","C02","C03","C04","C05"],"propIds":["P01","P03"],"crowdPlan":"现场对峙拆成许知遥播音、程野展示联单和高嵩阻断连接三组近景，围观者只用背影与局部反应带过；许德海和许潮仅以档案证据存在，不与现场人物同框。","warnings":["人群"]}]}</script>
+<script>
+// beat rhythm: chart / table toggle
+document.querySelectorAll('.tab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('on', b === btn));
+    document.querySelectorAll('.tabpane').forEach((p) => p.classList.toggle('on', p.id === btn.dataset.pane));
+  });
+});
+
+// episode overview: first three by default, one click expands for good
+const epsMore = document.querySelector('.epsmore');
+if (epsMore) {
+  epsMore.addEventListener('click', () => {
+    document.querySelector('.epswrap').classList.remove('clip');
+    epsMore.remove();
+  });
+}
+
+// export: the report carries outline.json verbatim; the download is byte-identical
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('outline-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // don't revoke immediately — Safari may kill the blob before the download finishes reading
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

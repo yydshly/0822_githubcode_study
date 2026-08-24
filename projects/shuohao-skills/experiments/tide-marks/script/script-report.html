@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>潮痕 · 剧本（第 1–6 集）</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --band:#3d6b4f22;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* duration gauge */
+.timing{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.trow{display:grid;grid-template-columns:44px minmax(0,1fr) 220px;gap:12px;align-items:center;padding:5px 0}
+.tep{font:500 12px/1 var(--mono);color:var(--ink-2)}
+.track{position:relative;height:18px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.band{position:absolute;top:0;bottom:0;background:var(--band)}
+.fill{position:absolute;top:2px;bottom:2px;border-radius:1px}
+.fill.dlg{left:0;background:var(--seal)}
+.fill.act{background:var(--seal-2)}
+.tval{font:500 12px/1.5 var(--sans);color:var(--ink-2)}
+.tval.okc{color:var(--ok)}
+.tval .over{color:var(--seal);font-weight:600}
+.legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin:8px 0 2px}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+
+/* episode scripts: two per row; scene area clips at 300px with a fade, expandable */
+.eps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.eps.solo{grid-template-columns:minmax(0,1fr)}
+@media(max-width:1100px){.eps{grid-template-columns:minmax(0,1fr)}}
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 22px}
+.scenes{position:relative}
+.scenes.clip{max-height:300px;overflow:hidden}
+.scenes.clip::after{content:'';position:absolute;left:0;right:0;bottom:0;height:70px;
+  background:linear-gradient(180deg,transparent,var(--panel));pointer-events:none}
+.scmore{display:block;width:100%;margin-top:8px;font:500 11.5px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);border-radius:2px;
+  padding:7px 0;cursor:pointer;transition:.15s}
+.scmore:hover{border-color:var(--seal);color:var(--seal)}
+.scmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.ep-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px}
+.ep-n{font:400 22px/1 var(--serif);letter-spacing:.04em;color:var(--seal)}
+.ep-est{font-size:12.5px;color:var(--ink-2)}
+.bt{font-style:normal;font-size:11px;padding:2px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal)}
+.hk{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:10px;font-size:13px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.hk.cliff{border-bottom:0;border-top:1px solid var(--rule)}
+.hk b{font:500 11px/1.9 var(--sans);letter-spacing:.14em;color:var(--seal);white-space:nowrap}
+.scene-blk{margin-top:14px}
+.scene-h{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+.scene-h b{font:500 13px var(--serif);letter-spacing:.06em}
+.chip{font:400 10.5px/1.6 var(--mono);border:1px solid var(--rule-2);border-radius:2px;
+  padding:0 6px;background:var(--paper);color:var(--ink-2)}
+.chip.lite{border-color:var(--seal-2);color:var(--seal-2)}
+.chip.prop{border-color:var(--seal);color:var(--seal)}
+.act-line{margin:8px 0;font:400 13.5px/1.9 var(--sans);color:var(--ink-2)}
+.act-line.hooked,.dlg-line.hooked{border-left:2px solid var(--seal);padding-left:10px;background:var(--seal-soft)}
+.hookat{font-style:normal;font-size:11px;padding:1px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal);margin-left:8px;white-space:nowrap}
+.dlg-line{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:5px 0 5px 10px;border-left:2px solid var(--rule-2)}
+.dlg-line:hover{border-left-color:var(--seal)}
+.who{font:500 13px/1.6 var(--serif)}
+.who i{display:block;font:400 11px var(--sans);color:var(--ink-3);font-style:normal}
+.said{font:400 14.5px/1.8 var(--serif)}
+.dlg-line .copy{opacity:0;transition:.15s}
+.dlg-line:hover .copy{opacity:1}
+
+/* tables */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* line book: two per row; lists capped at 6 rows, scroll vertically */
+.casts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.casts{grid-template-columns:minmax(0,1fr)}}
+.cast-blk{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 18px}
+.cast-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px}
+.cast-h b{font:400 17px/1.2 var(--serif);letter-spacing:.04em}
+.cast-meta{font-size:12px;color:var(--ink-2)}
+.cast-h .copy{margin-left:auto}
+.cast-lines{margin:8px 0 0;padding:0 6px 0 0;list-style:none;max-height:186px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent}
+.cast-lines::-webkit-scrollbar{width:6px}
+.cast-lines::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+.cast-lines li{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:4.5px 0;border-top:1px solid var(--rule);font-size:13px}
+.cast-lines li:first-child{border-top:0}
+.cast-lines i{font:400 11px/1.8 var(--mono);color:var(--ink-3);font-style:normal}
+.cast-lines span{font-family:var(--serif)}
+.cast-lines em{font-style:normal;font-size:11.5px;color:var(--ink-3)}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.mini{padding:2px 7px;font-size:10.5px}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy,.scmore{display:none!important}
+  .scenes.clip{max-height:none}
+  .scenes.clip::after{display:none}
+  .cast-lines{max-height:none;overflow:visible}
+  .eps,.casts{grid-template-columns:minmax(0,1fr)}
+  .page{max-width:none;padding:0}
+  section.top-sec,.ep,.cast-blk{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style><!-- production-hub-return-css:start --><style>.production-hub-return{position:fixed;right:16px;bottom:16px;z-index:99999;padding:9px 12px;border:1px solid #3b6670;border-radius:9px;background:#0b151bea;color:#67e0e6!important;font:700 13px/1.2 system-ui,"Microsoft YaHei",sans-serif;text-decoration:none!important;box-shadow:0 8px 30px #0007;backdrop-filter:blur(10px)}.production-hub-return:focus-visible{outline:3px solid #67e0e6;outline-offset:3px}@media(max-width:560px){.production-hub-return{display:grid;place-items:center;right:10px;bottom:10px;width:44px;height:44px;padding:0;overflow:hidden;font-size:0}.production-hub-return::before{content:"⌂";font-size:22px}}</style><!-- production-hub-return-css:end --></head><body><!-- production-hub-return:start --><a class="production-hub-return" href="../index.html" aria-label="返回潮痕小说视频生产总控">⌂ 返回生产总控</a><!-- production-hub-return:end -->
+<div class="page">
+
+<header class="hd">
+  <h1>潮痕</h1>
+  <span class="sub">剧本 · 第 1–6 集</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 10 / 10</span>
+    <button class="expo" data-name="潮痕-script.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">集数</div><div class="v">6</div><div class="d">12 场戏</div></div>
+  <div class="kpi"><div class="l">预估总时长</div><div class="v">11 分 38 秒</div><div class="d">目标 12 分 0 秒</div></div>
+  <div class="kpi"><div class="l">台词</div><div class="v">138 <small>句</small></div><div class="d">约 322.5 秒对白</div></div>
+  <div class="kpi"><div class="l">台词占比</div><div class="v">46<small>%</small></div><div class="d">其余是画面与动作</div></div>
+  <div class="kpi"><div class="l">平均每场</div><div class="v">58.1 <small>秒</small></div><div class="d">换景是统计不是门——AI 换景不要钱</div></div>
+</div>
+
+
+<section class="top-sec" id="sec-timing">
+  <div class="sec-h"><span class="no">01</span><h2>时长仪表</h2><span class="note">绿带 = 目标 ±15%；台词按语速折算，动作按节拍估时</span></div>
+  <div class="timing">
+    <div class="legend">
+      <i><span class="sw" style="background:var(--seal)"></span>台词</i>
+      <i><span class="sw" style="background:var(--seal-2)"></span>动作</i>
+      <i><span class="sw" style="background:var(--band)"></span>目标区间</i>
+    </div>
+<div class="trow">
+  <span class="tep">E01</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:14.8%"></span>
+    <span class="fill act" style="left:14.8%;width:53.7%"></span>
+  </div>
+  <span class="tval okc">102s / 120s</span>
+</div>
+<div class="trow">
+  <span class="tep">E02</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:34.5%"></span>
+    <span class="fill act" style="left:34.5%;width:45.3%"></span>
+  </div>
+  <span class="tval okc">118.9s / 120s</span>
+</div>
+<div class="trow">
+  <span class="tep">E03</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:39.9%"></span>
+    <span class="fill act" style="left:39.9%;width:48.6%"></span>
+  </div>
+  <span class="tval okc">131.9s / 120s</span>
+</div>
+<div class="trow">
+  <span class="tep">E04</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:46.7%"></span>
+    <span class="fill act" style="left:46.7%;width:31.9%"></span>
+  </div>
+  <span class="tval okc">117.1s / 120s</span>
+</div>
+<div class="trow">
+  <span class="tep">E05</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:38%"></span>
+    <span class="fill act" style="left:38%;width:40.3%"></span>
+  </div>
+  <span class="tval okc">116.7s / 120s</span>
+</div>
+<div class="trow">
+  <span class="tep">E06</span>
+  <div class="track">
+    <span class="band" style="left:68.4%;width:24.2%"></span>
+    <span class="fill dlg" style="width:42.5%"></span>
+    <span class="fill act" style="left:42.5%;width:31.9%"></span>
+  </div>
+  <span class="tval okc">110.9s / 120s</span>
+</div>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-script">
+  <div class="sec-h"><span class="no">02</span><h2>分集剧本</h2><span class="note">一排两集 · 场次信息超高自动截断，点开看全部</span></div>
+  <div class="eps">
+<article class="ep" id="ep-1">
+  <header class="ep-h">
+    <span class="ep-n">E01</span>
+    <span class="ep-est">预估 102 秒 / 目标 120 秒</span>
+    <i class="bt">亡兄录音反转</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>亡兄为何能在事故现场留下点名高嵩的录音，父亲当年的责任书又掩盖了什么？ <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S01 南堤旧渡口候船厅与栈桥</span>
+    <span class="chip lite">光照 · 阴天上午</span>
+    <span class="chip">许知遥</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">黄铜船钥匙</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">许知遥抱着铁皮箱快步冲进候船厅，箱里反复漏出少年喘息。</p>
+<p class="act-line">她回身推紧候船厅的旧门。</p>
+<p class="act-line">拆迁通知在售票窗上被风吹起。</p>
+<div class="dlg-line"><span class="who">许知遥<i>低声，压着不满</i></span><span class="said">连他的东西也等不到明天。</span><button class="copy mini" data-copy="连他的东西也等不到明天。">复制</button></div>
+<p class="act-line">许知遥把铁皮箱放到长椅上。</p>
+<p class="act-line">她掀开箱盖。</p>
+<p class="act-line">烧损的橙色电台躺在黄铜船钥匙旁。</p>
+<div class="dlg-line"><span class="who">许知遥<i>冷淡中带失望</i></span><span class="said">爸，你就留下这些？</span><button class="copy mini" data-copy="爸，你就留下这些？">复制</button></div>
+<p class="act-line">她拿起电台检查烧融的外壳。</p>
+<p class="act-line">电台扬声器又挤出一声短促喘息。</p>
+<div class="dlg-line"><span class="who">许知遥<i>立刻警觉</i></span><span class="said">这不是电流声。</span><button class="copy mini" data-copy="这不是电流声。">复制</button></div>
+<p class="act-line">许知遥把黄铜钥匙装进口袋。</p>
+<p class="act-line">她抱起电台走出候船厅。</p>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">光照 · 凌晨修复</span>
+    <span class="chip">许知遥</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">黄铜船钥匙</span>
+  </header>
+  <p class="act-line">许知遥把电台放在灰绿修复台中央。</p>
+<p class="act-line">她用软刷清掉电池仓里的盐霜。</p>
+<p class="act-line">她接上实验电源。</p>
+<p class="act-line">两层屏幕同时跳出密集波形。</p>
+<div class="dlg-line"><span class="who">许知遥<i>专业，语速稳定</i></span><span class="said">先保原始轨，再做副本。</span><button class="copy mini" data-copy="先保原始轨，再做副本。">复制</button></div>
+<p class="act-line">她戴上耳机。</p>
+<p class="act-line">连续爆音盖住整条音轨。</p>
+<p class="act-line">许知遥拖动第一段降噪参数。</p>
+<div class="dlg-line"><span class="who">许知遥<i>专注，自言自语</i></span><span class="said">潮声太满，人声在下面。</span><button class="copy mini" data-copy="潮声太满，人声在下面。">复制</button></div>
+<p class="act-line">她把右声道单独放大。</p>
+<p class="act-line">一个模糊男声从噪声里露出半句。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，急促喘息</i></span><span class="said">开船的……</span><button class="copy mini" data-copy="开船的……">复制</button></div>
+<p class="act-line">许知遥猛地按下暂停。</p>
+<div class="dlg-line"><span class="who">许知遥<i>失神，尾音发紧</i></span><span class="said">这个声音……</span><button class="copy mini" data-copy="这个声音……">复制</button></div>
+<p class="act-line">她从抽屉里取出一张兄妹旧照。</p>
+<p class="act-line">许知遥把旧照立在屏幕边。</p>
+<div class="dlg-line"><span class="who">许知遥<i>极轻，第一次失去克制</i></span><span class="said">哥，是你吗？</span><button class="copy mini" data-copy="哥，是你吗？">复制</button></div>
+<p class="act-line">她重新播放那段残缺录音。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，气息短促</i></span><span class="said">开船的不是爸。</span><button class="copy mini" data-copy="开船的不是爸。">复制</button></div>
+<p class="act-line">许知遥攥紧耳机线。</p>
+<div class="dlg-line"><span class="who">许知遥<i>压住颤抖</i></span><span class="said">再说一遍。</span><button class="copy mini" data-copy="再说一遍。">复制</button></div>
+<p class="act-line">她提高人声频段。</p>
+<p class="act-line">波形里的最后两个音节变得清楚。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，清楚而急迫</i></span><span class="said">是高嵩。</span><button class="copy mini" data-copy="是高嵩。">复制</button></div>
+<p class="act-line">许知遥摘下耳机站起来。</p>
+<div class="dlg-line"><span class="who">许知遥<i>冷静被愤怒顶开</i></span><span class="said">责任书上写的是爸。</span><button class="copy mini" data-copy="责任书上写的是爸。">复制</button></div>
+<p class="act-line">她把责任书压到电台旁。</p>
+<div class="dlg-line"><span class="who">许知遥<i>盯着父亲签名</i></span><span class="said">你们谁在撒谎？</span><button class="copy mini" data-copy="你们谁在撒谎？">复制</button></div>
+<p class="act-line">许知遥保存刚刚修出的三段音频副本。</p>
+<p class="act-line">她继续向后拖动未修复的音轨。</p>
+<p class="act-line">电台突然爆出规律蜂鸣。</p>
+<p class="act-line">黄铜钥匙随震动滑到未修复的波形屏下。</p>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>电台里尚未修复的噪声下仍藏着后续内容，黄铜船钥匙的用途也无人知晓。</span></div>
+</article>
+<article class="ep" id="ep-2">
+  <header class="ep-h">
+    <span class="ep-n">E02</span>
+    <span class="ep-est">预估 118.9 秒 / 目标 120 秒</span>
+    <i class="bt">时间线破绽</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>同一场事故出现两套无法并存的时间记录，究竟是谁改写了值班日志？ <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">光照 · 阴天工作日</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">程野快步推门进来，把事故记录压到滚动的报时波形旁。</p>
+<div class="dlg-line"><span class="who">程野<i>低沉，直接进入正题</i></span><span class="said">官方写一点二十分离岸。</span><button class="copy mini" data-copy="官方写一点二十分离岸。">复制</button></div>
+<p class="act-line">许知遥把电台录音拉回蜂鸣处。</p>
+<div class="dlg-line"><span class="who">许知遥<i>逐字核对</i></span><span class="said">这段报时在一点四十七。</span><button class="copy mini" data-copy="这段报时在一点四十七。">复制</button></div>
+<p class="act-line">她按下播放。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，远而破碎</i></span><span class="said">七月十九，一点四十七。</span><button class="copy mini" data-copy="七月十九，一点四十七。">复制</button></div>
+<p class="act-line">程野靠近扬声器。</p>
+<p class="act-line">规律蜂鸣再次穿过潮声。</p>
+<div class="dlg-line"><span class="who">程野<i>确认，语气发沉</i></span><span class="said">这是货仓防潮报警器。</span><button class="copy mini" data-copy="这是货仓防潮报警器。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>迅速追问</i></span><span class="said">不是船上的？</span><button class="copy mini" data-copy="不是船上的？">复制</button></div>
+<p class="act-line">程野摇头。</p>
+<div class="dlg-line"><span class="who">程野<i>笃定</i></span><span class="said">每三十秒一次，我从小听到大。</span><button class="copy mini" data-copy="每三十秒一次，我从小听到大。">复制</button></div>
+<p class="act-line">许知遥把两条时间写在同一张纸上。</p>
+<div class="dlg-line"><span class="who">许知遥<i>压住激动</i></span><span class="said">哥哥那时还在岸上。</span><button class="copy mini" data-copy="哥哥那时还在岸上。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>简短，回避她的目光</i></span><span class="said">至少有一份记录是假的。</span><button class="copy mini" data-copy="至少有一份记录是假的。">复制</button></div>
+<p class="act-line">许知遥注意到他的回避。</p>
+<div class="dlg-line"><span class="who">许知遥<i>冷下来</i></span><span class="said">你还知道什么？</span><button class="copy mini" data-copy="你还知道什么？">复制</button></div>
+<p class="act-line">程野握紧椅背。</p>
+<div class="dlg-line"><span class="who">程野<i>停顿后承认</i></span><span class="said">事故第二天，我捡到过半块船牌。</span><button class="copy mini" data-copy="事故第二天，我捡到过半块船牌。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>立刻追问</i></span><span class="said">船牌呢？</span><button class="copy mini" data-copy="船牌呢？">复制</button></div>
+<p class="act-line">程野松开椅背。</p>
+<div class="dlg-line"><span class="who">程野<i>负疚，句尾收短</i></span><span class="said">被我扔回水里了。</span><button class="copy mini" data-copy="被我扔回水里了。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>声音发硬</i></span><span class="said">谁让你扔的？</span><button class="copy mini" data-copy="谁让你扔的？">复制</button></div>
+<p class="act-line">程野看向桌上的父亲旧照。</p>
+<div class="dlg-line"><span class="who">程野<i>很轻</i></span><span class="said">许叔。</span><button class="copy mini" data-copy="许叔。">复制</button></div>
+<p class="act-line">许知遥抓起黄铜钥匙。</p>
+<div class="dlg-line"><span class="who">许知遥<i>果断</i></span><span class="said">去货仓。现在。</span><button class="copy mini" data-copy="去货仓。现在。">复制</button></div>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">光照 · 阴天下午</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">黄铜船钥匙</span>
+  </header>
+  <p class="act-line">许知遥快步走到货仓钢门前。</p>
+<p class="act-line">她把黄铜钥匙插进新挂锁。</p>
+<p class="act-line">钥匙无法转动。</p>
+<div class="dlg-line"><span class="who">许知遥<i>迅速判断</i></span><span class="said">锁是后来换的。</span><button class="copy mini" data-copy="锁是后来换的。">复制</button></div>
+<p class="act-line">程野推开虚掩的侧门。</p>
+<p class="act-line">两人进入昏暗货仓。</p>
+<p class="act-line">后墙报警器亮起琥珀灯。</p>
+<p class="act-line">蜂鸣与电台录音重叠。</p>
+<div class="dlg-line"><span class="who">程野<i>确认</i></span><span class="said">就是这个声音。</span><button class="copy mini" data-copy="就是这个声音。">复制</button></div>
+<p class="act-line">许知遥走到嵌墙消防柜前。</p>
+<p class="act-line">她把钥匙插进消防柜锁孔。</p>
+<p class="act-line">消防柜门弹开。</p>
+<div class="dlg-line"><span class="who">许知遥<i>意外</i></span><span class="said">它开的是这里。</span><button class="copy mini" data-copy="它开的是这里。">复制</button></div>
+<p class="act-line">程野取出发霉的值班日志。</p>
+<p class="act-line">许知遥翻到七月十九日。</p>
+<div class="dlg-line"><span class="who">许知遥<i>读出记录</i></span><span class="said">一点二十分，许德海当班。</span><button class="copy mini" data-copy="一点二十分，许德海当班。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>盯住两条时间</i></span><span class="said">可一点四十七，报警器还在录音里。</span><button class="copy mini" data-copy="可一点四十七，报警器还在录音里。">复制</button></div>
+<p class="act-line">许知遥把日志放到电台旁。</p>
+<div class="dlg-line"><span class="who">许知遥<i>愤怒渐起</i></span><span class="said">哥哥在这儿，爸却被写在船上。</span><button class="copy mini" data-copy="哥哥在这儿，爸却被写在船上。">复制</button></div>
+<p class="act-line">程野蹲在消防柜边。</p>
+<div class="dlg-line"><span class="who">程野<i>终于直面记忆</i></span><span class="said">许叔那天不是怕我找到船。</span><button class="copy mini" data-copy="许叔那天不是怕我找到船。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>逼问</i></span><span class="said">那他怕什么？</span><button class="copy mini" data-copy="那他怕什么？">复制</button></div>
+<p class="act-line">程野抬头看向货仓深处。</p>
+<div class="dlg-line"><span class="who">程野<i>低声，留下疑点</i></span><span class="said">他当时盯着这里，只说谁都不要再找。</span><button class="copy mini" data-copy="他当时盯着这里，只说谁都不要再找。">复制</button></div>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>许德海明知船牌可能是证据却要求程野丢弃，他是在保护谁，还是受到了胁迫？</span></div>
+</article>
+<article class="ep" id="ep-3">
+  <header class="ep-h">
+    <span class="ep-n">E03</span>
+    <span class="ep-est">预估 131.9 秒 / 目标 120 秒</span>
+    <i class="bt">父亲清白中段揭破</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>父亲已经被证明困在岸上的货仓里，那么高嵩为何必须让那艘装有超量溶剂的船连夜离岸？ <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">光照 · 阴天下午</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">黄铜船钥匙</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">高嵩快步闯进货仓，一把按住写有六桶工业溶剂的清单。</p>
+<div class="dlg-line"><span class="who">高嵩<i>温和，手没有松开</i></span><span class="said">旧纸受潮，碰坏了没人负责。</span><button class="copy mini" data-copy="旧纸受潮，碰坏了没人负责。">复制</button></div>
+<p class="act-line">许知遥把清单从他手下抽走。</p>
+<div class="dlg-line"><span class="who">许知遥<i>冷静逼问</i></span><span class="said">两桶改成六桶，谁负责？</span><button class="copy mini" data-copy="两桶改成六桶，谁负责？">复制</button></div>
+<p class="act-line">程野指向清单右下角。</p>
+<div class="dlg-line"><span class="who">程野<i>简短，压住怒意</i></span><span class="said">这里是你的私章。</span><button class="copy mini" data-copy="这里是你的私章。">复制</button></div>
+<p class="act-line">高嵩整理被碰皱的袖口。</p>
+<div class="dlg-line"><span class="who">高嵩<i>保持笑意</i></span><span class="said">十五年前的纸，能说明什么？</span><button class="copy mini" data-copy="十五年前的纸，能说明什么？">复制</button></div>
+<p class="act-line">许知遥把电台放到日志旁。</p>
+<div class="dlg-line"><span class="who">许知遥<i>观察他的反应</i></span><span class="said">能说明你急着清掉这里。</span><button class="copy mini" data-copy="能说明你急着清掉这里。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>替她定义利害</i></span><span class="said">我是在替你父亲留体面。</span><button class="copy mini" data-copy="我是在替你父亲留体面。">复制</button></div>
+<p class="act-line">他把责任书推到许知遥面前。</p>
+<div class="dlg-line"><span class="who">高嵩<i>音量不高，句句压人</i></span><span class="said">签名是他的，责任也是他的。</span><button class="copy mini" data-copy="签名是他的，责任也是他的。">复制</button></div>
+<p class="act-line">许知遥拿起责任书。</p>
+<div class="dlg-line"><span class="who">许知遥<i>逐字核对</i></span><span class="said">一点四十七，他不在船上。</span><button class="copy mini" data-copy="一点四十七，他不在船上。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>轻描淡写</i></span><span class="said">录音修出来什么，全凭你说。</span><button class="copy mini" data-copy="录音修出来什么，全凭你说。">复制</button></div>
+<p class="act-line">程野挡在电台前。</p>
+<div class="dlg-line"><span class="who">程野<i>低沉</i></span><span class="said">报警器不会替她撒谎。</span><button class="copy mini" data-copy="报警器不会替她撒谎。">复制</button></div>
+<p class="act-line">货仓外传来拆迁设备启动声。</p>
+<p class="act-line">高嵩转身走向门口。</p>
+<div class="dlg-line"><span class="who">高嵩<i>平静施压</i></span><span class="said">我给你们十分钟。</span><button class="copy mini" data-copy="我给你们十分钟。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>像谈交易</i></span><span class="said">遗物交给我，旧事到此为止。</span><button class="copy mini" data-copy="遗物交给我，旧事到此为止。">复制</button></div>
+<p class="act-line">他走出货仓接起电话。</p>
+<p class="act-line">程野重新蹲到消防柜前。</p>
+<p class="act-line">他从夹层抽出油纸包裹的清单。</p>
+<div class="dlg-line"><span class="who">程野<i>压低声音</i></span><span class="said">他怕的不是电台，是这个。</span><button class="copy mini" data-copy="他怕的不是电台，是这个。">复制</button></div>
+<p class="act-line">许知遥把高嵩私章与六行数量拍进手机。</p>
+<div class="dlg-line"><span class="who">许知遥<i>恢复专业冷静</i></span><span class="said">先留副本。</span><button class="copy mini" data-copy="先留副本。">复制</button></div>
+<p class="act-line">许知遥把黄铜钥匙放到清单旁。</p>
+<p class="act-line">程野查看钥匙环上的两道压痕。</p>
+<div class="dlg-line"><span class="who">程野<i>低声确认</i></span><span class="said">这不像普通磨损。</span><button class="copy mini" data-copy="这不像普通磨损。">复制</button></div>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">光照 · 阴天工作日</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span><span class="chip">许德海</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span>
+  </header>
+  <p class="act-line">许知遥抱着电台快步回到修复台前。</p>
+<p class="act-line">她插入已经保存的原始副本。</p>
+<div class="dlg-line"><span class="who">许知遥<i>盯住波形</i></span><span class="said">蜂鸣之后还有人声。</span><button class="copy mini" data-copy="蜂鸣之后还有人声。">复制</button></div>
+<p class="act-line">程野关上房门。</p>
+<p class="act-line">许知遥提高蜂鸣后的低频人声。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，压低声音</i></span><span class="said">爸被他们按在货仓里。</span><button class="copy mini" data-copy="爸被他们按在货仓里。">复制</button></div>
+<p class="act-line">许知遥的手停在播放键上。</p>
+<div class="dlg-line"><span class="who">许知遥<i>确认事实，气息发紧</i></span><span class="said">他在货仓。</span><button class="copy mini" data-copy="他在货仓。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>立刻接上证据链</i></span><span class="said">所以他不可能开船。</span><button class="copy mini" data-copy="所以他不可能开船。">复制</button></div>
+<p class="act-line">录音里传来铁门撞击声。</p>
+<div class="dlg-line"><span class="who">许德海<i>录音远声，粗哑用力</i></span><span class="said">不能开船！</span><button class="copy mini" data-copy="不能开船！">复制</button></div>
+<div class="dlg-line"><span class="who">许潮<i>录音，急促喘息</i></span><span class="said">爸咬着正钥匙，抱着栏杆。</span><button class="copy mini" data-copy="爸咬着正钥匙，抱着栏杆。">复制</button></div>
+<p class="act-line">许知遥从修复台前站起来。</p>
+<div class="dlg-line"><span class="who">许知遥<i>克制而确定</i></span><span class="said">他签字，不等于他开船。</span><button class="copy mini" data-copy="他签字，不等于他开船。">复制</button></div>
+<p class="act-line">录音远处传来高嵩的喊声。</p>
+<div class="dlg-line"><span class="who">高嵩<i>录音远声，命令</i></span><span class="said">拿备用钥匙！</span><button class="copy mini" data-copy="拿备用钥匙！">复制</button></div>
+<p class="act-line">发动机声盖过报警蜂鸣。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音，恐惧却清楚</i></span><span class="said">船开了。爸还在这里。</span><button class="copy mini" data-copy="船开了。爸还在这里。">复制</button></div>
+<p class="act-line">许知遥摘下耳机。</p>
+<div class="dlg-line"><span class="who">许知遥<i>结论落定</i></span><span class="said">开船的是高嵩。</span><button class="copy mini" data-copy="开船的是高嵩。">复制</button></div>
+<p class="act-line">程野把油纸清单摊在责任书旁。</p>
+<div class="dlg-line"><span class="who">程野<i>指向清单</i></span><span class="said">六桶溶剂，私章也在。</span><button class="copy mini" data-copy="六桶溶剂，私章也在。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>不被胜利冲昏</i></span><span class="said">还差事故船上的原始联单。</span><button class="copy mini" data-copy="还差事故船上的原始联单。">复制</button></div>
+<p class="act-line">她把音轨继续拖向许潮登船前的空白段。</p>
+<p class="act-line">耳机里突然传来许潮奔向栈桥的脚步声。</p>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>货物清单虽指向高嵩，却仍缺少能与事故船直接对应的原始载货凭证，许潮登船的原因也没有揭开。</span></div>
+</article>
+<article class="ep" id="ep-4">
+  <header class="ep-h">
+    <span class="ep-n">E04</span>
+    <span class="ep-est">预估 117.1 秒 / 目标 120 秒</span>
+    <i class="bt">反派反制落空</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>高嵩追到货仓门口拦住许知遥，用拆迁倒计时逼她交出电台和清单。 <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">光照 · 单灯夜戏</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span>
+    <span class="chip prop">橙色应急电台</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">高嵩快步穿过货仓门口，张开手臂拦住抱着电台离开的许知遥。</p>
+<div class="dlg-line"><span class="who">高嵩<i>语气从容，像在谈一笔普通生意</i></span><span class="said">跑这么急，是怕我先找到那张清单？</span><button class="copy mini" data-copy="跑这么急，是怕我先找到那张清单？">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>站定，声音冷静</i></span><span class="said">我怕的是你把货仓推平。</span><button class="copy mini" data-copy="我怕的是你把货仓推平。">复制</button></div>
+<p class="act-line">许知遥把电台收进外套内侧，转身走向门口。</p>
+<p class="act-line">高嵩从文件夹里抽出一页房产资料，递到她面前。</p>
+<div class="dlg-line"><span class="who">高嵩<i>音量不高，句句留出逼人答应的停顿</i></span><span class="said">城里一套房，换电台和清单。今晚就签。</span><button class="copy mini" data-copy="城里一套房，换电台和清单。今晚就签。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>盯着他，不接资料</i></span><span class="said">你买得这么急，说明六桶不是笔误。</span><button class="copy mini" data-copy="你买得这么急，说明六桶不是笔误。">复制</button></div>
+<p class="act-line">高嵩收回资料，反手把货仓门关上。</p>
+<div class="dlg-line"><span class="who">高嵩<i>笑意不变</i></span><span class="said">多出来的溶剂，我没否认。</span><button class="copy mini" data-copy="多出来的溶剂，我没否认。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>追问得很快</i></span><span class="said">那晚是谁开的船？</span><button class="copy mini" data-copy="那晚是谁开的船？">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>轻描淡写</i></span><span class="said">雷打下来，谁开都一样。</span><button class="copy mini" data-copy="雷打下来，谁开都一样。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>压住怒意</i></span><span class="said">我爸被锁在这儿。</span><button class="copy mini" data-copy="我爸被锁在这儿。">复制</button></div>
+<p class="act-line">高嵩转身拍了拍锈蚀的钢门。</p>
+<div class="dlg-line"><span class="who">高嵩<i>替死者下结论</i></span><span class="said">他后来签了字，因为他知道许潮上了船。</span><button class="copy mini" data-copy="他后来签了字，因为他知道许潮上了船。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>不让他绕开</i></span><span class="said">我哥为什么会在货仓？</span><button class="copy mini" data-copy="我哥为什么会在货仓？">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>语气里带着轻蔑</i></span><span class="said">他偷了电台，想学大人报险。</span><button class="copy mini" data-copy="他偷了电台，想学大人报险。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>刻意放慢</i></span><span class="said">最后，他把自己送上了船。</span><button class="copy mini" data-copy="最后，他把自己送上了船。">复制</button></div>
+<p class="act-line">门外的程野抬起手机，把收音口贴近门缝。</p>
+<div class="dlg-line"><span class="who">许知遥<i>声线更低</i></span><span class="said">你连一个不能开口的孩子都要推过去。</span><button class="copy mini" data-copy="你连一个不能开口的孩子都要推过去。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>礼貌中露出威胁</i></span><span class="said">我是在提醒你，查下去，你连最后的家也保不住。</span><button class="copy mini" data-copy="我是在提醒你，查下去，你连最后的家也保不住。">复制</button></div>
+<p class="act-line">高嵩低头看见门缝下晃动的人影。</p>
+<p class="act-line">高嵩一把拉开货仓门。</p>
+<p class="act-line">程野后退两步，手机仍举在胸前。</p>
+<div class="dlg-line"><span class="who">高嵩<i>笑意已经消失</i></span><span class="said">录到了什么？</span><button class="copy mini" data-copy="录到了什么？">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>短促，转身前回答</i></span><span class="said">够你解释很久。</span><button class="copy mini" data-copy="够你解释很久。">复制</button></div>
+<p class="act-line">程野转身跑向候船厅，高嵩立即追了出去。</p>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S01 南堤旧渡口候船厅与栈桥</span>
+    <span class="chip lite">光照 · 夜间逼问</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span>
+    <span class="chip prop">橙色应急电台</span>
+  </header>
+  <p class="act-line">程野跑下石阶，许知遥抱着电台紧跟在后。</p>
+<p class="act-line">高嵩转身夺过电台，用力摔在石阶上。</p>
+<p class="act-line">橙色外壳裂开，存储板从缝里滑了出来。</p>
+<div class="dlg-line"><span class="who">高嵩<i>呼吸略乱，重新挤出笑</i></span><span class="said">现在，你还剩什么？</span><button class="copy mini" data-copy="现在，你还剩什么？">复制</button></div>
+<p class="act-line">许知遥蹲下捡起裂开的电台。</p>
+<div class="dlg-line"><span class="who">许知遥<i>平静得没有停顿</i></span><span class="said">三份备份。</span><button class="copy mini" data-copy="三份备份。">复制</button></div>
+<p class="act-line">高嵩停在石阶上，没有再往前走。</p>
+<div class="dlg-line"><span class="who">许知遥<i>把断裂存储板装回外壳</i></span><span class="said">档案修复，从来不在原介质上做。</span><button class="copy mini" data-copy="档案修复，从来不在原介质上做。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>站到许知遥身边</i></span><span class="said">你毁掉的，只是我们愿意让你看见的那份。</span><button class="copy mini" data-copy="你毁掉的，只是我们愿意让你看见的那份。">复制</button></div>
+<p class="act-line">高嵩转身指向黑暗中的货仓。</p>
+<div class="dlg-line"><span class="who">高嵩<i>不再掩饰威胁</i></span><span class="said">明早九点，拆迁启动。</span><button class="copy mini" data-copy="明早九点，拆迁启动。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>目光落在程野的手机上</i></span><span class="said">里面的湿纸，一张都留不住。</span><button class="copy mini" data-copy="里面的湿纸，一张都留不住。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>故意把水下两个字说重</i></span><span class="said">你越急，水下那份东西越值得找。</span><button class="copy mini" data-copy="你越急，水下那份东西越值得找。">复制</button></div>
+<p class="act-line">高嵩沿着栈桥快步离开。</p>
+<div class="dlg-line"><span class="who">许知遥<i>立刻转向程野</i></span><span class="said">刚才录到了多少？</span><button class="copy mini" data-copy="刚才录到了多少？">复制</button></div>
+<p class="act-line">程野点开手机里的残缺录音。</p>
+<p class="act-line">爆音过后，手机里挤出三个断续词组。</p>
+<div class="dlg-line"><span class="who">高嵩<i>来自手机残录，失真而断裂</i></span><span class="said">她的学籍……住处……让他签。</span><button class="copy mini" data-copy="她的学籍……住处……让他签。">复制</button></div>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>程野的残录在最后一拍放出学籍、住处与签字三个词，父亲当年受胁迫的轮廓第一次具象出现。</span></div>
+</article>
+<article class="ep" id="ep-5">
+  <header class="ep-h">
+    <span class="ep-n">E05</span>
+    <span class="ep-est">预估 116.7 秒 / 目标 120 秒</span>
+    <i class="bt">事故与哥哥选择双重真相</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>退潮窗口与拆迁倒计时重叠，程野冲向沉船点下水寻找能独立印证录音的联单。 <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S04 沉船点外侧防波堤</span>
+    <span class="chip lite">光照 · 夜间退潮</span>
+    <span class="chip">程野</span>
+    <span class="chip prop">真正的载货联单</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">程野沿防波堤快步跑下消波块，冲向退潮后露出的水线。</p>
+<p class="act-line">他把安全绳扣在坡面的锈环上。</p>
+<div class="dlg-line"><span class="who">程野<i>对着耳机，已经开始调整呼吸</i></span><span class="said">知遥，给我十五分钟。</span><button class="copy mini" data-copy="知遥，给我十五分钟。">复制</button></div>
+<div class="dlg-line"><span class="who">画外音<i>许知遥从电话里传来，克制而急促</i></span><span class="said">退潮只剩十二分钟，别逞强。</span><button class="copy mini" data-copy="退潮只剩十二分钟，别逞强。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>短暂停顿后说完</i></span><span class="said">十五年前，我已经退过一次。</span><button class="copy mini" data-copy="十五年前，我已经退过一次。">复制</button></div>
+<p class="act-line">程野戴好面镜，转身滑入黑色江水。</p>
+<p class="act-line">安全绳沿着湿滑混凝土不断向水里移动。</p>
+<div class="dlg-line"><span class="who">画外音<i>许知遥从耳机里呼叫</i></span><span class="said">程野，回话。</span><button class="copy mini" data-copy="程野，回话。">复制</button></div>
+<p class="act-line">程野突然浮出水面，双臂抱住一只锈死的金属筒。</p>
+<div class="dlg-line"><span class="who">程野<i>喘息很重</i></span><span class="said">找到了。</span><button class="copy mini" data-copy="找到了。">复制</button></div>
+<p class="act-line">他拖着金属筒爬上混凝土坡面。</p>
+<p class="act-line">程野拧开筒盖。</p>
+<p class="act-line">一卷湿透的载货联单从筒里滑出。</p>
+<div class="dlg-line"><span class="who">画外音<i>许知遥迅速下令</i></span><span class="said">别展开，马上带回来。</span><button class="copy mini" data-copy="别展开，马上带回来。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>声音第一次发抖</i></span><span class="said">筒盖上有许潮的潮记。</span><button class="copy mini" data-copy="筒盖上有许潮的潮记。">复制</button></div>
+<p class="act-line">程野抱起金属筒，沿消波块跑回岸上。</p>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">光照 · 退潮前夜</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">真正的载货联单</span>
+  </header>
+  <p class="act-line">许知遥按下修复软件的播放键。</p>
+<p class="act-line">扬声器先传出发动机声，随后响起沉闷爆音。</p>
+<div class="dlg-line"><span class="who">许潮<i>来自旧录音，压低声音快速报告</i></span><span class="said">高嵩开的船，他要赶在检查前运走六桶。</span><button class="copy mini" data-copy="高嵩开的船，他要赶在检查前运走六桶。">复制</button></div>
+<p class="act-line">程野把载货联单放到显示器旁。</p>
+<p class="act-line">许知遥戴上薄手套，慢慢展开潮湿的纸张。</p>
+<div class="dlg-line"><span class="who">许知遥<i>逐行核对</i></span><span class="said">六行编号，和货仓清单一模一样。</span><button class="copy mini" data-copy="六行编号，和货仓清单一模一样。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>指向印章，句尾收紧</i></span><span class="said">右下角，是他的私章。</span><button class="copy mini" data-copy="右下角，是他的私章。">复制</button></div>
+<p class="act-line">许知遥把录音倒回十秒。</p>
+<div class="dlg-line"><span class="who">许潮<i>喘息急促</i></span><span class="said">电台藏在救生圈里，位置我报过了。</span><button class="copy mini" data-copy="电台藏在救生圈里，位置我报过了。">复制</button></div>
+<p class="act-line">录音深处传来孩子连续的哭声。</p>
+<div class="dlg-line"><span class="who">许潮<i>一边跑一边说</i></span><span class="said">舱里还有孩子。</span><button class="copy mini" data-copy="舱里还有孩子。">复制</button></div>
+<div class="dlg-line"><span class="who">许潮<i>没有犹豫</i></span><span class="said">我回去带他出来。</span><button class="copy mini" data-copy="我回去带他出来。">复制</button></div>
+<p class="act-line">急促脚步声远去，爆音随即盖过录音。</p>
+<div class="dlg-line"><span class="who">许知遥<i>第一次失去平稳</i></span><span class="said">哥。</span><button class="copy mini" data-copy="哥。">复制</button></div>
+<p class="act-line">许知遥摘下耳机，扶着修复台站起来。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音恢复后再次出现</i></span><span class="said">知遥长大以后，告诉她。</span><button class="copy mini" data-copy="知遥长大以后，告诉她。">复制</button></div>
+<div class="dlg-line"><span class="who">许潮<i>声音被潮声逐渐淹没</i></span><span class="said">我不是跟爸赌气跑掉的。</span><button class="copy mini" data-copy="我不是跟爸赌气跑掉的。">复制</button></div>
+<p class="act-line">许知遥把裂开的电台放到联单旁边。</p>
+<div class="dlg-line"><span class="who">程野<i>看着电台，缓慢说出</i></span><span class="said">他留下证据，又回去救人。</span><button class="copy mini" data-copy="他留下证据，又回去救人。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>重新稳住声音</i></span><span class="said">高嵩把他的选择，改成了罪。</span><button class="copy mini" data-copy="高嵩把他的选择，改成了罪。">复制</button></div>
+<p class="act-line">程野打开手机里的残缺录音。</p>
+<div class="dlg-line"><span class="who">高嵩<i>手机残录，断续但可辨</i></span><span class="said">她的学籍和住处，都在我手里。</span><button class="copy mini" data-copy="她的学籍和住处，都在我手里。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>手机残录，尾句被杂音切断</i></span><span class="said">要想保住女儿，就让他签。</span><button class="copy mini" data-copy="要想保住女儿，就让他签。">复制</button></div>
+<p class="act-line">许知遥把父亲的责任书压在联单旁。</p>
+<div class="dlg-line"><span class="who">许知遥<i>眼睛停在签名上</i></span><span class="said">爸不是认罪。他是在替我挡。</span><button class="copy mini" data-copy="爸不是认罪。他是在替我挡。">复制</button></div>
+<div class="dlg-line"><span class="who">程野<i>逐件确认</i></span><span class="said">录音、联单、责任书，现在能互相对上。</span><button class="copy mini" data-copy="录音、联单、责任书，现在能互相对上。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>抬头看向窗外</i></span><span class="said">还差公开。</span><button class="copy mini" data-copy="还差公开。">复制</button></div>
+<p class="act-line">许知遥把修复录音复制进三个独立存储盘。</p>
+<p class="act-line">程野把展开的载货联单装进透明保护袋。</p>
+<div class="dlg-line"><span class="who">程野<i>拿起保护袋</i></span><span class="said">去渡口。</span><button class="copy mini" data-copy="去渡口。">复制</button></div>
+<p class="act-line">两人分别拿起电台和联单，快步走向门口。</p>
+<p class="act-line">铁丝玻璃窗外泛白，手机闹钟跳到八点五十九分。</p>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>证据链刚刚闭合，铁丝玻璃窗外已经发亮，手机闹钟在最后一拍跳到八点五十九分。</span></div>
+</article>
+<article class="ep" id="ep-6">
+  <header class="ep-h">
+    <span class="ep-n">E06</span>
+    <span class="ep-est">预估 110.9 秒 / 目标 120 秒</span>
+    <i class="bt">公开证据链</i>
+  </header>
+  <div class="hk"><b>开场钩子</b><span>公开录音刚刚响起，高嵩便穿过现场冲向音响线，试图在联单展示前切断传播。 <i class="hookat">第 1 场第 1 拍兑现</i></span></div>
+  <div class="scenes clip">
+  <section class="scene-blk">
+  <header class="scene-h">
+    <b>第 1 场</b>
+    <span class="chip">S01 南堤旧渡口候船厅与栈桥</span>
+    <span class="chip lite">光照 · 仪式清晨</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span><span class="chip">高嵩</span><span class="chip">许潮</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">真正的载货联单</span>
+  </header>
+  <p class="act-line hooked" title="开场钩子">高嵩快步穿过候船厅前场，伸手冲向正在播放录音的音响线。</p>
+<p class="act-line">程野侧身挡在音响前，把载货联单举到胸口。</p>
+<p class="act-line">许知遥按下播放键，潮声从现场音响里涌出。</p>
+<div class="dlg-line"><span class="who">许知遥<i>面对高嵩，语气稳定</i></span><span class="said">你拔一根线，我还有三份备份。</span><button class="copy mini" data-copy="你拔一根线，我还有三份备份。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>努力维持体面</i></span><span class="said">这是拆迁仪式，不是你的修复室。</span><button class="copy mini" data-copy="这是拆迁仪式，不是你的修复室。">复制</button></div>
+<p class="act-line">程野展开保护袋里的载货联单，转向围观者。</p>
+<div class="dlg-line"><span class="who">程野<i>让每个字落清</i></span><span class="said">六桶编号，都在这儿。</span><button class="copy mini" data-copy="六桶编号，都在这儿。">复制</button></div>
+<p class="act-line">前排围观者放下效果图，转身看向联单。</p>
+<div class="dlg-line"><span class="who">高嵩<i>提高音量压住现场</i></span><span class="said">一张泡烂的纸，也配叫证据？</span><button class="copy mini" data-copy="一张泡烂的纸，也配叫证据？">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>不与他争吵</i></span><span class="said">所以请所有人一起核对。</span><button class="copy mini" data-copy="所以请所有人一起核对。">复制</button></div>
+<p class="act-line">防潮报警蜂鸣从音响里连续响起。</p>
+<div class="dlg-line"><span class="who">许潮<i>旧录音里的少年声音，紧张但清楚</i></span><span class="said">七月十九日，一点四十七分。</span><button class="copy mini" data-copy="七月十九日，一点四十七分。">复制</button></div>
+<div class="dlg-line"><span class="who">许潮<i>急促喘息中报出位置</i></span><span class="said">我还在货仓外。</span><button class="copy mini" data-copy="我还在货仓外。">复制</button></div>
+<p class="act-line">高嵩后退一步，回头看向停在场边的拆迁设备。</p>
+<div class="dlg-line"><span class="who">高嵩<i>控制第一次崩开</i></span><span class="said">关掉！</span><button class="copy mini" data-copy="关掉！">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>把音量推高</i></span><span class="said">你怕的不是噪声，是时间。</span><button class="copy mini" data-copy="你怕的不是噪声，是时间。">复制</button></div>
+<p class="act-line">发动机启动声盖过现场的低语。</p>
+<div class="dlg-line"><span class="who">许潮<i>录音里快速报告</i></span><span class="said">高嵩拿了备用钥匙，亲自开船。</span><button class="copy mini" data-copy="高嵩拿了备用钥匙，亲自开船。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>指向音响</i></span><span class="said">那是个孩子胡说！</span><button class="copy mini" data-copy="那是个孩子胡说！">复制</button></div>
+<p class="act-line">程野把联单递到现场摄像设备前。</p>
+<div class="dlg-line"><span class="who">程野<i>手指沿六行编号向下移动</i></span><span class="said">六桶，不是两桶。</span><button class="copy mini" data-copy="六桶，不是两桶。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>逐项对账</i></span><span class="said">编号连续，私章也在。</span><button class="copy mini" data-copy="编号连续，私章也在。">复制</button></div>
+<p class="act-line">围观者纷纷举起手机对准联单。</p>
+<div class="dlg-line"><span class="who">高嵩<i>退回最后一道旧结论</i></span><span class="said">责任书还在，许德海洗不干净。</span><button class="copy mini" data-copy="责任书还在，许德海洗不干净。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>没有回避</i></span><span class="said">责任书也会进鉴定。</span><button class="copy mini" data-copy="责任书也会进鉴定。">复制</button></div>
+<p class="act-line">高嵩伸手去抓联单，程野把保护袋收回身前。</p>
+<div class="dlg-line"><span class="who">程野<i>直视高嵩</i></span><span class="said">这一次，谁也扔不回水里。</span><button class="copy mini" data-copy="这一次，谁也扔不回水里。">复制</button></div>
+<p class="act-line">高嵩的手机连续震动，他低头接起电话。</p>
+<div class="dlg-line"><span class="who">画外音<i>电话里的项目主管，急促而正式</i></span><span class="said">现场拆迁暂停，所有材料原地封存。</span><button class="copy mini" data-copy="现场拆迁暂停，所有材料原地封存。">复制</button></div>
+<p class="act-line">程野把昨晚的手机残录放到联单旁继续播放。</p>
+<div class="dlg-line"><span class="who">程野<i>让残录声穿过现场</i></span><span class="said">还有你的原话，一份不少。</span><button class="copy mini" data-copy="还有你的原话，一份不少。">复制</button></div>
+<div class="dlg-line"><span class="who">高嵩<i>急着替自己定性</i></span><span class="said">断断续续的东西，证明不了什么。</span><button class="copy mini" data-copy="断断续续的东西，证明不了什么。">复制</button></div>
+<p class="act-line">拆迁设备依次熄火，候船厅前安静下来。</p>
+<div class="dlg-line"><span class="who">高嵩<i>握着手机，声音发紧</i></span><span class="said">暂停不等于翻案。</span><button class="copy mini" data-copy="暂停不等于翻案。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>把电台放到联单旁</i></span><span class="said">对。接下来每一项，都公开核验。</span><button class="copy mini" data-copy="对。接下来每一项，都公开核验。">复制</button></div>
+<div class="dlg-line"><span class="who">画外音<i>电话扩音里的正式通知</i></span><span class="said">七一九事故材料已受理，启动复查。</span><button class="copy mini" data-copy="七一九事故材料已受理，启动复查。">复制</button></div>
+<p class="act-line">程野把联单交给赶到现场的取证人员。</p>
+</section>
+<section class="scene-blk">
+  <header class="scene-h">
+    <b>第 2 场</b>
+    <span class="chip">S01 南堤旧渡口候船厅与栈桥</span>
+    <span class="chip lite">光照 · 退潮黄昏</span>
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+  </header>
+  <p class="act-line">黄昏时，许知遥把裂开的电台放回救生圈夹层。</p>
+<div class="dlg-line"><span class="who">程野<i>站在两级石阶上</i></span><span class="said">至少今天，他们停了。</span><button class="copy mini" data-copy="至少今天，他们停了。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>整理电台的归档支架</i></span><span class="said">不是为了赢。</span><button class="copy mini" data-copy="不是为了赢。">复制</button></div>
+<div class="dlg-line"><span class="who">许知遥<i>贴好新的档案标签</i></span><span class="said">是让每一件证据，都能被核验。</span><button class="copy mini" data-copy="是让每一件证据，都能被核验。">复制</button></div>
+<p class="act-line">许知遥保留电台外壳的烧痕，没有重新补漆。</p>
+<p class="act-line">潮水慢慢退下，最低两级石阶露出深浅两道水线。</p>
+<p class="act-line">许知遥的手机震动，屏幕弹出七一九旧案复查受理编号。</p>
+</section>
+  </div>
+  <button class="scmore">▾ 展开全部场次</button>
+  <div class="hk cliff"><b>结尾悬念</b><span>黄昏的双潮痕重新露出，手机在最后一拍弹出七一九旧案复查受理编号，让结局落在可继续核验的程序入口。</span></div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-scenes">
+  <div class="sec-h"><span class="no">03</span><h2>场次总表</h2><span class="note">自动汇总 · 模型不写</span></div>
+  <table><thead><tr><th>集</th><th>场</th><th>场景</th><th>光照</th><th>人物</th><th>台词句数</th><th>估秒</th></tr></thead>
+<tbody><tr><td>1</td><td>1</td><td>S01 南堤旧渡口候船厅与栈桥</td><td>阴天上午</td><td>许知遥</td><td>3</td><td>31.2</td></tr>
+<tr><td>1</td><td>2</td><td>S02 许知遥临时声音修复室</td><td>凌晨修复</td><td>许知遥、许潮</td><td>10</td><td>70.8</td></tr>
+<tr><td>2</td><td>1</td><td>S02 许知遥临时声音修复室</td><td>阴天工作日</td><td>许知遥、程野、许潮</td><td>15</td><td>59.6</td></tr>
+<tr><td>2</td><td>2</td><td>S03 旧渡口货仓</td><td>阴天下午</td><td>许知遥、程野、许潮</td><td>9</td><td>59.3</td></tr>
+<tr><td>3</td><td>1</td><td>S03 旧渡口货仓</td><td>阴天下午</td><td>许知遥、程野、高嵩</td><td>15</td><td>75.8</td></tr>
+<tr><td>3</td><td>2</td><td>S02 许知遥临时声音修复室</td><td>阴天工作日</td><td>许知遥、程野、高嵩、许德海、许潮</td><td>12</td><td>56.1</td></tr>
+<tr><td>4</td><td>1</td><td>S03 旧渡口货仓</td><td>单灯夜戏</td><td>许知遥、程野、高嵩</td><td>16</td><td>70.6</td></tr>
+<tr><td>4</td><td>2</td><td>S01 南堤旧渡口候船厅与栈桥</td><td>夜间逼问</td><td>许知遥、程野、高嵩</td><td>9</td><td>46.5</td></tr>
+<tr><td>5</td><td>1</td><td>S04 沉船点外侧防波堤</td><td>夜间退潮</td><td>程野</td><td>7</td><td>37.2</td></tr>
+<tr><td>5</td><td>2</td><td>S02 许知遥临时声音修复室</td><td>退潮前夜</td><td>许知遥、程野、高嵩、许潮</td><td>17</td><td>79.5</td></tr>
+<tr><td>6</td><td>1</td><td>S01 南堤旧渡口候船厅与栈桥</td><td>仪式清晨</td><td>许知遥、程野、高嵩、许潮</td><td>22</td><td>94.2</td></tr>
+<tr><td>6</td><td>2</td><td>S01 南堤旧渡口候船厅与栈桥</td><td>退潮黄昏</td><td>许知遥、程野</td><td>3</td><td>16.7</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-cast">
+  <div class="sec-h"><span class="no">04</span><h2>台词本</h2><span class="note">按角色聚合 · 列表最多显示 6 行可滚动 · 直接对接 TTS 批量生成</span></div>
+  <div class="casts">
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>许知遥</b>
+    <span class="cast-meta">53 句 · 499 字 · 约 110.9 秒</span>
+    <button class="copy" data-copy="30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving.">音色提示词</button>
+    <button class="copy" data-copy="连他的东西也等不到明天。
+爸，你就留下这些？
+这不是电流声。
+先保原始轨，再做副本。
+潮声太满，人声在下面。
+这个声音……
+哥，是你吗？
+再说一遍。
+责任书上写的是爸。
+你们谁在撒谎？
+这段报时在一点四十七。
+不是船上的？
+哥哥那时还在岸上。
+你还知道什么？
+船牌呢？
+谁让你扔的？
+去货仓。现在。
+锁是后来换的。
+它开的是这里。
+一点二十分，许德海当班。
+哥哥在这儿，爸却被写在船上。
+那他怕什么？
+两桶改成六桶，谁负责？
+能说明你急着清掉这里。
+一点四十七，他不在船上。
+先留副本。
+蜂鸣之后还有人声。
+他在货仓。
+他签字，不等于他开船。
+开船的是高嵩。
+还差事故船上的原始联单。
+我怕的是你把货仓推平。
+你买得这么急，说明六桶不是笔误。
+那晚是谁开的船？
+我爸被锁在这儿。
+我哥为什么会在货仓？
+你连一个不能开口的孩子都要推过去。
+三份备份。
+档案修复，从来不在原介质上做。
+刚才录到了多少？
+六行编号，和货仓清单一模一样。
+哥。
+高嵩把他的选择，改成了罪。
+爸不是认罪。他是在替我挡。
+还差公开。
+你拔一根线，我还有三份备份。
+所以请所有人一起核对。
+你怕的不是噪声，是时间。
+编号连续，私章也在。
+责任书也会进鉴定。
+对。接下来每一项，都公开核验。
+不是为了赢。
+是让每一件证据，都能被核验。">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E01 第 1 场</i><span>连他的东西也等不到明天。</span><em>低声，压着不满</em></li><li><i>E01 第 1 场</i><span>爸，你就留下这些？</span><em>冷淡中带失望</em></li><li><i>E01 第 1 场</i><span>这不是电流声。</span><em>立刻警觉</em></li><li><i>E01 第 2 场</i><span>先保原始轨，再做副本。</span><em>专业，语速稳定</em></li><li><i>E01 第 2 场</i><span>潮声太满，人声在下面。</span><em>专注，自言自语</em></li><li><i>E01 第 2 场</i><span>这个声音……</span><em>失神，尾音发紧</em></li><li><i>E01 第 2 场</i><span>哥，是你吗？</span><em>极轻，第一次失去克制</em></li><li><i>E01 第 2 场</i><span>再说一遍。</span><em>压住颤抖</em></li><li><i>E01 第 2 场</i><span>责任书上写的是爸。</span><em>冷静被愤怒顶开</em></li><li><i>E01 第 2 场</i><span>你们谁在撒谎？</span><em>盯着父亲签名</em></li><li><i>E02 第 1 场</i><span>这段报时在一点四十七。</span><em>逐字核对</em></li><li><i>E02 第 1 场</i><span>不是船上的？</span><em>迅速追问</em></li><li><i>E02 第 1 场</i><span>哥哥那时还在岸上。</span><em>压住激动</em></li><li><i>E02 第 1 场</i><span>你还知道什么？</span><em>冷下来</em></li><li><i>E02 第 1 场</i><span>船牌呢？</span><em>立刻追问</em></li><li><i>E02 第 1 场</i><span>谁让你扔的？</span><em>声音发硬</em></li><li><i>E02 第 1 场</i><span>去货仓。现在。</span><em>果断</em></li><li><i>E02 第 2 场</i><span>锁是后来换的。</span><em>迅速判断</em></li><li><i>E02 第 2 场</i><span>它开的是这里。</span><em>意外</em></li><li><i>E02 第 2 场</i><span>一点二十分，许德海当班。</span><em>读出记录</em></li><li><i>E02 第 2 场</i><span>哥哥在这儿，爸却被写在船上。</span><em>愤怒渐起</em></li><li><i>E02 第 2 场</i><span>那他怕什么？</span><em>逼问</em></li><li><i>E03 第 1 场</i><span>两桶改成六桶，谁负责？</span><em>冷静逼问</em></li><li><i>E03 第 1 场</i><span>能说明你急着清掉这里。</span><em>观察他的反应</em></li><li><i>E03 第 1 场</i><span>一点四十七，他不在船上。</span><em>逐字核对</em></li><li><i>E03 第 1 场</i><span>先留副本。</span><em>恢复专业冷静</em></li><li><i>E03 第 2 场</i><span>蜂鸣之后还有人声。</span><em>盯住波形</em></li><li><i>E03 第 2 场</i><span>他在货仓。</span><em>确认事实，气息发紧</em></li><li><i>E03 第 2 场</i><span>他签字，不等于他开船。</span><em>克制而确定</em></li><li><i>E03 第 2 场</i><span>开船的是高嵩。</span><em>结论落定</em></li><li><i>E03 第 2 场</i><span>还差事故船上的原始联单。</span><em>不被胜利冲昏</em></li><li><i>E04 第 1 场</i><span>我怕的是你把货仓推平。</span><em>站定，声音冷静</em></li><li><i>E04 第 1 场</i><span>你买得这么急，说明六桶不是笔误。</span><em>盯着他，不接资料</em></li><li><i>E04 第 1 场</i><span>那晚是谁开的船？</span><em>追问得很快</em></li><li><i>E04 第 1 场</i><span>我爸被锁在这儿。</span><em>压住怒意</em></li><li><i>E04 第 1 场</i><span>我哥为什么会在货仓？</span><em>不让他绕开</em></li><li><i>E04 第 1 场</i><span>你连一个不能开口的孩子都要推过去。</span><em>声线更低</em></li><li><i>E04 第 2 场</i><span>三份备份。</span><em>平静得没有停顿</em></li><li><i>E04 第 2 场</i><span>档案修复，从来不在原介质上做。</span><em>把断裂存储板装回外壳</em></li><li><i>E04 第 2 场</i><span>刚才录到了多少？</span><em>立刻转向程野</em></li><li><i>E05 第 2 场</i><span>六行编号，和货仓清单一模一样。</span><em>逐行核对</em></li><li><i>E05 第 2 场</i><span>哥。</span><em>第一次失去平稳</em></li><li><i>E05 第 2 场</i><span>高嵩把他的选择，改成了罪。</span><em>重新稳住声音</em></li><li><i>E05 第 2 场</i><span>爸不是认罪。他是在替我挡。</span><em>眼睛停在签名上</em></li><li><i>E05 第 2 场</i><span>还差公开。</span><em>抬头看向窗外</em></li><li><i>E06 第 1 场</i><span>你拔一根线，我还有三份备份。</span><em>面对高嵩，语气稳定</em></li><li><i>E06 第 1 场</i><span>所以请所有人一起核对。</span><em>不与他争吵</em></li><li><i>E06 第 1 场</i><span>你怕的不是噪声，是时间。</span><em>把音量推高</em></li><li><i>E06 第 1 场</i><span>编号连续，私章也在。</span><em>逐项对账</em></li><li><i>E06 第 1 场</i><span>责任书也会进鉴定。</span><em>没有回避</em></li><li><i>E06 第 1 场</i><span>对。接下来每一项，都公开核验。</span><em>把电台放到联单旁</em></li><li><i>E06 第 2 场</i><span>不是为了赢。</span><em>整理电台的归档支架</em></li><li><i>E06 第 2 场</i><span>是让每一件证据，都能被核验。</span><em>贴好新的档案标签</em></li></ol>
+</section>
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>程野</b>
+    <span class="cast-meta">33 句 · 355 字 · 约 78.9 秒</span>
+    <button class="copy" data-copy="32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable.">音色提示词</button>
+    <button class="copy" data-copy="官方写一点二十分离岸。
+这是货仓防潮报警器。
+每三十秒一次，我从小听到大。
+至少有一份记录是假的。
+事故第二天，我捡到过半块船牌。
+被我扔回水里了。
+许叔。
+就是这个声音。
+可一点四十七，报警器还在录音里。
+许叔那天不是怕我找到船。
+他当时盯着这里，只说谁都不要再找。
+这里是你的私章。
+报警器不会替她撒谎。
+他怕的不是电台，是这个。
+这不像普通磨损。
+所以他不可能开船。
+六桶溶剂，私章也在。
+够你解释很久。
+你毁掉的，只是我们愿意让你看见的那份。
+你越急，水下那份东西越值得找。
+知遥，给我十五分钟。
+十五年前，我已经退过一次。
+找到了。
+筒盖上有许潮的潮记。
+右下角，是他的私章。
+他留下证据，又回去救人。
+录音、联单、责任书，现在能互相对上。
+去渡口。
+六桶编号，都在这儿。
+六桶，不是两桶。
+这一次，谁也扔不回水里。
+还有你的原话，一份不少。
+至少今天，他们停了。">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E02 第 1 场</i><span>官方写一点二十分离岸。</span><em>低沉，直接进入正题</em></li><li><i>E02 第 1 场</i><span>这是货仓防潮报警器。</span><em>确认，语气发沉</em></li><li><i>E02 第 1 场</i><span>每三十秒一次，我从小听到大。</span><em>笃定</em></li><li><i>E02 第 1 场</i><span>至少有一份记录是假的。</span><em>简短，回避她的目光</em></li><li><i>E02 第 1 场</i><span>事故第二天，我捡到过半块船牌。</span><em>停顿后承认</em></li><li><i>E02 第 1 场</i><span>被我扔回水里了。</span><em>负疚，句尾收短</em></li><li><i>E02 第 1 场</i><span>许叔。</span><em>很轻</em></li><li><i>E02 第 2 场</i><span>就是这个声音。</span><em>确认</em></li><li><i>E02 第 2 场</i><span>可一点四十七，报警器还在录音里。</span><em>盯住两条时间</em></li><li><i>E02 第 2 场</i><span>许叔那天不是怕我找到船。</span><em>终于直面记忆</em></li><li><i>E02 第 2 场</i><span>他当时盯着这里，只说谁都不要再找。</span><em>低声，留下疑点</em></li><li><i>E03 第 1 场</i><span>这里是你的私章。</span><em>简短，压住怒意</em></li><li><i>E03 第 1 场</i><span>报警器不会替她撒谎。</span><em>低沉</em></li><li><i>E03 第 1 场</i><span>他怕的不是电台，是这个。</span><em>压低声音</em></li><li><i>E03 第 1 场</i><span>这不像普通磨损。</span><em>低声确认</em></li><li><i>E03 第 2 场</i><span>所以他不可能开船。</span><em>立刻接上证据链</em></li><li><i>E03 第 2 场</i><span>六桶溶剂，私章也在。</span><em>指向清单</em></li><li><i>E04 第 1 场</i><span>够你解释很久。</span><em>短促，转身前回答</em></li><li><i>E04 第 2 场</i><span>你毁掉的，只是我们愿意让你看见的那份。</span><em>站到许知遥身边</em></li><li><i>E04 第 2 场</i><span>你越急，水下那份东西越值得找。</span><em>故意把水下两个字说重</em></li><li><i>E05 第 1 场</i><span>知遥，给我十五分钟。</span><em>对着耳机，已经开始调整呼吸</em></li><li><i>E05 第 1 场</i><span>十五年前，我已经退过一次。</span><em>短暂停顿后说完</em></li><li><i>E05 第 1 场</i><span>找到了。</span><em>喘息很重</em></li><li><i>E05 第 1 场</i><span>筒盖上有许潮的潮记。</span><em>声音第一次发抖</em></li><li><i>E05 第 2 场</i><span>右下角，是他的私章。</span><em>指向印章，句尾收紧</em></li><li><i>E05 第 2 场</i><span>他留下证据，又回去救人。</span><em>看着电台，缓慢说出</em></li><li><i>E05 第 2 场</i><span>录音、联单、责任书，现在能互相对上。</span><em>逐件确认</em></li><li><i>E05 第 2 场</i><span>去渡口。</span><em>拿起保护袋</em></li><li><i>E06 第 1 场</i><span>六桶编号，都在这儿。</span><em>让每个字落清</em></li><li><i>E06 第 1 场</i><span>六桶，不是两桶。</span><em>手指沿六行编号向下移动</em></li><li><i>E06 第 1 场</i><span>这一次，谁也扔不回水里。</span><em>直视高嵩</em></li><li><i>E06 第 1 场</i><span>还有你的原话，一份不少。</span><em>让残录声穿过现场</em></li><li><i>E06 第 2 场</i><span>至少今天，他们停了。</span><em>站在两级石阶上</em></li></ol>
+</section>
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>高嵩</b>
+    <span class="cast-meta">30 句 · 366 字 · 约 81.3 秒</span>
+    <button class="copy" data-copy="55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling.">音色提示词</button>
+    <button class="copy" data-copy="旧纸受潮，碰坏了没人负责。
+十五年前的纸，能说明什么？
+我是在替你父亲留体面。
+签名是他的，责任也是他的。
+录音修出来什么，全凭你说。
+我给你们十分钟。
+遗物交给我，旧事到此为止。
+拿备用钥匙！
+跑这么急，是怕我先找到那张清单？
+城里一套房，换电台和清单。今晚就签。
+多出来的溶剂，我没否认。
+雷打下来，谁开都一样。
+他后来签了字，因为他知道许潮上了船。
+他偷了电台，想学大人报险。
+最后，他把自己送上了船。
+我是在提醒你，查下去，你连最后的家也保不住。
+录到了什么？
+现在，你还剩什么？
+明早九点，拆迁启动。
+里面的湿纸，一张都留不住。
+她的学籍……住处……让他签。
+她的学籍和住处，都在我手里。
+要想保住女儿，就让他签。
+这是拆迁仪式，不是你的修复室。
+一张泡烂的纸，也配叫证据？
+关掉！
+那是个孩子胡说！
+责任书还在，许德海洗不干净。
+断断续续的东西，证明不了什么。
+暂停不等于翻案。">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E03 第 1 场</i><span>旧纸受潮，碰坏了没人负责。</span><em>温和，手没有松开</em></li><li><i>E03 第 1 场</i><span>十五年前的纸，能说明什么？</span><em>保持笑意</em></li><li><i>E03 第 1 场</i><span>我是在替你父亲留体面。</span><em>替她定义利害</em></li><li><i>E03 第 1 场</i><span>签名是他的，责任也是他的。</span><em>音量不高，句句压人</em></li><li><i>E03 第 1 场</i><span>录音修出来什么，全凭你说。</span><em>轻描淡写</em></li><li><i>E03 第 1 场</i><span>我给你们十分钟。</span><em>平静施压</em></li><li><i>E03 第 1 场</i><span>遗物交给我，旧事到此为止。</span><em>像谈交易</em></li><li><i>E03 第 2 场</i><span>拿备用钥匙！</span><em>录音远声，命令</em></li><li><i>E04 第 1 场</i><span>跑这么急，是怕我先找到那张清单？</span><em>语气从容，像在谈一笔普通生意</em></li><li><i>E04 第 1 场</i><span>城里一套房，换电台和清单。今晚就签。</span><em>音量不高，句句留出逼人答应的停顿</em></li><li><i>E04 第 1 场</i><span>多出来的溶剂，我没否认。</span><em>笑意不变</em></li><li><i>E04 第 1 场</i><span>雷打下来，谁开都一样。</span><em>轻描淡写</em></li><li><i>E04 第 1 场</i><span>他后来签了字，因为他知道许潮上了船。</span><em>替死者下结论</em></li><li><i>E04 第 1 场</i><span>他偷了电台，想学大人报险。</span><em>语气里带着轻蔑</em></li><li><i>E04 第 1 场</i><span>最后，他把自己送上了船。</span><em>刻意放慢</em></li><li><i>E04 第 1 场</i><span>我是在提醒你，查下去，你连最后的家也保不住。</span><em>礼貌中露出威胁</em></li><li><i>E04 第 1 场</i><span>录到了什么？</span><em>笑意已经消失</em></li><li><i>E04 第 2 场</i><span>现在，你还剩什么？</span><em>呼吸略乱，重新挤出笑</em></li><li><i>E04 第 2 场</i><span>明早九点，拆迁启动。</span><em>不再掩饰威胁</em></li><li><i>E04 第 2 场</i><span>里面的湿纸，一张都留不住。</span><em>目光落在程野的手机上</em></li><li><i>E04 第 2 场</i><span>她的学籍……住处……让他签。</span><em>来自手机残录，失真而断裂</em></li><li><i>E05 第 2 场</i><span>她的学籍和住处，都在我手里。</span><em>手机残录，断续但可辨</em></li><li><i>E05 第 2 场</i><span>要想保住女儿，就让他签。</span><em>手机残录，尾句被杂音切断</em></li><li><i>E06 第 1 场</i><span>这是拆迁仪式，不是你的修复室。</span><em>努力维持体面</em></li><li><i>E06 第 1 场</i><span>一张泡烂的纸，也配叫证据？</span><em>提高音量压住现场</em></li><li><i>E06 第 1 场</i><span>关掉！</span><em>控制第一次崩开</em></li><li><i>E06 第 1 场</i><span>那是个孩子胡说！</span><em>指向音响</em></li><li><i>E06 第 1 场</i><span>责任书还在，许德海洗不干净。</span><em>退回最后一道旧结论</em></li><li><i>E06 第 1 场</i><span>断断续续的东西，证明不了什么。</span><em>急着替自己定性</em></li><li><i>E06 第 1 场</i><span>暂停不等于翻案。</span><em>握着手机，声音发紧</em></li></ol>
+</section>
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>许潮</b>
+    <span class="cast-meta">16 句 · 164 字 · 约 36.4 秒</span>
+    <button class="copy" data-copy="17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined.">音色提示词</button>
+    <button class="copy" data-copy="开船的……
+开船的不是爸。
+是高嵩。
+七月十九，一点四十七。
+爸被他们按在货仓里。
+爸咬着正钥匙，抱着栏杆。
+船开了。爸还在这里。
+高嵩开的船，他要赶在检查前运走六桶。
+电台藏在救生圈里，位置我报过了。
+舱里还有孩子。
+我回去带他出来。
+知遥长大以后，告诉她。
+我不是跟爸赌气跑掉的。
+七月十九日，一点四十七分。
+我还在货仓外。
+高嵩拿了备用钥匙，亲自开船。">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E01 第 2 场</i><span>开船的……</span><em>录音，急促喘息</em></li><li><i>E01 第 2 场</i><span>开船的不是爸。</span><em>录音，气息短促</em></li><li><i>E01 第 2 场</i><span>是高嵩。</span><em>录音，清楚而急迫</em></li><li><i>E02 第 1 场</i><span>七月十九，一点四十七。</span><em>录音，远而破碎</em></li><li><i>E03 第 2 场</i><span>爸被他们按在货仓里。</span><em>录音，压低声音</em></li><li><i>E03 第 2 场</i><span>爸咬着正钥匙，抱着栏杆。</span><em>录音，急促喘息</em></li><li><i>E03 第 2 场</i><span>船开了。爸还在这里。</span><em>录音，恐惧却清楚</em></li><li><i>E05 第 2 场</i><span>高嵩开的船，他要赶在检查前运走六桶。</span><em>来自旧录音，压低声音快速报告</em></li><li><i>E05 第 2 场</i><span>电台藏在救生圈里，位置我报过了。</span><em>喘息急促</em></li><li><i>E05 第 2 场</i><span>舱里还有孩子。</span><em>一边跑一边说</em></li><li><i>E05 第 2 场</i><span>我回去带他出来。</span><em>没有犹豫</em></li><li><i>E05 第 2 场</i><span>知遥长大以后，告诉她。</span><em>录音恢复后再次出现</em></li><li><i>E05 第 2 场</i><span>我不是跟爸赌气跑掉的。</span><em>声音被潮声逐渐淹没</em></li><li><i>E06 第 1 场</i><span>七月十九日，一点四十七分。</span><em>旧录音里的少年声音，紧张但清楚</em></li><li><i>E06 第 1 场</i><span>我还在货仓外。</span><em>急促喘息中报出位置</em></li><li><i>E06 第 1 场</i><span>高嵩拿了备用钥匙，亲自开船。</span><em>录音里快速报告</em></li></ol>
+</section>
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>画外音</b>
+    <span class="cast-meta">5 句 · 61 字 · 约 13.6 秒</span>
+    
+    <button class="copy" data-copy="退潮只剩十二分钟，别逞强。
+程野，回话。
+别展开，马上带回来。
+现场拆迁暂停，所有材料原地封存。
+七一九事故材料已受理，启动复查。">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E05 第 1 场</i><span>退潮只剩十二分钟，别逞强。</span><em>许知遥从电话里传来，克制而急促</em></li><li><i>E05 第 1 场</i><span>程野，回话。</span><em>许知遥从耳机里呼叫</em></li><li><i>E05 第 1 场</i><span>别展开，马上带回来。</span><em>许知遥迅速下令</em></li><li><i>E06 第 1 场</i><span>现场拆迁暂停，所有材料原地封存。</span><em>电话里的项目主管，急促而正式</em></li><li><i>E06 第 1 场</i><span>七一九事故材料已受理，启动复查。</span><em>电话扩音里的正式通知</em></li></ol>
+</section>
+<section class="cast-blk">
+  <header class="cast-h">
+    <b>许德海</b>
+    <span class="cast-meta">1 句 · 5 字 · 约 1.1 秒</span>
+    <button class="copy" data-copy="50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective.">音色提示词</button>
+    <button class="copy" data-copy="不能开船！">复制全部台词</button>
+  </header>
+  <ol class="cast-lines"><li><i>E03 第 2 场</i><span>不能开船！</span><em>录音远声，粗哑用力</em></li></ol>
+</section>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-gates">
+  <div class="sec-h"><span class="no">05</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>每集时长在目标 ±15% 内</span></li>
+  <li class="ok"><span class="m">✓</span><span>单句台词 ≤ 35 字</span></li>
+  <li class="ok"><span class="m">✓</span><span>说话人在本场人物里，或明确标画外音 VO</span></li>
+  <li class="ok"><span class="m">✓</span><span>每集开场钩子与结尾悬念都落在纸面</span></li>
+  <li class="ok"><span class="m">✓</span><span>钩子的具象在全集前 3 拍内兑现（hookBeat 认领）</span></li>
+  <li class="ok"><span class="m">✓</span><span>每场至少一个动作节拍——纯对白的场是广播剧</span></li>
+  <li class="ok"><span class="m">✓</span><span>动作描述叙述体，台词只进 dialogue 字段</span></li>
+  <li class="ok"><span class="m">✓</span><span>大纲爽点逐集认领</span></li>
+  <li class="ok"><span class="m">✓</span><span>角色引用对账大纲</span></li>
+  <li class="ok"><span class="m">✓</span><span>场景／光照／道具对账美术设定</span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">剧本由模型依据大纲与美术设定生成，时长与引用由脚本确定性检查。分镜与首帧提示词是下一层的事，不在本报告里。</p>
+</div>
+
+<script type="application/json" id="script-data">{"source":"潮痕","params":null,"episodes":[{"ep":1,"targetSeconds":120,"hook":"亡兄为何能在事故现场留下点名高嵩的录音，父亲当年的责任书又掩盖了什么？","cliff":"电台里尚未修复的噪声下仍藏着后续内容，黄铜船钥匙的用途也无人知晓。","beatsClaimed":["亡兄录音反转"],"hookBeat":[1,1],"scenes":[{"sceneId":"S01","lighting":"阴天上午","characters":["C01"],"props":["P01","P02"],"flow":[{"action":"许知遥抱着铁皮箱快步冲进候船厅，箱里反复漏出少年喘息。"},{"action":"她回身推紧候船厅的旧门。"},{"action":"拆迁通知在售票窗上被风吹起。"},{"speaker":"C01","line":"连他的东西也等不到明天。","delivery":"低声，压着不满"},{"action":"许知遥把铁皮箱放到长椅上。"},{"action":"她掀开箱盖。"},{"action":"烧损的橙色电台躺在黄铜船钥匙旁。"},{"speaker":"C01","line":"爸，你就留下这些？","delivery":"冷淡中带失望"},{"action":"她拿起电台检查烧融的外壳。"},{"action":"电台扬声器又挤出一声短促喘息。"},{"speaker":"C01","line":"这不是电流声。","delivery":"立刻警觉"},{"action":"许知遥把黄铜钥匙装进口袋。"},{"action":"她抱起电台走出候船厅。"}]},{"sceneId":"S02","lighting":"凌晨修复","characters":["C01","C05"],"props":["P01","P02"],"flow":[{"action":"许知遥把电台放在灰绿修复台中央。"},{"action":"她用软刷清掉电池仓里的盐霜。"},{"action":"她接上实验电源。"},{"action":"两层屏幕同时跳出密集波形。"},{"speaker":"C01","line":"先保原始轨，再做副本。","delivery":"专业，语速稳定"},{"action":"她戴上耳机。"},{"action":"连续爆音盖住整条音轨。"},{"action":"许知遥拖动第一段降噪参数。"},{"speaker":"C01","line":"潮声太满，人声在下面。","delivery":"专注，自言自语"},{"action":"她把右声道单独放大。"},{"action":"一个模糊男声从噪声里露出半句。"},{"speaker":"C05","line":"开船的……","delivery":"录音，急促喘息"},{"action":"许知遥猛地按下暂停。"},{"speaker":"C01","line":"这个声音……","delivery":"失神，尾音发紧"},{"action":"她从抽屉里取出一张兄妹旧照。"},{"action":"许知遥把旧照立在屏幕边。"},{"speaker":"C01","line":"哥，是你吗？","delivery":"极轻，第一次失去克制"},{"action":"她重新播放那段残缺录音。"},{"speaker":"C05","line":"开船的不是爸。","delivery":"录音，气息短促"},{"action":"许知遥攥紧耳机线。"},{"speaker":"C01","line":"再说一遍。","delivery":"压住颤抖"},{"action":"她提高人声频段。"},{"action":"波形里的最后两个音节变得清楚。"},{"speaker":"C05","line":"是高嵩。","delivery":"录音，清楚而急迫"},{"action":"许知遥摘下耳机站起来。"},{"speaker":"C01","line":"责任书上写的是爸。","delivery":"冷静被愤怒顶开"},{"action":"她把责任书压到电台旁。"},{"speaker":"C01","line":"你们谁在撒谎？","delivery":"盯着父亲签名"},{"action":"许知遥保存刚刚修出的三段音频副本。"},{"action":"她继续向后拖动未修复的音轨。"},{"action":"电台突然爆出规律蜂鸣。"},{"action":"黄铜钥匙随震动滑到未修复的波形屏下。"}]}]},{"ep":2,"targetSeconds":120,"hook":"同一场事故出现两套无法并存的时间记录，究竟是谁改写了值班日志？","cliff":"许德海明知船牌可能是证据却要求程野丢弃，他是在保护谁，还是受到了胁迫？","beatsClaimed":["时间线破绽"],"hookBeat":[1,1],"scenes":[{"sceneId":"S02","lighting":"阴天工作日","characters":["C01","C02","C05"],"props":["P01"],"flow":[{"action":"程野快步推门进来，把事故记录压到滚动的报时波形旁。"},{"speaker":"C02","line":"官方写一点二十分离岸。","delivery":"低沉，直接进入正题"},{"action":"许知遥把电台录音拉回蜂鸣处。"},{"speaker":"C01","line":"这段报时在一点四十七。","delivery":"逐字核对"},{"action":"她按下播放。"},{"speaker":"C05","line":"七月十九，一点四十七。","delivery":"录音，远而破碎"},{"action":"程野靠近扬声器。"},{"action":"规律蜂鸣再次穿过潮声。"},{"speaker":"C02","line":"这是货仓防潮报警器。","delivery":"确认，语气发沉"},{"speaker":"C01","line":"不是船上的？","delivery":"迅速追问"},{"action":"程野摇头。"},{"speaker":"C02","line":"每三十秒一次，我从小听到大。","delivery":"笃定"},{"action":"许知遥把两条时间写在同一张纸上。"},{"speaker":"C01","line":"哥哥那时还在岸上。","delivery":"压住激动"},{"speaker":"C02","line":"至少有一份记录是假的。","delivery":"简短，回避她的目光"},{"action":"许知遥注意到他的回避。"},{"speaker":"C01","line":"你还知道什么？","delivery":"冷下来"},{"action":"程野握紧椅背。"},{"speaker":"C02","line":"事故第二天，我捡到过半块船牌。","delivery":"停顿后承认"},{"speaker":"C01","line":"船牌呢？","delivery":"立刻追问"},{"action":"程野松开椅背。"},{"speaker":"C02","line":"被我扔回水里了。","delivery":"负疚，句尾收短"},{"speaker":"C01","line":"谁让你扔的？","delivery":"声音发硬"},{"action":"程野看向桌上的父亲旧照。"},{"speaker":"C02","line":"许叔。","delivery":"很轻"},{"action":"许知遥抓起黄铜钥匙。"},{"speaker":"C01","line":"去货仓。现在。","delivery":"果断"}]},{"sceneId":"S03","lighting":"阴天下午","characters":["C01","C02","C05"],"props":["P01","P02"],"flow":[{"action":"许知遥快步走到货仓钢门前。"},{"action":"她把黄铜钥匙插进新挂锁。"},{"action":"钥匙无法转动。"},{"speaker":"C01","line":"锁是后来换的。","delivery":"迅速判断"},{"action":"程野推开虚掩的侧门。"},{"action":"两人进入昏暗货仓。"},{"action":"后墙报警器亮起琥珀灯。"},{"action":"蜂鸣与电台录音重叠。"},{"speaker":"C02","line":"就是这个声音。","delivery":"确认"},{"action":"许知遥走到嵌墙消防柜前。"},{"action":"她把钥匙插进消防柜锁孔。"},{"action":"消防柜门弹开。"},{"speaker":"C01","line":"它开的是这里。","delivery":"意外"},{"action":"程野取出发霉的值班日志。"},{"action":"许知遥翻到七月十九日。"},{"speaker":"C01","line":"一点二十分，许德海当班。","delivery":"读出记录"},{"speaker":"C02","line":"可一点四十七，报警器还在录音里。","delivery":"盯住两条时间"},{"action":"许知遥把日志放到电台旁。"},{"speaker":"C01","line":"哥哥在这儿，爸却被写在船上。","delivery":"愤怒渐起"},{"action":"程野蹲在消防柜边。"},{"speaker":"C02","line":"许叔那天不是怕我找到船。","delivery":"终于直面记忆"},{"speaker":"C01","line":"那他怕什么？","delivery":"逼问"},{"action":"程野抬头看向货仓深处。"},{"speaker":"C02","line":"他当时盯着这里，只说谁都不要再找。","delivery":"低声，留下疑点"}]}]},{"ep":3,"targetSeconds":120,"hook":"父亲已经被证明困在岸上的货仓里，那么高嵩为何必须让那艘装有超量溶剂的船连夜离岸？","cliff":"货物清单虽指向高嵩，却仍缺少能与事故船直接对应的原始载货凭证，许潮登船的原因也没有揭开。","beatsClaimed":["父亲清白中段揭破"],"hookBeat":[1,1],"scenes":[{"sceneId":"S03","lighting":"阴天下午","characters":["C01","C02","C03"],"props":["P01","P02"],"flow":[{"action":"高嵩快步闯进货仓，一把按住写有六桶工业溶剂的清单。"},{"speaker":"C03","line":"旧纸受潮，碰坏了没人负责。","delivery":"温和，手没有松开"},{"action":"许知遥把清单从他手下抽走。"},{"speaker":"C01","line":"两桶改成六桶，谁负责？","delivery":"冷静逼问"},{"action":"程野指向清单右下角。"},{"speaker":"C02","line":"这里是你的私章。","delivery":"简短，压住怒意"},{"action":"高嵩整理被碰皱的袖口。"},{"speaker":"C03","line":"十五年前的纸，能说明什么？","delivery":"保持笑意"},{"action":"许知遥把电台放到日志旁。"},{"speaker":"C01","line":"能说明你急着清掉这里。","delivery":"观察他的反应"},{"speaker":"C03","line":"我是在替你父亲留体面。","delivery":"替她定义利害"},{"action":"他把责任书推到许知遥面前。"},{"speaker":"C03","line":"签名是他的，责任也是他的。","delivery":"音量不高，句句压人"},{"action":"许知遥拿起责任书。"},{"speaker":"C01","line":"一点四十七，他不在船上。","delivery":"逐字核对"},{"speaker":"C03","line":"录音修出来什么，全凭你说。","delivery":"轻描淡写"},{"action":"程野挡在电台前。"},{"speaker":"C02","line":"报警器不会替她撒谎。","delivery":"低沉"},{"action":"货仓外传来拆迁设备启动声。"},{"action":"高嵩转身走向门口。"},{"speaker":"C03","line":"我给你们十分钟。","delivery":"平静施压"},{"speaker":"C03","line":"遗物交给我，旧事到此为止。","delivery":"像谈交易"},{"action":"他走出货仓接起电话。"},{"action":"程野重新蹲到消防柜前。"},{"action":"他从夹层抽出油纸包裹的清单。"},{"speaker":"C02","line":"他怕的不是电台，是这个。","delivery":"压低声音"},{"action":"许知遥把高嵩私章与六行数量拍进手机。"},{"speaker":"C01","line":"先留副本。","delivery":"恢复专业冷静"},{"action":"许知遥把黄铜钥匙放到清单旁。"},{"action":"程野查看钥匙环上的两道压痕。"},{"speaker":"C02","line":"这不像普通磨损。","delivery":"低声确认"}]},{"sceneId":"S02","lighting":"阴天工作日","characters":["C01","C02","C03","C04","C05"],"props":["P01"],"flow":[{"action":"许知遥抱着电台快步回到修复台前。"},{"action":"她插入已经保存的原始副本。"},{"speaker":"C01","line":"蜂鸣之后还有人声。","delivery":"盯住波形"},{"action":"程野关上房门。"},{"action":"许知遥提高蜂鸣后的低频人声。"},{"speaker":"C05","line":"爸被他们按在货仓里。","delivery":"录音，压低声音"},{"action":"许知遥的手停在播放键上。"},{"speaker":"C01","line":"他在货仓。","delivery":"确认事实，气息发紧"},{"speaker":"C02","line":"所以他不可能开船。","delivery":"立刻接上证据链"},{"action":"录音里传来铁门撞击声。"},{"speaker":"C04","line":"不能开船！","delivery":"录音远声，粗哑用力"},{"speaker":"C05","line":"爸咬着正钥匙，抱着栏杆。","delivery":"录音，急促喘息"},{"action":"许知遥从修复台前站起来。"},{"speaker":"C01","line":"他签字，不等于他开船。","delivery":"克制而确定"},{"action":"录音远处传来高嵩的喊声。"},{"speaker":"C03","line":"拿备用钥匙！","delivery":"录音远声，命令"},{"action":"发动机声盖过报警蜂鸣。"},{"speaker":"C05","line":"船开了。爸还在这里。","delivery":"录音，恐惧却清楚"},{"action":"许知遥摘下耳机。"},{"speaker":"C01","line":"开船的是高嵩。","delivery":"结论落定"},{"action":"程野把油纸清单摊在责任书旁。"},{"speaker":"C02","line":"六桶溶剂，私章也在。","delivery":"指向清单"},{"speaker":"C01","line":"还差事故船上的原始联单。","delivery":"不被胜利冲昏"},{"action":"她把音轨继续拖向许潮登船前的空白段。"},{"action":"耳机里突然传来许潮奔向栈桥的脚步声。"}]}]},{"ep":4,"targetSeconds":120,"hook":"高嵩追到货仓门口拦住许知遥，用拆迁倒计时逼她交出电台和清单。","cliff":"程野的残录在最后一拍放出学籍、住处与签字三个词，父亲当年受胁迫的轮廓第一次具象出现。","beatsClaimed":["反派反制落空"],"hookBeat":[1,1],"scenes":[{"sceneId":"S03","lighting":"单灯夜戏","characters":["C01","C02","C03"],"props":["P01"],"flow":[{"action":"高嵩快步穿过货仓门口，张开手臂拦住抱着电台离开的许知遥。"},{"speaker":"C03","line":"跑这么急，是怕我先找到那张清单？","delivery":"语气从容，像在谈一笔普通生意"},{"speaker":"C01","line":"我怕的是你把货仓推平。","delivery":"站定，声音冷静"},{"action":"许知遥把电台收进外套内侧，转身走向门口。"},{"action":"高嵩从文件夹里抽出一页房产资料，递到她面前。"},{"speaker":"C03","line":"城里一套房，换电台和清单。今晚就签。","delivery":"音量不高，句句留出逼人答应的停顿"},{"speaker":"C01","line":"你买得这么急，说明六桶不是笔误。","delivery":"盯着他，不接资料"},{"action":"高嵩收回资料，反手把货仓门关上。"},{"speaker":"C03","line":"多出来的溶剂，我没否认。","delivery":"笑意不变"},{"speaker":"C01","line":"那晚是谁开的船？","delivery":"追问得很快"},{"speaker":"C03","line":"雷打下来，谁开都一样。","delivery":"轻描淡写"},{"speaker":"C01","line":"我爸被锁在这儿。","delivery":"压住怒意"},{"action":"高嵩转身拍了拍锈蚀的钢门。"},{"speaker":"C03","line":"他后来签了字，因为他知道许潮上了船。","delivery":"替死者下结论"},{"speaker":"C01","line":"我哥为什么会在货仓？","delivery":"不让他绕开"},{"speaker":"C03","line":"他偷了电台，想学大人报险。","delivery":"语气里带着轻蔑"},{"speaker":"C03","line":"最后，他把自己送上了船。","delivery":"刻意放慢"},{"action":"门外的程野抬起手机，把收音口贴近门缝。"},{"speaker":"C01","line":"你连一个不能开口的孩子都要推过去。","delivery":"声线更低"},{"speaker":"C03","line":"我是在提醒你，查下去，你连最后的家也保不住。","delivery":"礼貌中露出威胁"},{"action":"高嵩低头看见门缝下晃动的人影。"},{"action":"高嵩一把拉开货仓门。"},{"action":"程野后退两步，手机仍举在胸前。"},{"speaker":"C03","line":"录到了什么？","delivery":"笑意已经消失"},{"speaker":"C02","line":"够你解释很久。","delivery":"短促，转身前回答"},{"action":"程野转身跑向候船厅，高嵩立即追了出去。"}]},{"sceneId":"S01","lighting":"夜间逼问","characters":["C01","C02","C03"],"props":["P01"],"flow":[{"action":"程野跑下石阶，许知遥抱着电台紧跟在后。"},{"action":"高嵩转身夺过电台，用力摔在石阶上。"},{"action":"橙色外壳裂开，存储板从缝里滑了出来。"},{"speaker":"C03","line":"现在，你还剩什么？","delivery":"呼吸略乱，重新挤出笑"},{"action":"许知遥蹲下捡起裂开的电台。"},{"speaker":"C01","line":"三份备份。","delivery":"平静得没有停顿"},{"action":"高嵩停在石阶上，没有再往前走。"},{"speaker":"C01","line":"档案修复，从来不在原介质上做。","delivery":"把断裂存储板装回外壳"},{"speaker":"C02","line":"你毁掉的，只是我们愿意让你看见的那份。","delivery":"站到许知遥身边"},{"action":"高嵩转身指向黑暗中的货仓。"},{"speaker":"C03","line":"明早九点，拆迁启动。","delivery":"不再掩饰威胁"},{"speaker":"C03","line":"里面的湿纸，一张都留不住。","delivery":"目光落在程野的手机上"},{"speaker":"C02","line":"你越急，水下那份东西越值得找。","delivery":"故意把水下两个字说重"},{"action":"高嵩沿着栈桥快步离开。"},{"speaker":"C01","line":"刚才录到了多少？","delivery":"立刻转向程野"},{"action":"程野点开手机里的残缺录音。"},{"action":"爆音过后，手机里挤出三个断续词组。"},{"speaker":"C03","line":"她的学籍……住处……让他签。","delivery":"来自手机残录，失真而断裂"}]}]},{"ep":5,"targetSeconds":120,"hook":"退潮窗口与拆迁倒计时重叠，程野冲向沉船点下水寻找能独立印证录音的联单。","cliff":"证据链刚刚闭合，铁丝玻璃窗外已经发亮，手机闹钟在最后一拍跳到八点五十九分。","beatsClaimed":["事故与哥哥选择双重真相"],"hookBeat":[1,1],"scenes":[{"sceneId":"S04","lighting":"夜间退潮","characters":["C02"],"props":["P03"],"flow":[{"action":"程野沿防波堤快步跑下消波块，冲向退潮后露出的水线。"},{"action":"他把安全绳扣在坡面的锈环上。"},{"speaker":"C02","line":"知遥，给我十五分钟。","delivery":"对着耳机，已经开始调整呼吸"},{"speaker":"VO","line":"退潮只剩十二分钟，别逞强。","delivery":"许知遥从电话里传来，克制而急促"},{"speaker":"C02","line":"十五年前，我已经退过一次。","delivery":"短暂停顿后说完"},{"action":"程野戴好面镜，转身滑入黑色江水。"},{"action":"安全绳沿着湿滑混凝土不断向水里移动。"},{"speaker":"VO","line":"程野，回话。","delivery":"许知遥从耳机里呼叫"},{"action":"程野突然浮出水面，双臂抱住一只锈死的金属筒。"},{"speaker":"C02","line":"找到了。","delivery":"喘息很重"},{"action":"他拖着金属筒爬上混凝土坡面。"},{"action":"程野拧开筒盖。"},{"action":"一卷湿透的载货联单从筒里滑出。"},{"speaker":"VO","line":"别展开，马上带回来。","delivery":"许知遥迅速下令"},{"speaker":"C02","line":"筒盖上有许潮的潮记。","delivery":"声音第一次发抖"},{"action":"程野抱起金属筒，沿消波块跑回岸上。"}]},{"sceneId":"S02","lighting":"退潮前夜","characters":["C01","C02","C03","C05"],"props":["P01","P03"],"flow":[{"action":"许知遥按下修复软件的播放键。"},{"action":"扬声器先传出发动机声，随后响起沉闷爆音。"},{"speaker":"C05","line":"高嵩开的船，他要赶在检查前运走六桶。","delivery":"来自旧录音，压低声音快速报告"},{"action":"程野把载货联单放到显示器旁。"},{"action":"许知遥戴上薄手套，慢慢展开潮湿的纸张。"},{"speaker":"C01","line":"六行编号，和货仓清单一模一样。","delivery":"逐行核对"},{"speaker":"C02","line":"右下角，是他的私章。","delivery":"指向印章，句尾收紧"},{"action":"许知遥把录音倒回十秒。"},{"speaker":"C05","line":"电台藏在救生圈里，位置我报过了。","delivery":"喘息急促"},{"action":"录音深处传来孩子连续的哭声。"},{"speaker":"C05","line":"舱里还有孩子。","delivery":"一边跑一边说"},{"speaker":"C05","line":"我回去带他出来。","delivery":"没有犹豫"},{"action":"急促脚步声远去，爆音随即盖过录音。"},{"speaker":"C01","line":"哥。","delivery":"第一次失去平稳"},{"action":"许知遥摘下耳机，扶着修复台站起来。"},{"speaker":"C05","line":"知遥长大以后，告诉她。","delivery":"录音恢复后再次出现"},{"speaker":"C05","line":"我不是跟爸赌气跑掉的。","delivery":"声音被潮声逐渐淹没"},{"action":"许知遥把裂开的电台放到联单旁边。"},{"speaker":"C02","line":"他留下证据，又回去救人。","delivery":"看着电台，缓慢说出"},{"speaker":"C01","line":"高嵩把他的选择，改成了罪。","delivery":"重新稳住声音"},{"action":"程野打开手机里的残缺录音。"},{"speaker":"C03","line":"她的学籍和住处，都在我手里。","delivery":"手机残录，断续但可辨"},{"speaker":"C03","line":"要想保住女儿，就让他签。","delivery":"手机残录，尾句被杂音切断"},{"action":"许知遥把父亲的责任书压在联单旁。"},{"speaker":"C01","line":"爸不是认罪。他是在替我挡。","delivery":"眼睛停在签名上"},{"speaker":"C02","line":"录音、联单、责任书，现在能互相对上。","delivery":"逐件确认"},{"speaker":"C01","line":"还差公开。","delivery":"抬头看向窗外"},{"action":"许知遥把修复录音复制进三个独立存储盘。"},{"action":"程野把展开的载货联单装进透明保护袋。"},{"speaker":"C02","line":"去渡口。","delivery":"拿起保护袋"},{"action":"两人分别拿起电台和联单，快步走向门口。"},{"action":"铁丝玻璃窗外泛白，手机闹钟跳到八点五十九分。"}]}]},{"ep":6,"targetSeconds":120,"hook":"公开录音刚刚响起，高嵩便穿过现场冲向音响线，试图在联单展示前切断传播。","cliff":"黄昏的双潮痕重新露出，手机在最后一拍弹出七一九旧案复查受理编号，让结局落在可继续核验的程序入口。","beatsClaimed":["公开证据链"],"hookBeat":[1,1],"scenes":[{"sceneId":"S01","lighting":"仪式清晨","characters":["C01","C02","C03","C05"],"props":["P01","P03"],"flow":[{"action":"高嵩快步穿过候船厅前场，伸手冲向正在播放录音的音响线。"},{"action":"程野侧身挡在音响前，把载货联单举到胸口。"},{"action":"许知遥按下播放键，潮声从现场音响里涌出。"},{"speaker":"C01","line":"你拔一根线，我还有三份备份。","delivery":"面对高嵩，语气稳定"},{"speaker":"C03","line":"这是拆迁仪式，不是你的修复室。","delivery":"努力维持体面"},{"action":"程野展开保护袋里的载货联单，转向围观者。"},{"speaker":"C02","line":"六桶编号，都在这儿。","delivery":"让每个字落清"},{"action":"前排围观者放下效果图，转身看向联单。"},{"speaker":"C03","line":"一张泡烂的纸，也配叫证据？","delivery":"提高音量压住现场"},{"speaker":"C01","line":"所以请所有人一起核对。","delivery":"不与他争吵"},{"action":"防潮报警蜂鸣从音响里连续响起。"},{"speaker":"C05","line":"七月十九日，一点四十七分。","delivery":"旧录音里的少年声音，紧张但清楚"},{"speaker":"C05","line":"我还在货仓外。","delivery":"急促喘息中报出位置"},{"action":"高嵩后退一步，回头看向停在场边的拆迁设备。"},{"speaker":"C03","line":"关掉！","delivery":"控制第一次崩开"},{"speaker":"C01","line":"你怕的不是噪声，是时间。","delivery":"把音量推高"},{"action":"发动机启动声盖过现场的低语。"},{"speaker":"C05","line":"高嵩拿了备用钥匙，亲自开船。","delivery":"录音里快速报告"},{"speaker":"C03","line":"那是个孩子胡说！","delivery":"指向音响"},{"action":"程野把联单递到现场摄像设备前。"},{"speaker":"C02","line":"六桶，不是两桶。","delivery":"手指沿六行编号向下移动"},{"speaker":"C01","line":"编号连续，私章也在。","delivery":"逐项对账"},{"action":"围观者纷纷举起手机对准联单。"},{"speaker":"C03","line":"责任书还在，许德海洗不干净。","delivery":"退回最后一道旧结论"},{"speaker":"C01","line":"责任书也会进鉴定。","delivery":"没有回避"},{"action":"高嵩伸手去抓联单，程野把保护袋收回身前。"},{"speaker":"C02","line":"这一次，谁也扔不回水里。","delivery":"直视高嵩"},{"action":"高嵩的手机连续震动，他低头接起电话。"},{"speaker":"VO","line":"现场拆迁暂停，所有材料原地封存。","delivery":"电话里的项目主管，急促而正式"},{"action":"程野把昨晚的手机残录放到联单旁继续播放。"},{"speaker":"C02","line":"还有你的原话，一份不少。","delivery":"让残录声穿过现场"},{"speaker":"C03","line":"断断续续的东西，证明不了什么。","delivery":"急着替自己定性"},{"action":"拆迁设备依次熄火，候船厅前安静下来。"},{"speaker":"C03","line":"暂停不等于翻案。","delivery":"握着手机，声音发紧"},{"speaker":"C01","line":"对。接下来每一项，都公开核验。","delivery":"把电台放到联单旁"},{"speaker":"VO","line":"七一九事故材料已受理，启动复查。","delivery":"电话扩音里的正式通知"},{"action":"程野把联单交给赶到现场的取证人员。"}]},{"sceneId":"S01","lighting":"退潮黄昏","characters":["C01","C02"],"props":["P01"],"flow":[{"action":"黄昏时，许知遥把裂开的电台放回救生圈夹层。"},{"speaker":"C02","line":"至少今天，他们停了。","delivery":"站在两级石阶上"},{"speaker":"C01","line":"不是为了赢。","delivery":"整理电台的归档支架"},{"speaker":"C01","line":"是让每一件证据，都能被核验。","delivery":"贴好新的档案标签"},{"action":"许知遥保留电台外壳的烧痕，没有重新补漆。"},{"action":"潮水慢慢退下，最低两级石阶露出深浅两道水线。"},{"action":"许知遥的手机震动，屏幕弹出七一九旧案复查受理编号。"}]}]}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败","show":"▾ 展开全部场次","hide":"▴ 收起场次"};
+
+// episode scripts: scene areas clip at 300px; short ones unclip, tall ones toggle
+document.querySelectorAll('.scmore').forEach((btn) => {
+  const zone = btn.previousElementSibling;
+  if (zone.scrollHeight <= 320) {
+    zone.classList.remove('clip');
+    btn.remove();
+    return;
+  }
+  btn.addEventListener('click', () => {
+    const clipped = zone.classList.toggle('clip');
+    btn.textContent = clipped ? L.show : L.hide;
+    if (clipped) zone.closest('.ep').scrollIntoView({ block: 'nearest' });
+  });
+});
+
+// copy buttons (a single line / a character's whole line book)
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// export: the report carries the full script.json; the download is it verbatim
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('script-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // don't revoke right away — Safari kills the blob before the download finishes reading it
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

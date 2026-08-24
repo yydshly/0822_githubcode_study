@@ -1,0 +1,373 @@
+{
+  "source": "潮痕",
+  "episodes": [
+    {
+      "ep": 2,
+      "segments": [],
+      "seedScenes": [
+        {
+          "sceneIndex": 1,
+          "sceneId": "S02",
+          "lighting": "阴天工作日",
+          "characters": [
+            "C01",
+            "C02",
+            "C05"
+          ],
+          "props": [
+            "P01",
+            "P02"
+          ],
+          "beats": [
+            {
+              "n": 1,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野快步推门进来，把事故记录压到滚动的报时波形旁。"
+            },
+            {
+              "n": 2,
+              "kind": "line",
+              "seconds": 2.4,
+              "speaker": "C02",
+              "text": "官方写一点二十分离岸。"
+            },
+            {
+              "n": 3,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥把电台录音拉回蜂鸣处。"
+            },
+            {
+              "n": 4,
+              "kind": "line",
+              "seconds": 2.4,
+              "speaker": "C01",
+              "text": "这段报时在一点四十七。"
+            },
+            {
+              "n": 5,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "她按下播放。"
+            },
+            {
+              "n": 6,
+              "kind": "line",
+              "seconds": 2.4,
+              "speaker": "C05",
+              "text": "七月十九，一点四十七。"
+            },
+            {
+              "n": 7,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野靠近扬声器。"
+            },
+            {
+              "n": 8,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "规律蜂鸣再次穿过潮声。"
+            },
+            {
+              "n": 9,
+              "kind": "line",
+              "seconds": 2.2,
+              "speaker": "C02",
+              "text": "这是货仓防潮报警器。"
+            },
+            {
+              "n": 10,
+              "kind": "line",
+              "seconds": 1.3,
+              "speaker": "C01",
+              "text": "不是船上的？"
+            },
+            {
+              "n": 11,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野摇头。"
+            },
+            {
+              "n": 12,
+              "kind": "line",
+              "seconds": 3.1,
+              "speaker": "C02",
+              "text": "每三十秒一次，我从小听到大。"
+            },
+            {
+              "n": 13,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥把两条时间写在同一张纸上。"
+            },
+            {
+              "n": 14,
+              "kind": "line",
+              "seconds": 2,
+              "speaker": "C01",
+              "text": "哥哥那时还在岸上。"
+            },
+            {
+              "n": 15,
+              "kind": "line",
+              "seconds": 2.4,
+              "speaker": "C02",
+              "text": "至少有一份记录是假的。"
+            },
+            {
+              "n": 16,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥注意到他的回避。"
+            },
+            {
+              "n": 17,
+              "kind": "line",
+              "seconds": 1.6,
+              "speaker": "C01",
+              "text": "你还知道什么？"
+            },
+            {
+              "n": 18,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野握紧椅背。"
+            },
+            {
+              "n": 19,
+              "kind": "line",
+              "seconds": 3.3,
+              "speaker": "C02",
+              "text": "事故第二天，我捡到过半块船牌。"
+            },
+            {
+              "n": 20,
+              "kind": "line",
+              "seconds": 0.9,
+              "speaker": "C01",
+              "text": "船牌呢？"
+            },
+            {
+              "n": 21,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野松开椅背。"
+            },
+            {
+              "n": 22,
+              "kind": "line",
+              "seconds": 1.8,
+              "speaker": "C02",
+              "text": "被我扔回水里了。"
+            },
+            {
+              "n": 23,
+              "kind": "line",
+              "seconds": 1.3,
+              "speaker": "C01",
+              "text": "谁让你扔的？"
+            },
+            {
+              "n": 24,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野看向桌上的父亲旧照。"
+            },
+            {
+              "n": 25,
+              "kind": "line",
+              "seconds": 0.7,
+              "speaker": "C02",
+              "text": "许叔。"
+            },
+            {
+              "n": 26,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥抓起黄铜钥匙。"
+            },
+            {
+              "n": 27,
+              "kind": "line",
+              "seconds": 1.6,
+              "speaker": "C01",
+              "text": "去货仓。现在。"
+            }
+          ]
+        },
+        {
+          "sceneIndex": 2,
+          "sceneId": "S03",
+          "lighting": "阴天下午",
+          "characters": [
+            "C01",
+            "C02",
+            "C05"
+          ],
+          "props": [
+            "P01",
+            "P02"
+          ],
+          "beats": [
+            {
+              "n": 1,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥快步走到货仓钢门前。"
+            },
+            {
+              "n": 2,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "她把黄铜钥匙插进新挂锁。"
+            },
+            {
+              "n": 3,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "钥匙无法转动。"
+            },
+            {
+              "n": 4,
+              "kind": "line",
+              "seconds": 1.6,
+              "speaker": "C01",
+              "text": "锁是后来换的。"
+            },
+            {
+              "n": 5,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野推开虚掩的侧门。"
+            },
+            {
+              "n": 6,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "两人进入昏暗货仓。"
+            },
+            {
+              "n": 7,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "后墙报警器亮起琥珀灯。"
+            },
+            {
+              "n": 8,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "蜂鸣与电台录音重叠。"
+            },
+            {
+              "n": 9,
+              "kind": "line",
+              "seconds": 1.6,
+              "speaker": "C02",
+              "text": "就是这个声音。"
+            },
+            {
+              "n": 10,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥走到嵌墙消防柜前。"
+            },
+            {
+              "n": 11,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "她把钥匙插进消防柜锁孔。"
+            },
+            {
+              "n": 12,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "消防柜门弹开。"
+            },
+            {
+              "n": 13,
+              "kind": "line",
+              "seconds": 1.6,
+              "speaker": "C01",
+              "text": "它开的是这里。"
+            },
+            {
+              "n": 14,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野取出发霉的值班日志。"
+            },
+            {
+              "n": 15,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥翻到七月十九日。"
+            },
+            {
+              "n": 16,
+              "kind": "line",
+              "seconds": 2.7,
+              "speaker": "C01",
+              "text": "一点二十分，许德海当班。"
+            },
+            {
+              "n": 17,
+              "kind": "line",
+              "seconds": 3.6,
+              "speaker": "C02",
+              "text": "可一点四十七，报警器还在录音里。"
+            },
+            {
+              "n": 18,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "许知遥把日志放到电台旁。"
+            },
+            {
+              "n": 19,
+              "kind": "line",
+              "seconds": 3.1,
+              "speaker": "C01",
+              "text": "哥哥在这儿，爸却被写在船上。"
+            },
+            {
+              "n": 20,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野蹲在消防柜边。"
+            },
+            {
+              "n": 21,
+              "kind": "line",
+              "seconds": 2.7,
+              "speaker": "C02",
+              "text": "许叔那天不是怕我找到船。"
+            },
+            {
+              "n": 22,
+              "kind": "line",
+              "seconds": 1.3,
+              "speaker": "C01",
+              "text": "那他怕什么？"
+            },
+            {
+              "n": 23,
+              "kind": "action",
+              "seconds": 2.5,
+              "text": "程野抬头看向货仓深处。"
+            },
+            {
+              "n": 24,
+              "kind": "line",
+              "seconds": 3.8,
+              "speaker": "C02",
+              "text": "他当时盯着这里，只说谁都不要再找。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>潮痕 · 角色设定集</title>
+<style>
+/* 冷灰印张 + 铁锈红印记。红色只用在与原文有关的地方和当前选中态。 */
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-soft:#8a332412;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,"Iowan Old Style",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --top:60px; --side-w:400px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-weight:400}
+button{font-family:inherit}
+
+/* ---------- 顶栏 ---------- */
+.top{position:sticky;top:0;z-index:20;height:var(--top);display:flex;align-items:center;gap:24px;
+  padding:0 20px;background:var(--panel);border-bottom:1px solid var(--rule-2)}
+.brand{display:flex;align-items:baseline;gap:10px;flex:none}
+.brand h1{font:400 22px/1 var(--serif);letter-spacing:.04em}
+.brand em{font:italic 12px/1 var(--serif);color:var(--ink-3)}
+.search{flex:1;max-width:720px;position:relative}
+.search input{width:100%;height:34px;padding:0 12px 0 32px;border:1px solid var(--rule-2);
+  border-radius:3px;background:var(--paper);color:var(--ink);font:14px/1 var(--sans);outline:none}
+.search input:focus{border-color:var(--seal)}
+.search svg{position:absolute;left:10px;top:9px;width:14px;height:14px;stroke:var(--ink-3);fill:none}
+.topmeta{margin-left:auto;font-size:12px;color:var(--ink-3);display:flex;align-items:center;
+  gap:10px;flex:none}
+.topmeta i{font-style:normal;color:var(--rule-2)}
+/* 导出：下载的就是内嵌的那份 cast.json，编辑完能直接喂回 render */
+.expo{margin-left:4px;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:6px 10px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+/* ---------- 骨架 ---------- */
+.shell{display:grid;grid-template-columns:var(--side-w) minmax(0,1fr);align-items:start}
+@media(max-width:1080px){:root{--side-w:100%}.shell{grid-template-columns:1fr}}
+
+/* ---------- 左栏 ---------- */
+.side{position:sticky;top:var(--top);height:calc(100vh - var(--top));overflow-y:auto;
+  background:var(--side);border-right:1px solid var(--rule-2)}
+@media(max-width:1080px){.side{position:static;height:auto}}
+.synopsis{padding:18px 20px;border-bottom:1px solid var(--rule)}
+.lbl{font:500 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3)}
+.synopsis p{margin:10px 0 0;font:400 14px/1.95 var(--serif)}
+/* 摘要默认三行，底部渐隐——左栏第一屏要留给角色列表。点一下展开，之后不再收起 */
+.syn-clamp{cursor:pointer}
+.syn-clamp p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,#000 58%,transparent);
+  mask-image:linear-gradient(180deg,#000 58%,transparent)}
+.syn-more{display:none;margin-top:7px;padding:0;background:none;border:0;cursor:pointer;
+  font:500 11px/1 var(--sans);letter-spacing:.06em;color:var(--seal)}
+.syn-clamp .syn-more{display:block}
+.syn-more:hover{text-decoration:underline}
+.syn-more:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.roster-h{padding:14px 20px 8px}
+.roster{display:block}
+.rost{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;width:100%;text-align:left;
+  padding:12px 20px;background:none;border:0;border-bottom:1px solid var(--rule);
+  border-left:2px solid transparent;cursor:pointer;color:inherit}
+.rost:hover{background:#00000006}
+.rost.on{background:var(--panel);border-left-color:var(--seal)}
+.rost:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+/* 缩略图 = 设定图的左栏切片。设定图固定 16:9、左栏占约 34%，
+   所以把整图按 1/0.34 ≈ 294% 放大再左上对齐，裁出来正好是半身像。
+   比 <img> + object-position 可控：不依赖浏览器怎么 cover。 */
+.rost-thumb{display:block;width:76px;height:76px;border:1px solid var(--rule-2);border-radius:6px;
+  background:#fff no-repeat left top;background-size:294% auto}
+.rost-body{min-width:0}
+.rost-top{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.rost-n{font:500 10px/1 var(--mono);color:var(--ink-3);font-style:normal}
+.rost-name{font:400 17px/1.2 var(--serif);letter-spacing:.03em}
+.rost-meta{font-size:11px;color:var(--ink-3)}
+.rost-one{display:block;margin-top:5px;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+.rost-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.rost-chips i{font-style:normal;font-size:11px;padding:1px 6px;border:1px solid var(--rule-2);
+  border-radius:2px;color:var(--ink-2);background:var(--paper)}
+.side-foot{padding:14px 20px 28px;font-size:11px;line-height:1.7;color:var(--ink-3)}
+.badge{font-size:11px;padding:1px 7px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2)}
+.rost.on .badge,.char-h .badge{border-color:var(--seal);color:var(--seal)}
+
+/* ---------- 主区 ---------- */
+.main{padding:26px 28px 72px;min-width:0;max-width:1500px}
+.char{display:none}
+.char.on{display:block}
+.char-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid var(--rule-2)}
+.char-n{font:500 13px/1 var(--mono);color:var(--seal)}
+.char-h h2{font:400 clamp(24px,2.4vw,30px)/1.1 var(--serif);letter-spacing:.05em}
+.aka{font-size:12px;color:var(--ink-3)}
+.char-one{margin-left:auto;font:400 14px/1.7 var(--serif);color:var(--ink-2);text-align:right;max-width:44ch}
+@media(max-width:900px){.char-one{margin-left:0;text-align:left}}
+
+.upper{display:grid;grid-template-columns:minmax(0,1fr) 500px;gap:26px;align-items:start;margin-top:20px}
+@media(max-width:1240px){.upper{grid-template-columns:1fr}}
+
+/* 设定图是白底印张 */
+.plate-wrap{position:relative;margin:0}
+.plate{display:block;width:100%;padding:0;background:#fff;border:1px solid var(--rule-2);
+  border-radius:2px;overflow:hidden;cursor:zoom-in}
+.plate img{display:block;width:100%;height:auto}
+.plate:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+/* 右下角浮在图上，hover 才明显——别挡住画面 */
+.copy-img{position:absolute;right:10px;bottom:10px;font:500 11px/1 var(--sans);color:var(--ink-2);
+  background:var(--paper);border:1px solid var(--rule-2);border-radius:3px;padding:6px 10px;
+  cursor:pointer;opacity:.55;transition:.15s}
+.plate-wrap:hover .copy-img{opacity:1}
+.copy-img:hover{border-color:var(--seal);color:var(--seal)}
+.copy-img:focus-visible{opacity:1;outline:2px solid var(--seal);outline-offset:2px}
+.copy-img[data-done]{border-color:var(--seal);color:var(--seal);opacity:1}
+
+/* 弹层 */
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;
+  background:#191d21e6;padding:32px;cursor:zoom-out}
+.lightbox.on{display:grid}
+.lightbox img{max-width:100%;max-height:100%;background:#fff;border-radius:2px;
+  box-shadow:0 8px 40px #0006}
+.lightbox-x{position:absolute;top:18px;right:22px;font:500 13px/1 var(--sans);color:#fff;
+  background:none;border:1px solid #fff6;border-radius:3px;padding:8px 12px;cursor:pointer}
+.lightbox-x:hover{border-color:#fff}
+.plate-empty{display:grid;place-items:center;min-height:220px;text-align:center;
+  border:1px dashed var(--rule-2);background:var(--panel);color:var(--ink-3);font-size:13px}
+.plate-empty em{font-style:normal;font-size:12px;opacity:.8}
+.plate-c{margin:7px 0 0;font-size:11px;letter-spacing:.1em;color:var(--ink-3)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;margin-top:24px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.blk{margin-bottom:20px}
+.blk h3{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--seal);margin-bottom:7px}
+.blk p{margin:0;font-size:13.5px;line-height:1.85}
+
+/* 原文：衬线体，铁锈红边栏。这里是书自己在说话 */
+.source .quotes{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
+@media(max-width:700px){.source .quotes{grid-template-columns:1fr}}
+.source blockquote{margin:0;padding-left:13px;border-left:2px solid var(--seal);
+  font:400 13.5px/1.85 var(--serif)}
+
+/* ---------- 右侧信息卡 ---------- */
+.side-cards{display:flex;flex-direction:column;gap:14px}
+.card{border:1px solid var(--rule);border-radius:2px;background:var(--panel);padding:14px 16px}
+.card h4{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--ink-3);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.tag-en{font:500 9px/1 var(--mono);letter-spacing:.22em;color:var(--rule-2);font-style:normal}
+.card dl{margin:0}
+.kv{display:flex;gap:12px;padding:2.5px 0;font-size:13px}
+.kv dt{color:var(--ink-3);flex:none;width:46px}
+.kv dd{margin:0;min-width:0}
+.rel-n{color:var(--ink)!important;width:auto!important;min-width:46px}
+.style{margin:0;font-size:12.5px;line-height:1.7;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0;padding:0;list-style:none}
+.tags li{font:400 11px/1.5 var(--mono);color:var(--ink-2);border:1px solid var(--rule-2);
+  background:var(--paper);border-radius:2px;padding:1px 6px}
+
+/* ---------- 提示词 ---------- */
+.prompts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+@media(max-width:900px){.prompts{grid-template-columns:1fr}}
+.pgroup{border:1px solid var(--rule);border-radius:2px;background:var(--panel);padding:6px 14px 10px}
+.pr{border-bottom:1px solid var(--rule)}
+.pgroup .pr:last-of-type{border-bottom:0}
+.pr summary{display:flex;align-items:center;gap:10px;padding:11px 0;cursor:pointer;list-style:none;
+  font:500 12px/1 var(--sans);letter-spacing:.04em}
+.pr summary::-webkit-details-marker{display:none}
+.pr summary::before{content:"▸";color:var(--seal);font-size:11px;transition:transform .15s}
+.pr[open] summary::before{transform:rotate(90deg)}
+.pr summary span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr p{margin:0 0 12px;padding:11px 12px;background:var(--paper);border:1px solid var(--rule);
+  border-radius:2px;font:400 12px/1.75 var(--mono);white-space:pre-wrap;word-break:break-word}
+.pgroup-f{padding:12px 0 4px}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.wide{width:100%;padding:9px}
+
+/* ---------- 关系图谱 ---------- */
+/* 布局在 Node 里算好写进 SVG，这里只管高亮。红色仍然只给选中态 */
+.gtoggle{display:flex;align-items:center;gap:9px;width:100%;padding:13px 20px;text-align:left;
+  background:none;border:0;border-bottom:1px solid var(--rule);border-left:2px solid transparent;
+  cursor:pointer;color:var(--ink-2);font:500 12px/1 var(--sans);letter-spacing:.1em}
+.gtoggle:hover{background:#00000006}
+.gtoggle.on{background:var(--panel);border-left-color:var(--seal);color:var(--seal)}
+.gtoggle:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.gtoggle svg{width:15px;height:15px;flex:none;stroke:currentColor;fill:none;stroke-width:1.3}
+.graph{display:none}
+.graph.on{display:block}
+.main.gmode .char{display:none}
+.graph-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid var(--rule-2)}
+.graph-h h2{font:400 clamp(22px,2.2vw,28px)/1.1 var(--serif);letter-spacing:.05em}
+.graph-h .hint{margin-left:auto;font-size:12px;color:var(--ink-3)}
+.graph-body{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:26px;
+  align-items:start;margin-top:20px}
+@media(max-width:1100px){.graph-body{grid-template-columns:1fr}}
+.graph-canvas{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:10px}
+.graph-canvas svg{display:block;width:100%;height:auto}
+.graph-empty{margin:0 0 8px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.gedge{fill:none;stroke:var(--rule-2);stroke-width:1.1;transition:.15s}
+.gedge.hot{stroke:var(--seal);stroke-width:2}
+.gedge.dim{opacity:.15}
+.gnode{cursor:pointer;transition:.15s}
+.gnode .gdot{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.5}
+/* 看不见的命中区：节点本身才十来个像素，光标很难压准。
+   单独一个类，免得被下面 .lead / .hot 的规则一起染色 */
+.gnode .ghit{fill:none;stroke:none;pointer-events:all}
+.gnode text{font:400 13px var(--serif);fill:var(--ink)}
+.gnode.lead .gdot{fill:var(--seal);stroke:var(--seal)}
+.gnode.hot .gdot{stroke:var(--seal);stroke-width:2.5}
+.gnode.hot text{fill:var(--seal)}
+.gnode.dim{opacity:.22}
+.gnode:focus-visible{outline:2px solid var(--seal)}
+/* 弦上的关系文字。默认按边数决定开不开，悬停的那条永远显示。
+   paint-order + 同色描边 = 给字加一圈底衬，压在弦上也读得清 */
+.glabel{display:none;font:400 9px var(--sans);fill:var(--ink-3);pointer-events:none;
+  paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
+.graph.labels .glabel{display:block}
+.glabel.dim{opacity:.15}
+.glabel.hot{display:block;fill:var(--seal);font-weight:500}
+.glabtoggle{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.glabtoggle:hover{border-color:var(--seal);color:var(--seal)}
+.glabtoggle.on{border-color:var(--seal);color:var(--seal);background:var(--seal-soft)}
+.glabtoggle:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.grel{border:1px solid var(--rule);border-radius:2px;background:var(--panel)}
+.grel h4{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--ink-3);padding:14px 16px 11px}
+.grel-list{max-height:56vh;overflow-y:auto;border-top:1px solid var(--rule)}
+.grow{display:block;width:100%;text-align:left;padding:11px 16px;background:none;border:0;
+  border-bottom:1px solid var(--rule);cursor:pointer;color:inherit;transition:.15s}
+.grow:last-child{border-bottom:0}
+.grow:hover,.grow.hot{background:var(--seal-soft)}
+.grow.dim{opacity:.3}
+.grow:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.grow b{font:400 14px/1.4 var(--serif);letter-spacing:.03em}
+.grow i{font-style:normal;color:var(--ink-3);padding:0 6px}
+.grow span{display:block;margin-top:4px;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+.grow em{font-style:normal;color:var(--ink-3)}
+.grel-foot{margin:0;padding:11px 16px;border-top:1px solid var(--rule);
+  font-size:11px;line-height:1.6;color:var(--ink-3)}
+
+/* 签名：推断标记 */
+.inf{color:var(--ink-3);font-size:.88em;background:var(--seal-soft);padding:0 3px;border-radius:2px}
+
+.nomatch{display:none;padding:20px;font-size:13px;color:var(--ink-3)}
+.nomatch.on{display:block}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* 屏幕上一次一个角色，纸上要完整 */
+@media print{
+  .top,.side,.copy{display:none!important}
+  .shell{display:block}
+  .main{padding:0}
+  .graph{display:block!important;page-break-after:always}
+  .char{display:block!important;page-break-after:always}
+  .pr p{display:block!important}
+  .pr summary::before{content:""}
+  body{background:#fff}
+}
+</style><!-- production-hub-return-css:start --><style>.production-hub-return{position:fixed;right:16px;bottom:16px;z-index:99999;padding:9px 12px;border:1px solid #3b6670;border-radius:9px;background:#0b151bea;color:#67e0e6!important;font:700 13px/1.2 system-ui,"Microsoft YaHei",sans-serif;text-decoration:none!important;box-shadow:0 8px 30px #0007;backdrop-filter:blur(10px)}.production-hub-return:focus-visible{outline:3px solid #67e0e6;outline-offset:3px}@media(max-width:560px){.production-hub-return{display:grid;place-items:center;right:10px;bottom:10px;width:44px;height:44px;padding:0;overflow:hidden;font-size:0}.production-hub-return::before{content:"⌂";font-size:22px}}</style><!-- production-hub-return-css:end --></head><body><!-- production-hub-return:start --><a class="production-hub-return" href="../index.html" aria-label="返回潮痕小说视频生产总控">⌂ 返回生产总控</a><!-- production-hub-return:end -->
+
+<header class="top">
+  <div class="brand"><h1>潮痕</h1></div>
+  <div class="search">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke-width="1.5"/><path d="M11 11l4 4" stroke-width="1.5"/></svg>
+    <input id="q" type="search" placeholder="搜索角色、特质、身份" aria-label="搜索角色、特质、身份" autocomplete="off">
+  </div>
+  <div class="topmeta">
+    <span>角色设定集</span><i>·</i>
+    <span>5 位角色 · 5 张设定图 · 按戏份排序</span>
+    <button class="expo" data-name="潮痕-cast.json">导出 JSON</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="side">
+    <section class="synopsis syn-clamp"><div class="lbl">故事摘要</div><p>当代南方江镇的旧渡口即将拆除，声音修复师许知遥回乡整理已故父亲的遗物。她从一台烧损的应急电台中修出失踪哥哥的声音，并在儿时朋友程野协助下追查十五年前的沉船事故。如今掌控文旅项目的高嵩试图阻止调查，而父亲许德海和哥哥许潮只能通过遗物、录音与残存物证重新进入这场迟到的对质。</p><button class="syn-more">全部展开</button></section>
+    <button class="gtoggle" aria-controls="graph">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="4" r="1.9"/><circle cx="12.8" cy="6.2" r="1.9"/><circle cx="7.2" cy="13" r="1.9"/><path d="M5 4.6l6 1.2M4 5.9l2.5 5.4M11.7 7.9l-3.3 3.7"/></svg>
+      <span>关系图谱</span>
+    </button>
+    <div class="roster-h lbl">角色 · 按戏份排序</div>
+    <nav class="roster" aria-label="角色索引">
+      <button class="rost on" data-target="p-许知遥" data-hay="许知遥 知遥 中国南方江镇出身的声音修复师与档案技术人员（推断） 女 约三十岁（推断） 克制 执拗 严谨 敏锐 从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。">
+  <span class="rost-thumb" style="background-image:url('images/许知遥-sheet.png')"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">01</em>
+      <b class="rost-name">许知遥</b>
+      <span class="badge">主角</span>
+      <span class="rost-meta">女 · 约三十岁（推断）</span>
+    </span>
+    <span class="rost-one">从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。</span>
+    <span class="rost-chips"><i>克制</i><i>执拗</i><i>严谨</i><i>敏锐</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-程野" data-hay="程野 中国南方江镇潜水员，兄妹二人的儿时朋友 男 约三十二岁（推断） 寡言 可靠 负疚 勇敢 熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。">
+  <span class="rost-thumb" style="background-image:url('images/程野-sheet.png')"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">02</em>
+      <b class="rost-name">程野</b>
+      <span class="badge">主角</span>
+      <span class="rost-meta">男 · 约三十二岁（推断）</span>
+    </span>
+    <span class="rost-one">熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。</span>
+    <span class="rost-chips"><i>寡言</i><i>可靠</i><i>负疚</i><i>勇敢</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-高嵩" data-hay="高嵩 南堤文旅项目投资人，十五年前的渡运公司经理 男 约五十五岁（推断） 控制欲强 圆滑 冷酷 善于施压 把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。">
+  <span class="rost-thumb" style="background-image:url('images/高嵩-sheet.png')"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">03</em>
+      <b class="rost-name">高嵩</b>
+      <span class="badge">主要角色</span>
+      <span class="rost-meta">男 · 约五十五岁（推断）</span>
+    </span>
+    <span class="rost-one">把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。</span>
+    <span class="rost-chips"><i>控制欲强</i><i>圆滑</i><i>冷酷</i><i>善于施压</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-许德海" data-hay="许德海 中国南方江镇渡工，兄妹二人的父亲 男 事故时约五十岁（推断） 沉默 坚忍 保护欲强 负重 被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。">
+  <span class="rost-thumb" style="background-image:url('images/许德海-sheet.png')"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">04</em>
+      <b class="rost-name">许德海</b>
+      <span class="badge">配角</span>
+      <span class="rost-meta">男 · 事故时约五十岁（推断）</span>
+    </span>
+    <span class="rost-one">被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。</span>
+    <span class="rost-chips"><i>沉默</i><i>坚忍</i><i>保护欲强</i><i>负重</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-许潮" data-hay="许潮 中国南方江镇少年，女主的哥哥与事故现场录音者 男 事故时约十七岁（推断） 勇敢 机敏 重情 有行动力 把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。">
+  <span class="rost-thumb" style="background-image:url('images/许潮-sheet.png')"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">05</em>
+      <b class="rost-name">许潮</b>
+      <span class="badge">配角</span>
+      <span class="rost-meta">男 · 事故时约十七岁（推断）</span>
+    </span>
+    <span class="rost-one">把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。</span>
+    <span class="rost-chips"><i>勇敢</i><i>机敏</i><i>重情</i><i>有行动力</i></span>
+  </span>
+</button>
+    </nav>
+    <p class="nomatch">没有匹配的角色</p>
+    <p class="side-foot">标注（推断）的条目为原文未明写、依据文本推演。</p>
+  </aside>
+
+  <main class="main">
+    <section class="graph labels" id="graph">
+  <header class="graph-h">
+    <h2>关系图谱</h2>
+    <span class="badge">5 位角色 · 10 组关系</span>
+    <button class="glabtoggle on" aria-pressed="true">关系文字</button>
+    <span class="hint">悬停看关系，点击进角色</span>
+  </header>
+  <div class="graph-body">
+    <div class="graph-canvas">
+      <svg viewBox="0 0 480 480" role="img" aria-label="关系图谱">
+        <g class="gedges"><path class="gedge" data-a="程野" data-b="许知遥" d="M363.6 199.8 Q261.6 210.2 240 110"></path><path class="gedge" data-a="许知遥" data-b="高嵩" d="M240 110 Q253.4 235.7 316.4 345.2"></path><path class="gedge" data-a="许德海" data-b="许知遥" d="M163.6 345.2 Q226.6 235.7 240 110"></path><path class="gedge" data-a="许潮" data-b="许知遥" d="M116.4 199.8 Q218.4 210.2 240 110"></path><path class="gedge" data-a="程野" data-b="许潮" d="M363.6 199.8 Q240 225.9 116.4 199.8"></path><path class="gedge" data-a="程野" data-b="许德海" d="M363.6 199.8 Q248.3 251.4 163.6 345.2"></path><path class="gedge" data-a="程野" data-b="高嵩" d="M363.6 199.8 Q275 251.4 316.4 345.2"></path><path class="gedge" data-a="许德海" data-b="高嵩" d="M163.6 345.2 Q240 276.8 316.4 345.2"></path><path class="gedge" data-a="许潮" data-b="高嵩" d="M116.4 199.8 Q231.7 251.4 316.4 345.2"></path><path class="gedge" data-a="许德海" data-b="许潮" d="M163.6 345.2 Q205 251.4 116.4 199.8"></path></g>
+        <g class="gnodes"><g class="gnode lead" data-node="许知遥" data-target="p-许知遥" tabindex="0" role="button" aria-label="许知遥">
+  <circle class="ghit" cx="240" cy="110" r="24"></circle>
+  <circle class="gdot" cx="240" cy="110" r="11"></circle>
+  <text x="240" y="89" text-anchor="middle">许知遥</text>
+</g><g class="gnode lead" data-node="程野" data-target="p-程野" tabindex="0" role="button" aria-label="程野">
+  <circle class="ghit" cx="363.6" cy="199.8" r="24"></circle>
+  <circle class="gdot" cx="363.6" cy="199.8" r="11"></circle>
+  <text x="377.9" y="199.7" text-anchor="start">程野</text>
+</g><g class="gnode" data-node="高嵩" data-target="p-高嵩" tabindex="0" role="button" aria-label="高嵩">
+  <circle class="ghit" cx="316.4" cy="345.2" r="24"></circle>
+  <circle class="gdot" cx="316.4" cy="345.2" r="9"></circle>
+  <text x="325.2" y="361.8" text-anchor="start">高嵩</text>
+</g><g class="gnode" data-node="许德海" data-target="p-许德海" tabindex="0" role="button" aria-label="许德海">
+  <circle class="ghit" cx="163.6" cy="345.2" r="24"></circle>
+  <circle class="gdot" cx="163.6" cy="345.2" r="7"></circle>
+  <text x="154.8" y="361.8" text-anchor="end">许德海</text>
+</g><g class="gnode" data-node="许潮" data-target="p-许潮" tabindex="0" role="button" aria-label="许潮">
+  <circle class="ghit" cx="116.4" cy="199.8" r="24"></circle>
+  <circle class="gdot" cx="116.4" cy="199.8" r="7"></circle>
+  <text x="102.1" y="199.7" text-anchor="end">许潮</text>
+</g></g>
+        <g class="glabels"><text class="glabel" data-a="程野" data-b="许知遥" x="300.6" y="193" text-anchor="middle" dominant-baseline="middle">儿时朋友与共…<title>许知遥 · 儿时朋友与共同调查旧案的行动搭档
+程野 · 儿时朋友，也是他决定协助查案的搭档</title></text><text class="glabel" data-a="许知遥" data-b="高嵩" x="265.8" y="231.6" text-anchor="middle" dominant-baseline="middle">试图收买并压…<title>许知遥 · 她追查的旧案核心嫌疑人与当前阻挠者
+高嵩 · 试图收买并压制的调查者</title></text><text class="glabel" data-a="许德海" data-b="许知遥" x="223.9" y="198.4" text-anchor="middle" dominant-baseline="middle">已故父亲，她…<title>许知遥 · 已故父亲，她从怨恨走向重新理解
+许德海 · 他竭力保护、却因沉默而与之隔阂的女儿</title></text><text class="glabel" data-a="许潮" data-b="许知遥" x="179.4" y="193" text-anchor="middle" dominant-baseline="middle">想把真实去向…<title>许知遥 · 失踪十五年的哥哥，也是录音证据的留下者
+许潮 · 想把真实去向留给她的妹妹</title></text><text class="glabel" data-a="程野" data-b="许潮" x="240" y="212.9" text-anchor="middle" dominant-baseline="middle">在渡口一同长…<title>程野 · 儿时伙伴，其失踪让他背负多年愧疚（推断）
+许潮 · 在渡口一同长大的儿时朋友</title></text><text class="glabel" data-a="程野" data-b="许德海" x="228.5" y="283.1" text-anchor="middle" dominant-baseline="middle">曾要求他丢弃…<title>程野 · 曾要求他丢弃船牌的长辈
+许德海 · 事故后被他要求丢弃船牌的少年见证者</title></text><text class="glabel" data-a="程野" data-b="高嵩" x="316.7" y="242.4" text-anchor="middle" dominant-baseline="middle">旧案中被证据…<title>程野 · 旧案中被证据逐步指向的对手
+高嵩 · 被他低估的潜水证人与取证者</title></text><text class="glabel" data-a="许德海" data-b="高嵩" x="240" y="311" text-anchor="middle" dominant-baseline="middle">胁迫他签下伪…<title>高嵩 · 十五年前被其胁迫签下责任书的渡工
+许德海 · 胁迫他签下伪造记录的渡运经理</title></text><text class="glabel" data-a="许潮" data-b="高嵩" x="251.5" y="283.1" text-anchor="middle" dominant-baseline="middle">被他在录音中…<title>高嵩 · 留下现场录音、推翻其说法的少年证人
+许潮 · 被他在录音中点名的违规开船者</title></text><text class="glabel" data-a="许德海" data-b="许潮" x="176.5" y="283.1" text-anchor="middle" dominant-baseline="middle">事故中失踪的…<title>许德海 · 事故中失踪的儿子
+许潮 · 他目睹被困并阻止开船的父亲</title></text></g>
+      </svg>
+      
+    </div>
+    <aside class="grel">
+      <h4>全部关系</h4>
+      <div class="grel-list"><button class="grow" data-a="程野" data-b="许知遥" data-target="p-程野">
+  <b>程野</b><i>—</i><b>许知遥</b>
+  <span><em>许知遥</em> 儿时朋友与共同调查旧案的行动搭档</span><span><em>程野</em> 儿时朋友，也是他决定协助查案的搭档</span>
+</button><button class="grow" data-a="许知遥" data-b="高嵩" data-target="p-许知遥">
+  <b>许知遥</b><i>—</i><b>高嵩</b>
+  <span><em>许知遥</em> 她追查的旧案核心嫌疑人与当前阻挠者</span><span><em>高嵩</em> 试图收买并压制的调查者</span>
+</button><button class="grow" data-a="许德海" data-b="许知遥" data-target="p-许德海">
+  <b>许德海</b><i>—</i><b>许知遥</b>
+  <span><em>许知遥</em> 已故父亲，她从怨恨走向重新理解</span><span><em>许德海</em> 他竭力保护、却因沉默而与之隔阂的女儿</span>
+</button><button class="grow" data-a="许潮" data-b="许知遥" data-target="p-许潮">
+  <b>许潮</b><i>—</i><b>许知遥</b>
+  <span><em>许知遥</em> 失踪十五年的哥哥，也是录音证据的留下者</span><span><em>许潮</em> 想把真实去向留给她的妹妹</span>
+</button><button class="grow" data-a="程野" data-b="许潮" data-target="p-程野">
+  <b>程野</b><i>—</i><b>许潮</b>
+  <span><em>程野</em> 儿时伙伴，其失踪让他背负多年愧疚<span class="inf">（推断）</span></span><span><em>许潮</em> 在渡口一同长大的儿时朋友</span>
+</button><button class="grow" data-a="程野" data-b="许德海" data-target="p-程野">
+  <b>程野</b><i>—</i><b>许德海</b>
+  <span><em>程野</em> 曾要求他丢弃船牌的长辈</span><span><em>许德海</em> 事故后被他要求丢弃船牌的少年见证者</span>
+</button><button class="grow" data-a="程野" data-b="高嵩" data-target="p-程野">
+  <b>程野</b><i>—</i><b>高嵩</b>
+  <span><em>程野</em> 旧案中被证据逐步指向的对手</span><span><em>高嵩</em> 被他低估的潜水证人与取证者</span>
+</button><button class="grow" data-a="许德海" data-b="高嵩" data-target="p-许德海">
+  <b>许德海</b><i>—</i><b>高嵩</b>
+  <span><em>高嵩</em> 十五年前被其胁迫签下责任书的渡工</span><span><em>许德海</em> 胁迫他签下伪造记录的渡运经理</span>
+</button><button class="grow" data-a="许潮" data-b="高嵩" data-target="p-许潮">
+  <b>许潮</b><i>—</i><b>高嵩</b>
+  <span><em>高嵩</em> 留下现场录音、推翻其说法的少年证人</span><span><em>许潮</em> 被他在录音中点名的违规开船者</span>
+</button><button class="grow" data-a="许德海" data-b="许潮" data-target="p-许德海">
+  <b>许德海</b><i>—</i><b>许潮</b>
+  <span><em>许德海</em> 事故中失踪的儿子</span><span><em>许潮</em> 他目睹被困并阻止开船的父亲</span>
+</button></div>
+      
+    </aside>
+  </div>
+</section>
+    <article class="char on" id="p-许知遥">
+  <header class="char-h">
+    <span class="char-n">01</span>
+    <h2>许知遥</h2>
+    <span class="badge">主角</span>
+    <span class="aka">又称　知遥</span>
+    <span class="char-one">从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <figure class="plate-wrap">
+         <button class="plate zoom" data-src="images/许知遥-sheet.png" aria-label="放大查看">
+           <img src="images/许知遥-sheet.png" alt="许知遥 左：半身像　右：全身三视图" loading="lazy">
+         </button>
+         <button class="copy-img" data-img="images/许知遥-sheet.png" title="复制图片">复制图片</button>
+       </figure>
+       <p class="plate-c">左：半身像　右：全身三视图</p>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>身形清瘦，长时间伏案使肩背略显紧绷<span class="inf">（推断）</span>。鹅蛋脸，眉形利落，眼下有淡淡疲态，黑发低束；工作时戴封闭式耳机，穿灰蓝衬衫、深色直筒裤与轻薄防水外套<span class="inf">（推断）</span>。</p></section>
+        <section class="blk"><h3>性情</h3><p>习惯先听完、核对完再作判断，动作精确，情绪越强时语气反而越稳。面对与家人有关的证据会短暂失去冷静，但很快回到可验证的事实。</p></section>
+        <section class="blk"><h3>动机</h3><p>在旧渡口拆除前修复哥哥留下的录音，厘清父亲承担责任的真相，并把完整证据交给公开核验。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>事故以后，知遥离开南堤，学了声音修复，专门替档案馆抢救被水和霉菌毁坏的录音。</blockquote><blockquote>知遥因此更愤怒。她一直以为父亲签责任书只是软弱，现在看来更像是在主动掩埋什么。</blockquote><blockquote>知遥没有阻拦，只告诉他，自己修复档案从来不会在原介质上工作。完整录音已经复制了三份。</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>女</dd></div><div class="kv"><dt>年龄</dt><dd>约三十岁<span class="inf">（推断）</span></dd></div><div class="kv"><dt>身份</dt><dd>中国南方江镇出身的声音修复师与档案技术人员<span class="inf">（推断）</span></dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">程野</dt><dd>儿时朋友与共同调查旧案的行动搭档</dd></div><div class="kv"><dt class="rel-n">高嵩</dt><dd>她追查的旧案核心嫌疑人与当前阻挠者</dd></div><div class="kv"><dt class="rel-n">许德海</dt><dd>已故父亲，她从怨恨走向重新理解</dd></div><div class="kv"><dt class="rel-n">许潮</dt><dd>失踪十五年的哥哥，也是录音证据的留下者</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>清晰偏冷的年轻女中音，轻微气声，咬字边缘干净</dd></div><div class="kv"><dt>音高</dt><dd>中音区</dd></div><div class="kv"><dt>语速</dt><dd>平稳偏慢，核对事实时停顿短而精确</dd></div><div class="kv"><dt>口音</dt><dd>标准普通话，保留很淡的南方江镇尾音<span class="inf">（推断）</span></dd></div><div class="kv"><dt>情绪</dt><dd>克制、警觉，底层带未消退的悲伤</dd></div><div class="kv"><dt>类比</dt><dd>参考三十岁左右、长期做档案修复的专业女性，收音近、气息稳定</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>cool grey-blue palette</li><li>contemporary china</li><li>audio restoration</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词 · 喂出图模型用这条</span><button class="copy" data-copy="Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A slim East Asian woman around thirty with Han Chinese features in a contemporary 2020s southern Chinese riverside town, oval face, alert almond-shaped dark eyes, straight brows, faint under-eye fatigue, black hair tied low with loose strands. She wears a slate-blue cotton shirt, charcoal straight trousers and a lightweight dark rain jacket; studio headphones rest around her neck and a small audio-cleaning stylus is held carefully. Visible pores, uneven skin tone, faint capillaries at nostrils and ear rims, wet eye highlights, iris fibres, slightly asymmetric eyelids and brows. Fabric shows weave, cuff wear, realistic weight and fold self-shadow. Three-quarter waist-up view, plain neutral background, soft upper-left directional key with cool fill, shallow depth of field, face sharpest.">复制</button></summary>
+  <p>Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A slim East Asian woman around thirty with Han Chinese features in a contemporary 2020s southern Chinese riverside town, oval face, alert almond-shaped dark eyes, straight brows, faint under-eye fatigue, black hair tied low with loose strands. She wears a slate-blue cotton shirt, charcoal straight trousers and a lightweight dark rain jacket; studio headphones rest around her neck and a small audio-cleaning stylus is held carefully. Visible pores, uneven skin tone, faint capillaries at nostrils and ear rims, wet eye highlights, iris fibres, slightly asymmetric eyelids and brows. Fabric shows weave, cuff wear, realistic weight and fold self-shadow. Three-quarter waist-up view, plain neutral background, soft upper-left directional key with cool fill, shallow depth of field, face sharpest.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas for a slim East Asian Han Chinese woman around thirty in a contemporary 2020s southern Chinese riverside town. Divide the canvas into three zones with thin hairline rules. LEFT ZONE occupies about 34% of the canvas width: one front-facing ID-style bust portrait with BOTH SHOULDERS FULLY VISIBLE, clear side margins, and a clean straight horizontal cut below the chest; oval face, alert almond eyes, straight brows, faint under-eye fatigue, low-tied black hair with flyaways, slate-blue shirt and dark rain jacket. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, on one shared ground line, wearing charcoal trousers and practical waterproof shoes, headphones at the neck. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb lengths, no stretching, squashing or foreshortening, margin above heads and below feet. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: four small isolated studies of the studio headphones, audio stylus, worn shirt cuff and waterproof shoe, smaller than the figures. If space is tight, continue details down the right edge; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Skin with visible pores and uneven tone, wet eye highlights, slight facial asymmetry, flyaway hair; fabric with visible weave, wear and real weight.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas for a slim East Asian Han Chinese woman around thirty in a contemporary 2020s southern Chinese riverside town. Divide the canvas into three zones with thin hairline rules. LEFT ZONE occupies about 34% of the canvas width: one front-facing ID-style bust portrait with BOTH SHOULDERS FULLY VISIBLE, clear side margins, and a clean straight horizontal cut below the chest; oval face, alert almond eyes, straight brows, faint under-eye fatigue, low-tied black hair with flyaways, slate-blue shirt and dark rain jacket. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, on one shared ground line, wearing charcoal trousers and practical waterproof shoes, headphones at the neck. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb lengths, no stretching, squashing or foreshortening, margin above heads and below feet. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: four small isolated studies of the studio headphones, audio stylus, worn shirt cuff and waterproof shoe, smaller than the figures. If space is tight, continue details down the right edge; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Skin with visible pores and uneven tone, wet eye highlights, slight facial asymmetry, flyaway hair; fabric with visible weave, wear and real weight.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词（中文对照）</span><button class="copy" data-copy="半写实厚涂插画：约三十岁的东亚汉族女性，身处当代中国南方江镇。身形清瘦，鹅蛋脸，深色杏眼警觉，直眉，眼下略显疲惫，黑发低束并有碎发。穿灰蓝棉衬衫、炭灰直筒裤和深色轻薄防水外套，耳机挂在颈间，谨慎拿着音频清理笔。皮肤可见毛孔与不均匀肤色，鼻翼和耳缘有细微毛细血管，眼睛有湿润高光与虹膜纤维，眼睑和眉毛略不对称。布料可见织纹、袖口磨损、真实垂坠和褶皱自阴影。四分之三视角半身，纯中性背景，左上柔和方向主光配冷调补光，浅景深，面部最清晰。">复制</button></summary>
+  <p>半写实厚涂插画：约三十岁的东亚汉族女性，身处当代中国南方江镇。身形清瘦，鹅蛋脸，深色杏眼警觉，直眉，眼下略显疲惫，黑发低束并有碎发。穿灰蓝棉衬衫、炭灰直筒裤和深色轻薄防水外套，耳机挂在颈间，谨慎拿着音频清理笔。皮肤可见毛孔与不均匀肤色，鼻翼和耳缘有细微毛细血管，眼睛有湿润高光与虹膜纤维，眼睑和眉毛略不对称。布料可见织纹、袖口磨损、真实垂坠和褶皱自阴影。四分之三视角半身，纯中性背景，左上柔和方向主光配冷调补光，浅景深，面部最清晰。</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词 · 喂 TTS 引擎用这条</span><button class="copy" data-copy="30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving.">复制</button></summary>
+  <p>30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C01&quot;,
+  &quot;name&quot;: &quot;许知遥&quot;,
+  &quot;aliases&quot;: [
+    &quot;知遥&quot;
+  ],
+  &quot;importance&quot;: &quot;protagonist&quot;,
+  &quot;oneLiner&quot;: &quot;从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;女&quot;,
+    &quot;ageRange&quot;: &quot;约三十岁（推断）&quot;,
+    &quot;identity&quot;: &quot;中国南方江镇出身的声音修复师与档案技术人员（推断）&quot;,
+    &quot;appearance&quot;: &quot;身形清瘦，长时间伏案使肩背略显紧绷（推断）。鹅蛋脸，眉形利落，眼下有淡淡疲态，黑发低束；工作时戴封闭式耳机，穿灰蓝衬衫、深色直筒裤与轻薄防水外套（推断）。&quot;,
+    &quot;personality&quot;: [
+      &quot;克制&quot;,
+      &quot;执拗&quot;,
+      &quot;严谨&quot;,
+      &quot;敏锐&quot;
+    ],
+    &quot;temperament&quot;: &quot;习惯先听完、核对完再作判断，动作精确，情绪越强时语气反而越稳。面对与家人有关的证据会短暂失去冷静，但很快回到可验证的事实。&quot;,
+    &quot;motivation&quot;: &quot;在旧渡口拆除前修复哥哥留下的录音，厘清父亲承担责任的真相，并把完整证据交给公开核验。&quot;,
+    &quot;arc&quot;: &quot;从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;程野&quot;,
+        &quot;relation&quot;: &quot;儿时朋友与共同调查旧案的行动搭档&quot;
+      },
+      {
+        &quot;name&quot;: &quot;高嵩&quot;,
+        &quot;relation&quot;: &quot;她追查的旧案核心嫌疑人与当前阻挠者&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许德海&quot;,
+        &quot;relation&quot;: &quot;已故父亲，她从怨恨走向重新理解&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许潮&quot;,
+        &quot;relation&quot;: &quot;失踪十五年的哥哥，也是录音证据的留下者&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;事故以后，知遥离开南堤，学了声音修复，专门替档案馆抢救被水和霉菌毁坏的录音。&quot;,
+      &quot;知遥因此更愤怒。她一直以为父亲签责任书只是软弱，现在看来更像是在主动掩埋什么。&quot;,
+      &quot;知遥没有阻拦，只告诉他，自己修复档案从来不会在原介质上工作。完整录音已经复制了三份。&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感&quot;,
+    &quot;prompt&quot;: &quot;Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A slim East Asian woman around thirty with Han Chinese features in a contemporary 2020s southern Chinese riverside town, oval face, alert almond-shaped dark eyes, straight brows, faint under-eye fatigue, black hair tied low with loose strands. She wears a slate-blue cotton shirt, charcoal straight trousers and a lightweight dark rain jacket; studio headphones rest around her neck and a small audio-cleaning stylus is held carefully. Visible pores, uneven skin tone, faint capillaries at nostrils and ear rims, wet eye highlights, iris fibres, slightly asymmetric eyelids and brows. Fabric shows weave, cuff wear, realistic weight and fold self-shadow. Three-quarter waist-up view, plain neutral background, soft upper-left directional key with cool fill, shallow depth of field, face sharpest.&quot;,
+    &quot;promptLocal&quot;: &quot;半写实厚涂插画：约三十岁的东亚汉族女性，身处当代中国南方江镇。身形清瘦，鹅蛋脸，深色杏眼警觉，直眉，眼下略显疲惫，黑发低束并有碎发。穿灰蓝棉衬衫、炭灰直筒裤和深色轻薄防水外套，耳机挂在颈间，谨慎拿着音频清理笔。皮肤可见毛孔与不均匀肤色，鼻翼和耳缘有细微毛细血管，眼睛有湿润高光与虹膜纤维，眼睑和眉毛略不对称。布料可见织纹、袖口磨损、真实垂坠和褶皱自阴影。四分之三视角半身，纯中性背景，左上柔和方向主光配冷调补光，浅景深，面部最清晰。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;cool grey-blue palette&quot;,
+      &quot;contemporary china&quot;,
+      &quot;audio restoration&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas for a slim East Asian Han Chinese woman around thirty in a contemporary 2020s southern Chinese riverside town. Divide the canvas into three zones with thin hairline rules. LEFT ZONE occupies about 34% of the canvas width: one front-facing ID-style bust portrait with BOTH SHOULDERS FULLY VISIBLE, clear side margins, and a clean straight horizontal cut below the chest; oval face, alert almond eyes, straight brows, faint under-eye fatigue, low-tied black hair with flyaways, slate-blue shirt and dark rain jacket. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, on one shared ground line, wearing charcoal trousers and practical waterproof shoes, headphones at the neck. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb lengths, no stretching, squashing or foreshortening, margin above heads and below feet. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: four small isolated studies of the studio headphones, audio stylus, worn shirt cuff and waterproof shoe, smaller than the figures. If space is tight, continue details down the right edge; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Skin with visible pores and uneven tone, wet eye highlights, slight facial asymmetry, flyaway hair; fabric with visible weave, wear and real weight.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;清晰偏冷的年轻女中音，轻微气声，咬字边缘干净&quot;,
+    &quot;pitch&quot;: &quot;中音区&quot;,
+    &quot;pace&quot;: &quot;平稳偏慢，核对事实时停顿短而精确&quot;,
+    &quot;accent&quot;: &quot;标准普通话，保留很淡的南方江镇尾音（推断）&quot;,
+    &quot;emotion&quot;: &quot;克制、警觉，底层带未消退的悲伤&quot;,
+    &quot;referenceHint&quot;: &quot;参考三十岁左右、长期做档案修复的专业女性，收音近、气息稳定&quot;,
+    &quot;prompt&quot;: &quot;30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving.&quot;
+  },
+  &quot;sheetImage&quot;: &quot;images/许知遥-sheet.png&quot;
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-程野">
+  <header class="char-h">
+    <span class="char-n">02</span>
+    <h2>程野</h2>
+    <span class="badge">主角</span>
+    
+    <span class="char-one">熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <figure class="plate-wrap">
+         <button class="plate zoom" data-src="images/程野-sheet.png" aria-label="放大查看">
+           <img src="images/程野-sheet.png" alt="程野 左：半身像　右：全身三视图" loading="lazy">
+         </button>
+         <button class="copy-img" data-img="images/程野-sheet.png" title="复制图片">复制图片</button>
+       </figure>
+       <p class="plate-c">左：半身像　右：全身三视图</p>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>肩背宽实、腰腹紧凑，皮肤带长期户外作业的深麦色<span class="inf">（推断）</span>。方脸，下颌短硬，眉浓，短发常被水汽压乱；穿磨白的深青工作夹克、速干内搭与带水渍的工装裤，手腕留有潜水表压痕<span class="inf">（推断）</span>。</p></section>
+        <section class="blk"><h3>性情</h3><p>说话前常有较长沉默，不轻易承诺；一旦进入水边和装备操作状态，动作果断熟练。对十五年前的隐瞒始终带着明显回避。</p></section>
+        <section class="blk"><h3>动机</h3><p>弥补当年丢弃船牌的过错，帮助儿时朋友找到能独立印证录音的水下物证。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>程野是在渡口长大的潜水员，也是兄妹俩儿时的朋友。</blockquote><blockquote>他听完录音后沉默很久，才承认事故第二天，他在防波堤下面捡到过半块烧焦的船牌。</blockquote><blockquote>他这些年一直记得那半块船牌落下的位置，却不敢再下去。</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约三十二岁<span class="inf">（推断）</span></dd></div><div class="kv"><dt>身份</dt><dd>中国南方江镇潜水员，兄妹二人的儿时朋友</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">许知遥</dt><dd>儿时朋友，也是他决定协助查案的搭档</dd></div><div class="kv"><dt class="rel-n">许潮</dt><dd>儿时伙伴，其失踪让他背负多年愧疚<span class="inf">（推断）</span></dd></div><div class="kv"><dt class="rel-n">许德海</dt><dd>曾要求他丢弃船牌的长辈</dd></div><div class="kv"><dt class="rel-n">高嵩</dt><dd>旧案中被证据逐步指向的对手</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>粗粝但不浑浊的男中音，胸腔共鸣厚，气息短而稳</dd></div><div class="kv"><dt>音高</dt><dd>中低音区</dd></div><div class="kv"><dt>语速</dt><dd>偏慢，开口前停顿明显，句尾收得短</dd></div><div class="kv"><dt>口音</dt><dd>南方江镇口音较明显，辅音偏软<span class="inf">（推断）</span></dd></div><div class="kv"><dt>情绪</dt><dd>沉着、负疚，少量紧张压在低处</dd></div><div class="kv"><dt>类比</dt><dd>参考长期水上作业的三十岁男性，声音贴近胸腔、字少而实</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>deep teal workwear</li><li>contemporary china</li><li>working diver</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词 · 喂出图模型用这条</span><button class="copy" data-copy="Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town, compact athletic build, square weathered face, short firm jaw, heavy eyebrows, deep-set dark eyes, cropped black hair flattened by damp air. He wears a faded deep-teal canvas work jacket over a black quick-dry shirt and water-marked cargo trousers; a dive watch leaves a pressure mark at the wrist. Sun-darkened skin with visible pores, uneven tan lines, faint nose capillaries, wet eye highlights and asymmetric brows; coarse stubble shadows the jaw. Canvas weave, salt bloom, polished elbow wear and weighted folds are visible. Three-quarter waist-up view, plain neutral background, soft upper-left key with cold fill, shallow depth of field, face sharpest.">复制</button></summary>
+  <p>Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town, compact athletic build, square weathered face, short firm jaw, heavy eyebrows, deep-set dark eyes, cropped black hair flattened by damp air. He wears a faded deep-teal canvas work jacket over a black quick-dry shirt and water-marked cargo trousers; a dive watch leaves a pressure mark at the wrist. Sun-darkened skin with visible pores, uneven tan lines, faint nose capillaries, wet eye highlights and asymmetric brows; coarse stubble shadows the jaw. Canvas weave, salt bloom, polished elbow wear and weighted folds are visible. Three-quarter waist-up view, plain neutral background, soft upper-left key with cold fill, shallow depth of field, face sharpest.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas for a broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins, clean straight bottom cut; square weathered face, heavy brows, deep-set eyes, cropped damp black hair, dark stubble, faded deep-teal canvas jacket. LIGHTING IN THE LEFT ZONE ONLY: soft upper-left directional key with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, compact athletic build, black quick-dry shirt, water-marked cargo trousers and rubber dive boots. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: all three equal in height and head-to-body ratio, correct limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the dive-watch pressure mark, jacket salt bloom, worn rubber boot and coiled guideline. Continue details at the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Visible pores and tan lines, wet eyes, facial asymmetry, individual damp hair strands; heavy canvas weave and realistic weighted folds.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas for a broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins, clean straight bottom cut; square weathered face, heavy brows, deep-set eyes, cropped damp black hair, dark stubble, faded deep-teal canvas jacket. LIGHTING IN THE LEFT ZONE ONLY: soft upper-left directional key with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, compact athletic build, black quick-dry shirt, water-marked cargo trousers and rubber dive boots. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: all three equal in height and head-to-body ratio, correct limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the dive-watch pressure mark, jacket salt bloom, worn rubber boot and coiled guideline. Continue details at the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Visible pores and tan lines, wet eyes, facial asymmetry, individual damp hair strands; heavy canvas weave and realistic weighted folds.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词（中文对照）</span><button class="copy" data-copy="半写实厚涂插画：约三十二岁的东亚汉族男性潜水员，身处当代中国南方江镇。宽肩、紧凑结实，方脸，下颌短硬，浓眉和深眼窝，黑色短发被水汽压乱。穿褪色深青帆布工作夹克、黑色速干内搭和带水渍的工装裤，腕上有潜水表压痕。皮肤深麦色且可见毛孔和晒痕，鼻翼有细微毛细血管，眼睛有湿润高光，眉形不对称，下颌有粗硬胡茬阴影。帆布可见织纹、盐渍、肘部磨亮和有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深，面部最清晰。">复制</button></summary>
+  <p>半写实厚涂插画：约三十二岁的东亚汉族男性潜水员，身处当代中国南方江镇。宽肩、紧凑结实，方脸，下颌短硬，浓眉和深眼窝，黑色短发被水汽压乱。穿褪色深青帆布工作夹克、黑色速干内搭和带水渍的工装裤，腕上有潜水表压痕。皮肤深麦色且可见毛孔和晒痕，鼻翼有细微毛细血管，眼睛有湿润高光，眉形不对称，下颌有粗硬胡茬阴影。帆布可见织纹、盐渍、肘部磨亮和有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深，面部最清晰。</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词 · 喂 TTS 引擎用这条</span><button class="copy" data-copy="32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable.">复制</button></summary>
+  <p>32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C02&quot;,
+  &quot;name&quot;: &quot;程野&quot;,
+  &quot;aliases&quot;: [],
+  &quot;importance&quot;: &quot;protagonist&quot;,
+  &quot;oneLiner&quot;: &quot;熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约三十二岁（推断）&quot;,
+    &quot;identity&quot;: &quot;中国南方江镇潜水员，兄妹二人的儿时朋友&quot;,
+    &quot;appearance&quot;: &quot;肩背宽实、腰腹紧凑，皮肤带长期户外作业的深麦色（推断）。方脸，下颌短硬，眉浓，短发常被水汽压乱；穿磨白的深青工作夹克、速干内搭与带水渍的工装裤，手腕留有潜水表压痕（推断）。&quot;,
+    &quot;personality&quot;: [
+      &quot;寡言&quot;,
+      &quot;可靠&quot;,
+      &quot;负疚&quot;,
+      &quot;勇敢&quot;
+    ],
+    &quot;temperament&quot;: &quot;说话前常有较长沉默，不轻易承诺；一旦进入水边和装备操作状态，动作果断熟练。对十五年前的隐瞒始终带着明显回避。&quot;,
+    &quot;motivation&quot;: &quot;弥补当年丢弃船牌的过错，帮助儿时朋友找到能独立印证录音的水下物证。&quot;,
+    &quot;arc&quot;: &quot;从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;许知遥&quot;,
+        &quot;relation&quot;: &quot;儿时朋友，也是他决定协助查案的搭档&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许潮&quot;,
+        &quot;relation&quot;: &quot;儿时伙伴，其失踪让他背负多年愧疚（推断）&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许德海&quot;,
+        &quot;relation&quot;: &quot;曾要求他丢弃船牌的长辈&quot;
+      },
+      {
+        &quot;name&quot;: &quot;高嵩&quot;,
+        &quot;relation&quot;: &quot;旧案中被证据逐步指向的对手&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;程野是在渡口长大的潜水员，也是兄妹俩儿时的朋友。&quot;,
+      &quot;他听完录音后沉默很久，才承认事故第二天，他在防波堤下面捡到过半块烧焦的船牌。&quot;,
+      &quot;他这些年一直记得那半块船牌落下的位置，却不敢再下去。&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感&quot;,
+    &quot;prompt&quot;: &quot;Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town, compact athletic build, square weathered face, short firm jaw, heavy eyebrows, deep-set dark eyes, cropped black hair flattened by damp air. He wears a faded deep-teal canvas work jacket over a black quick-dry shirt and water-marked cargo trousers; a dive watch leaves a pressure mark at the wrist. Sun-darkened skin with visible pores, uneven tan lines, faint nose capillaries, wet eye highlights and asymmetric brows; coarse stubble shadows the jaw. Canvas weave, salt bloom, polished elbow wear and weighted folds are visible. Three-quarter waist-up view, plain neutral background, soft upper-left key with cold fill, shallow depth of field, face sharpest.&quot;,
+    &quot;promptLocal&quot;: &quot;半写实厚涂插画：约三十二岁的东亚汉族男性潜水员，身处当代中国南方江镇。宽肩、紧凑结实，方脸，下颌短硬，浓眉和深眼窝，黑色短发被水汽压乱。穿褪色深青帆布工作夹克、黑色速干内搭和带水渍的工装裤，腕上有潜水表压痕。皮肤深麦色且可见毛孔和晒痕，鼻翼有细微毛细血管，眼睛有湿润高光，眉形不对称，下颌有粗硬胡茬阴影。帆布可见织纹、盐渍、肘部磨亮和有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深，面部最清晰。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;deep teal workwear&quot;,
+      &quot;contemporary china&quot;,
+      &quot;working diver&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas for a broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins, clean straight bottom cut; square weathered face, heavy brows, deep-set eyes, cropped damp black hair, dark stubble, faded deep-teal canvas jacket. LIGHTING IN THE LEFT ZONE ONLY: soft upper-left directional key with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, compact athletic build, black quick-dry shirt, water-marked cargo trousers and rubber dive boots. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: all three equal in height and head-to-body ratio, correct limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the dive-watch pressure mark, jacket salt bloom, worn rubber boot and coiled guideline. Continue details at the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Visible pores and tan lines, wet eyes, facial asymmetry, individual damp hair strands; heavy canvas weave and realistic weighted folds.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;粗粝但不浑浊的男中音，胸腔共鸣厚，气息短而稳&quot;,
+    &quot;pitch&quot;: &quot;中低音区&quot;,
+    &quot;pace&quot;: &quot;偏慢，开口前停顿明显，句尾收得短&quot;,
+    &quot;accent&quot;: &quot;南方江镇口音较明显，辅音偏软（推断）&quot;,
+    &quot;emotion&quot;: &quot;沉着、负疚，少量紧张压在低处&quot;,
+    &quot;referenceHint&quot;: &quot;参考长期水上作业的三十岁男性，声音贴近胸腔、字少而实&quot;,
+    &quot;prompt&quot;: &quot;32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable.&quot;
+  },
+  &quot;sheetImage&quot;: &quot;images/程野-sheet.png&quot;
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-高嵩">
+  <header class="char-h">
+    <span class="char-n">03</span>
+    <h2>高嵩</h2>
+    <span class="badge">主要角色</span>
+    
+    <span class="char-one">把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <figure class="plate-wrap">
+         <button class="plate zoom" data-src="images/高嵩-sheet.png" aria-label="放大查看">
+           <img src="images/高嵩-sheet.png" alt="高嵩 左：半身像　右：全身三视图" loading="lazy">
+         </button>
+         <button class="copy-img" data-img="images/高嵩-sheet.png" title="复制图片">复制图片</button>
+       </figure>
+       <p class="plate-c">左：半身像　右：全身三视图</p>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>体态保养得当，站姿从容，习惯用微笑压住真实反应<span class="inf">（推断）</span>。长方脸，发际线后移，鬓角整齐发灰；穿剪裁精确的深棕防风外套、浅色衬衫与擦得过亮的皮鞋，腕表低调昂贵<span class="inf">（推断）</span>。</p></section>
+        <section class="blk"><h3>性情</h3><p>语言始终像谈交易，音量不高却不断替别人定义利害。受阻时先维持笑意，再迅速转向时间压力和资源威胁。</p></section>
+        <section class="blk"><h3>动机</h3><p>在拆迁前收走或毁掉旧电台与清单，维持自己对七一九事故的既定叙述，并保护当前文旅投资。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>高嵩如今是南堤文旅项目的投资人，十五年前则是渡运公司的经理。</blockquote><blockquote>他还提醒知遥，责任书上有许德海的亲笔签名，翻旧账只会让死者再蒙一次羞。</blockquote><blockquote>高嵩脸上的笑第一次消失。</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约五十五岁<span class="inf">（推断）</span></dd></div><div class="kv"><dt>身份</dt><dd>南堤文旅项目投资人，十五年前的渡运公司经理</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">许知遥</dt><dd>试图收买并压制的调查者</dd></div><div class="kv"><dt class="rel-n">程野</dt><dd>被他低估的潜水证人与取证者</dd></div><div class="kv"><dt class="rel-n">许德海</dt><dd>十五年前被其胁迫签下责任书的渡工</dd></div><div class="kv"><dt class="rel-n">许潮</dt><dd>留下现场录音、推翻其说法的少年证人</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>温润偏薄的成熟男中音，鼻腔共鸣集中，边缘光滑</dd></div><div class="kv"><dt>音高</dt><dd>中音区</dd></div><div class="kv"><dt>语速</dt><dd>从容偏慢，句间停顿像在等待对方让步</dd></div><div class="kv"><dt>口音</dt><dd>标准普通话，地域色彩很弱</dd></div><div class="kv"><dt>情绪</dt><dd>礼貌、疏离、掌控感强</dd></div><div class="kv"><dt>类比</dt><dd>参考五十多岁商务谈判者，近距离收音，音量不高但句子完整</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>dark brown tailoring</li><li>contemporary china</li><li>controlled businessman</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词 · 喂出图模型用这条</span><button class="copy" data-copy="Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town, controlled upright posture, rectangular face, narrow hooded eyes, smooth cheeks beginning to sag at the jaw, receding black hair precisely combed with grey temples, a practiced small smile. He wears a tailored dark-brown weatherproof coat, pale stone shirt, pressed black trousers, polished leather shoes and a discreet steel watch. Mature skin shows pores, uneven tone, faint capillaries around nostrils, moist iris highlights, asymmetric eyelids and restrained expression lines. Technical fabric and shirt weave are visible with crisp weighted folds. Three-quarter waist-up view, neutral background, warm upper-left key opposed by cold river light, shallow depth of field.">复制</button></summary>
+  <p>Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town, controlled upright posture, rectangular face, narrow hooded eyes, smooth cheeks beginning to sag at the jaw, receding black hair precisely combed with grey temples, a practiced small smile. He wears a tailored dark-brown weatherproof coat, pale stone shirt, pressed black trousers, polished leather shoes and a discreet steel watch. Mature skin shows pores, uneven tone, faint capillaries around nostrils, moist iris highlights, asymmetric eyelids and restrained expression lines. Technical fabric and shirt weave are visible with crisp weighted folds. Three-quarter waist-up view, neutral background, warm upper-left key opposed by cold river light, shallow depth of field.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas for a well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust with BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; rectangular face, narrow hooded eyes, receding combed black hair with grey temples, controlled small smile, tailored dark-brown coat and pale shirt. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, aligned on one shared ground line, pressed black trousers, polished shoes, steel watch, contained posture. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb length, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated details of the discreet watch, polished shoe, precise coat cuff and the smile fading at one corner. Continue details down the right edge if required; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), balanced margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Mature porous skin, moist eyes, subtle asymmetry, individual temple hairs; fine technical fabric weave and crisp weighted folds.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas for a well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust with BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; rectangular face, narrow hooded eyes, receding combed black hair with grey temples, controlled small smile, tailored dark-brown coat and pale shirt. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, aligned on one shared ground line, pressed black trousers, polished shoes, steel watch, contained posture. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb length, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated details of the discreet watch, polished shoe, precise coat cuff and the smile fading at one corner. Continue details down the right edge if required; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), balanced margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Mature porous skin, moist eyes, subtle asymmetry, individual temple hairs; fine technical fabric weave and crisp weighted folds.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词（中文对照）</span><button class="copy" data-copy="半写实厚涂插画：约五十五岁的东亚汉族男性商人，身处当代中国南方江镇改造项目。体态保养良好、站姿受控，长方脸，窄而略垂的眼睛，下颌开始松弛，发际线后移，黑发梳理精确、鬓角发灰，嘴边保持练习过的浅笑。穿剪裁精确的深棕防风外套、浅石色衬衫、熨挺黑裤和过亮皮鞋，戴低调钢表。成熟皮肤可见毛孔和不均匀肤色，鼻翼有细微毛细血管，眼睛有湿润高光，眼睑不对称，表情纹克制。技术面料和衬衫织纹清晰，褶皱挺括而有重量。四分之三视角半身，纯中性背景，暖色左上主光与冷色江面补光对照，浅景深。">复制</button></summary>
+  <p>半写实厚涂插画：约五十五岁的东亚汉族男性商人，身处当代中国南方江镇改造项目。体态保养良好、站姿受控，长方脸，窄而略垂的眼睛，下颌开始松弛，发际线后移，黑发梳理精确、鬓角发灰，嘴边保持练习过的浅笑。穿剪裁精确的深棕防风外套、浅石色衬衫、熨挺黑裤和过亮皮鞋，戴低调钢表。成熟皮肤可见毛孔和不均匀肤色，鼻翼有细微毛细血管，眼睛有湿润高光，眼睑不对称，表情纹克制。技术面料和衬衫织纹清晰，褶皱挺括而有重量。四分之三视角半身，纯中性背景，暖色左上主光与冷色江面补光对照，浅景深。</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词 · 喂 TTS 引擎用这条</span><button class="copy" data-copy="55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling.">复制</button></summary>
+  <p>55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C03&quot;,
+  &quot;name&quot;: &quot;高嵩&quot;,
+  &quot;aliases&quot;: [],
+  &quot;importance&quot;: &quot;major&quot;,
+  &quot;oneLiner&quot;: &quot;把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约五十五岁（推断）&quot;,
+    &quot;identity&quot;: &quot;南堤文旅项目投资人，十五年前的渡运公司经理&quot;,
+    &quot;appearance&quot;: &quot;体态保养得当，站姿从容，习惯用微笑压住真实反应（推断）。长方脸，发际线后移，鬓角整齐发灰；穿剪裁精确的深棕防风外套、浅色衬衫与擦得过亮的皮鞋，腕表低调昂贵（推断）。&quot;,
+    &quot;personality&quot;: [
+      &quot;控制欲强&quot;,
+      &quot;圆滑&quot;,
+      &quot;冷酷&quot;,
+      &quot;善于施压&quot;
+    ],
+    &quot;temperament&quot;: &quot;语言始终像谈交易，音量不高却不断替别人定义利害。受阻时先维持笑意，再迅速转向时间压力和资源威胁。&quot;,
+    &quot;motivation&quot;: &quot;在拆迁前收走或毁掉旧电台与清单，维持自己对七一九事故的既定叙述，并保护当前文旅投资。&quot;,
+    &quot;arc&quot;: &quot;从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;许知遥&quot;,
+        &quot;relation&quot;: &quot;试图收买并压制的调查者&quot;
+      },
+      {
+        &quot;name&quot;: &quot;程野&quot;,
+        &quot;relation&quot;: &quot;被他低估的潜水证人与取证者&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许德海&quot;,
+        &quot;relation&quot;: &quot;十五年前被其胁迫签下责任书的渡工&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许潮&quot;,
+        &quot;relation&quot;: &quot;留下现场录音、推翻其说法的少年证人&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;高嵩如今是南堤文旅项目的投资人，十五年前则是渡运公司的经理。&quot;,
+      &quot;他还提醒知遥，责任书上有许德海的亲笔签名，翻旧账只会让死者再蒙一次羞。&quot;,
+      &quot;高嵩脸上的笑第一次消失。&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感&quot;,
+    &quot;prompt&quot;: &quot;Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town, controlled upright posture, rectangular face, narrow hooded eyes, smooth cheeks beginning to sag at the jaw, receding black hair precisely combed with grey temples, a practiced small smile. He wears a tailored dark-brown weatherproof coat, pale stone shirt, pressed black trousers, polished leather shoes and a discreet steel watch. Mature skin shows pores, uneven tone, faint capillaries around nostrils, moist iris highlights, asymmetric eyelids and restrained expression lines. Technical fabric and shirt weave are visible with crisp weighted folds. Three-quarter waist-up view, neutral background, warm upper-left key opposed by cold river light, shallow depth of field.&quot;,
+    &quot;promptLocal&quot;: &quot;半写实厚涂插画：约五十五岁的东亚汉族男性商人，身处当代中国南方江镇改造项目。体态保养良好、站姿受控，长方脸，窄而略垂的眼睛，下颌开始松弛，发际线后移，黑发梳理精确、鬓角发灰，嘴边保持练习过的浅笑。穿剪裁精确的深棕防风外套、浅石色衬衫、熨挺黑裤和过亮皮鞋，戴低调钢表。成熟皮肤可见毛孔和不均匀肤色，鼻翼有细微毛细血管，眼睛有湿润高光，眼睑不对称，表情纹克制。技术面料和衬衫织纹清晰，褶皱挺括而有重量。四分之三视角半身，纯中性背景，暖色左上主光与冷色江面补光对照，浅景深。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;dark brown tailoring&quot;,
+      &quot;contemporary china&quot;,
+      &quot;controlled businessman&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas for a well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust with BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; rectangular face, narrow hooded eyes, receding combed black hair with grey temples, controlled small smile, tailored dark-brown coat and pale shirt. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, aligned on one shared ground line, pressed black trousers, polished shoes, steel watch, contained posture. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb length, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated details of the discreet watch, polished shoe, precise coat cuff and the smile fading at one corner. Continue details down the right edge if required; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), balanced margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Mature porous skin, moist eyes, subtle asymmetry, individual temple hairs; fine technical fabric weave and crisp weighted folds.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;温润偏薄的成熟男中音，鼻腔共鸣集中，边缘光滑&quot;,
+    &quot;pitch&quot;: &quot;中音区&quot;,
+    &quot;pace&quot;: &quot;从容偏慢，句间停顿像在等待对方让步&quot;,
+    &quot;accent&quot;: &quot;标准普通话，地域色彩很弱&quot;,
+    &quot;emotion&quot;: &quot;礼貌、疏离、掌控感强&quot;,
+    &quot;referenceHint&quot;: &quot;参考五十多岁商务谈判者，近距离收音，音量不高但句子完整&quot;,
+    &quot;prompt&quot;: &quot;55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling.&quot;
+  },
+  &quot;sheetImage&quot;: &quot;images/高嵩-sheet.png&quot;
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-许德海">
+  <header class="char-h">
+    <span class="char-n">04</span>
+    <h2>许德海</h2>
+    <span class="badge">配角</span>
+    
+    <span class="char-one">被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <figure class="plate-wrap">
+         <button class="plate zoom" data-src="images/许德海-sheet.png" aria-label="放大查看">
+           <img src="images/许德海-sheet.png" alt="许德海 左：半身像　右：全身三视图" loading="lazy">
+         </button>
+         <button class="copy-img" data-img="images/许德海-sheet.png" title="复制图片">复制图片</button>
+       </figure>
+       <p class="plate-c">左：半身像　右：全身三视图</p>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>常年风吹日晒，脊背略弯，手掌粗大且关节突出<span class="inf">（推断）</span>。瘦长脸、颧骨明显，眼角和额头有顺着表情肌形成的深纹，短发夹灰；事故时穿褪色藏青渡工夹克、粗布长裤和旧胶鞋<span class="inf">（推断）</span>。</p></section>
+        <section class="blk"><h3>性情</h3><p>不擅长解释，把决定压进重复劳动和具体动作里。面对事故责任长期沉默，却曾在最危险的时刻用身体和钥匙阻止开船。</p></section>
+        <section class="blk"><h3>动机</h3><p>阻止违规船只离岸，并在受胁迫后尽可能保护女儿、保留未来翻案的线索。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>父亲许德海做了一辈子渡工。</blockquote><blockquote>爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。</blockquote><blockquote>父亲此后每年都去沉船点测潮，直到病重，也没能把证据带上来。</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>事故时约五十岁<span class="inf">（推断）</span></dd></div><div class="kv"><dt>身份</dt><dd>中国南方江镇渡工，兄妹二人的父亲</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">许知遥</dt><dd>他竭力保护、却因沉默而与之隔阂的女儿</dd></div><div class="kv"><dt class="rel-n">许潮</dt><dd>事故中失踪的儿子</dd></div><div class="kv"><dt class="rel-n">程野</dt><dd>事故后被他要求丢弃船牌的少年见证者</dd></div><div class="kv"><dt class="rel-n">高嵩</dt><dd>胁迫他签下伪造记录的渡运经理</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>被江风磨粗的年长男中低音，胸腔共鸣深，略带干涩气声</dd></div><div class="kv"><dt>音高</dt><dd>低音区</dd></div><div class="kv"><dt>语速</dt><dd>缓慢，停顿长，尾音常收进气息</dd></div><div class="kv"><dt>口音</dt><dd>南方江镇口音明显，元音偏窄<span class="inf">（推断）</span></dd></div><div class="kv"><dt>情绪</dt><dd>疲惫、压抑、保护欲内收</dd></div><div class="kv"><dt>类比</dt><dd>参考五十岁渡工的近距离干声，低沉、耐久、很少抬高音量</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>faded navy workwear</li><li>early 2010s china</li><li>weathered ferryman</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词 · 喂出图模型用这条</span><button class="copy" data-copy="Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A lean East Asian Han Chinese ferryman around fifty during the early 2010s in a southern Chinese riverside town, slightly stooped from decades of boat work, long narrow face, prominent cheekbones, deep-set patient eyes, broad rough hands, short black hair threaded with grey. He wears a faded navy work jacket, coarse dark trousers and old rubber shoes. Sun-damaged skin has age spots, visible pores and uneven pigmentation; wrinkles follow expression muscles through forehead lines, crow's feet and nasolabial folds; eyelids and brows are asymmetric, eyes retain wet highlights, sparse stubble and flyaway grey hairs break the silhouette. Heavy cotton shows weave, shoulder fading, frayed cuffs and deep weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key and cool fill, face sharpest.">复制</button></summary>
+  <p>Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A lean East Asian Han Chinese ferryman around fifty during the early 2010s in a southern Chinese riverside town, slightly stooped from decades of boat work, long narrow face, prominent cheekbones, deep-set patient eyes, broad rough hands, short black hair threaded with grey. He wears a faded navy work jacket, coarse dark trousers and old rubber shoes. Sun-damaged skin has age spots, visible pores and uneven pigmentation; wrinkles follow expression muscles through forehead lines, crow's feet and nasolabial folds; eyelids and brows are asymmetric, eyes retain wet highlights, sparse stubble and flyaway grey hairs break the silhouette. Heavy cotton shows weave, shoulder fading, frayed cuffs and deep weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key and cool fill, face sharpest.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas for a lean East Asian Han Chinese ferryman around fifty in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins and clean straight bottom cut; long weathered face, prominent cheekbones, deep patient eyes, short black hair threaded grey, faded navy work jacket. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, slightly stooped, coarse trousers, old rubber shoes and broad rough hands. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, natural limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of a weathered hand holding a blackened brass boat key, frayed cuff, old rubber shoe and tide-mark notebook edge. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Sun-damaged porous skin, expression-line wrinkles, wet eyes, asymmetric brows, flyaway grey hair; heavy cotton weave and worn weighted folds.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas for a lean East Asian Han Chinese ferryman around fifty in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins and clean straight bottom cut; long weathered face, prominent cheekbones, deep patient eyes, short black hair threaded grey, faded navy work jacket. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, slightly stooped, coarse trousers, old rubber shoes and broad rough hands. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, natural limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of a weathered hand holding a blackened brass boat key, frayed cuff, old rubber shoe and tide-mark notebook edge. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Sun-damaged porous skin, expression-line wrinkles, wet eyes, asymmetric brows, flyaway grey hair; heavy cotton weave and worn weighted folds.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词（中文对照）</span><button class="copy" data-copy="半写实厚涂插画：约五十岁的东亚汉族男性渡工，处于二〇一〇年代初的中国南方江镇。长期船上劳作令他清瘦略驼，瘦长脸、颧骨突出、眼窝深而有耐性，手掌粗大，短黑发夹灰。穿褪色藏青工作夹克、深色粗布裤和旧胶鞋。日晒皮肤有老年斑、毛孔和不均匀色素；额纹、鱼尾纹与法令纹顺着表情肌生长，眼睑和眉毛不对称，眼睛保留湿润高光，稀疏胡茬与灰白碎发打破轮廓。厚棉布可见织纹、肩部褪色、袖口磨损和深重褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，面部最清晰。">复制</button></summary>
+  <p>半写实厚涂插画：约五十岁的东亚汉族男性渡工，处于二〇一〇年代初的中国南方江镇。长期船上劳作令他清瘦略驼，瘦长脸、颧骨突出、眼窝深而有耐性，手掌粗大，短黑发夹灰。穿褪色藏青工作夹克、深色粗布裤和旧胶鞋。日晒皮肤有老年斑、毛孔和不均匀色素；额纹、鱼尾纹与法令纹顺着表情肌生长，眼睑和眉毛不对称，眼睛保留湿润高光，稀疏胡茬与灰白碎发打破轮廓。厚棉布可见织纹、肩部褪色、袖口磨损和深重褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，面部最清晰。</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词 · 喂 TTS 引擎用这条</span><button class="copy" data-copy="50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective.">复制</button></summary>
+  <p>50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C04&quot;,
+  &quot;name&quot;: &quot;许德海&quot;,
+  &quot;aliases&quot;: [],
+  &quot;importance&quot;: &quot;supporting&quot;,
+  &quot;oneLiner&quot;: &quot;被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;事故时约五十岁（推断）&quot;,
+    &quot;identity&quot;: &quot;中国南方江镇渡工，兄妹二人的父亲&quot;,
+    &quot;appearance&quot;: &quot;常年风吹日晒，脊背略弯，手掌粗大且关节突出（推断）。瘦长脸、颧骨明显，眼角和额头有顺着表情肌形成的深纹，短发夹灰；事故时穿褪色藏青渡工夹克、粗布长裤和旧胶鞋（推断）。&quot;,
+    &quot;personality&quot;: [
+      &quot;沉默&quot;,
+      &quot;坚忍&quot;,
+      &quot;保护欲强&quot;,
+      &quot;负重&quot;
+    ],
+    &quot;temperament&quot;: &quot;不擅长解释，把决定压进重复劳动和具体动作里。面对事故责任长期沉默，却曾在最危险的时刻用身体和钥匙阻止开船。&quot;,
+    &quot;motivation&quot;: &quot;阻止违规船只离岸，并在受胁迫后尽可能保护女儿、保留未来翻案的线索。&quot;,
+    &quot;arc&quot;: &quot;从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;许知遥&quot;,
+        &quot;relation&quot;: &quot;他竭力保护、却因沉默而与之隔阂的女儿&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许潮&quot;,
+        &quot;relation&quot;: &quot;事故中失踪的儿子&quot;
+      },
+      {
+        &quot;name&quot;: &quot;程野&quot;,
+        &quot;relation&quot;: &quot;事故后被他要求丢弃船牌的少年见证者&quot;
+      },
+      {
+        &quot;name&quot;: &quot;高嵩&quot;,
+        &quot;relation&quot;: &quot;胁迫他签下伪造记录的渡运经理&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;父亲许德海做了一辈子渡工。&quot;,
+      &quot;爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。&quot;,
+      &quot;父亲此后每年都去沉船点测潮，直到病重，也没能把证据带上来。&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感&quot;,
+    &quot;prompt&quot;: &quot;Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A lean East Asian Han Chinese ferryman around fifty during the early 2010s in a southern Chinese riverside town, slightly stooped from decades of boat work, long narrow face, prominent cheekbones, deep-set patient eyes, broad rough hands, short black hair threaded with grey. He wears a faded navy work jacket, coarse dark trousers and old rubber shoes. Sun-damaged skin has age spots, visible pores and uneven pigmentation; wrinkles follow expression muscles through forehead lines, crow's feet and nasolabial folds; eyelids and brows are asymmetric, eyes retain wet highlights, sparse stubble and flyaway grey hairs break the silhouette. Heavy cotton shows weave, shoulder fading, frayed cuffs and deep weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key and cool fill, face sharpest.&quot;,
+    &quot;promptLocal&quot;: &quot;半写实厚涂插画：约五十岁的东亚汉族男性渡工，处于二〇一〇年代初的中国南方江镇。长期船上劳作令他清瘦略驼，瘦长脸、颧骨突出、眼窝深而有耐性，手掌粗大，短黑发夹灰。穿褪色藏青工作夹克、深色粗布裤和旧胶鞋。日晒皮肤有老年斑、毛孔和不均匀色素；额纹、鱼尾纹与法令纹顺着表情肌生长，眼睑和眉毛不对称，眼睛保留湿润高光，稀疏胡茬与灰白碎发打破轮廓。厚棉布可见织纹、肩部褪色、袖口磨损和深重褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，面部最清晰。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;faded navy workwear&quot;,
+      &quot;early 2010s china&quot;,
+      &quot;weathered ferryman&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas for a lean East Asian Han Chinese ferryman around fifty in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins and clean straight bottom cut; long weathered face, prominent cheekbones, deep patient eyes, short black hair threaded grey, faded navy work jacket. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, slightly stooped, coarse trousers, old rubber shoes and broad rough hands. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, natural limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of a weathered hand holding a blackened brass boat key, frayed cuff, old rubber shoe and tide-mark notebook edge. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Sun-damaged porous skin, expression-line wrinkles, wet eyes, asymmetric brows, flyaway grey hair; heavy cotton weave and worn weighted folds.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;被江风磨粗的年长男中低音，胸腔共鸣深，略带干涩气声&quot;,
+    &quot;pitch&quot;: &quot;低音区&quot;,
+    &quot;pace&quot;: &quot;缓慢，停顿长，尾音常收进气息&quot;,
+    &quot;accent&quot;: &quot;南方江镇口音明显，元音偏窄（推断）&quot;,
+    &quot;emotion&quot;: &quot;疲惫、压抑、保护欲内收&quot;,
+    &quot;referenceHint&quot;: &quot;参考五十岁渡工的近距离干声，低沉、耐久、很少抬高音量&quot;,
+    &quot;prompt&quot;: &quot;50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective.&quot;
+  },
+  &quot;sheetImage&quot;: &quot;images/许德海-sheet.png&quot;
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-许潮">
+  <header class="char-h">
+    <span class="char-n">05</span>
+    <h2>许潮</h2>
+    <span class="badge">配角</span>
+    
+    <span class="char-one">把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <figure class="plate-wrap">
+         <button class="plate zoom" data-src="images/许潮-sheet.png" aria-label="放大查看">
+           <img src="images/许潮-sheet.png" alt="许潮 左：半身像　右：全身三视图" loading="lazy">
+         </button>
+         <button class="copy-img" data-img="images/许潮-sheet.png" title="复制图片">复制图片</button>
+       </figure>
+       <p class="plate-c">左：半身像　右：全身三视图</p>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>身形尚未长开但灵活，眉眼明亮，神情急切<span class="inf">（推断）</span>。圆中带窄的少年脸，短黑发被潮气打湿贴住额角；穿二〇一〇年代初常见的橙褐连帽衫、旧牛仔裤和帆布鞋，衣袖与膝部沾有货仓灰尘<span class="inf">（推断）</span>。</p></section>
+        <section class="blk"><h3>性情</h3><p>遇险时会压低声音快速报告事实，恐惧并未消失，却不妨碍他先藏好证据、标记位置，再回到危险中救人。</p></section>
+        <section class="blk"><h3>动机</h3><p>记录高嵩违规开船与私运溶剂的事实，让家人知道自己并非赌气离家，并救出火场中的孩子。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>录音里，他喘着气说：开船的不是爸，是高嵩。</blockquote><blockquote>他把电台塞进救生圈的夹层，报出位置，然后转身冲进烟里。</blockquote><blockquote>录音最后，许潮没有喊救命。</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>事故时约十七岁<span class="inf">（推断）</span></dd></div><div class="kv"><dt>身份</dt><dd>中国南方江镇少年，女主的哥哥与事故现场录音者</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">许知遥</dt><dd>想把真实去向留给她的妹妹</dd></div><div class="kv"><dt class="rel-n">许德海</dt><dd>他目睹被困并阻止开船的父亲</dd></div><div class="kv"><dt class="rel-n">程野</dt><dd>在渡口一同长大的儿时朋友</dd></div><div class="kv"><dt class="rel-n">高嵩</dt><dd>被他在录音中点名的违规开船者</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>清亮未完全成熟的少年男声，带急促气声和轻微喉部紧张</dd></div><div class="kv"><dt>音高</dt><dd>中高音区</dd></div><div class="kv"><dt>语速</dt><dd>偏快，短句密集，换气可听见</dd></div><div class="kv"><dt>口音</dt><dd>南方江镇普通话，尾音略短<span class="inf">（推断）</span></dd></div><div class="kv"><dt>情绪</dt><dd>紧张、警觉，却保持明确和勇敢</dd></div><div class="kv"><dt>类比</dt><dd>参考十七岁少年在低声报告紧急情况时的真实近讲声</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>burnt orange hoodie</li><li>early 2010s china</li><li>teen witness</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词 · 喂出图模型用这条</span><button class="copy" data-copy="Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town, unfinished adolescent proportions, narrow-round face, bright wide dark eyes, straight youthful brows, small nose, tense parted lips, damp short black hair stuck at the temples. He wears a faded burnt-orange hooded sweatshirt, old blue jeans and off-white canvas shoes, with warehouse dust on sleeves and knees; a compact orange emergency radio strap crosses his chest. Young skin has visible nose pores, uneven flushed tone, faint nostril capillaries, wet eye highlights, iris fibres, asymmetric eyelids and loose damp hairs. Brushed jersey and denim show weave, abrasion and weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key with cold fill, shallow depth of field.">复制</button></summary>
+  <p>Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town, unfinished adolescent proportions, narrow-round face, bright wide dark eyes, straight youthful brows, small nose, tense parted lips, damp short black hair stuck at the temples. He wears a faded burnt-orange hooded sweatshirt, old blue jeans and off-white canvas shoes, with warehouse dust on sleeves and knees; a compact orange emergency radio strap crosses his chest. Young skin has visible nose pores, uneven flushed tone, faint nostril capillaries, wet eye highlights, iris fibres, asymmetric eyelids and loose damp hairs. Brushed jersey and denim show weave, abrasion and weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key with cold fill, shallow depth of field.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas for a wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; narrow-round youthful face, wide dark eyes, straight brows, tense parted lips, damp short black hair, faded burnt-orange hoodie. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and hood. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, unfinished adolescent proportions, old jeans, canvas shoes and an emergency-radio strap across the torso. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct adolescent anatomy and limbs, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the scorched orange radio strap, dusty hoodie cuff, hand-cut tide mark on a metal cap and worn canvas shoe. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Young porous flushed skin, wet eyes, subtle facial asymmetry, damp flyaway hair; jersey and denim weave, abrasion and weighted folds.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas for a wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; narrow-round youthful face, wide dark eyes, straight brows, tense parted lips, damp short black hair, faded burnt-orange hoodie. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and hood. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, unfinished adolescent proportions, old jeans, canvas shoes and an emergency-radio strap across the torso. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct adolescent anatomy and limbs, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the scorched orange radio strap, dusty hoodie cuff, hand-cut tide mark on a metal cap and worn canvas shoe. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Young porous flushed skin, wet eyes, subtle facial asymmetry, damp flyaway hair; jersey and denim weave, abrasion and weighted folds.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词（中文对照）</span><button class="copy" data-copy="半写实厚涂插画：约十七岁的东亚汉族少年，处于二〇一〇年代初的中国南方江镇。身形瘦而灵活，保留未长开的少年比例，圆中带窄的脸，深色大眼明亮，直眉，鼻梁小，嘴唇因紧张微张，潮湿短黑发贴在额角。穿褪色氧化橙连帽衫、旧蓝牛仔裤和米白帆布鞋，袖口与膝部沾货仓灰尘，胸前斜跨橙色应急电台带。年轻皮肤可见鼻部毛孔与潮红不均，鼻翼有细微毛细血管，眼睛有湿润高光和虹膜纤维，眼睑略不对称，湿发碎丝打破轮廓。针织绒布和牛仔布可见织纹、擦伤与有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深。">复制</button></summary>
+  <p>半写实厚涂插画：约十七岁的东亚汉族少年，处于二〇一〇年代初的中国南方江镇。身形瘦而灵活，保留未长开的少年比例，圆中带窄的脸，深色大眼明亮，直眉，鼻梁小，嘴唇因紧张微张，潮湿短黑发贴在额角。穿褪色氧化橙连帽衫、旧蓝牛仔裤和米白帆布鞋，袖口与膝部沾货仓灰尘，胸前斜跨橙色应急电台带。年轻皮肤可见鼻部毛孔与潮红不均，鼻翼有细微毛细血管，眼睛有湿润高光和虹膜纤维，眼睑略不对称，湿发碎丝打破轮廓。针织绒布和牛仔布可见织纹、擦伤与有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深。</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词 · 喂 TTS 引擎用这条</span><button class="copy" data-copy="17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined.">复制</button></summary>
+  <p>17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C05&quot;,
+  &quot;name&quot;: &quot;许潮&quot;,
+  &quot;aliases&quot;: [],
+  &quot;importance&quot;: &quot;supporting&quot;,
+  &quot;oneLiner&quot;: &quot;把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;事故时约十七岁（推断）&quot;,
+    &quot;identity&quot;: &quot;中国南方江镇少年，女主的哥哥与事故现场录音者&quot;,
+    &quot;appearance&quot;: &quot;身形尚未长开但灵活，眉眼明亮，神情急切（推断）。圆中带窄的少年脸，短黑发被潮气打湿贴住额角；穿二〇一〇年代初常见的橙褐连帽衫、旧牛仔裤和帆布鞋，衣袖与膝部沾有货仓灰尘（推断）。&quot;,
+    &quot;personality&quot;: [
+      &quot;勇敢&quot;,
+      &quot;机敏&quot;,
+      &quot;重情&quot;,
+      &quot;有行动力&quot;
+    ],
+    &quot;temperament&quot;: &quot;遇险时会压低声音快速报告事实，恐惧并未消失，却不妨碍他先藏好证据、标记位置，再回到危险中救人。&quot;,
+    &quot;motivation&quot;: &quot;记录高嵩违规开船与私运溶剂的事实，让家人知道自己并非赌气离家，并救出火场中的孩子。&quot;,
+    &quot;arc&quot;: &quot;从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;许知遥&quot;,
+        &quot;relation&quot;: &quot;想把真实去向留给她的妹妹&quot;
+      },
+      {
+        &quot;name&quot;: &quot;许德海&quot;,
+        &quot;relation&quot;: &quot;他目睹被困并阻止开船的父亲&quot;
+      },
+      {
+        &quot;name&quot;: &quot;程野&quot;,
+        &quot;relation&quot;: &quot;在渡口一同长大的儿时朋友&quot;
+      },
+      {
+        &quot;name&quot;: &quot;高嵩&quot;,
+        &quot;relation&quot;: &quot;被他在录音中点名的违规开船者&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;录音里，他喘着气说：开船的不是爸，是高嵩。&quot;,
+      &quot;他把电台塞进救生圈的夹层，报出位置，然后转身冲进烟里。&quot;,
+      &quot;录音最后，许潮没有喊救命。&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感&quot;,
+    &quot;prompt&quot;: &quot;Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town, unfinished adolescent proportions, narrow-round face, bright wide dark eyes, straight youthful brows, small nose, tense parted lips, damp short black hair stuck at the temples. He wears a faded burnt-orange hooded sweatshirt, old blue jeans and off-white canvas shoes, with warehouse dust on sleeves and knees; a compact orange emergency radio strap crosses his chest. Young skin has visible nose pores, uneven flushed tone, faint nostril capillaries, wet eye highlights, iris fibres, asymmetric eyelids and loose damp hairs. Brushed jersey and denim show weave, abrasion and weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key with cold fill, shallow depth of field.&quot;,
+    &quot;promptLocal&quot;: &quot;半写实厚涂插画：约十七岁的东亚汉族少年，处于二〇一〇年代初的中国南方江镇。身形瘦而灵活，保留未长开的少年比例，圆中带窄的脸，深色大眼明亮，直眉，鼻梁小，嘴唇因紧张微张，潮湿短黑发贴在额角。穿褪色氧化橙连帽衫、旧蓝牛仔裤和米白帆布鞋，袖口与膝部沾货仓灰尘，胸前斜跨橙色应急电台带。年轻皮肤可见鼻部毛孔与潮红不均，鼻翼有细微毛细血管，眼睛有湿润高光和虹膜纤维，眼睑略不对称，湿发碎丝打破轮廓。针织绒布和牛仔布可见织纹、擦伤与有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;burnt orange hoodie&quot;,
+      &quot;early 2010s china&quot;,
+      &quot;teen witness&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas for a wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; narrow-round youthful face, wide dark eyes, straight brows, tense parted lips, damp short black hair, faded burnt-orange hoodie. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and hood. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, unfinished adolescent proportions, old jeans, canvas shoes and an emergency-radio strap across the torso. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct adolescent anatomy and limbs, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the scorched orange radio strap, dusty hoodie cuff, hand-cut tide mark on a metal cap and worn canvas shoe. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Young porous flushed skin, wet eyes, subtle facial asymmetry, damp flyaway hair; jersey and denim weave, abrasion and weighted folds.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;清亮未完全成熟的少年男声，带急促气声和轻微喉部紧张&quot;,
+    &quot;pitch&quot;: &quot;中高音区&quot;,
+    &quot;pace&quot;: &quot;偏快，短句密集，换气可听见&quot;,
+    &quot;accent&quot;: &quot;南方江镇普通话，尾音略短（推断）&quot;,
+    &quot;emotion&quot;: &quot;紧张、警觉，却保持明确和勇敢&quot;,
+    &quot;referenceHint&quot;: &quot;参考十七岁少年在低声报告紧急情况时的真实近讲声&quot;,
+    &quot;prompt&quot;: &quot;17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined.&quot;
+  },
+  &quot;sheetImage&quot;: &quot;images/许潮-sheet.png&quot;
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+  </main>
+</div>
+
+<div class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-x" aria-label="关闭">关闭</button>
+  <img alt="">
+</div>
+
+<script type="application/json" id="cast-data">{"source":"潮痕","lang":"zh","style":"realistic","summary":"当代南方江镇的旧渡口即将拆除，声音修复师许知遥回乡整理已故父亲的遗物。她从一台烧损的应急电台中修出失踪哥哥的声音，并在儿时朋友程野协助下追查十五年前的沉船事故。如今掌控文旅项目的高嵩试图阻止调查，而父亲许德海和哥哥许潮只能通过遗物、录音与残存物证重新进入这场迟到的对质。","characters":[{"id":"C01","name":"许知遥","aliases":["知遥"],"importance":"protagonist","oneLiner":"从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。","persona":{"gender":"女","ageRange":"约三十岁（推断）","identity":"中国南方江镇出身的声音修复师与档案技术人员（推断）","appearance":"身形清瘦，长时间伏案使肩背略显紧绷（推断）。鹅蛋脸，眉形利落，眼下有淡淡疲态，黑发低束；工作时戴封闭式耳机，穿灰蓝衬衫、深色直筒裤与轻薄防水外套（推断）。","personality":["克制","执拗","严谨","敏锐"],"temperament":"习惯先听完、核对完再作判断，动作精确，情绪越强时语气反而越稳。面对与家人有关的证据会短暂失去冷静，但很快回到可验证的事实。","motivation":"在旧渡口拆除前修复哥哥留下的录音，厘清父亲承担责任的真相，并把完整证据交给公开核验。","arc":"从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。","relationships":[{"name":"程野","relation":"儿时朋友与共同调查旧案的行动搭档"},{"name":"高嵩","relation":"她追查的旧案核心嫌疑人与当前阻挠者"},{"name":"许德海","relation":"已故父亲，她从怨恨走向重新理解"},{"name":"许潮","relation":"失踪十五年的哥哥，也是录音证据的留下者"}],"evidence":["事故以后，知遥离开南堤，学了声音修复，专门替档案馆抢救被水和霉菌毁坏的录音。","知遥因此更愤怒。她一直以为父亲签责任书只是软弱，现在看来更像是在主动掩埋什么。","知遥没有阻拦，只告诉他，自己修复档案从来不会在原介质上工作。完整录音已经复制了三份。"]},"image":{"style":"半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感","prompt":"Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A slim East Asian woman around thirty with Han Chinese features in a contemporary 2020s southern Chinese riverside town, oval face, alert almond-shaped dark eyes, straight brows, faint under-eye fatigue, black hair tied low with loose strands. She wears a slate-blue cotton shirt, charcoal straight trousers and a lightweight dark rain jacket; studio headphones rest around her neck and a small audio-cleaning stylus is held carefully. Visible pores, uneven skin tone, faint capillaries at nostrils and ear rims, wet eye highlights, iris fibres, slightly asymmetric eyelids and brows. Fabric shows weave, cuff wear, realistic weight and fold self-shadow. Three-quarter waist-up view, plain neutral background, soft upper-left directional key with cool fill, shallow depth of field, face sharpest.","promptLocal":"半写实厚涂插画：约三十岁的东亚汉族女性，身处当代中国南方江镇。身形清瘦，鹅蛋脸，深色杏眼警觉，直眉，眼下略显疲惫，黑发低束并有碎发。穿灰蓝棉衬衫、炭灰直筒裤和深色轻薄防水外套，耳机挂在颈间，谨慎拿着音频清理笔。皮肤可见毛孔与不均匀肤色，鼻翼和耳缘有细微毛细血管，眼睛有湿润高光与虹膜纤维，眼睑和眉毛略不对称。布料可见织纹、袖口磨损、真实垂坠和褶皱自阴影。四分之三视角半身，纯中性背景，左上柔和方向主光配冷调补光，浅景深，面部最清晰。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","cool grey-blue palette","contemporary china","audio restoration"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas for a slim East Asian Han Chinese woman around thirty in a contemporary 2020s southern Chinese riverside town. Divide the canvas into three zones with thin hairline rules. LEFT ZONE occupies about 34% of the canvas width: one front-facing ID-style bust portrait with BOTH SHOULDERS FULLY VISIBLE, clear side margins, and a clean straight horizontal cut below the chest; oval face, alert almond eyes, straight brows, faint under-eye fatigue, low-tied black hair with flyaways, slate-blue shirt and dark rain jacket. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, on one shared ground line, wearing charcoal trousers and practical waterproof shoes, headphones at the neck. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb lengths, no stretching, squashing or foreshortening, margin above heads and below feet. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: four small isolated studies of the studio headphones, audio stylus, worn shirt cuff and waterproof shoe, smaller than the figures. If space is tight, continue details down the right edge; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Skin with visible pores and uneven tone, wet eye highlights, slight facial asymmetry, flyaway hair; fabric with visible weave, wear and real weight."},"voice":{"timbre":"清晰偏冷的年轻女中音，轻微气声，咬字边缘干净","pitch":"中音区","pace":"平稳偏慢，核对事实时停顿短而精确","accent":"标准普通话，保留很淡的南方江镇尾音（推断）","emotion":"克制、警觉，底层带未消退的悲伤","referenceHint":"参考三十岁左右、长期做档案修复的专业女性，收音近、气息稳定","prompt":"30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving."},"sheetImage":"images/许知遥-sheet.png"},{"id":"C02","name":"程野","aliases":[],"importance":"protagonist","oneLiner":"熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。","persona":{"gender":"男","ageRange":"约三十二岁（推断）","identity":"中国南方江镇潜水员，兄妹二人的儿时朋友","appearance":"肩背宽实、腰腹紧凑，皮肤带长期户外作业的深麦色（推断）。方脸，下颌短硬，眉浓，短发常被水汽压乱；穿磨白的深青工作夹克、速干内搭与带水渍的工装裤，手腕留有潜水表压痕（推断）。","personality":["寡言","可靠","负疚","勇敢"],"temperament":"说话前常有较长沉默，不轻易承诺；一旦进入水边和装备操作状态，动作果断熟练。对十五年前的隐瞒始终带着明显回避。","motivation":"弥补当年丢弃船牌的过错，帮助儿时朋友找到能独立印证录音的水下物证。","arc":"从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。","relationships":[{"name":"许知遥","relation":"儿时朋友，也是他决定协助查案的搭档"},{"name":"许潮","relation":"儿时伙伴，其失踪让他背负多年愧疚（推断）"},{"name":"许德海","relation":"曾要求他丢弃船牌的长辈"},{"name":"高嵩","relation":"旧案中被证据逐步指向的对手"}],"evidence":["程野是在渡口长大的潜水员，也是兄妹俩儿时的朋友。","他听完录音后沉默很久，才承认事故第二天，他在防波堤下面捡到过半块烧焦的船牌。","他这些年一直记得那半块船牌落下的位置，却不敢再下去。"]},"image":{"style":"半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感","prompt":"Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town, compact athletic build, square weathered face, short firm jaw, heavy eyebrows, deep-set dark eyes, cropped black hair flattened by damp air. He wears a faded deep-teal canvas work jacket over a black quick-dry shirt and water-marked cargo trousers; a dive watch leaves a pressure mark at the wrist. Sun-darkened skin with visible pores, uneven tan lines, faint nose capillaries, wet eye highlights and asymmetric brows; coarse stubble shadows the jaw. Canvas weave, salt bloom, polished elbow wear and weighted folds are visible. Three-quarter waist-up view, plain neutral background, soft upper-left key with cold fill, shallow depth of field, face sharpest.","promptLocal":"半写实厚涂插画：约三十二岁的东亚汉族男性潜水员，身处当代中国南方江镇。宽肩、紧凑结实，方脸，下颌短硬，浓眉和深眼窝，黑色短发被水汽压乱。穿褪色深青帆布工作夹克、黑色速干内搭和带水渍的工装裤，腕上有潜水表压痕。皮肤深麦色且可见毛孔和晒痕，鼻翼有细微毛细血管，眼睛有湿润高光，眉形不对称，下颌有粗硬胡茬阴影。帆布可见织纹、盐渍、肘部磨亮和有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深，面部最清晰。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","deep teal workwear","contemporary china","working diver"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas for a broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins, clean straight bottom cut; square weathered face, heavy brows, deep-set eyes, cropped damp black hair, dark stubble, faded deep-teal canvas jacket. LIGHTING IN THE LEFT ZONE ONLY: soft upper-left directional key with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, compact athletic build, black quick-dry shirt, water-marked cargo trousers and rubber dive boots. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: all three equal in height and head-to-body ratio, correct limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the dive-watch pressure mark, jacket salt bloom, worn rubber boot and coiled guideline. Continue details at the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Visible pores and tan lines, wet eyes, facial asymmetry, individual damp hair strands; heavy canvas weave and realistic weighted folds."},"voice":{"timbre":"粗粝但不浑浊的男中音，胸腔共鸣厚，气息短而稳","pitch":"中低音区","pace":"偏慢，开口前停顿明显，句尾收得短","accent":"南方江镇口音较明显，辅音偏软（推断）","emotion":"沉着、负疚，少量紧张压在低处","referenceHint":"参考长期水上作业的三十岁男性，声音贴近胸腔、字少而实","prompt":"32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable."},"sheetImage":"images/程野-sheet.png"},{"id":"C03","name":"高嵩","aliases":[],"importance":"major","oneLiner":"把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。","persona":{"gender":"男","ageRange":"约五十五岁（推断）","identity":"南堤文旅项目投资人，十五年前的渡运公司经理","appearance":"体态保养得当，站姿从容，习惯用微笑压住真实反应（推断）。长方脸，发际线后移，鬓角整齐发灰；穿剪裁精确的深棕防风外套、浅色衬衫与擦得过亮的皮鞋，腕表低调昂贵（推断）。","personality":["控制欲强","圆滑","冷酷","善于施压"],"temperament":"语言始终像谈交易，音量不高却不断替别人定义利害。受阻时先维持笑意，再迅速转向时间压力和资源威胁。","motivation":"在拆迁前收走或毁掉旧电台与清单，维持自己对七一九事故的既定叙述，并保护当前文旅投资。","arc":"从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。","relationships":[{"name":"许知遥","relation":"试图收买并压制的调查者"},{"name":"程野","relation":"被他低估的潜水证人与取证者"},{"name":"许德海","relation":"十五年前被其胁迫签下责任书的渡工"},{"name":"许潮","relation":"留下现场录音、推翻其说法的少年证人"}],"evidence":["高嵩如今是南堤文旅项目的投资人，十五年前则是渡运公司的经理。","他还提醒知遥，责任书上有许德海的亲笔签名，翻旧账只会让死者再蒙一次羞。","高嵩脸上的笑第一次消失。"]},"image":{"style":"半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感","prompt":"Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town, controlled upright posture, rectangular face, narrow hooded eyes, smooth cheeks beginning to sag at the jaw, receding black hair precisely combed with grey temples, a practiced small smile. He wears a tailored dark-brown weatherproof coat, pale stone shirt, pressed black trousers, polished leather shoes and a discreet steel watch. Mature skin shows pores, uneven tone, faint capillaries around nostrils, moist iris highlights, asymmetric eyelids and restrained expression lines. Technical fabric and shirt weave are visible with crisp weighted folds. Three-quarter waist-up view, neutral background, warm upper-left key opposed by cold river light, shallow depth of field.","promptLocal":"半写实厚涂插画：约五十五岁的东亚汉族男性商人，身处当代中国南方江镇改造项目。体态保养良好、站姿受控，长方脸，窄而略垂的眼睛，下颌开始松弛，发际线后移，黑发梳理精确、鬓角发灰，嘴边保持练习过的浅笑。穿剪裁精确的深棕防风外套、浅石色衬衫、熨挺黑裤和过亮皮鞋，戴低调钢表。成熟皮肤可见毛孔和不均匀肤色，鼻翼有细微毛细血管，眼睛有湿润高光，眼睑不对称，表情纹克制。技术面料和衬衫织纹清晰，褶皱挺括而有重量。四分之三视角半身，纯中性背景，暖色左上主光与冷色江面补光对照，浅景深。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","dark brown tailoring","contemporary china","controlled businessman"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas for a well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust with BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; rectangular face, narrow hooded eyes, receding combed black hair with grey temples, controlled small smile, tailored dark-brown coat and pale shirt. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, aligned on one shared ground line, pressed black trousers, polished shoes, steel watch, contained posture. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb length, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated details of the discreet watch, polished shoe, precise coat cuff and the smile fading at one corner. Continue details down the right edge if required; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), balanced margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Mature porous skin, moist eyes, subtle asymmetry, individual temple hairs; fine technical fabric weave and crisp weighted folds."},"voice":{"timbre":"温润偏薄的成熟男中音，鼻腔共鸣集中，边缘光滑","pitch":"中音区","pace":"从容偏慢，句间停顿像在等待对方让步","accent":"标准普通话，地域色彩很弱","emotion":"礼貌、疏离、掌控感强","referenceHint":"参考五十多岁商务谈判者，近距离收音，音量不高但句子完整","prompt":"55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling."},"sheetImage":"images/高嵩-sheet.png"},{"id":"C04","name":"许德海","aliases":[],"importance":"supporting","oneLiner":"被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。","persona":{"gender":"男","ageRange":"事故时约五十岁（推断）","identity":"中国南方江镇渡工，兄妹二人的父亲","appearance":"常年风吹日晒，脊背略弯，手掌粗大且关节突出（推断）。瘦长脸、颧骨明显，眼角和额头有顺着表情肌形成的深纹，短发夹灰；事故时穿褪色藏青渡工夹克、粗布长裤和旧胶鞋（推断）。","personality":["沉默","坚忍","保护欲强","负重"],"temperament":"不擅长解释，把决定压进重复劳动和具体动作里。面对事故责任长期沉默，却曾在最危险的时刻用身体和钥匙阻止开船。","motivation":"阻止违规船只离岸，并在受胁迫后尽可能保护女儿、保留未来翻案的线索。","arc":"从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。","relationships":[{"name":"许知遥","relation":"他竭力保护、却因沉默而与之隔阂的女儿"},{"name":"许潮","relation":"事故中失踪的儿子"},{"name":"程野","relation":"事故后被他要求丢弃船牌的少年见证者"},{"name":"高嵩","relation":"胁迫他签下伪造记录的渡运经理"}],"evidence":["父亲许德海做了一辈子渡工。","爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。","父亲此后每年都去沉船点测潮，直到病重，也没能把证据带上来。"]},"image":{"style":"半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感","prompt":"Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A lean East Asian Han Chinese ferryman around fifty during the early 2010s in a southern Chinese riverside town, slightly stooped from decades of boat work, long narrow face, prominent cheekbones, deep-set patient eyes, broad rough hands, short black hair threaded with grey. He wears a faded navy work jacket, coarse dark trousers and old rubber shoes. Sun-damaged skin has age spots, visible pores and uneven pigmentation; wrinkles follow expression muscles through forehead lines, crow's feet and nasolabial folds; eyelids and brows are asymmetric, eyes retain wet highlights, sparse stubble and flyaway grey hairs break the silhouette. Heavy cotton shows weave, shoulder fading, frayed cuffs and deep weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key and cool fill, face sharpest.","promptLocal":"半写实厚涂插画：约五十岁的东亚汉族男性渡工，处于二〇一〇年代初的中国南方江镇。长期船上劳作令他清瘦略驼，瘦长脸、颧骨突出、眼窝深而有耐性，手掌粗大，短黑发夹灰。穿褪色藏青工作夹克、深色粗布裤和旧胶鞋。日晒皮肤有老年斑、毛孔和不均匀色素；额纹、鱼尾纹与法令纹顺着表情肌生长，眼睑和眉毛不对称，眼睛保留湿润高光，稀疏胡茬与灰白碎发打破轮廓。厚棉布可见织纹、肩部褪色、袖口磨损和深重褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，面部最清晰。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","faded navy workwear","early 2010s china","weathered ferryman"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas for a lean East Asian Han Chinese ferryman around fifty in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins and clean straight bottom cut; long weathered face, prominent cheekbones, deep patient eyes, short black hair threaded grey, faded navy work jacket. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, slightly stooped, coarse trousers, old rubber shoes and broad rough hands. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, natural limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of a weathered hand holding a blackened brass boat key, frayed cuff, old rubber shoe and tide-mark notebook edge. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Sun-damaged porous skin, expression-line wrinkles, wet eyes, asymmetric brows, flyaway grey hair; heavy cotton weave and worn weighted folds."},"voice":{"timbre":"被江风磨粗的年长男中低音，胸腔共鸣深，略带干涩气声","pitch":"低音区","pace":"缓慢，停顿长，尾音常收进气息","accent":"南方江镇口音明显，元音偏窄（推断）","emotion":"疲惫、压抑、保护欲内收","referenceHint":"参考五十岁渡工的近距离干声，低沉、耐久、很少抬高音量","prompt":"50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective."},"sheetImage":"images/许德海-sheet.png"},{"id":"C05","name":"许潮","aliases":[],"importance":"supporting","oneLiner":"把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。","persona":{"gender":"男","ageRange":"事故时约十七岁（推断）","identity":"中国南方江镇少年，女主的哥哥与事故现场录音者","appearance":"身形尚未长开但灵活，眉眼明亮，神情急切（推断）。圆中带窄的少年脸，短黑发被潮气打湿贴住额角；穿二〇一〇年代初常见的橙褐连帽衫、旧牛仔裤和帆布鞋，衣袖与膝部沾有货仓灰尘（推断）。","personality":["勇敢","机敏","重情","有行动力"],"temperament":"遇险时会压低声音快速报告事实，恐惧并未消失，却不妨碍他先藏好证据、标记位置，再回到危险中救人。","motivation":"记录高嵩违规开船与私运溶剂的事实，让家人知道自己并非赌气离家，并救出火场中的孩子。","arc":"从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。","relationships":[{"name":"许知遥","relation":"想把真实去向留给她的妹妹"},{"name":"许德海","relation":"他目睹被困并阻止开船的父亲"},{"name":"程野","relation":"在渡口一同长大的儿时朋友"},{"name":"高嵩","relation":"被他在录音中点名的违规开船者"}],"evidence":["录音里，他喘着气说：开船的不是爸，是高嵩。","他把电台塞进救生圈的夹层，报出位置，然后转身冲进烟里。","录音最后，许潮没有喊救命。"]},"image":{"style":"半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感","prompt":"Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town, unfinished adolescent proportions, narrow-round face, bright wide dark eyes, straight youthful brows, small nose, tense parted lips, damp short black hair stuck at the temples. He wears a faded burnt-orange hooded sweatshirt, old blue jeans and off-white canvas shoes, with warehouse dust on sleeves and knees; a compact orange emergency radio strap crosses his chest. Young skin has visible nose pores, uneven flushed tone, faint nostril capillaries, wet eye highlights, iris fibres, asymmetric eyelids and loose damp hairs. Brushed jersey and denim show weave, abrasion and weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key with cold fill, shallow depth of field.","promptLocal":"半写实厚涂插画：约十七岁的东亚汉族少年，处于二〇一〇年代初的中国南方江镇。身形瘦而灵活，保留未长开的少年比例，圆中带窄的脸，深色大眼明亮，直眉，鼻梁小，嘴唇因紧张微张，潮湿短黑发贴在额角。穿褪色氧化橙连帽衫、旧蓝牛仔裤和米白帆布鞋，袖口与膝部沾货仓灰尘，胸前斜跨橙色应急电台带。年轻皮肤可见鼻部毛孔与潮红不均，鼻翼有细微毛细血管，眼睛有湿润高光和虹膜纤维，眼睑略不对称，湿发碎丝打破轮廓。针织绒布和牛仔布可见织纹、擦伤与有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","burnt orange hoodie","early 2010s china","teen witness"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas for a wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; narrow-round youthful face, wide dark eyes, straight brows, tense parted lips, damp short black hair, faded burnt-orange hoodie. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and hood. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, unfinished adolescent proportions, old jeans, canvas shoes and an emergency-radio strap across the torso. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct adolescent anatomy and limbs, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the scorched orange radio strap, dusty hoodie cuff, hand-cut tide mark on a metal cap and worn canvas shoe. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Young porous flushed skin, wet eyes, subtle facial asymmetry, damp flyaway hair; jersey and denim weave, abrasion and weighted folds."},"voice":{"timbre":"清亮未完全成熟的少年男声，带急促气声和轻微喉部紧张","pitch":"中高音区","pace":"偏快，短句密集，换气可听见","accent":"南方江镇普通话，尾音略短（推断）","emotion":"紧张、警觉，却保持明确和勇敢","referenceHint":"参考十七岁少年在低声报告紧急情况时的真实近讲声","prompt":"17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined."},"sheetImage":"images/许潮-sheet.png"}]}</script>
+
+<script>
+const L = {"copied":"已复制","failed":"复制失败"};
+
+// 导出：报告自己就带着完整的 cast.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('cast-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别在 click 之后立刻回收——Safari 上会抢在下载读完之前把 blob 撤掉，存出来是空文件
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+
+// 左栏切换：一次只显示一个角色
+document.querySelector('.roster').addEventListener('click', (e) => {
+  const btn = e.target.closest('.rost');
+  if (!btn) return;
+  document.querySelectorAll('.rost').forEach((b) => b.classList.toggle('on', b === btn));
+  document.querySelectorAll('.char').forEach((a) => a.classList.toggle('on', a.id === btn.dataset.target));
+  showGraph(false);
+  document.querySelector('.main').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
+
+// 关系图谱：一张全景视图，跟角色详情互斥
+const gv = document.querySelector('.graph');
+const gbtn = document.querySelector('.gtoggle');
+function showGraph(on) {
+  gv.classList.toggle('on', on);
+  gbtn.classList.toggle('on', on);
+  document.querySelector('.main').classList.toggle('gmode', on);
+}
+gbtn.addEventListener('click', () => {
+  showGraph(true);
+  document.querySelector('.main').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
+{
+  // 弦和弦上的文字共用 data-a/data-b，高亮逻辑完全一样，放一个数组里
+  const edges = [...gv.querySelectorAll('.gedge, .glabel')];
+  const nodes = [...gv.querySelectorAll('.gnode')];
+  const rows = [...gv.querySelectorAll('.grow')];
+  const clear = () => [...edges, ...nodes, ...rows].forEach((el) => el.classList.remove('hot', 'dim'));
+
+  // 悬停一个人：他的关系线亮起来，没关系的压到背景里
+  const byNode = (name) => {
+    const near = new Set([name]);
+    for (const e of edges) {
+      if (e.dataset.a === name) near.add(e.dataset.b);
+      if (e.dataset.b === name) near.add(e.dataset.a);
+    }
+    for (const e of edges) {
+      const hot = e.dataset.a === name || e.dataset.b === name;
+      e.classList.toggle('hot', hot);
+      e.classList.toggle('dim', !hot);
+    }
+    for (const nd of nodes) {
+      nd.classList.toggle('hot', nd.dataset.node === name);
+      nd.classList.toggle('dim', !near.has(nd.dataset.node));
+    }
+    for (const r of rows) {
+      const hot = r.dataset.a === name || r.dataset.b === name;
+      r.classList.toggle('hot', hot);
+      r.classList.toggle('dim', !hot);
+    }
+  };
+
+  // 悬停关系表的一行：只亮那一条弦
+  const byEdge = (a, b) => {
+    for (const e of edges) {
+      const hot = e.dataset.a === a && e.dataset.b === b;
+      e.classList.toggle('hot', hot);
+      e.classList.toggle('dim', !hot);
+    }
+    for (const nd of nodes) {
+      const hot = nd.dataset.node === a || nd.dataset.node === b;
+      nd.classList.toggle('hot', hot);
+      nd.classList.toggle('dim', !hot);
+    }
+    for (const r of rows) {
+      const hot = r.dataset.a === a && r.dataset.b === b;
+      r.classList.toggle('hot', hot);
+      r.classList.toggle('dim', !hot);
+    }
+  };
+
+  const jump = (el) => {
+    const item = document.querySelector('.rost[data-target="' + el.dataset.target + '"]');
+    if (item) item.click();
+  };
+
+  // 关系文字的总开关：人多的时候标签会盖住图，一键收起
+  const glab = gv.querySelector('.glabtoggle');
+  glab.addEventListener('click', () => {
+    const on = !gv.classList.contains('labels');
+    gv.classList.toggle('labels', on);
+    glab.classList.toggle('on', on);
+    glab.setAttribute('aria-pressed', String(on));
+  });
+
+  gv.addEventListener('mouseover', (e) => {
+    const nd = e.target.closest('.gnode');
+    const row = e.target.closest('.grow');
+    if (nd) byNode(nd.dataset.node);
+    else if (row) byEdge(row.dataset.a, row.dataset.b);
+    else clear();
+  });
+  gv.addEventListener('mouseleave', clear);
+  gv.addEventListener('focusin', (e) => {
+    const nd = e.target.closest('.gnode');
+    if (nd) byNode(nd.dataset.node);
+  });
+  gv.addEventListener('click', (e) => {
+    const hit = e.target.closest('.gnode, .grow');
+    if (hit) jump(hit);
+  });
+  // SVG 的 <g> 不是原生按钮，回车/空格要自己接
+  gv.addEventListener('keydown', (e) => {
+    const nd = e.target.closest('.gnode');
+    if (!nd || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    jump(nd);
+  });
+}
+
+// 搜索：过滤左栏；结果只剩一个就直接切过去
+document.getElementById('q').addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  let hits = [];
+  document.querySelectorAll('.rost').forEach((b) => {
+    const hit = !q || b.dataset.hay.toLowerCase().includes(q);
+    b.style.display = hit ? '' : 'none';
+    if (hit) hits.push(b);
+  });
+  document.querySelector('.nomatch').classList.toggle('on', hits.length === 0);
+  if (q && hits.length === 1) hits[0].click();
+});
+
+// 摘要默认三行，点一下展开全部；短到不需要折叠的就直接去掉折叠态
+const syn = document.querySelector('.synopsis');
+if (syn) {
+  const body = syn.querySelector('p');
+  if (body.scrollHeight <= body.clientHeight + 1) syn.classList.remove('syn-clamp');
+  syn.addEventListener('click', () => syn.classList.remove('syn-clamp'));
+}
+
+// 图片弹层
+const lb = document.querySelector('.lightbox');
+const lbImg = lb.querySelector('img');
+function closeLb() { lb.classList.remove('on'); lbImg.removeAttribute('src'); }
+document.addEventListener('click', (e) => {
+  const z = e.target.closest('.zoom');
+  if (z) { lbImg.src = z.dataset.src; lb.classList.add('on'); return; }
+  if (e.target.closest('.lightbox')) closeLb();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+// 复制图片本身到剪贴板（不是路径）
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy-img');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const label = btn.textContent;
+  try {
+    const blob = await (await fetch(btn.dataset.img)).blob();
+    // Safari 只认 image/png，其它格式先过一遍 canvas
+    let png = blob;
+    if (blob.type !== 'image/png') {
+      const bmp = await createImageBitmap(blob);
+      const cv = Object.assign(document.createElement('canvas'), { width: bmp.width, height: bmp.height });
+      cv.getContext('2d').drawImage(bmp, 0, 0);
+      png = await new Promise((r) => cv.toBlob(r, 'image/png'));
+    }
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+</script>
+</body></html>

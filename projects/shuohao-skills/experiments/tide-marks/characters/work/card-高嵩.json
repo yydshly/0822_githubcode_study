@@ -1,0 +1,45 @@
+{
+  "id": "C03",
+  "name": "高嵩",
+  "aliases": [],
+  "importance": "major",
+  "oneLiner": "把旧案与新项目都握成生意筹码的投资人，始终用体面语气掩盖十五年前的私运决定。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "约五十五岁（推断）",
+    "identity": "南堤文旅项目投资人，十五年前的渡运公司经理",
+    "appearance": "体态保养得当，站姿从容，习惯用微笑压住真实反应（推断）。长方脸，发际线后移，鬓角整齐发灰；穿剪裁精确的深棕防风外套、浅色衬衫与擦得过亮的皮鞋，腕表低调昂贵（推断）。",
+    "personality": ["控制欲强", "圆滑", "冷酷", "善于施压"],
+    "temperament": "语言始终像谈交易，音量不高却不断替别人定义利害。受阻时先维持笑意，再迅速转向时间压力和资源威胁。",
+    "motivation": "在拆迁前收走或毁掉旧电台与清单，维持自己对七一九事故的既定叙述，并保护当前文旅投资。",
+    "arc": "从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。",
+    "relationships": [
+      {"name": "许知遥", "relation": "试图收买并压制的调查者"},
+      {"name": "程野", "relation": "被他低估的潜水证人与取证者"},
+      {"name": "许德海", "relation": "十五年前被其胁迫签下责任书的渡工"},
+      {"name": "许潮", "relation": "留下现场录音、推翻其说法的少年证人"}
+    ],
+    "evidence": [
+      "高嵩如今是南堤文旅项目的投资人，十五年前则是渡运公司的经理。",
+      "他还提醒知遥，责任书上有许德海的亲笔签名，翻旧账只会让死者再蒙一次羞。",
+      "高嵩脸上的笑第一次消失。"
+    ]
+  },
+  "image": {
+    "style": "半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感",
+    "prompt": "Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town, controlled upright posture, rectangular face, narrow hooded eyes, smooth cheeks beginning to sag at the jaw, receding black hair precisely combed with grey temples, a practiced small smile. He wears a tailored dark-brown weatherproof coat, pale stone shirt, pressed black trousers, polished leather shoes and a discreet steel watch. Mature skin shows pores, uneven tone, faint capillaries around nostrils, moist iris highlights, asymmetric eyelids and restrained expression lines. Technical fabric and shirt weave are visible with crisp weighted folds. Three-quarter waist-up view, neutral background, warm upper-left key opposed by cold river light, shallow depth of field.",
+    "promptLocal": "半写实厚涂插画：约五十五岁的东亚汉族男性商人，身处当代中国南方江镇改造项目。体态保养良好、站姿受控，长方脸，窄而略垂的眼睛，下颌开始松弛，发际线后移，黑发梳理精确、鬓角发灰，嘴边保持练习过的浅笑。穿剪裁精确的深棕防风外套、浅石色衬衫、熨挺黑裤和过亮皮鞋，戴低调钢表。成熟皮肤可见毛孔和不均匀肤色，鼻翼有细微毛细血管，眼睛有湿润高光，眼睑不对称，表情纹克制。技术面料和衬衫织纹清晰，褶皱挺括而有重量。四分之三视角半身，纯中性背景，暖色左上主光与冷色江面补光对照，浅景深。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop",
+    "tags": ["semi-realistic", "painterly", "character sheet", "dark brown tailoring", "contemporary china", "controlled businessman"],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas for a well-groomed East Asian Han Chinese businessman around fifty-five in a contemporary 2020s southern Chinese riverside redevelopment town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust with BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; rectangular face, narrow hooded eyes, receding combed black hair with grey temples, controlled small smile, tailored dark-brown coat and pale shirt. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, aligned on one shared ground line, pressed black trousers, polished shoes, steel watch, contained posture. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb length, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated details of the discreet watch, polished shoe, precise coat cuff and the smile fading at one corner. Continue details down the right edge if required; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), balanced margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Mature porous skin, moist eyes, subtle asymmetry, individual temple hairs; fine technical fabric weave and crisp weighted folds."
+  },
+  "voice": {
+    "timbre": "温润偏薄的成熟男中音，鼻腔共鸣集中，边缘光滑",
+    "pitch": "中音区",
+    "pace": "从容偏慢，句间停顿像在等待对方让步",
+    "accent": "标准普通话，地域色彩很弱",
+    "emotion": "礼貌、疏离、掌控感强",
+    "referenceHint": "参考五十多岁商务谈判者，近距离收音，音量不高但句子完整",
+    "prompt": "55-year-old male, polished light baritone, medium pitch, focused nasal-mask resonance, smooth onset, restrained dynamic range. Quiet authoritative volume, deliberate pace, evenly weighted clauses, gently falling cadence. Standard Mandarin, minimal regional accent. Courteous, detached, controlling."
+  }
+}

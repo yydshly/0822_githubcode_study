@@ -1,0 +1,10 @@
+{
+  "characters": [
+    {"name": "许知遥", "aliases": ["知遥"], "notes": ["女主，声音修复师与旧案调查者"], "quotes": []},
+    {"name": "程野", "aliases": [], "notes": ["男主，潜水员与迟到的证人"], "quotes": []},
+    {"name": "高嵩", "aliases": [], "notes": ["主反派，文旅投资人与当年渡运公司经理"], "quotes": []},
+    {"name": "许德海", "aliases": [], "notes": ["重要配角，已故渡工与被改写责任的父亲"], "quotes": []},
+    {"name": "许潮", "aliases": [], "notes": ["重要配角，录音留下者与失踪哥哥"], "quotes": []}
+  ],
+  "mergeCandidates": []
+}

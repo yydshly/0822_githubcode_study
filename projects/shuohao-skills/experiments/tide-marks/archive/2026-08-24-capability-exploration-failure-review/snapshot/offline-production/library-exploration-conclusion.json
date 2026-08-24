@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-08-24",
+  "explorationStatus": "complete",
+  "productionAttemptStatus": "failed-narrative-gate",
+  "narrativeGatePassed": false,
+  "productionDecision": "stop-video-generation",
+  "libraryBoundary": "基于已有小说，把改编过程拆成大纲、角色、美术、剧本、分镜、校验和导出；不负责保证小说质量、因果逻辑或成片质量。",
+  "evidence": [
+    "E01-01 结束于人物奔向门并准备开门，E01-02 却回到先前位置打开盒子，行动与空间状态发生回退。",
+    "两个连续视频样本已经证明：格式校验、图片齐全和提示词齐全不能保证故事因果与动态衔接成立。",
+    "问题发生在视频模型之前；继续扩大生成只会放大返工成本。"
+  ],
+  "inventory": {
+    "episodes": 6,
+    "segments": 59,
+    "cuts": 193,
+    "status": "实验资料，不是可投产资产"
+  },
+  "nextFocus": [
+    "小说原型质量",
+    "全剧因果链",
+    "小说到短剧的改编取舍",
+    "人物与物体状态连续性",
+    "低成本连贯性预演质量门"
+  ]
+}

@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>潮痕 · 分镜（第 2 集）</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+.preflight{margin:18px 0 6px;background:#111;border:1px solid var(--rule-2);border-radius:2px;overflow:hidden}
+.preflight video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.preflight-copy{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;padding:11px 14px;background:var(--panel);border-top:1px solid var(--rule)}
+.preflight-copy strong{font:400 17px/1.2 var(--serif)}
+.preflight-copy span{font-size:12px;color:var(--ink-2)}
+.preflight-copy b{color:var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* 01 cut rhythm strip */
+.rhythm{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.rrow{display:grid;grid-template-columns:44px minmax(0,1fr) 150px;gap:12px;align-items:center;padding:5px 0}
+.rep{font:500 12px/1 var(--mono);color:var(--ink-2)}
+.rtrack{display:flex;height:22px;border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--paper)}
+.rseg{display:flex;border-right:2px solid var(--ink-2)}
+.rseg:last-child{border-right:0}
+.seg{display:block;border-right:1px solid var(--panel)}
+.rseg .seg:last-child{border-right:0}
+.seg:hover{outline:2px solid var(--ink);outline-offset:-2px}
+.rval{font:500 12px/1.5 var(--sans);color:var(--ink-2)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--ink-2);margin:8px 0 2px;flex-wrap:wrap}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+
+/* 02 segment cards */
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 22px;margin-bottom:16px}
+.ep-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px;margin-bottom:14px}
+.ep-n{font:400 22px/1 var(--serif);letter-spacing:.04em;color:var(--seal)}
+.ep-est{font-size:12.5px;color:var(--ink-2)}
+.shots{position:relative}
+.shots.clip{max-height:760px;overflow:hidden}
+.shots.clip::after{content:'';position:absolute;left:0;right:0;bottom:0;height:80px;
+  background:linear-gradient(180deg,transparent,var(--panel));pointer-events:none}
+.shmore{display:block;width:100%;margin-top:8px;font:500 11.5px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);border-radius:2px;
+  padding:7px 0;cursor:pointer;transition:.15s}
+.shmore:hover{border-color:var(--seal);color:var(--seal)}
+.shmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.seggrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.seggrid{grid-template-columns:minmax(0,1fr)}}
+.segcard{background:var(--paper);border:1px solid var(--rule);border-radius:2px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.seg-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.seg-h b{font:500 14px/1 var(--mono);color:var(--seal)}
+.sec-badge{font:500 11px/1 var(--mono);border:1px solid var(--seal);color:var(--seal);border-radius:99px;padding:2px 8px}
+.beatsref{margin-left:auto;font-size:10.5px;color:var(--ink-3)}
+.frame{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;background:var(--side)}
+.frame.ph{display:flex;flex-direction:column;gap:6px;padding:10px 12px;cursor:default;overflow:hidden}
+.frame.ph b{font:500 10px/1 var(--sans);letter-spacing:.14em;color:var(--ink-3)}
+.frame.ph span{font:400 10.5px/1.55 var(--mono);color:var(--ink-2);overflow:hidden;display:-webkit-box;
+  -webkit-line-clamp:5;-webkit-box-orient:vertical}
+.subs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.fquad{display:grid;grid-template-columns:1fr;gap:10px;margin:10px 0}
+.fquad .frame.ph{aspect-ratio:auto}
+.fquad .fcell{margin:0;min-height:0}
+.fcell-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+.fcell-h .copy.mini{margin:0;flex:none}
+.frame.ph .fprompt{font:400 10.5px/1.4 var(--mono);color:var(--ink-2);white-space:pre-wrap;word-break:break-word;display:block;
+  -webkit-line-clamp:none;-webkit-box-orient:vertical;overflow:visible}
+.subf{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;background:var(--side)}
+.subf.ph{display:flex;align-items:center;justify-content:center;cursor:default;
+  font:500 10px/1 var(--sans);color:var(--ink-3);letter-spacing:.08em}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;border-top:1px solid var(--rule);padding-top:4px}
+@media(max-width:900px){.duo{grid-template-columns:minmax(0,1fr)}}
+.ppanel{border:1px solid var(--rule);border-radius:2px;background:var(--panel);margin-top:7px}
+.pp-h{display:flex;align-items:center;gap:6px;padding:7px 10px;border-bottom:1px solid var(--rule)}
+.pp-h b{font:500 11px/1 var(--sans);letter-spacing:.08em;color:var(--ink-2);margin-right:auto}
+.pp{display:none;margin:0;padding:9px 12px;font:400 12px/1.8 var(--sans);color:var(--ink);
+  white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent}
+.pp.on{display:block}
+.pp::-webkit-scrollbar{width:6px}
+.pp::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+.cuts{margin:0;padding:0;list-style:none}
+.cut{padding:7px 0;border-bottom:1px solid var(--rule)}
+.cut:first-child{padding-top:11px}
+.cut:last-child{border-bottom:0}
+.cut-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.cut-h b{font:500 12px/1 var(--mono);color:var(--seal)}
+.cut-t{font:500 10.5px/1.6 var(--mono);color:var(--ink-3)}
+.cut-sc{font-size:11.5px;color:var(--ink-2)}
+.cut-rc{font:400 10.5px/1.6 var(--mono);border:1px dashed var(--rule-2);border-radius:2px;padding:0 6px;color:var(--ink-2)}
+.cut-rc sup{color:var(--seal-2);font-weight:700;cursor:help;margin-left:2px}
+.cut-h .copy{margin-left:auto;opacity:0;transition:.15s}
+.cut:hover .copy{opacity:1}
+.cut p{margin:3px 0 0;font-size:12px;line-height:1.6}
+.sact{color:var(--ink-2)}
+.sline{font-family:var(--serif)}
+.sline b{font-weight:500;margin-right:6px;color:var(--seal)}
+.chip{font:400 10.5px/1.6 var(--mono);border:1px solid var(--rule-2);border-radius:2px;
+  padding:0 6px;background:var(--panel);color:var(--ink-2);text-decoration:none}
+.chip.lite{border-color:var(--seal-2);color:var(--seal-2)}
+.chip.prop{border-color:var(--seal);color:var(--seal)}
+.chip.mono{font-family:var(--mono)}
+a.chip:hover{border-color:var(--seal);color:var(--seal)}
+.prompts{display:flex;gap:6px}
+.seg-note{margin:0;font-size:11px;color:var(--ink-3)}
+
+/* 03 generation batches */
+.batches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.batches{grid-template-columns:minmax(0,1fr)}}
+.batch{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 18px}
+.bimg{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;margin-bottom:10px}
+.batch-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.batch-h b{font:500 13px var(--serif);letter-spacing:.06em}
+.batch-shots{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.batch-need{margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+
+/* 04 audio alignment */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;white-space:nowrap}
+td a{color:var(--seal);text-decoration:none}
+td.serif{font-family:var(--serif)}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:5px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.mini{padding:3px 7px;font-size:10px}
+.copy.h3{border-color:var(--seal-2);color:var(--seal-2);width:100%}
+.copy.h3:hover,.copy.h3[data-done]{border-color:var(--seal);color:var(--seal)}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.lightbox{position:fixed;inset:0;background:rgba(20,22,24,.88);display:none;align-items:center;
+  justify-content:center;z-index:9;cursor:zoom-out;padding:32px}
+.lightbox.on{display:flex}
+.lightbox img{max-width:96%;max-height:96%;border:1px solid #555;border-radius:2px}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy,.shmore{display:none!important}
+  .pp{max-height:none;overflow:visible}
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .shots.clip{max-height:none}
+  .shots.clip::after{display:none}
+  .seggrid,.batches{grid-template-columns:minmax(0,1fr)}
+  .page{max-width:none;padding:0}
+  section.top-sec,.segcard,.batch{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style><!-- production-hub-return-css:start --><style>.production-hub-return{position:fixed;right:16px;bottom:16px;z-index:99999;padding:9px 12px;border:1px solid #3b6670;border-radius:9px;background:#0b151bea;color:#67e0e6!important;font:700 13px/1.2 system-ui,"Microsoft YaHei",sans-serif;text-decoration:none!important;box-shadow:0 8px 30px #0007;backdrop-filter:blur(10px)}.production-hub-return:focus-visible{outline:3px solid #67e0e6;outline-offset:3px}@media(max-width:560px){.production-hub-return{display:grid;place-items:center;right:10px;bottom:10px;width:44px;height:44px;padding:0;overflow:hidden;font-size:0}.production-hub-return::before{content:"⌂";font-size:22px}}</style><!-- production-hub-return-css:end --></head><body><!-- production-hub-return:start --><a class="production-hub-return" href="../index.html" aria-label="返回潮痕小说视频生产总控">⌂ 返回生产总控</a><!-- production-hub-return:end -->
+<div class="page">
+
+<header class="hd">
+  <h1>潮痕</h1>
+  <span class="sub">分镜 · 第 2 集</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 17 / 17</span>
+    <button class="expo" data-name="潮痕-storyboard.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">生成段</div><div class="v">10 <small>段</small></div><div class="d">一段一次调用，上限 15 秒</div></div>
+  <div class="kpi"><div class="l">分镜</div><div class="v">36 <small>切</small></div><div class="d">平均 3.2 秒一切</div></div>
+  <div class="kpi"><div class="l">预估总时长</div><div class="v">1 分 54 秒</div><div class="d">目标 2 分 0 秒</div></div>
+  <div class="kpi"><div class="l">生成批次</div><div class="v">2</div><div class="d">同场景同光照共用环境参考图</div></div>
+  <div class="kpi"><div class="l">台词段</div><div class="v">10 <small>段</small></div><div class="d">其余是纯画面段</div></div>
+</div>
+
+<div class="preflight" id="e02-01-preflight">
+  <video controls preload="metadata" poster="../storyboard-ep2-pack/E02-01/f3.png">
+    <source src="../storyboard-ep2-pack/E02-01/e02-01-static-preflight.mp4" type="video/mp4">
+  </video>
+  <div class="preflight-copy">
+    <strong>E02-01 · 13 秒双人物预演</strong>
+    <span>0.00 / 3.00 / 6.00 / 10.50 秒切换，共 4 镜。</span>
+    <span><b>性质说明：</b>这是静态关键帧按时间轴拼接的预演，不是人物已运动的 AI 生成视频。</span>
+  </div>
+</div>
+
+
+<section class="top-sec" id="sec-rhythm">
+  <div class="sec-h"><span class="no">01</span><h2>分镜节奏带</h2><span class="note">粗分隔 = 生成段边界 · 段宽 = 分镜时长占比 · 颜色越深景别越近</span></div>
+  <div class="rhythm">
+    <div class="legend"><i><span class="sw" style="background:rgba(138,51,36,0.25)"></span>大远景</i><i><span class="sw" style="background:rgba(138,51,36,0.4)"></span>全景</i><i><span class="sw" style="background:rgba(138,51,36,0.58)"></span>中景</i><i><span class="sw" style="background:rgba(138,51,36,0.78)"></span>特写</i><i><span class="sw" style="background:rgba(138,51,36,1)"></span>大特写</i></div>
+<div class="rrow"><span class="rep">E02</span><div class="rtrack"><span class="rseg" style="width:11.5%"><a class="seg" href="#seg-E02-01" style="width:2.6%;background:rgba(138,51,36,0.58)" title="E02-01#1 · 3s · 中景 · Tracking Shot"></a><a class="seg" href="#seg-E02-01" style="width:2.6%;background:rgba(138,51,36,0.78)" title="E02-01#2 · 3s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-01" style="width:4%;background:rgba(138,51,36,0.58)" title="E02-01#3 · 4.5s · 中景 · Pan Right"></a><a class="seg" href="#seg-E02-01" style="width:2.2%;background:rgba(138,51,36,1)" title="E02-01#4 · 2.5s · 大特写 · Push In"></a></span><span class="rseg" style="width:8.4%"><a class="seg" href="#seg-E02-02" style="width:2.6%;background:rgba(138,51,36,1)" title="E02-02#1 · 3s · 大特写 · Static Shot"></a><a class="seg" href="#seg-E02-02" style="width:3.5%;background:rgba(138,51,36,0.58)" title="E02-02#2 · 4s · 中景 · Push In"></a><a class="seg" href="#seg-E02-02" style="width:2.2%;background:rgba(138,51,36,0.78)" title="E02-02#3 · 2.5s · 特写 · Static Shot"></a></span><span class="rseg" style="width:11.5%"><a class="seg" href="#seg-E02-03" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-03#1 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-03" style="width:3.5%;background:rgba(138,51,36,0.78)" title="E02-03#2 · 4s · 特写 · Push In"></a><a class="seg" href="#seg-E02-03" style="width:3.5%;background:rgba(138,51,36,1)" title="E02-03#3 · 4s · 大特写 · Pan Right"></a><a class="seg" href="#seg-E02-03" style="width:2.6%;background:rgba(138,51,36,0.78)" title="E02-03#4 · 3s · 特写 · Static Shot"></a></span><span class="rseg" style="width:8.8%"><a class="seg" href="#seg-E02-04" style="width:3.1%;background:rgba(138,51,36,0.78)" title="E02-04#1 · 3.5s · 特写 · Push In"></a><a class="seg" href="#seg-E02-04" style="width:2.2%;background:rgba(138,51,36,1)" title="E02-04#2 · 2.5s · 大特写 · Static Shot"></a><a class="seg" href="#seg-E02-04" style="width:3.5%;background:rgba(138,51,36,0.78)" title="E02-04#3 · 4s · 特写 · Push In"></a></span><span class="rseg" style="width:12.3%"><a class="seg" href="#seg-E02-05" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-05#1 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-05" style="width:3.1%;background:rgba(138,51,36,0.78)" title="E02-05#2 · 3.5s · 特写 · Pull Out"></a><a class="seg" href="#seg-E02-05" style="width:2.6%;background:rgba(138,51,36,0.58)" title="E02-05#3 · 3s · 中景 · Pan Left"></a><a class="seg" href="#seg-E02-05" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-05#4 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-05" style="width:3.1%;background:rgba(138,51,36,0.58)" title="E02-05#5 · 3.5s · 中景 · Tracking Shot"></a></span><span class="rseg" style="width:9.7%"><a class="seg" href="#seg-E02-06" style="width:2.6%;background:rgba(138,51,36,0.4)" title="E02-06#1 · 3s · 全景 · Tracking Shot"></a><a class="seg" href="#seg-E02-06" style="width:3.1%;background:rgba(138,51,36,1)" title="E02-06#2 · 3.5s · 大特写 · Push In"></a><a class="seg" href="#seg-E02-06" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-06#3 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-06" style="width:2.2%;background:rgba(138,51,36,0.58)" title="E02-06#4 · 2.5s · 中景 · Pan Right"></a></span><span class="rseg" style="width:7.9%"><a class="seg" href="#seg-E02-07" style="width:2.6%;background:rgba(138,51,36,0.4)" title="E02-07#1 · 3s · 全景 · Tracking Shot"></a><a class="seg" href="#seg-E02-07" style="width:3.5%;background:rgba(138,51,36,1)" title="E02-07#2 · 4s · 大特写 · Push In"></a><a class="seg" href="#seg-E02-07" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-07#3 · 2s · 特写 · Static Shot"></a></span><span class="rseg" style="width:9.7%"><a class="seg" href="#seg-E02-08" style="width:2.2%;background:rgba(138,51,36,0.58)" title="E02-08#1 · 2.5s · 中景 · Tracking Shot"></a><a class="seg" href="#seg-E02-08" style="width:3.1%;background:rgba(138,51,36,1)" title="E02-08#2 · 3.5s · 大特写 · Push In"></a><a class="seg" href="#seg-E02-08" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-08#3 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-08" style="width:2.6%;background:rgba(138,51,36,0.58)" title="E02-08#4 · 3s · 中景 · Pan Right"></a></span><span class="rseg" style="width:11%"><a class="seg" href="#seg-E02-09" style="width:3.5%;background:rgba(138,51,36,0.78)" title="E02-09#1 · 4s · 特写 · Push In"></a><a class="seg" href="#seg-E02-09" style="width:4%;background:rgba(138,51,36,0.78)" title="E02-09#2 · 4.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-09" style="width:3.5%;background:rgba(138,51,36,0.58)" title="E02-09#3 · 4s · 中景 · Pan Left"></a></span><span class="rseg" style="width:9.3%"><a class="seg" href="#seg-E02-10" style="width:3.5%;background:rgba(138,51,36,0.58)" title="E02-10#1 · 4s · 中景 · Pull Out"></a><a class="seg" href="#seg-E02-10" style="width:1.8%;background:rgba(138,51,36,0.78)" title="E02-10#2 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E02-10" style="width:4%;background:rgba(138,51,36,0.4)" title="E02-10#3 · 4.5s · 全景 · Push In"></a></span></div><span class="rval">10 段 36 切 · 113.5s</span></div>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-segments">
+  <div class="sec-h"><span class="no">02</span><h2>分集分镜表</h2><span class="note">一段 = 一次生成：主分镜图钉 0.00 秒，子分镜图钉各自切点</span></div>
+<section class="ep" id="ep-2">
+  <header class="ep-h">
+    <span class="ep-n">E02</span>
+    <span class="ep-est">10 段 36 切 · 共 113.5 秒 / 目标 120 秒</span>
+  </header>
+  <div class="shots clip">
+    <div class="seggrid">
+<article class="segcard" id="seg-E02-01">
+  <header class="seg-h">
+    <b>E02-01</b>
+    <span class="sec-badge">13s · 4 切</span>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">阴天工作日</span>
+    <span class="beatsref">第 1 场 第 1–5 拍</span>
+  </header>
+  <img class="frame" src="E02-01/f1.png" alt="E02-01#1" loading="lazy">
+  <div class="subs"><img class="subf" src="E02-01/f2.png" alt="E02-01#2" loading="lazy"><img class="subf" src="E02-01/f3.png" alt="E02-01#3" loading="lazy"><img class="subf" src="E02-01/f4.png" alt="E02-01#4" loading="lazy"></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3s</span>
+    <span class="cut-sc">中景 · Tracking Shot</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot of a broad-shouldered East Asian male diver pushing into the overcast audio lab and pressing an accident record beside a rolling waveform while a slim East Asian female archivist turns from the console, two-person composition, damp workwear and cool daylight.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野快步推门进来，把事故记录压到滚动的报时波形旁。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.00s 起 · 3s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the weathered male diver leaning over the steel bench, one finger pinning an accident record, heavy brows and guilty eyes held steady in soft overcast laboratory light.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>官方写一点二十分离岸。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.00s 起 · 4.5s</span>
+    <span class="cut-sc">中景 · Pan Right</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot across the audio bench: the slim female archivist drags the damaged orange radio recording back to an alarm spike while the male diver watches from the opposite side, their faces separated by twin cyan waveform monitors.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥把电台录音拉回蜂鸣处。</p><p class="sline"><b>许知遥</b>这段报时在一点四十七。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">10.50s 起 · 2.5s</span>
+    <span class="cut-sc">大特写 · Push In</span>
+    
+    <span class="chip">许知遥</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the female archivist's precise fingertip pressing play beside the scorched orange emergency radio, a cyan waveform frozen at a narrow spike, cool overcast light on scratched steel.">分镜图提示词</button>
+  </div>
+  <p class="sact">她按下播放。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, a broad-shouldered male diver pushes through the lab door and plants an accident record beside the rolling waveform as the female archivist turns toward him. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the male diver pins the accident record to the bench and states the official departure time without preamble. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 官方写一点二十分离岸。&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the female archivist scrubs the radio recording back to an alarm spike while the male diver studies the waveform across from her. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 这段报时在一点四十七。&lt;/d&gt;
+[Shot 4] At 00:10.500, the camera cuts to &lt;Picture 4&gt;: her fingertip presses play beside the scorched orange radio and the waveform begins to move. The camera uses a push in.
+
+overall_soundscape: The door opens sharply, paper lands on steel, monitor fans hum, and the damaged radio emits a faint alarm pulse beneath room tone.
+
+non_diegetic_music: Low bowed cello with a restrained ticking pulse.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, a broad-shouldered male diver pushes through the lab door and plants an accident record beside the rolling waveform as the female archivist turns toward him. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the male diver pins the accident record to the bench and states the official departure time without preamble. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 官方写一点二十分离岸。&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the female archivist scrubs the radio recording back to an alarm spike while the male diver studies the waveform across from her. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 这段报时在一点四十七。&lt;/d&gt;
+[Shot 4] At 00:10.500, the camera cuts to &lt;Picture 4&gt;: her fingertip presses play beside the scorched orange radio and the waveform begins to move. The camera uses a push in.
+
+overall_soundscape: The door opens sharply, paper lands on steel, monitor fans hum, and the damaged radio emits a faint alarm pulse beneath room tone.
+
+non_diegetic_music: Low bowed cello with a restrained ticking pulse.</pre>
+    </div>
+  </div>
+  <p class="seg-note">双主角同场开场：行动主体进门，正反打核对两套时间。</p>
+</article>
+<article class="segcard" id="seg-E02-02">
+  <header class="seg-h">
+    <b>E02-02</b>
+    <span class="sec-badge">9.5s · 3 切</span>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">阴天工作日</span>
+    <span class="beatsref">第 1 场 第 6–9 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up of the damaged orange emergency radio speaker under a cyan waveform display as an old teenage recording breaks through salt noise, the broken grille bar and fire scar sharply visible.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up of the damaged orange emergency radio speaker under a cyan waveform display as an old teenage recording breaks through salt noise, the broken grille bar and fire scar sharply visible.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot with both people visible: the male diver bends close to the orange radio speaker while the female archivist listens at the console, a repeating waveform pulse between their profiles in the overcast restoration room.">复制</button></div><span class="fprompt">Cinematic film still, medium shot with both people visible: the male diver bends close to the orange radio speaker while the female archivist listens at the console, a repeating waveform pulse between their profiles in the overcast restoration room.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver recognizing the sound, eyes fixed on the radio and jaw tightening, cyan monitor light reflected in his weathered face.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver recognizing the sound, eyes fixed on the radio and jaw tightening, cyan monitor light reflected in his weathered face.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3s</span>
+    <span class="cut-sc">大特写 · Static Shot</span>
+    
+    
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the damaged orange emergency radio speaker under a cyan waveform display as an old teenage recording breaks through salt noise, the broken grille bar and fire scar sharply visible.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许潮</b>七月十九，一点四十七。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.00s 起 · 4s</span>
+    <span class="cut-sc">中景 · Push In</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot with both people visible: the male diver bends close to the orange radio speaker while the female archivist listens at the console, a repeating waveform pulse between their profiles in the overcast restoration room.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野靠近扬声器。</p><p class="sact">规律蜂鸣再次穿过潮声。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">7.00s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver recognizing the sound, eyes fixed on the radio and jaw tightening, cyan monitor light reflected in his weathered face.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>这是货仓防潮报警器。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the scorched radio speaker carries a distant teenage time report through salt noise. The camera uses a static shot. A distant teenage male recording speaks in an off-screen voiceover with a bright strained voice (S3), while all visible lips remain completely closed: &lt;d&gt;[Chinese] 七月十九，一点四十七。&lt;/d&gt;
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the male diver bends toward the speaker as the regular alarm pulse cuts through the tide recording; the camera pushes in between both listeners. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to &lt;Picture 3&gt;: recognition settles across the male diver's face as he identifies the warehouse moisture alarm. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 这是货仓防潮报警器。&lt;/d&gt;
+
+overall_soundscape: A brittle teenage recording emerges through tide hiss; a regular moisture alarm pulse repeats while clothing brushes the steel bench.
+
+non_diegetic_music: Sparse muted piano over a low electronic drone.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the scorched radio speaker carries a distant teenage time report through salt noise. The camera uses a static shot. A distant teenage male recording speaks in an off-screen voiceover with a bright strained voice (S3), while all visible lips remain completely closed: &lt;d&gt;[Chinese] 七月十九，一点四十七。&lt;/d&gt;
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the male diver bends toward the speaker as the regular alarm pulse cuts through the tide recording; the camera pushes in between both listeners. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to &lt;Picture 3&gt;: recognition settles across the male diver's face as he identifies the warehouse moisture alarm. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 这是货仓防潮报警器。&lt;/d&gt;
+
+overall_soundscape: A brittle teenage recording emerges through tide hiss; a regular moisture alarm pulse repeats while clothing brushes the steel bench.
+
+non_diegetic_music: Sparse muted piano over a low electronic drone.</pre>
+    </div>
+  </div>
+  <p class="seg-note">录音与现实双层人物：少年只以画外录音存在，画内保持两人。</p>
+</article>
+<article class="segcard" id="seg-E02-03">
+  <header class="seg-h">
+    <b>E02-03</b>
+    <span class="sec-badge">13s · 4 切</span>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">阴天工作日</span>
+    <span class="beatsref">第 1 场 第 10–15 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist turning sharply toward the diver, brows lifted in a precise challenge, neutral overcast daylight and faint cyan fill across her face.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the female archivist turning sharply toward the diver, brows lifted in a precise challenge, neutral overcast daylight and faint cyan fill across her face.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver slowly shaking his head, one hand braced on the bench, certainty and old dread visible in his deep-set eyes.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver slowly shaking his head, one hand braced on the bench, certainty and old dread visible in his deep-set eyes.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up of the female archivist's hand drawing two separated time marks on one blank evidence sheet, her tense face reflected faintly in the monitor edge, no readable writing.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up of the female archivist's hand drawing two separated time marks on one blank evidence sheet, her tense face reflected faintly in the monitor edge, no readable writing.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 4 · #4 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver avoiding the woman's gaze after stating that one record must be false, soft window light exposing tension in his jaw.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver avoiding the woman's gaze after stating that one record must be false, soft window light exposing tension in his jaw.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">许知遥</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist turning sharply toward the diver, brows lifted in a precise challenge, neutral overcast daylight and faint cyan fill across her face.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>不是船上的？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.00s 起 · 4s</span>
+    <span class="cut-sc">特写 · Push In</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver slowly shaking his head, one hand braced on the bench, certainty and old dread visible in his deep-set eyes.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野摇头。</p><p class="sline"><b>程野</b>每三十秒一次，我从小听到大。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.00s 起 · 4s</span>
+    <span class="cut-sc">大特写 · Pan Right</span>
+    
+    <span class="chip">许知遥</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the female archivist's hand drawing two separated time marks on one blank evidence sheet, her tense face reflected faintly in the monitor edge, no readable writing.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥把两条时间写在同一张纸上。</p><p class="sline"><b>许知遥</b>哥哥那时还在岸上。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">10.00s 起 · 3s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver avoiding the woman's gaze after stating that one record must be false, soft window light exposing tension in his jaw.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>至少有一份记录是假的。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist turns sharply and asks whether the sound came from the boat. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 不是船上的？&lt;/d&gt;
+[Shot 2] At 00:02.000, the camera cuts to &lt;Picture 2&gt;: the male diver shakes his head and explains that the alarm has repeated every thirty seconds since childhood. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 每三十秒一次，我从小听到大。&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: her pencil places two incompatible time marks on the same evidence sheet as she realizes her brother was still ashore. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 哥哥那时还在岸上。&lt;/d&gt;
+[Shot 4] At 00:10.000, the camera cuts to &lt;Picture 4&gt;: the male diver states that at least one record is false and then avoids her gaze. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 至少有一份记录是假的。&lt;/d&gt;
+
+overall_soundscape: The alarm pulse repeats every thirty seconds, a pencil scratches paper, and the room falls quiet between short questions.
+
+non_diegetic_music: A restrained cello ostinato with isolated piano notes.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist turns sharply and asks whether the sound came from the boat. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 不是船上的？&lt;/d&gt;
+[Shot 2] At 00:02.000, the camera cuts to &lt;Picture 2&gt;: the male diver shakes his head and explains that the alarm has repeated every thirty seconds since childhood. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 每三十秒一次，我从小听到大。&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: her pencil places two incompatible time marks on the same evidence sheet as she realizes her brother was still ashore. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 哥哥那时还在岸上。&lt;/d&gt;
+[Shot 4] At 00:10.000, the camera cuts to &lt;Picture 4&gt;: the male diver states that at least one record is false and then avoids her gaze. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 至少有一份记录是假的。&lt;/d&gt;
+
+overall_soundscape: The alarm pulse repeats every thirty seconds, a pencil scratches paper, and the room falls quiet between short questions.
+
+non_diegetic_music: A restrained cello ostinato with isolated piano notes.</pre>
+    </div>
+  </div>
+  <p class="seg-note">用正反打和纸面插入镜头把时间矛盾变成可见证据。</p>
+</article>
+<article class="segcard" id="seg-E02-04">
+  <header class="seg-h">
+    <b>E02-04</b>
+    <span class="sec-badge">10s · 3 切</span>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">阴天工作日</span>
+    <span class="beatsref">第 1 场 第 16–19 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up two-person composition across the bench as the female archivist notices the diver's evasive look and leans forward to question him, his shoulders turning away while her gaze hardens.">复制</button></div><span class="fprompt">Cinematic film still, close-up two-person composition across the bench as the female archivist notices the diver's evasive look and leans forward to question him, his shoulders turning away while her gaze hardens.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up of the male diver's rough hand tightening around the back of a worn steel chair, pale knuckles and a dive-watch pressure mark visible.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up of the male diver's rough hand tightening around the back of a worn steel chair, pale knuckles and a dive-watch pressure mark visible.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver finally meeting her eyes as he confesses finding half a burned boat plate after the accident, guilt held in a rigid face.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver finally meeting her eyes as he confesses finding half a burned boat plate after the accident, guilt held in a rigid face.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3.5s</span>
+    <span class="cut-sc">特写 · Push In</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up two-person composition across the bench as the female archivist notices the diver's evasive look and leans forward to question him, his shoulders turning away while her gaze hardens.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥注意到他的回避。</p><p class="sline"><b>许知遥</b>你还知道什么？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.50s 起 · 2.5s</span>
+    <span class="cut-sc">大特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the male diver's rough hand tightening around the back of a worn steel chair, pale knuckles and a dive-watch pressure mark visible.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野握紧椅背。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.00s 起 · 4s</span>
+    <span class="cut-sc">特写 · Push In</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver finally meeting her eyes as he confesses finding half a burned boat plate after the accident, guilt held in a rigid face.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>事故第二天，我捡到过半块船牌。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist catches his evasive glance and presses him for what else he knows. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 你还知道什么？&lt;/d&gt;
+[Shot 2] At 00:03.500, the camera cuts to &lt;Picture 2&gt;: his hand tightens around the chair back before he can answer. The camera uses a static shot.
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the male diver finally looks up and admits that he found half a burned boat plate the next day. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 事故第二天，我捡到过半块船牌。&lt;/d&gt;
+
+overall_soundscape: A chair creaks under tightening fingers, distant traffic fades behind wired glass, and the radio hiss continues at low level.
+
+non_diegetic_music: Low sustained strings with a single muted heartbeat-like drum.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist catches his evasive glance and presses him for what else he knows. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 你还知道什么？&lt;/d&gt;
+[Shot 2] At 00:03.500, the camera cuts to &lt;Picture 2&gt;: his hand tightens around the chair back before he can answer. The camera uses a static shot.
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the male diver finally looks up and admits that he found half a burned boat plate the next day. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 事故第二天，我捡到过半块船牌。&lt;/d&gt;
+
+overall_soundscape: A chair creaks under tightening fingers, distant traffic fades behind wired glass, and the radio hiss continues at low level.
+
+non_diegetic_music: Low sustained strings with a single muted heartbeat-like drum.</pre>
+    </div>
+  </div>
+  <p class="seg-note">回避升级为逼问，椅背手部特写承接负疚。</p>
+</article>
+<article class="segcard" id="seg-E02-05">
+  <header class="seg-h">
+    <b>E02-05</b>
+    <span class="sec-badge">14s · 5 切</span>
+    <span class="chip">S02 许知遥临时声音修复室</span>
+    <span class="chip lite">阴天工作日</span>
+    <span class="beatsref">第 1 场 第 20–27 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist reacting instantly, eyes locked on the diver as she demands the boat plate's location.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the female archivist reacting instantly, eyes locked on the diver as she demands the boat plate's location.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up widening from the male diver's hand releasing the chair to his ashamed face as he admits throwing the plate back into the river.">复制</button></div><span class="fprompt">Cinematic film still, close-up widening from the male diver's hand releasing the chair to his ashamed face as he admits throwing the plate back into the river.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the female archivist asks who ordered it and the male diver turns toward an old father photograph beside the monitor, the photograph soft and unreadable.">复制</button></div><span class="fprompt">Cinematic film still, medium shot with both investigators visible as the female archivist asks who ordered it and the male diver turns toward an old father photograph beside the monitor, the photograph soft and unreadable.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 4 · #4 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver looking at the old photograph as he gives a painfully quiet answer, cold window light flattening the room behind him.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver looking at the old photograph as he gives a painfully quiet answer, cold window light flattening the room behind him.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 5 · #5 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot of both investigators: the female archivist snatches the blackened brass boat key from the bench and strides toward the door while the male diver pivots to follow, decisive forward motion in overcast light.">复制</button></div><span class="fprompt">Cinematic film still, medium shot of both investigators: the female archivist snatches the blackened brass boat key from the bench and strides toward the door while the male diver pivots to follow, decisive forward motion in overcast light.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">许知遥</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist reacting instantly, eyes locked on the diver as she demands the boat plate's location.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>船牌呢？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.00s 起 · 3.5s</span>
+    <span class="cut-sc">特写 · Pull Out</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up widening from the male diver's hand releasing the chair to his ashamed face as he admits throwing the plate back into the river.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野松开椅背。</p><p class="sline"><b>程野</b>被我扔回水里了。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.50s 起 · 3s</span>
+    <span class="cut-sc">中景 · Pan Left</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the female archivist asks who ordered it and the male diver turns toward an old father photograph beside the monitor, the photograph soft and unreadable.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>谁让你扔的？</p><p class="sact">程野看向桌上的父亲旧照。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">8.50s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver looking at the old photograph as he gives a painfully quiet answer, cold window light flattening the room behind him.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>许叔。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">10.50s 起 · 3.5s</span>
+    <span class="cut-sc">中景 · Tracking Shot</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot of both investigators: the female archivist snatches the blackened brass boat key from the bench and strides toward the door while the male diver pivots to follow, decisive forward motion in overcast light.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥抓起黄铜钥匙。</p><p class="sline"><b>许知遥</b>去货仓。现在。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist demands to know where the boat plate is. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 船牌呢？&lt;/d&gt;
+[Shot 2] At 00:02.000, the camera cuts to &lt;Picture 2&gt;: his hand releases the chair and the camera pulls out as he admits throwing the plate back into the water. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 被我扔回水里了。&lt;/d&gt;
+[Shot 3] At 00:05.500, the camera cuts to &lt;Picture 3&gt;: she asks who ordered him to discard it, and he turns toward the old father photograph. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 谁让你扔的？&lt;/d&gt;
+[Shot 4] At 00:08.500, the camera cuts to &lt;Picture 4&gt;: the male diver gives the father's familiar title in a voice barely above the room tone. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 许叔。&lt;/d&gt;
+[Shot 5] At 00:10.500, the camera cuts to &lt;Picture 5&gt;: the female archivist grabs the blackened brass key and strides for the door, ordering an immediate trip to the warehouse as the diver follows. The camera uses a tracking shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 去货仓。现在。&lt;/d&gt;
+
+overall_soundscape: The chair releases with a metal tick, paper shifts under a hand, and the brass key scrapes sharply across the bench.
+
+non_diegetic_music: A tense cello line rises, then cuts to a held low note.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist demands to know where the boat plate is. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 船牌呢？&lt;/d&gt;
+[Shot 2] At 00:02.000, the camera cuts to &lt;Picture 2&gt;: his hand releases the chair and the camera pulls out as he admits throwing the plate back into the water. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 被我扔回水里了。&lt;/d&gt;
+[Shot 3] At 00:05.500, the camera cuts to &lt;Picture 3&gt;: she asks who ordered him to discard it, and he turns toward the old father photograph. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 谁让你扔的？&lt;/d&gt;
+[Shot 4] At 00:08.500, the camera cuts to &lt;Picture 4&gt;: the male diver gives the father's familiar title in a voice barely above the room tone. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 许叔。&lt;/d&gt;
+[Shot 5] At 00:10.500, the camera cuts to &lt;Picture 5&gt;: the female archivist grabs the blackened brass key and strides for the door, ordering an immediate trip to the warehouse as the diver follows. The camera uses a tracking shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 去货仓。现在。&lt;/d&gt;
+
+overall_soundscape: The chair releases with a metal tick, paper shifts under a hand, and the brass key scrapes sharply across the bench.
+
+non_diegetic_music: A tense cello line rises, then cuts to a held low note.</pre>
+    </div>
+  </div>
+  <p class="seg-note">双人对峙落到父亲旧照和钥匙，作为转场钩子。</p>
+</article>
+<article class="segcard" id="seg-E02-06">
+  <header class="seg-h">
+    <b>E02-06</b>
+    <span class="sec-badge">11s · 4 切</span>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">阴天下午</span>
+    <span class="beatsref">第 2 场 第 1–5 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, wide shot outside an abandoned riverside warehouse as the female archivist strides toward the steel door with the brass key ready and the male diver follows one pace behind under dim overcast afternoon light.">复制</button></div><span class="fprompt">Cinematic film still, wide shot outside an abandoned riverside warehouse as the female archivist strides toward the steel door with the brass key ready and the male diver follows one pace behind under dim overcast afternoon light.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up of the blackened brass key entering a clean new padlock and refusing to turn, its off-center triangular notch and salt-white patches visible against cold steel.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up of the blackened brass key entering a clean new padlock and refusing to turn, its off-center triangular notch and salt-white patches visible against cold steel.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist studying the mismatched new lock and immediately recognizing that it was replaced later.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the female archivist studying the mismatched new lock and immediately recognizing that it was replaced later.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 4 · #4 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot of the male diver testing a partly open side door and pushing it inward, deep warehouse darkness appearing beyond his shoulder.">复制</button></div><span class="fprompt">Cinematic film still, medium shot of the male diver testing a partly open side door and pushing it inward, deep warehouse darkness appearing beyond his shoulder.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3s</span>
+    <span class="cut-sc">全景 · Tracking Shot</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, wide shot outside an abandoned riverside warehouse as the female archivist strides toward the steel door with the brass key ready and the male diver follows one pace behind under dim overcast afternoon light.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥快步走到货仓钢门前。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.00s 起 · 3.5s</span>
+    <span class="cut-sc">大特写 · Push In</span>
+    
+    <span class="chip">许知遥</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the blackened brass key entering a clean new padlock and refusing to turn, its off-center triangular notch and salt-white patches visible against cold steel.">分镜图提示词</button>
+  </div>
+  <p class="sact">她把黄铜钥匙插进新挂锁。</p><p class="sact">钥匙无法转动。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.50s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">许知遥</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist studying the mismatched new lock and immediately recognizing that it was replaced later.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>锁是后来换的。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">8.50s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Pan Right</span>
+    
+    <span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, medium shot of the male diver testing a partly open side door and pushing it inward, deep warehouse darkness appearing beyond his shoulder.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野推开虚掩的侧门。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, both investigators cross the wet yard toward the warehouse steel door, the camera tracking their urgent approach. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the brass key enters the new padlock but stops against the unfamiliar mechanism. The camera uses a push in.
+[Shot 3] At 00:06.500, the camera cuts to &lt;Picture 3&gt;: the female archivist identifies the lock as a later replacement. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 锁是后来换的。&lt;/d&gt;
+[Shot 4] At 00:08.500, the camera cuts to &lt;Picture 4&gt;: the male diver finds the partly open side door and pushes it inward. The camera uses a pan right.
+
+overall_soundscape: Boots cross wet concrete, brass scrapes inside a new padlock, and a heavy side door groans open.
+
+non_diegetic_music: Low tremolo strings with sparse metallic percussion.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, both investigators cross the wet yard toward the warehouse steel door, the camera tracking their urgent approach. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the brass key enters the new padlock but stops against the unfamiliar mechanism. The camera uses a push in.
+[Shot 3] At 00:06.500, the camera cuts to &lt;Picture 3&gt;: the female archivist identifies the lock as a later replacement. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 锁是后来换的。&lt;/d&gt;
+[Shot 4] At 00:08.500, the camera cuts to &lt;Picture 4&gt;: the male diver finds the partly open side door and pushes it inward. The camera uses a pan right.
+
+overall_soundscape: Boots cross wet concrete, brass scrapes inside a new padlock, and a heavy side door groans open.
+
+non_diegetic_music: Low tremolo strings with sparse metallic percussion.</pre>
+    </div>
+  </div>
+  <p class="seg-note">新场景先运动主体、门锁特写、再由第二人物找到侧门。</p>
+</article>
+<article class="segcard" id="seg-E02-07">
+  <header class="seg-h">
+    <b>E02-07</b>
+    <span class="sec-badge">9s · 3 切</span>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">阴天下午</span>
+    <span class="beatsref">第 2 场 第 6–9 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, wide shot inside the dim warehouse as the two investigators enter together, the woman holding the brass key and damaged radio while the diver scans the concrete walls, cold doorway light behind them.">复制</button></div><span class="fprompt">Cinematic film still, wide shot inside the dim warehouse as the two investigators enter together, the woman holding the brass key and damaged radio while the diver scans the concrete walls, cold doorway light behind them.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up linking a weak amber moisture-alarm lamp on the rear wall with the scorched orange radio in foreground as their pulses overlap in perfect rhythm.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up linking a weak amber moisture-alarm lamp on the rear wall with the scorched orange radio in foreground as their pulses overlap in perfect rhythm.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver listening between the wall alarm and the orange radio, his recognition now certain in the dim amber-and-cold warehouse light.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver listening between the wall alarm and the orange radio, his recognition now certain in the dim amber-and-cold warehouse light.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3s</span>
+    <span class="cut-sc">全景 · Tracking Shot</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span><span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, wide shot inside the dim warehouse as the two investigators enter together, the woman holding the brass key and damaged radio while the diver scans the concrete walls, cold doorway light behind them.">分镜图提示词</button>
+  </div>
+  <p class="sact">两人进入昏暗货仓。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.00s 起 · 4s</span>
+    <span class="cut-sc">大特写 · Push In</span>
+    
+    
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up linking a weak amber moisture-alarm lamp on the rear wall with the scorched orange radio in foreground as their pulses overlap in perfect rhythm.">分镜图提示词</button>
+  </div>
+  <p class="sact">后墙报警器亮起琥珀灯。</p><p class="sact">蜂鸣与电台录音重叠。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">7.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver listening between the wall alarm and the orange radio, his recognition now certain in the dim amber-and-cold warehouse light.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>就是这个声音。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the pair enter the dim warehouse together and spread their attention across the unfamiliar interior. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the rear alarm lamp blinks in exact rhythm with the damaged radio playback as the camera pushes toward the matching pulses. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to &lt;Picture 3&gt;: the male diver confirms that this is the sound preserved in the recording. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 就是这个声音。&lt;/d&gt;
+
+overall_soundscape: The side door echoes shut, a moisture alarm beeps through the cavernous warehouse, and the radio playback overlaps it exactly.
+
+non_diegetic_music: A subdued low-frequency drone with a faint ticking motif.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the pair enter the dim warehouse together and spread their attention across the unfamiliar interior. The camera uses a tracking shot.
+[Shot 2] At 00:03.000, the camera cuts to &lt;Picture 2&gt;: the rear alarm lamp blinks in exact rhythm with the damaged radio playback as the camera pushes toward the matching pulses. The camera uses a push in.
+[Shot 3] At 00:07.000, the camera cuts to &lt;Picture 3&gt;: the male diver confirms that this is the sound preserved in the recording. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 就是这个声音。&lt;/d&gt;
+
+overall_soundscape: The side door echoes shut, a moisture alarm beeps through the cavernous warehouse, and the radio playback overlaps it exactly.
+
+non_diegetic_music: A subdued low-frequency drone with a faint ticking motif.</pre>
+    </div>
+  </div>
+  <p class="seg-note">双人进场与声源确认，强调两人共享但反应不同。</p>
+</article>
+<article class="segcard" id="seg-E02-08">
+  <header class="seg-h">
+    <b>E02-08</b>
+    <span class="sec-badge">11s · 4 切</span>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">阴天下午</span>
+    <span class="beatsref">第 2 场 第 10–14 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot following the female archivist toward an embedded fire cabinet while the male diver remains behind near the blinking alarm, two-person depth composition in the dim warehouse.">复制</button></div><span class="fprompt">Cinematic film still, medium shot following the female archivist toward an embedded fire cabinet while the male diver remains behind near the blinking alarm, two-person depth composition in the dim warehouse.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, extreme close-up of the blackened brass key fitting the old fire-cabinet lock and turning cleanly as the metal door springs open, salt-white patches sharp under amber light.">复制</button></div><span class="fprompt">Cinematic film still, extreme close-up of the blackened brass key fitting the old fire-cabinet lock and turning cleanly as the metal door springs open, salt-white patches sharp under amber light.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist staring into the newly opened cabinet, surprise displacing certainty as she realizes what the key opens.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the female archivist staring into the newly opened cabinet, surprise displacing certainty as she realizes what the key opens.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 4 · #4 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the male diver reaches into the open fire cabinet and lifts out a mold-stained duty log while the female archivist holds the door and watches.">复制</button></div><span class="fprompt">Cinematic film still, medium shot with both investigators visible as the male diver reaches into the open fire cabinet and lifts out a mold-stained duty log while the female archivist holds the door and watches.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Tracking Shot</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot following the female archivist toward an embedded fire cabinet while the male diver remains behind near the blinking alarm, two-person depth composition in the dim warehouse.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥走到嵌墙消防柜前。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 3.5s</span>
+    <span class="cut-sc">大特写 · Push In</span>
+    
+    <span class="chip">许知遥</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, extreme close-up of the blackened brass key fitting the old fire-cabinet lock and turning cleanly as the metal door springs open, salt-white patches sharp under amber light.">分镜图提示词</button>
+  </div>
+  <p class="sact">她把钥匙插进消防柜锁孔。</p><p class="sact">消防柜门弹开。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">许知遥</span>
+    <span class="chip prop">黄铜船钥匙</span>
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist staring into the newly opened cabinet, surprise displacing certainty as she realizes what the key opens.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>它开的是这里。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">8.00s 起 · 3s</span>
+    <span class="cut-sc">中景 · Pan Right</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the male diver reaches into the open fire cabinet and lifts out a mold-stained duty log while the female archivist holds the door and watches.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野取出发霉的值班日志。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist crosses toward the embedded fire cabinet while the diver watches the alarm behind her. The camera uses a tracking shot.
+[Shot 2] At 00:02.500, the camera cuts to &lt;Picture 2&gt;: the same brass key fits the old cabinet lock, turns, and releases the spring-loaded door. The camera uses a push in.
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the female archivist realizes that the inherited key was meant for this cabinet. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 它开的是这里。&lt;/d&gt;
+[Shot 4] At 00:08.000, the camera cuts to &lt;Picture 4&gt;: the male diver removes a mold-stained duty log while the female archivist holds the cabinet open. The camera uses a pan right.
+
+overall_soundscape: Footsteps approach the wall cabinet, brass enters an old lock, the latch snaps, and the cabinet door springs outward.
+
+non_diegetic_music: Muted piano notes brighten slightly over sustained low strings.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist crosses toward the embedded fire cabinet while the diver watches the alarm behind her. The camera uses a tracking shot.
+[Shot 2] At 00:02.500, the camera cuts to &lt;Picture 2&gt;: the same brass key fits the old cabinet lock, turns, and releases the spring-loaded door. The camera uses a push in.
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the female archivist realizes that the inherited key was meant for this cabinet. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 它开的是这里。&lt;/d&gt;
+[Shot 4] At 00:08.000, the camera cuts to &lt;Picture 4&gt;: the male diver removes a mold-stained duty log while the female archivist holds the cabinet open. The camera uses a pan right.
+
+overall_soundscape: Footsteps approach the wall cabinet, brass enters an old lock, the latch snaps, and the cabinet door springs outward.
+
+non_diegetic_music: Muted piano notes brighten slightly over sustained low strings.</pre>
+    </div>
+  </div>
+  <p class="seg-note">钥匙真正用途揭晓，动作在双人配合中完成。</p>
+</article>
+<article class="segcard" id="seg-E02-09">
+  <header class="seg-h">
+    <b>E02-09</b>
+    <span class="sec-badge">12.5s · 3 切</span>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">阴天下午</span>
+    <span class="beatsref">第 2 场 第 15–19 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up two-person composition over a mold-stained duty log as the female archivist turns to a dated page and reads one time while the male diver leans in from the opposite side, all writing blurred and unreadable.">复制</button></div><span class="fprompt">Cinematic film still, close-up two-person composition over a mold-stained duty log as the female archivist turns to a dated page and reads one time while the male diver leans in from the opposite side, all writing blurred and unreadable.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the male diver comparing the damp log with the orange radio waveform, one hand indicating the time conflict without showing readable text.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the male diver comparing the damp log with the orange radio waveform, one hand indicating the time conflict without showing readable text.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the female archivist sets the moldy log beside the scorched orange radio and turns on the diver, anger rising while he absorbs the implication across the evidence table.">复制</button></div><span class="fprompt">Cinematic film still, medium shot with both investigators visible as the female archivist sets the moldy log beside the scorched orange radio and turns on the diver, anger rising while he absorbs the implication across the evidence table.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 4s</span>
+    <span class="cut-sc">特写 · Push In</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up two-person composition over a mold-stained duty log as the female archivist turns to a dated page and reads one time while the male diver leans in from the opposite side, all writing blurred and unreadable.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥翻到七月十九日。</p><p class="sline"><b>许知遥</b>一点二十分，许德海当班。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">4.00s 起 · 4.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the male diver comparing the damp log with the orange radio waveform, one hand indicating the time conflict without showing readable text.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>程野</b>可一点四十七，报警器还在录音里。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">8.50s 起 · 4s</span>
+    <span class="cut-sc">中景 · Pan Left</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    <span class="chip prop">橙色应急电台</span>
+    <button class="copy mini" data-copy="Cinematic film still, medium shot with both investigators visible as the female archivist sets the moldy log beside the scorched orange radio and turns on the diver, anger rising while he absorbs the implication across the evidence table.">分镜图提示词</button>
+  </div>
+  <p class="sact">许知遥把日志放到电台旁。</p><p class="sline"><b>许知遥</b>哥哥在这儿，爸却被写在船上。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist opens the log to the accident date and reads the official duty time while the diver follows the page. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 一点二十分，许德海当班。&lt;/d&gt;
+[Shot 2] At 00:04.000, the camera cuts to &lt;Picture 2&gt;: the male diver compares the log with the radio recording and states that the alarm was still sounding twenty-seven minutes later. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 可一点四十七，报警器还在录音里。&lt;/d&gt;
+[Shot 3] At 00:08.500, the camera cuts to &lt;Picture 3&gt;: she places the log beside the radio and voices the impossible split between her brother ashore and her father written aboard. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 哥哥在这儿，爸却被写在船上。&lt;/d&gt;
+
+overall_soundscape: Damp pages separate with soft tearing sounds, the alarm continues at fixed intervals, and the radio hiss fills the spaces between voices.
+
+non_diegetic_music: A tightening cello ostinato with restrained low piano.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the female archivist opens the log to the accident date and reads the official duty time while the diver follows the page. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 一点二十分，许德海当班。&lt;/d&gt;
+[Shot 2] At 00:04.000, the camera cuts to &lt;Picture 2&gt;: the male diver compares the log with the radio recording and states that the alarm was still sounding twenty-seven minutes later. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 可一点四十七，报警器还在录音里。&lt;/d&gt;
+[Shot 3] At 00:08.500, the camera cuts to &lt;Picture 3&gt;: she places the log beside the radio and voices the impossible split between her brother ashore and her father written aboard. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 哥哥在这儿，爸却被写在船上。&lt;/d&gt;
+
+overall_soundscape: Damp pages separate with soft tearing sounds, the alarm continues at fixed intervals, and the radio hiss fills the spaces between voices.
+
+non_diegetic_music: A tightening cello ostinato with restrained low piano.</pre>
+    </div>
+  </div>
+  <p class="seg-note">日志、电台与两人证词在桌面三角构图中完成对账。</p>
+</article>
+<article class="segcard" id="seg-E02-10">
+  <header class="seg-h">
+    <b>E02-10</b>
+    <span class="sec-badge">10.5s · 3 切</span>
+    <span class="chip">S03 旧渡口货仓</span>
+    <span class="chip lite">阴天下午</span>
+    <span class="beatsref">第 2 场 第 20–24 拍</span>
+  </header>
+  <div class="fquad"><div class="frame ph fcell"><div class="fcell-h"><b>主分镜图 · #1 未生成</b><button class="copy mini" data-copy="Cinematic film still, medium shot in a two-level composition with the male diver crouched beside the open cabinet and the female archivist standing over the evidence table as he reinterprets the father's warning.">复制</button></div><span class="fprompt">Cinematic film still, medium shot in a two-level composition with the male diver crouched beside the open cabinet and the female archivist standing over the evidence table as he reinterprets the father's warning.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 2 · #2 未生成</b><button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist looking down at the diver and demanding what her father actually feared, cool light hardening her expression.">复制</button></div><span class="fprompt">Cinematic film still, close-up of the female archivist looking down at the diver and demanding what her father actually feared, cool light hardening her expression.</span></div>
+<div class="frame ph fcell"><div class="fcell-h"><b>子分镜 3 · #3 未生成</b><button class="copy mini" data-copy="Cinematic film still, wide shot of both investigators turning toward the unlit depth of the warehouse, the open fire cabinet and evidence table behind them, a narrow corridor of darkness becoming the final focal point.">复制</button></div><span class="fprompt">Cinematic film still, wide shot of both investigators turning toward the unlit depth of the warehouse, the open fire cabinet and evidence table behind them, a narrow corridor of darkness becoming the final focal point.</span></div></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 4s</span>
+    <span class="cut-sc">中景 · Pull Out</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, medium shot in a two-level composition with the male diver crouched beside the open cabinet and the female archivist standing over the evidence table as he reinterprets the father's warning.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野蹲在消防柜边。</p><p class="sline"><b>程野</b>许叔那天不是怕我找到船。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">4.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip">许知遥</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, close-up of the female archivist looking down at the diver and demanding what her father actually feared, cool light hardening her expression.">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>许知遥</b>那他怕什么？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.00s 起 · 4.5s</span>
+    <span class="cut-sc">全景 · Push In</span>
+    
+    <span class="chip">许知遥</span><span class="chip">程野</span>
+    
+    <button class="copy mini" data-copy="Cinematic film still, wide shot of both investigators turning toward the unlit depth of the warehouse, the open fire cabinet and evidence table behind them, a narrow corridor of darkness becoming the final focal point.">分镜图提示词</button>
+  </div>
+  <p class="sact">程野抬头看向货仓深处。</p><p class="sline"><b>程野</b>他当时盯着这里，只说谁都不要再找。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the crouched diver admits that the father was not afraid of the boat being found, while the camera pulls out to hold both investigators. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 许叔那天不是怕我找到船。&lt;/d&gt;
+[Shot 2] At 00:04.000, the camera cuts to &lt;Picture 2&gt;: the female archivist demands to know what the father feared. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 那他怕什么？&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the male diver looks into the warehouse depth and recalls that the father stared there while ordering everyone to stop searching; the camera pushes into the darkness between them. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 他当时盯着这里，只说谁都不要再找。&lt;/d&gt;
+
+overall_soundscape: The alarm pulse continues, fabric shifts as the diver crouches, and a distant metal drip echoes from the dark rear of the warehouse.
+
+non_diegetic_music: A single low cello note expands into unresolved dark ambience.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following &lt;Picture 1&gt;, the crouched diver admits that the father was not afraid of the boat being found, while the camera pulls out to hold both investigators. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 许叔那天不是怕我找到船。&lt;/d&gt;
+[Shot 2] At 00:04.000, the camera cuts to &lt;Picture 2&gt;: the female archivist demands to know what the father feared. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): &lt;d&gt;[Chinese] 那他怕什么？&lt;/d&gt;
+[Shot 3] At 00:06.000, the camera cuts to &lt;Picture 3&gt;: the male diver looks into the warehouse depth and recalls that the father stared there while ordering everyone to stop searching; the camera pushes into the darkness between them. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): &lt;d&gt;[Chinese] 他当时盯着这里，只说谁都不要再找。&lt;/d&gt;
+
+overall_soundscape: The alarm pulse continues, fabric shifts as the diver crouches, and a distant metal drip echoes from the dark rear of the warehouse.
+
+non_diegetic_music: A single low cello note expands into unresolved dark ambience.</pre>
+    </div>
+  </div>
+  <p class="seg-note">以双人高低位对话收束，视线引向货仓深处留下悬念。</p>
+</article>
+    </div>
+  </div>
+  <button class="shmore">▾ 展开全部段</button>
+</section>
+</section>
+
+<section class="top-sec" id="sec-batches">
+  <div class="sec-h"><span class="no">03</span><h2>生成批次单</h2><span class="note">自动汇总 · 同批段共用同一张环境参考图</span></div>
+  <div class="batches">
+<article class="batch">
+  
+  <header class="batch-h"><b>批次 01</b><span class="chip">S02 许知遥临时声音修复室</span><span class="chip lite">阴天工作日</span></header>
+  <div class="batch-shots"><a class="chip mono" href="#seg-E02-01">E02-01</a><a class="chip mono" href="#seg-E02-02">E02-02</a><a class="chip mono" href="#seg-E02-03">E02-03</a><a class="chip mono" href="#seg-E02-04">E02-04</a><a class="chip mono" href="#seg-E02-05">E02-05</a></div>
+  <p class="batch-need">需要：许知遥、程野 的角色设定图 · 橙色应急电台、黄铜船钥匙</p>
+</article>
+<article class="batch">
+  
+  <header class="batch-h"><b>批次 02</b><span class="chip">S03 旧渡口货仓</span><span class="chip lite">阴天下午</span></header>
+  <div class="batch-shots"><a class="chip mono" href="#seg-E02-06">E02-06</a><a class="chip mono" href="#seg-E02-07">E02-07</a><a class="chip mono" href="#seg-E02-08">E02-08</a><a class="chip mono" href="#seg-E02-09">E02-09</a><a class="chip mono" href="#seg-E02-10">E02-10</a></div>
+  <p class="batch-need">需要：许知遥、程野 的角色设定图 · 黄铜船钥匙、橙色应急电台</p>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-dialogue">
+  <div class="sec-h"><span class="no">04</span><h2>配音对齐单</h2><span class="note">自动汇总 · TTS 音频对到哪一段的第几切</span></div>
+  <table><thead><tr><th>段 · 切</th><th>说话人</th><th>台词</th><th>台词秒数</th></tr></thead>
+  <tbody>
+<tr><td><a href="#seg-E02-01">E02-01</a> #2</td><td>程野</td><td class="serif">官方写一点二十分离岸。</td><td>2.4</td></tr>
+<tr><td><a href="#seg-E02-01">E02-01</a> #3</td><td>许知遥</td><td class="serif">这段报时在一点四十七。</td><td>2.4</td></tr>
+<tr><td><a href="#seg-E02-02">E02-02</a> #1</td><td>许潮</td><td class="serif">七月十九，一点四十七。</td><td>2.4</td></tr>
+<tr><td><a href="#seg-E02-02">E02-02</a> #3</td><td>程野</td><td class="serif">这是货仓防潮报警器。</td><td>2.2</td></tr>
+<tr><td><a href="#seg-E02-03">E02-03</a> #1</td><td>许知遥</td><td class="serif">不是船上的？</td><td>1.3</td></tr>
+<tr><td><a href="#seg-E02-03">E02-03</a> #2</td><td>程野</td><td class="serif">每三十秒一次，我从小听到大。</td><td>3.1</td></tr>
+<tr><td><a href="#seg-E02-03">E02-03</a> #3</td><td>许知遥</td><td class="serif">哥哥那时还在岸上。</td><td>2</td></tr>
+<tr><td><a href="#seg-E02-03">E02-03</a> #4</td><td>程野</td><td class="serif">至少有一份记录是假的。</td><td>2.4</td></tr>
+<tr><td><a href="#seg-E02-04">E02-04</a> #1</td><td>许知遥</td><td class="serif">你还知道什么？</td><td>1.6</td></tr>
+<tr><td><a href="#seg-E02-04">E02-04</a> #3</td><td>程野</td><td class="serif">事故第二天，我捡到过半块船牌。</td><td>3.3</td></tr>
+<tr><td><a href="#seg-E02-05">E02-05</a> #1</td><td>许知遥</td><td class="serif">船牌呢？</td><td>0.9</td></tr>
+<tr><td><a href="#seg-E02-05">E02-05</a> #2</td><td>程野</td><td class="serif">被我扔回水里了。</td><td>1.8</td></tr>
+<tr><td><a href="#seg-E02-05">E02-05</a> #3</td><td>许知遥</td><td class="serif">谁让你扔的？</td><td>1.3</td></tr>
+<tr><td><a href="#seg-E02-05">E02-05</a> #4</td><td>程野</td><td class="serif">许叔。</td><td>0.7</td></tr>
+<tr><td><a href="#seg-E02-05">E02-05</a> #5</td><td>许知遥</td><td class="serif">去货仓。现在。</td><td>1.6</td></tr>
+<tr><td><a href="#seg-E02-06">E02-06</a> #3</td><td>许知遥</td><td class="serif">锁是后来换的。</td><td>1.6</td></tr>
+<tr><td><a href="#seg-E02-07">E02-07</a> #3</td><td>程野</td><td class="serif">就是这个声音。</td><td>1.6</td></tr>
+<tr><td><a href="#seg-E02-08">E02-08</a> #3</td><td>许知遥</td><td class="serif">它开的是这里。</td><td>1.6</td></tr>
+<tr><td><a href="#seg-E02-09">E02-09</a> #1</td><td>许知遥</td><td class="serif">一点二十分，许德海当班。</td><td>2.7</td></tr>
+<tr><td><a href="#seg-E02-09">E02-09</a> #2</td><td>程野</td><td class="serif">可一点四十七，报警器还在录音里。</td><td>3.6</td></tr>
+<tr><td><a href="#seg-E02-09">E02-09</a> #3</td><td>许知遥</td><td class="serif">哥哥在这儿，爸却被写在船上。</td><td>3.1</td></tr>
+<tr><td><a href="#seg-E02-10">E02-10</a> #1</td><td>程野</td><td class="serif">许叔那天不是怕我找到船。</td><td>2.7</td></tr>
+<tr><td><a href="#seg-E02-10">E02-10</a> #2</td><td>许知遥</td><td class="serif">那他怕什么？</td><td>1.3</td></tr>
+<tr><td><a href="#seg-E02-10">E02-10</a> #3</td><td>程野</td><td class="serif">他当时盯着这里，只说谁都不要再找。</td><td>3.8</td></tr>
+  </tbody></table>
+</section>
+
+<section class="top-sec" id="sec-gates">
+  <div class="sec-h"><span class="no">05</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>剧本节拍被恰好一次、按顺序、连续认领（分镜级）</span></li>
+  <li class="ok"><span class="m">✓</span><span>每段 0 &lt; 总秒数 ≤ 15（一次生成的上限）</span></li>
+  <li class="ok"><span class="m">✓</span><span>每个分镜 2–5 秒——短剧的注意力节奏</span></li>
+  <li class="ok"><span class="m">✓</span><span>认领节拍的台词装得进分镜秒数</span></li>
+  <li class="ok"><span class="m">✓</span><span>每集总时长在剧本目标 ±15% 内</span></li>
+  <li class="ok"><span class="m">✓</span><span>单个分镜同框 ≤ 3 人，超了必须带拆解说明</span></li>
+  <li class="ok"><span class="m">✓</span><span>段号 E01-01 格式、按顺序连号</span></li>
+  <li class="ok"><span class="m">✓</span><span>景别短语写进分镜图提示词</span></li>
+  <li class="ok"><span class="m">✓</span><span>运镜用 H3 官方词表，且出现在自己的 [Shot k] 段落里</span></li>
+  <li class="ok"><span class="m">✓</span><span>H3 首行对齐指令由分镜结构推导逐字对账，切点时刻逐个对</span></li>
+  <li class="ok"><span class="m">✓</span><span>认领节拍的台词逐字进 H3 提示词的 &lt;d&gt; 块</span></li>
+  <li class="ok"><span class="m">✓</span><span>H3 提示词语言与设定一致（promptLang=en，正文全英文、骨架 token 官方英文格式）</span></li>
+  <li class="ok"><span class="m">✓</span><span>分镜图风格短语统一（realistic：cinematic film still）——同剧不许画风漂</span></li>
+  <li class="ok"><span class="m">✓</span><span>分镜图提示词全英文且非空</span></li>
+  <li class="ok"><span class="m">✓</span><span>英文提示词不含角色名（分镜图提示词恒查；中文 H3 提示词放行）</span></li>
+  <li class="ok"><span class="m">✓</span><span>场次／人物／道具对账剧本</span></li>
+  <li class="ok"><span class="m">✓</span><span>引用的配方存在、必备短语进了分镜图提示词、多格配方连排够格数<small>未挂载配方卡库（--shots &lt;卡片目录&gt;），本门跳过（视为通过）</small></span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">分镜由模型依据剧本切分：段 = 一次生成（≤15 秒），分镜 = 段内 2–5 秒的剪切，每个分镜一张关键帧图。对齐指令、切点时刻、台词、提示词纪律全部由脚本确定性对账。分镜图出图走 codex，环境与角色设定图当参考图。</p>
+</div>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script type="application/json" id="storyboard-data">{"source":"潮痕","style":"realistic","promptLang":"en","episodes":[{"ep":2,"segments":[{"id":"E02-01","sceneIndex":1,"cuts":[{"beats":[1,1],"seconds":3,"size":"medium","camera":"Tracking Shot","characters":["C01","C02"],"props":["P01"],"frame":"Cinematic film still, medium shot of a broad-shouldered East Asian male diver pushing into the overcast audio lab and pressing an accident record beside a rolling waveform while a slim East Asian female archivist turns from the console, two-person composition, damp workwear and cool daylight."},{"beats":[2,2],"seconds":3,"size":"close","camera":"Static Shot","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up of the weathered male diver leaning over the steel bench, one finger pinning an accident record, heavy brows and guilty eyes held steady in soft overcast laboratory light."},{"beats":[3,4],"seconds":4.5,"size":"medium","camera":"Pan Right","characters":["C01","C02"],"props":["P01"],"frame":"Cinematic film still, medium shot across the audio bench: the slim female archivist drags the damaged orange radio recording back to an alarm spike while the male diver watches from the opposite side, their faces separated by twin cyan waveform monitors."},{"beats":[5,5],"seconds":2.5,"size":"extreme-close","camera":"Push In","characters":["C01"],"props":["P01"],"frame":"Cinematic film still, extreme close-up of the female archivist's precise fingertip pressing play beside the scorched orange emergency radio, a cyan waveform frozen at a narrow spike, cool overcast light on scratched steel."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, a broad-shouldered male diver pushes through the lab door and plants an accident record beside the rolling waveform as the female archivist turns toward him. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to \u003cPicture 2>: the male diver pins the accident record to the bench and states the official departure time without preamble. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 官方写一点二十分离岸。\u003c/d>\n[Shot 3] At 00:06.000, the camera cuts to \u003cPicture 3>: the female archivist scrubs the radio recording back to an alarm spike while the male diver studies the waveform across from her. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 这段报时在一点四十七。\u003c/d>\n[Shot 4] At 00:10.500, the camera cuts to \u003cPicture 4>: her fingertip presses play beside the scorched orange radio and the waveform begins to move. The camera uses a push in.\n\noverall_soundscape: The door opens sharply, paper lands on steel, monitor fans hum, and the damaged radio emits a faint alarm pulse beneath room tone.\n\nnon_diegetic_music: Low bowed cello with a restrained ticking pulse.","note":"双主角同场开场：行动主体进门，正反打核对两套时间。"},{"id":"E02-02","sceneIndex":1,"cuts":[{"beats":[6,6],"seconds":3,"size":"extreme-close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"Cinematic film still, extreme close-up of the damaged orange emergency radio speaker under a cyan waveform display as an old teenage recording breaks through salt noise, the broken grille bar and fire scar sharply visible."},{"beats":[7,8],"seconds":4,"size":"medium","camera":"Push In","characters":["C01","C02"],"props":["P01"],"frame":"Cinematic film still, medium shot with both people visible: the male diver bends close to the orange radio speaker while the female archivist listens at the console, a repeating waveform pulse between their profiles in the overcast restoration room."},{"beats":[9,9],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C02"],"props":["P01"],"frame":"Cinematic film still, close-up of the male diver recognizing the sound, eyes fixed on the radio and jaw tightening, cyan monitor light reflected in his weathered face."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the scorched radio speaker carries a distant teenage time report through salt noise. The camera uses a static shot. A distant teenage male recording speaks in an off-screen voiceover with a bright strained voice (S3), while all visible lips remain completely closed: \u003cd>[Chinese] 七月十九，一点四十七。\u003c/d>\n[Shot 2] At 00:03.000, the camera cuts to \u003cPicture 2>: the male diver bends toward the speaker as the regular alarm pulse cuts through the tide recording; the camera pushes in between both listeners. The camera uses a push in.\n[Shot 3] At 00:07.000, the camera cuts to \u003cPicture 3>: recognition settles across the male diver's face as he identifies the warehouse moisture alarm. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 这是货仓防潮报警器。\u003c/d>\n\noverall_soundscape: A brittle teenage recording emerges through tide hiss; a regular moisture alarm pulse repeats while clothing brushes the steel bench.\n\nnon_diegetic_music: Sparse muted piano over a low electronic drone.","note":"录音与现实双层人物：少年只以画外录音存在，画内保持两人。"},{"id":"E02-03","sceneIndex":1,"cuts":[{"beats":[10,10],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":[],"frame":"Cinematic film still, close-up of the female archivist turning sharply toward the diver, brows lifted in a precise challenge, neutral overcast daylight and faint cyan fill across her face."},{"beats":[11,12],"seconds":4,"size":"close","camera":"Push In","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up of the male diver slowly shaking his head, one hand braced on the bench, certainty and old dread visible in his deep-set eyes."},{"beats":[13,14],"seconds":4,"size":"extreme-close","camera":"Pan Right","characters":["C01"],"props":[],"frame":"Cinematic film still, extreme close-up of the female archivist's hand drawing two separated time marks on one blank evidence sheet, her tense face reflected faintly in the monitor edge, no readable writing."},{"beats":[15,15],"seconds":3,"size":"close","camera":"Static Shot","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up of the male diver avoiding the woman's gaze after stating that one record must be false, soft window light exposing tension in his jaw."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the female archivist turns sharply and asks whether the sound came from the boat. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 不是船上的？\u003c/d>\n[Shot 2] At 00:02.000, the camera cuts to \u003cPicture 2>: the male diver shakes his head and explains that the alarm has repeated every thirty seconds since childhood. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 每三十秒一次，我从小听到大。\u003c/d>\n[Shot 3] At 00:06.000, the camera cuts to \u003cPicture 3>: her pencil places two incompatible time marks on the same evidence sheet as she realizes her brother was still ashore. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 哥哥那时还在岸上。\u003c/d>\n[Shot 4] At 00:10.000, the camera cuts to \u003cPicture 4>: the male diver states that at least one record is false and then avoids her gaze. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 至少有一份记录是假的。\u003c/d>\n\noverall_soundscape: The alarm pulse repeats every thirty seconds, a pencil scratches paper, and the room falls quiet between short questions.\n\nnon_diegetic_music: A restrained cello ostinato with isolated piano notes.","note":"用正反打和纸面插入镜头把时间矛盾变成可见证据。"},{"id":"E02-04","sceneIndex":1,"cuts":[{"beats":[16,17],"seconds":3.5,"size":"close","camera":"Push In","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, close-up two-person composition across the bench as the female archivist notices the diver's evasive look and leans forward to question him, his shoulders turning away while her gaze hardens."},{"beats":[18,18],"seconds":2.5,"size":"extreme-close","camera":"Static Shot","characters":["C02"],"props":[],"frame":"Cinematic film still, extreme close-up of the male diver's rough hand tightening around the back of a worn steel chair, pale knuckles and a dive-watch pressure mark visible."},{"beats":[19,19],"seconds":4,"size":"close","camera":"Push In","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up of the male diver finally meeting her eyes as he confesses finding half a burned boat plate after the accident, guilt held in a rigid face."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the female archivist catches his evasive glance and presses him for what else he knows. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 你还知道什么？\u003c/d>\n[Shot 2] At 00:03.500, the camera cuts to \u003cPicture 2>: his hand tightens around the chair back before he can answer. The camera uses a static shot.\n[Shot 3] At 00:06.000, the camera cuts to \u003cPicture 3>: the male diver finally looks up and admits that he found half a burned boat plate the next day. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 事故第二天，我捡到过半块船牌。\u003c/d>\n\noverall_soundscape: A chair creaks under tightening fingers, distant traffic fades behind wired glass, and the radio hiss continues at low level.\n\nnon_diegetic_music: Low sustained strings with a single muted heartbeat-like drum.","note":"回避升级为逼问，椅背手部特写承接负疚。"},{"id":"E02-05","sceneIndex":1,"cuts":[{"beats":[20,20],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":[],"frame":"Cinematic film still, close-up of the female archivist reacting instantly, eyes locked on the diver as she demands the boat plate's location."},{"beats":[21,22],"seconds":3.5,"size":"close","camera":"Pull Out","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up widening from the male diver's hand releasing the chair to his ashamed face as he admits throwing the plate back into the river."},{"beats":[23,24],"seconds":3,"size":"medium","camera":"Pan Left","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, medium shot with both investigators visible as the female archivist asks who ordered it and the male diver turns toward an old father photograph beside the monitor, the photograph soft and unreadable."},{"beats":[25,25],"seconds":2,"size":"close","camera":"Static Shot","characters":["C02"],"props":[],"frame":"Cinematic film still, close-up of the male diver looking at the old photograph as he gives a painfully quiet answer, cold window light flattening the room behind him."},{"beats":[26,27],"seconds":3.5,"size":"medium","camera":"Tracking Shot","characters":["C01","C02"],"props":["P02"],"frame":"Cinematic film still, medium shot of both investigators: the female archivist snatches the blackened brass boat key from the bench and strides toward the door while the male diver pivots to follow, decisive forward motion in overcast light."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the female archivist demands to know where the boat plate is. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 船牌呢？\u003c/d>\n[Shot 2] At 00:02.000, the camera cuts to \u003cPicture 2>: his hand releases the chair and the camera pulls out as he admits throwing the plate back into the water. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 被我扔回水里了。\u003c/d>\n[Shot 3] At 00:05.500, the camera cuts to \u003cPicture 3>: she asks who ordered him to discard it, and he turns toward the old father photograph. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 谁让你扔的？\u003c/d>\n[Shot 4] At 00:08.500, the camera cuts to \u003cPicture 4>: the male diver gives the father's familiar title in a voice barely above the room tone. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 许叔。\u003c/d>\n[Shot 5] At 00:10.500, the camera cuts to \u003cPicture 5>: the female archivist grabs the blackened brass key and strides for the door, ordering an immediate trip to the warehouse as the diver follows. The camera uses a tracking shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 去货仓。现在。\u003c/d>\n\noverall_soundscape: The chair releases with a metal tick, paper shifts under a hand, and the brass key scrapes sharply across the bench.\n\nnon_diegetic_music: A tense cello line rises, then cuts to a held low note.","note":"双人对峙落到父亲旧照和钥匙，作为转场钩子。"},{"id":"E02-06","sceneIndex":2,"cuts":[{"beats":[1,1],"seconds":3,"size":"wide","camera":"Tracking Shot","characters":["C01","C02"],"props":["P02"],"frame":"Cinematic film still, wide shot outside an abandoned riverside warehouse as the female archivist strides toward the steel door with the brass key ready and the male diver follows one pace behind under dim overcast afternoon light."},{"beats":[2,3],"seconds":3.5,"size":"extreme-close","camera":"Push In","characters":["C01"],"props":["P02"],"frame":"Cinematic film still, extreme close-up of the blackened brass key entering a clean new padlock and refusing to turn, its off-center triangular notch and salt-white patches visible against cold steel."},{"beats":[4,4],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P02"],"frame":"Cinematic film still, close-up of the female archivist studying the mismatched new lock and immediately recognizing that it was replaced later."},{"beats":[5,5],"seconds":2.5,"size":"medium","camera":"Pan Right","characters":["C02"],"props":[],"frame":"Cinematic film still, medium shot of the male diver testing a partly open side door and pushing it inward, deep warehouse darkness appearing beyond his shoulder."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, both investigators cross the wet yard toward the warehouse steel door, the camera tracking their urgent approach. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to \u003cPicture 2>: the brass key enters the new padlock but stops against the unfamiliar mechanism. The camera uses a push in.\n[Shot 3] At 00:06.500, the camera cuts to \u003cPicture 3>: the female archivist identifies the lock as a later replacement. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 锁是后来换的。\u003c/d>\n[Shot 4] At 00:08.500, the camera cuts to \u003cPicture 4>: the male diver finds the partly open side door and pushes it inward. The camera uses a pan right.\n\noverall_soundscape: Boots cross wet concrete, brass scrapes inside a new padlock, and a heavy side door groans open.\n\nnon_diegetic_music: Low tremolo strings with sparse metallic percussion.","note":"新场景先运动主体、门锁特写、再由第二人物找到侧门。"},{"id":"E02-07","sceneIndex":2,"cuts":[{"beats":[6,6],"seconds":3,"size":"wide","camera":"Tracking Shot","characters":["C01","C02"],"props":["P01","P02"],"frame":"Cinematic film still, wide shot inside the dim warehouse as the two investigators enter together, the woman holding the brass key and damaged radio while the diver scans the concrete walls, cold doorway light behind them."},{"beats":[7,8],"seconds":4,"size":"extreme-close","camera":"Push In","characters":[],"props":["P01"],"frame":"Cinematic film still, extreme close-up linking a weak amber moisture-alarm lamp on the rear wall with the scorched orange radio in foreground as their pulses overlap in perfect rhythm."},{"beats":[9,9],"seconds":2,"size":"close","camera":"Static Shot","characters":["C02"],"props":["P01"],"frame":"Cinematic film still, close-up of the male diver listening between the wall alarm and the orange radio, his recognition now certain in the dim amber-and-cold warehouse light."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the pair enter the dim warehouse together and spread their attention across the unfamiliar interior. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to \u003cPicture 2>: the rear alarm lamp blinks in exact rhythm with the damaged radio playback as the camera pushes toward the matching pulses. The camera uses a push in.\n[Shot 3] At 00:07.000, the camera cuts to \u003cPicture 3>: the male diver confirms that this is the sound preserved in the recording. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 就是这个声音。\u003c/d>\n\noverall_soundscape: The side door echoes shut, a moisture alarm beeps through the cavernous warehouse, and the radio playback overlaps it exactly.\n\nnon_diegetic_music: A subdued low-frequency drone with a faint ticking motif.","note":"双人进场与声源确认，强调两人共享但反应不同。"},{"id":"E02-08","sceneIndex":2,"cuts":[{"beats":[10,10],"seconds":2.5,"size":"medium","camera":"Tracking Shot","characters":["C01","C02"],"props":["P02"],"frame":"Cinematic film still, medium shot following the female archivist toward an embedded fire cabinet while the male diver remains behind near the blinking alarm, two-person depth composition in the dim warehouse."},{"beats":[11,12],"seconds":3.5,"size":"extreme-close","camera":"Push In","characters":["C01"],"props":["P02"],"frame":"Cinematic film still, extreme close-up of the blackened brass key fitting the old fire-cabinet lock and turning cleanly as the metal door springs open, salt-white patches sharp under amber light."},{"beats":[13,13],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P02"],"frame":"Cinematic film still, close-up of the female archivist staring into the newly opened cabinet, surprise displacing certainty as she realizes what the key opens."},{"beats":[14,14],"seconds":3,"size":"medium","camera":"Pan Right","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, medium shot with both investigators visible as the male diver reaches into the open fire cabinet and lifts out a mold-stained duty log while the female archivist holds the door and watches."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the female archivist crosses toward the embedded fire cabinet while the diver watches the alarm behind her. The camera uses a tracking shot.\n[Shot 2] At 00:02.500, the camera cuts to \u003cPicture 2>: the same brass key fits the old cabinet lock, turns, and releases the spring-loaded door. The camera uses a push in.\n[Shot 3] At 00:06.000, the camera cuts to \u003cPicture 3>: the female archivist realizes that the inherited key was meant for this cabinet. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 它开的是这里。\u003c/d>\n[Shot 4] At 00:08.000, the camera cuts to \u003cPicture 4>: the male diver removes a mold-stained duty log while the female archivist holds the cabinet open. The camera uses a pan right.\n\noverall_soundscape: Footsteps approach the wall cabinet, brass enters an old lock, the latch snaps, and the cabinet door springs outward.\n\nnon_diegetic_music: Muted piano notes brighten slightly over sustained low strings.","note":"钥匙真正用途揭晓，动作在双人配合中完成。"},{"id":"E02-09","sceneIndex":2,"cuts":[{"beats":[15,16],"seconds":4,"size":"close","camera":"Push In","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, close-up two-person composition over a mold-stained duty log as the female archivist turns to a dated page and reads one time while the male diver leans in from the opposite side, all writing blurred and unreadable."},{"beats":[17,17],"seconds":4.5,"size":"close","camera":"Static Shot","characters":["C02"],"props":["P01"],"frame":"Cinematic film still, close-up of the male diver comparing the damp log with the orange radio waveform, one hand indicating the time conflict without showing readable text."},{"beats":[18,19],"seconds":4,"size":"medium","camera":"Pan Left","characters":["C01","C02"],"props":["P01"],"frame":"Cinematic film still, medium shot with both investigators visible as the female archivist sets the moldy log beside the scorched orange radio and turns on the diver, anger rising while he absorbs the implication across the evidence table."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the female archivist opens the log to the accident date and reads the official duty time while the diver follows the page. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 一点二十分，许德海当班。\u003c/d>\n[Shot 2] At 00:04.000, the camera cuts to \u003cPicture 2>: the male diver compares the log with the radio recording and states that the alarm was still sounding twenty-seven minutes later. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 可一点四十七，报警器还在录音里。\u003c/d>\n[Shot 3] At 00:08.500, the camera cuts to \u003cPicture 3>: she places the log beside the radio and voices the impossible split between her brother ashore and her father written aboard. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 哥哥在这儿，爸却被写在船上。\u003c/d>\n\noverall_soundscape: Damp pages separate with soft tearing sounds, the alarm continues at fixed intervals, and the radio hiss fills the spaces between voices.\n\nnon_diegetic_music: A tightening cello ostinato with restrained low piano.","note":"日志、电台与两人证词在桌面三角构图中完成对账。"},{"id":"E02-10","sceneIndex":2,"cuts":[{"beats":[20,21],"seconds":4,"size":"medium","camera":"Pull Out","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, medium shot in a two-level composition with the male diver crouched beside the open cabinet and the female archivist standing over the evidence table as he reinterprets the father's warning."},{"beats":[22,22],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":[],"frame":"Cinematic film still, close-up of the female archivist looking down at the diver and demanding what her father actually feared, cool light hardening her expression."},{"beats":[23,24],"seconds":4.5,"size":"wide","camera":"Push In","characters":["C01","C02"],"props":[],"frame":"Cinematic film still, wide shot of both investigators turning toward the unlit depth of the warehouse, the open fire cabinet and evidence table behind them, a narrow corridor of darkness becoming the final focal point."}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following \u003cPicture 1>, the crouched diver admits that the father was not afraid of the boat being found, while the camera pulls out to hold both investigators. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 许叔那天不是怕我找到船。\u003c/d>\n[Shot 2] At 00:04.000, the camera cuts to \u003cPicture 2>: the female archivist demands to know what the father feared. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): \u003cd>[Chinese] 那他怕什么？\u003c/d>\n[Shot 3] At 00:06.000, the camera cuts to \u003cPicture 3>: the male diver looks into the warehouse depth and recalls that the father stared there while ordering everyone to stop searching; the camera pushes into the darkness between them. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): \u003cd>[Chinese] 他当时盯着这里，只说谁都不要再找。\u003c/d>\n\noverall_soundscape: The alarm pulse continues, fabric shifts as the diver crouches, and a distant metal drip echoes from the dark rear of the warehouse.\n\nnon_diegetic_music: A single low cello note expands into unresolved dark ambience.","note":"以双人高低位对话收束，视线引向货仓深处留下悬念。"}]}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败","show":"▾ 展开全部段","hide":"▴ 收起"};
+
+// 分集分镜表：段卡区默认最多 760px。不超高的集直接放开；超高的集点开/收起
+document.querySelectorAll('.shmore').forEach((btn) => {
+  const zone = btn.previousElementSibling;
+  if (zone.scrollHeight <= 780) {
+    zone.classList.remove('clip');
+    btn.remove();
+    return;
+  }
+  btn.addEventListener('click', () => {
+    const clipped = zone.classList.toggle('clip');
+    btn.textContent = clipped ? L.show : L.hide;
+    if (clipped) zone.closest('.ep').scrollIntoView({ block: 'nearest' });
+  });
+});
+
+// 点图放大（主分镜图 / 子分镜图 / 批次场景图）
+const lb = document.getElementById('lightbox');
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('img.frame, img.subf, img.bimg');
+  if (img) {
+    lb.querySelector('img').src = img.src;
+    lb.classList.add('on');
+    return;
+  }
+  if (e.target.closest('#lightbox')) lb.classList.remove('on');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') lb.classList.remove('on');
+});
+
+// 复制提示词
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// 导出：报告自己带着完整的 storyboard.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('storyboard-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

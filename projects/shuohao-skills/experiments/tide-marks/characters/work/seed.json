@@ -1,0 +1,193 @@
+{
+  "source": "潮痕",
+  "lang": "zh",
+  "style": "realistic",
+  "summary": "",
+  "characters": [
+    {
+      "id": "C01",
+      "name": "许知遥",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "style": "",
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色码 C01　大纲定位：女主，声音修复师与旧案调查者　大纲分档：lead　合并自：原著许知遥"
+    },
+    {
+      "id": "C02",
+      "name": "程野",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "style": "",
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色码 C02　大纲定位：男主，潜水员与迟到的证人　大纲分档：lead　合并自：原著程野"
+    },
+    {
+      "id": "C03",
+      "name": "高嵩",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "从依靠旧结论和资源掌控现场，到因连续物证与自己的谈话失去叙事控制。",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "style": "",
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色码 C03　大纲定位：主反派，文旅投资人与当年渡运公司经理　大纲分档：lead　合并自：原著高嵩、合并：拆迁主持、现场保安和投资方随员的阻挠功能"
+    },
+    {
+      "id": "C04",
+      "name": "许德海",
+      "importance": "supporting",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "style": "",
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色码 C04　大纲定位：重要配角，已故渡工与被改写责任的父亲　大纲分档：support　合并自：原著许德海"
+    },
+    {
+      "id": "C05",
+      "name": "许潮",
+      "importance": "supporting",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "style": "",
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色码 C05　大纲定位：重要配角，录音留下者与失踪哥哥　大纲分档：support　合并自：原著许潮"
+    }
+  ]
+}
