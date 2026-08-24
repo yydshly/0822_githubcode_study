@@ -1,0 +1,45 @@
+{
+  "id": "C05",
+  "name": "许潮",
+  "aliases": [],
+  "importance": "supporting",
+  "oneLiner": "把险情录进电台又转身救人的少年，以十五年后才被听见的声音洗去赌气失踪的污名。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "事故时约十七岁（推断）",
+    "identity": "中国南方江镇少年，女主的哥哥与事故现场录音者",
+    "appearance": "身形尚未长开但灵活，眉眼明亮，神情急切（推断）。圆中带窄的少年脸，短黑发被潮气打湿贴住额角；穿二〇一〇年代初常见的橙褐连帽衫、旧牛仔裤和帆布鞋，衣袖与膝部沾有货仓灰尘（推断）。",
+    "personality": ["勇敢", "机敏", "重情", "有行动力"],
+    "temperament": "遇险时会压低声音快速报告事实，恐惧并未消失，却不妨碍他先藏好证据、标记位置，再回到危险中救人。",
+    "motivation": "记录高嵩违规开船与私运溶剂的事实，让家人知道自己并非赌气离家，并救出火场中的孩子。",
+    "arc": "从被认为赌气登船的失踪少年，恢复为主动报告险情并返回火场救人的证人。",
+    "relationships": [
+      {"name": "许知遥", "relation": "想把真实去向留给她的妹妹"},
+      {"name": "许德海", "relation": "他目睹被困并阻止开船的父亲"},
+      {"name": "程野", "relation": "在渡口一同长大的儿时朋友"},
+      {"name": "高嵩", "relation": "被他在录音中点名的违规开船者"}
+    ],
+    "evidence": [
+      "录音里，他喘着气说：开船的不是爸，是高嵩。",
+      "他把电台塞进救生圈的夹层，报出位置，然后转身冲进烟里。",
+      "录音最后，许潮没有喊救命。"
+    ]
+  },
+  "image": {
+    "style": "半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感",
+    "prompt": "Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town, unfinished adolescent proportions, narrow-round face, bright wide dark eyes, straight youthful brows, small nose, tense parted lips, damp short black hair stuck at the temples. He wears a faded burnt-orange hooded sweatshirt, old blue jeans and off-white canvas shoes, with warehouse dust on sleeves and knees; a compact orange emergency radio strap crosses his chest. Young skin has visible nose pores, uneven flushed tone, faint nostril capillaries, wet eye highlights, iris fibres, asymmetric eyelids and loose damp hairs. Brushed jersey and denim show weave, abrasion and weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key with cold fill, shallow depth of field.",
+    "promptLocal": "半写实厚涂插画：约十七岁的东亚汉族少年，处于二〇一〇年代初的中国南方江镇。身形瘦而灵活，保留未长开的少年比例，圆中带窄的脸，深色大眼明亮，直眉，鼻梁小，嘴唇因紧张微张，潮湿短黑发贴在额角。穿褪色氧化橙连帽衫、旧蓝牛仔裤和米白帆布鞋，袖口与膝部沾货仓灰尘，胸前斜跨橙色应急电台带。年轻皮肤可见鼻部毛孔与潮红不均，鼻翼有细微毛细血管，眼睛有湿润高光和虹膜纤维，眼睑略不对称，湿发碎丝打破轮廓。针织绒布和牛仔布可见织纹、擦伤与有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop",
+    "tags": ["semi-realistic", "painterly", "character sheet", "burnt orange hoodie", "early 2010s china", "teen witness"],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas for a wiry seventeen-year-old East Asian Han Chinese boy in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, side margins and clean straight bottom cut; narrow-round youthful face, wide dark eyes, straight brows, tense parted lips, damp short black hair, faded burnt-orange hoodie. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and hood. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, unfinished adolescent proportions, old jeans, canvas shoes and an emergency-radio strap across the torso. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct adolescent anatomy and limbs, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the scorched orange radio strap, dusty hoodie cuff, hand-cut tide mark on a metal cap and worn canvas shoe. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Young porous flushed skin, wet eyes, subtle facial asymmetry, damp flyaway hair; jersey and denim weave, abrasion and weighted folds."
+  },
+  "voice": {
+    "timbre": "清亮未完全成熟的少年男声，带急促气声和轻微喉部紧张",
+    "pitch": "中高音区",
+    "pace": "偏快，短句密集，换气可听见",
+    "accent": "南方江镇普通话，尾音略短（推断）",
+    "emotion": "紧张、警觉，却保持明确和勇敢",
+    "referenceHint": "参考十七岁少年在低声报告紧急情况时的真实近讲声",
+    "prompt": "17-year-old male, bright adolescent tenor, mid-high pitch, light throat tension, audible breath, narrow-to-medium dynamics. Quiet urgent volume, fast compact pace, frequent short inhales, clipped falling endings. Southern Chinese river-town Mandarin. Anxious, alert, determined."
+  }
+}

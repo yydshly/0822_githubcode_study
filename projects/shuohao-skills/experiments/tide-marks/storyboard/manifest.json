@@ -1,0 +1,182 @@
+[
+  {
+    "segment": "E01-01",
+    "seconds": 10.5,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3.5,
+      7
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-01/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-01/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-01/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-01/f3.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-02",
+    "seconds": 10.5,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3.5,
+      7
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-02/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-02/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-02/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-02/f3.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-03",
+    "seconds": 10.5,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3.5,
+      6.5
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-03/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-03/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-03/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-03/f3.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-04",
+    "seconds": 10,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3.5,
+      7
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-04/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-04/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-04/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-04/f3.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-05",
+    "seconds": 10,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3.5,
+      7
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-05/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-05/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-05/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-05/f3.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-06",
+    "seconds": 10.5,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      3,
+      5.5,
+      8
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-06/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-06/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-06/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-06/f3.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-06/f4.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-07",
+    "seconds": 11,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      3.5,
+      6,
+      8.5
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-07/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-07/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-07/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-07/f3.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-07/f4.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-08",
+    "seconds": 10,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      2.5,
+      4.5,
+      8
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-08/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-08/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-08/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-08/f3.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-08/f4.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-09",
+    "seconds": 10.5,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      3,
+      6,
+      8
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-09/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-09/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-09/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-09/f3.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-09/f4.png"
+    ],
+    "missing": []
+  },
+  {
+    "segment": "E01-10",
+    "seconds": 11,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      3,
+      6,
+      8.5
+    ],
+    "prompt": "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-10/prompt.md",
+    "pictures": [
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-10/f1.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-10/f2.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-10/f3.png",
+      "projects\\shuohao-skills\\experiments\\tide-marks\\storyboard/E01-10/f4.png"
+    ],
+    "missing": []
+  }
+]

@@ -12,6 +12,7 @@
 | story-to-handdrawn-video | Agent 驱动的手绘故事视频流水线 | `researching` | [gnipbao/story-to-handdrawn-video](https://github.com/gnipbao/story-to-handdrawn-video) | [详细研究](projects/story-to-handdrawn-video/README.md) | [交互演示](https://yydshly.github.io/0822_githubcode_study/demos/story-to-handdrawn-video/) |
 | 史境·沉浸式历史阅读 | 通用书籍格式驱动的图文听读产品 | `validated` | [KilledByAPixel/GatelessGate](https://github.com/KilledByAPixel/GatelessGate)（模式启发） | [实现与验证](projects/shijing-dayu-immersive/README.md) | [在线体验](https://yydshly.github.io/0822_githubcode_study/demos/shijing-dayu-immersive/) |
 | lanshu-create-ai-presenter-video | 数字人视频 Agent 编排、预检与交付 QA | `researching` | [cclank/lanshu-create-ai-presenter-video](https://github.com/cclank/lanshu-create-ai-presenter-video) | [研究报告](projects/lanshu-create-ai-presenter-video/README.md) | [在线页面](https://yydshly.github.io/0822_githubcode_study/demos/lanshu-create-ai-presenter-video/) |
+| shuohao-skills | 已有小说到结构化短剧资料的五阶段工作流 | `archived` | [eternityspring/shuohao-skills](https://github.com/eternityspring/shuohao-skills) | [研究总结](projects/shuohao-skills/RESEARCH-SUMMARY.zh-CN.md) | [《潮痕》失败复盘](https://yydshly.github.io/0822_githubcode_study/demos/shuohao-skills/tide-marks/) · [《渡口》夹具](https://yydshly.github.io/0822_githubcode_study/demos/shuohao-skills/) |
 
 状态统一使用：
 

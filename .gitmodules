@@ -1,3 +1,6 @@
 [submodule "projects/story-to-handdrawn-video/upstream"]
 	path = projects/story-to-handdrawn-video/upstream
 	url = https://github.com/gnipbao/story-to-handdrawn-video.git
+[submodule "projects/shuohao-skills/upstream"]
+	path = projects/shuohao-skills/upstream
+	url = https://github.com/eternityspring/shuohao-skills.git

@@ -1,0 +1,45 @@
+{
+  "id": "C04",
+  "name": "许德海",
+  "aliases": [],
+  "importance": "supporting",
+  "oneLiner": "被迫替事故背责的老渡工，把反抗留在一把咬住的船钥匙和十五年的测潮记录里。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "事故时约五十岁（推断）",
+    "identity": "中国南方江镇渡工，兄妹二人的父亲",
+    "appearance": "常年风吹日晒，脊背略弯，手掌粗大且关节突出（推断）。瘦长脸、颧骨明显，眼角和额头有顺着表情肌形成的深纹，短发夹灰；事故时穿褪色藏青渡工夹克、粗布长裤和旧胶鞋（推断）。",
+    "personality": ["沉默", "坚忍", "保护欲强", "负重"],
+    "temperament": "不擅长解释，把决定压进重复劳动和具体动作里。面对事故责任长期沉默，却曾在最危险的时刻用身体和钥匙阻止开船。",
+    "motivation": "阻止违规船只离岸，并在受胁迫后尽可能保护女儿、保留未来翻案的线索。",
+    "arc": "从被女儿认定为软弱失职，到通过钥匙、日志和录音恢复阻止事故者的真实位置。",
+    "relationships": [
+      {"name": "许知遥", "relation": "他竭力保护、却因沉默而与之隔阂的女儿"},
+      {"name": "许潮", "relation": "事故中失踪的儿子"},
+      {"name": "程野", "relation": "事故后被他要求丢弃船牌的少年见证者"},
+      {"name": "高嵩", "relation": "胁迫他签下伪造记录的渡运经理"}
+    ],
+    "evidence": [
+      "父亲许德海做了一辈子渡工。",
+      "爸把黄铜钥匙咬在嘴里，抱住栏杆不肯让船走。",
+      "父亲此后每年都去沉船点测潮，直到病重，也没能把证据带上来。"
+    ]
+  },
+  "image": {
+    "style": "半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感",
+    "prompt": "Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A lean East Asian Han Chinese ferryman around fifty during the early 2010s in a southern Chinese riverside town, slightly stooped from decades of boat work, long narrow face, prominent cheekbones, deep-set patient eyes, broad rough hands, short black hair threaded with grey. He wears a faded navy work jacket, coarse dark trousers and old rubber shoes. Sun-damaged skin has age spots, visible pores and uneven pigmentation; wrinkles follow expression muscles through forehead lines, crow's feet and nasolabial folds; eyelids and brows are asymmetric, eyes retain wet highlights, sparse stubble and flyaway grey hairs break the silhouette. Heavy cotton shows weave, shoulder fading, frayed cuffs and deep weighted folds. Three-quarter waist-up, plain neutral background, soft upper-left key and cool fill, face sharpest.",
+    "promptLocal": "半写实厚涂插画：约五十岁的东亚汉族男性渡工，处于二〇一〇年代初的中国南方江镇。长期船上劳作令他清瘦略驼，瘦长脸、颧骨突出、眼窝深而有耐性，手掌粗大，短黑发夹灰。穿褪色藏青工作夹克、深色粗布裤和旧胶鞋。日晒皮肤有老年斑、毛孔和不均匀色素；额纹、鱼尾纹与法令纹顺着表情肌生长，眼睑和眉毛不对称，眼睛保留湿润高光，稀疏胡茬与灰白碎发打破轮廓。厚棉布可见织纹、肩部褪色、袖口磨损和深重褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，面部最清晰。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop",
+    "tags": ["semi-realistic", "painterly", "character sheet", "faded navy workwear", "early 2010s china", "weathered ferryman"],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas for a lean East Asian Han Chinese ferryman around fifty in an early-2010s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins and clean straight bottom cut; long weathered face, prominent cheekbones, deep patient eyes, short black hair threaded grey, faded navy work jacket. LIGHTING IN THE LEFT ZONE ONLY: soft directional upper-left key with gentle falloff and ambient occlusion under chin, eyes and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, slightly stooped, coarse trousers, old rubber shoes and broad rough hands. Faces must match the bust exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, natural limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of a weathered hand holding a blackened brass boat key, frayed cuff, old rubber shoe and tide-mark notebook edge. Continue details down the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Sun-damaged porous skin, expression-line wrinkles, wet eyes, asymmetric brows, flyaway grey hair; heavy cotton weave and worn weighted folds."
+  },
+  "voice": {
+    "timbre": "被江风磨粗的年长男中低音，胸腔共鸣深，略带干涩气声",
+    "pitch": "低音区",
+    "pace": "缓慢，停顿长，尾音常收进气息",
+    "accent": "南方江镇口音明显，元音偏窄（推断）",
+    "emotion": "疲惫、压抑、保护欲内收",
+    "referenceHint": "参考五十岁渡工的近距离干声，低沉、耐久、很少抬高音量",
+    "prompt": "50-year-old male, weathered bass-baritone, low pitch, deep chest resonance, dry breath at onset, narrow dynamic span. Low volume, slow pace, long pauses, endings absorbed into breath. Southern Chinese river-town accent with narrow vowels. Enduring, burdened, protective."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "C02",
+  "name": "程野",
+  "aliases": [],
+  "importance": "protagonist",
+  "oneLiner": "熟悉江底却十五年不敢回到沉船点的潜水员，最终以一次下潜偿还迟到的证言。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "约三十二岁（推断）",
+    "identity": "中国南方江镇潜水员，兄妹二人的儿时朋友",
+    "appearance": "肩背宽实、腰腹紧凑，皮肤带长期户外作业的深麦色（推断）。方脸，下颌短硬，眉浓，短发常被水汽压乱；穿磨白的深青工作夹克、速干内搭与带水渍的工装裤，手腕留有潜水表压痕（推断）。",
+    "personality": ["寡言", "可靠", "负疚", "勇敢"],
+    "temperament": "说话前常有较长沉默，不轻易承诺；一旦进入水边和装备操作状态，动作果断熟练。对十五年前的隐瞒始终带着明显回避。",
+    "motivation": "弥补当年丢弃船牌的过错，帮助儿时朋友找到能独立印证录音的水下物证。",
+    "arc": "从因童年恐惧隐瞒船牌，到重新潜入事故点取回关键联单。",
+    "relationships": [
+      {"name": "许知遥", "relation": "儿时朋友，也是他决定协助查案的搭档"},
+      {"name": "许潮", "relation": "儿时伙伴，其失踪让他背负多年愧疚（推断）"},
+      {"name": "许德海", "relation": "曾要求他丢弃船牌的长辈"},
+      {"name": "高嵩", "relation": "旧案中被证据逐步指向的对手"}
+    ],
+    "evidence": [
+      "程野是在渡口长大的潜水员，也是兄妹俩儿时的朋友。",
+      "他听完录音后沉默很久，才承认事故第二天，他在防波堤下面捡到过半块烧焦的船牌。",
+      "他这些年一直记得那半块船牌落下的位置，却不敢再下去。"
+    ]
+  },
+  "image": {
+    "style": "半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感",
+    "prompt": "Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town, compact athletic build, square weathered face, short firm jaw, heavy eyebrows, deep-set dark eyes, cropped black hair flattened by damp air. He wears a faded deep-teal canvas work jacket over a black quick-dry shirt and water-marked cargo trousers; a dive watch leaves a pressure mark at the wrist. Sun-darkened skin with visible pores, uneven tan lines, faint nose capillaries, wet eye highlights and asymmetric brows; coarse stubble shadows the jaw. Canvas weave, salt bloom, polished elbow wear and weighted folds are visible. Three-quarter waist-up view, plain neutral background, soft upper-left key with cold fill, shallow depth of field, face sharpest.",
+    "promptLocal": "半写实厚涂插画：约三十二岁的东亚汉族男性潜水员，身处当代中国南方江镇。宽肩、紧凑结实，方脸，下颌短硬，浓眉和深眼窝，黑色短发被水汽压乱。穿褪色深青帆布工作夹克、黑色速干内搭和带水渍的工装裤，腕上有潜水表压痕。皮肤深麦色且可见毛孔和晒痕，鼻翼有细微毛细血管，眼睛有湿润高光，眉形不对称，下颌有粗硬胡茬阴影。帆布可见织纹、盐渍、肘部磨亮和有重量的褶皱。四分之三视角半身，纯中性背景，左上柔和主光配冷调补光，浅景深，面部最清晰。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop",
+    "tags": ["semi-realistic", "painterly", "character sheet", "deep teal workwear", "contemporary china", "working diver"],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas for a broad-shouldered East Asian Han Chinese male diver around thirty-two in a contemporary 2020s southern Chinese riverside town. Divide with thin hairline rules. LEFT ZONE about 34% of the canvas width: front-facing ID bust, BOTH SHOULDERS FULLY VISIBLE, clear side margins, clean straight bottom cut; square weathered face, heavy brows, deep-set eyes, cropped damp black hair, dark stubble, faded deep-teal canvas jacket. LIGHTING IN THE LEFT ZONE ONLY: soft upper-left directional key with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back on one shared ground line, compact athletic build, black quick-dry shirt, water-marked cargo trousers and rubber dive boots. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: all three equal in height and head-to-body ratio, correct limb lengths, no stretching, squashing or foreshortening, clear margins. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: small isolated studies of the dive-watch pressure mark, jacket salt bloom, worn rubber boot and coiled guideline. Continue details at the right edge if needed; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Visible pores and tan lines, wet eyes, facial asymmetry, individual damp hair strands; heavy canvas weave and realistic weighted folds."
+  },
+  "voice": {
+    "timbre": "粗粝但不浑浊的男中音，胸腔共鸣厚，气息短而稳",
+    "pitch": "中低音区",
+    "pace": "偏慢，开口前停顿明显，句尾收得短",
+    "accent": "南方江镇口音较明显，辅音偏软（推断）",
+    "emotion": "沉着、负疚，少量紧张压在低处",
+    "referenceHint": "参考长期水上作业的三十岁男性，声音贴近胸腔、字少而实",
+    "prompt": "32-year-old male, rough clear baritone, low-mid pitch, dense chest resonance, steady breath support, medium dynamic range. Moderate volume, slow economical pace, long pre-speech pauses, clipped phrase endings. Southern Chinese river-town accent with softened consonants. Grounded, guilty, dependable."
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "archiveId": "tide-marks-capability-exploration-failure-review-2026-08-24",
+  "revision": 2,
+  "frozenAt": "2026-08-24T11:01:09.855Z",
+  "phase": "库能力探索完成；短剧投产尝试未通过叙事前置质量门；停止扩大视频生成",
+  "supersedes": "archive/2026-08-24-capability-exploration（旧版把资料齐全误写为预生产完成）",
+  "summary": {
+    "episodes": 6,
+    "segments": 59,
+    "cuts": 193,
+    "inventoryStatus": "实验资料",
+    "narrativeGatePassed": false,
+    "productionDecision": "stop-video-generation",
+    "realVideoSegments": 3,
+    "acceptedVideoSegments": 0,
+    "logicIssuesFixedAfterGeneration": 11,
+    "continuityBoundariesReviewedAfterGeneration": 58
+  },
+  "policy": "文本、JSON 和报告复制进 snapshot 并记录 SHA-256；大体积视频不重复复制，只记录原路径、状态和 SHA-256。归档生成后默认冻结。",
+  "entries": [
+    {
+      "category": "创作源",
+      "source": "outline/潮痕-outline.json",
+      "snapshot": "snapshot/outline/潮痕-outline.json",
+      "bytes": 15931,
+      "sha256": "33a8431eaa7ca298606073f195886870f37a946bf6a1f6f6735b908025be574f"
+    },
+    {
+      "category": "创作源",
+      "source": "characters/潮痕-cast.json",
+      "snapshot": "snapshot/characters/潮痕-cast.json",
+      "bytes": 35924,
+      "sha256": "08e9f8fca7c413f0918b33f8ad8b79cb4d6cf9f4fd7123447a13d4e109ada4f7"
+    },
+    {
+      "category": "创作源",
+      "source": "art/潮痕-art.json",
+      "snapshot": "snapshot/art/潮痕-art.json",
+      "bytes": 45000,
+      "sha256": "d8df8925ca17722b06b6a3c9b4a3534317caff6bc070aa0864a0d3f3a981e8b6"
+    },
+    {
+      "category": "创作源",
+      "source": "script/潮痕-script.json",
+      "snapshot": "snapshot/script/潮痕-script.json",
+      "bytes": 47151,
+      "sha256": "47972f2359e46b57f831baaddc7f183a2fa5ec6d6a18a35470b23233deeb808c"
+    },
+    {
+      "category": "创作源",
+      "source": "storyboard/潮痕-storyboard.json",
+      "snapshot": "snapshot/storyboard/潮痕-storyboard.json",
+      "bytes": 406509,
+      "sha256": "770bc6a8bf728ac49d0edc2aeb54dfce5d743c0f9c3969bf37a3ffa4d5ca4972"
+    },
+    {
+      "category": "架构结论",
+      "source": "FOUNDATIONAL-CAPABILITIES.zh-CN.md",
+      "snapshot": "snapshot/FOUNDATIONAL-CAPABILITIES.zh-CN.md",
+      "bytes": 4422,
+      "sha256": "5e07beb294a543e36ed58c3e2470c7e19199f6ea58983d5c7095ceade1ed1c0b"
+    },
+    {
+      "category": "最终结论",
+      "source": "LIBRARY-EXPLORATION-CONCLUSION.zh-CN.md",
+      "snapshot": "snapshot/LIBRARY-EXPLORATION-CONCLUSION.zh-CN.md",
+      "bytes": 2359,
+      "sha256": "ccb160002e9f62a3532240eafbc5610183b9d49f8bcf578fb3d3bbae43b57cc3"
+    },
+    {
+      "category": "最终结论",
+      "source": "offline-production/library-exploration-conclusion.json",
+      "snapshot": "snapshot/offline-production/library-exploration-conclusion.json",
+      "bytes": 1095,
+      "sha256": "96240cf3c91f9f8eec407ea32f1adb2f0bfb72b0431da1ce6ed6301e3994fa7e"
+    },
+    {
+      "category": "最终结论",
+      "source": "offline-production/library-exploration-conclusion.html",
+      "snapshot": "snapshot/offline-production/library-exploration-conclusion.html",
+      "bytes": 3789,
+      "sha256": "3c78cf4985e88c60bf2bda9c195f750fc7bdab72e6507ae294bc444a3f44cada"
+    },
+    {
+      "category": "能力评估",
+      "source": "offline-production/CAPABILITY-EVALUATION.zh-CN.md",
+      "snapshot": "snapshot/offline-production/CAPABILITY-EVALUATION.zh-CN.md",
+      "bytes": 6902,
+      "sha256": "ce293722b02ad30cf449507f6739fab48c2e2cd29981bed34740fb685ed95669"
+    },
+    {
+      "category": "能力评估",
+      "source": "offline-production/capability-evaluation.html",
+      "snapshot": "snapshot/offline-production/capability-evaluation.html",
+      "bytes": 12684,
+      "sha256": "9f84b2b07e43e3f6134a3fa65b0bed515edae5d4bca76d8ff2f19f8e4d77c950"
+    },
+    {
+      "category": "逻辑审计",
+      "source": "offline-production/STORY-LOGIC-AUDIT.zh-CN.md",
+      "snapshot": "snapshot/offline-production/STORY-LOGIC-AUDIT.zh-CN.md",
+      "bytes": 5772,
+      "sha256": "f50193399264a56189ff322ea54d1b7afbc6eabb6c712181b03a7ac379fd4d0a"
+    },
+    {
+      "category": "逻辑审计",
+      "source": "offline-production/story-logic-audit.json",
+      "snapshot": "snapshot/offline-production/story-logic-audit.json",
+      "bytes": 6951,
+      "sha256": "eb33548d7b6fdc26276878c32c42d4af02952f3b1a7304d668ec6e99202ff508"
+    },
+    {
+      "category": "逻辑审计",
+      "source": "offline-production/story-logic-audit.html",
+      "snapshot": "snapshot/offline-production/story-logic-audit.html",
+      "bytes": 11725,
+      "sha256": "8a2b519cb812466e72d56d70626a8187dd6309ebf0b5dee64876347e117caecf"
+    },
+    {
+      "category": "衔接审计",
+      "source": "offline-production/CONTINUITY-AUDIT.zh-CN.md",
+      "snapshot": "snapshot/offline-production/CONTINUITY-AUDIT.zh-CN.md",
+      "bytes": 11827,
+      "sha256": "1d3dec2a94b251f05f698684b3b88b54e2674a3bd3b8b5a9204e1107bfa6ef6f"
+    },
+    {
+      "category": "衔接审计",
+      "source": "offline-production/continuity-boundary-audit.json",
+      "snapshot": "snapshot/offline-production/continuity-boundary-audit.json",
+      "bytes": 61626,
+      "sha256": "6ed9ac9fb15460377d3c9c9fd6d3d9c4b866ff01981459a7bb93c06cdcf9aae2"
+    },
+    {
+      "category": "衔接审计",
+      "source": "offline-production/continuity-audit.html",
+      "snapshot": "snapshot/offline-production/continuity-audit.html",
+      "bytes": 68979,
+      "sha256": "ac5a9bc5803537f947bf66b007e91366f750689489b356f94fbb0106175212da"
+    },
+    {
+      "category": "生产状态",
+      "source": "offline-production/video-production-control.json",
+      "snapshot": "snapshot/offline-production/video-production-control.json",
+      "bytes": 248156,
+      "sha256": "3e37fcfeb60e713d8a3cd1e1296d32e0cdb3fbf2ccf86fd9370ed383f609855a"
+    },
+    {
+      "category": "生产状态",
+      "source": "offline-production/video-production-tracker.csv",
+      "snapshot": "snapshot/offline-production/video-production-tracker.csv",
+      "bytes": 12312,
+      "sha256": "3eade21040d5fbebd6b06432f1cd52c365c4d187f1fa2e69c6059e774aeb2c79"
+    },
+    {
+      "category": "生产状态",
+      "source": "PRODUCTION.md",
+      "snapshot": "snapshot/PRODUCTION.md",
+      "bytes": 2801,
+      "sha256": "ac04ab03aad7d3a9051d4f558554d64d952311b36dca06f9189814bba5fbc6eb"
+    },
+    {
+      "category": "生产状态",
+      "source": "production-hub-data.json",
+      "snapshot": "snapshot/production-hub-data.json",
+      "bytes": 81704,
+      "sha256": "02b2a3843e7b14084d7d5cc2eb953ff1ebc515410cf9838f07997067a9074b24"
+    },
+    {
+      "category": "策略",
+      "source": "continuity-audit-policy.json",
+      "snapshot": "snapshot/continuity-audit-policy.json",
+      "bytes": 5497,
+      "sha256": "926fe266f4bcb244db9f5fae2d1737a78310f139898e2713b280825d3050b71d"
+    },
+    {
+      "category": "策略",
+      "source": "story-logic-audit.json",
+      "snapshot": "snapshot/story-logic-audit.json",
+      "bytes": 6628,
+      "sha256": "866973b5d54c7c0aa9c7cc50002b863466e76c502ca1618b57a15b6aabe4c2fa"
+    },
+    {
+      "category": "策略",
+      "source": "frame-qc-overrides.json",
+      "snapshot": "snapshot/frame-qc-overrides.json",
+      "bytes": 58821,
+      "sha256": "532cc9b1f7b8266257b67369d35e6e0ac04925e245cdbe5bf8194e1d1ac26f17"
+    }
+  ],
+  "videos": [
+    {
+      "category": "真实H3-失败样本",
+      "source": "generated-videos/E01-01/E01-01-v01.mp4",
+      "status": "需返工",
+      "exists": true,
+      "bytes": 2009183,
+      "sha256": "56e70afe31cdf481fa98434673cc6451a553fb20dc4ac85256dcaaf9ebdf6d25",
+      "copied": false
+    },
+    {
+      "category": "真实H3-待检候选",
+      "source": "generated-videos/E01-02/E01-02-v01.mp4",
+      "status": "待质检",
+      "exists": true,
+      "bytes": 1714844,
+      "sha256": "dce0e3492f9e47cf6f7fda8ddc6b2889784f3ff2ef897996323b85cf29f4000e",
+      "copied": false
+    },
+    {
+      "category": "真实H3-历史演示",
+      "source": "storyboard-ep2-pack/E02-01/e02-01-generated-chatart-h3-768p.mp4",
+      "status": "待正式标准复核",
+      "exists": true,
+      "bytes": 3718532,
+      "sha256": "c5442501a5419e5a8252b905f09de36324b3305568b97a514d2e3d5d3b4bfd70",
+      "copied": false
+    },
+    {
+      "category": "静态预演",
+      "source": "animatic/tide-marks-episode-01-silent-animatic.mp4",
+      "status": "非视频模型成片",
+      "exists": true,
+      "bytes": 15930543,
+      "sha256": "1932a15e0d6401ec4fa6b57166b6491f54196be8c1edc6d96f54664595ad7710",
+      "copied": false
+    }
+  ]
+}

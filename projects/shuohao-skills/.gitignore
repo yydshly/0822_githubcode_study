@@ -1,0 +1,16 @@
+# Large generated media and duplicated production packs stay local.
+experiments/tide-marks/storyboard-full-pack/
+experiments/tide-marks/storyboard/E*/
+experiments/tide-marks/characters/images/
+experiments/tide-marks/characters/actual-generation/
+experiments/tide-marks/art/images/
+experiments/tide-marks/art/actual-generation/
+experiments/tide-marks/animatic/
+experiments/tide-marks/offline-production/qc-contact-sheets/
+experiments/tide-marks/archive/2026-08-24-capability-exploration/
+experiments/tide-marks/storyboard-ep2-pack/
+experiments/tide-marks/generated-videos/
+
+# The final failure-review archive contains compact text/JSON evidence and is committed.
+!experiments/tide-marks/archive/2026-08-24-capability-exploration-failure-review/
+!experiments/tide-marks/archive/2026-08-24-capability-exploration-failure-review/**

@@ -1,0 +1,45 @@
+{
+  "id": "C01",
+  "name": "许知遥",
+  "aliases": ["知遥"],
+  "importance": "protagonist",
+  "oneLiner": "从坏录音里追索旧案真相的声音修复师，冷静手艺之下压着对父亲十五年的怨与愧。",
+  "persona": {
+    "gender": "女",
+    "ageRange": "约三十岁（推断）",
+    "identity": "中国南方江镇出身的声音修复师与档案技术人员（推断）",
+    "appearance": "身形清瘦，长时间伏案使肩背略显紧绷（推断）。鹅蛋脸，眉形利落，眼下有淡淡疲态，黑发低束；工作时戴封闭式耳机，穿灰蓝衬衫、深色直筒裤与轻薄防水外套（推断）。",
+    "personality": ["克制", "执拗", "严谨", "敏锐"],
+    "temperament": "习惯先听完、核对完再作判断，动作精确，情绪越强时语气反而越稳。面对与家人有关的证据会短暂失去冷静，但很快回到可验证的事实。",
+    "motivation": "在旧渡口拆除前修复哥哥留下的录音，厘清父亲承担责任的真相，并把完整证据交给公开核验。",
+    "arc": "从把父亲的沉默视作背叛，到理解沉默背后的胁迫，并选择让证据公开接受核验。",
+    "relationships": [
+      {"name": "程野", "relation": "儿时朋友与共同调查旧案的行动搭档"},
+      {"name": "高嵩", "relation": "她追查的旧案核心嫌疑人与当前阻挠者"},
+      {"name": "许德海", "relation": "已故父亲，她从怨恨走向重新理解"},
+      {"name": "许潮", "relation": "失踪十五年的哥哥，也是录音证据的留下者"}
+    ],
+    "evidence": [
+      "事故以后，知遥离开南堤，学了声音修复，专门替档案馆抢救被水和霉菌毁坏的录音。",
+      "知遥因此更愤怒。她一直以为父亲签责任书只是软弱，现在看来更像是在主动掩埋什么。",
+      "知遥没有阻拦，只告诉他，自己修复档案从来不会在原介质上工作。完整录音已经复制了三份。"
+    ]
+  },
+  "image": {
+    "style": "半写实厚涂角色插画，冷灰蓝与氧化橙统一色板，现代南方江镇的潮湿质感",
+    "prompt": "Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. A slim East Asian woman around thirty with Han Chinese features in a contemporary 2020s southern Chinese riverside town, oval face, alert almond-shaped dark eyes, straight brows, faint under-eye fatigue, black hair tied low with loose strands. She wears a slate-blue cotton shirt, charcoal straight trousers and a lightweight dark rain jacket; studio headphones rest around her neck and a small audio-cleaning stylus is held carefully. Visible pores, uneven skin tone, faint capillaries at nostrils and ear rims, wet eye highlights, iris fibres, slightly asymmetric eyelids and brows. Fabric shows weave, cuff wear, realistic weight and fold self-shadow. Three-quarter waist-up view, plain neutral background, soft upper-left directional key with cool fill, shallow depth of field, face sharpest.",
+    "promptLocal": "半写实厚涂插画：约三十岁的东亚汉族女性，身处当代中国南方江镇。身形清瘦，鹅蛋脸，深色杏眼警觉，直眉，眼下略显疲惫，黑发低束并有碎发。穿灰蓝棉衬衫、炭灰直筒裤和深色轻薄防水外套，耳机挂在颈间，谨慎拿着音频清理笔。皮肤可见毛孔与不均匀肤色，鼻翼和耳缘有细微毛细血管，眼睛有湿润高光与虹膜纤维，眼睑和眉毛略不对称。布料可见织纹、袖口磨损、真实垂坠和褶皱自阴影。四分之三视角半身，纯中性背景，左上柔和方向主光配冷调补光，浅景深，面部最清晰。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop",
+    "tags": ["semi-realistic", "painterly", "character sheet", "cool grey-blue palette", "contemporary china", "audio restoration"],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas for a slim East Asian Han Chinese woman around thirty in a contemporary 2020s southern Chinese riverside town. Divide the canvas into three zones with thin hairline rules. LEFT ZONE occupies about 34% of the canvas width: one front-facing ID-style bust portrait with BOTH SHOULDERS FULLY VISIBLE, clear side margins, and a clean straight horizontal cut below the chest; oval face, alert almond eyes, straight brows, faint under-eye fatigue, low-tied black hair with flyaways, slate-blue shirt and dark rain jacket. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff and subtle ambient occlusion under chin, eye sockets and collar. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character, front, left profile and back, on one shared ground line, wearing charcoal trousers and practical waterproof shoes, headphones at the neck. Faces must match the bust portrait exactly. PROPORTIONS ARE CRITICAL: equal height and head-to-body ratio, correct anatomy and limb lengths, no stretching, squashing or foreshortening, margin above heads and below feet. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows. RIGHT-BOTTOM ZONE: four small isolated studies of the studio headphones, audio stylus, worn shirt cuff and waterproof shoe, smaller than the figures. If space is tight, continue details down the right edge; the detail studies give way, not the figures. Plain pure white background (#FFFFFF), generous even margins. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded. Skin with visible pores and uneven tone, wet eye highlights, slight facial asymmetry, flyaway hair; fabric with visible weave, wear and real weight."
+  },
+  "voice": {
+    "timbre": "清晰偏冷的年轻女中音，轻微气声，咬字边缘干净",
+    "pitch": "中音区",
+    "pace": "平稳偏慢，核对事实时停顿短而精确",
+    "accent": "标准普通话，保留很淡的南方江镇尾音（推断）",
+    "emotion": "克制、警觉，底层带未消退的悲伤",
+    "referenceHint": "参考三十岁左右、长期做档案修复的专业女性，收音近、气息稳定",
+    "prompt": "30-year-old female, clear cool mezzo-soprano, mid pitch, light breath texture, focused chest-and-mask resonance, controlled dynamic range. Moderate-low volume, measured slow pace, precise short pauses, mostly level inflection. Standard Mandarin with a faint southern river-town cadence. Restrained, vigilant, quietly grieving."
+  }
+}

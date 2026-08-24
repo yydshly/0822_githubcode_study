@@ -1,0 +1,1225 @@
+{
+  "source": "潮痕",
+  "style": "realistic",
+  "promptLang": "en",
+  "episodes": [
+    {
+      "ep": 1,
+      "segments": [
+        {
+          "id": "E01-01",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 3.5,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, medium shot of a slim East Asian woman in a dark rain jacket rushing through the abandoned ferry waiting hall while hugging a battered tin box, loose hair moving, cold overcast morning, chipped blue ticket window behind her, strong forward motion."
+            },
+            {
+              "beats": [
+                2,
+                3
+              ],
+              "seconds": 3.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, wide shot inside the abandoned riverside waiting hall as the young woman pushes the old door shut, a demolition notice lifting in the wind against the chipped blue-grey ticket window, damp concrete and empty benches visible."
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman's tired face turned toward the fluttering demolition notice, jaw set and eyes cold, soft river light catching uneven skin texture against the decayed ticket window."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold blue-gray palette. Following <Picture 1>, a slim young audio archivist rushes through the abandoned ferry waiting hall while hugging a tin box; a tracking shot moves with her as a faint adolescent breath leaks repeatedly from inside the box.\n[Shot 2] At 00:03.500, the camera cuts to <Picture 2>: she turns and pushes the old door shut while a demolition notice flutters against the ticket window; the static shot establishes the damp, empty hall.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3>: a slow push in approaches her controlled face as the young woman with a clear, cool, restrained voice (S1) says: <d>[Chinese] 连他的东西也等不到明天。</d>\n\noverall_soundscape: Hurried footsteps cross damp concrete, the old door scrapes shut, paper flaps against metal, and a faint recorded breath leaks from the box.\n\nnon_diegetic_music: A low sustained cello tone with sparse muted piano notes.",
+          "note": "冷开场先跟拍运动主体，再建立旧渡口空间与拆迁倒计时。"
+        },
+        {
+          "id": "E01-02",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                5,
+                6
+              ],
+              "seconds": 3.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, medium shot of the young woman setting a battered tin box on an old bench and lifting its lid inside the empty waiting hall, shoulders tense, cold soft daylight, damp walls and worn wood."
+            },
+            {
+              "beats": [
+                7,
+                7
+              ],
+              "seconds": 3.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [],
+              "props": [
+                "P01",
+                "P02"
+              ],
+              "frame": "Cinematic film still, extreme close-up inside an open tin box: one compact orange emergency radio with a black melted scar and salt-frost battery compartment lies beside one blackened brass boat key, both sharply isolated against aged cloth."
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01",
+                "P02"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman looking down at the scorched orange radio and blackened brass key in the open box, her restrained anger visible in lowered eyes, cold window light across her face."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold blue-gray palette. Matching <Picture 1>, the young archivist sets the tin box on the bench and opens it in a static shot.\n[Shot 2] At 00:03.500, the camera cuts to the object layout in <Picture 2>; a slow push in reveals the fire-scarred orange radio beside the blackened brass key.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3> and holds a static shot on her face and the open box as the restrained young woman (S1) asks softly: <d>[Chinese] 爸，你就留下这些？</d>\n\noverall_soundscape: The tin box lands on old wood, its hinges creak, cloth shifts, and distant river wind moves through the hall.\n\nnon_diegetic_music: Muted piano notes over a restrained low string drone.",
+          "note": "静物特写作为第二落点，锁定两件核心物证。"
+        },
+        {
+          "id": "E01-03",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                9,
+                10
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman lifting the compact orange emergency radio and inspecting its black melted shell as a faint breath emerges, her fingers careful around the salt-frost battery opening."
+            },
+            {
+              "beats": [
+                11,
+                11
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up reaction shot of the young woman holding the damaged radio beside her ear, eyes suddenly alert, abandoned hall blurred behind her, cold overcast light."
+            },
+            {
+              "beats": [
+                12,
+                13
+              ],
+              "seconds": 4,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01",
+                "P02"
+              ],
+              "frame": "Cinematic film still, medium shot of the young woman pocketing the blackened brass key and striding out of the waiting hall with the damaged orange radio held securely, the open doorway framing the wet jetty beyond."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold blue-gray palette. A slow push in follows <Picture 1> as the young archivist lifts the scarred orange radio and examines its melted shell; a short human breath breaks through the speaker.\n[Shot 2] At 00:03.500, the camera cuts to <Picture 2> and holds a static shot on her alert reaction as she says: <d>[Chinese] 这不是电流声。</d>\n[Shot 3] At 00:06.500, the camera cuts to <Picture 3>: a tracking shot follows her pocketing the brass key, gathering the radio, and walking quickly toward the open door.\n\noverall_soundscape: The radio grille crackles, one breath cuts through static, fabric rustles as the key enters a pocket, and footsteps accelerate toward the doorway.\n\nnon_diegetic_music: The low string drone tightens with one restrained pulse.",
+          "note": "以离场动势接入修复室换景。"
+        },
+        {
+          "id": "E01-04",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                2
+              ],
+              "seconds": 3.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot in a cramped midnight audio restoration room as the young archivist places the damaged orange radio on a worn gray-green steel bench and brushes salt frost from its battery compartment, warm task lamp against cyan monitor light."
+            },
+            {
+              "beats": [
+                3,
+                4
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Pan Right",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up across the restoration bench from power leads connected to the scorched orange radio toward two stacked monitors filling with dense cyan waveforms, the technician's steady hands at frame edge."
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young audio archivist facing the waveform monitors under mixed amber and cyan light, expression disciplined and professional, cracked wired-glass window behind her."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, mixed amber and cyan midnight light. The static shot follows <Picture 1> as the young technician places the orange radio on the steel bench and gently brushes salt from the open battery compartment.\n[Shot 2] At 00:03.500, the camera cuts to <Picture 2>; a pan right travels from the connected power leads to two monitors as dense waveforms jump alive.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3> and holds a static shot as the clear-voiced technician (S1) says with measured precision: <d>[Chinese] 先保原始轨，再做副本。</d>\n\noverall_soundscape: Soft brush strokes scrape salt crystals, power relays click, cooling fans start, and a low electrical hum fills the cramped room.\n\nnon_diegetic_music: Sparse glassy tones over a quiet bass pulse.",
+          "note": "新空间以操作动作、设备局部、人物近景建立。"
+        },
+        {
+          "id": "E01-05",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                7
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young archivist putting on sealed studio headphones as harsh waveform noise fills her attention, cyan reflections in her dark eyes, amber desk lamp edging her cheek."
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 3.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of precise fingers dragging an audio noise-reduction control beside a dense cyan waveform, worn gray-green steel bench and warm task light, no readable interface text."
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up profile of the young technician listening through headphones and studying the waveform, lips barely moving, concentrated and controlled under cyan screen glow."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, tense cyan-and-amber palette. A slow push in follows <Picture 1> as the young technician puts on studio headphones and a wall of explosive static fills her hearing.\n[Shot 2] At 00:03.500, the camera cuts to the interface detail in <Picture 2>; the static shot holds while her fingers drag a noise-reduction control.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3> and holds a static shot on her listening profile as she says quietly: <d>[Chinese] 潮声太满，人声在下面。</d>\n\noverall_soundscape: Headphone pads settle, dense static crackles, mouse and keyboard clicks stay dry and close, and a faint tide-like hiss remains beneath the processing.\n\nnon_diegetic_music: N/A",
+          "note": "操作特写避免修复过程成为静态屏幕戏。"
+        },
+        {
+          "id": "E01-06",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                10,
+                11
+              ],
+              "seconds": 3,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of a cyan right-channel waveform enlarged on a monitor while the young technician leans closer at the edge of frame, one small voice-shaped peak emerging from heavy noise, no readable text."
+            },
+            {
+              "beats": [
+                12,
+                12
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman frozen beside the damaged orange radio as a broken adolescent voice comes from its speaker, her eyes fixed on the waveform under cold cyan light."
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the technician's hand slamming the pause control, fingertips tense above the worn steel bench, cyan waveform stopping sharply, no readable text."
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up reaction shot of the young woman's face after stopping playback, breath held, eyes widening with recognition, warm desk light fading into cold screen glow."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold cyan monitor glow. A slow push in follows <Picture 1> as the technician enlarges the right channel and a human-shaped waveform begins to emerge.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2> and holds a static shot on her listening face while a breathless adolescent male voice (S2) speaks from the radio in off-screen voiceover, with the visible woman's lips completely closed: <d>[Chinese] 开船的……</d>\n[Shot 3] At 00:05.500, the camera cuts to <Picture 3>; the static shot catches her hand pressing pause in one abrupt motion.\n[Shot 4] At 00:08.000, the camera cuts to <Picture 4>; a slow push in closes on her recognition as the young woman (S1) whispers: <d>[Chinese] 这个声音……</d>\n\noverall_soundscape: Filtered tide hiss narrows into a human breath, a broken syllable emerges, the pause key clicks, and the room drops to electrical silence.\n\nnon_diegetic_music: A single bowed harmonic rises and stops abruptly.",
+          "note": "男声用画外音覆盖女主反应，嘴唇保持闭合。"
+        },
+        {
+          "id": "E01-07",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                16
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Pan Right",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up moving from the young woman's hand taking a worn sibling photograph from a drawer to the photograph standing beside the cyan waveform monitor, her face reflected faintly in the screen."
+            },
+            {
+              "beats": [
+                17,
+                17
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman leaning toward the worn family photograph beside the monitor, guarded expression breaking into vulnerable recognition, cyan and amber light divided across her face."
+            },
+            {
+              "beats": [
+                18,
+                18
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of a finger pressing replay beside the scorched orange radio and the frozen cyan waveform, warm desk lamp reflecting on the worn control surface."
+            },
+            {
+              "beats": [
+                19,
+                19
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman listening motionless beside the orange radio, wet highlights gathering in her eyes while an unseen adolescent recording speaks, cyan waveform behind her."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, intimate cyan-and-amber light. A pan right follows <Picture 1> as the young woman takes a worn sibling photograph from a drawer and sets it beside the monitor.\n[Shot 2] At 00:03.500, the camera cuts to <Picture 2>; a slow push in closes on her vulnerable face as she asks: <d>[Chinese] 哥，是你吗？</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3> and holds a static shot as one finger presses replay beside the fire-scarred radio.\n[Shot 4] At 00:08.500, the camera cuts to <Picture 4>; the static shot stays on her silent reaction while the breathless adolescent male voice (S2) says in an off-screen voiceover and her lips remain completely closed: <d>[Chinese] 开船的不是爸。</d>\n\noverall_soundscape: A drawer slides, old paper touches the desk, the replay control clicks, tide hiss returns, and the recorded adolescent breath stays close and damaged.\n\nnon_diegetic_music: Soft piano enters on one unresolved minor interval.",
+          "note": "正面反应承接画外录音，不具象重演事故。"
+        },
+        {
+          "id": "E01-08",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                20,
+                20
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the young woman's hand tightening around a black headphone cable, knuckles pale against the worn gray-green steel bench, cyan light along the fingers."
+            },
+            {
+              "beats": [
+                21,
+                21
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman staring at the monitor with controlled urgency, headphones covering both ears, lips set before a short command."
+            },
+            {
+              "beats": [
+                22,
+                23
+              ],
+              "seconds": 3.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of an audio frequency control rising as two final waveform syllables sharpen on a cyan display, the technician's fingertips steady, no readable interface text."
+            },
+            {
+              "beats": [
+                24,
+                24
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman beside the damaged orange radio at the instant the final name becomes clear, her eyes fixed and stunned, cold cyan light dominating the room."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold cyan palette. The static shot follows <Picture 1> as her hand tightens around the headphone cable.\n[Shot 2] At 00:02.500, the camera cuts to <Picture 2> and holds a static shot on the young technician as she says: <d>[Chinese] 再说一遍。</d>\n[Shot 3] At 00:04.500, the camera cuts to <Picture 3>; a slow push in follows her raising the human frequency band until the last two syllables sharpen.\n[Shot 4] At 00:08.000, the camera cuts to <Picture 4>; a slow push in closes on her stunned face while the breathless adolescent male voice (S2) says in off-screen voiceover, with her lips completely closed: <d>[Chinese] 是高嵩。</d>\n\noverall_soundscape: Headphone cable rubs against cloth, a control clicks upward, filtered noise thins, and two clear syllables break through the radio speaker.\n\nnon_diegetic_music: A low pulse lands beneath the revealed name, then holds.",
+          "note": "逐步压近，最终名字落在女主反应上。"
+        },
+        {
+          "id": "E01-09",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                25,
+                25
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Pull Out",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, medium shot of the young woman pulling off her headphones and rising abruptly from the restoration bench, the cramped room widening around her under amber task light and cyan monitors."
+            },
+            {
+              "beats": [
+                26,
+                26
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the standing young woman looking down toward an old signed responsibility document beside the restoration equipment, disbelief turning into anger, face sharply lit."
+            },
+            {
+              "beats": [
+                27,
+                27
+              ],
+              "seconds": 2,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of a hand pressing an aged responsibility document flat beside the scorched orange emergency radio, paper creased under tense fingers, no readable writing."
+            },
+            {
+              "beats": [
+                28,
+                28
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young woman's face angled between the old document and the waveform monitor, eyes demanding an answer, warm and cold light splitting the frame."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, divided amber and cyan light. A pull out follows <Picture 1> as the young woman removes her headphones and stands abruptly from the bench.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2> and holds a static shot as she looks toward the old signed document and says: <d>[Chinese] 责任书上写的是爸。</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>; the static shot isolates her hand pressing the document beside the damaged radio.\n[Shot 4] At 00:08.000, the camera cuts to <Picture 4>; a slow push in closes on her demanding face as she asks: <d>[Chinese] 你们谁在撒谎？</d>\n\noverall_soundscape: Headphones hit the bench softly, the chair scrapes back, old paper slaps onto steel, and the monitor fan continues under the tense silence.\n\nnon_diegetic_music: Low strings sustain with two distant piano strikes.",
+          "note": "物证插入特写夹在两句自问之间。"
+        },
+        {
+          "id": "E01-10",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                29,
+                29
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "frame": "Cinematic film still, close-up of the young technician saving three audio copies on the restoration workstation, one hand steady on the controls, three abstract waveform tiles visible without readable text."
+            },
+            {
+              "beats": [
+                30,
+                30
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot of the young woman seated again and dragging the damaged recording farther along the waveform timeline, orange radio beneath the monitors, body leaning forward into cold cyan light."
+            },
+            {
+              "beats": [
+                31,
+                31
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the fire-scarred orange radio speaker at the instant a regular alarm pulse bursts through, black diagonal grille and broken third bar sharply visible."
+            },
+            {
+              "beats": [
+                32,
+                32
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, extreme close-up of one blackened brass boat key sliding under the cyan waveform screen from the vibration of a nearby alarm pulse, two pressure marks and salt-white patches visible, amber desk light grazing the metal."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cold cyan-and-amber palette. The static shot follows <Picture 1> as the technician saves three separate copies of the restored audio.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>; a slow push in follows her dragging the recording deeper into the unrepaired waveform.\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3> and holds a static shot as a regular alarm pulse suddenly bursts from the orange radio speaker.\n[Shot 4] At 00:08.500, the camera cuts to <Picture 4>; a slow push in follows the blackened brass key sliding under the cyan waveform screen with each vibration, ending before its purpose is explained.\n\noverall_soundscape: Save confirmations click softly, the timeline scrub produces filtered tide hiss, a regular electronic alarm bursts through, and metal scrapes lightly across the steel bench in rhythm.\n\nnon_diegetic_music: A restrained sub-bass pulse begins matching the unexplained alarm interval.",
+          "note": "末切以运动中的钥匙和规律蜂鸣构成具象 cliff。"
+        }
+      ]
+    },
+    {
+      "ep": 2,
+      "segments": [
+        {
+          "id": "E02-01",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot of a broad-shouldered East Asian male diver pushing into the overcast audio lab and pressing an accident record beside a rolling waveform while a slim East Asian female archivist turns from the console, two-person composition, damp workwear and cool daylight."
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the weathered male diver leaning over the steel bench, one finger pinning an accident record, heavy brows and guilty eyes held steady in soft overcast laboratory light."
+            },
+            {
+              "beats": [
+                3,
+                4
+              ],
+              "seconds": 4.5,
+              "size": "medium",
+              "camera": "Pan Right",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot across the audio bench: the slim female archivist drags the damaged orange radio recording back to an alarm spike while the male diver watches from the opposite side, their faces separated by twin cyan waveform monitors."
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the female archivist's precise fingertip pressing play beside the scorched orange emergency radio, a cyan waveform frozen at a narrow spike, cool overcast light on scratched steel."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, a broad-shouldered male diver pushes through the lab door and plants an accident record beside the rolling waveform as the female archivist turns toward him. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: the male diver pins the accident record to the bench and states the official departure time without preamble. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 官方写一点二十分离岸。</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: the female archivist scrubs the radio recording back to an alarm spike while the male diver studies the waveform across from her. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 这段报时在一点四十七。</d>\n[Shot 4] At 00:10.500, the camera cuts to <Picture 4>: her fingertip presses play beside the scorched orange radio and the waveform begins to move. The camera uses a push in.\n\noverall_soundscape: The door opens sharply, paper lands on steel, monitor fans hum, and the damaged radio emits a faint alarm pulse beneath room tone.\n\nnon_diegetic_music: Low bowed cello with a restrained ticking pulse.",
+          "note": "双主角同场开场：行动主体进门，正反打核对两套时间。"
+        },
+        {
+          "id": "E02-02",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 3,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the damaged orange emergency radio speaker under a cyan waveform display as an old teenage recording breaks through salt noise, the broken grille bar and fire scar sharply visible."
+            },
+            {
+              "beats": [
+                7,
+                8
+              ],
+              "seconds": 4,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot with both people visible: the male diver bends close to the orange radio speaker while the female archivist listens at the console, a repeating waveform pulse between their profiles in the overcast restoration room."
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the male diver recognizing the sound, eyes fixed on the radio and jaw tightening, cyan monitor light reflected in his weathered face."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the scorched radio speaker carries a distant teenage time report through salt noise. The camera uses a static shot. A distant teenage male recording speaks in an off-screen voiceover with a bright strained voice (S3), while all visible lips remain completely closed: <d>[Chinese] 七月十九，一点四十七。</d>\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: the male diver bends toward the speaker as the regular alarm pulse cuts through the tide recording; the camera pushes in between both listeners. The camera uses a push in.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3>: recognition settles across the male diver's face as he identifies the warehouse moisture alarm. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 这是货仓防潮报警器。</d>\n\noverall_soundscape: A brittle teenage recording emerges through tide hiss; a regular moisture alarm pulse repeats while clothing brushes the steel bench.\n\nnon_diegetic_music: Sparse muted piano over a low electronic drone.",
+          "note": "录音与现实双层人物：少年只以画外录音存在，画内保持两人。"
+        },
+        {
+          "id": "E02-03",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the female archivist turning sharply toward the diver, brows lifted in a precise challenge, neutral overcast daylight and faint cyan fill across her face."
+            },
+            {
+              "beats": [
+                11,
+                12
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the male diver slowly shaking his head, one hand braced on the bench, certainty and old dread visible in his deep-set eyes."
+            },
+            {
+              "beats": [
+                13,
+                14
+              ],
+              "seconds": 4,
+              "size": "extreme-close",
+              "camera": "Pan Right",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, extreme close-up of the female archivist's hand drawing two separated time marks on one blank evidence sheet, her tense face reflected faintly in the monitor edge, no readable writing."
+            },
+            {
+              "beats": [
+                15,
+                15
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the male diver avoiding the woman's gaze after stating that one record must be false, soft window light exposing tension in his jaw."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the female archivist turns sharply and asks whether the sound came from the boat. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 不是船上的？</d>\n[Shot 2] At 00:02.000, the camera cuts to <Picture 2>: the male diver shakes his head and explains that the alarm has repeated every thirty seconds since childhood. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 每三十秒一次，我从小听到大。</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: her pencil places two incompatible time marks on the same evidence sheet as she realizes her brother was still ashore. The camera uses a pan right. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 哥哥那时还在岸上。</d>\n[Shot 4] At 00:10.000, the camera cuts to <Picture 4>: the male diver states that at least one record is false and then avoids her gaze. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 至少有一份记录是假的。</d>\n\noverall_soundscape: The alarm pulse repeats every thirty seconds, a pencil scratches paper, and the room falls quiet between short questions.\n\nnon_diegetic_music: A restrained cello ostinato with isolated piano notes.",
+          "note": "用正反打和纸面插入镜头把时间矛盾变成可见证据。"
+        },
+        {
+          "id": "E02-04",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                16,
+                17
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up two-person composition across the bench as the female archivist notices the diver's evasive look and leans forward to question him, his shoulders turning away while her gaze hardens."
+            },
+            {
+              "beats": [
+                18,
+                18
+              ],
+              "seconds": 2.5,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, extreme close-up of the male diver's rough hand tightening around the back of a worn steel chair, pale knuckles and a dive-watch pressure mark visible."
+            },
+            {
+              "beats": [
+                19,
+                19
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the male diver finally meeting her eyes as he confesses finding half a burned boat plate after the accident, guilt held in a rigid face."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the female archivist catches his evasive glance and presses him for what else he knows. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 你还知道什么？</d>\n[Shot 2] At 00:03.500, the camera cuts to <Picture 2>: his hand tightens around the chair back before he can answer. The camera uses a static shot.\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: the male diver finally looks up and admits that he found half a burned boat plate the next day. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 事故第二天，我捡到过半块船牌。</d>\n\noverall_soundscape: A chair creaks under tightening fingers, distant traffic fades behind wired glass, and the radio hiss continues at low level.\n\nnon_diegetic_music: Low sustained strings with a single muted heartbeat-like drum.",
+          "note": "回避升级为逼问，椅背手部特写承接负疚。"
+        },
+        {
+          "id": "E02-05",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                20,
+                20
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the female archivist reacting instantly, eyes locked on the diver as she demands the boat plate's location."
+            },
+            {
+              "beats": [
+                21,
+                22
+              ],
+              "seconds": 3.5,
+              "size": "close",
+              "camera": "Pull Out",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up widening from the male diver's hand releasing the chair to his ashamed face as he admits throwing the plate back into the river."
+            },
+            {
+              "beats": [
+                23,
+                24
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Pan Left",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, medium shot with both investigators visible as the female archivist asks who ordered it and the male diver turns toward an old father photograph beside the monitor, the photograph soft and unreadable."
+            },
+            {
+              "beats": [
+                25,
+                25
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the male diver looking at the old photograph as he gives a painfully quiet answer, cold window light flattening the room behind him."
+            },
+            {
+              "beats": [
+                26,
+                27
+              ],
+              "seconds": 3.5,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, medium shot of both investigators: the female archivist snatches the blackened brass boat key from the bench and strides toward the door while the male diver pivots to follow, decisive forward motion in overcast light."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the female archivist demands to know where the boat plate is. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 船牌呢？</d>\n[Shot 2] At 00:02.000, the camera cuts to <Picture 2>: his hand releases the chair and the camera pulls out as he admits throwing the plate back into the water. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 被我扔回水里了。</d>\n[Shot 3] At 00:05.500, the camera cuts to <Picture 3>: she asks who ordered him to discard it, and he turns toward the old father photograph. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 谁让你扔的？</d>\n[Shot 4] At 00:08.500, the camera cuts to <Picture 4>: the male diver gives the father's familiar title in a voice barely above the room tone. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 许叔。</d>\n[Shot 5] At 00:10.500, the camera cuts to <Picture 5>: the female archivist grabs the blackened brass key and strides for the door, ordering an immediate trip to the warehouse as the diver follows. The camera uses a tracking shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 去货仓。现在。</d>\n\noverall_soundscape: The chair releases with a metal tick, paper shifts under a hand, and the brass key scrapes sharply across the bench.\n\nnon_diegetic_music: A tense cello line rises, then cuts to a held low note.",
+          "note": "双人对峙落到父亲旧照和钥匙，作为转场钩子。"
+        },
+        {
+          "id": "E02-06",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 3,
+              "size": "wide",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, wide shot outside an abandoned riverside warehouse as the female archivist strides toward the steel door with the brass key ready and the male diver follows one pace behind under dim overcast afternoon light."
+            },
+            {
+              "beats": [
+                2,
+                3
+              ],
+              "seconds": 3.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the blackened brass key entering a clean new padlock and refusing to turn, its off-center triangular notch and salt-white patches visible against cold steel."
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, close-up of the female archivist studying the mismatched new lock and immediately recognizing that it was replaced later."
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Pan Right",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, medium shot of the male diver testing a partly open side door and pushing it inward, deep warehouse darkness appearing beyond his shoulder."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, both investigators cross the wet yard toward the warehouse steel door, the camera tracking their urgent approach. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: the brass key enters the new padlock but stops against the unfamiliar mechanism. The camera uses a push in.\n[Shot 3] At 00:06.500, the camera cuts to <Picture 3>: the female archivist identifies the lock as a later replacement. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 锁是后来换的。</d>\n[Shot 4] At 00:08.500, the camera cuts to <Picture 4>: the male diver finds the partly open side door and pushes it inward. The camera uses a pan right.\n\noverall_soundscape: Boots cross wet concrete, brass scrapes inside a new padlock, and a heavy side door groans open.\n\nnon_diegetic_music: Low tremolo strings with sparse metallic percussion.",
+          "note": "新场景先运动主体、门锁特写、再由第二人物找到侧门。"
+        },
+        {
+          "id": "E02-07",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 3,
+              "size": "wide",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01",
+                "P02"
+              ],
+              "frame": "Cinematic film still, wide shot inside the dim warehouse as the two investigators enter together, the woman holding the brass key and damaged radio while the diver scans the concrete walls, cold doorway light behind them."
+            },
+            {
+              "beats": [
+                7,
+                8
+              ],
+              "seconds": 4,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, extreme close-up linking a weak amber moisture-alarm lamp on the rear wall with the scorched orange radio in foreground as their pulses overlap in perfect rhythm."
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the male diver listening between the wall alarm and the orange radio, his recognition now certain in the dim amber-and-cold warehouse light."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the pair enter the dim warehouse together and spread their attention across the unfamiliar interior. The camera uses a tracking shot.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: the rear alarm lamp blinks in exact rhythm with the damaged radio playback as the camera pushes toward the matching pulses. The camera uses a push in.\n[Shot 3] At 00:07.000, the camera cuts to <Picture 3>: the male diver confirms that this is the sound preserved in the recording. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 就是这个声音。</d>\n\noverall_soundscape: The side door echoes shut, a moisture alarm beeps through the cavernous warehouse, and the radio playback overlaps it exactly.\n\nnon_diegetic_music: A subdued low-frequency drone with a faint ticking motif.",
+          "note": "双人进场与声源确认，强调两人共享但反应不同。"
+        },
+        {
+          "id": "E02-08",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, medium shot following the female archivist toward an embedded fire cabinet while the male diver remains behind near the blinking alarm, two-person depth composition in the dim warehouse."
+            },
+            {
+              "beats": [
+                11,
+                12
+              ],
+              "seconds": 3.5,
+              "size": "extreme-close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, extreme close-up of the blackened brass key fitting the old fire-cabinet lock and turning cleanly as the metal door springs open, salt-white patches sharp under amber light."
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P02"
+              ],
+              "frame": "Cinematic film still, close-up of the female archivist staring into the newly opened cabinet, surprise displacing certainty as she realizes what the key opens."
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Pan Right",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, medium shot with both investigators visible as the male diver reaches into the open fire cabinet and lifts out a mold-stained duty log while the female archivist holds the door and watches."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the female archivist crosses toward the embedded fire cabinet while the diver watches the alarm behind her. The camera uses a tracking shot.\n[Shot 2] At 00:02.500, the camera cuts to <Picture 2>: the same brass key fits the old cabinet lock, turns, and releases the spring-loaded door. The camera uses a push in.\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: the female archivist realizes that the inherited key was meant for this cabinet. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 它开的是这里。</d>\n[Shot 4] At 00:08.000, the camera cuts to <Picture 4>: the male diver removes a mold-stained duty log while the female archivist holds the cabinet open. The camera uses a pan right.\n\noverall_soundscape: Footsteps approach the wall cabinet, brass enters an old lock, the latch snaps, and the cabinet door springs outward.\n\nnon_diegetic_music: Muted piano notes brighten slightly over sustained low strings.",
+          "note": "钥匙真正用途揭晓，动作在双人配合中完成。"
+        },
+        {
+          "id": "E02-09",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                16
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up two-person composition over a mold-stained duty log as the female archivist turns to a dated page and reads one time while the male diver leans in from the opposite side, all writing blurred and unreadable."
+            },
+            {
+              "beats": [
+                17,
+                17
+              ],
+              "seconds": 4.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, close-up of the male diver comparing the damp log with the orange radio waveform, one hand indicating the time conflict without showing readable text."
+            },
+            {
+              "beats": [
+                18,
+                19
+              ],
+              "seconds": 4,
+              "size": "medium",
+              "camera": "Pan Left",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "Cinematic film still, medium shot with both investigators visible as the female archivist sets the moldy log beside the scorched orange radio and turns on the diver, anger rising while he absorbs the implication across the evidence table."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the female archivist opens the log to the accident date and reads the official duty time while the diver follows the page. The camera uses a push in. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 一点二十分，许德海当班。</d>\n[Shot 2] At 00:04.000, the camera cuts to <Picture 2>: the male diver compares the log with the radio recording and states that the alarm was still sounding twenty-seven minutes later. The camera uses a static shot. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 可一点四十七，报警器还在录音里。</d>\n[Shot 3] At 00:08.500, the camera cuts to <Picture 3>: she places the log beside the radio and voices the impossible split between her brother ashore and her father written aboard. The camera uses a pan left. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 哥哥在这儿，爸却被写在船上。</d>\n\noverall_soundscape: Damp pages separate with soft tearing sounds, the alarm continues at fixed intervals, and the radio hiss fills the spaces between voices.\n\nnon_diegetic_music: A tightening cello ostinato with restrained low piano.",
+          "note": "日志、电台与两人证词在桌面三角构图中完成对账。"
+        },
+        {
+          "id": "E02-10",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                20,
+                21
+              ],
+              "seconds": 4,
+              "size": "medium",
+              "camera": "Pull Out",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, medium shot in a two-level composition with the male diver crouched beside the open cabinet and the female archivist standing over the evidence table as he reinterprets the father's warning."
+            },
+            {
+              "beats": [
+                22,
+                22
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, close-up of the female archivist looking down at the diver and demanding what her father actually feared, cool light hardening her expression."
+            },
+            {
+              "beats": [
+                23,
+                24
+              ],
+              "seconds": 4.5,
+              "size": "wide",
+              "camera": "Push In",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [],
+              "frame": "Cinematic film still, wide shot of both investigators turning toward the unlit depth of the warehouse, the open fire cabinet and evidence table behind them, a narrow corridor of darkness becoming the final focal point."
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action, cool grey-green and oxidized orange palette. Following <Picture 1>, the crouched diver admits that the father was not afraid of the boat being found, while the camera pulls out to hold both investigators. The camera uses a pull out. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 许叔那天不是怕我找到船。</d>\n[Shot 2] At 00:04.000, the camera cuts to <Picture 2>: the female archivist demands to know what the father feared. The camera uses a static shot. The slim female audio archivist speaks in a clear, cool, restrained voice (S1): <d>[Chinese] 那他怕什么？</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: the male diver looks into the warehouse depth and recalls that the father stared there while ordering everyone to stop searching; the camera pushes into the darkness between them. The camera uses a push in. The broad-shouldered male diver speaks in a rough low baritone (S2): <d>[Chinese] 他当时盯着这里，只说谁都不要再找。</d>\n\noverall_soundscape: The alarm pulse continues, fabric shifts as the diver crouches, and a distant metal drip echoes from the dark rear of the warehouse.\n\nnon_diegetic_music: A single low cello note expands into unresolved dark ambience.",
+          "note": "以双人高低位对话收束，视线引向货仓深处留下悬念。"
+        }
+      ]
+    }
+  ]
+}
