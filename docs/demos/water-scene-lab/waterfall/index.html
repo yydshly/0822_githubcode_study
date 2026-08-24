@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Waterfall Vertical Slice：用连续水幕表达宏观瀑布，并用 Particles4All 原始 PBF 与 Shape Matching 验证近场撞击。" />
+    <meta name="theme-color" content="#07151b" />
+    <link rel="icon" href="data:," />
+    <title>Waterfall MVP｜Water Scene Lab</title>
+    <link rel="stylesheet" href="../ocean/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.addEventListener('error', function (event) {
+        if (!document.body || document.body.dataset.renderState === 'ready') return;
+        document.body.dataset.renderState = 'failed';
+        var reason = document.querySelector('#fallback-reason');
+        if (reason) reason.textContent = event.message || '实时模块加载失败。';
+      });
+    </script>
+  </head>
+  <body data-render-state="loading">
+    <a class="skip-link" href="#experiment">跳到实验控制</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="返回 Water Scene Lab 路线台">
+        <span class="brand-mark" aria-hidden="true">WS</span>
+        <span class="brand-copy">
+          <small>WATER SCENE PLATFORM / VERTICAL 01</small>
+          <strong>Waterfall Slice</strong>
+        </span>
+      </a>
+      <div class="top-status">
+        <span class="runtime-dot" aria-hidden="true"></span>
+        <span id="runtime-label">正在建立 WebGL 瀑布</span>
+        <span class="truth-badge">宏观表达 + 原库近场物理</span>
+      </div>
+    </header>
+
+    <main class="lab-layout" id="experiment">
+      <section class="stage-card" aria-labelledby="scene-title">
+        <div class="waterfall-intro-strip">
+          <div>
+            <p class="kicker">CONTROLLED DROP · BREAKUP LAYER</p>
+            <h1 id="scene-title">同一面水幕，<em>粒子层值不值得？</em></h1>
+          </div>
+          <p>崖壁、落差、宽度、主水幕、落水池、相机与时间轴全部固定；唯一实验因子是 <code>breakupMode</code>。</p>
+        </div>
+
+        <div class="scene-viewport" id="scene-viewport">
+          <canvas id="waterfall-canvas" aria-label="连续主水幕与增加破碎粒子层后的同步三维瀑布对比">
+            当前浏览器不能显示实时三维画布，请查看页面中的实验指标与真实性说明。
+          </canvas>
+
+          <div class="loading-state" id="loading-state" role="status">
+            <span class="loading-ring" aria-hidden="true"></span>
+            <p>正在建立主水幕、边缘破碎与撞击区…</p>
+          </div>
+
+          <div class="fallback-state" id="fallback-state" role="alert">
+            <p class="kicker">REALTIME FALLBACK</p>
+            <h2>当前设备没有进入实时瀑布。</h2>
+            <p id="fallback-reason">WebGL2 初始化或着色器编译失败。</p>
+            <p>实验协议、固定指标和真实性边界仍保留；这里不会用预录画面冒充本设备的实时结果。</p>
+            <button type="button" id="retry-renderer">重试实时场景</button>
+          </div>
+
+          <div class="stage-topline" aria-hidden="true">
+            <span>DROP · FIXED</span>
+            <span>FIXED STEP · 60 HZ</span>
+            <span id="quality-label">QUALITY · —</span>
+          </div>
+
+          <div class="variant-label variant-a">
+            <span>A</span>
+            <div><strong>连续主水幕</strong><small>CURTAIN ONLY</small></div>
+          </div>
+          <div class="variant-label variant-b">
+            <span>B</span>
+            <div><strong>增加破碎粒子</strong><small>HYBRID BREAKUP</small></div>
+          </div>
+          <div class="split-rule" aria-hidden="true"></div>
+
+          <div class="mobile-variant-tabs" aria-label="手机画布瀑布层级选择">
+            <button type="button" class="active" data-mobile-variant="curtain">A 主水幕</button>
+            <button type="button" data-mobile-variant="breakup">B 加粒子</button>
+          </div>
+
+          <div class="drop-orientation" aria-hidden="true">
+            <span>LIP</span><i></i><span>IMPACT</span>
+          </div>
+
+          <div class="live-hud" aria-label="实时读数">
+            <div><span>SIM TIME</span><strong id="hud-time">0.00 s</strong></div>
+            <div><span>STEP</span><strong id="hud-step">0 / 1200</strong></div>
+            <div><span>FRAME P50</span><strong id="hud-frame">—</strong></div>
+            <div><span>DRAW</span><strong id="hud-draw">—</strong></div>
+          </div>
+        </div>
+
+        <div class="contract-strip">
+          <div><span>固定</span><strong>崖壁 · 落差 · 宽度 · 主水幕 · 水池 · 相机 · 时间轴</strong></div>
+          <div><span>唯一因子</span><strong>breakupMode</strong></div>
+          <div><span>契约哈希</span><code id="contract-hash">—</code></div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="实验控制与结果">
+        <div class="panel-heading">
+          <div>
+            <p class="kicker">PROOF MODE</p>
+            <h2>破碎粒子增益实验</h2>
+          </div>
+          <span class="phase-badge" id="phase-badge">准备</span>
+        </div>
+
+        <p class="panel-intro">同步运行 A 与 B 1,200 个固定步。两侧主水幕完全相同，只判断破碎粒子是否让边缘、撞击点和尺度更可读。</p>
+
+        <div class="run-progress" aria-label="实验进度"><span id="run-progress-fill"></span></div>
+        <div class="run-progress-labels"><span>A / B 同步起点</span><span id="progress-label">0%</span></div>
+
+        <div class="sea-cards waterfall-cards">
+          <article>
+            <div><span class="sea-index">A</span><strong>主水幕</strong></div>
+            <dl>
+              <div><dt>规则</dt><dd>curtain only</dd></div>
+              <div><dt>补充代理</dt><dd id="curtain-count">0</dd></div>
+            </dl>
+          </article>
+          <article>
+            <div><span class="sea-index sea-index-b">B</span><strong>粒子破碎</strong></div>
+            <dl>
+              <div><dt>规则</dt><dd>hybrid breakup</dd></div>
+              <div><dt>补充代理</dt><dd id="breakup-count">—</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="primary-controls">
+          <button type="button" class="primary-button" id="run-ab"><span id="run-button-label">运行固定 A / B</span><span aria-hidden="true">→</span></button>
+          <button type="button" class="icon-button" id="pause-run" aria-label="暂停实验" title="暂停实验">Ⅱ</button>
+          <button type="button" class="icon-button" id="reset-run" aria-label="重置实验" title="重置实验">↺</button>
+        </div>
+
+        <div class="secondary-controls waterfall-controls">
+          <button type="button" id="camera-toggle">镜头：全落差</button>
+          <button type="button" id="foam-toggle" aria-pressed="false">白沫诊断：关</button>
+          <button type="button" id="mist-toggle" aria-pressed="false">雾诊断：关</button>
+          <button type="button" id="motion-toggle">运动：自动</button>
+        </div>
+
+        <section class="reading-section" aria-labelledby="reading-title">
+          <div class="subheading"><h3 id="reading-title">当前混合层</h3><span id="reading-variant">A / B</span></div>
+          <div class="reading-grid">
+            <div><span>A 活跃粒子</span><strong id="live-a-particles">0</strong></div>
+            <div><span>B 活跃粒子</span><strong id="live-b-particles">—</strong></div>
+            <div><span>A 外扩宽度</span><strong id="live-a-spread">0.00</strong></div>
+            <div><span>B 外扩宽度</span><strong id="live-b-spread">—</strong></div>
+          </div>
+        </section>
+
+        <section class="result-section" aria-labelledby="result-title">
+          <div class="subheading"><h3 id="result-title">固定终点结果</h3><span id="result-state">等待运行</span></div>
+          <div class="result-table" role="table" aria-label="Waterfall A B 实验结果">
+            <div class="result-row result-head" role="row">
+              <span role="columnheader">指标</span><span role="columnheader">A</span><span role="columnheader">B</span><span role="columnheader">判断</span>
+            </div>
+            <div id="result-rows"></div>
+          </div>
+          <div class="bounded-conclusion" id="bounded-conclusion" aria-live="polite">
+            运行完成后，只判断破碎粒子层在本固定瀑布构图中的可见增益；性能读数只代表整页混合演示总成本。
+          </div>
+        </section>
+
+        <details class="method-details">
+          <summary>方法、共享输入与真实性边界</summary>
+          <div>
+            <p><strong>主水幕：</strong>A/B 共用同一解析曲面、落差、宽度、材质、相机与时间。</p>
+            <p><strong>粒子：</strong>B 增加固定种子的边缘下落与撞击飞沫；它们是视觉采样，不携带守恒水量。</p>
+            <p><strong>白沫与雾：</strong>只供独立观察，固定证据运行时强制关闭，不进入粒子层结论。</p>
+            <p><strong>没有计算：</strong>真实流量、压力、空气卷吸、岩壁碰撞、落水池水动力或质量守恒。</p>
+          </div>
+        </details>
+      </aside>
+    </main>
+
+    <section class="physics-bridge" id="physics-bridge" aria-labelledby="physics-title">
+      <header class="physics-bridge-header">
+        <div>
+          <p class="kicker">STAGE 02 · PARTICLES4ALL NEAR-FIELD LENS</p>
+          <h2 id="physics-title">原生高密度刚体，验证瀑布撞击而非重力下落</h2>
+        </div>
+        <p>上方水幕负责宏观轮廓；这里使用 Particles4All 原生高密度 box 和 Shape Matching。Scene Runner 分别运行无注入基线与瀑布脉冲，只把两者的向下位移差计为撞击证据。</p>
+      </header>
+
+      <div class="physics-map" aria-label="宏观到近场的参数映射">
+        <div><span>WORLD DROP</span><strong id="physics-drop">16.80 m</strong><small>宏观瀑布落差</small></div>
+        <div><span>IDEAL IMPACT</span><strong id="physics-impact-speed">—</strong><small>√(2gH)，只作输入映射</small></div>
+        <div><span>SOLVER INPUT</span><strong id="physics-solver-speed">—</strong><small>受控 solver-unit 速度</small></div>
+        <div><span>NATIVE BODY</span><strong id="physics-body-profile">—</strong><small>原库 shape / density</small></div>
+      </div>
+
+      <div class="physics-bridge-layout">
+        <div class="physics-viewport">
+          <iframe id="physics-frame" title="Particles4All 瀑布落点近场物理镜头" allow="fullscreen"></iframe>
+          <div class="physics-placeholder" id="physics-placeholder">
+            <span>WEBGPU PHYSICS LENS</span>
+            <strong>尚未加载近场求解器</strong>
+            <p>点击右侧运行后才创建 WebGPU 设备，避免宏观水幕和局部求解器长期争用 GPU。</p>
+          </div>
+        </div>
+
+        <aside class="physics-console" aria-label="Particles4All 近场物理控制">
+          <div class="physics-console-heading">
+            <div><span>运行状态</span><strong id="physics-status">等待加载</strong></div>
+            <code id="physics-contract">—</code>
+          </div>
+          <button type="button" class="primary-button" id="physics-run">加载并运行近场映射 →</button>
+          <button type="button" id="physics-unload" disabled>卸载近场求解器</button>
+
+          <div class="physics-results" aria-live="polite">
+            <div><span>实际注入</span><strong id="physics-injected">—</strong></div>
+            <div><span>Solver ticks</span><strong id="physics-ticks">—</strong></div>
+            <div><span>相对基线撞击</span><strong id="physics-body-motion">—</strong></div>
+            <div><span>非有限位置</span><strong id="physics-nonfinite">—</strong></div>
+          </div>
+
+          <p id="physics-conclusion" class="physics-conclusion">这里验证瀑布脉冲是否让原生高密度 box 比无注入基线产生更多向下响应；宏观水幕仍不是 PBF。</p>
+          <a id="physics-export" download="waterfall-impact-near-field.scene.json">导出可复用场景契约 JSON ↓</a>
+          <a id="physics-open" href="../../particles4all/engine/" target="_blank" rel="noreferrer">全屏检查 Particles4All 原始运行时 ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="explain-grid" aria-label="原型意义与决策门">
+      <article><span>01 · MACRO</span><h2>宏观目标是什么？</h2><p>建立可复用的桌面水体场景基座：连续水幕负责世界尺度，Particles4All 只在撞击、刚体和自由液面真正需要时进入。</p></article>
+      <article><span>02 · MAPPING</span><h2>能力如何关联场景？</h2><p>落差映射入水速度，固定流体包进入原库 appendFluid，PBF 与 Shape Matching 产生局部结果；表现层只读取状态。</p></article>
+      <article><span>03 · NEXT</span><h2>下一步横向扩展什么？</h2><p>瀑布已输出可序列化近场契约；下一步只替换河流的流向、发射器和验收目标，验证同一执行器能否处理河流障碍与漂浮物。</p></article>
+    </section>
+
+    <footer>
+      <p>Waterfall Vertical Slice · Water Scene Platform · 宏观表达与 Particles4All 近场物理分层。</p>
+      <a href="../">返回技术路线台 ↑</a>
+    </footer>
+
+    <noscript><div class="noscript-state">此页面需要 JavaScript 才能运行实时 Waterfall MVP；实验方法与真实性边界仍可在上方文字中阅读。</div></noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

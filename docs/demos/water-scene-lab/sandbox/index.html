@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive Water Sandbox：用三个固定使用场景组织 Particles4All 原生液体—刚体能力。" />
+    <meta name="theme-color" content="#06151d" />
+    <link rel="icon" href="data:," />
+    <title>Interactive Water Sandbox｜Water Scene Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-preset="impact" data-ready="false">
+    <a class="skip-link" href="#workspace">跳到沙盘操作台</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="返回 Water Scene Lab 路线台">
+        <span class="brand-mark">WS</span>
+        <span><small>WATER SCENE LAB / STAGE 10</small><strong>Interactive Water Sandbox</strong></span>
+      </a>
+      <div class="top-status">
+        <span class="status-dot"></span>
+        <strong id="top-runtime-state">HOST SHELL READY</strong>
+        <span id="top-solver-state">Solver · 未加载</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">ONE HOST · THREE FIXED SCENARIOS · PARTICLES4ALL</p>
+          <h1 id="page-title">把原库能力放回<br /><em>真实使用场景。</em></h1>
+        </div>
+        <div class="intro-copy">
+          <p>这里不是同时运行三个水效果，而是通过同一个宿主依次检查跌水冲击、河道漂流与水面浮环。每次只加载一个原库 Runtime，并直接执行已有 Scene Contract；切换预设会先卸载当前求解器。</p>
+          <div class="intro-facts">
+            <span><strong>03</strong>固定预设</span>
+            <span><strong>01</strong>最大运行槽</span>
+            <span><strong>按需</strong>当前 solver</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" id="workspace" aria-label="水体交互沙盘">
+        <aside class="preset-rail">
+          <header><span>SCENARIO PRESETS</span><strong>选择观察目标</strong></header>
+          <div class="preset-tabs" id="preset-tabs" role="tablist" aria-label="固定使用场景"></div>
+          <div class="rail-boundary">
+            <span>范围约束</span>
+            <p>固定预设，不支持自由编辑、任意模型导入或工程物理参数。</p>
+          </div>
+        </aside>
+
+        <section class="stage" id="preset-panel" role="tabpanel" aria-live="polite">
+          <header class="stage-header">
+            <div><span id="preset-index">01</span><p><small id="preset-english">SPILLWAY IMPACT</small><strong id="preset-title">跌水冲击区</strong></p></div>
+            <div class="runtime-controls">
+              <div class="runtime-pill"><i></i><span id="runtime-status-text">运行槽空闲</span></div>
+              <button class="runtime-action tertiary" id="runtime-clear" type="button" disabled>清除结果</button>
+              <button class="runtime-action secondary" id="runtime-unload" type="button" disabled>卸载归零</button>
+              <button class="runtime-action primary" id="runtime-run" type="button">加载并运行</button>
+            </div>
+          </header>
+
+          <div class="physics-viewport" id="physics-viewport">
+            <iframe id="runtime-frame" title="Particles4All 单一物理运行槽"></iframe>
+            <div class="viewport-labels">
+              <span id="viewport-mode">HOST PREVIEW</span><span id="viewport-capability">NO WEBGPU DEVICE CREATED</span>
+            </div>
+            <div class="water-field" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="input-vector" aria-hidden="true"><span></span><small>LOCAL INPUT</small></div>
+            <div class="hero-body" id="body-object" data-shape="box" aria-hidden="true"><i></i></div>
+            <div class="body-caption"><span>HERO OBJECT</span><strong id="body-label">高密度冲击块</strong></div>
+            <div class="idle-message">
+              <span id="idle-step">STAGE 10 · WP2</span>
+              <strong id="idle-title">物理运行槽尚未加载</strong>
+              <p id="idle-copy">点击“运行本场景”后按需加载唯一 Particles4All Runtime；页面不会用宿主预览冒充求解结果。</p>
+            </div>
+          </div>
+
+          <div class="scenario-caption">
+            <p id="scenario-value">观察落水对高密度局部对象产生的额外向下撞击响应。</p>
+            <small id="observation">重点不是对象会下落，而是相对基线的额外响应。</small>
+          </div>
+        </section>
+
+        <aside class="evidence-console">
+          <header><div><span>SELECTED CONTRACT</span><strong id="contract-hash">—</strong></div><span class="idle-badge" id="runtime-badge">IDLE</span></header>
+
+          <section class="console-section run-guide">
+            <div class="section-title"><h2>证据生命周期</h2><span>GUIDED RUN</span></div>
+            <ol>
+              <li data-guide-step="0" data-status="active"><i>1</i><span><strong>确认输入</strong><small>固定契约与原生对象</small></span></li>
+              <li data-guide-step="1" data-status="pending"><i>2</i><span><strong>加载 Runtime</strong><small>最多一个 WebGPU solver</small></span></li>
+              <li data-guide-step="2" data-status="pending"><i>3</i><span><strong>执行契约</strong><small>基线、注入、确定性 tick</small></span></li>
+              <li data-guide-step="3" data-status="pending"><i>4</i><span><strong>判断证据</strong><small>实际指标与逐项 Gate</small></span></li>
+            </ol>
+          </section>
+
+          <section class="console-section preflight">
+            <div class="section-title"><h2>运行前摘要</h2><span>BEFORE RUN</span></div>
+            <dl>
+              <div><dt>CONTRACT</dt><dd id="preflight-contract">—</dd></div>
+              <div><dt>NATIVE BODY</dt><dd id="preflight-body">—</dd></div>
+              <div><dt>INJECTED PARTICLES</dt><dd id="preflight-particles">—</dd></div>
+              <div><dt>DETERMINISTIC TICKS</dt><dd id="preflight-ticks">—</dd></div>
+            </dl>
+          </section>
+
+          <section class="console-section live-evidence" aria-live="polite">
+            <div class="section-title"><h2>本次运行结果</h2><span id="live-state">WAITING</span></div>
+            <dl class="metric-grid">
+              <div><dt>粒子注入</dt><dd id="live-injected">—</dd></div>
+              <div><dt>确定性 TICK</dt><dd id="live-ticks">—</dd></div>
+              <div><dt>主响应</dt><dd id="live-primary">—</dd></div>
+              <div><dt>刚体旋转</dt><dd id="live-rotation">—</dd></div>
+              <div><dt>非有限位置</dt><dd id="live-nonfinite">—</dd></div>
+              <div><dt>原生 BODY</dt><dd id="live-profile">—</dd></div>
+            </dl>
+            <ul class="acceptance-checks" id="acceptance-checks" aria-label="本次契约逐项验收"></ul>
+            <p class="live-conclusion" id="live-conclusion">尚未执行本次场景。点击“运行本场景”后，这里只显示当前 Particles4All Runtime 返回的证据。</p>
+          </section>
+
+          <section class="console-section">
+            <h2>原生对象</h2>
+            <dl class="profile-grid">
+              <div><dt>SHAPE</dt><dd id="body-shape">box</dd></div>
+              <div><dt>DENSITY</dt><dd id="body-density">2.20</dd></div>
+              <div class="wide"><dt>SCENE ROLE</dt><dd id="body-role">dense-impact-block</dd></div>
+            </dl>
+          </section>
+
+          <section class="console-section">
+            <h2>映射输入</h2>
+            <dl class="mapping-list">
+              <div><dt>WORLD DRIVER</dt><dd id="world-driver">—</dd></div>
+              <div><dt>SOLVER FRAME</dt><dd id="solver-frame">—</dd></div>
+              <div><dt>LOCAL VELOCITY</dt><dd id="solver-velocity">—</dd></div>
+            </dl>
+          </section>
+
+          <section class="console-section historic-evidence">
+            <div class="section-title"><h2>历史运行证据</h2><span>NOT THIS RUN</span></div>
+            <dl class="metric-grid">
+              <div><dt id="metric-label">额外向下响应</dt><dd id="metric-value">0.01538 u</dd></div>
+              <div><dt>旋转</dt><dd id="metric-rotation">未设旋转 Gate</dd></div>
+              <div><dt>SCENE GATE</dt><dd id="metric-gate">19 / 19</dd></div>
+              <div><dt>覆盖</dt><dd id="metric-configurations">Chrome / Edge</dd></div>
+            </dl>
+          </section>
+
+          <p class="truth-boundary"><strong>真实性边界</strong>只证明内部 solver 单位下的局部 PBF 与 Shape Matching 响应；不代表现实浮力、水工安全、结构载荷或 CFD。</p>
+          <a class="source-link" id="source-link" href="../waterfall/">打开 Waterfall 原始场景 ↗</a>
+        </aside>
+      </section>
+
+      <section class="lifecycle" aria-label="Sandbox 生命周期">
+        <div><span>01</span><strong>选择固定预设</strong><small>场景目标先于参数</small></div>
+        <i>→</i>
+        <div><span>02</span><strong>按需加载一个 Runtime</strong><small>WP2 已接入</small></div>
+        <i>→</i>
+        <div><span>03</span><strong>执行已有契约</strong><small>直接调用原库</small></div>
+        <i>→</i>
+        <div><span>04</span><strong>证据、重跑与卸载</strong><small>WP3 引导中</small></div>
+      </section>
+    </main>
+
+    <footer><span>Interactive Water Sandbox · Guided Lifecycle v0.3</span><a href="../">返回 Water Scene Lab ↑</a></footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

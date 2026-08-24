@@ -1,0 +1,775 @@
+{
+  "protocol": {
+    "ticks": 30,
+    "packetCounts": [
+      8,
+      6,
+      8
+    ],
+    "queries": {
+      "fluidOnly": "preset=small&view=ssfr&particles=28000&bodies=0&ssfrscale=0.5",
+      "withBody": "preset=small&view=ssfr&particles=28000&body=sphere:0.5:0.76&bodysize=0.15&ssfrscale=0.5"
+    }
+  },
+  "runs": [
+    {
+      "label": "A-fluid-only",
+      "query": "preset=small&view=ssfr&particles=28000&bodies=0&ssfrscale=0.5",
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28000,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 28000,
+        "after": 28384,
+        "capacity": 56000,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28384,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28384,
+        "impactCount": 0,
+        "yP05": 0.0206314567476511,
+        "yP50": 0.14066271483898163,
+        "yP95": 0.32668009400367737,
+        "radialP95": 0.7714400047921118
+      },
+      "body": null,
+      "stats": {
+        "avgRho": 0.962110310826522,
+        "maxRho": 0.9990234375,
+        "maxSpeed": 2.7490234375,
+        "frames": 0,
+        "ke": 11.3974609375
+      }
+    },
+    {
+      "label": "B-with-body-1",
+      "query": "preset=small&view=ssfr&particles=28000&body=sphere:0.5:0.76&bodysize=0.15&ssfrscale=0.5",
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29791,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1791,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29791,
+        "after": 30175,
+        "capacity": 57791,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30175,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1791,
+        "bodyCount": 1,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28384,
+        "impactCount": 116,
+        "yP05": 0.02058173529803753,
+        "yP50": 0.14190387725830078,
+        "yP95": 0.32975515723228455,
+        "radialP95": 0.7717027307518469
+      },
+      "body": {
+        "id": 1,
+        "key": "body-1",
+        "initialCentre": [
+          0.75,
+          0.7599999904632568,
+          0.5
+        ],
+        "finalCentre": [
+          0.7261964678764343,
+          0.3446597754955292,
+          0.5000172853469849
+        ],
+        "finalRotation": [
+          0.9920758605003357,
+          0.12564045190811157,
+          -0.00009893947571981698,
+          -0.12564049661159515,
+          0.9920754432678223,
+          -0.0008891539182513952,
+          -0.000013558274076785892,
+          0.0008945389417931437,
+          0.9999996423721313
+        ],
+        "displacement": 0.4160217573754756,
+        "verticalDisplacement": -0.41534021496772766
+      },
+      "stats": {
+        "avgRho": 0.9647122902858326,
+        "maxRho": 1.4375,
+        "maxSpeed": 6.3271484375,
+        "frames": 0,
+        "ke": 17.1689453125
+      }
+    },
+    {
+      "label": "B-with-body-2",
+      "query": "preset=small&view=ssfr&particles=28000&body=sphere:0.5:0.76&bodysize=0.15&ssfrscale=0.5",
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29791,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1791,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29791,
+        "after": 30175,
+        "capacity": 57791,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30175,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1791,
+        "bodyCount": 1,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28384,
+        "impactCount": 116,
+        "yP05": 0.020553745329380035,
+        "yP50": 0.14215658605098724,
+        "yP95": 0.32994359731674194,
+        "radialP95": 0.7715105119564193
+      },
+      "body": {
+        "id": 1,
+        "key": "body-1",
+        "initialCentre": [
+          0.75,
+          0.7599999904632568,
+          0.5
+        ],
+        "finalCentre": [
+          0.7262278199195862,
+          0.3447197675704956,
+          0.5000283718109131
+        ],
+        "finalRotation": [
+          0.9921148419380188,
+          0.1253322958946228,
+          -0.00005644228804158047,
+          -0.1253322958946228,
+          0.9921145439147949,
+          -0.0007461162167601287,
+          -0.00003751524491235614,
+          0.0007473070290870965,
+          0.9999997615814209
+        ],
+        "displacement": 0.4159600712527547,
+        "verticalDisplacement": -0.41528022289276123
+      },
+      "stats": {
+        "avgRho": 0.9647122255592377,
+        "maxRho": 1.4375,
+        "maxSpeed": 6.3271484375,
+        "frames": 0,
+        "ke": 17.169921875
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "A-fluid-only.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      }
+    },
+    {
+      "name": "A-fluid-only.injection",
+      "passed": true,
+      "detail": {
+        "requested": 384,
+        "added": 384,
+        "before": 28000,
+        "after": 28384,
+        "capacity": 56000,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "A-fluid-only.fluidCount",
+      "passed": true,
+      "detail": 28384
+    },
+    {
+      "name": "A-fluid-only.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      }
+    },
+    {
+      "name": "A-fluid-only.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "A-fluid-only.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "B-with-body-1.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      }
+    },
+    {
+      "name": "B-with-body-1.injection",
+      "passed": true,
+      "detail": {
+        "requested": 384,
+        "added": 384,
+        "before": 29791,
+        "after": 30175,
+        "capacity": 57791,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "B-with-body-1.fluidCount",
+      "passed": true,
+      "detail": 28384
+    },
+    {
+      "name": "B-with-body-1.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      }
+    },
+    {
+      "name": "B-with-body-1.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "B-with-body-1.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "B-with-body-2.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "count": 384
+      }
+    },
+    {
+      "name": "B-with-body-2.injection",
+      "passed": true,
+      "detail": {
+        "requested": 384,
+        "added": 384,
+        "before": 29791,
+        "after": 30175,
+        "capacity": 57791,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "B-with-body-2.fluidCount",
+      "passed": true,
+      "detail": 28384
+    },
+    {
+      "name": "B-with-body-2.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997
+      }
+    },
+    {
+      "name": "B-with-body-2.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "B-with-body-2.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "singleVariable.fluidInitial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "singleVariable.packetConfig",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "singleVariable.bodyCount",
+      "passed": true,
+      "detail": {
+        "a": 0,
+        "b": 1
+      }
+    },
+    {
+      "name": "body.response",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "initialCentre": [
+          0.75,
+          0.7599999904632568,
+          0.5
+        ],
+        "finalCentre": [
+          0.7261964678764343,
+          0.3446597754955292,
+          0.5000172853469849
+        ],
+        "finalRotation": [
+          0.9920758605003357,
+          0.12564045190811157,
+          -0.00009893947571981698,
+          -0.12564049661159515,
+          0.9920754432678223,
+          -0.0008891539182513952,
+          -0.000013558274076785892,
+          0.0008945389417931437,
+          0.9999996423721313
+        ],
+        "displacement": 0.4160217573754756,
+        "verticalDisplacement": -0.41534021496772766
+      }
+    },
+    {
+      "name": "body.finite",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "initialCentre": [
+          0.75,
+          0.7599999904632568,
+          0.5
+        ],
+        "finalCentre": [
+          0.7261964678764343,
+          0.3446597754955292,
+          0.5000172853469849
+        ],
+        "finalRotation": [
+          0.9920758605003357,
+          0.12564045190811157,
+          -0.00009893947571981698,
+          -0.12564049661159515,
+          0.9920754432678223,
+          -0.0008891539182513952,
+          -0.000013558274076785892,
+          0.0008945389417931437,
+          0.9999996423721313
+        ],
+        "displacement": 0.4160217573754756,
+        "verticalDisplacement": -0.41534021496772766
+      }
+    },
+    {
+      "name": "water.explainableDifference",
+      "passed": true,
+      "detail": {
+        "impactCount": 116,
+        "yP95": 0.0030750632286071777,
+        "radialP95": 0.0002627259597350884
+      }
+    },
+    {
+      "name": "repeat.bodyCentre",
+      "passed": true,
+      "detail": {
+        "a": {
+          "id": 1,
+          "key": "body-1",
+          "initialCentre": [
+            0.75,
+            0.7599999904632568,
+            0.5
+          ],
+          "finalCentre": [
+            0.7261964678764343,
+            0.3446597754955292,
+            0.5000172853469849
+          ],
+          "finalRotation": [
+            0.9920758605003357,
+            0.12564045190811157,
+            -0.00009893947571981698,
+            -0.12564049661159515,
+            0.9920754432678223,
+            -0.0008891539182513952,
+            -0.000013558274076785892,
+            0.0008945389417931437,
+            0.9999996423721313
+          ],
+          "displacement": 0.4160217573754756,
+          "verticalDisplacement": -0.41534021496772766
+        },
+        "b": {
+          "id": 1,
+          "key": "body-1",
+          "initialCentre": [
+            0.75,
+            0.7599999904632568,
+            0.5
+          ],
+          "finalCentre": [
+            0.7262278199195862,
+            0.3447197675704956,
+            0.5000283718109131
+          ],
+          "finalRotation": [
+            0.9921148419380188,
+            0.1253322958946228,
+            -0.00005644228804158047,
+            -0.1253322958946228,
+            0.9921145439147949,
+            -0.0007461162167601287,
+            -0.00003751524491235614,
+            0.0007473070290870965,
+            0.9999997615814209
+          ],
+          "displacement": 0.4159600712527547,
+          "verticalDisplacement": -0.41528022289276123
+        }
+      }
+    },
+    {
+      "name": "repeat.water",
+      "passed": true,
+      "detail": {
+        "a": {
+          "count": 28384,
+          "impactCount": 116,
+          "yP05": 0.02058173529803753,
+          "yP50": 0.14190387725830078,
+          "yP95": 0.32975515723228455,
+          "radialP95": 0.7717027307518469
+        },
+        "b": {
+          "count": 28384,
+          "impactCount": 116,
+          "yP05": 0.020553745329380035,
+          "yP50": 0.14215658605098724,
+          "yP95": 0.32994359731674194,
+          "radialP95": 0.7715105119564193
+        }
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true,
+  "waterDifference": {
+    "impactCount": 116,
+    "yP95": 0.0030750632286071777,
+    "radialP95": 0.0002627259597350884
+  }
+}

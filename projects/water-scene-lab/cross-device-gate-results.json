@@ -1,0 +1,83 @@
+{
+  "schema": "water-scene.cross-device-gate/v1",
+  "createdAt": "2026-08-24T14:42:02.146Z",
+  "passed": true,
+  "checks": 55,
+  "configurations": [
+    {
+      "id": "chrome-intel",
+      "browserVersion": "151.0.7922.170",
+      "adapterLabel": "intel gen-12lp",
+      "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sceneChecks": {
+        "waterfall": 19,
+        "river": 20,
+        "ocean": 20
+      }
+    },
+    {
+      "id": "edge-intel",
+      "browserVersion": "151.0.4129.101",
+      "adapterLabel": "intel gen-12lp",
+      "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sceneChecks": {
+        "waterfall": 19,
+        "river": 20,
+        "ocean": 20
+      }
+    },
+    {
+      "id": "edge-nvidia",
+      "browserVersion": "151.0.4129.101",
+      "adapterLabel": "nvidia lovelace",
+      "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002860) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sceneChecks": {
+        "waterfall": 19,
+        "river": 20,
+        "ocean": 20
+      }
+    }
+  ],
+  "values": {
+    "waterfallImpactDelta": {
+      "samples": [
+        0.01537388563156128,
+        0.015374898910522461,
+        0.015387922525405884
+      ],
+      "relativeSpread": 0.0009127370419439168
+    },
+    "riverAlongFlow": {
+      "samples": [
+        0.24705356359481812,
+        0.24701619148254395,
+        0.24702376127243042
+      ],
+      "relativeSpread": 0.00015128500566936737
+    },
+    "riverRotationDegrees": {
+      "samples": [
+        14.26426678719867,
+        14.263566827045564,
+        14.279463569872748
+      ],
+      "relativeSpread": 0.001114067731873709
+    },
+    "oceanUpliftDelta": {
+      "samples": [
+        0.015263915061950684,
+        0.015227913856506348,
+        0.015318453311920166
+      ],
+      "relativeSpread": 0.005929200891526981
+    },
+    "oceanRotationDegrees": {
+      "samples": [
+        1.1902543484252548,
+        1.2297153007326669,
+        1.214342676110388
+      ],
+      "relativeSpread": 0.032573660799363593
+    }
+  }
+}

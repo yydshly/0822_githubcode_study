@@ -1,0 +1,112 @@
+{
+  "createdAt": "2026-08-24T07:10:58.402Z",
+  "label": "optimized-t3",
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/watershed/",
+  "browserVersion": "151.0.7922.170",
+  "renderer": "SwiftShader",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "quality": "balanced",
+      "sampleTarget": 60,
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-6914ef45",
+        "coupledContractHash": "fnv1a-f762b6c5",
+        "truthLevel": "T3",
+        "quality": "balanced",
+        "firstFrameMs": 2885.799999988079,
+        "frameTimeP50": 287.5,
+        "frameTimeP95": 329.404999999999,
+        "frameSampleCount": 60,
+        "maxFrameTime": 495.7999999999993,
+        "drawCalls": 44,
+        "triangles": 30352,
+        "renderedVariants": 2,
+        "analysisDurationMs": 164.29999995231628,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 994,
+          "height": 804,
+          "dpr": 1
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "checks": {
+        "rendererReady": true,
+        "sampleCount": true,
+        "finiteP50": true,
+        "finiteP95": true,
+        "correctVariants": true,
+        "controlledCanvas": true,
+        "noContextLoss": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true
+      },
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "quality": "fallback",
+      "sampleTarget": 60,
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-6914ef45",
+        "coupledContractHash": "fnv1a-f762b6c5",
+        "truthLevel": "T3",
+        "quality": "fallback",
+        "firstFrameMs": 329.6,
+        "frameTimeP50": 37.5,
+        "frameTimeP95": 46.105000000000075,
+        "frameSampleCount": 60,
+        "maxFrameTime": 75,
+        "drawCalls": 22,
+        "triangles": 10520,
+        "renderedVariants": 1,
+        "analysisDurationMs": 113.5,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 364,
+          "height": 455,
+          "dpr": 1
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "checks": {
+        "rendererReady": true,
+        "sampleCount": true,
+        "finiteP50": true,
+        "finiteP95": true,
+        "correctVariants": true,
+        "controlledCanvas": true,
+        "noContextLoss": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

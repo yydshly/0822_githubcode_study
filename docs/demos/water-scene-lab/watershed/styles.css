@@ -1,0 +1,212 @@
+:root {
+  --bg: #06160f;
+  --panel: #0a241a;
+  --panel-soft: #0d2d21;
+  --cyan: #6ee7c2;
+  --cyan-pale: #d4f8dc;
+  --blue: #77a9ff;
+  --lime: #d9f496;
+  --amber: #ffc878;
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 7%, rgba(87, 167, 116, 0.16), transparent 34rem),
+    radial-gradient(circle at 82% 18%, rgba(71, 137, 152, 0.09), transparent 30rem),
+    linear-gradient(180deg, #0a2018, var(--bg) 44%);
+}
+
+.brand-mark {
+  background: linear-gradient(135deg, #d8f6d2, #64d9b6);
+}
+
+.stage-card {
+  grid-template-rows: auto minmax(700px, 1fr) auto;
+  align-self: start;
+}
+
+.watershed-intro-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 30px;
+  align-items: end;
+  padding: 20px 24px 19px;
+  background: linear-gradient(110deg, rgba(9, 36, 25, 0.99), rgba(8, 29, 27, 0.98));
+  border-bottom: 1px solid var(--line);
+}
+
+.watershed-intro-strip h1 {
+  margin: 7px 0 0;
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.watershed-intro-strip h1 em {
+  color: var(--cyan-pale);
+  font-style: normal;
+}
+
+.watershed-intro-strip > p {
+  margin: 0;
+  color: #9bb4a8;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.watershed-intro-strip code,
+.method-details code {
+  color: #c8f2dc;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.scene-viewport {
+  background:
+    linear-gradient(180deg, rgba(94, 132, 101, 0.45), rgba(7, 31, 26, 0.92)),
+    #173b30;
+}
+
+#watershed-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+
+.water-chain {
+  position: absolute;
+  z-index: 4;
+  right: 22px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(218, 245, 226, 0.68);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.water-chain i {
+  width: 21px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), rgba(110, 231, 194, 0.08));
+}
+
+.water-chain i::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: -1.5px 0 0 auto;
+  background: var(--cyan);
+  border-radius: 50%;
+}
+
+.watershed-controls {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.study-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 0 0 14px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(5, 24, 20, 0.72);
+}
+
+.study-tabs a {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  border-radius: 8px;
+  color: #7f9e91;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.study-tabs a.active {
+  color: #071c17;
+  background: linear-gradient(120deg, var(--cyan-pale), var(--cyan));
+}
+
+.flow-cards article:first-child {
+  border-color: rgba(255, 200, 120, 0.2);
+}
+
+.flow-cards article:last-child {
+  border-color: rgba(110, 231, 194, 0.26);
+}
+
+.result-row .ratio-pass {
+  color: var(--cyan-pale);
+}
+
+.pool-rise-note {
+  color: var(--amber) !important;
+}
+
+@media (max-width: 1180px) {
+  .stage-card {
+    grid-template-rows: auto minmax(640px, 72svh) auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .watershed-intro-strip {
+    display: block;
+    padding: 18px 16px;
+  }
+
+  .watershed-intro-strip h1 {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+
+  .watershed-intro-strip > p {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+
+  .scene-viewport {
+    aspect-ratio: 4 / 5;
+  }
+
+  .mobile-variant-tabs button {
+    min-height: 44px;
+  }
+
+  .study-tabs a {
+    min-height: 44px;
+  }
+
+  .water-chain {
+    right: 14px;
+    bottom: 18px;
+    gap: 4px;
+  }
+
+  .water-chain i {
+    width: 8px;
+  }
+
+  .watershed-controls button {
+    min-height: 44px;
+  }
+
+  .watershed-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-chain i::after {
+    display: none;
+  }
+}

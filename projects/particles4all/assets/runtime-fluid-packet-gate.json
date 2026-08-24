@@ -1,0 +1,553 @@
+{
+  "runs": [
+    {
+      "packet": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      },
+      "solverSpacing": 0.02,
+      "before": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "injection": {
+        "requested": 12,
+        "added": 12,
+        "before": 28341,
+        "after": 28353,
+        "capacity": 56341,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "after": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28353,
+        "fluidParticleCount": 28012,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "centroid": [
+        0.2819720920574348,
+        0.21054720573876531,
+        0.499814060022734
+      ],
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    {
+      "packet": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      },
+      "solverSpacing": 0.02,
+      "before": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "injection": {
+        "requested": 12,
+        "added": 12,
+        "before": 28341,
+        "after": 28353,
+        "capacity": 56341,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "after": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28353,
+        "fluidParticleCount": 28012,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "centroid": [
+        0.28197247216847166,
+        0.21054794082636719,
+        0.4998137736317995
+      ],
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "run1.kind",
+      "passed": true,
+      "detail": "fluid-block"
+    },
+    {
+      "name": "run1.count",
+      "passed": true,
+      "detail": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "run1.lengths",
+      "passed": true,
+      "detail": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "run1.unique",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "run1.serializable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.spacing",
+      "passed": true,
+      "detail": {
+        "packet": 0.02,
+        "solver": 0.02
+      }
+    },
+    {
+      "name": "run1.injected",
+      "passed": true,
+      "detail": {
+        "requested": 12,
+        "added": 12,
+        "before": 28341,
+        "after": 28353,
+        "capacity": 56341,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "run1.fluidCount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.nonFinite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run1.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "run2.kind",
+      "passed": true,
+      "detail": "fluid-block"
+    },
+    {
+      "name": "run2.count",
+      "passed": true,
+      "detail": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "run2.lengths",
+      "passed": true,
+      "detail": {
+        "kind": "fluid-block",
+        "config": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        },
+        "count": 12,
+        "positionLength": 36,
+        "velocityLength": 36,
+        "uniquePositions": 12,
+        "serializable": {
+          "origin": [
+            0.72,
+            0.7,
+            0.48
+          ],
+          "counts": [
+            3,
+            2,
+            2
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -1.25,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "run2.unique",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "run2.serializable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.spacing",
+      "passed": true,
+      "detail": {
+        "packet": 0.02,
+        "solver": 0.02
+      }
+    },
+    {
+      "name": "run2.injected",
+      "passed": true,
+      "detail": {
+        "requested": 12,
+        "added": 12,
+        "before": 28341,
+        "after": 28353,
+        "capacity": 56341,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "run2.fluidCount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.nonFinite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run2.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "repeat.config",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat.finalCount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat.centroid.0",
+      "passed": true,
+      "detail": {
+        "a": 0.2819720920574348,
+        "b": 0.28197247216847166
+      }
+    },
+    {
+      "name": "repeat.centroid.1",
+      "passed": true,
+      "detail": {
+        "a": 0.21054720573876531,
+        "b": 0.21054794082636719
+      }
+    },
+    {
+      "name": "repeat.centroid.2",
+      "passed": true,
+      "detail": {
+        "a": 0.499814060022734,
+        "b": 0.4998137736317995
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

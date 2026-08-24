@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07161e" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Particles4All｜源库能力与扩展研究</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../"><span>P4A</span><strong>源库能力研究</strong></a>
+    <nav>
+      <a href="#upstream">源库效果</a>
+      <a href="#capabilities">能力</a>
+      <a href="#exploration">探索</a>
+      <a href="#extensions">扩展与场景</a>
+    </nav>
+    <a class="source-link" href="https://github.com/matsuoka-601/Particles4All" target="_blank" rel="noopener">GitHub 源库 ↗</a>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="kicker">UPSTREAM FIRST · EVIDENCE-GATED EXTENSION</p>
+        <h1>先演示源库，<br /><em>再说明我们探索了什么。</em></h1>
+      </div>
+      <div class="hero-copy">
+        <p><strong>阶段研究已于 2026-08-25 归档。</strong>本页保留源库 Runtime、受控实验、扩展证据与停止边界；后续只由明确使用场景重新启动。</p>
+        <p>研究目标不是重新做水，而是理解 Particles4All 已实现的液体—刚体算法、渲染和交互能力；基于真实能力做受控实验，再判断可以扩展到哪些场景。</p>
+        <div class="legend">
+          <span class="u0">U0 源库原生</span><span class="u1">U1 受控探索</span><span class="e1">E1 场景扩展</span><span class="stop">STOP 尚不支持</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage shell" id="upstream">
+      <div class="stage-head">
+        <div><span class="label u0">U0 · SOURCE RUNTIME</span><h2>这里运行的是源库固定提交，不是我们重写的效果。</h2></div>
+        <div class="commit"><small>UPSTREAM COMMIT</small><strong>f0ab7c2</strong><small>ENGINE / WGSL UNMODIFIED</small></div>
+      </div>
+      <div class="stage-grid">
+        <div class="runtime">
+          <iframe id="upstream-frame" title="Particles4All 上游原生 WebGPU Runtime" src="../../particles4all/engine/?preset=small&view=ssfr"></iframe>
+        </div>
+        <aside class="stage-guide">
+          <p class="step">先看这里</p>
+          <h3 id="demo-title">原生 SSFR 水面</h3>
+          <p id="demo-description">粒子经过各向异性核和屏幕空间窄域滤波，被重建为连续水面。点击原生画面右上角 <b>Pour water</b> 可以直接观察注水和水面响应。</p>
+          <div class="demo-switcher" aria-label="源库原生能力切换">
+            <button class="active" data-demo="ssfr">连续水面</button>
+            <button data-demo="particles">粒子求解</button>
+            <button data-demo="mesh">表面网格</button>
+            <button data-demo="tension">表面张力</button>
+          </div>
+          <dl>
+            <div><dt>你可以操作</dt><dd id="demo-action">旋转镜头、推水、Pour water</dd></div>
+            <div><dt>它能证明</dt><dd id="demo-proof">源库具有连续水面重建路径</dd></div>
+            <div><dt>不能证明</dt><dd id="demo-boundary">不代表真实河流或瀑布已经实现</dd></div>
+          </dl>
+          <a class="primary-action" href="../../particles4all/engine/?preset=small&view=ssfr" target="_blank">全屏打开源库 Runtime ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section shell" id="capabilities">
+      <div class="section-heading"><div><p class="kicker">01 · SOURCE CAPABILITY MAP</p><h2>源库真正提供的能力。</h2></div><p>以下能力来自上游 README 和未修改 Runtime；场景名称不是源库能力。</p></div>
+      <div class="capability-grid">
+        <article><span>01 · SOLVER</span><h3>统一粒子物理</h3><p>水和刚体都表示为粒子，在同一空间网格与约束循环中求解。</p><b>PBF · Shape Matching</b></article>
+        <article><span>02 · COUPLING</span><h3>液体—刚体双向作用</h3><p>水能推动物体，物体会排开和扰动水；浮力由统一求解自然产生。</p><b>浮沉 · 排水 · 碰撞</b></article>
+        <article><span>03 · SURFACE</span><h3>各向异性表面重建</h3><p>将离散粒子邻域重建为更平滑的液体轮廓，而不是直接显示球形粒子。</p><b>Anisotropic Kernels</b></article>
+        <article><span>04 · RENDER</span><h3>屏幕空间流体渲染</h3><p>利用深度、厚度、法线和窄域滤波构成 SSFR 连续水面。</p><b>Narrow-range Filter</b></article>
+        <article><span>05 · MATERIAL</span><h3>表面张力与黏附</h3><p>支持液柱断裂、液滴聚合和不同材料观感的定性实验。</p><b>Tension · Adhesion</b></article>
+        <article><span>06 · INTERACTION</span><h3>原生互动与质量档</h3><p>推水、注水、抓取刚体、移动箱壁，以及 small / medium / large 粒子规模。</p><b>WebGPU Compute</b></article>
+      </div>
+    </section>
+
+    <section class="section exploration" id="exploration">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">02 · CONTROLLED EXPLORATION</p><h2>我们如何探索源库能力？</h2></div><p>不靠描述猜测，而是只改变一个条件，观察原库真实求解结果。</p></div>
+        <div class="exploration-grid">
+          <article class="experiment-card">
+            <img src="./assets/controlled-flotation-ab.png" alt="Particles4All 浮具轻载与重载受控对照" />
+            <div><span class="label u1">U1 · 受控 A/B</span><h3>浮具与载荷</h3><p><strong>只改变：</strong>刚体密度 0.22× / 2.20×</p><p><strong>观察：</strong>上浮、下沉、刚体位移和吃水趋势。</p><p><strong>关联能力：</strong>PBF、Shape Matching、密度与排水、SSFR。</p><a href="../../particles4all/?scenario=buoyancy">进入这个实验 →</a></div>
+          </article>
+          <article class="experiment-card">
+            <img src="./assets/controlled-boundary-ab.png" alt="Particles4All 动态边界受控对照" />
+            <div><span class="label u1">U1 · 受控 A/B</span><h3>动态箱体边界</h3><p><strong>只改变：</strong>整体 X 边界 1.00× / 0.70×</p><p><strong>观察：</strong>水位响应、漂浮物重排和稳定过程。</p><p><strong>关联能力：</strong>移动箱壁、连续来水和双向耦合。</p><a href="../../particles4all/?scenario=compression">进入这个实验 →</a></div>
+          </article>
+        </div>
+        <div class="experiment-links">
+          <a href="../../particles4all/?scenario=tension"><strong>液柱与成滴</strong><span>表面张力 0 / 2.1</span></a>
+          <a href="../../particles4all/?scenario=coupling"><strong>水与可搬障碍</strong><span>有 / 无刚体对照</span></a>
+          <a href="../../particles4all/?scenario=particles"><strong>粒子诊断</strong><span>查看速度和接触结构</span></a>
+          <a href="../../particles4all/?scenario=ssfr"><strong>SSFR 分层</strong><span>法线、深度、厚度</span></a>
+          <a href="../../particles4all/?scenario=performance"><strong>设备负载</strong><span>30K / 100K 性能边界</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="extensions">
+      <div class="section-heading"><div><p class="kicker">03 · EXTENSION ROUTES</p><h2>基于这些能力，可以扩展什么？</h2></div><p>扩展分为“场景输入可实现”和“必须新增求解器”，不能混为一谈。</p></div>
+      <div class="route-columns">
+        <article class="route route-ready">
+          <span class="label e1">E1 · 可基于原库继续</span>
+          <h3>场景与边界扩展</h3>
+          <ul><li>参数化喷口与持续来水</li><li>多个静态 box 障碍</li><li>局部平移/旋转闸门</li><li>开放出流与局部采样</li><li>高度场或 glTF → SDF/体素碰撞</li></ul>
+        </article>
+        <article class="route route-hybrid">
+          <span class="label u1">HYBRID · 近场组合</span>
+          <h3>可使用的场景</h3>
+          <ul><li>浮具、漂浮物和水上救援教学</li><li>储液箱、注水、灌装与喷流原型</li><li>游戏中的水体机关和清障互动</li><li>瀑布落点、水潭冲击等局部英雄效果</li><li>船体/岸边等局部液固交互验证</li></ul>
+        </article>
+        <article class="route route-stop">
+          <span class="label stop">STOP · 不能靠包装得到</span>
+          <h3>需要新求解能力</h3>
+          <ul><li>完整海洋、长距离河流和流域模拟</li><li>泡沫、喷雾、多液体和明确黏性模型</li><li>泥沙、冲刷、侵蚀、渗流和材料断裂</li><li>复合船体与非均匀质量</li><li>工程流量、承载或洪水风险结论</li></ul>
+        </article>
+      </div>
+
+      <div class="extension-evidence">
+        <article><img src="./assets/extension-local-impact.png" alt="Particles4All 局部落水冲击扩展" /><div><span class="label e1">E1 · 已验证</span><h3>局部落水冲击</h3><p>使用 Adapter 注入粒子并读取刚体响应，证明原库可被包装为局部效果模块。</p></div></article>
+        <article><img src="./assets/extension-gate-jet.png" alt="Particles4All 闸门喷流扩展" /><div><span class="label e1">E1 · 已验证</span><h3>闸门喷流</h3><p>验证持续来水、障碍与水体响应；这是场景边界扩展，不是新液体算法。</p></div></article>
+        <article><img src="./assets/boundary-container-stop.png" alt="Particles4All 复杂容器能力边界" /><div><span class="label stop">STOP · 失败边界</span><h3>复杂容器与任意碰撞体</h3><p>现有箱体边界不足以可靠支持复杂中空容器，已明确停止独立造引擎。</p></div></article>
+      </div>
+
+      <div class="decision">
+        <div><p class="kicker">ARCHIVED · 2026-08-25</p><h3>保留为 WebGPU 局部液体—刚体研究基线。</h3></div>
+        <p>最适合有限容器注水、喷流、局部冲击、浮沉和障碍互动。宏观河海只可把它作为近场模块；当前不包装成通用水体 SDK，也不把流域或工程水力学算作源库能力。</p>
+        <a href="../../particles4all/">打开完整源库能力实验台 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell"><span>Particles4All fixed upstream · MIT · f0ab7c2</span><a href="../">返回 Water Scene Lab</a></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

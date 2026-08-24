@@ -1,0 +1,1770 @@
+{
+  "runs": [
+    {
+      "requestedTicks": 24,
+      "actualTicks": 24,
+      "endTime": 0.19999999999999998,
+      "target": [
+        0.83,
+        0.8399999928474426,
+        0.5
+      ],
+      "history": [
+        {
+          "id": "initial",
+          "type": "sampleBodies",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.75,
+                  0.8199999928474426,
+                  0.5
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "hold",
+          "type": "holdBody",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "result": {
+            "bodyId": 1,
+            "target": [
+              0.83,
+              0.8399999928474426,
+              0.5
+            ],
+            "rate": 18,
+            "limit": 1.2,
+            "held": true
+          }
+        },
+        {
+          "id": "held",
+          "type": "sampleBodies",
+          "tick": 12,
+          "order": 2,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8173754215240479,
+                  0.8247535824775696,
+                  0.500003457069397
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "release",
+          "type": "releaseBody",
+          "tick": 12,
+          "order": 3,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "held": false
+          }
+        },
+        {
+          "id": "released",
+          "type": "sampleBodies",
+          "tick": 12,
+          "order": 4,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8173754215240479,
+                  0.8247535824775696,
+                  0.500003457069397
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "final",
+          "type": "sampleBodies",
+          "tick": 24,
+          "order": 5,
+          "simTime": 0.19999999999999998,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8657546043395996,
+                  0.7778962850570679,
+                  0.5000141859054565
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    {
+      "requestedTicks": 24,
+      "actualTicks": 24,
+      "endTime": 0.19999999999999998,
+      "target": [
+        0.83,
+        0.8399999928474426,
+        0.5
+      ],
+      "history": [
+        {
+          "id": "initial",
+          "type": "sampleBodies",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.75,
+                  0.8199999928474426,
+                  0.5
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "hold",
+          "type": "holdBody",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "result": {
+            "bodyId": 1,
+            "target": [
+              0.83,
+              0.8399999928474426,
+              0.5
+            ],
+            "rate": 18,
+            "limit": 1.2,
+            "held": true
+          }
+        },
+        {
+          "id": "held",
+          "type": "sampleBodies",
+          "tick": 12,
+          "order": 2,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8173754215240479,
+                  0.8247535824775696,
+                  0.500003457069397
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "release",
+          "type": "releaseBody",
+          "tick": 12,
+          "order": 3,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "held": false
+          }
+        },
+        {
+          "id": "released",
+          "type": "sampleBodies",
+          "tick": 12,
+          "order": 4,
+          "simTime": 0.09999999999999999,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8173754215240479,
+                  0.8247535824775696,
+                  0.500003457069397
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "final",
+          "type": "sampleBodies",
+          "tick": 24,
+          "order": 5,
+          "simTime": 0.19999999999999998,
+          "result": {
+            "bodyCount": 1,
+            "body": {
+              "id": 1,
+              "key": "body-1",
+              "shape": "sphere",
+              "size": 0.085,
+              "density": 0.22,
+              "particleCount": 341,
+              "initialCentre": [
+                0.75,
+                0.82,
+                0.5
+              ],
+              "pose": {
+                "centre": [
+                  0.8657546043395996,
+                  0.7778962850570679,
+                  0.5000150203704834
+                ],
+                "rot": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "run1.ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 24,
+        "actualTicks": 24,
+        "endTime": 0.19999999999999998,
+        "target": [
+          0.83,
+          0.8399999928474426,
+          0.5
+        ],
+        "history": [
+          {
+            "id": "initial",
+            "type": "sampleBodies",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.75,
+                    0.8199999928474426,
+                    0.5
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "hold",
+            "type": "holdBody",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "result": {
+              "bodyId": 1,
+              "target": [
+                0.83,
+                0.8399999928474426,
+                0.5
+              ],
+              "rate": 18,
+              "limit": 1.2,
+              "held": true
+            }
+          },
+          {
+            "id": "held",
+            "type": "sampleBodies",
+            "tick": 12,
+            "order": 2,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8173754215240479,
+                    0.8247535824775696,
+                    0.500003457069397
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "release",
+            "type": "releaseBody",
+            "tick": 12,
+            "order": 3,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "held": false
+            }
+          },
+          {
+            "id": "released",
+            "type": "sampleBodies",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8173754215240479,
+                    0.8247535824775696,
+                    0.500003457069397
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "final",
+            "type": "sampleBodies",
+            "tick": 24,
+            "order": 5,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8657546043395996,
+                    0.7778962850570679,
+                    0.5000141859054565
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        },
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "run1.sameTickOrder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.identity",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "held": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "released": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8657546043395996,
+              0.7778962850570679,
+              0.5000141859054565
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "run1.initialPose",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "sphere",
+        "size": 0.085,
+        "density": 0.22,
+        "particleCount": 341,
+        "initialCentre": [
+          0.75,
+          0.82,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.8199999928474426,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "run1.heldMoved",
+      "passed": true,
+      "detail": {
+        "initial": [
+          0.75,
+          0.8199999928474426,
+          0.5
+        ],
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run1.towardTarget",
+      "passed": true,
+      "detail": {
+        "target": [
+          0.83,
+          0.8399999928474426,
+          0.5
+        ],
+        "initial": [
+          0.75,
+          0.8199999928474426,
+          0.5
+        ],
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run1.release",
+      "passed": true,
+      "detail": {
+        "id": "release",
+        "type": "releaseBody",
+        "tick": 12,
+        "order": 3,
+        "simTime": 0.09999999999999999,
+        "result": {
+          "held": false
+        }
+      }
+    },
+    {
+      "name": "run1.releasePoint",
+      "passed": true,
+      "detail": {
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ],
+        "released": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run1.finite",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "held": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "released": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8657546043395996,
+              0.7778962850570679,
+              0.5000141859054565
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "run1.rotation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "run2.ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 24,
+        "actualTicks": 24,
+        "endTime": 0.19999999999999998,
+        "target": [
+          0.83,
+          0.8399999928474426,
+          0.5
+        ],
+        "history": [
+          {
+            "id": "initial",
+            "type": "sampleBodies",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.75,
+                    0.8199999928474426,
+                    0.5
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "hold",
+            "type": "holdBody",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "result": {
+              "bodyId": 1,
+              "target": [
+                0.83,
+                0.8399999928474426,
+                0.5
+              ],
+              "rate": 18,
+              "limit": 1.2,
+              "held": true
+            }
+          },
+          {
+            "id": "held",
+            "type": "sampleBodies",
+            "tick": 12,
+            "order": 2,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8173754215240479,
+                    0.8247535824775696,
+                    0.500003457069397
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "release",
+            "type": "releaseBody",
+            "tick": 12,
+            "order": 3,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "held": false
+            }
+          },
+          {
+            "id": "released",
+            "type": "sampleBodies",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8173754215240479,
+                    0.8247535824775696,
+                    0.500003457069397
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": "final",
+            "type": "sampleBodies",
+            "tick": 24,
+            "order": 5,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "bodyCount": 1,
+              "body": {
+                "id": 1,
+                "key": "body-1",
+                "shape": "sphere",
+                "size": 0.085,
+                "density": 0.22,
+                "particleCount": 341,
+                "initialCentre": [
+                  0.75,
+                  0.82,
+                  0.5
+                ],
+                "pose": {
+                  "centre": [
+                    0.8657546043395996,
+                    0.7778962850570679,
+                    0.5000150203704834
+                  ],
+                  "rot": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        },
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "run2.sameTickOrder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.identity",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "held": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "released": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8657546043395996,
+              0.7778962850570679,
+              0.5000150203704834
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "run2.initialPose",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "sphere",
+        "size": 0.085,
+        "density": 0.22,
+        "particleCount": 341,
+        "initialCentre": [
+          0.75,
+          0.82,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.8199999928474426,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "run2.heldMoved",
+      "passed": true,
+      "detail": {
+        "initial": [
+          0.75,
+          0.8199999928474426,
+          0.5
+        ],
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run2.towardTarget",
+      "passed": true,
+      "detail": {
+        "target": [
+          0.83,
+          0.8399999928474426,
+          0.5
+        ],
+        "initial": [
+          0.75,
+          0.8199999928474426,
+          0.5
+        ],
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run2.release",
+      "passed": true,
+      "detail": {
+        "id": "release",
+        "type": "releaseBody",
+        "tick": 12,
+        "order": 3,
+        "simTime": 0.09999999999999999,
+        "result": {
+          "held": false
+        }
+      }
+    },
+    {
+      "name": "run2.releasePoint",
+      "passed": true,
+      "detail": {
+        "held": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ],
+        "released": [
+          0.8173754215240479,
+          0.8247535824775696,
+          0.500003457069397
+        ]
+      }
+    },
+    {
+      "name": "run2.finite",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "held": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "released": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8173754215240479,
+              0.8247535824775696,
+              0.500003457069397
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.085,
+          "density": 0.22,
+          "particleCount": 341,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.8657546043395996,
+              0.7778962850570679,
+              0.5000150203704834
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "run2.rotation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "repeat.ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat.initial.centre.0",
+      "passed": true,
+      "detail": {
+        "a": 0.75,
+        "b": 0.75
+      }
+    },
+    {
+      "name": "repeat.initial.centre.1",
+      "passed": true,
+      "detail": {
+        "a": 0.8199999928474426,
+        "b": 0.8199999928474426
+      }
+    },
+    {
+      "name": "repeat.initial.centre.2",
+      "passed": true,
+      "detail": {
+        "a": 0.5,
+        "b": 0.5
+      }
+    },
+    {
+      "name": "repeat.held.centre.0",
+      "passed": true,
+      "detail": {
+        "a": 0.8173754215240479,
+        "b": 0.8173754215240479
+      }
+    },
+    {
+      "name": "repeat.held.centre.1",
+      "passed": true,
+      "detail": {
+        "a": 0.8247535824775696,
+        "b": 0.8247535824775696
+      }
+    },
+    {
+      "name": "repeat.held.centre.2",
+      "passed": true,
+      "detail": {
+        "a": 0.500003457069397,
+        "b": 0.500003457069397
+      }
+    },
+    {
+      "name": "repeat.released.centre.0",
+      "passed": true,
+      "detail": {
+        "a": 0.8173754215240479,
+        "b": 0.8173754215240479
+      }
+    },
+    {
+      "name": "repeat.released.centre.1",
+      "passed": true,
+      "detail": {
+        "a": 0.8247535824775696,
+        "b": 0.8247535824775696
+      }
+    },
+    {
+      "name": "repeat.released.centre.2",
+      "passed": true,
+      "detail": {
+        "a": 0.500003457069397,
+        "b": 0.500003457069397
+      }
+    },
+    {
+      "name": "repeat.final.centre.0",
+      "passed": true,
+      "detail": {
+        "a": 0.8657546043395996,
+        "b": 0.8657546043395996
+      }
+    },
+    {
+      "name": "repeat.final.centre.1",
+      "passed": true,
+      "detail": {
+        "a": 0.7778962850570679,
+        "b": 0.7778962850570679
+      }
+    },
+    {
+      "name": "repeat.final.centre.2",
+      "passed": true,
+      "detail": {
+        "a": 0.5000141859054565,
+        "b": 0.5000150203704834
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

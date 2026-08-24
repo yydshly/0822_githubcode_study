@@ -1,0 +1,18 @@
+diff --git a/src/main.js b/src/main.js
+--- a/src/main.js
++++ b/src/main.js
+@@ -958,10 +958,11 @@
+     let fpsAcc = 0, fpsN = 0, shown = 0;
+     let frames = 0;
+     function frame(now) {
+       resize();
+ 
+-      const dt = Math.max(0, Math.min((now - last) / 1000, 0.05));
++      const wallDt = Math.max(0, (now - last) / 1000);
++      const dt = Math.min(wallDt, 0.05);
+       last = now;
+-      fpsAcc += dt; fpsN++;
++      fpsAcc += wallDt; fpsN++;
+       if (fpsAcc > 0.25) { shown = fpsN / fpsAcc; fpsAcc = 0; fpsN = 0; }
+ 
+       ssfr.ior = ray.ior;

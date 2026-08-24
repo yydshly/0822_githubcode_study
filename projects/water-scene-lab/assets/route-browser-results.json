@@ -1,0 +1,73 @@
+{
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/",
+  "createdAt": "2026-08-24T15:38:33.154Z",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.170"
+  },
+  "passed": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "state": {
+        "title": "Water Scene Platform｜桌面水体场景技术基座",
+        "bodyLength": 4468,
+        "h1": "不只研究“水的能力”。\n\n而是构建水体场景基座。",
+        "programCards": 3,
+        "activeProgramCards": 1,
+        "moduleCards": 5,
+        "decisionRows": 6,
+        "timelineItems": 9,
+        "activeTimelineItems": 1,
+        "overflowX": 0,
+        "overflowElements": [],
+        "errorOverlay": false,
+        "particlesHref": "../particles4all/",
+        "oceanHref": "./ocean/",
+        "riverHref": "./river/",
+        "waterfallHref": "./waterfall/",
+        "sandboxHref": "./sandbox/",
+        "watershedHref": "./watershed/?study=barrier",
+        "evidenceBranches": 4,
+        "activeRouteDots": 5,
+        "sharedContracts": 8,
+        "goalChain": "宏观场景\n→\n子目标\n→\n能力实验\n→\n场景集成\n→\n证据与决策"
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "macroPrograms": true,
+        "allModules": true,
+        "decisionTable": true,
+        "roadmap": true,
+        "oneActiveRoadmapStage": true,
+        "routeNavigation": true,
+        "particlesLink": true,
+        "oceanLink": true,
+        "riverLink": true,
+        "waterfallLink": true,
+        "sandboxLink": true,
+        "watershedLink": true,
+        "evidenceBranchCount": true,
+        "activeRouteDots": true,
+        "sharedContractCount": true,
+        "goalDrivenFlow": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    }
+  ]
+}

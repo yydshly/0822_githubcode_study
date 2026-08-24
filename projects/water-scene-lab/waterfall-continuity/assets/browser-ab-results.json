@@ -1,0 +1,5610 @@
+{
+  "baseUrl": "http://127.0.0.1:8107/demos/water-scene-lab/waterfall-continuity/",
+  "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "browserVersion": "151.0.7922.170",
+  "results": {
+    "single": {
+      "bridgeVersion": "particles4all-scene-runner-v1",
+      "sceneContract": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-single-pulse-observable",
+        "revision": 1,
+        "hash": "fnv1a-8b1e794c"
+      },
+      "mapping": {
+        "worldDriver": "free-fall-impact-speed",
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+        "solverVelocity": [
+          0,
+          -2.5,
+          0
+        ],
+        "velocityScale": 0.13770061067998812,
+        "solverFrame": "world-down-to-solver-negative-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      },
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "count": 384,
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            6,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      },
+      "bodyProfile": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      },
+      "plan": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "sceneId": "waterfall-single-pulse-observable",
+        "sceneContractHash": "fnv1a-8b1e794c",
+        "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+        "runtimeBox": [
+          1.5,
+          1,
+          1
+        ],
+        "reset": true,
+        "ticks": 42,
+        "packets": [
+          {
+            "id": "single-pulse-384",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "interactionRegion": {
+          "center": [
+            0.75,
+            0.5
+          ],
+          "radius": 0.18,
+          "minimumY": 0.25
+        }
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 42,
+        "actualTicks": 42,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.35000000000000026,
+        "reset": false,
+        "history": [
+          {
+            "id": "single-pulse-384",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 384,
+              "added": 384,
+              "before": 29859,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30243,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0.35000000000000026,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "localImpactCount": 145,
+      "elevatedFluidProfile": {
+        "binCount": 12,
+        "bins": [
+          145,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "occupiedBins": 1,
+        "coverageRatio": 0.08333333333333333,
+        "particleCount": 145,
+        "lowestY": 0.25095266103744507,
+        "highestY": 0.28283029794692993,
+        "minimumX": 0.5926703214645386,
+        "maximumX": 0.8576258420944214,
+        "spanX": 0.2649555206298828,
+        "minimumZ": 0.38627317547798157,
+        "maximumZ": 0.611351728439331,
+        "spanZ": 0.2250785529613495,
+        "minimumY": 0.25,
+        "maximumY": 1
+      },
+      "bodyDisplacement": 0.6080769074634241,
+      "bodyDisplacementVector": [
+        -0.0003578066825866699,
+        -0.6080767959356308,
+        -0.00008723139762878418
+      ],
+      "bodyDisplacementAlongAxis": 0.6080767959356308,
+      "bodyRotationDegrees": 5.533375426760012,
+      "baselineBodyDisplacement": 0.600624499683719,
+      "baselineBodyDisplacementAlongAxis": 0.6006195545196533,
+      "bodyDisplacementDeltaAlongAxis": 0.007457241415977478,
+      "nonFinite": 0,
+      "stats": {
+        "avgRho": 1.0109289236352215,
+        "maxRho": 1.7626953125,
+        "maxSpeed": 6.7744140625,
+        "frames": 0,
+        "ke": 296.583984375
+      },
+      "acceptance": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "passed": true
+      }
+    },
+    "staged": {
+      "bridgeVersion": "particles4all-scene-runner-v1",
+      "sceneContract": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-staged-cascade-observable-particles",
+        "revision": 1,
+        "hash": "fnv1a-1acae6a1"
+      },
+      "mapping": {
+        "worldDriver": "free-fall-impact-speed",
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+        "solverVelocity": [
+          0,
+          -2.5,
+          0
+        ],
+        "velocityScale": 0.13770061067998812,
+        "solverFrame": "world-down-to-solver-negative-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      },
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 5,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "count": 32,
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            4,
+            2,
+            4
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      },
+      "bodyProfile": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      },
+      "plan": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "sceneId": "waterfall-staged-cascade-observable-particles",
+        "sceneContractHash": "fnv1a-1acae6a1",
+        "engineQuery": "preset=small&view=particles&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+        "runtimeBox": [
+          1.5,
+          1,
+          1
+        ],
+        "reset": true,
+        "ticks": 42,
+        "packets": [
+          {
+            "id": "cascade-pulse-1",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "tick": 3,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "tick": 6,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "tick": 9,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "tick": 12,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "tick": 15,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "tick": 18,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "tick": 21,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "tick": 24,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "tick": 27,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "tick": 30,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "tick": 33,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "interactionRegion": {
+          "center": [
+            0.75,
+            0.5
+          ],
+          "radius": 0.18,
+          "minimumY": 0.25
+        }
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 42,
+        "actualTicks": 42,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.35000000000000026,
+        "reset": false,
+        "history": [
+          {
+            "id": "cascade-pulse-1",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29859,
+              "after": 29891,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "type": "injectFluid",
+            "tick": 3,
+            "order": 1,
+            "simTime": 0.025,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29891,
+              "after": 29923,
+              "capacity": 57859,
+              "availableBefore": 27968,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29923,
+              "after": 29955,
+              "capacity": 57859,
+              "availableBefore": 27936,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "type": "injectFluid",
+            "tick": 9,
+            "order": 3,
+            "simTime": 0.075,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29955,
+              "after": 29987,
+              "capacity": 57859,
+              "availableBefore": 27904,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "type": "injectFluid",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29987,
+              "after": 30019,
+              "capacity": 57859,
+              "availableBefore": 27872,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "type": "injectFluid",
+            "tick": 15,
+            "order": 5,
+            "simTime": 0.12499999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30019,
+              "after": 30051,
+              "capacity": 57859,
+              "availableBefore": 27840,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "type": "injectFluid",
+            "tick": 18,
+            "order": 6,
+            "simTime": 0.15,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30051,
+              "after": 30083,
+              "capacity": 57859,
+              "availableBefore": 27808,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "type": "injectFluid",
+            "tick": 21,
+            "order": 7,
+            "simTime": 0.175,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30083,
+              "after": 30115,
+              "capacity": 57859,
+              "availableBefore": 27776,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "type": "injectFluid",
+            "tick": 24,
+            "order": 8,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30115,
+              "after": 30147,
+              "capacity": 57859,
+              "availableBefore": 27744,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "type": "injectFluid",
+            "tick": 27,
+            "order": 9,
+            "simTime": 0.22499999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30147,
+              "after": 30179,
+              "capacity": 57859,
+              "availableBefore": 27712,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "type": "injectFluid",
+            "tick": 30,
+            "order": 10,
+            "simTime": 0.24999999999999997,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30179,
+              "after": 30211,
+              "capacity": 57859,
+              "availableBefore": 27680,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "type": "injectFluid",
+            "tick": 33,
+            "order": 11,
+            "simTime": 0.275,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30211,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 27648,
+              "clamped": false
+            }
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30243,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0.35000000000000026,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 5,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "localImpactCount": 262,
+      "elevatedFluidProfile": {
+        "binCount": 12,
+        "bins": [
+          129,
+          16,
+          18,
+          35,
+          16,
+          16,
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "occupiedBins": 7,
+        "coverageRatio": 0.5833333333333334,
+        "particleCount": 262,
+        "lowestY": 0.2501031458377838,
+        "highestY": 0.6732115745544434,
+        "minimumX": 0.5868149995803833,
+        "maximumX": 0.8862103223800659,
+        "spanX": 0.2993953227996826,
+        "minimumZ": 0.35930687189102173,
+        "maximumZ": 0.6208581328392029,
+        "spanZ": 0.26155126094818115,
+        "minimumY": 0.25,
+        "maximumY": 1
+      },
+      "bodyDisplacement": 0.6005895385375866,
+      "bodyDisplacementVector": [
+        0.00032204389572143555,
+        -0.6005797833204269,
+        -0.0034079253673553467
+      ],
+      "bodyDisplacementAlongAxis": 0.6005797833204269,
+      "bodyRotationDegrees": 11.916692621764982,
+      "baselineBodyDisplacement": 0.6005337174759968,
+      "baselineBodyDisplacementAlongAxis": 0.6005281955003738,
+      "bodyDisplacementDeltaAlongAxis": 0.000051587820053100586,
+      "nonFinite": 0,
+      "stats": {
+        "avgRho": 1.0103412682790232,
+        "maxRho": 1.744140625,
+        "maxSpeed": 6.1044921875,
+        "frames": 0,
+        "ke": 301.2998046875
+      },
+      "acceptance": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "passed": true
+      }
+    }
+  },
+  "surface": {
+    "mesh": {
+      "bridgeVersion": "particles4all-scene-runner-v1",
+      "sceneContract": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-staged-cascade-observable-mesh",
+        "revision": 1,
+        "hash": "fnv1a-da56c5dd"
+      },
+      "mapping": {
+        "worldDriver": "free-fall-impact-speed",
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+        "solverVelocity": [
+          0,
+          -2.5,
+          0
+        ],
+        "velocityScale": 0.13770061067998812,
+        "solverFrame": "world-down-to-solver-negative-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      },
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "count": 32,
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            4,
+            2,
+            4
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      },
+      "bodyProfile": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      },
+      "plan": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "sceneId": "waterfall-staged-cascade-observable-mesh",
+        "sceneContractHash": "fnv1a-da56c5dd",
+        "engineQuery": "preset=small&view=mesh&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+        "runtimeBox": [
+          1.5,
+          1,
+          1
+        ],
+        "reset": true,
+        "ticks": 42,
+        "packets": [
+          {
+            "id": "cascade-pulse-1",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "tick": 3,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "tick": 6,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "tick": 9,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "tick": 12,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "tick": 15,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "tick": 18,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "tick": 21,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "tick": 24,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "tick": 27,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "tick": 30,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "tick": 33,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "interactionRegion": {
+          "center": [
+            0.75,
+            0.5
+          ],
+          "radius": 0.18,
+          "minimumY": 0.25
+        }
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 42,
+        "actualTicks": 42,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.35000000000000026,
+        "reset": false,
+        "history": [
+          {
+            "id": "cascade-pulse-1",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29859,
+              "after": 29891,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "type": "injectFluid",
+            "tick": 3,
+            "order": 1,
+            "simTime": 0.025,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29891,
+              "after": 29923,
+              "capacity": 57859,
+              "availableBefore": 27968,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29923,
+              "after": 29955,
+              "capacity": 57859,
+              "availableBefore": 27936,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "type": "injectFluid",
+            "tick": 9,
+            "order": 3,
+            "simTime": 0.075,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29955,
+              "after": 29987,
+              "capacity": 57859,
+              "availableBefore": 27904,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "type": "injectFluid",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29987,
+              "after": 30019,
+              "capacity": 57859,
+              "availableBefore": 27872,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "type": "injectFluid",
+            "tick": 15,
+            "order": 5,
+            "simTime": 0.12499999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30019,
+              "after": 30051,
+              "capacity": 57859,
+              "availableBefore": 27840,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "type": "injectFluid",
+            "tick": 18,
+            "order": 6,
+            "simTime": 0.15,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30051,
+              "after": 30083,
+              "capacity": 57859,
+              "availableBefore": 27808,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "type": "injectFluid",
+            "tick": 21,
+            "order": 7,
+            "simTime": 0.175,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30083,
+              "after": 30115,
+              "capacity": 57859,
+              "availableBefore": 27776,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "type": "injectFluid",
+            "tick": 24,
+            "order": 8,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30115,
+              "after": 30147,
+              "capacity": 57859,
+              "availableBefore": 27744,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "type": "injectFluid",
+            "tick": 27,
+            "order": 9,
+            "simTime": 0.22499999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30147,
+              "after": 30179,
+              "capacity": 57859,
+              "availableBefore": 27712,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "type": "injectFluid",
+            "tick": 30,
+            "order": 10,
+            "simTime": 0.24999999999999997,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30179,
+              "after": 30211,
+              "capacity": 57859,
+              "availableBefore": 27680,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "type": "injectFluid",
+            "tick": 33,
+            "order": 11,
+            "simTime": 0.275,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30211,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 27648,
+              "clamped": false
+            }
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30243,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0.35000000000000026,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "localImpactCount": 262,
+      "elevatedFluidProfile": {
+        "binCount": 12,
+        "bins": [
+          129,
+          16,
+          17,
+          36,
+          16,
+          16,
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "occupiedBins": 7,
+        "coverageRatio": 0.5833333333333334,
+        "particleCount": 262,
+        "lowestY": 0.2506296932697296,
+        "highestY": 0.6732115745544434,
+        "minimumX": 0.5748741030693054,
+        "maximumX": 0.8891122341156006,
+        "spanX": 0.31423813104629517,
+        "minimumZ": 0.36158543825149536,
+        "maximumZ": 0.6207225918769836,
+        "spanZ": 0.2591371536254883,
+        "minimumY": 0.25,
+        "maximumY": 1
+      },
+      "bodyDisplacement": 0.6007186449593922,
+      "bodyDisplacementVector": [
+        0.0003896355628967285,
+        -0.6007086336612701,
+        -0.0034461617469787598
+      ],
+      "bodyDisplacementAlongAxis": 0.6007086336612701,
+      "bodyRotationDegrees": 12.088387545480185,
+      "baselineBodyDisplacement": 0.6005888775246893,
+      "baselineBodyDisplacementAlongAxis": 0.6005837470293045,
+      "bodyDisplacementDeltaAlongAxis": 0.0001248866319656372,
+      "nonFinite": 0,
+      "stats": {
+        "avgRho": 1.0106060506253514,
+        "maxRho": 1.853515625,
+        "maxSpeed": 5.8740234375,
+        "frames": 0,
+        "ke": 300.5361328125
+      },
+      "acceptance": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "passed": true
+      }
+    },
+    "ssfr": {
+      "bridgeVersion": "particles4all-scene-runner-v1",
+      "sceneContract": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-staged-cascade-observable-ssfr",
+        "revision": 1,
+        "hash": "fnv1a-deb23114"
+      },
+      "mapping": {
+        "worldDriver": "free-fall-impact-speed",
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+        "solverVelocity": [
+          0,
+          -2.5,
+          0
+        ],
+        "velocityScale": 0.13770061067998812,
+        "solverFrame": "world-down-to-solver-negative-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      },
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "count": 32,
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            4,
+            2,
+            4
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      },
+      "bodyProfile": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      },
+      "plan": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "sceneId": "waterfall-staged-cascade-observable-ssfr",
+        "sceneContractHash": "fnv1a-deb23114",
+        "engineQuery": "preset=small&view=ssfr&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+        "runtimeBox": [
+          1.5,
+          1,
+          1
+        ],
+        "reset": true,
+        "ticks": 42,
+        "packets": [
+          {
+            "id": "cascade-pulse-1",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "tick": 3,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "tick": 6,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "tick": 9,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "tick": 12,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "tick": 15,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "tick": 18,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "tick": 21,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "tick": 24,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "tick": 27,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "tick": 30,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "tick": 33,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "interactionRegion": {
+          "center": [
+            0.75,
+            0.5
+          ],
+          "radius": 0.18,
+          "minimumY": 0.25
+        }
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 42,
+        "actualTicks": 42,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.35000000000000026,
+        "reset": false,
+        "history": [
+          {
+            "id": "cascade-pulse-1",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29859,
+              "after": 29891,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "type": "injectFluid",
+            "tick": 3,
+            "order": 1,
+            "simTime": 0.025,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29891,
+              "after": 29923,
+              "capacity": 57859,
+              "availableBefore": 27968,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29923,
+              "after": 29955,
+              "capacity": 57859,
+              "availableBefore": 27936,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "type": "injectFluid",
+            "tick": 9,
+            "order": 3,
+            "simTime": 0.075,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29955,
+              "after": 29987,
+              "capacity": 57859,
+              "availableBefore": 27904,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "type": "injectFluid",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29987,
+              "after": 30019,
+              "capacity": 57859,
+              "availableBefore": 27872,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "type": "injectFluid",
+            "tick": 15,
+            "order": 5,
+            "simTime": 0.12499999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30019,
+              "after": 30051,
+              "capacity": 57859,
+              "availableBefore": 27840,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "type": "injectFluid",
+            "tick": 18,
+            "order": 6,
+            "simTime": 0.15,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30051,
+              "after": 30083,
+              "capacity": 57859,
+              "availableBefore": 27808,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "type": "injectFluid",
+            "tick": 21,
+            "order": 7,
+            "simTime": 0.175,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30083,
+              "after": 30115,
+              "capacity": 57859,
+              "availableBefore": 27776,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "type": "injectFluid",
+            "tick": 24,
+            "order": 8,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30115,
+              "after": 30147,
+              "capacity": 57859,
+              "availableBefore": 27744,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "type": "injectFluid",
+            "tick": 27,
+            "order": 9,
+            "simTime": 0.22499999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30147,
+              "after": 30179,
+              "capacity": 57859,
+              "availableBefore": 27712,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "type": "injectFluid",
+            "tick": 30,
+            "order": 10,
+            "simTime": 0.24999999999999997,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30179,
+              "after": 30211,
+              "capacity": 57859,
+              "availableBefore": 27680,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "type": "injectFluid",
+            "tick": 33,
+            "order": 11,
+            "simTime": 0.275,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30211,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 27648,
+              "clamped": false
+            }
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30243,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0.35000000000000026,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "localImpactCount": 259,
+      "elevatedFluidProfile": {
+        "binCount": 12,
+        "bins": [
+          126,
+          16,
+          18,
+          35,
+          16,
+          16,
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "occupiedBins": 7,
+        "coverageRatio": 0.5833333333333334,
+        "particleCount": 259,
+        "lowestY": 0.25024521350860596,
+        "highestY": 0.6732115745544434,
+        "minimumX": 0.5814642906188965,
+        "maximumX": 0.8903346657752991,
+        "spanX": 0.3088703751564026,
+        "minimumZ": 0.3524709641933441,
+        "maximumZ": 0.6191456913948059,
+        "spanZ": 0.2666747272014618,
+        "minimumY": 0.25,
+        "maximumY": 1
+      },
+      "bodyDisplacement": 0.6006018174747764,
+      "bodyDisplacementVector": [
+        0.0003204345703125,
+        -0.6005918830633163,
+        -0.0034395456314086914
+      ],
+      "bodyDisplacementAlongAxis": 0.6005918830633163,
+      "bodyRotationDegrees": 12.274527093849548,
+      "baselineBodyDisplacement": 0.600802820214871,
+      "baselineBodyDisplacementAlongAxis": 0.6007968783378601,
+      "bodyDisplacementDeltaAlongAxis": -0.0002049952745437622,
+      "nonFinite": 0,
+      "stats": {
+        "avgRho": 1.010745416553004,
+        "maxRho": 1.716796875,
+        "maxSpeed": 6.6044921875,
+        "frames": 0,
+        "ke": 300.90625
+      },
+      "acceptance": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "passed": true
+      }
+    },
+    "sheetSsfr": {
+      "bridgeVersion": "particles4all-scene-runner-v1",
+      "sceneContract": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-staged-sheet-cascade-observable-ssfr",
+        "revision": 1,
+        "hash": "fnv1a-ab1eed2a"
+      },
+      "mapping": {
+        "worldDriver": "free-fall-impact-speed",
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+        "solverVelocity": [
+          0,
+          -2.5,
+          0
+        ],
+        "velocityScale": 0.13770061067998812,
+        "solverFrame": "world-down-to-solver-negative-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      },
+      "environment": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      },
+      "initial": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "packet": {
+        "count": 32,
+        "config": {
+          "origin": [
+            0.675,
+            0.86,
+            0.43
+          ],
+          "counts": [
+            8,
+            1,
+            4
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      },
+      "bodyProfile": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      },
+      "plan": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "sceneId": "waterfall-staged-sheet-cascade-observable-ssfr",
+        "sceneContractHash": "fnv1a-ab1eed2a",
+        "engineQuery": "preset=small&view=ssfr&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+        "runtimeBox": [
+          1.5,
+          1,
+          1
+        ],
+        "reset": true,
+        "ticks": 42,
+        "packets": [
+          {
+            "id": "cascade-pulse-1",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "tick": 3,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "tick": 6,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "tick": 9,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "tick": 12,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "tick": 15,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "tick": 18,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "tick": 21,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "tick": 24,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "tick": 27,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "tick": 30,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "tick": 33,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                1,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "interactionRegion": {
+          "center": [
+            0.75,
+            0.5
+          ],
+          "radius": 0.18,
+          "minimumY": 0.25
+        }
+      },
+      "injection": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 42,
+        "actualTicks": 42,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.35000000000000026,
+        "reset": false,
+        "history": [
+          {
+            "id": "cascade-pulse-1",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29859,
+              "after": 29891,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "type": "injectFluid",
+            "tick": 3,
+            "order": 1,
+            "simTime": 0.025,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29891,
+              "after": 29923,
+              "capacity": 57859,
+              "availableBefore": 27968,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29923,
+              "after": 29955,
+              "capacity": 57859,
+              "availableBefore": 27936,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "type": "injectFluid",
+            "tick": 9,
+            "order": 3,
+            "simTime": 0.075,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29955,
+              "after": 29987,
+              "capacity": 57859,
+              "availableBefore": 27904,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "type": "injectFluid",
+            "tick": 12,
+            "order": 4,
+            "simTime": 0.09999999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 29987,
+              "after": 30019,
+              "capacity": 57859,
+              "availableBefore": 27872,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "type": "injectFluid",
+            "tick": 15,
+            "order": 5,
+            "simTime": 0.12499999999999999,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30019,
+              "after": 30051,
+              "capacity": 57859,
+              "availableBefore": 27840,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "type": "injectFluid",
+            "tick": 18,
+            "order": 6,
+            "simTime": 0.15,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30051,
+              "after": 30083,
+              "capacity": 57859,
+              "availableBefore": 27808,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "type": "injectFluid",
+            "tick": 21,
+            "order": 7,
+            "simTime": 0.175,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30083,
+              "after": 30115,
+              "capacity": 57859,
+              "availableBefore": 27776,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "type": "injectFluid",
+            "tick": 24,
+            "order": 8,
+            "simTime": 0.19999999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30115,
+              "after": 30147,
+              "capacity": 57859,
+              "availableBefore": 27744,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "type": "injectFluid",
+            "tick": 27,
+            "order": 9,
+            "simTime": 0.22499999999999998,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30147,
+              "after": 30179,
+              "capacity": 57859,
+              "availableBefore": 27712,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "type": "injectFluid",
+            "tick": 30,
+            "order": 10,
+            "simTime": 0.24999999999999997,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30179,
+              "after": 30211,
+              "capacity": 57859,
+              "availableBefore": 27680,
+              "clamped": false
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "type": "injectFluid",
+            "tick": 33,
+            "order": 11,
+            "simTime": 0.275,
+            "result": {
+              "requested": 32,
+              "added": 32,
+              "before": 30211,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 27648,
+              "clamped": false
+            }
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 30243,
+        "fluidParticleCount": 28384,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0.35000000000000026,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "localImpactCount": 281,
+      "elevatedFluidProfile": {
+        "binCount": 12,
+        "bins": [
+          150,
+          32,
+          0,
+          32,
+          32,
+          0,
+          32,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        "occupiedBins": 6,
+        "coverageRatio": 0.5,
+        "particleCount": 281,
+        "lowestY": 0.251347154378891,
+        "highestY": 0.7950841784477234,
+        "minimumX": 0.5954894423484802,
+        "maximumX": 0.8624383211135864,
+        "spanX": 0.2669488787651062,
+        "minimumZ": 0.35510188341140747,
+        "maximumZ": 0.5929925441741943,
+        "spanZ": 0.23789066076278687,
+        "minimumY": 0.25,
+        "maximumY": 1
+      },
+      "bodyDisplacement": 0.6033802425871607,
+      "bodyDisplacementVector": [
+        0.000911712646484375,
+        -0.6033741384744644,
+        -0.002556353807449341
+      ],
+      "bodyDisplacementAlongAxis": 0.6033741384744644,
+      "bodyRotationDegrees": 11.276533233143098,
+      "baselineBodyDisplacement": 0.6006490273299363,
+      "baselineBodyDisplacementAlongAxis": 0.6006441414356232,
+      "bodyDisplacementDeltaAlongAxis": 0.0027299970388412476,
+      "nonFinite": 0,
+      "stats": {
+        "avgRho": 1.0106190959994874,
+        "maxRho": 1.8583984375,
+        "maxSpeed": 6.255859375,
+        "frames": 0,
+        "ke": 301.69921875
+      },
+      "acceptance": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "passed": true
+      }
+    }
+  },
+  "page": {
+    "conclusion": "B 的高位垂直占用增加 5 个分箱，最高流体位置增加 0.512 u：分时注入形成了更长的落水带；当前刚体基线差为 0.00273 u，不能据此宣称冲击增强，且画面仍是离散粒子。",
+    "conclusionOutcome": "improved",
+    "singleGate": "PASSED",
+    "stagedGate": "PASSED",
+    "singleBins": "1 / 12",
+    "stagedBins": "6 / 12",
+    "overflow": 0
+  },
+  "checks": [
+    {
+      "name": "route.http200",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "runtime.initiallyIdle",
+      "passed": true,
+      "detail": {
+        "phase": "idle",
+        "runtimeSlots": 0,
+        "maxObservedRuntimeSlots": 0,
+        "activeVariant": null,
+        "results": {
+          "single": null,
+          "staged": null
+        },
+        "surfaceResults": {},
+        "displayMode": "particles",
+        "emitterShape": "compact",
+        "error": null,
+        "iframeHasSource": false,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "ab.sameInputs",
+      "passed": true,
+      "detail": {
+        "single": {
+          "injection": {
+            "requested": 384,
+            "added": 384,
+            "before": 29859,
+            "after": 30243,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 42,
+            "actualTicks": 42,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.35000000000000026,
+            "reset": false,
+            "history": [
+              {
+                "id": "single-pulse-384",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 384,
+                  "added": 384,
+                  "before": 29859,
+                  "after": 30243,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        },
+        "staged": {
+          "injection": {
+            "requested": 384,
+            "added": 384,
+            "before": 29859,
+            "after": 30243,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 42,
+            "actualTicks": 42,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.35000000000000026,
+            "reset": false,
+            "history": [
+              {
+                "id": "cascade-pulse-1",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 29859,
+                  "after": 29891,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-2",
+                "type": "injectFluid",
+                "tick": 3,
+                "order": 1,
+                "simTime": 0.025,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 29891,
+                  "after": 29923,
+                  "capacity": 57859,
+                  "availableBefore": 27968,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-3",
+                "type": "injectFluid",
+                "tick": 6,
+                "order": 2,
+                "simTime": 0.049999999999999996,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 29923,
+                  "after": 29955,
+                  "capacity": 57859,
+                  "availableBefore": 27936,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-4",
+                "type": "injectFluid",
+                "tick": 9,
+                "order": 3,
+                "simTime": 0.075,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 29955,
+                  "after": 29987,
+                  "capacity": 57859,
+                  "availableBefore": 27904,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-5",
+                "type": "injectFluid",
+                "tick": 12,
+                "order": 4,
+                "simTime": 0.09999999999999999,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 29987,
+                  "after": 30019,
+                  "capacity": 57859,
+                  "availableBefore": 27872,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-6",
+                "type": "injectFluid",
+                "tick": 15,
+                "order": 5,
+                "simTime": 0.12499999999999999,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30019,
+                  "after": 30051,
+                  "capacity": 57859,
+                  "availableBefore": 27840,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-7",
+                "type": "injectFluid",
+                "tick": 18,
+                "order": 6,
+                "simTime": 0.15,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30051,
+                  "after": 30083,
+                  "capacity": 57859,
+                  "availableBefore": 27808,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-8",
+                "type": "injectFluid",
+                "tick": 21,
+                "order": 7,
+                "simTime": 0.175,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30083,
+                  "after": 30115,
+                  "capacity": 57859,
+                  "availableBefore": 27776,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-9",
+                "type": "injectFluid",
+                "tick": 24,
+                "order": 8,
+                "simTime": 0.19999999999999998,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30115,
+                  "after": 30147,
+                  "capacity": 57859,
+                  "availableBefore": 27744,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-10",
+                "type": "injectFluid",
+                "tick": 27,
+                "order": 9,
+                "simTime": 0.22499999999999998,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30147,
+                  "after": 30179,
+                  "capacity": 57859,
+                  "availableBefore": 27712,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-11",
+                "type": "injectFluid",
+                "tick": 30,
+                "order": 10,
+                "simTime": 0.24999999999999997,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30179,
+                  "after": 30211,
+                  "capacity": 57859,
+                  "availableBefore": 27680,
+                  "clamped": false
+                }
+              },
+              {
+                "id": "cascade-pulse-12",
+                "type": "injectFluid",
+                "tick": 33,
+                "order": 11,
+                "simTime": 0.275,
+                "result": {
+                  "requested": 32,
+                  "added": 32,
+                  "before": 30211,
+                  "after": 30243,
+                  "capacity": 57859,
+                  "availableBefore": 27648,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "velocity": [
+            0,
+            -2.5,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "ab.onlyTimingChanged",
+      "passed": true,
+      "detail": {
+        "single": [
+          {
+            "id": "single-pulse-384",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ],
+        "staged": [
+          {
+            "id": "cascade-pulse-1",
+            "tick": 0,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-2",
+            "tick": 3,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-3",
+            "tick": 6,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-4",
+            "tick": 9,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-5",
+            "tick": 12,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-6",
+            "tick": 15,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-7",
+            "tick": 18,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-8",
+            "tick": 21,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-9",
+            "tick": 24,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-10",
+            "tick": 27,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-11",
+            "tick": 30,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          {
+            "id": "cascade-pulse-12",
+            "tick": 33,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                4,
+                2,
+                4
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ab.sameNativeBody",
+      "passed": true,
+      "detail": {
+        "single": {
+          "id": 1,
+          "shape": "box",
+          "density": 2.2,
+          "size": 0.15,
+          "sceneRole": "dense-impact-block"
+        },
+        "staged": {
+          "id": 1,
+          "shape": "box",
+          "density": 2.2,
+          "size": 0.15,
+          "sceneRole": "dense-impact-block"
+        }
+      }
+    },
+    {
+      "name": "ab.runtimeValid",
+      "passed": true,
+      "detail": {
+        "single": {
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "nonFinite": 0,
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          }
+        },
+        "staged": {
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "nonFinite": 0,
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          }
+        }
+      }
+    },
+    {
+      "name": "effect.moreVerticalCoverage",
+      "passed": true,
+      "detail": {
+        "single": {
+          "binCount": 12,
+          "bins": [
+            145,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "occupiedBins": 1,
+          "coverageRatio": 0.08333333333333333,
+          "particleCount": 145,
+          "lowestY": 0.25095266103744507,
+          "highestY": 0.28283029794692993,
+          "minimumX": 0.5926703214645386,
+          "maximumX": 0.8576258420944214,
+          "spanX": 0.2649555206298828,
+          "minimumZ": 0.38627317547798157,
+          "maximumZ": 0.611351728439331,
+          "spanZ": 0.2250785529613495,
+          "minimumY": 0.25,
+          "maximumY": 1
+        },
+        "staged": {
+          "binCount": 12,
+          "bins": [
+            129,
+            16,
+            18,
+            35,
+            16,
+            16,
+            32,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "occupiedBins": 7,
+          "coverageRatio": 0.5833333333333334,
+          "particleCount": 262,
+          "lowestY": 0.2501031458377838,
+          "highestY": 0.6732115745544434,
+          "minimumX": 0.5868149995803833,
+          "maximumX": 0.8862103223800659,
+          "spanX": 0.2993953227996826,
+          "minimumZ": 0.35930687189102173,
+          "maximumZ": 0.6208581328392029,
+          "spanZ": 0.26155126094818115,
+          "minimumY": 0.25,
+          "maximumY": 1
+        }
+      }
+    },
+    {
+      "name": "effect.higherLiveWater",
+      "passed": true,
+      "detail": {
+        "single": 0.28283029794692993,
+        "staged": 0.6732115745544434
+      }
+    },
+    {
+      "name": "runtime.singleSlot",
+      "passed": true,
+      "detail": {
+        "afterSingle": {
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "maxObservedRuntimeSlots": 1,
+          "activeVariant": "single",
+          "results": {
+            "single": {
+              "bridgeVersion": "particles4all-scene-runner-v1",
+              "sceneContract": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "id": "waterfall-single-pulse-observable",
+                "revision": 1,
+                "hash": "fnv1a-8b1e794c"
+              },
+              "mapping": {
+                "worldDriver": "free-fall-impact-speed",
+                "gravityMetersPerSecond2": 9.81,
+                "worldDropMeters": 16.8,
+                "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+                "solverVelocity": [
+                  0,
+                  -2.5,
+                  0
+                ],
+                "velocityScale": 0.13770061067998812,
+                "solverFrame": "world-down-to-solver-negative-y",
+                "crossScaleTruthLevel": "T2 mapped input",
+                "localTruthLevel": "T3 local PBF / rigid coupling"
+              },
+              "environment": {
+                "adapterLabel": "intel gen-12lp",
+                "webgpuContext": true
+              },
+              "initial": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 29859,
+                "fluidParticleCount": 28000,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 3,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "packet": {
+                "count": 384,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              },
+              "bodyProfile": {
+                "id": 1,
+                "shape": "box",
+                "density": 2.2,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "plan": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "sceneId": "waterfall-single-pulse-observable",
+                "sceneContractHash": "fnv1a-8b1e794c",
+                "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+                "runtimeBox": [
+                  1.5,
+                  1,
+                  1
+                ],
+                "reset": true,
+                "ticks": 42,
+                "packets": [
+                  {
+                    "id": "single-pulse-384",
+                    "tick": 0,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        8,
+                        6,
+                        8
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  }
+                ],
+                "interactionRegion": {
+                  "center": [
+                    0.75,
+                    0.5
+                  ],
+                  "radius": 0.18,
+                  "minimumY": 0.25
+                }
+              },
+              "injection": {
+                "requested": 384,
+                "added": 384,
+                "before": 29859,
+                "after": 30243,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              },
+              "step": {
+                "requestedTicks": 42,
+                "actualTicks": 42,
+                "stepDt": 0.008333333333333333,
+                "startTime": 0,
+                "endTime": 0.35000000000000026,
+                "reset": false,
+                "history": [
+                  {
+                    "id": "single-pulse-384",
+                    "type": "injectFluid",
+                    "tick": 0,
+                    "order": 0,
+                    "simTime": 0,
+                    "result": {
+                      "requested": 384,
+                      "added": 384,
+                      "before": 29859,
+                      "after": 30243,
+                      "capacity": 57859,
+                      "availableBefore": 28000,
+                      "clamped": false
+                    }
+                  }
+                ]
+              },
+              "final": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 30243,
+                "fluidParticleCount": 28384,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0.35000000000000026,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 3,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "localImpactCount": 145,
+              "elevatedFluidProfile": {
+                "binCount": 12,
+                "bins": [
+                  145,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "occupiedBins": 1,
+                "coverageRatio": 0.08333333333333333,
+                "particleCount": 145,
+                "lowestY": 0.25095266103744507,
+                "highestY": 0.28283029794692993,
+                "minimumX": 0.5926703214645386,
+                "maximumX": 0.8576258420944214,
+                "spanX": 0.2649555206298828,
+                "minimumZ": 0.38627317547798157,
+                "maximumZ": 0.611351728439331,
+                "spanZ": 0.2250785529613495,
+                "minimumY": 0.25,
+                "maximumY": 1
+              },
+              "bodyDisplacement": 0.6080769074634241,
+              "bodyDisplacementVector": [
+                -0.0003578066825866699,
+                -0.6080767959356308,
+                -0.00008723139762878418
+              ],
+              "bodyDisplacementAlongAxis": 0.6080767959356308,
+              "bodyRotationDegrees": 5.533375426760012,
+              "baselineBodyDisplacement": 0.600624499683719,
+              "baselineBodyDisplacementAlongAxis": 0.6006195545196533,
+              "bodyDisplacementDeltaAlongAxis": 0.007457241415977478,
+              "nonFinite": 0,
+              "stats": {
+                "avgRho": 1.0109289236352215,
+                "maxRho": 1.7626953125,
+                "maxSpeed": 6.7744140625,
+                "frames": 0,
+                "ke": 296.583984375
+              },
+              "acceptance": {
+                "injectedParticles": true,
+                "solverTicks": true,
+                "finitePositions": true,
+                "bodyProfile": true,
+                "rigidResponse": true,
+                "directionalRigidResponse": true,
+                "webGpuContext": true,
+                "passed": true
+              }
+            },
+            "staged": null
+          },
+          "surfaceResults": {},
+          "displayMode": "particles",
+          "emitterShape": "compact",
+          "error": null,
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "afterStaged": {
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "maxObservedRuntimeSlots": 1,
+          "activeVariant": "staged",
+          "results": {
+            "single": {
+              "bridgeVersion": "particles4all-scene-runner-v1",
+              "sceneContract": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "id": "waterfall-single-pulse-observable",
+                "revision": 1,
+                "hash": "fnv1a-8b1e794c"
+              },
+              "mapping": {
+                "worldDriver": "free-fall-impact-speed",
+                "gravityMetersPerSecond2": 9.81,
+                "worldDropMeters": 16.8,
+                "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+                "solverVelocity": [
+                  0,
+                  -2.5,
+                  0
+                ],
+                "velocityScale": 0.13770061067998812,
+                "solverFrame": "world-down-to-solver-negative-y",
+                "crossScaleTruthLevel": "T2 mapped input",
+                "localTruthLevel": "T3 local PBF / rigid coupling"
+              },
+              "environment": {
+                "adapterLabel": "intel gen-12lp",
+                "webgpuContext": true
+              },
+              "initial": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 29859,
+                "fluidParticleCount": 28000,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 3,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "packet": {
+                "count": 384,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              },
+              "bodyProfile": {
+                "id": 1,
+                "shape": "box",
+                "density": 2.2,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "plan": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "sceneId": "waterfall-single-pulse-observable",
+                "sceneContractHash": "fnv1a-8b1e794c",
+                "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+                "runtimeBox": [
+                  1.5,
+                  1,
+                  1
+                ],
+                "reset": true,
+                "ticks": 42,
+                "packets": [
+                  {
+                    "id": "single-pulse-384",
+                    "tick": 0,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        8,
+                        6,
+                        8
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  }
+                ],
+                "interactionRegion": {
+                  "center": [
+                    0.75,
+                    0.5
+                  ],
+                  "radius": 0.18,
+                  "minimumY": 0.25
+                }
+              },
+              "injection": {
+                "requested": 384,
+                "added": 384,
+                "before": 29859,
+                "after": 30243,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              },
+              "step": {
+                "requestedTicks": 42,
+                "actualTicks": 42,
+                "stepDt": 0.008333333333333333,
+                "startTime": 0,
+                "endTime": 0.35000000000000026,
+                "reset": false,
+                "history": [
+                  {
+                    "id": "single-pulse-384",
+                    "type": "injectFluid",
+                    "tick": 0,
+                    "order": 0,
+                    "simTime": 0,
+                    "result": {
+                      "requested": 384,
+                      "added": 384,
+                      "before": 29859,
+                      "after": 30243,
+                      "capacity": 57859,
+                      "availableBefore": 28000,
+                      "clamped": false
+                    }
+                  }
+                ]
+              },
+              "final": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 30243,
+                "fluidParticleCount": 28384,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0.35000000000000026,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 3,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "localImpactCount": 145,
+              "elevatedFluidProfile": {
+                "binCount": 12,
+                "bins": [
+                  145,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "occupiedBins": 1,
+                "coverageRatio": 0.08333333333333333,
+                "particleCount": 145,
+                "lowestY": 0.25095266103744507,
+                "highestY": 0.28283029794692993,
+                "minimumX": 0.5926703214645386,
+                "maximumX": 0.8576258420944214,
+                "spanX": 0.2649555206298828,
+                "minimumZ": 0.38627317547798157,
+                "maximumZ": 0.611351728439331,
+                "spanZ": 0.2250785529613495,
+                "minimumY": 0.25,
+                "maximumY": 1
+              },
+              "bodyDisplacement": 0.6080769074634241,
+              "bodyDisplacementVector": [
+                -0.0003578066825866699,
+                -0.6080767959356308,
+                -0.00008723139762878418
+              ],
+              "bodyDisplacementAlongAxis": 0.6080767959356308,
+              "bodyRotationDegrees": 5.533375426760012,
+              "baselineBodyDisplacement": 0.600624499683719,
+              "baselineBodyDisplacementAlongAxis": 0.6006195545196533,
+              "bodyDisplacementDeltaAlongAxis": 0.007457241415977478,
+              "nonFinite": 0,
+              "stats": {
+                "avgRho": 1.0109289236352215,
+                "maxRho": 1.7626953125,
+                "maxSpeed": 6.7744140625,
+                "frames": 0,
+                "ke": 296.583984375
+              },
+              "acceptance": {
+                "injectedParticles": true,
+                "solverTicks": true,
+                "finitePositions": true,
+                "bodyProfile": true,
+                "rigidResponse": true,
+                "directionalRigidResponse": true,
+                "webGpuContext": true,
+                "passed": true
+              }
+            },
+            "staged": {
+              "bridgeVersion": "particles4all-scene-runner-v1",
+              "sceneContract": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "id": "waterfall-staged-cascade-observable-particles",
+                "revision": 1,
+                "hash": "fnv1a-1acae6a1"
+              },
+              "mapping": {
+                "worldDriver": "free-fall-impact-speed",
+                "gravityMetersPerSecond2": 9.81,
+                "worldDropMeters": 16.8,
+                "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+                "solverVelocity": [
+                  0,
+                  -2.5,
+                  0
+                ],
+                "velocityScale": 0.13770061067998812,
+                "solverFrame": "world-down-to-solver-negative-y",
+                "crossScaleTruthLevel": "T2 mapped input",
+                "localTruthLevel": "T3 local PBF / rigid coupling"
+              },
+              "environment": {
+                "adapterLabel": "intel gen-12lp",
+                "webgpuContext": true
+              },
+              "initial": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 29859,
+                "fluidParticleCount": 28000,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 5,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "packet": {
+                "count": 32,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    4,
+                    2,
+                    4
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              },
+              "bodyProfile": {
+                "id": 1,
+                "shape": "box",
+                "density": 2.2,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "plan": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "sceneId": "waterfall-staged-cascade-observable-particles",
+                "sceneContractHash": "fnv1a-1acae6a1",
+                "engineQuery": "preset=small&view=particles&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+                "runtimeBox": [
+                  1.5,
+                  1,
+                  1
+                ],
+                "reset": true,
+                "ticks": 42,
+                "packets": [
+                  {
+                    "id": "cascade-pulse-1",
+                    "tick": 0,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-2",
+                    "tick": 3,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-3",
+                    "tick": 6,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-4",
+                    "tick": 9,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-5",
+                    "tick": 12,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-6",
+                    "tick": 15,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-7",
+                    "tick": 18,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-8",
+                    "tick": 21,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-9",
+                    "tick": 24,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-10",
+                    "tick": 27,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-11",
+                    "tick": 30,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-12",
+                    "tick": 33,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  }
+                ],
+                "interactionRegion": {
+                  "center": [
+                    0.75,
+                    0.5
+                  ],
+                  "radius": 0.18,
+                  "minimumY": 0.25
+                }
+              },
+              "injection": {
+                "requested": 384,
+                "added": 384,
+                "before": 29859,
+                "after": 30243,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              },
+              "step": {
+                "requestedTicks": 42,
+                "actualTicks": 42,
+                "stepDt": 0.008333333333333333,
+                "startTime": 0,
+                "endTime": 0.35000000000000026,
+                "reset": false,
+                "history": [
+                  {
+                    "id": "cascade-pulse-1",
+                    "type": "injectFluid",
+                    "tick": 0,
+                    "order": 0,
+                    "simTime": 0,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29859,
+                      "after": 29891,
+                      "capacity": 57859,
+                      "availableBefore": 28000,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-2",
+                    "type": "injectFluid",
+                    "tick": 3,
+                    "order": 1,
+                    "simTime": 0.025,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29891,
+                      "after": 29923,
+                      "capacity": 57859,
+                      "availableBefore": 27968,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-3",
+                    "type": "injectFluid",
+                    "tick": 6,
+                    "order": 2,
+                    "simTime": 0.049999999999999996,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29923,
+                      "after": 29955,
+                      "capacity": 57859,
+                      "availableBefore": 27936,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-4",
+                    "type": "injectFluid",
+                    "tick": 9,
+                    "order": 3,
+                    "simTime": 0.075,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29955,
+                      "after": 29987,
+                      "capacity": 57859,
+                      "availableBefore": 27904,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-5",
+                    "type": "injectFluid",
+                    "tick": 12,
+                    "order": 4,
+                    "simTime": 0.09999999999999999,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29987,
+                      "after": 30019,
+                      "capacity": 57859,
+                      "availableBefore": 27872,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-6",
+                    "type": "injectFluid",
+                    "tick": 15,
+                    "order": 5,
+                    "simTime": 0.12499999999999999,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30019,
+                      "after": 30051,
+                      "capacity": 57859,
+                      "availableBefore": 27840,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-7",
+                    "type": "injectFluid",
+                    "tick": 18,
+                    "order": 6,
+                    "simTime": 0.15,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30051,
+                      "after": 30083,
+                      "capacity": 57859,
+                      "availableBefore": 27808,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-8",
+                    "type": "injectFluid",
+                    "tick": 21,
+                    "order": 7,
+                    "simTime": 0.175,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30083,
+                      "after": 30115,
+                      "capacity": 57859,
+                      "availableBefore": 27776,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-9",
+                    "type": "injectFluid",
+                    "tick": 24,
+                    "order": 8,
+                    "simTime": 0.19999999999999998,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30115,
+                      "after": 30147,
+                      "capacity": 57859,
+                      "availableBefore": 27744,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-10",
+                    "type": "injectFluid",
+                    "tick": 27,
+                    "order": 9,
+                    "simTime": 0.22499999999999998,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30147,
+                      "after": 30179,
+                      "capacity": 57859,
+                      "availableBefore": 27712,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-11",
+                    "type": "injectFluid",
+                    "tick": 30,
+                    "order": 10,
+                    "simTime": 0.24999999999999997,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30179,
+                      "after": 30211,
+                      "capacity": 57859,
+                      "availableBefore": 27680,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-12",
+                    "type": "injectFluid",
+                    "tick": 33,
+                    "order": 11,
+                    "simTime": 0.275,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30211,
+                      "after": 30243,
+                      "capacity": 57859,
+                      "availableBefore": 27648,
+                      "clamped": false
+                    }
+                  }
+                ]
+              },
+              "final": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 30243,
+                "fluidParticleCount": 28384,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0.35000000000000026,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 5,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "localImpactCount": 262,
+              "elevatedFluidProfile": {
+                "binCount": 12,
+                "bins": [
+                  129,
+                  16,
+                  18,
+                  35,
+                  16,
+                  16,
+                  32,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "occupiedBins": 7,
+                "coverageRatio": 0.5833333333333334,
+                "particleCount": 262,
+                "lowestY": 0.2501031458377838,
+                "highestY": 0.6732115745544434,
+                "minimumX": 0.5868149995803833,
+                "maximumX": 0.8862103223800659,
+                "spanX": 0.2993953227996826,
+                "minimumZ": 0.35930687189102173,
+                "maximumZ": 0.6208581328392029,
+                "spanZ": 0.26155126094818115,
+                "minimumY": 0.25,
+                "maximumY": 1
+              },
+              "bodyDisplacement": 0.6005895385375866,
+              "bodyDisplacementVector": [
+                0.00032204389572143555,
+                -0.6005797833204269,
+                -0.0034079253673553467
+              ],
+              "bodyDisplacementAlongAxis": 0.6005797833204269,
+              "bodyRotationDegrees": 11.916692621764982,
+              "baselineBodyDisplacement": 0.6005337174759968,
+              "baselineBodyDisplacementAlongAxis": 0.6005281955003738,
+              "bodyDisplacementDeltaAlongAxis": 0.000051587820053100586,
+              "nonFinite": 0,
+              "stats": {
+                "avgRho": 1.0103412682790232,
+                "maxRho": 1.744140625,
+                "maxSpeed": 6.1044921875,
+                "frames": 0,
+                "ke": 301.2998046875
+              },
+              "acceptance": {
+                "injectedParticles": true,
+                "solverTicks": true,
+                "finitePositions": true,
+                "bodyProfile": true,
+                "rigidResponse": true,
+                "directionalRigidResponse": true,
+                "webGpuContext": true,
+                "passed": true
+              }
+            }
+          },
+          "surfaceResults": {
+            "compact:particles": {
+              "bridgeVersion": "particles4all-scene-runner-v1",
+              "sceneContract": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "id": "waterfall-staged-cascade-observable-particles",
+                "revision": 1,
+                "hash": "fnv1a-1acae6a1"
+              },
+              "mapping": {
+                "worldDriver": "free-fall-impact-speed",
+                "gravityMetersPerSecond2": 9.81,
+                "worldDropMeters": 16.8,
+                "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+                "solverVelocity": [
+                  0,
+                  -2.5,
+                  0
+                ],
+                "velocityScale": 0.13770061067998812,
+                "solverFrame": "world-down-to-solver-negative-y",
+                "crossScaleTruthLevel": "T2 mapped input",
+                "localTruthLevel": "T3 local PBF / rigid coupling"
+              },
+              "environment": {
+                "adapterLabel": "intel gen-12lp",
+                "webgpuContext": true
+              },
+              "initial": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 29859,
+                "fluidParticleCount": 28000,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 5,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "packet": {
+                "count": 32,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    4,
+                    2,
+                    4
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              },
+              "bodyProfile": {
+                "id": 1,
+                "shape": "box",
+                "density": 2.2,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "plan": {
+                "schema": "water-scene.particles4all-near-field/v1",
+                "sceneId": "waterfall-staged-cascade-observable-particles",
+                "sceneContractHash": "fnv1a-1acae6a1",
+                "engineQuery": "preset=small&view=particles&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1",
+                "runtimeBox": [
+                  1.5,
+                  1,
+                  1
+                ],
+                "reset": true,
+                "ticks": 42,
+                "packets": [
+                  {
+                    "id": "cascade-pulse-1",
+                    "tick": 0,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-2",
+                    "tick": 3,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-3",
+                    "tick": 6,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-4",
+                    "tick": 9,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-5",
+                    "tick": 12,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-6",
+                    "tick": 15,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-7",
+                    "tick": 18,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-8",
+                    "tick": 21,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-9",
+                    "tick": 24,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-10",
+                    "tick": 27,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-11",
+                    "tick": 30,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-12",
+                    "tick": 33,
+                    "config": {
+                      "origin": [
+                        0.675,
+                        0.86,
+                        0.43
+                      ],
+                      "counts": [
+                        4,
+                        2,
+                        4
+                      ],
+                      "spacing": 0.02,
+                      "velocity": [
+                        0,
+                        -2.5,
+                        0
+                      ]
+                    }
+                  }
+                ],
+                "interactionRegion": {
+                  "center": [
+                    0.75,
+                    0.5
+                  ],
+                  "radius": 0.18,
+                  "minimumY": 0.25
+                }
+              },
+              "injection": {
+                "requested": 384,
+                "added": 384,
+                "before": 29859,
+                "after": 30243,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              },
+              "step": {
+                "requestedTicks": 42,
+                "actualTicks": 42,
+                "stepDt": 0.008333333333333333,
+                "startTime": 0,
+                "endTime": 0.35000000000000026,
+                "reset": false,
+                "history": [
+                  {
+                    "id": "cascade-pulse-1",
+                    "type": "injectFluid",
+                    "tick": 0,
+                    "order": 0,
+                    "simTime": 0,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29859,
+                      "after": 29891,
+                      "capacity": 57859,
+                      "availableBefore": 28000,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-2",
+                    "type": "injectFluid",
+                    "tick": 3,
+                    "order": 1,
+                    "simTime": 0.025,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29891,
+                      "after": 29923,
+                      "capacity": 57859,
+                      "availableBefore": 27968,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-3",
+                    "type": "injectFluid",
+                    "tick": 6,
+                    "order": 2,
+                    "simTime": 0.049999999999999996,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29923,
+                      "after": 29955,
+                      "capacity": 57859,
+                      "availableBefore": 27936,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-4",
+                    "type": "injectFluid",
+                    "tick": 9,
+                    "order": 3,
+                    "simTime": 0.075,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29955,
+                      "after": 29987,
+                      "capacity": 57859,
+                      "availableBefore": 27904,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-5",
+                    "type": "injectFluid",
+                    "tick": 12,
+                    "order": 4,
+                    "simTime": 0.09999999999999999,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 29987,
+                      "after": 30019,
+                      "capacity": 57859,
+                      "availableBefore": 27872,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-6",
+                    "type": "injectFluid",
+                    "tick": 15,
+                    "order": 5,
+                    "simTime": 0.12499999999999999,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30019,
+                      "after": 30051,
+                      "capacity": 57859,
+                      "availableBefore": 27840,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-7",
+                    "type": "injectFluid",
+                    "tick": 18,
+                    "order": 6,
+                    "simTime": 0.15,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30051,
+                      "after": 30083,
+                      "capacity": 57859,
+                      "availableBefore": 27808,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-8",
+                    "type": "injectFluid",
+                    "tick": 21,
+                    "order": 7,
+                    "simTime": 0.175,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30083,
+                      "after": 30115,
+                      "capacity": 57859,
+                      "availableBefore": 27776,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-9",
+                    "type": "injectFluid",
+                    "tick": 24,
+                    "order": 8,
+                    "simTime": 0.19999999999999998,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30115,
+                      "after": 30147,
+                      "capacity": 57859,
+                      "availableBefore": 27744,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-10",
+                    "type": "injectFluid",
+                    "tick": 27,
+                    "order": 9,
+                    "simTime": 0.22499999999999998,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30147,
+                      "after": 30179,
+                      "capacity": 57859,
+                      "availableBefore": 27712,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-11",
+                    "type": "injectFluid",
+                    "tick": 30,
+                    "order": 10,
+                    "simTime": 0.24999999999999997,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30179,
+                      "after": 30211,
+                      "capacity": 57859,
+                      "availableBefore": 27680,
+                      "clamped": false
+                    }
+                  },
+                  {
+                    "id": "cascade-pulse-12",
+                    "type": "injectFluid",
+                    "tick": 33,
+                    "order": 11,
+                    "simTime": 0.275,
+                    "result": {
+                      "requested": 32,
+                      "added": 32,
+                      "before": 30211,
+                      "after": 30243,
+                      "capacity": 57859,
+                      "availableBefore": 27648,
+                      "clamped": false
+                    }
+                  }
+                ]
+              },
+              "final": {
+                "adapterVersion": 1,
+                "classification": "E1 runtime adapter",
+                "upstreamRuntime": true,
+                "particleCount": 30243,
+                "fluidParticleCount": 28384,
+                "rigidParticleCount": 1859,
+                "bodyCount": 1,
+                "simTime": 0.35000000000000026,
+                "solverStepDt": 0.008333333333333333,
+                "generation": 5,
+                "support": {
+                  "deterministicTicks": true,
+                  "frozenSampling": true,
+                  "directFluidInjection": true,
+                  "fluidPacketGenerator": true,
+                  "seededReset": false,
+                  "scheduledEvents": true,
+                  "directBodySampling": true,
+                  "rigidBodyEvents": true,
+                  "gpuDeviceDisposal": false
+                }
+              },
+              "localImpactCount": 262,
+              "elevatedFluidProfile": {
+                "binCount": 12,
+                "bins": [
+                  129,
+                  16,
+                  18,
+                  35,
+                  16,
+                  16,
+                  32,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "occupiedBins": 7,
+                "coverageRatio": 0.5833333333333334,
+                "particleCount": 262,
+                "lowestY": 0.2501031458377838,
+                "highestY": 0.6732115745544434,
+                "minimumX": 0.5868149995803833,
+                "maximumX": 0.8862103223800659,
+                "spanX": 0.2993953227996826,
+                "minimumZ": 0.35930687189102173,
+                "maximumZ": 0.6208581328392029,
+                "spanZ": 0.26155126094818115,
+                "minimumY": 0.25,
+                "maximumY": 1
+              },
+              "bodyDisplacement": 0.6005895385375866,
+              "bodyDisplacementVector": [
+                0.00032204389572143555,
+                -0.6005797833204269,
+                -0.0034079253673553467
+              ],
+              "bodyDisplacementAlongAxis": 0.6005797833204269,
+              "bodyRotationDegrees": 11.916692621764982,
+              "baselineBodyDisplacement": 0.6005337174759968,
+              "baselineBodyDisplacementAlongAxis": 0.6005281955003738,
+              "bodyDisplacementDeltaAlongAxis": 0.000051587820053100586,
+              "nonFinite": 0,
+              "stats": {
+                "avgRho": 1.0103412682790232,
+                "maxRho": 1.744140625,
+                "maxSpeed": 6.1044921875,
+                "frames": 0,
+                "ke": 301.2998046875
+              },
+              "acceptance": {
+                "injectedParticles": true,
+                "solverTicks": true,
+                "finitePositions": true,
+                "bodyProfile": true,
+                "rigidResponse": true,
+                "directionalRigidResponse": true,
+                "webGpuContext": true,
+                "passed": true
+              }
+            }
+          },
+          "displayMode": "particles",
+          "emitterShape": "compact",
+          "error": null,
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "firstFrameSrc": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+        "secondFrameSrc": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+      }
+    },
+    {
+      "name": "surface.originalPaths",
+      "passed": true,
+      "detail": {
+        "mesh": {
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          },
+          "engineQuery": "preset=small&view=mesh&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1"
+        },
+        "ssfr": {
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          },
+          "engineQuery": "preset=small&view=ssfr&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1"
+        }
+      }
+    },
+    {
+      "name": "effect.thinSheetWider",
+      "passed": false,
+      "detail": {
+        "compactSsfr": {
+          "binCount": 12,
+          "bins": [
+            126,
+            16,
+            18,
+            35,
+            16,
+            16,
+            32,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "occupiedBins": 7,
+          "coverageRatio": 0.5833333333333334,
+          "particleCount": 259,
+          "lowestY": 0.25024521350860596,
+          "highestY": 0.6732115745544434,
+          "minimumX": 0.5814642906188965,
+          "maximumX": 0.8903346657752991,
+          "spanX": 0.3088703751564026,
+          "minimumZ": 0.3524709641933441,
+          "maximumZ": 0.6191456913948059,
+          "spanZ": 0.2666747272014618,
+          "minimumY": 0.25,
+          "maximumY": 1
+        },
+        "sheetSsfr": {
+          "binCount": 12,
+          "bins": [
+            150,
+            32,
+            0,
+            32,
+            32,
+            0,
+            32,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          "occupiedBins": 6,
+          "coverageRatio": 0.5,
+          "particleCount": 281,
+          "lowestY": 0.251347154378891,
+          "highestY": 0.7950841784477234,
+          "minimumX": 0.5954894423484802,
+          "maximumX": 0.8624383211135864,
+          "spanX": 0.2669488787651062,
+          "minimumZ": 0.35510188341140747,
+          "maximumZ": 0.5929925441741943,
+          "spanZ": 0.23789066076278687,
+          "minimumY": 0.25,
+          "maximumY": 1
+        }
+      }
+    },
+    {
+      "name": "ui.observedConclusion",
+      "passed": true,
+      "detail": {
+        "conclusion": "B 的高位垂直占用增加 5 个分箱，最高流体位置增加 0.512 u：分时注入形成了更长的落水带；当前刚体基线差为 0.00273 u，不能据此宣称冲击增强，且画面仍是离散粒子。",
+        "conclusionOutcome": "improved",
+        "singleGate": "PASSED",
+        "stagedGate": "PASSED",
+        "singleBins": "1 / 12",
+        "stagedBins": "6 / 12",
+        "overflow": 0
+      }
+    },
+    {
+      "name": "ui.desktop",
+      "passed": true,
+      "detail": {
+        "conclusion": "B 的高位垂直占用增加 5 个分箱，最高流体位置增加 0.512 u：分时注入形成了更长的落水带；当前刚体基线差为 0.00273 u，不能据此宣称冲击增强，且画面仍是离散粒子。",
+        "conclusionOutcome": "improved",
+        "singleGate": "PASSED",
+        "stagedGate": "PASSED",
+        "singleBins": "1 / 12",
+        "stagedBins": "6 / 12",
+        "overflow": 0
+      }
+    },
+    {
+      "name": "browser.clean",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "failedRequests": []
+      }
+    }
+  ],
+  "passed": false,
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": []
+}

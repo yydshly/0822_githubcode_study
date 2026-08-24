@@ -1,0 +1,748 @@
+{
+  "createdAt": "2026-08-24T09:55:23.450Z",
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/watershed/",
+  "browserVersion": "151.0.7922.170",
+  "sources": {
+    "app": {
+      "repositoryPath": "docs/demos/water-scene-lab/watershed/app.js",
+      "sha256": "cb506c4cf0dac89661eda8df085cc1c065db631864a67a547678d917f5f7f492"
+    },
+    "html": {
+      "repositoryPath": "docs/demos/water-scene-lab/watershed/index.html",
+      "sha256": "c53dd9a78a55ffd74f5c2937c9814d239d3ad9c63821d715c24ff9b35c62a16e"
+    },
+    "css": {
+      "repositoryPath": "docs/demos/water-scene-lab/watershed/styles.css",
+      "sha256": "81fac4e64c4fd20fb3b0117b83a72d4879b63009a5c059ed32843ff66979a34d"
+    },
+    "model": {
+      "repositoryPath": "docs/demos/water-scene-lab/watershed/watershed-model.mjs",
+      "sha256": "2873af443bf297f0b609017635217d015af2594ef10fa237c84a74d5d05075dc"
+    },
+    "riverModel": {
+      "repositoryPath": "docs/demos/water-scene-lab/river/river-model.mjs",
+      "sha256": "0710380f105cdd4edf598e6e2d6b1e31c29b394e892c7b5d8fe5cc9b0d34b17e"
+    }
+  },
+  "cases": [
+    {
+      "name": "desktop",
+      "study": "threshold",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "inputDiff": [
+        "dischargeScale"
+      ],
+      "checks": {
+        "httpOk": true,
+        "renderReady": true,
+        "truthfulLevel": true,
+        "correctOverflowModel": true,
+        "correctStudyMode": true,
+        "correctQuality": true,
+        "correctVariantCount": true,
+        "onlyOneStudyFactorDiffers": true,
+        "dischargeRatio": true,
+        "thicknessRatio": true,
+        "sameGravityTrajectory": true,
+        "poolResponseMatchesStudy": true,
+        "riverInventoryDebited": true,
+        "packetsInFlight": true,
+        "depositionReachedPool": true,
+        "poolCapacityRespected": true,
+        "overflowPatternMatchesStudy": true,
+        "floodplainStorageMatchesStudy": true,
+        "routingEffectMatchesStudy": true,
+        "overflowLedgerClosed": true,
+        "overflowHasArrivalTime": true,
+        "cumulativeBudgetsClosed": true,
+        "visualSamplingDecoupled": true,
+        "canvasNonBlank": true,
+        "contentPresent": true,
+        "noOverflow": true,
+        "noFallback": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "layout": {
+        "title": "Watershed Slice v3｜Water Scene Lab",
+        "renderState": "ready",
+        "bodyLength": 1995,
+        "h1": "同一股来水，贯穿河流、瀑布、水潭与洪泛地。",
+        "resultRows": 13,
+        "readingCells": 20,
+        "overflowX": 0,
+        "overflowElements": [],
+        "fallbackVisible": false
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          994,
+          700
+        ],
+        "uniqueColors": 53,
+        "luminanceVariance": 2612.5807449859058
+      },
+      "impactEvidence": {
+        "cameraChanged": true,
+        "canvasSample": {
+          "available": true,
+          "drawingBuffer": [
+            994,
+            700
+          ],
+          "uniqueColors": 66,
+          "luminanceVariance": 2649.975403817989
+        },
+        "screenshot": "watershed-impact-desktop.png"
+      },
+      "floodplainEvidence": {
+        "cameraChanged": true,
+        "canvasSample": {
+          "available": true,
+          "drawingBuffer": [
+            994,
+            700
+          ],
+          "uniqueColors": 43,
+          "luminanceVariance": 1895.8594735656798
+        },
+        "screenshot": "watershed-floodplain-desktop.png"
+      },
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-overflow-v2",
+        "coupledModelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "coupledContractHash": "fnv1a-f59c7995",
+        "overflowContractHash": "fnv1a-8897a3a6",
+        "studyMode": "threshold",
+        "truthLevel": "T3",
+        "quality": "balanced",
+        "firstFrameMs": 1215.3999999642372,
+        "frameTimeP50": 7.699999976158097,
+        "frameTimeP95": 7.699999976158097,
+        "frameSampleCount": 1,
+        "maxFrameTime": 7.699999976158097,
+        "drawCalls": 56,
+        "triangles": 38464,
+        "renderedVariants": 2,
+        "analysisDurationMs": 127.09999996423721,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 994,
+          "height": 700,
+          "dpr": 1
+        }
+      },
+      "diagnostics": {
+        "low": {
+          "poolLevelRiseM": 0.010119047618713597,
+          "riverVolumeM3": 219.99999999998408,
+          "airborneVolumeM3": 5.749999999999988,
+          "depositedM3": 54.249999999999055,
+          "overflowM3": 0,
+          "floodplainVolumeM3": 0,
+          "wetCellCount": 0,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 0,
+          "maximumWetRow": -1,
+          "wetRouteSignature": "",
+          "firstOverflowTick": null,
+          "budgetResidualM3": 1.5711520973127335e-10
+        },
+        "high": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 24,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 5.599999999999999,
+          "maximumWetRow": 2,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshot": "projects/water-scene-lab/watershed-slice/assets/watershed-desktop.png",
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "study": "threshold",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inputDiff": [
+        "dischargeScale"
+      ],
+      "checks": {
+        "httpOk": true,
+        "renderReady": true,
+        "truthfulLevel": true,
+        "correctOverflowModel": true,
+        "correctStudyMode": true,
+        "correctQuality": true,
+        "correctVariantCount": true,
+        "onlyOneStudyFactorDiffers": true,
+        "dischargeRatio": true,
+        "thicknessRatio": true,
+        "sameGravityTrajectory": true,
+        "poolResponseMatchesStudy": true,
+        "riverInventoryDebited": true,
+        "packetsInFlight": true,
+        "depositionReachedPool": true,
+        "poolCapacityRespected": true,
+        "overflowPatternMatchesStudy": true,
+        "floodplainStorageMatchesStudy": true,
+        "routingEffectMatchesStudy": true,
+        "overflowLedgerClosed": true,
+        "overflowHasArrivalTime": true,
+        "cumulativeBudgetsClosed": true,
+        "visualSamplingDecoupled": true,
+        "canvasNonBlank": true,
+        "contentPresent": true,
+        "noOverflow": true,
+        "noFallback": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "layout": {
+        "title": "Watershed Slice v3｜Water Scene Lab",
+        "renderState": "ready",
+        "bodyLength": 1900,
+        "h1": "同一股来水，贯穿河流、瀑布、水潭与洪泛地。",
+        "resultRows": 13,
+        "readingCells": 20,
+        "overflowX": 0,
+        "overflowElements": [],
+        "fallbackVisible": false
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 60,
+        "luminanceVariance": 2565.5372324241125
+      },
+      "impactEvidence": null,
+      "floodplainEvidence": null,
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-overflow-v2",
+        "coupledModelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "coupledContractHash": "fnv1a-f59c7995",
+        "overflowContractHash": "fnv1a-8897a3a6",
+        "studyMode": "threshold",
+        "truthLevel": "T3",
+        "quality": "fallback",
+        "firstFrameMs": 548.6,
+        "frameTimeP50": 97.00000003576281,
+        "frameTimeP95": 97.00000003576281,
+        "frameSampleCount": 1,
+        "maxFrameTime": 97.00000003576281,
+        "drawCalls": 28,
+        "triangles": 14576,
+        "renderedVariants": 1,
+        "analysisDurationMs": 154.0999999642372,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 364,
+          "height": 455,
+          "dpr": 1
+        }
+      },
+      "diagnostics": {
+        "low": {
+          "poolLevelRiseM": 0.010119047618713597,
+          "riverVolumeM3": 219.99999999998408,
+          "airborneVolumeM3": 5.749999999999988,
+          "depositedM3": 54.249999999999055,
+          "overflowM3": 0,
+          "floodplainVolumeM3": 0,
+          "wetCellCount": 0,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 0,
+          "maximumWetRow": -1,
+          "wetRouteSignature": "",
+          "firstOverflowTick": null,
+          "budgetResidualM3": 1.5711520973127335e-10
+        },
+        "high": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 24,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 5.599999999999999,
+          "maximumWetRow": 2,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshot": "projects/water-scene-lab/watershed-slice/assets/watershed-mobile.png",
+      "passed": true
+    },
+    {
+      "name": "mobile-reduce",
+      "study": "threshold",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inputDiff": [
+        "dischargeScale"
+      ],
+      "checks": {
+        "httpOk": true,
+        "renderReady": true,
+        "truthfulLevel": true,
+        "correctOverflowModel": true,
+        "correctStudyMode": true,
+        "correctQuality": true,
+        "correctVariantCount": true,
+        "onlyOneStudyFactorDiffers": true,
+        "dischargeRatio": true,
+        "thicknessRatio": true,
+        "sameGravityTrajectory": true,
+        "poolResponseMatchesStudy": true,
+        "riverInventoryDebited": true,
+        "packetsInFlight": true,
+        "depositionReachedPool": true,
+        "poolCapacityRespected": true,
+        "overflowPatternMatchesStudy": true,
+        "floodplainStorageMatchesStudy": true,
+        "routingEffectMatchesStudy": true,
+        "overflowLedgerClosed": true,
+        "overflowHasArrivalTime": true,
+        "cumulativeBudgetsClosed": true,
+        "visualSamplingDecoupled": true,
+        "canvasNonBlank": true,
+        "contentPresent": true,
+        "noOverflow": true,
+        "noFallback": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "layout": {
+        "title": "Watershed Slice v3｜Water Scene Lab",
+        "renderState": "ready",
+        "bodyLength": 1900,
+        "h1": "同一股来水，贯穿河流、瀑布、水潭与洪泛地。",
+        "resultRows": 13,
+        "readingCells": 20,
+        "overflowX": 0,
+        "overflowElements": [],
+        "fallbackVisible": false
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 61,
+        "luminanceVariance": 2535.7913534904037
+      },
+      "impactEvidence": null,
+      "floodplainEvidence": null,
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-overflow-v2",
+        "coupledModelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "coupledContractHash": "fnv1a-f59c7995",
+        "overflowContractHash": "fnv1a-8897a3a6",
+        "studyMode": "threshold",
+        "truthLevel": "T3",
+        "quality": "fallback",
+        "firstFrameMs": 433.69999998807907,
+        "frameTimeP50": 195.05,
+        "frameTimeP95": 304.445,
+        "frameSampleCount": 2,
+        "maxFrameTime": 316.6,
+        "drawCalls": 28,
+        "triangles": 14576,
+        "renderedVariants": 1,
+        "analysisDurationMs": 134.30000001192093,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 364,
+          "height": 455,
+          "dpr": 1
+        }
+      },
+      "diagnostics": {
+        "low": {
+          "poolLevelRiseM": 0.010119047618713597,
+          "riverVolumeM3": 219.99999999998408,
+          "airborneVolumeM3": 5.749999999999988,
+          "depositedM3": 54.249999999999055,
+          "overflowM3": 0,
+          "floodplainVolumeM3": 0,
+          "wetCellCount": 0,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 0,
+          "maximumWetRow": -1,
+          "wetRouteSignature": "",
+          "firstOverflowTick": null,
+          "budgetResidualM3": 1.5711520973127335e-10
+        },
+        "high": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 24,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 5.599999999999999,
+          "maximumWetRow": 2,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshot": "projects/water-scene-lab/watershed-slice/assets/watershed-mobile-reduce.png",
+      "passed": true
+    },
+    {
+      "name": "barrier-desktop",
+      "study": "barrier",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "inputDiff": [
+        "floodplainRoutingMode"
+      ],
+      "checks": {
+        "httpOk": true,
+        "renderReady": true,
+        "truthfulLevel": true,
+        "correctOverflowModel": true,
+        "correctStudyMode": true,
+        "correctQuality": true,
+        "correctVariantCount": true,
+        "onlyOneStudyFactorDiffers": true,
+        "dischargeRatio": true,
+        "thicknessRatio": true,
+        "sameGravityTrajectory": true,
+        "poolResponseMatchesStudy": true,
+        "riverInventoryDebited": true,
+        "packetsInFlight": true,
+        "depositionReachedPool": true,
+        "poolCapacityRespected": true,
+        "overflowPatternMatchesStudy": true,
+        "floodplainStorageMatchesStudy": true,
+        "routingEffectMatchesStudy": true,
+        "overflowLedgerClosed": true,
+        "overflowHasArrivalTime": true,
+        "cumulativeBudgetsClosed": true,
+        "visualSamplingDecoupled": true,
+        "canvasNonBlank": true,
+        "contentPresent": true,
+        "noOverflow": true,
+        "noFallback": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "layout": {
+        "title": "Watershed Slice v3｜Water Scene Lab",
+        "renderState": "ready",
+        "bodyLength": 1927,
+        "h1": "同一股溢流水，比较开放路径与障碍改道。",
+        "resultRows": 13,
+        "readingCells": 20,
+        "overflowX": 0,
+        "overflowElements": [],
+        "fallbackVisible": false
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          994,
+          700
+        ],
+        "uniqueColors": 50,
+        "luminanceVariance": 2624.4151615593355
+      },
+      "impactEvidence": null,
+      "floodplainEvidence": {
+        "cameraChanged": true,
+        "canvasSample": {
+          "available": true,
+          "drawingBuffer": [
+            994,
+            700
+          ],
+          "uniqueColors": 43,
+          "luminanceVariance": 2631.866505648081
+        },
+        "screenshot": "watershed-barrier-desktop.png"
+      },
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-overflow-v2",
+        "coupledModelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "coupledContractHash": "fnv1a-f59c7995",
+        "overflowContractHash": "fnv1a-8897a3a6",
+        "studyMode": "barrier",
+        "truthLevel": "T3",
+        "quality": "balanced",
+        "firstFrameMs": 803.5000000476837,
+        "frameTimeP50": 225.4000000238418,
+        "frameTimeP95": 225.4000000238418,
+        "frameSampleCount": 1,
+        "maxFrameTime": 225.4000000238418,
+        "drawCalls": 56,
+        "triangles": 38464,
+        "renderedVariants": 2,
+        "analysisDurationMs": 198.80000001192093,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 994,
+          "height": 700,
+          "dpr": 1
+        }
+      },
+      "diagnostics": {
+        "low": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 24,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 5.599999999999999,
+          "maximumWetRow": 2,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        },
+        "high": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 25,
+          "blockedCellCount": 8,
+          "meanWetAbsXM": 8.88,
+          "maximumWetRow": 3,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-12-13-22-23-24-25-26-27-32-33-34-35-37",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshot": "projects/water-scene-lab/watershed-slice/assets/watershed-barrier-desktop.png",
+      "passed": true
+    },
+    {
+      "name": "barrier-mobile",
+      "study": "barrier",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inputDiff": [
+        "floodplainRoutingMode"
+      ],
+      "checks": {
+        "httpOk": true,
+        "renderReady": true,
+        "truthfulLevel": true,
+        "correctOverflowModel": true,
+        "correctStudyMode": true,
+        "correctQuality": true,
+        "correctVariantCount": true,
+        "onlyOneStudyFactorDiffers": true,
+        "dischargeRatio": true,
+        "thicknessRatio": true,
+        "sameGravityTrajectory": true,
+        "poolResponseMatchesStudy": true,
+        "riverInventoryDebited": true,
+        "packetsInFlight": true,
+        "depositionReachedPool": true,
+        "poolCapacityRespected": true,
+        "overflowPatternMatchesStudy": true,
+        "floodplainStorageMatchesStudy": true,
+        "routingEffectMatchesStudy": true,
+        "overflowLedgerClosed": true,
+        "overflowHasArrivalTime": true,
+        "cumulativeBudgetsClosed": true,
+        "visualSamplingDecoupled": true,
+        "canvasNonBlank": true,
+        "contentPresent": true,
+        "noOverflow": true,
+        "noFallback": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "layout": {
+        "title": "Watershed Slice v3｜Water Scene Lab",
+        "renderState": "ready",
+        "bodyLength": 1832,
+        "h1": "同一股溢流水，比较开放路径与障碍改道。",
+        "resultRows": 13,
+        "readingCells": 20,
+        "overflowX": 0,
+        "overflowElements": [],
+        "fallbackVisible": false
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 61,
+        "luminanceVariance": 2629.1387021797755
+      },
+      "impactEvidence": null,
+      "floodplainEvidence": null,
+      "runtime": {
+        "rendererReady": true,
+        "threeRevision": "185",
+        "modelVersion": "mountain-watershed-overflow-v2",
+        "coupledModelVersion": "mountain-watershed-coupled-v1",
+        "mappedModelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "coupledContractHash": "fnv1a-f59c7995",
+        "overflowContractHash": "fnv1a-8897a3a6",
+        "studyMode": "barrier",
+        "truthLevel": "T3",
+        "quality": "fallback",
+        "firstFrameMs": 561.2999999761581,
+        "frameTimeP50": 31.299999999999955,
+        "frameTimeP95": 274.64999999999975,
+        "frameSampleCount": 14,
+        "maxFrameTime": 583.4,
+        "drawCalls": 29,
+        "triangles": 14588,
+        "renderedVariants": 1,
+        "analysisDurationMs": 226.80000001192093,
+        "contextLostCount": 0,
+        "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gpuVendor": "Google Inc. (Google)",
+        "gpuRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "viewport": {
+          "width": 364,
+          "height": 455,
+          "dpr": 1
+        }
+      },
+      "diagnostics": {
+        "low": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 24,
+          "blockedCellCount": 0,
+          "meanWetAbsXM": 5.599999999999999,
+          "maximumWetRow": 2,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        },
+        "high": {
+          "poolLevelRiseM": 0.07142857142857142,
+          "riverVolumeM3": 160.00000000000455,
+          "airborneVolumeM3": 11.499999999999975,
+          "depositedM3": 108.49999999999811,
+          "overflowM3": 28.49999999981037,
+          "floodplainVolumeM3": 26.46249999981046,
+          "wetCellCount": 25,
+          "blockedCellCount": 8,
+          "meanWetAbsXM": 8.88,
+          "maximumWetRow": 3,
+          "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-12-13-22-23-24-25-26-27-32-33-34-35-37",
+          "firstOverflowTick": 712,
+          "budgetResidualM3": 1.8599166651256382e-10
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshot": "projects/water-scene-lab/watershed-slice/assets/watershed-barrier-mobile.png",
+      "passed": true
+    }
+  ],
+  "fallback": {
+    "state": {
+      "renderState": "failed",
+      "fallbackVisible": true,
+      "modelHookPresent": true,
+      "title": "Watershed Slice v3｜Water Scene Lab"
+    },
+    "checks": {
+      "httpOk": true,
+      "failedState": true,
+      "fallbackVisible": true,
+      "modelStillInspectable": true,
+      "noPageErrors": true
+    },
+    "pageErrors": [],
+    "passed": true
+  },
+  "passed": true
+}

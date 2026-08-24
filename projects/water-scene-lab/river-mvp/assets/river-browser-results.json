@@ -1,0 +1,3849 @@
+{
+  "schemaVersion": "1.0",
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/river/",
+  "createdAt": "2026-08-24T04:17:55.049Z",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.170"
+  },
+  "passed": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "expectedQuality": "balanced",
+      "frameBudgets": {
+        "p50": 22,
+        "p95": 50,
+        "max": 2000
+      },
+      "initial": {
+        "title": "River MVP｜Water Scene Lab",
+        "bodyLength": 1115,
+        "renderState": "ready",
+        "h1": "同一条河，两种流向规则。",
+        "truthBadge": "视觉流向代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getFlowSnapshot": true,
+          "runVerification": true,
+          "start": true,
+          "pause": true,
+          "reset": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 1335.300000011921,
+          "analysisDurationMs": 83.60000002384186,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 20.90000000000009,
+          "maxFrameTime": 62.40000000000009,
+          "longFrameCount": 2,
+          "measuredFrames": 193,
+          "drawCalls": 26,
+          "triangles": 9448,
+          "viewport": [
+            994,
+            805
+          ],
+          "dpr": 0.8,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": false,
+          "accumulator": 0,
+          "previewTick": 46.90620000078679,
+          "previewMotion": true,
+          "results": null,
+          "mobileVariant": "uniform",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "balanced",
+            "firstFrameMs": 1335.300000011921,
+            "analysisDurationMs": 83.60000002384186,
+            "frameTimeP50": 4.2000000000000455,
+            "frameTimeP95": 20.90000000000009,
+            "maxFrameTime": 62.40000000000009,
+            "longFrameCount": 2,
+            "measuredFrames": 193,
+            "drawCalls": 26,
+            "triangles": 9448,
+            "viewport": [
+              994,
+              805
+            ],
+            "dpr": 0.8,
+            "renderedVariants": 2,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "uniformFlow": {
+          "caseId": "A",
+          "flowMode": "uniform_world",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 1.9948282374732378
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 2.980506267689858
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 51.885468872597436
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 23.640192873228248
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "guidedFlow": {
+          "caseId": "B",
+          "flowMode": "spline_tangent",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000014787793334710982
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 0
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "tabMetrics": [
+          {
+            "variant": "uniform",
+            "height": 0,
+            "width": 0,
+            "visible": false
+          },
+          {
+            "variant": "guided",
+            "height": 0,
+            "width": 0,
+            "visible": false
+          }
+        ]
+      },
+      "flowEvidence": {
+        "sampleCount": 4,
+        "markerCount": 8,
+        "uniformIsWorldZ": true,
+        "guidedMatchesTangent": true,
+        "scalarSpeedParity": true,
+        "initialMarkerParity": true,
+        "normalized": {
+          "uniform": [
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ],
+          "guided": [
+            {
+              "id": null,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ]
+        }
+      },
+      "playback": {
+        "started": true,
+        "advanced": true,
+        "stable": true,
+        "reset": true
+      },
+      "mobileSwitch": {
+        "required": false,
+        "switched": true,
+        "target": null
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 1335.300000011921,
+          "analysisDurationMs": 83.60000002384186,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 20.879999999999747,
+          "maxFrameTime": 62.40000000000009,
+          "longFrameCount": 2,
+          "measuredFrames": 305,
+          "drawCalls": 26,
+          "triangles": 9448,
+          "viewport": [
+            994,
+            805
+          ],
+          "dpr": 0.8,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        }
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          795,
+          666
+        ],
+        "uniqueColors": 31,
+        "luminanceVariance": 1152.931140205253
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 0.135299999999997,
+          "previewMotion": true,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "river-flowmap-v1",
+            "factor": "flowMode",
+            "contractHash": "fnv1a-4b3a09ae",
+            "A": {
+              "caseId": "A",
+              "label": "全局固定方向场",
+              "factor": "flowMode",
+              "flowMode": "uniform_world",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-4dddd998",
+              "resultDigest": "fnv1a-b098cc22",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 0.7855554648407829,
+                "headingErrorP95Deg": 51.73084924030725,
+                "inChannelRate": 0.35260416666666666,
+                "laneErrorRms": 5.482020969738067,
+                "forwardSpeedMean": 2.003166435343993,
+                "lateralDistanceP95": 8.271724123096512,
+                "bankExitCount": 4972,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": 2.167067027742549,
+                  "z": 21.379236729854945,
+                  "lateral": -6.254228583467008,
+                  "inChannel": false
+                },
+                {
+                  "id": "m1",
+                  "x": 0.6960840802260447,
+                  "z": 23.85045208222484,
+                  "lateral": -3.7494604466893735,
+                  "inChannel": false
+                },
+                {
+                  "id": "m2",
+                  "x": -0.6183575940164999,
+                  "z": 25.89251609679725,
+                  "lateral": -1.5781063454397937,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -1.4052491021450728,
+                  "z": 28.147007002437164,
+                  "lateral": 0.2606814479573181,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -0.8855432101704237,
+                  "z": 30.65728362920876,
+                  "lateral": 1.0923872964501529,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": 0.5811268608328675,
+                  "z": 32.86568212045683,
+                  "lateral": 0.8663131246072802,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": 2.1112315387993545,
+                  "z": 34.88439242269517,
+                  "lateral": 0.49351072249717043,
+                  "inChannel": false
+                },
+                {
+                  "id": "m7",
+                  "x": 3.0878280277283716,
+                  "z": 36.59253530998873,
+                  "lateral": 0.4570975656878886,
+                  "inChannel": false
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "样条切线方向场",
+              "factor": "flowMode",
+              "flowMode": "spline_tangent",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-44cad80e",
+              "resultDigest": "fnv1a-039e9609",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 1,
+                "headingErrorP95Deg": 0.0000014787793334710982,
+                "inChannelRate": 1,
+                "laneErrorRms": 1.1502984961823988e-8,
+                "forwardSpeedMean": 2.5499999999996303,
+                "lateralDistanceP95": 2.2500000006706626,
+                "bankExitCount": 0,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": -4.859566394117989,
+                  "z": 12.63650815851146,
+                  "lateral": -2.200000000000052,
+                  "inChannel": true
+                },
+                {
+                  "id": "m1",
+                  "x": -5.5737169603089445,
+                  "z": 14.333967194517983,
+                  "lateral": -1.5500000048652933,
+                  "inChannel": true
+                },
+                {
+                  "id": "m2",
+                  "x": -5.72593948947912,
+                  "z": 16.66138438306719,
+                  "lateral": -0.8500000014110938,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -5.491216701676567,
+                  "z": 19.17279358013763,
+                  "lateral": -0.19999999998631054,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -5.1814831529382825,
+                  "z": 21.72725521897423,
+                  "lateral": 0.4499999992322296,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": -4.588928902933244,
+                  "z": 24.252006295419022,
+                  "lateral": 1.049999991244866,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": -3.8700485613873665,
+                  "z": 26.737951681184175,
+                  "lateral": 1.6499999987253213,
+                  "inChannel": true
+                },
+                {
+                  "id": "m7",
+                  "x": -3.283706844704885,
+                  "z": 28.886044864160777,
+                  "lateral": 2.2499999990599266,
+                  "inChannel": true
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "improvements": {
+              "alignmentGain": 0.21444453515921713,
+              "headingErrorReduction": 51.73084776152792,
+              "inChannelGain": 0.6473958333333334,
+              "laneErrorReduction": 5.482020958235082
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "distinctResolvedConfig": true,
+              "uniformShowsTurnMismatch": true,
+              "guidedAlignsToTangent": true,
+              "guidedHeadingError": true,
+              "guidedStaysInChannel": true,
+              "guidedReducesBankExit": true,
+              "guidedReducesLaneError": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+          },
+          "mobileVariant": "uniform",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "balanced",
+            "firstFrameMs": 1335.300000011921,
+            "analysisDurationMs": 83.60000002384186,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 17.095000000000116,
+            "maxFrameTime": 62.40000000000009,
+            "longFrameCount": 3,
+            "measuredFrames": 360,
+            "drawCalls": 26,
+            "triangles": 9448,
+            "viewport": [
+              994,
+              833
+            ],
+            "dpr": 0.8,
+            "renderedVariants": 2,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 1335.300000011921,
+          "analysisDurationMs": 83.60000002384186,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 17.095000000000116,
+          "maxFrameTime": 62.40000000000009,
+          "longFrameCount": 3,
+          "measuredFrames": 360,
+          "drawCalls": 26,
+          "triangles": 9448,
+          "viewport": [
+            994,
+            833
+          ],
+          "dpr": 0.8,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "resultState": "10/10 通过",
+        "conclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。 这不是现实流量、水位或防洪结论。",
+        "resultRows": 6,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "flowUniformWorldZ": true,
+        "flowGuidedSplineTangent": true,
+        "equalScalarSpeed": true,
+        "initialMarkerParity": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "playbackApi": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "commonContract": true,
+        "noNumericalFailures": true,
+        "resultRendered": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "no-preference",
+      "expectedQuality": "fallback",
+      "frameBudgets": {
+        "p50": 33,
+        "p95": 66,
+        "max": 2000
+      },
+      "initial": {
+        "title": "River MVP｜Water Scene Lab",
+        "bodyLength": 998,
+        "renderState": "ready",
+        "h1": "同一条河，两种流向规则。",
+        "truthBadge": "视觉流向代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getFlowSnapshot": true,
+          "runVerification": true,
+          "start": true,
+          "pause": true,
+          "reset": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 196.29999995231628,
+          "analysisDurationMs": 86.19999998807907,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 4.300000000000182,
+          "maxFrameTime": 37.599999999999966,
+          "longFrameCount": 0,
+          "measuredFrames": 360,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": false,
+          "accumulator": 0,
+          "previewTick": 57.9149999996067,
+          "previewMotion": true,
+          "results": null,
+          "mobileVariant": "uniform",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 196.29999995231628,
+            "analysisDurationMs": 86.19999998807907,
+            "frameTimeP50": 4.2000000000000455,
+            "frameTimeP95": 4.300000000000182,
+            "maxFrameTime": 37.599999999999966,
+            "longFrameCount": 0,
+            "measuredFrames": 360,
+            "drawCalls": 13,
+            "triangles": 3060,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "uniformFlow": {
+          "caseId": "A",
+          "flowMode": "uniform_world",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 1.9948282374732378
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 2.980506267689858
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 51.885468872597436
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 23.640192873228248
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "guidedFlow": {
+          "caseId": "B",
+          "flowMode": "spline_tangent",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000014787793334710982
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 0
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "tabMetrics": [
+          {
+            "variant": "uniform",
+            "height": 44,
+            "width": 71.453125,
+            "visible": true
+          },
+          {
+            "variant": "guided",
+            "height": 44,
+            "width": 71.453125,
+            "visible": true
+          }
+        ]
+      },
+      "flowEvidence": {
+        "sampleCount": 4,
+        "markerCount": 8,
+        "uniformIsWorldZ": true,
+        "guidedMatchesTangent": true,
+        "scalarSpeedParity": true,
+        "initialMarkerParity": true,
+        "normalized": {
+          "uniform": [
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ],
+          "guided": [
+            {
+              "id": null,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ]
+        }
+      },
+      "playback": {
+        "started": false,
+        "advanced": false,
+        "stable": false,
+        "reset": false
+      },
+      "mobileSwitch": {
+        "required": true,
+        "switched": true,
+        "target": "guided"
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 196.29999995231628,
+          "analysisDurationMs": 86.19999998807907,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.300000000000182,
+          "maxFrameTime": 37.599999999999966,
+          "longFrameCount": 0,
+          "measuredFrames": 360,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        }
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 30,
+        "luminanceVariance": 1237.2039260199392
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 72.90029999960693,
+          "previewMotion": true,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "river-flowmap-v1",
+            "factor": "flowMode",
+            "contractHash": "fnv1a-4b3a09ae",
+            "A": {
+              "caseId": "A",
+              "label": "全局固定方向场",
+              "factor": "flowMode",
+              "flowMode": "uniform_world",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-4dddd998",
+              "resultDigest": "fnv1a-b098cc22",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 0.7855554648407829,
+                "headingErrorP95Deg": 51.73084924030725,
+                "inChannelRate": 0.35260416666666666,
+                "laneErrorRms": 5.482020969738067,
+                "forwardSpeedMean": 2.003166435343993,
+                "lateralDistanceP95": 8.271724123096512,
+                "bankExitCount": 4972,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": 2.167067027742549,
+                  "z": 21.379236729854945,
+                  "lateral": -6.254228583467008,
+                  "inChannel": false
+                },
+                {
+                  "id": "m1",
+                  "x": 0.6960840802260447,
+                  "z": 23.85045208222484,
+                  "lateral": -3.7494604466893735,
+                  "inChannel": false
+                },
+                {
+                  "id": "m2",
+                  "x": -0.6183575940164999,
+                  "z": 25.89251609679725,
+                  "lateral": -1.5781063454397937,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -1.4052491021450728,
+                  "z": 28.147007002437164,
+                  "lateral": 0.2606814479573181,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -0.8855432101704237,
+                  "z": 30.65728362920876,
+                  "lateral": 1.0923872964501529,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": 0.5811268608328675,
+                  "z": 32.86568212045683,
+                  "lateral": 0.8663131246072802,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": 2.1112315387993545,
+                  "z": 34.88439242269517,
+                  "lateral": 0.49351072249717043,
+                  "inChannel": false
+                },
+                {
+                  "id": "m7",
+                  "x": 3.0878280277283716,
+                  "z": 36.59253530998873,
+                  "lateral": 0.4570975656878886,
+                  "inChannel": false
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "样条切线方向场",
+              "factor": "flowMode",
+              "flowMode": "spline_tangent",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-44cad80e",
+              "resultDigest": "fnv1a-039e9609",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 1,
+                "headingErrorP95Deg": 0.0000014787793334710982,
+                "inChannelRate": 1,
+                "laneErrorRms": 1.1502984961823988e-8,
+                "forwardSpeedMean": 2.5499999999996303,
+                "lateralDistanceP95": 2.2500000006706626,
+                "bankExitCount": 0,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": -4.859566394117989,
+                  "z": 12.63650815851146,
+                  "lateral": -2.200000000000052,
+                  "inChannel": true
+                },
+                {
+                  "id": "m1",
+                  "x": -5.5737169603089445,
+                  "z": 14.333967194517983,
+                  "lateral": -1.5500000048652933,
+                  "inChannel": true
+                },
+                {
+                  "id": "m2",
+                  "x": -5.72593948947912,
+                  "z": 16.66138438306719,
+                  "lateral": -0.8500000014110938,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -5.491216701676567,
+                  "z": 19.17279358013763,
+                  "lateral": -0.19999999998631054,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -5.1814831529382825,
+                  "z": 21.72725521897423,
+                  "lateral": 0.4499999992322296,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": -4.588928902933244,
+                  "z": 24.252006295419022,
+                  "lateral": 1.049999991244866,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": -3.8700485613873665,
+                  "z": 26.737951681184175,
+                  "lateral": 1.6499999987253213,
+                  "inChannel": true
+                },
+                {
+                  "id": "m7",
+                  "x": -3.283706844704885,
+                  "z": 28.886044864160777,
+                  "lateral": 2.2499999990599266,
+                  "inChannel": true
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "improvements": {
+              "alignmentGain": 0.21444453515921713,
+              "headingErrorReduction": 51.73084776152792,
+              "inChannelGain": 0.6473958333333334,
+              "laneErrorReduction": 5.482020958235082
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "distinctResolvedConfig": true,
+              "uniformShowsTurnMismatch": true,
+              "guidedAlignsToTangent": true,
+              "guidedHeadingError": true,
+              "guidedStaysInChannel": true,
+              "guidedReducesBankExit": true,
+              "guidedReducesLaneError": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+          },
+          "mobileVariant": "guided",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 196.29999995231628,
+            "analysisDurationMs": 86.19999998807907,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 4.2999999999999545,
+            "maxFrameTime": 54.19999999999982,
+            "longFrameCount": 1,
+            "measuredFrames": 360,
+            "drawCalls": 13,
+            "triangles": 3060,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 196.29999995231628,
+          "analysisDurationMs": 86.19999998807907,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.2999999999999545,
+          "maxFrameTime": 54.19999999999982,
+          "longFrameCount": 1,
+          "measuredFrames": 360,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "resultState": "10/10 通过",
+        "conclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。 这不是现实流量、水位或防洪结论。",
+        "resultRows": 6,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "flowUniformWorldZ": true,
+        "flowGuidedSplineTangent": true,
+        "equalScalarSpeed": true,
+        "initialMarkerParity": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "playbackApi": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "commonContract": true,
+        "noNumericalFailures": true,
+        "resultRendered": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile-reduce",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "expectedQuality": "fallback",
+      "frameBudgets": {
+        "p50": 33,
+        "p95": 66,
+        "max": 2000
+      },
+      "initial": {
+        "title": "River MVP｜Water Scene Lab",
+        "bodyLength": 998,
+        "renderState": "ready",
+        "h1": "同一条河，两种流向规则。",
+        "truthBadge": "视觉流向代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getFlowSnapshot": true,
+          "runVerification": true,
+          "start": true,
+          "pause": true,
+          "reset": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 138.80000001192093,
+          "analysisDurationMs": 76.5,
+          "frameTimeP50": 15.300000011920929,
+          "frameTimeP95": 15.300000011920929,
+          "maxFrameTime": 15.300000011920929,
+          "longFrameCount": 0,
+          "measuredFrames": 1,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 720,
+          "previewMotion": false,
+          "results": null,
+          "mobileVariant": "uniform",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 138.80000001192093,
+            "analysisDurationMs": 76.5,
+            "frameTimeP50": 15.300000011920929,
+            "frameTimeP95": 15.300000011920929,
+            "maxFrameTime": 15.300000011920929,
+            "longFrameCount": 0,
+            "measuredFrames": 1,
+            "drawCalls": 13,
+            "triangles": 3060,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": true,
+            "fallbackActive": false
+          }
+        },
+        "uniformFlow": {
+          "caseId": "A",
+          "flowMode": "uniform_world",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 1.9948282374732378
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 2.980506267689858
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 51.885468872597436
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 23.640192873228248
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "guidedFlow": {
+          "caseId": "B",
+          "flowMode": "spline_tangent",
+          "time": 0,
+          "probes": [
+            {
+              "centerlineS": 0.12,
+              "x": -1.6463999999999994,
+              "z": -23.337792000000004,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.38,
+              "x": 7.478432799999998,
+              "z": -8.617222,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000014787793334710982
+            },
+            {
+              "centerlineS": 0.63,
+              "x": -2.2767119000000013,
+              "z": 6.801771000000001,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55,
+              "headingErrorDeg": 0.0000012074182697257333
+            },
+            {
+              "centerlineS": 0.87,
+              "x": -4.846987600000001,
+              "z": 21.371380000000002,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55,
+              "headingErrorDeg": 0
+            }
+          ],
+          "markers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ],
+          "initialMarkers": [
+            {
+              "id": "m0",
+              "x": 2.167067027742549,
+              "z": -29.620763270145055,
+              "inChannel": true
+            },
+            {
+              "id": "m1",
+              "x": 0.6960840802260447,
+              "z": -27.14954791777516,
+              "inChannel": true
+            },
+            {
+              "id": "m2",
+              "x": -0.6183575940164999,
+              "z": -25.10748390320275,
+              "inChannel": true
+            },
+            {
+              "id": "m3",
+              "x": -1.4052491021450728,
+              "z": -22.852992997562836,
+              "inChannel": true
+            },
+            {
+              "id": "m4",
+              "x": -0.8855432101704237,
+              "z": -20.34271637079124,
+              "inChannel": true
+            },
+            {
+              "id": "m5",
+              "x": 0.5811268608328675,
+              "z": -18.13431787954317,
+              "inChannel": true
+            },
+            {
+              "id": "m6",
+              "x": 2.1112315387993545,
+              "z": -16.115607577304832,
+              "inChannel": true
+            },
+            {
+              "id": "m7",
+              "x": 3.0878280277283716,
+              "z": -14.407464690011263,
+              "inChannel": true
+            }
+          ]
+        },
+        "tabMetrics": [
+          {
+            "variant": "uniform",
+            "height": 44,
+            "width": 71.453125,
+            "visible": true
+          },
+          {
+            "variant": "guided",
+            "height": 44,
+            "width": 71.453125,
+            "visible": true
+          }
+        ]
+      },
+      "flowEvidence": {
+        "sampleCount": 4,
+        "markerCount": 8,
+        "uniformIsWorldZ": true,
+        "guidedMatchesTangent": true,
+        "scalarSpeedParity": true,
+        "initialMarkerParity": true,
+        "normalized": {
+          "uniform": [
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0,
+              "directionZ": 1,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ],
+          "guided": [
+            {
+              "id": null,
+              "directionX": 0.03480928726278556,
+              "directionZ": 0.9993939731258422,
+              "tangentX": 0.03480928726278556,
+              "tangentZ": 0.9993939731258422,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.0519961896812053,
+              "directionZ": 0.9986472832079581,
+              "tangentX": 0.0519961896812053,
+              "tangentZ": 0.9986472832079581,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": -0.7867785064736343,
+              "directionZ": 0.6172354346204673,
+              "tangentX": -0.7867785064736343,
+              "tangentZ": 0.6172354346204673,
+              "speed": 2.55
+            },
+            {
+              "id": null,
+              "directionX": 0.4009917605963504,
+              "directionZ": 0.9160816600794055,
+              "tangentX": 0.4009917605963504,
+              "tangentZ": 0.9160816600794055,
+              "speed": 2.55
+            }
+          ]
+        }
+      },
+      "playback": {
+        "started": true,
+        "advanced": true,
+        "stable": true,
+        "reset": true
+      },
+      "mobileSwitch": {
+        "required": true,
+        "switched": true,
+        "target": "guided"
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 138.80000001192093,
+          "analysisDurationMs": 76.5,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 8.400000000000091,
+          "maxFrameTime": 15.300000011920929,
+          "longFrameCount": 0,
+          "measuredFrames": 76,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        }
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 30,
+        "luminanceVariance": 1237.2039260199392
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 720,
+          "previewMotion": false,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "river-flowmap-v1",
+            "factor": "flowMode",
+            "contractHash": "fnv1a-4b3a09ae",
+            "A": {
+              "caseId": "A",
+              "label": "全局固定方向场",
+              "factor": "flowMode",
+              "flowMode": "uniform_world",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-4dddd998",
+              "resultDigest": "fnv1a-b098cc22",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 0.7855554648407829,
+                "headingErrorP95Deg": 51.73084924030725,
+                "inChannelRate": 0.35260416666666666,
+                "laneErrorRms": 5.482020969738067,
+                "forwardSpeedMean": 2.003166435343993,
+                "lateralDistanceP95": 8.271724123096512,
+                "bankExitCount": 4972,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": 2.167067027742549,
+                  "z": 21.379236729854945,
+                  "lateral": -6.254228583467008,
+                  "inChannel": false
+                },
+                {
+                  "id": "m1",
+                  "x": 0.6960840802260447,
+                  "z": 23.85045208222484,
+                  "lateral": -3.7494604466893735,
+                  "inChannel": false
+                },
+                {
+                  "id": "m2",
+                  "x": -0.6183575940164999,
+                  "z": 25.89251609679725,
+                  "lateral": -1.5781063454397937,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -1.4052491021450728,
+                  "z": 28.147007002437164,
+                  "lateral": 0.2606814479573181,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -0.8855432101704237,
+                  "z": 30.65728362920876,
+                  "lateral": 1.0923872964501529,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": 0.5811268608328675,
+                  "z": 32.86568212045683,
+                  "lateral": 0.8663131246072802,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": 2.1112315387993545,
+                  "z": 34.88439242269517,
+                  "lateral": 0.49351072249717043,
+                  "inChannel": false
+                },
+                {
+                  "id": "m7",
+                  "x": 3.0878280277283716,
+                  "z": 36.59253530998873,
+                  "lateral": 0.4570975656878886,
+                  "inChannel": false
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "样条切线方向场",
+              "factor": "flowMode",
+              "flowMode": "spline_tangent",
+              "contractHash": "fnv1a-4b3a09ae",
+              "caseConfigHash": "fnv1a-44cad80e",
+              "resultDigest": "fnv1a-039e9609",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "queryCount": 7680,
+              "metrics": {
+                "tangentAlignmentMean": 1,
+                "headingErrorP95Deg": 0.0000014787793334710982,
+                "inChannelRate": 1,
+                "laneErrorRms": 1.1502984961823988e-8,
+                "forwardSpeedMean": 2.5499999999996303,
+                "lateralDistanceP95": 2.2500000006706626,
+                "bankExitCount": 0,
+                "nonFiniteCount": 0
+              },
+              "terminalMarkers": [
+                {
+                  "id": "m0",
+                  "x": -4.859566394117989,
+                  "z": 12.63650815851146,
+                  "lateral": -2.200000000000052,
+                  "inChannel": true
+                },
+                {
+                  "id": "m1",
+                  "x": -5.5737169603089445,
+                  "z": 14.333967194517983,
+                  "lateral": -1.5500000048652933,
+                  "inChannel": true
+                },
+                {
+                  "id": "m2",
+                  "x": -5.72593948947912,
+                  "z": 16.66138438306719,
+                  "lateral": -0.8500000014110938,
+                  "inChannel": true
+                },
+                {
+                  "id": "m3",
+                  "x": -5.491216701676567,
+                  "z": 19.17279358013763,
+                  "lateral": -0.19999999998631054,
+                  "inChannel": true
+                },
+                {
+                  "id": "m4",
+                  "x": -5.1814831529382825,
+                  "z": 21.72725521897423,
+                  "lateral": 0.4499999992322296,
+                  "inChannel": true
+                },
+                {
+                  "id": "m5",
+                  "x": -4.588928902933244,
+                  "z": 24.252006295419022,
+                  "lateral": 1.049999991244866,
+                  "inChannel": true
+                },
+                {
+                  "id": "m6",
+                  "x": -3.8700485613873665,
+                  "z": 26.737951681184175,
+                  "lateral": 1.6499999987253213,
+                  "inChannel": true
+                },
+                {
+                  "id": "m7",
+                  "x": -3.283706844704885,
+                  "z": 28.886044864160777,
+                  "lateral": 2.2499999990599266,
+                  "inChannel": true
+                }
+              ],
+              "checks": {
+                "steps": true,
+                "measuredTicks": true,
+                "queryCount": true,
+                "noNonFinite": true,
+                "resultFinite": true
+              },
+              "passed": true
+            },
+            "improvements": {
+              "alignmentGain": 0.21444453515921713,
+              "headingErrorReduction": 51.73084776152792,
+              "inChannelGain": 0.6473958333333334,
+              "laneErrorReduction": 5.482020958235082
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "distinctResolvedConfig": true,
+              "uniformShowsTurnMismatch": true,
+              "guidedAlignsToTangent": true,
+              "guidedHeadingError": true,
+              "guidedStaysInChannel": true,
+              "guidedReducesBankExit": true,
+              "guidedReducesLaneError": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+          },
+          "mobileVariant": "guided",
+          "cameraMode": "overview",
+          "arrowsVisible": true,
+          "trailsVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "river-flowmap-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 138.80000001192093,
+            "analysisDurationMs": 76.5,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 8.400000000000091,
+            "maxFrameTime": 15.300000011920929,
+            "longFrameCount": 0,
+            "measuredFrames": 77,
+            "drawCalls": 13,
+            "triangles": 3060,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": true,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 138.80000001192093,
+          "analysisDurationMs": 76.5,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 8.400000000000091,
+          "maxFrameTime": 15.300000011920929,
+          "longFrameCount": 0,
+          "measuredFrames": 77,
+          "drawCalls": 13,
+          "triangles": 3060,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "river-flowmap-v1",
+          "factor": "flowMode",
+          "contractHash": "fnv1a-4b3a09ae",
+          "A": {
+            "caseId": "A",
+            "label": "全局固定方向场",
+            "factor": "flowMode",
+            "flowMode": "uniform_world",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-4dddd998",
+            "resultDigest": "fnv1a-b098cc22",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 0.7855554648407829,
+              "headingErrorP95Deg": 51.73084924030725,
+              "inChannelRate": 0.35260416666666666,
+              "laneErrorRms": 5.482020969738067,
+              "forwardSpeedMean": 2.003166435343993,
+              "lateralDistanceP95": 8.271724123096512,
+              "bankExitCount": 4972,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": 2.167067027742549,
+                "z": 21.379236729854945,
+                "lateral": -6.254228583467008,
+                "inChannel": false
+              },
+              {
+                "id": "m1",
+                "x": 0.6960840802260447,
+                "z": 23.85045208222484,
+                "lateral": -3.7494604466893735,
+                "inChannel": false
+              },
+              {
+                "id": "m2",
+                "x": -0.6183575940164999,
+                "z": 25.89251609679725,
+                "lateral": -1.5781063454397937,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -1.4052491021450728,
+                "z": 28.147007002437164,
+                "lateral": 0.2606814479573181,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -0.8855432101704237,
+                "z": 30.65728362920876,
+                "lateral": 1.0923872964501529,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": 0.5811268608328675,
+                "z": 32.86568212045683,
+                "lateral": 0.8663131246072802,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": 2.1112315387993545,
+                "z": 34.88439242269517,
+                "lateral": 0.49351072249717043,
+                "inChannel": false
+              },
+              {
+                "id": "m7",
+                "x": 3.0878280277283716,
+                "z": 36.59253530998873,
+                "lateral": 0.4570975656878886,
+                "inChannel": false
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "样条切线方向场",
+            "factor": "flowMode",
+            "flowMode": "spline_tangent",
+            "contractHash": "fnv1a-4b3a09ae",
+            "caseConfigHash": "fnv1a-44cad80e",
+            "resultDigest": "fnv1a-039e9609",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "queryCount": 7680,
+            "metrics": {
+              "tangentAlignmentMean": 1,
+              "headingErrorP95Deg": 0.0000014787793334710982,
+              "inChannelRate": 1,
+              "laneErrorRms": 1.1502984961823988e-8,
+              "forwardSpeedMean": 2.5499999999996303,
+              "lateralDistanceP95": 2.2500000006706626,
+              "bankExitCount": 0,
+              "nonFiniteCount": 0
+            },
+            "terminalMarkers": [
+              {
+                "id": "m0",
+                "x": -4.859566394117989,
+                "z": 12.63650815851146,
+                "lateral": -2.200000000000052,
+                "inChannel": true
+              },
+              {
+                "id": "m1",
+                "x": -5.5737169603089445,
+                "z": 14.333967194517983,
+                "lateral": -1.5500000048652933,
+                "inChannel": true
+              },
+              {
+                "id": "m2",
+                "x": -5.72593948947912,
+                "z": 16.66138438306719,
+                "lateral": -0.8500000014110938,
+                "inChannel": true
+              },
+              {
+                "id": "m3",
+                "x": -5.491216701676567,
+                "z": 19.17279358013763,
+                "lateral": -0.19999999998631054,
+                "inChannel": true
+              },
+              {
+                "id": "m4",
+                "x": -5.1814831529382825,
+                "z": 21.72725521897423,
+                "lateral": 0.4499999992322296,
+                "inChannel": true
+              },
+              {
+                "id": "m5",
+                "x": -4.588928902933244,
+                "z": 24.252006295419022,
+                "lateral": 1.049999991244866,
+                "inChannel": true
+              },
+              {
+                "id": "m6",
+                "x": -3.8700485613873665,
+                "z": 26.737951681184175,
+                "lateral": 1.6499999987253213,
+                "inChannel": true
+              },
+              {
+                "id": "m7",
+                "x": -3.283706844704885,
+                "z": 28.886044864160777,
+                "lateral": 2.2499999990599266,
+                "inChannel": true
+              }
+            ],
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "queryCount": true,
+              "noNonFinite": true,
+              "resultFinite": true
+            },
+            "passed": true
+          },
+          "improvements": {
+            "alignmentGain": 0.21444453515921713,
+            "headingErrorReduction": 51.73084776152792,
+            "inChannelGain": 0.6473958333333334,
+            "laneErrorReduction": 5.482020958235082
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "uniformShowsTurnMismatch": true,
+            "guidedAlignsToTangent": true,
+            "guidedHeadingError": true,
+            "guidedStaysInChannel": true,
+            "guidedReducesBankExit": true,
+            "guidedReducesLaneError": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+        },
+        "resultState": "10/10 通过",
+        "conclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。 这不是现实流量、水位或防洪结论。",
+        "resultRows": 6,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "flowUniformWorldZ": true,
+        "flowGuidedSplineTangent": true,
+        "equalScalarSpeed": true,
+        "initialMarkerParity": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "playbackApi": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "commonContract": true,
+        "noNumericalFailures": true,
+        "resultRendered": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    }
+  ],
+  "fallback": {
+    "viewport": {
+      "width": 900,
+      "height": 700
+    },
+    "reducedMotion": "reduce",
+    "state": {
+      "renderState": "failed",
+      "bodyLength": 1051,
+      "fallbackVisible": true,
+      "reason": "已由验证参数强制进入 WebGL 回退。",
+      "retryVisible": true,
+      "overflowX": 0,
+      "errorOverlay": false
+    },
+    "checks": {
+      "status200": true,
+      "hasContent": true,
+      "failedState": true,
+      "fallbackVisible": true,
+      "reasonVisible": true,
+      "retryVisible": true,
+      "noHorizontalOverflow": true,
+      "noErrorOverlay": true,
+      "noConsoleErrors": true,
+      "noPageErrors": true,
+      "noFailedRequests": true
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "passed": true
+  }
+}

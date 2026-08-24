@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Water Scene Platform：面向桌面浏览器，以 Particles4All 为近场物理核心构建瀑布、河流和海洋场景能力。" />
+    <meta name="theme-color" content="#071721" />
+    <link rel="icon" href="data:," />
+    <title>Water Scene Platform｜桌面水体场景技术基座</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="topbar shell">
+      <a class="brand" href="../../" aria-label="返回研究展厅">
+        <span class="brand-mark" aria-hidden="true">WS</span>
+        <span>
+          <strong>Water Scene Lab</strong>
+          <small>桌面水体场景技术基座</small>
+        </span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#goal">目标</a>
+        <a href="#route">能力</a>
+        <a href="#next">计划</a>
+        <a class="nav-back" href="../../">研究展厅 <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <section class="freeze-banner" aria-label="当前活动计划">
+      <div class="shell freeze-banner-inner">
+        <div>
+          <strong>ACTIVE DESKTOP PROGRAM · 宏观场景驱动</strong>
+          <p>停止继续打磨宿主。首个真实效果已完成：同样 384 粒子，分时注入让瀑布高位垂直占用从 1/12 提升到 7/12。</p>
+        </div>
+        <a href="./research-summary/">查看阶段研究汇总 →</a>
+      </div>
+    </section>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> MACRO GOAL · PARTICLES4ALL-BACKED SCENES</p>
+          <h1 id="hero-title">不只研究“水的能力”。<br /><em>而是构建水体场景基座。</em></h1>
+          <p class="lead">宏观场景决定需要什么：连续表面负责世界尺度，Particles4All 负责真正需要自由液面、碰撞与刚体响应的近场区域。瀑布、河流与海浪上举复用均已通过，当前先比较价值，再选择下一条扩展主线。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./sandbox/">进入 Interactive Sandbox <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#route">查看场景能力架构</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="当前状态">
+          <p class="panel-label">CURRENT POSITION</p>
+          <div class="position-meter" aria-hidden="true">
+            <span class="position-dot active"></span>
+            <span class="position-dot active"></span><span class="position-dot active"></span><span class="position-dot active"></span><span class="position-dot active"></span>
+          </div>
+          <p class="position-title">Phase 6 完整通过：三场景 × 三运行配置全部通过；当前只制定下一条场景价值主线。</p>
+          <dl>
+            <div><dt>候选外围资产</dt><dd>04</dd></div>
+            <div><dt>原生对象场景</dt><dd>03</dd></div>
+            <div><dt>活动计划</dt><dd>01</dd></div>
+          </dl>
+          <p class="truth-note"><span aria-hidden="true">◎</span> 当前把 Waterfall、River 与 Ocean 近场镜头计入 Particles4All 集成证据；宏观海面与 Watershed 仍按各自真实性边界保留。</p>
+        </aside>
+      </section>
+
+      <section class="principle-strip" aria-label="工作原则">
+        <div class="shell principle-grid">
+          <p><span>01</span> 原库定义能力边界</p>
+          <p><span>02</span> 扩展解决真实缺口</p>
+          <p><span>03</span> 场景验证扩展价值</p>
+          <p><span>04</span> 证据决定继续或停止</p>
+        </div>
+      </section>
+
+      <section class="section goal-section" id="goal" aria-labelledby="goal-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span></span> HISTORICAL MACRO GOAL</p>
+              <h2 id="goal-title">构建多尺度、可组合、可验证的桌面水环境。</h2>
+            </div>
+            <p>宏观场景决定能力组合；三条原库场景与跨设备 Gate 均已通过，当前把它们装入一个固定预设的水体交互宿主。</p>
+          </div>
+
+          <div class="program-grid">
+            <article class="program-card">
+              <p class="module-en">EVIDENCE PROGRAM · 01</p>
+              <h3>Mountain Watershed</h3>
+              <p>水源 → 河流 → 瀑布 → 水潭 → 下游/洪泛区。用最短链路验证公共单位、上下游拓扑、陡坎转换和质量传递。</p>
+              <dl>
+                <div><dt>当前</dt><dd>Waterfall + River Objects</dd></div>
+                <div><dt>状态</dt><dd>两个原生对象 Gate 通过</dd></div>
+              </dl>
+              <a href="./river/">查看 River Reuse <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="program-card">
+              <p class="module-en">EVIDENCE PASSED · 02</p>
+              <h3>Coastal World</h3>
+              <p>远海 → 近岸 → 河口 → 港口/船只。用于复用 Ocean、河口流场、岸线层级、浮体查询和开放世界运行能力。</p>
+              <dl>
+                <div><dt>结果</dt><dd>Ocean Native Torus</dd></div>
+                <div><dt>状态</dt><dd>20 / 20 Gate Passed</dd></div>
+              </dl>
+              <a href="./ocean/">查看 Ocean 宏观基线 <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="program-card program-active">
+              <p class="module-en">ACTIVE HOST · 03</p>
+              <h3>Interactive Water</h3>
+              <p>跌水冲击 → 河道漂流 → 水面浮环。用一个固定预设宿主复用 Particles4All，展示原生对象和局部液固响应差异。</p>
+              <dl>
+                <div><dt>当前</dt><dd>Single Runtime Integration</dd></div>
+                <div><dt>约束</dt><dd>1 Runtime · 3 Presets</dd></div>
+              </dl>
+              <a href="./sandbox/">进入 Sandbox Host <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+
+          <div class="goal-chain" aria-label="目标驱动工作流">
+            <span>宏观场景</span><i aria-hidden="true">→</i><span>子目标</span><i aria-hidden="true">→</i><span>能力实验</span><i aria-hidden="true">→</i><span>场景集成</span><i aria-hidden="true">→</i><span>证据与决策</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="route" aria-labelledby="route-title">
+        <div class="section-heading">
+          <div>
+              <p class="eyebrow"><span></span> HISTORICAL SCENE ROUTES</p>
+              <h2 id="route-title">这些是候选场景资产，不是原库能力。</h2>
+          </div>
+          <p>Waterfall、River 与 Ocean 近场镜头运行 Particles4All；Watershed 的历史代理只有在接入同一场景契约后才升级分类。</p>
+        </div>
+
+        <div class="route-map">
+          <article class="module-card module-primary">
+            <div class="module-topline">
+              <span class="module-index">00</span>
+              <span class="status status-evidence">EVIDENCE-BACKED</span>
+            </div>
+            <p class="module-en">LOCAL LIQUID</p>
+            <h3>局部液体与刚体</h3>
+            <p>容器、倒水、浮沉、碰撞、挤压和自由液面。Particles4All 已有五类场景、固定终点和硬件浏览器证据。</p>
+            <dl class="module-meta">
+              <div><dt>核心</dt><dd>PBF · Shape Matching · SSFR</dd></div>
+              <div><dt>适合</dt><dd>近景互动 / 局部英雄效果</dd></div>
+            </dl>
+            <a href="../particles4all/">进入实验台 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <div class="branch-label" aria-hidden="true"><span></span> SCENE ROUTES</div>
+
+          <div class="route-grid">
+            <article class="module-card">
+              <div class="module-topline">
+                <span class="module-index">01</span>
+                <span class="status status-evidence">EVIDENCE-BACKED</span>
+              </div>
+              <p class="module-en">OCEAN</p>
+              <h3>大海与风浪</h3>
+              <p>6 组解析 Gerstner 波、动态法线与四点船体采样已跑通；同一时间轴可直接比较平静海况和有风涌浪。</p>
+              <dl class="module-meta">
+                <div><dt>证据</dt><dd>1,200 步固定 A/B · 桌面 / 手机</dd></div>
+                <div><dt>决策</dt><dd>基线通过 · FFT 按需</dd></div>
+              </dl>
+              <a href="./ocean/">进入 Ocean MVP <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="module-card">
+              <div class="module-topline">
+                <span class="module-index">02</span>
+                <span class="status status-evidence">P4A-BACKED</span>
+              </div>
+              <p class="module-en">RIVER</p>
+              <h3>河道与定向流动</h3>
+              <p>固定样条与 <code>sampleFlow</code> 提供宏观流向；第二份场景契约用同一 Scene Runner 把切线映射为局部入流，并验证水平刚体响应。</p>
+              <dl class="module-meta">
+                <div><dt>近场证据</dt><dd>480 粒子 · 36 ticks · 18/18</dd></div>
+                <div><dt>决策</dt><dd>共享 Runner 复用通过</dd></div>
+              </dl>
+              <a href="./river/">进入 River MVP <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="module-card">
+              <div class="module-topline">
+                <span class="module-index">03</span>
+                <span class="status status-evidence">P4A-BACKED</span>
+              </div>
+              <p class="module-en">WATERFALL</p>
+              <h3>落差、破碎与雾化</h3>
+              <p>固定主水幕与 1,200 tick 模型已建立；A/B 只改变破碎粒子层，白沫和雾在正式实验中锁定关闭。</p>
+              <dl class="module-meta">
+                <div><dt>模型证据</dt><dd>24 / 24 · 唯一变量</dd></div>
+                <div><dt>决策</dt><dd>混合视觉保留 · 局部求解按需</dd></div>
+              </dl>
+              <a href="./waterfall/">进入 Waterfall MVP <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="module-card">
+              <div class="module-topline">
+                <span class="module-index">04</span>
+                <span class="status status-gated">PROGRAM-GATED</span>
+              </div>
+              <p class="module-en">FLOOD PROXY</p>
+              <h3>地形漫淹代理</h3>
+              <p>Mountain Watershed 已提供 Pool 溢流、优先蓄水和障碍改道宿主；下一步用时变暴雨/溃坝输入判断是否引入高度场或浅水方程。只回答内部模型比较，不做真实洪水预测。</p>
+              <dl class="module-meta">
+                <div><dt>当前宿主</dt><dd>12 × 7 优先蓄水格</dd></div>
+                <div><dt>下一 A/B</dt><dd>稳定来水 / 峰值过程线</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+
+        <div class="shared-interface">
+          <p class="panel-label">SHARED CONTRACT · 共用语义与传递，而非共用算法</p>
+          <ul>
+            <li><code>time</code><span>固定时钟与重放</span></li>
+            <li><code>sampleSurface</code><span>高度与法线查询</span></li>
+            <li><code>sampleFlow</code><span>方向与速度代理查询</span></li>
+            <li><code>disturb</code><span>局部扰动事件</span></li>
+            <li><code>WaterTransfer</code><span>上下游水量与动量代理</span></li>
+            <li><code>qualityTier</code><span>桌面与移动降级</span></li>
+            <li><code>truthLevel</code><span>T0–T4 真实性等级</span></li>
+            <li><code>nearFieldScene</code><span>原库近场场景契约</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section decision-section" id="decision" aria-labelledby="decision-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span></span> SCENE ROUTER</p>
+              <h2 id="decision-title">你要解决的问题，决定路线。</h2>
+            </div>
+            <p>同样叫“水”，主要运动和交互不同，技术成本会完全不同。</p>
+          </div>
+
+          <div class="decision-table" role="table" aria-label="水场景技术选择">
+            <div class="decision-row decision-head" role="row">
+              <span role="columnheader">场景目标</span>
+              <span role="columnheader">应选择</span>
+              <span role="columnheader">关键证明</span>
+              <span role="columnheader">不能声称</span>
+            </div>
+            <div class="decision-row" role="row">
+              <span role="cell" data-label="场景目标">物体入水、排水、浮沉</span>
+              <strong role="cell" data-label="应选择">Local Liquid</strong>
+              <span role="cell" data-label="关键证明">约束与刚体响应</span>
+              <span role="cell" data-label="不能声称">大尺度河海</span>
+            </div>
+            <div class="decision-row" role="row">
+              <span role="cell" data-label="场景目标">远景海面、风浪、浮体</span>
+              <strong role="cell" data-label="应选择">Ocean</strong>
+              <span role="cell" data-label="关键证明">连续波面与采样一致</span>
+              <span role="cell" data-label="不能声称">完整船舶水动力</span>
+            </div>
+            <div class="decision-row" role="row">
+              <span role="cell" data-label="场景目标">沿河道持续定向流动</span>
+              <strong role="cell" data-label="应选择">River</strong>
+              <span role="cell" data-label="关键证明">形状、流向与对象一致</span>
+              <span role="cell" data-label="不能声称">贴图即真实流速</span>
+            </div>
+            <div class="decision-row" role="row">
+              <span role="cell" data-label="场景目标">落差、白水、飞沫与雾</span>
+              <strong role="cell" data-label="应选择">Waterfall</strong>
+              <span role="cell" data-label="关键证明">各视觉层的增益与成本</span>
+              <span role="cell" data-label="不能声称">粒子数即流量</span>
+            </div>
+            <div class="decision-row" role="row">
+              <span role="cell" data-label="场景目标">地形阻挡和水位传播</span>
+              <strong role="cell" data-label="应选择">Flood Proxy</strong>
+              <span role="cell" data-label="关键证明">守恒、稳定与到达顺序</span>
+              <span role="cell" data-label="不能声称">真实淹没预测</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="next" aria-labelledby="next-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> EXECUTION ORDER</p>
+            <h2 id="next-title">从能力实验走向连续水系。</h2>
+          </div>
+          <p>主线由 Mountain Watershed 驱动；能力实验继续存在，但不能替代连接、因果和质量预算。</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-done">
+            <div class="timeline-marker">00</div>
+            <div>
+              <div class="timeline-title"><h3>能力勘探</h3><span>COMPLETED</span></div>
+              <p>Local Liquid、Ocean、River 和 Waterfall 已建立独立运行证据，明确各自能力和真实性边界。</p>
+              <div class="gate"><strong>阶段结论：</strong> 零件可用；系统级连接、单位和因果仍未证明。</div>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">01</div>
+            <div>
+              <div class="timeline-title"><h3>目标与连接基线</h3><span>MODEL PASSED</span></div>
+              <p>建立 ScenarioGoal、WorldContext、WaterGraph、WaterTransfer 和 T0–T4 真实性等级，让模块拥有共同语言。</p>
+              <div class="gate"><strong>结果：</strong> 7 节点、6 连接和 23 项单步/累计模型检查通过；T2 浏览器集成见下一阶段。</div>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">02</div>
+            <div>
+            <div class="timeline-title"><h3>Watershed Slice v0</h3><span>RUNTIME PASSED · T2</span></div>
+              <p>连接现有 River 与 Waterfall，增加 Pool 代理；同一体积流量 Q 驱动出口、水幕、粒子代表量、撞击和水潭入流。</p>
+              <div class="gate"><strong>阶段结论：</strong> 固定 A/B 只改变 dischargeScale；桌面、手机和回退路径已通过浏览器验证。</div>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">03</div>
+            <div>
+              <div class="timeline-title"><h3>局部质量传递与沉积</h3><span>RUNTIME PASSED · T3</span></div>
+              <p>River 每步扣减出流，瀑布携带对应代表量，落入 Pool 后沉积；视觉粒子数量与真实代表水量解耦。</p>
+              <div class="gate"><strong>阶段结论：</strong> T3 模型 24/24、浏览器功能与瀑布撞击近景通过；全局和单步预算闭合。</div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-marker">04</div>
+            <div>
+              <div class="timeline-title"><h3>水潭溢流与洪泛区</h3><span>HISTORICAL BASELINE · FROZEN</span></div>
+              <p>1,710 m³ Pool 容量、12 × 7 优先蓄水格、固定边界和 8 格障碍改道作为历史代理保留；不再继续暴雨过程线、闸坝失效或浅水方程研发。</p>
+              <div class="gate"><strong>当前结果：</strong> 阈值与障碍路由两组模型均 26/26；障碍使平均横向距离由 5.60 m 增至 8.88 m，同时保持溢流、蓄水和边界预算不变。</div>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">05</div>
+            <div>
+              <div class="timeline-title"><h3>Particles4All 场景接入</h3><span>THREE SCENES PASSED</span></div>
+              <p>Waterfall 17 项、River 18 项与 Ocean 18 项桌面 Gate 均通过；三者共用同一 Schema、Runtime Adapter 与 Scene Runner。</p>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">06</div>
+            <div>
+              <div class="timeline-title"><h3>原生刚体场景化</h3><span>STAGE 8 PASSED</span></div>
+              <p>Waterfall box、River box 与 Ocean torus 在 Chrome/Edge、Intel/RTX 上均通过；聚合 Gate 55/55。</p>
+              <div class="gate"><strong>阶段结论：</strong> 原生对象差异与桌面跨设备一致性成立；不代表现实尺度或工程校准。</div>
+            </div>
+          </li>
+          <li class="timeline-done">
+            <div class="timeline-marker">07</div>
+            <div>
+              <div class="timeline-title"><h3>场景价值与能力投资决策</h3><span>STAGE 9 PASSED</span></div>
+              <p>固定预设 Interactive Water Sandbox 被选为唯一主线；规格静态 Gate 40/40。</p>
+              <div class="gate"><strong>阶段结论：</strong> 服务游戏原型、互动展示和科普教学；复用已有三份原库契约。</div>
+            </div>
+          </li>
+          <li class="timeline-next">
+            <div class="timeline-marker">08</div>
+            <div>
+              <div class="timeline-title"><h3>可观测场景效果研究</h3><span>WATERFALL TIMING PASSED · SURFACE ACTIVE</span></div>
+              <p>分时落水实际 A/B 已通过：垂直占用 1/12 → 7/12；当前直接比较原库 particles / mesh / ssfr 表面路径。</p>
+              <div class="gate"><strong>当前 Gate：</strong> 每项研究必须有实际画面、固定变量、数值、截图和有限结论。</div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="truth-section">
+        <div class="shell truth-grid">
+          <div>
+            <p class="eyebrow"><span></span> TRUTH CONTRACT</p>
+            <h2>真实性可以升级，<br />但每一级都要<em>有证据。</em></h2>
+          </div>
+          <div class="truth-cards">
+            <article>
+              <span aria-hidden="true">✓</span>
+              <div><h3>当前可以证明</h3><p>固定能力实验的视觉差异，以及特定山地切片中的 T2 参数映射、上下游连续性、Pool 容量阈值和 T3 溢流/蓄水质量预算。</p></div>
+            </article>
+            <article>
+              <span aria-hidden="true">×</span>
+              <div><h3>升级后才能证明</h3><p>真实流量、水位、淹没范围、结构载荷或防洪结论需要 T4 数据校准、基准和专家验证，不能由视觉原型直接推导。</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing shell">
+        <p class="panel-label">THE CURRENT PROGRAM</p>
+        <h2>宏观目标驱动场景。<br />Particles4All 负责近场物理。</h2>
+        <p>三场景横向决策已经完成。当前不增加第四个水效果，也不开发新求解器；只使用 Particles4All 原生 sphere、torus、box 与密度，让瀑布、河流和海面对应不同的刚体场景角色。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="./sandbox/">进入 Sandbox Host <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="./watershed/?study=barrier">查看历史 Watershed</a>
+          <a class="button button-secondary" href="../particles4all/">查看底层 Particles4All 实验台</a>
+          <a class="button button-secondary" href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/particles4all/RESEARCH_CHARTER.md">阅读研究章程</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <p>Water Scene Platform · 桌面浏览器 · 宏观场景与 Particles4All 近场物理分层。</p>
+      <a href="#main">返回顶部 ↑</a>
+    </footer>
+  </body>
+</html>

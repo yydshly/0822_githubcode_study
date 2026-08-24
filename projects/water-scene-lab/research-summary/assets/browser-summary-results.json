@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": {
+    "http200": true,
+    "upstreamRuntime": true,
+    "sourceEffectSwitch": true,
+    "sourceBoundaryLabels": true,
+    "capabilitySections": true,
+    "evidenceImages": true,
+    "sourceAndLabLinks": true,
+    "desktopNoOverflow": true,
+    "browserClean": true
+  },
+  "initialRuntime": {
+    "frameSrc": "../../particles4all/engine/?preset=small&view=ssfr",
+    "upstreamRuntime": true,
+    "webgpuContext": true
+  },
+  "switched": {
+    "frameSrc": "../../particles4all/engine/?preset=small&view=particles&particles=24000&body=sphere:0.4:0.78,torus:0.8:0.78,box:1.4:0.78&radius=0.48&speedmax=3.2",
+    "title": "原始粒子与刚体采样",
+    "active": "particles"
+  },
+  "state": {
+    "title": "Particles4All｜源库能力与扩展研究",
+    "h1": "先演示源库，再说明我们探索了什么。",
+    "sections": true,
+    "images": [
+      {
+        "complete": true,
+        "width": 1425
+      },
+      {
+        "complete": true,
+        "width": 1425
+      },
+      {
+        "complete": true,
+        "width": 1440
+      },
+      {
+        "complete": true,
+        "width": 1440
+      },
+      {
+        "complete": true,
+        "width": 1440
+      }
+    ],
+    "labels": true,
+    "commit": true,
+    "sourceHref": "https://github.com/matsuoka-601/Particles4All",
+    "labHref": "http://127.0.0.1:8107/demos/particles4all/",
+    "overflow": 0
+  },
+  "consoleErrors": [],
+  "failedRequests": []
+}

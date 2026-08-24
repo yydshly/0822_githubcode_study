@@ -1,0 +1,89 @@
+{
+  "schema": "water-scene.interactive-sandbox/v1",
+  "id": "interactive-water-sandbox",
+  "revision": 1,
+  "targetPlatform": "desktop-browser",
+  "macroGoal": "把已验证的 Particles4All 局部液体—刚体能力组织成一个面向游戏原型、互动展示和科普教学的固定场景沙盘。",
+  "operatingMode": "fixed-presets",
+  "productUseCases": [
+    "gameplay-prototyping",
+    "interactive-exhibition",
+    "science-education"
+  ],
+  "architecture": {
+    "macroSceneShell": "DOM evidence shell with fixed scenario narratives",
+    "localPhysicsProvider": "Particles4All",
+    "sceneContractSchema": "water-scene.particles4all-near-field/v1",
+    "runtimeAdapter": "Particles4AllRuntimeAdapter",
+    "sceneRunner": "particles4all-scene-runner-v1",
+    "runtimePolicy": {
+      "maxConcurrentSolvers": 1,
+      "loadMode": "lazy-on-demand",
+      "unloadBetweenPresets": true,
+      "requireReset": true
+    }
+  },
+  "presets": [
+    {
+      "id": "spillway-impact-block",
+      "label": "跌水冲击区",
+      "scenarioValue": "解释落水对高密度局部对象的额外撞击响应",
+      "sourceSceneContractId": "waterfall-impact-near-field",
+      "sourceArtifact": "scenes/waterfall-impact-near-field.scene.json",
+      "nativeBody": {
+        "shape": "box",
+        "density": 2.2,
+        "sceneRole": "dense-impact-block"
+      },
+      "primaryEvidence": "baseline-delta-along-negative-y"
+    },
+    {
+      "id": "channel-drifting-block",
+      "label": "河道漂流区",
+      "scenarioValue": "解释低密度对象的沿流平移与 Shape Matching 姿态响应",
+      "sourceSceneContractId": "river-obstacle-near-field",
+      "sourceArtifact": "scenes/river-obstacle-near-field.scene.json",
+      "nativeBody": {
+        "shape": "box",
+        "density": 0.35,
+        "sceneRole": "drifting-debris-block"
+      },
+      "primaryEvidence": "positive-x-displacement-and-rotation"
+    },
+    {
+      "id": "surface-rescue-ring",
+      "label": "水面浮环区",
+      "scenarioValue": "解释低密度浮环受局部上升水体作用后的上举与姿态变化",
+      "sourceSceneContractId": "ocean-wave-uplift-near-field",
+      "sourceArtifact": "scenes/ocean-wave-uplift-near-field.scene.json",
+      "nativeBody": {
+        "shape": "torus",
+        "density": 0.22,
+        "sceneRole": "floating-ring-probe"
+      },
+      "primaryEvidence": "baseline-delta-along-positive-y-and-rotation"
+    }
+  ],
+  "interactionSequence": [
+    "show-readable-baseline",
+    "select-one-fixed-preset",
+    "lazy-load-one-particles4all-runtime",
+    "run-contract-event",
+    "show-native-body-and-evidence",
+    "reset-or-unload-before-next-preset"
+  ],
+  "truthBoundary": "The sandbox demonstrates bounded local PBF and Shape Matching responses in internal solver units; it is not calibrated hydraulics, hydrology, buoyancy safety, structural load, or CFD evidence.",
+  "nonGoals": [
+    "generic-scene-editor",
+    "independent-fluid-solver",
+    "arbitrary-gltf-collider",
+    "engineering-calibration",
+    "mobile-browser"
+  ],
+  "stage10WorkPackages": [
+    "S10-WP1 Host Shell and Preset Navigation",
+    "S10-WP2 Single Runtime Slot and Contract Loading",
+    "S10-WP3 Guided Evidence Sequence and Reset",
+    "S10-WP4 Desktop Browser and GPU Gate"
+  ]
+}

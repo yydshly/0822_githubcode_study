@@ -1,0 +1,584 @@
+{
+  "shapes": [
+    {
+      "shape": "box",
+      "metadata": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "box",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1859,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "bodyParticleCount": 1859,
+      "nearCentre": 7,
+      "minRadial": 0,
+      "maxRadial": 0.16970563422826718,
+      "extents": [
+        0.12000000476837158,
+        0.10000002384185791,
+        0.12000000476837158
+      ],
+      "nonFinite": 0,
+      "methods": {
+        "holdBody": true,
+        "releaseBody": true,
+        "setBodyPose": false,
+        "setBodyRotation": false,
+        "addStaticCollider": false
+      },
+      "webgpuContext": true,
+      "adapterLabel": "intel gen-12lp"
+    },
+    {
+      "shape": "sphere",
+      "metadata": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "sphere",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1791,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "bodyParticleCount": 1791,
+      "nearCentre": 7,
+      "minRadial": 0,
+      "maxRadial": 0.14560218992577792,
+      "extents": [
+        0.13999998569488525,
+        0.13999998569488525,
+        0.13999998569488525
+      ],
+      "nonFinite": 0,
+      "methods": {
+        "holdBody": true,
+        "releaseBody": true,
+        "setBodyPose": false,
+        "setBodyRotation": false,
+        "addStaticCollider": false
+      },
+      "webgpuContext": true,
+      "adapterLabel": "intel gen-12lp"
+    },
+    {
+      "shape": "torus",
+      "metadata": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "torus",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1232,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "bodyParticleCount": 1232,
+      "nearCentre": 0,
+      "minRadial": 0.09999998807907176,
+      "maxRadial": 0.20880611944512273,
+      "extents": [
+        0.19999998807907104,
+        0.04000002145767212,
+        0.19999998807907104
+      ],
+      "nonFinite": 0,
+      "methods": {
+        "holdBody": true,
+        "releaseBody": true,
+        "setBodyPose": false,
+        "setBodyRotation": false,
+        "addStaticCollider": false
+      },
+      "webgpuContext": true,
+      "adapterLabel": "intel gen-12lp"
+    }
+  ],
+  "checks": [
+    {
+      "name": "box.identity",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "box",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1859,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "box.count",
+      "passed": true,
+      "detail": {
+        "sampled": 1859,
+        "metadata": 1859
+      }
+    },
+    {
+      "name": "box.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "box.rotationIdentity",
+      "passed": true,
+      "detail": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "box.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "sphere.identity",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "sphere",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1791,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "sphere.count",
+      "passed": true,
+      "detail": {
+        "sampled": 1791,
+        "metadata": 1791
+      }
+    },
+    {
+      "name": "sphere.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "sphere.rotationIdentity",
+      "passed": true,
+      "detail": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "sphere.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "torus.identity",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "key": "body-1",
+        "shape": "torus",
+        "size": 0.15,
+        "density": 1,
+        "particleCount": 1232,
+        "initialCentre": [
+          0.75,
+          0.7,
+          0.5
+        ],
+        "pose": {
+          "centre": [
+            0.75,
+            0.699999988079071,
+            0.5
+          ],
+          "rot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "torus.count",
+      "passed": true,
+      "detail": {
+        "sampled": 1232,
+        "metadata": 1232
+      }
+    },
+    {
+      "name": "torus.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "torus.rotationIdentity",
+      "passed": true,
+      "detail": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "torus.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "box.volumeFilled",
+      "passed": true,
+      "detail": {
+        "shape": "box",
+        "metadata": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.15,
+          "density": 1,
+          "particleCount": 1859,
+          "initialCentre": [
+            0.75,
+            0.7,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.699999988079071,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "bodyParticleCount": 1859,
+        "nearCentre": 7,
+        "minRadial": 0,
+        "maxRadial": 0.16970563422826718,
+        "extents": [
+          0.12000000476837158,
+          0.10000002384185791,
+          0.12000000476837158
+        ],
+        "nonFinite": 0,
+        "methods": {
+          "holdBody": true,
+          "releaseBody": true,
+          "setBodyPose": false,
+          "setBodyRotation": false,
+          "addStaticCollider": false
+        },
+        "webgpuContext": true,
+        "adapterLabel": "intel gen-12lp"
+      }
+    },
+    {
+      "name": "sphere.volumeFilled",
+      "passed": true,
+      "detail": {
+        "shape": "sphere",
+        "metadata": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "sphere",
+          "size": 0.15,
+          "density": 1,
+          "particleCount": 1791,
+          "initialCentre": [
+            0.75,
+            0.7,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.699999988079071,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "bodyParticleCount": 1791,
+        "nearCentre": 7,
+        "minRadial": 0,
+        "maxRadial": 0.14560218992577792,
+        "extents": [
+          0.13999998569488525,
+          0.13999998569488525,
+          0.13999998569488525
+        ],
+        "nonFinite": 0,
+        "methods": {
+          "holdBody": true,
+          "releaseBody": true,
+          "setBodyPose": false,
+          "setBodyRotation": false,
+          "addStaticCollider": false
+        },
+        "webgpuContext": true,
+        "adapterLabel": "intel gen-12lp"
+      }
+    },
+    {
+      "name": "torus.centralHole",
+      "passed": true,
+      "detail": {
+        "shape": "torus",
+        "metadata": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "torus",
+          "size": 0.15,
+          "density": 1,
+          "particleCount": 1232,
+          "initialCentre": [
+            0.75,
+            0.7,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.699999988079071,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "bodyParticleCount": 1232,
+        "nearCentre": 0,
+        "minRadial": 0.09999998807907176,
+        "maxRadial": 0.20880611944512273,
+        "extents": [
+          0.19999998807907104,
+          0.04000002145767212,
+          0.19999998807907104
+        ],
+        "nonFinite": 0,
+        "methods": {
+          "holdBody": true,
+          "releaseBody": true,
+          "setBodyPose": false,
+          "setBodyRotation": false,
+          "addStaticCollider": false
+        },
+        "webgpuContext": true,
+        "adapterLabel": "intel gen-12lp"
+      }
+    },
+    {
+      "name": "torus.ringNotCup",
+      "passed": true,
+      "detail": [
+        0.19999998807907104,
+        0.04000002145767212,
+        0.19999998807907104
+      ]
+    },
+    {
+      "name": "control.translationOnly",
+      "passed": true,
+      "detail": {
+        "holdBody": true,
+        "releaseBody": true,
+        "setBodyPose": false,
+        "setBodyRotation": false,
+        "addStaticCollider": false
+      }
+    },
+    {
+      "name": "control.noStaticCollider",
+      "passed": true,
+      "detail": {
+        "holdBody": true,
+        "releaseBody": true,
+        "setBodyPose": false,
+        "setBodyRotation": false,
+        "addStaticCollider": false
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

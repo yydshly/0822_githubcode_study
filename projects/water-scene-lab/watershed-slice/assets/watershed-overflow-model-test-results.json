@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-08-24T10:01:51.443Z",
+  "modelVersion": "mountain-watershed-overflow-v2",
+  "modelSha256": "2873af443bf297f0b609017635217d015af2594ef10fa237c84a74d5d05075dc",
+  "overflowContractHash": "fnv1a-8897a3a6",
+  "checks": {
+    "selfCheck": true,
+    "version": true,
+    "truthLevel": true,
+    "fixedDuration": true,
+    "contractHashStable": true,
+    "sameExternalSource": true,
+    "lowDoesNotOverflow": true,
+    "highOverflows": true,
+    "overflowDelayed": true,
+    "poolCapacityRespected": true,
+    "poolBudgetClosed": true,
+    "floodplainBudgetClosed": true,
+    "globalBudgetsClosed": true,
+    "stepBudgetsClosed": true,
+    "highWetsFloodplain": true,
+    "lowKeepsFloodplainDry": true,
+    "storageRepresentedByCells": true,
+    "cellDepthsBounded": true,
+    "arrivalTicksBounded": true,
+    "priorityPropagation": true,
+    "floodplainHasOpenBoundary": true,
+    "riverAndWaterfallRemainCoupled": true,
+    "deterministicReplay": true,
+    "finiteState": true,
+    "invalidStateRejected": true,
+    "invalidScaleRejected": true
+  },
+  "diagnostics": {
+    "low": {
+      "poolVolumeM3": 1684.2499999998597,
+      "poolOverflowM3": 0,
+      "floodplainVolumeM3": 0,
+      "wetCellCount": 0,
+      "budgetResidualM3": 1.5711520973127335e-10
+    },
+    "high": {
+      "poolVolumeM3": 1710,
+      "poolOverflowM3": 28.49999999981037,
+      "floodplainVolumeM3": 26.46249999981046,
+      "floodplainOutflowM3": 2.037499999999996,
+      "wetCellCount": 24,
+      "maximumDepthM": 0.193606850077369,
+      "firstOverflowTick": 712,
+      "budgetResidualM3": 1.8599166651256382e-10
+    }
+  },
+  "passed": true
+}

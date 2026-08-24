@@ -1,0 +1,2112 @@
+{
+  "protocol": {
+    "baseUrl": "http://127.0.0.1:8107/demos/water-scene-lab/ocean/",
+    "executablePath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "browserLabel": "edge-high-performance",
+    "browserVersion": "151.0.4129.101",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  "result": {
+    "bridgeVersion": "particles4all-scene-runner-v1",
+    "sceneContract": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "id": "ocean-wave-uplift-near-field",
+      "revision": 2,
+      "hash": "fnv1a-24c48c8f"
+    },
+    "mapping": {
+      "worldDriver": "ocean-surface-vertical-velocity",
+      "seaState": 1,
+      "probeXWorldUnits": 0,
+      "probeZWorldUnits": 0,
+      "probeTimeSeconds": 5,
+      "surfaceHeightWorldUnits": -0.147820841207212,
+      "surfaceNormalX": 0.07791067614459625,
+      "surfaceNormalY": 0.919796330722049,
+      "surfaceNormalZ": 0.38458371849695727,
+      "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+      "maxVerticalEnvelopeWorldUnits": 0.897,
+      "solverVelocity": [
+        0,
+        4,
+        0
+      ],
+      "velocityScale": 2.428710547014972,
+      "solverFrame": "ocean-up-to-solver-positive-y",
+      "crossScaleTruthLevel": "T2 mapped input",
+      "localTruthLevel": "T3 local PBF / rigid coupling"
+    },
+    "environment": {
+      "adapterLabel": "nvidia lovelace",
+      "webgpuContext": true
+    },
+    "initial": {
+      "adapterVersion": 1,
+      "classification": "E1 runtime adapter",
+      "upstreamRuntime": true,
+      "particleCount": 29232,
+      "fluidParticleCount": 28000,
+      "rigidParticleCount": 1232,
+      "bodyCount": 1,
+      "simTime": 0,
+      "solverStepDt": 0.008333333333333333,
+      "generation": 3,
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    "packet": {
+      "count": 640,
+      "config": {
+        "origin": [
+          0.675,
+          0.44,
+          0.43
+        ],
+        "counts": [
+          8,
+          10,
+          8
+        ],
+        "spacing": 0.02,
+        "velocity": [
+          0,
+          4,
+          0
+        ]
+      }
+    },
+    "bodyProfile": {
+      "id": 1,
+      "shape": "torus",
+      "density": 0.22,
+      "size": 0.15,
+      "sceneRole": "floating-ring-probe"
+    },
+    "plan": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "sceneId": "ocean-wave-uplift-near-field",
+      "sceneContractHash": "fnv1a-24c48c8f",
+      "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+      "reset": true,
+      "ticks": 36,
+      "packets": [
+        {
+          "id": "ocean-rising-surface-packet",
+          "tick": 0,
+          "config": {
+            "origin": [
+              0.675,
+              0.44,
+              0.43
+            ],
+            "counts": [
+              8,
+              10,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              0,
+              4,
+              0
+            ]
+          }
+        }
+      ],
+      "interactionRegion": {
+        "center": [
+          0.75,
+          0.5
+        ],
+        "radius": 0.22,
+        "minimumY": 0.15
+      }
+    },
+    "injection": {
+      "requested": 640,
+      "added": 640,
+      "before": 29232,
+      "after": 29872,
+      "capacity": 57232,
+      "availableBefore": 28000,
+      "clamped": false
+    },
+    "step": {
+      "requestedTicks": 36,
+      "actualTicks": 36,
+      "stepDt": 0.008333333333333333,
+      "startTime": 0,
+      "endTime": 0.3000000000000001,
+      "reset": false,
+      "history": [
+        {
+          "id": "ocean-rising-surface-packet",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "result": {
+            "requested": 640,
+            "added": 640,
+            "before": 29232,
+            "after": 29872,
+            "capacity": 57232,
+            "availableBefore": 28000,
+            "clamped": false
+          }
+        }
+      ]
+    },
+    "final": {
+      "adapterVersion": 1,
+      "classification": "E1 runtime adapter",
+      "upstreamRuntime": true,
+      "particleCount": 29872,
+      "fluidParticleCount": 28640,
+      "rigidParticleCount": 1232,
+      "bodyCount": 1,
+      "simTime": 0.3000000000000001,
+      "solverStepDt": 0.008333333333333333,
+      "generation": 3,
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    "localImpactCount": 493,
+    "bodyDisplacement": 0.4391427504774801,
+    "bodyDisplacementVector": [
+      -0.02608811855316162,
+      -0.43836715817451477,
+      0.0000011324882507324219
+    ],
+    "bodyDisplacementAlongAxis": -0.43836715817451477,
+    "bodyRotationDegrees": 1.214342676110388,
+    "baselineBodyDisplacement": 0.453685611527296,
+    "baselineBodyDisplacementAlongAxis": -0.45368561148643494,
+    "bodyDisplacementDeltaAlongAxis": 0.015318453311920166,
+    "nonFinite": 0,
+    "stats": {
+      "avgRho": 0.9913007739270889,
+      "maxRho": 1.1650390625,
+      "maxSpeed": 4.240234375,
+      "frames": 0,
+      "ke": 223.625
+    },
+    "acceptance": {
+      "injectedParticles": true,
+      "solverTicks": true,
+      "finitePositions": true,
+      "bodyProfile": true,
+      "rigidResponse": true,
+      "directionalRigidResponse": true,
+      "webGpuContext": true,
+      "rigidRotationResponse": true,
+      "passed": true
+    }
+  },
+  "page": {
+    "title": "Ocean MVP｜Water Scene Lab",
+    "state": {
+      "phase": "complete",
+      "result": {
+        "bridgeVersion": "particles4all-scene-runner-v1",
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "hash": "fnv1a-24c48c8f"
+        },
+        "mapping": {
+          "worldDriver": "ocean-surface-vertical-velocity",
+          "seaState": 1,
+          "probeXWorldUnits": 0,
+          "probeZWorldUnits": 0,
+          "probeTimeSeconds": 5,
+          "surfaceHeightWorldUnits": -0.147820841207212,
+          "surfaceNormalX": 0.07791067614459625,
+          "surfaceNormalY": 0.919796330722049,
+          "surfaceNormalZ": 0.38458371849695727,
+          "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+          "maxVerticalEnvelopeWorldUnits": 0.897,
+          "solverVelocity": [
+            0,
+            4,
+            0
+          ],
+          "velocityScale": 2.428710547014972,
+          "solverFrame": "ocean-up-to-solver-positive-y",
+          "crossScaleTruthLevel": "T2 mapped input",
+          "localTruthLevel": "T3 local PBF / rigid coupling"
+        },
+        "environment": {
+          "adapterLabel": "nvidia lovelace",
+          "webgpuContext": true
+        },
+        "initial": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29232,
+          "fluidParticleCount": 28000,
+          "rigidParticleCount": 1232,
+          "bodyCount": 1,
+          "simTime": 0,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "packet": {
+          "count": 640,
+          "config": {
+            "origin": [
+              0.675,
+              0.44,
+              0.43
+            ],
+            "counts": [
+              8,
+              10,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              0,
+              4,
+              0
+            ]
+          }
+        },
+        "bodyProfile": {
+          "id": 1,
+          "shape": "torus",
+          "density": 0.22,
+          "size": 0.15,
+          "sceneRole": "floating-ring-probe"
+        },
+        "plan": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "sceneId": "ocean-wave-uplift-near-field",
+          "sceneContractHash": "fnv1a-24c48c8f",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+          "reset": true,
+          "ticks": 36,
+          "packets": [
+            {
+              "id": "ocean-rising-surface-packet",
+              "tick": 0,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            }
+          ],
+          "interactionRegion": {
+            "center": [
+              0.75,
+              0.5
+            ],
+            "radius": 0.22,
+            "minimumY": 0.15
+          }
+        },
+        "injection": {
+          "requested": 640,
+          "added": 640,
+          "before": 29232,
+          "after": 29872,
+          "capacity": 57232,
+          "availableBefore": 28000,
+          "clamped": false
+        },
+        "step": {
+          "requestedTicks": 36,
+          "actualTicks": 36,
+          "stepDt": 0.008333333333333333,
+          "startTime": 0,
+          "endTime": 0.3000000000000001,
+          "reset": false,
+          "history": [
+            {
+              "id": "ocean-rising-surface-packet",
+              "type": "injectFluid",
+              "tick": 0,
+              "order": 0,
+              "simTime": 0,
+              "result": {
+                "requested": 640,
+                "added": 640,
+                "before": 29232,
+                "after": 29872,
+                "capacity": 57232,
+                "availableBefore": 28000,
+                "clamped": false
+              }
+            }
+          ]
+        },
+        "final": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29872,
+          "fluidParticleCount": 28640,
+          "rigidParticleCount": 1232,
+          "bodyCount": 1,
+          "simTime": 0.3000000000000001,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "localImpactCount": 493,
+        "bodyDisplacement": 0.4391427504774801,
+        "bodyDisplacementVector": [
+          -0.02608811855316162,
+          -0.43836715817451477,
+          0.0000011324882507324219
+        ],
+        "bodyDisplacementAlongAxis": -0.43836715817451477,
+        "bodyRotationDegrees": 1.214342676110388,
+        "baselineBodyDisplacement": 0.453685611527296,
+        "baselineBodyDisplacementAlongAxis": -0.45368561148643494,
+        "bodyDisplacementDeltaAlongAxis": 0.015318453311920166,
+        "nonFinite": 0,
+        "stats": {
+          "avgRho": 0.9913007739270889,
+          "maxRho": 1.1650390625,
+          "maxSpeed": 4.240234375,
+          "frames": 0,
+          "ke": 223.625
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      },
+      "error": null
+    },
+    "oceanRuntime": {
+      "rendererReady": true,
+      "threeRevision": "185",
+      "modelVersion": "ocean-gerstner-v1",
+      "qualityTier": "balanced",
+      "firstFrameMs": 807.2999999523163,
+      "frameTimeP50": null,
+      "frameTimeP95": null,
+      "measuredFrames": 1,
+      "drawCalls": 36,
+      "triangles": 42428,
+      "viewport": [
+        994,
+        925
+      ],
+      "dpr": 1,
+      "renderedVariants": 2,
+      "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "gpuVendor": "Google Inc. (NVIDIA)",
+      "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002860) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "contextLostCount": 0,
+      "horizontalOverflow": 0,
+      "reducedMotion": false,
+      "fallbackActive": false
+    },
+    "sceneContract": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "id": "ocean-wave-uplift-near-field",
+      "revision": 2,
+      "title": "Ocean Floating Ring Uplift / Particles4All Near-field Lens",
+      "sceneKind": "ocean-wave-uplift",
+      "targetPlatform": "desktop-browser",
+      "macroLayer": {
+        "role": "world-scale-water-representation",
+        "capability": "OceanSurfaceSampler",
+        "modelVersion": "ocean-gerstner-v1",
+        "contractHash": "fnv1a-4a2c196d"
+      },
+      "localPhysics": {
+        "provider": "Particles4All",
+        "adapter": "Particles4AllRuntimeAdapter",
+        "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+        "body": {
+          "shape": "torus",
+          "density": 0.22,
+          "startY": 0.76,
+          "size": 0.15,
+          "sceneRole": "floating-ring-probe"
+        },
+        "loading": {
+          "mode": "lazy-on-demand",
+          "unloadable": true,
+          "pauseMacroPreviewWhileLoaded": true
+        }
+      },
+      "mapping": {
+        "world": {
+          "driver": "ocean-surface-vertical-velocity",
+          "parameters": {
+            "seaState": 1,
+            "probeXWorldUnits": 0,
+            "probeZWorldUnits": 0,
+            "probeTimeSeconds": 5,
+            "surfaceHeightWorldUnits": -0.147820841207212,
+            "surfaceNormalX": 0.07791067614459625,
+            "surfaceNormalY": 0.919796330722049,
+            "surfaceNormalZ": 0.38458371849695727,
+            "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+            "maxVerticalEnvelopeWorldUnits": 0.897
+          }
+        },
+        "solver": {
+          "velocityScale": 2.428710547014972,
+          "frame": "ocean-up-to-solver-positive-y",
+          "units": "Particles4All solver-unit"
+        },
+        "truth": {
+          "crossScale": "T2 mapped input",
+          "local": "T3 local PBF / rigid coupling",
+          "boundary": "The Ocean surface query selects and scales a local uplift packet; it is not calibrated wave pressure, buoyancy, or coastal inundation."
+        }
+      },
+      "scenario": {
+        "reset": true,
+        "ticks": 36,
+        "comparison": {
+          "mode": "no-injection-baseline"
+        },
+        "emitters": [
+          {
+            "id": "ocean-rising-surface-packet",
+            "type": "fluid-block",
+            "tick": 0,
+            "origin": {
+              "space": "box-normalized",
+              "value": [
+                0.45,
+                0.44,
+                0.43
+              ]
+            },
+            "counts": [
+              8,
+              10,
+              8
+            ],
+            "spacing": {
+              "source": "runtime-spacing",
+              "multiplier": 1
+            },
+            "velocity": [
+              0,
+              4,
+              0
+            ]
+          }
+        ],
+        "probe": {
+          "interactionRegion": {
+            "center": {
+              "space": "box-normalized",
+              "value": [
+                0.5,
+                0.5
+              ]
+            },
+            "radius": {
+              "space": "solver-unit",
+              "value": 0.22
+            },
+            "minimumY": {
+              "space": "solver-unit",
+              "value": 0.15
+            }
+          },
+          "sampleFluidPositions": true,
+          "sampleRigidBodies": true
+        }
+      },
+      "acceptance": {
+        "requiredInjectedParticles": 640,
+        "requiredTicks": 36,
+        "maximumNonFinitePositions": 0,
+        "minimumBodyDisplacement": 0.005,
+        "bodyDisplacementAxis": [
+          0,
+          1,
+          0
+        ],
+        "minimumBodyDisplacementAlongAxis": 0,
+        "directionalResponseMode": "baseline-delta",
+        "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+        "minimumBodyRotationDegrees": 0.5,
+        "requireWebGpuContext": true
+      }
+    },
+    "sceneContractHash": "fnv1a-24c48c8f",
+    "statusText": "Ocean 复用证据已完成",
+    "conclusionText": "原生浮环 Gate 通过：Ocean 上升样本驱动局部 +Y 粒子脉冲；低密度 torus 相对基线增加 0.0153 u 上向响应，并旋转 1.21°（基线 -0.4537 u）。",
+    "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22ocean-wave-uplift-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22Ocean%20Floating%20Ring%20Uplift%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22ocean-wave-uplift%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22OceanSurfaceSampler%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22ocean-gerstner-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4a2c196d%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dtorus%3A0.22%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22torus%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.22%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22floating-ring-probe%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22ocean-surface-vertical-velocity%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22seaState%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22probeXWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeZWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeTimeSeconds%22%3A%205%2C%0A%20%20%20%20%20%20%20%20%22surfaceHeightWorldUnits%22%3A%20-0.147820841207212%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalX%22%3A%200.07791067614459625%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalY%22%3A%200.919796330722049%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalZ%22%3A%200.38458371849695727%2C%0A%20%20%20%20%20%20%20%20%22verticalVelocityWorldUnitsPerSecond%22%3A%201.6469644787091795%2C%0A%20%20%20%20%20%20%20%20%22maxVerticalEnvelopeWorldUnits%22%3A%200.897%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%202.428710547014972%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22ocean-up-to-solver-positive-y%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20Ocean%20surface%20query%20selects%20and%20scales%20a%20local%20uplift%20packet%3B%20it%20is%20not%20calibrated%20wave%20pressure%2C%20buoyancy%2C%20or%20coastal%20inundation.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22comparison%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22no-injection-baseline%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22ocean-rising-surface-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.45%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.44%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%208%2C%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%204%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20640%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200%2C%0A%20%20%20%20%22directionalResponseMode%22%3A%20%22baseline-delta%22%2C%0A%20%20%20%20%22minimumBodyDisplacementDeltaAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+    "placeholderHidden": true,
+    "bridgeVisible": true,
+    "horizontalOverflow": 0
+  },
+  "checks": [
+    {
+      "name": "source.upstreamRuntime",
+      "passed": true,
+      "detail": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29232,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1232,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      }
+    },
+    {
+      "name": "source.webgpu",
+      "passed": true,
+      "detail": {
+        "adapterLabel": "nvidia lovelace",
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "reuse.sharedRunner",
+      "passed": true,
+      "detail": "particles4all-scene-runner-v1"
+    },
+    {
+      "name": "contract.oceanScene",
+      "passed": true,
+      "detail": {
+        "result": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "hash": "fnv1a-24c48c8f"
+        },
+        "page": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "title": "Ocean Floating Ring Uplift / Particles4All Near-field Lens",
+          "sceneKind": "ocean-wave-uplift",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "OceanSurfaceSampler",
+            "modelVersion": "ocean-gerstner-v1",
+            "contractHash": "fnv1a-4a2c196d"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "ocean-surface-vertical-velocity",
+              "parameters": {
+                "seaState": 1,
+                "probeXWorldUnits": 0,
+                "probeZWorldUnits": 0,
+                "probeTimeSeconds": 5,
+                "surfaceHeightWorldUnits": -0.147820841207212,
+                "surfaceNormalX": 0.07791067614459625,
+                "surfaceNormalY": 0.919796330722049,
+                "surfaceNormalZ": 0.38458371849695727,
+                "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+                "maxVerticalEnvelopeWorldUnits": 0.897
+              }
+            },
+            "solver": {
+              "velocityScale": 2.428710547014972,
+              "frame": "ocean-up-to-solver-positive-y",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The Ocean surface query selects and scales a local uplift packet; it is not calibrated wave pressure, buoyancy, or coastal inundation."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "comparison": {
+              "mode": "no-injection-baseline"
+            },
+            "emitters": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.45,
+                    0.44,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 640,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              0,
+              1,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0,
+            "directionalResponseMode": "baseline-delta",
+            "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        }
+      }
+    },
+    {
+      "name": "contract.serializable",
+      "passed": true,
+      "detail": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "ocean-wave-uplift-near-field",
+        "revision": 2,
+        "title": "Ocean Floating Ring Uplift / Particles4All Near-field Lens",
+        "sceneKind": "ocean-wave-uplift",
+        "targetPlatform": "desktop-browser",
+        "macroLayer": {
+          "role": "world-scale-water-representation",
+          "capability": "OceanSurfaceSampler",
+          "modelVersion": "ocean-gerstner-v1",
+          "contractHash": "fnv1a-4a2c196d"
+        },
+        "localPhysics": {
+          "provider": "Particles4All",
+          "adapter": "Particles4AllRuntimeAdapter",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+          "body": {
+            "shape": "torus",
+            "density": 0.22,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "loading": {
+            "mode": "lazy-on-demand",
+            "unloadable": true,
+            "pauseMacroPreviewWhileLoaded": true
+          }
+        },
+        "mapping": {
+          "world": {
+            "driver": "ocean-surface-vertical-velocity",
+            "parameters": {
+              "seaState": 1,
+              "probeXWorldUnits": 0,
+              "probeZWorldUnits": 0,
+              "probeTimeSeconds": 5,
+              "surfaceHeightWorldUnits": -0.147820841207212,
+              "surfaceNormalX": 0.07791067614459625,
+              "surfaceNormalY": 0.919796330722049,
+              "surfaceNormalZ": 0.38458371849695727,
+              "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+              "maxVerticalEnvelopeWorldUnits": 0.897
+            }
+          },
+          "solver": {
+            "velocityScale": 2.428710547014972,
+            "frame": "ocean-up-to-solver-positive-y",
+            "units": "Particles4All solver-unit"
+          },
+          "truth": {
+            "crossScale": "T2 mapped input",
+            "local": "T3 local PBF / rigid coupling",
+            "boundary": "The Ocean surface query selects and scales a local uplift packet; it is not calibrated wave pressure, buoyancy, or coastal inundation."
+          }
+        },
+        "scenario": {
+          "reset": true,
+          "ticks": 36,
+          "comparison": {
+            "mode": "no-injection-baseline"
+          },
+          "emitters": [
+            {
+              "id": "ocean-rising-surface-packet",
+              "type": "fluid-block",
+              "tick": 0,
+              "origin": {
+                "space": "box-normalized",
+                "value": [
+                  0.45,
+                  0.44,
+                  0.43
+                ]
+              },
+              "counts": [
+                8,
+                10,
+                8
+              ],
+              "spacing": {
+                "source": "runtime-spacing",
+                "multiplier": 1
+              },
+              "velocity": [
+                0,
+                4,
+                0
+              ]
+            }
+          ],
+          "probe": {
+            "interactionRegion": {
+              "center": {
+                "space": "box-normalized",
+                "value": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "radius": {
+                "space": "solver-unit",
+                "value": 0.22
+              },
+              "minimumY": {
+                "space": "solver-unit",
+                "value": 0.15
+              }
+            },
+            "sampleFluidPositions": true,
+            "sampleRigidBodies": true
+          }
+        },
+        "acceptance": {
+          "requiredInjectedParticles": 640,
+          "requiredTicks": 36,
+          "maximumNonFinitePositions": 0,
+          "minimumBodyDisplacement": 0.005,
+          "bodyDisplacementAxis": [
+            0,
+            1,
+            0
+          ],
+          "minimumBodyDisplacementAlongAxis": 0,
+          "directionalResponseMode": "baseline-delta",
+          "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+          "minimumBodyRotationDegrees": 0.5,
+          "requireWebGpuContext": true
+        }
+      }
+    },
+    {
+      "name": "mapping.oceanDriver",
+      "passed": true,
+      "detail": {
+        "worldDriver": "ocean-surface-vertical-velocity",
+        "seaState": 1,
+        "probeXWorldUnits": 0,
+        "probeZWorldUnits": 0,
+        "probeTimeSeconds": 5,
+        "surfaceHeightWorldUnits": -0.147820841207212,
+        "surfaceNormalX": 0.07791067614459625,
+        "surfaceNormalY": 0.919796330722049,
+        "surfaceNormalZ": 0.38458371849695727,
+        "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+        "maxVerticalEnvelopeWorldUnits": 0.897,
+        "solverVelocity": [
+          0,
+          4,
+          0
+        ],
+        "velocityScale": 2.428710547014972,
+        "solverFrame": "ocean-up-to-solver-positive-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "mapping.localFrame",
+      "passed": true,
+      "detail": {
+        "worldDriver": "ocean-surface-vertical-velocity",
+        "seaState": 1,
+        "probeXWorldUnits": 0,
+        "probeZWorldUnits": 0,
+        "probeTimeSeconds": 5,
+        "surfaceHeightWorldUnits": -0.147820841207212,
+        "surfaceNormalX": 0.07791067614459625,
+        "surfaceNormalY": 0.919796330722049,
+        "surfaceNormalZ": 0.38458371849695727,
+        "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+        "maxVerticalEnvelopeWorldUnits": 0.897,
+        "solverVelocity": [
+          0,
+          4,
+          0
+        ],
+        "velocityScale": 2.428710547014972,
+        "solverFrame": "ocean-up-to-solver-positive-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "mapping.truthBoundary",
+      "passed": true,
+      "detail": {
+        "worldDriver": "ocean-surface-vertical-velocity",
+        "seaState": 1,
+        "probeXWorldUnits": 0,
+        "probeZWorldUnits": 0,
+        "probeTimeSeconds": 5,
+        "surfaceHeightWorldUnits": -0.147820841207212,
+        "surfaceNormalX": 0.07791067614459625,
+        "surfaceNormalY": 0.919796330722049,
+        "surfaceNormalZ": 0.38458371849695727,
+        "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+        "maxVerticalEnvelopeWorldUnits": 0.897,
+        "solverVelocity": [
+          0,
+          4,
+          0
+        ],
+        "velocityScale": 2.428710547014972,
+        "solverFrame": "ocean-up-to-solver-positive-y",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "injection.count",
+      "passed": true,
+      "detail": {
+        "requested": 640,
+        "added": 640,
+        "before": 29232,
+        "after": 29872,
+        "capacity": 57232,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "solver.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 36,
+        "actualTicks": 36,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.3000000000000001,
+        "reset": false,
+        "history": [
+          {
+            "id": "ocean-rising-surface-packet",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "solver.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "rigid.baselineDelta",
+      "passed": true,
+      "detail": {
+        "injected": -0.43836715817451477,
+        "baseline": -0.45368561148643494,
+        "delta": 0.015318453311920166
+      }
+    },
+    {
+      "name": "rigid.nativeBodyProfile",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "shape": "torus",
+        "density": 0.22,
+        "size": 0.15,
+        "sceneRole": "floating-ring-probe"
+      }
+    },
+    {
+      "name": "rigid.rotationResponse",
+      "passed": true,
+      "detail": 1.214342676110388
+    },
+    {
+      "name": "contract.acceptance",
+      "passed": true,
+      "detail": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "rigidRotationResponse": true,
+        "passed": true
+      }
+    },
+    {
+      "name": "runtime.phase",
+      "passed": true,
+      "detail": {
+        "phase": "complete",
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "ocean-wave-uplift-near-field",
+            "revision": 2,
+            "hash": "fnv1a-24c48c8f"
+          },
+          "mapping": {
+            "worldDriver": "ocean-surface-vertical-velocity",
+            "seaState": 1,
+            "probeXWorldUnits": 0,
+            "probeZWorldUnits": 0,
+            "probeTimeSeconds": 5,
+            "surfaceHeightWorldUnits": -0.147820841207212,
+            "surfaceNormalX": 0.07791067614459625,
+            "surfaceNormalY": 0.919796330722049,
+            "surfaceNormalZ": 0.38458371849695727,
+            "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+            "maxVerticalEnvelopeWorldUnits": 0.897,
+            "solverVelocity": [
+              0,
+              4,
+              0
+            ],
+            "velocityScale": 2.428710547014972,
+            "solverFrame": "ocean-up-to-solver-positive-y",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "nvidia lovelace",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29232,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1232,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 640,
+            "config": {
+              "origin": [
+                0.675,
+                0.44,
+                0.43
+              ],
+              "counts": [
+                8,
+                10,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                4,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "torus",
+            "density": 0.22,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "ocean-wave-uplift-near-field",
+            "sceneContractHash": "fnv1a-24c48c8f",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 36,
+            "packets": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.44,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    10,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    4,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.22,
+              "minimumY": 0.15
+            }
+          },
+          "injection": {
+            "requested": 640,
+            "added": 640,
+            "before": 29232,
+            "after": 29872,
+            "capacity": 57232,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 36,
+            "actualTicks": 36,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.3000000000000001,
+            "reset": false,
+            "history": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 640,
+                  "added": 640,
+                  "before": 29232,
+                  "after": 29872,
+                  "capacity": 57232,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29872,
+            "fluidParticleCount": 28640,
+            "rigidParticleCount": 1232,
+            "bodyCount": 1,
+            "simTime": 0.3000000000000001,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 493,
+          "bodyDisplacement": 0.4391427504774801,
+          "bodyDisplacementVector": [
+            -0.02608811855316162,
+            -0.43836715817451477,
+            0.0000011324882507324219
+          ],
+          "bodyDisplacementAlongAxis": -0.43836715817451477,
+          "bodyRotationDegrees": 1.214342676110388,
+          "baselineBodyDisplacement": 0.453685611527296,
+          "baselineBodyDisplacementAlongAxis": -0.45368561148643494,
+          "bodyDisplacementDeltaAlongAxis": 0.015318453311920166,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 0.9913007739270889,
+            "maxRho": 1.1650390625,
+            "maxSpeed": 4.240234375,
+            "frames": 0,
+            "ke": 223.625
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "rigidRotationResponse": true,
+            "passed": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "ui.desktopBridge",
+      "passed": true,
+      "detail": {
+        "title": "Ocean MVP｜Water Scene Lab",
+        "state": {
+          "phase": "complete",
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "ocean-wave-uplift-near-field",
+              "revision": 2,
+              "hash": "fnv1a-24c48c8f"
+            },
+            "mapping": {
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "seaState": 1,
+              "probeXWorldUnits": 0,
+              "probeZWorldUnits": 0,
+              "probeTimeSeconds": 5,
+              "surfaceHeightWorldUnits": -0.147820841207212,
+              "surfaceNormalX": 0.07791067614459625,
+              "surfaceNormalY": 0.919796330722049,
+              "surfaceNormalZ": 0.38458371849695727,
+              "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+              "maxVerticalEnvelopeWorldUnits": 0.897,
+              "solverVelocity": [
+                0,
+                4,
+                0
+              ],
+              "velocityScale": 2.428710547014972,
+              "solverFrame": "ocean-up-to-solver-positive-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "nvidia lovelace",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29232,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 640,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "torus",
+              "density": 0.22,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "ocean-wave-uplift-near-field",
+              "sceneContractHash": "fnv1a-24c48c8f",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.44,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      10,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      4,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 640,
+                    "added": 640,
+                    "before": 29232,
+                    "after": 29872,
+                    "capacity": 57232,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29872,
+              "fluidParticleCount": 28640,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 493,
+            "bodyDisplacement": 0.4391427504774801,
+            "bodyDisplacementVector": [
+              -0.02608811855316162,
+              -0.43836715817451477,
+              0.0000011324882507324219
+            ],
+            "bodyDisplacementAlongAxis": -0.43836715817451477,
+            "bodyRotationDegrees": 1.214342676110388,
+            "baselineBodyDisplacement": 0.453685611527296,
+            "baselineBodyDisplacementAlongAxis": -0.45368561148643494,
+            "bodyDisplacementDeltaAlongAxis": 0.015318453311920166,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9913007739270889,
+              "maxRho": 1.1650390625,
+              "maxSpeed": 4.240234375,
+              "frames": 0,
+              "ke": 223.625
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null
+        },
+        "oceanRuntime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 807.2999999523163,
+          "frameTimeP50": null,
+          "frameTimeP95": null,
+          "measuredFrames": 1,
+          "drawCalls": 36,
+          "triangles": 42428,
+          "viewport": [
+            994,
+            925
+          ],
+          "dpr": 1,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (NVIDIA)",
+          "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002860) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "title": "Ocean Floating Ring Uplift / Particles4All Near-field Lens",
+          "sceneKind": "ocean-wave-uplift",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "OceanSurfaceSampler",
+            "modelVersion": "ocean-gerstner-v1",
+            "contractHash": "fnv1a-4a2c196d"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "ocean-surface-vertical-velocity",
+              "parameters": {
+                "seaState": 1,
+                "probeXWorldUnits": 0,
+                "probeZWorldUnits": 0,
+                "probeTimeSeconds": 5,
+                "surfaceHeightWorldUnits": -0.147820841207212,
+                "surfaceNormalX": 0.07791067614459625,
+                "surfaceNormalY": 0.919796330722049,
+                "surfaceNormalZ": 0.38458371849695727,
+                "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+                "maxVerticalEnvelopeWorldUnits": 0.897
+              }
+            },
+            "solver": {
+              "velocityScale": 2.428710547014972,
+              "frame": "ocean-up-to-solver-positive-y",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The Ocean surface query selects and scales a local uplift packet; it is not calibrated wave pressure, buoyancy, or coastal inundation."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "comparison": {
+              "mode": "no-injection-baseline"
+            },
+            "emitters": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.45,
+                    0.44,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 640,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              0,
+              1,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0,
+            "directionalResponseMode": "baseline-delta",
+            "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        },
+        "sceneContractHash": "fnv1a-24c48c8f",
+        "statusText": "Ocean 复用证据已完成",
+        "conclusionText": "原生浮环 Gate 通过：Ocean 上升样本驱动局部 +Y 粒子脉冲；低密度 torus 相对基线增加 0.0153 u 上向响应，并旋转 1.21°（基线 -0.4537 u）。",
+        "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22ocean-wave-uplift-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22Ocean%20Floating%20Ring%20Uplift%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22ocean-wave-uplift%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22OceanSurfaceSampler%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22ocean-gerstner-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4a2c196d%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dtorus%3A0.22%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22torus%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.22%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22floating-ring-probe%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22ocean-surface-vertical-velocity%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22seaState%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22probeXWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeZWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeTimeSeconds%22%3A%205%2C%0A%20%20%20%20%20%20%20%20%22surfaceHeightWorldUnits%22%3A%20-0.147820841207212%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalX%22%3A%200.07791067614459625%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalY%22%3A%200.919796330722049%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalZ%22%3A%200.38458371849695727%2C%0A%20%20%20%20%20%20%20%20%22verticalVelocityWorldUnitsPerSecond%22%3A%201.6469644787091795%2C%0A%20%20%20%20%20%20%20%20%22maxVerticalEnvelopeWorldUnits%22%3A%200.897%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%202.428710547014972%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22ocean-up-to-solver-positive-y%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20Ocean%20surface%20query%20selects%20and%20scales%20a%20local%20uplift%20packet%3B%20it%20is%20not%20calibrated%20wave%20pressure%2C%20buoyancy%2C%20or%20coastal%20inundation.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22comparison%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22no-injection-baseline%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22ocean-rising-surface-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.45%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.44%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%208%2C%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%204%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20640%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200%2C%0A%20%20%20%20%22directionalResponseMode%22%3A%20%22baseline-delta%22%2C%0A%20%20%20%20%22minimumBodyDisplacementDeltaAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+        "placeholderHidden": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "ui.conclusion",
+      "passed": true,
+      "detail": {
+        "title": "Ocean MVP｜Water Scene Lab",
+        "state": {
+          "phase": "complete",
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "ocean-wave-uplift-near-field",
+              "revision": 2,
+              "hash": "fnv1a-24c48c8f"
+            },
+            "mapping": {
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "seaState": 1,
+              "probeXWorldUnits": 0,
+              "probeZWorldUnits": 0,
+              "probeTimeSeconds": 5,
+              "surfaceHeightWorldUnits": -0.147820841207212,
+              "surfaceNormalX": 0.07791067614459625,
+              "surfaceNormalY": 0.919796330722049,
+              "surfaceNormalZ": 0.38458371849695727,
+              "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+              "maxVerticalEnvelopeWorldUnits": 0.897,
+              "solverVelocity": [
+                0,
+                4,
+                0
+              ],
+              "velocityScale": 2.428710547014972,
+              "solverFrame": "ocean-up-to-solver-positive-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "nvidia lovelace",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29232,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 640,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "torus",
+              "density": 0.22,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "ocean-wave-uplift-near-field",
+              "sceneContractHash": "fnv1a-24c48c8f",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.44,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      10,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      4,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 640,
+                    "added": 640,
+                    "before": 29232,
+                    "after": 29872,
+                    "capacity": 57232,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29872,
+              "fluidParticleCount": 28640,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 493,
+            "bodyDisplacement": 0.4391427504774801,
+            "bodyDisplacementVector": [
+              -0.02608811855316162,
+              -0.43836715817451477,
+              0.0000011324882507324219
+            ],
+            "bodyDisplacementAlongAxis": -0.43836715817451477,
+            "bodyRotationDegrees": 1.214342676110388,
+            "baselineBodyDisplacement": 0.453685611527296,
+            "baselineBodyDisplacementAlongAxis": -0.45368561148643494,
+            "bodyDisplacementDeltaAlongAxis": 0.015318453311920166,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9913007739270889,
+              "maxRho": 1.1650390625,
+              "maxSpeed": 4.240234375,
+              "frames": 0,
+              "ke": 223.625
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null
+        },
+        "oceanRuntime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 807.2999999523163,
+          "frameTimeP50": null,
+          "frameTimeP95": null,
+          "measuredFrames": 1,
+          "drawCalls": 36,
+          "triangles": 42428,
+          "viewport": [
+            994,
+            925
+          ],
+          "dpr": 1,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (NVIDIA)",
+          "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002860) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "title": "Ocean Floating Ring Uplift / Particles4All Near-field Lens",
+          "sceneKind": "ocean-wave-uplift",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "OceanSurfaceSampler",
+            "modelVersion": "ocean-gerstner-v1",
+            "contractHash": "fnv1a-4a2c196d"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "ocean-surface-vertical-velocity",
+              "parameters": {
+                "seaState": 1,
+                "probeXWorldUnits": 0,
+                "probeZWorldUnits": 0,
+                "probeTimeSeconds": 5,
+                "surfaceHeightWorldUnits": -0.147820841207212,
+                "surfaceNormalX": 0.07791067614459625,
+                "surfaceNormalY": 0.919796330722049,
+                "surfaceNormalZ": 0.38458371849695727,
+                "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+                "maxVerticalEnvelopeWorldUnits": 0.897
+              }
+            },
+            "solver": {
+              "velocityScale": 2.428710547014972,
+              "frame": "ocean-up-to-solver-positive-y",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The Ocean surface query selects and scales a local uplift packet; it is not calibrated wave pressure, buoyancy, or coastal inundation."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "comparison": {
+              "mode": "no-injection-baseline"
+            },
+            "emitters": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.45,
+                    0.44,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 640,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              0,
+              1,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0,
+            "directionalResponseMode": "baseline-delta",
+            "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        },
+        "sceneContractHash": "fnv1a-24c48c8f",
+        "statusText": "Ocean 复用证据已完成",
+        "conclusionText": "原生浮环 Gate 通过：Ocean 上升样本驱动局部 +Y 粒子脉冲；低密度 torus 相对基线增加 0.0153 u 上向响应，并旋转 1.21°（基线 -0.4537 u）。",
+        "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22ocean-wave-uplift-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22Ocean%20Floating%20Ring%20Uplift%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22ocean-wave-uplift%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22OceanSurfaceSampler%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22ocean-gerstner-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4a2c196d%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dtorus%3A0.22%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22torus%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.22%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22floating-ring-probe%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22ocean-surface-vertical-velocity%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22seaState%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%22probeXWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeZWorldUnits%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22probeTimeSeconds%22%3A%205%2C%0A%20%20%20%20%20%20%20%20%22surfaceHeightWorldUnits%22%3A%20-0.147820841207212%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalX%22%3A%200.07791067614459625%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalY%22%3A%200.919796330722049%2C%0A%20%20%20%20%20%20%20%20%22surfaceNormalZ%22%3A%200.38458371849695727%2C%0A%20%20%20%20%20%20%20%20%22verticalVelocityWorldUnitsPerSecond%22%3A%201.6469644787091795%2C%0A%20%20%20%20%20%20%20%20%22maxVerticalEnvelopeWorldUnits%22%3A%200.897%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%202.428710547014972%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22ocean-up-to-solver-positive-y%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20Ocean%20surface%20query%20selects%20and%20scales%20a%20local%20uplift%20packet%3B%20it%20is%20not%20calibrated%20wave%20pressure%2C%20buoyancy%2C%20or%20coastal%20inundation.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22comparison%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22no-injection-baseline%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22ocean-rising-surface-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.45%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.44%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%208%2C%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%204%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20640%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200%2C%0A%20%20%20%20%22directionalResponseMode%22%3A%20%22baseline-delta%22%2C%0A%20%20%20%20%22minimumBodyDisplacementDeltaAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+        "placeholderHidden": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "water-scene.particles4all-near-field/v1",
+  "id": "waterfall-impact-near-field",
+  "revision": 2,
+  "title": "Waterfall Dense Block Impact / Particles4All Near-field Lens",
+  "sceneKind": "waterfall-impact",
+  "targetPlatform": "desktop-browser",
+  "macroLayer": {
+    "role": "world-scale-water-representation",
+    "capability": "WaterfallVisualAdapter",
+    "modelVersion": "waterfall-breakup-v1",
+    "contractHash": "fnv1a-17ebbf07"
+  },
+  "localPhysics": {
+    "provider": "Particles4All",
+    "adapter": "Particles4AllRuntimeAdapter",
+    "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+    "body": {
+      "shape": "box",
+      "density": 2.2,
+      "startY": 0.76,
+      "size": 0.15,
+      "sceneRole": "dense-impact-block"
+    },
+    "loading": {
+      "mode": "lazy-on-demand",
+      "unloadable": true,
+      "pauseMacroPreviewWhileLoaded": true
+    }
+  },
+  "mapping": {
+    "world": {
+      "driver": "free-fall-impact-speed",
+      "parameters": {
+        "gravityMetersPerSecond2": 9.81,
+        "worldDropMeters": 16.8,
+        "physicalImpactSpeedMetersPerSecond": 18.155329795957993
+      }
+    },
+    "solver": {
+      "velocityScale": 0.13770061067998812,
+      "frame": "world-down-to-solver-negative-y",
+      "units": "Particles4All solver-unit"
+    },
+    "truth": {
+      "crossScale": "T2 mapped input",
+      "local": "T3 local PBF / rigid coupling",
+      "boundary": "Particle count is a solver sample and must not be interpreted as real-world discharge."
+    }
+  },
+  "scenario": {
+    "reset": true,
+    "ticks": 30,
+    "comparison": {
+      "mode": "no-injection-baseline"
+    },
+    "emitters": [
+      {
+        "id": "waterfall-impact-packet",
+        "type": "fluid-block",
+        "tick": 0,
+        "origin": {
+          "space": "box-normalized",
+          "value": [0.45, 0.86, 0.43]
+        },
+        "counts": [8, 6, 8],
+        "spacing": {
+          "source": "runtime-spacing",
+          "multiplier": 1
+        },
+        "velocity": [0, -2.5, 0]
+      }
+    ],
+    "probe": {
+      "interactionRegion": {
+        "center": {
+          "space": "box-normalized",
+          "value": [0.5, 0.5]
+        },
+        "radius": {
+          "space": "solver-unit",
+          "value": 0.18
+        },
+        "minimumY": {
+          "space": "solver-unit",
+          "value": 0.25
+        }
+      },
+      "sampleFluidPositions": true,
+      "sampleRigidBodies": true
+    }
+  },
+  "acceptance": {
+    "requiredInjectedParticles": 384,
+    "requiredTicks": 30,
+    "maximumNonFinitePositions": 0,
+    "minimumBodyDisplacement": 0.005,
+    "bodyDisplacementAxis": [0, -1, 0],
+    "minimumBodyDisplacementAlongAxis": 0.005,
+    "directionalResponseMode": "baseline-delta",
+    "minimumBodyDisplacementDeltaAlongAxis": 0.003,
+    "requireWebGpuContext": true
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06151d" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>瀑布连续落水 A/B｜Water Scene Lab</title>
+</head>
+<body data-ready="false">
+  <header>
+    <a href="../">← WATER SCENE LAB</a>
+    <span>PARTICLES4ALL · OBSERVABLE EFFECT 01</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow" id="experiment-kicker">SAME SOLVER · SAME WATER SAMPLE · ONE VARIABLE</p>
+        <h1>从一次粒子团，<br /><em>到分时连续落水。</em></h1>
+      </div>
+      <div class="hero-copy">
+        <p id="experiment-copy">这不是换一套瀑布算法。A 与 B 都使用 Particles4All 原有 PBF、同一高密度 box、384 粒子、−2.5 u/s 和 42 ticks；唯一变化是粒子进入时间。</p>
+        <dl><div><dt>PARTICLES</dt><dd id="particle-budget">384 = 384</dd></div><div><dt>TICKS</dt><dd>42 = 42</dd></div><div><dt>RUNTIME</dt><dd>1 SLOT</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="lab">
+      <div class="runtime-head">
+        <div><span id="phase" data-phase="idle">IDLE</span><strong id="status">等待实际运行。</strong></div>
+        <nav aria-label="实验操作">
+          <label class="display-control">原库显示
+            <select id="display-mode">
+              <option value="particles">PARTICLES</option>
+              <option value="mesh">MESH</option>
+              <option value="ssfr">SSFR</option>
+            </select>
+          </label>
+          <label class="display-control">发射形状
+            <select id="emitter-shape">
+              <option value="compact">紧凑水块</option>
+              <option value="sheet">横向薄水片</option>
+              <option value="curtain">连续水幕（推荐）</option>
+              <option value="highflow">场景高流量水幕</option>
+            </select>
+          </label>
+          <button id="run-a" type="button">运行 A</button>
+          <button id="run-b" type="button">运行 B</button>
+          <button class="primary" id="run-both" type="button">自动运行 A → B</button>
+          <button id="unload" type="button" disabled>卸载 Runtime</button>
+        </nav>
+      </div>
+      <div class="runtime-grid">
+        <div class="viewport">
+          <iframe id="runtime-frame" title="Particles4All 瀑布连续落水实际运行"></iframe>
+          <div class="empty"><span>REAL PARTICLES4ALL RUNTIME</span><strong>运行后显示原库 WebGPU 画布</strong><p>没有运行时不展示预制动画或模拟截图。</p></div>
+        </div>
+        <aside>
+          <article data-result="single" data-state="waiting">
+            <div class="variant-title"><span>A</span><div><strong>单次粒子团</strong><small>tick 0 × 384</small></div><b data-field="gate">WAITING</b></div>
+            <dl><div><dt>垂直占用</dt><dd data-field="bins">—</dd></div><div><dt>高位粒子</dt><dd data-field="particles">—</dd></div><div><dt>最高位置</dt><dd data-field="highest">—</dd></div><div><dt>横向跨度</dt><dd data-field="width">—</dd></div><div><dt>刚体增量</dt><dd data-field="body">—</dd></div><div><dt>粒子注入</dt><dd data-field="injection">—</dd></div></dl>
+          </article>
+          <article data-result="staged" data-state="waiting">
+            <div class="variant-title"><span>B</span><div><strong>分时连续落水</strong><small id="staged-mode-label">12 pulses × 32 · PARTICLES</small></div><b data-field="gate">WAITING</b></div>
+            <dl><div><dt>垂直占用</dt><dd data-field="bins">—</dd></div><div><dt>高位粒子</dt><dd data-field="particles">—</dd></div><div><dt>最高位置</dt><dd data-field="highest">—</dd></div><div><dt>横向跨度</dt><dd data-field="width">—</dd></div><div><dt>刚体增量</dt><dd data-field="body">—</dd></div><div><dt>粒子注入</dt><dd data-field="injection">—</dd></div></dl>
+          </article>
+        </aside>
+      </div>
+      <div class="conclusion"><span>OBSERVED CONCLUSION</span><p id="conclusion">先运行 A 与 B。页面只在两个真实 Runtime 结果都存在后给出差异结论。</p></div>
+    </section>
+
+    <section class="boundary">
+      <strong>这次研究到底产出什么？</strong>
+      <p>产出的是“发射时间如何改变实际粒子空间分布”的可见 A/B 与数据，不是新的水体算法。即便 B 更连续，也只说明离散粒子落水带改善；表面连续性、白沫、水雾和现实流量仍是后续能力缺口。</p>
+      <a href="../research-summary/">查看阶段研究汇总 →</a>
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

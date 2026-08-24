@@ -1,0 +1,301 @@
+{
+  "schemaVersion": "1.0",
+  "modelSourceSha256": "eb8c30f67098d97612eae00002b0010361a2f6da060c35225e54c9aa52d25090",
+  "curtainHash": "fnv1a-adc38d1c",
+  "sharedContractHash": "fnv1a-17ebbf07",
+  "contractHash": "fnv1a-17ebbf07",
+  "breakupSpecHash": "fnv1a-b6b85ec7",
+  "checks": {
+    "selfCheck": true,
+    "fixedProtocol": true,
+    "proxyTable": true,
+    "emitterTable": true,
+    "explorationExcluded": true,
+    "mainCurtainIdentical": true,
+    "curtainRepeatable": true,
+    "curtainFinite": true,
+    "fixedCurtainEndpoints": true,
+    "fixedStartAndTime": true,
+    "proxyRepeatable": true,
+    "proxyLifetime": true,
+    "proxyBounds": true,
+    "proxyFinite": true,
+    "fixedLayerDifference": true,
+    "abPassed": true,
+    "repeatableDigests": true,
+    "hashContract": true,
+    "onlyBreakupModeDiffers": true,
+    "mainCurtainResultIdentity": true,
+    "curtainOnlyIncrementIsZero": true,
+    "hybridVisibleIncrement": true,
+    "mistExcluded": true,
+    "noNumericalFailures": true
+  },
+  "diagnostics": {
+    "curtainCaseErrorMax": 0,
+    "curtainRepeatErrorMax": 0,
+    "curtainNonFiniteCount": 0,
+    "curtainTopY": 18,
+    "curtainBottomY": 1.1999999999999993,
+    "fixedCurtainSample": {
+      "u": -0.35,
+      "v": 0.62,
+      "time": 7.25,
+      "position": [
+        -1.626130564388877,
+        7.584,
+        0.44372938468490136
+      ],
+      "du": [
+        4.869146508193346,
+        0,
+        -0.05818634123096692
+      ],
+      "dv": [
+        0.12003088608637177,
+        -16.8,
+        -0.3813056283923979
+      ],
+      "normal": [
+        0.011946102109971391,
+        -0.02260399325078342,
+        0.9996731216420179
+      ],
+      "velocity": [
+        -0.054234537820813576,
+        0,
+        -0.1280474265097835
+      ],
+      "phase": -20.064571155044604,
+      "flowDistance": 9.065999999999999
+    },
+    "lifecycleViolationCount": 0,
+    "boundaryViolationCount": 0,
+    "sampledProxyNonFiniteCount": 0,
+    "fixedLayerCounts": {
+      "A": 0,
+      "B": 69,
+      "edgeB": 29,
+      "impactB": 40
+    },
+    "caseConfigDifferingKeys": [
+      "breakupMode"
+    ]
+  },
+  "contract": {
+    "schemaVersion": "1.0",
+    "modelVersion": "waterfall-breakup-v1",
+    "curtainHash": "fnv1a-adc38d1c",
+    "sharedContractHash": "fnv1a-17ebbf07",
+    "contractHash": "fnv1a-17ebbf07",
+    "breakupSpecHash": "fnv1a-b6b85ec7",
+    "seed": 9041,
+    "fixedHz": 60,
+    "totalTicks": 1200,
+    "warmupTicks": 120,
+    "measureEndTick": 1080,
+    "measuredTicks": 960,
+    "curtain": {
+      "width": 9.6,
+      "topY": 18,
+      "impactY": 1.2,
+      "drop": 16.8,
+      "originZ": 0,
+      "sheetDepth": 0.32,
+      "bow": 0.58,
+      "rippleAmplitude": 0.18,
+      "lateralAmplitude": 0.07,
+      "phaseFrequencyU": 0.17,
+      "phaseFrequencyV": 1.18,
+      "phaseSpeed": 3.35,
+      "visualFallSpeed": 11.4
+    },
+    "cliff": {
+      "width": 20,
+      "height": 20,
+      "ledgeY": 18,
+      "basinY": 0,
+      "basinRadius": 10.5
+    },
+    "proxyCount": 104,
+    "emitterCounts": {
+      "edgeFall": 48,
+      "impactSpray": 56
+    },
+    "fixedFoamEnabled": false,
+    "fixedMistEnabled": false,
+    "cases": {
+      "curtain": {
+        "id": "curtain",
+        "caseId": "A",
+        "label": "连续主水幕",
+        "breakupMode": "curtain_only"
+      },
+      "hybrid": {
+        "id": "hybrid",
+        "caseId": "B",
+        "label": "主水幕 + 破碎粒子层",
+        "breakupMode": "hybrid_breakup"
+      }
+    }
+  },
+  "ab": {
+    "schemaVersion": "1.0",
+    "modelVersion": "waterfall-breakup-v1",
+    "factor": "breakupMode",
+    "curtainHash": "fnv1a-adc38d1c",
+    "sharedContractHash": "fnv1a-17ebbf07",
+    "contractHash": "fnv1a-17ebbf07",
+    "breakupSpecHash": "fnv1a-b6b85ec7",
+    "configDifferences": [
+      "breakupMode"
+    ],
+    "A": {
+      "caseId": "A",
+      "label": "连续主水幕",
+      "factor": "breakupMode",
+      "breakupMode": "curtain_only",
+      "curtainHash": "fnv1a-adc38d1c",
+      "curtainProbeDigest": "fnv1a-5b2f8b1a",
+      "sharedContractHash": "fnv1a-17ebbf07",
+      "contractHash": "fnv1a-17ebbf07",
+      "caseHash": "fnv1a-dc542e33",
+      "caseConfigHash": "fnv1a-dc542e33",
+      "resultDigest": "fnv1a-58a678a7",
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "curtainQueryCount": 4800,
+      "proxyQueryCount": 0,
+      "activeProxySampleCount": 0,
+      "layers": {
+        "curtainLayerCount": 1,
+        "breakupLayerCount": 0,
+        "foamLayerCount": 0,
+        "mistLayerCount": 0,
+        "fixedLayerCount": 1
+      },
+      "metrics": {
+        "layerCount": 1,
+        "activeProxyMean": 0,
+        "activeProxyP95": 0,
+        "activeProxyMax": 0,
+        "edgeActiveMean": 0,
+        "impactActiveMean": 0,
+        "edgeExpansionMean": 0,
+        "edgeExpansionP95": 0,
+        "impactOccupancyMean": 0,
+        "impactOccupancyP95": 0,
+        "mistCoverageMean": 0,
+        "terminalActiveProxyCount": 0,
+        "nonFiniteCount": 0,
+        "lifetimeViolationCount": 0,
+        "boundsViolationCount": 0
+      },
+      "terminal": {
+        "time": 20,
+        "activeProxyCount": 0,
+        "edgeActiveCount": 0,
+        "impactActiveCount": 0,
+        "impactOccupancy": 0
+      },
+      "checks": {
+        "fixedProtocol": true,
+        "measuredTicks": true,
+        "curtainQueries": true,
+        "proxyQueries": true,
+        "layerContract": true,
+        "fixedExplorationOff": true,
+        "noNonFinite": true,
+        "lifetimeValid": true,
+        "boundsValid": true,
+        "expectedIncrement": true
+      },
+      "passed": true
+    },
+    "B": {
+      "caseId": "B",
+      "label": "主水幕 + 破碎粒子层",
+      "factor": "breakupMode",
+      "breakupMode": "hybrid_breakup",
+      "curtainHash": "fnv1a-adc38d1c",
+      "curtainProbeDigest": "fnv1a-5b2f8b1a",
+      "sharedContractHash": "fnv1a-17ebbf07",
+      "contractHash": "fnv1a-17ebbf07",
+      "caseHash": "fnv1a-d9bed3b9",
+      "caseConfigHash": "fnv1a-d9bed3b9",
+      "resultDigest": "fnv1a-624b5038",
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "curtainQueryCount": 4800,
+      "proxyQueryCount": 99840,
+      "activeProxySampleCount": 66886,
+      "layers": {
+        "curtainLayerCount": 1,
+        "breakupLayerCount": 1,
+        "foamLayerCount": 0,
+        "mistLayerCount": 0,
+        "fixedLayerCount": 2
+      },
+      "metrics": {
+        "layerCount": 2,
+        "activeProxyMean": 69.67291666666667,
+        "activeProxyP95": 77,
+        "activeProxyMax": 85,
+        "edgeActiveMean": 31.210416666666667,
+        "impactActiveMean": 38.4625,
+        "edgeExpansionMean": 0.35947164894244504,
+        "edgeExpansionP95": 0.8245702365574992,
+        "impactOccupancyMean": 0.3570638020833333,
+        "impactOccupancyP95": 0.4375,
+        "mistCoverageMean": 0,
+        "terminalActiveProxyCount": 76,
+        "nonFiniteCount": 0,
+        "lifetimeViolationCount": 0,
+        "boundsViolationCount": 0
+      },
+      "terminal": {
+        "time": 20,
+        "activeProxyCount": 76,
+        "edgeActiveCount": 33,
+        "impactActiveCount": 43,
+        "impactOccupancy": 0.375
+      },
+      "checks": {
+        "fixedProtocol": true,
+        "measuredTicks": true,
+        "curtainQueries": true,
+        "proxyQueries": true,
+        "layerContract": true,
+        "fixedExplorationOff": true,
+        "noNonFinite": true,
+        "lifetimeValid": true,
+        "boundsValid": true,
+        "expectedIncrement": true
+      },
+      "passed": true
+    },
+    "increments": {
+      "layerCount": 1,
+      "activeProxyMean": 69.67291666666667,
+      "edgeExpansionMean": 0.35947164894244504,
+      "impactOccupancyMean": 0.3570638020833333,
+      "mistCoverageMean": 0
+    },
+    "checks": {
+      "casesPassed": true,
+      "commonContract": true,
+      "commonCurtainHash": true,
+      "identicalCurtainGeometry": true,
+      "distinctCaseHash": true,
+      "onlyBreakupModeDiffers": true,
+      "curtainOnlyHasNoIncrement": true,
+      "hybridAddsOneLayer": true,
+      "hybridHasVisibleIncrement": true,
+      "mistExcludedFromFixedAB": true,
+      "noNumericalFailures": true
+    },
+    "passed": true,
+    "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+  },
+  "passed": true
+}

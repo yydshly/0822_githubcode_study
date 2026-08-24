@@ -1,0 +1,6019 @@
+{
+  "protocol": {
+    "baseUrl": "http://127.0.0.1:8107/demos/water-scene-lab/sandbox/",
+    "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "browserVersion": "151.0.7922.170",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  "runs": [
+    {
+      "scenario": {
+        "presetId": "spillway-impact-block",
+        "shortId": "impact",
+        "contractId": "waterfall-impact-near-field",
+        "shape": "box",
+        "density": 2.2,
+        "particles": 384,
+        "ticks": 30
+      },
+      "result": {
+        "bridgeVersion": "particles4all-scene-runner-v1",
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "waterfall-impact-near-field",
+          "revision": 2,
+          "hash": "fnv1a-9bf4aa68"
+        },
+        "mapping": {
+          "worldDriver": "free-fall-impact-speed",
+          "gravityMetersPerSecond2": 9.81,
+          "worldDropMeters": 16.8,
+          "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+          "solverVelocity": [
+            0,
+            -2.5,
+            0
+          ],
+          "velocityScale": 0.13770061067998812,
+          "solverFrame": "world-down-to-solver-negative-y",
+          "crossScaleTruthLevel": "T2 mapped input",
+          "localTruthLevel": "T3 local PBF / rigid coupling"
+        },
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "initial": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29859,
+          "fluidParticleCount": 28000,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "packet": {
+          "count": 384,
+          "config": {
+            "origin": [
+              0.675,
+              0.86,
+              0.43
+            ],
+            "counts": [
+              8,
+              6,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              0,
+              -2.5,
+              0
+            ]
+          }
+        },
+        "bodyProfile": {
+          "id": 1,
+          "shape": "box",
+          "density": 2.2,
+          "size": 0.15,
+          "sceneRole": "dense-impact-block"
+        },
+        "plan": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "sceneId": "waterfall-impact-near-field",
+          "sceneContractHash": "fnv1a-9bf4aa68",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+          "reset": true,
+          "ticks": 30,
+          "packets": [
+            {
+              "id": "waterfall-impact-packet",
+              "tick": 0,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.86,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  -2.5,
+                  0
+                ]
+              }
+            }
+          ],
+          "interactionRegion": {
+            "center": [
+              0.75,
+              0.5
+            ],
+            "radius": 0.18,
+            "minimumY": 0.25
+          }
+        },
+        "injection": {
+          "requested": 384,
+          "added": 384,
+          "before": 29859,
+          "after": 30243,
+          "capacity": 57859,
+          "availableBefore": 28000,
+          "clamped": false
+        },
+        "step": {
+          "requestedTicks": 30,
+          "actualTicks": 30,
+          "stepDt": 0.008333333333333333,
+          "startTime": 0,
+          "endTime": 0.24999999999999997,
+          "reset": false,
+          "history": [
+            {
+              "id": "waterfall-impact-packet",
+              "type": "injectFluid",
+              "tick": 0,
+              "order": 0,
+              "simTime": 0,
+              "result": {
+                "requested": 384,
+                "added": 384,
+                "before": 29859,
+                "after": 30243,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              }
+            }
+          ]
+        },
+        "final": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 30243,
+          "fluidParticleCount": 28384,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0.24999999999999997,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "localImpactCount": 178,
+        "bodyDisplacement": 0.33220263337998124,
+        "bodyDisplacementVector": [
+          -0.0025700926780700684,
+          -0.33219268918037415,
+          -0.0000387728214263916
+        ],
+        "bodyDisplacementAlongAxis": 0.33219268918037415,
+        "bodyRotationDegrees": 5.442729431986291,
+        "baselineBodyDisplacement": 0.31679305436048805,
+        "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+        "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+        "nonFinite": 0,
+        "stats": {
+          "avgRho": 1.003840086703948,
+          "maxRho": 1.1904296875,
+          "maxSpeed": 4.40625,
+          "frames": 0,
+          "ke": 201.9755859375
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "passed": true
+        }
+      },
+      "host": {
+        "state": {
+          "selectedId": "spillway-impact-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "spillway-impact-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 1,
+          "activeRunSequence": 1,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "worldDriver": "free-fall-impact-speed",
+            "solverFrame": "world-down-to-solver-negative-y"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "waterfall-impact-near-field",
+              "revision": 2,
+              "hash": "fnv1a-9bf4aa68"
+            },
+            "mapping": {
+              "worldDriver": "free-fall-impact-speed",
+              "gravityMetersPerSecond2": 9.81,
+              "worldDropMeters": 16.8,
+              "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+              "solverVelocity": [
+                0,
+                -2.5,
+                0
+              ],
+              "velocityScale": 0.13770061067998812,
+              "solverFrame": "world-down-to-solver-negative-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 384,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.86,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  -2.5,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 2.2,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "waterfall-impact-near-field",
+              "sceneContractHash": "fnv1a-9bf4aa68",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 30,
+              "packets": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.86,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      -2.5,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.18,
+                "minimumY": 0.25
+              }
+            },
+            "injection": {
+              "requested": 384,
+              "added": 384,
+              "before": 29859,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 30,
+              "actualTicks": 30,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.24999999999999997,
+              "reset": false,
+              "history": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 384,
+                    "added": 384,
+                    "before": 29859,
+                    "after": 30243,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30243,
+              "fluidParticleCount": 28384,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.24999999999999997,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 178,
+            "bodyDisplacement": 0.33220263337998124,
+            "bodyDisplacementVector": [
+              -0.0025700926780700684,
+              -0.33219268918037415,
+              -0.0000387728214263916
+            ],
+            "bodyDisplacementAlongAxis": 0.33219268918037415,
+            "bodyRotationDegrees": 5.442729431986291,
+            "baselineBodyDisplacement": 0.31679305436048805,
+            "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+            "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 1.003840086703948,
+              "maxRho": 1.1904296875,
+              "maxSpeed": 4.40625,
+              "frames": 0,
+              "ke": 201.9755859375
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 waterfall-impact-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "384 / 384",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    },
+    {
+      "scenario": {
+        "presetId": "channel-drifting-block",
+        "shortId": "drift",
+        "contractId": "river-obstacle-near-field",
+        "shape": "box",
+        "density": 0.35,
+        "particles": 480,
+        "ticks": 36
+      },
+      "result": {
+        "bridgeVersion": "particles4all-scene-runner-v1",
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "hash": "fnv1a-1b6f9b1c"
+        },
+        "mapping": {
+          "worldDriver": "river-spline-flow-vector",
+          "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+          "sampleDistanceWorldUnits": 35.29949085569636,
+          "sampleTangentX": -0.617162205437667,
+          "sampleTangentZ": 0.7868359499789743,
+          "riverWidthWorldUnits": 6.8,
+          "solverVelocity": [
+            2.5,
+            0,
+            0
+          ],
+          "velocityScale": 0.9803921568627452,
+          "solverFrame": "river-tangent-to-solver-positive-x",
+          "crossScaleTruthLevel": "T2 mapped input",
+          "localTruthLevel": "T3 local PBF / rigid coupling"
+        },
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "initial": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29859,
+          "fluidParticleCount": 28000,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 2,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "packet": {
+          "count": 480,
+          "config": {
+            "origin": [
+              0.30000000000000004,
+              0.76,
+              0.43
+            ],
+            "counts": [
+              10,
+              6,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              2.5,
+              0,
+              0
+            ]
+          }
+        },
+        "bodyProfile": {
+          "id": 1,
+          "shape": "box",
+          "density": 0.35,
+          "size": 0.15,
+          "sceneRole": "drifting-debris-block"
+        },
+        "plan": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "sceneId": "river-obstacle-near-field",
+          "sceneContractHash": "fnv1a-1b6f9b1c",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+          "reset": true,
+          "ticks": 36,
+          "packets": [
+            {
+              "id": "river-tangent-inflow-packet",
+              "tick": 0,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "interactionRegion": {
+            "center": [
+              0.75,
+              0.5
+            ],
+            "radius": 0.22,
+            "minimumY": 0.15
+          }
+        },
+        "injection": {
+          "requested": 480,
+          "added": 480,
+          "before": 29859,
+          "after": 30339,
+          "capacity": 57859,
+          "availableBefore": 28000,
+          "clamped": false
+        },
+        "step": {
+          "requestedTicks": 36,
+          "actualTicks": 36,
+          "stepDt": 0.008333333333333333,
+          "startTime": 0,
+          "endTime": 0.3000000000000001,
+          "reset": false,
+          "history": [
+            {
+              "id": "river-tangent-inflow-packet",
+              "type": "injectFluid",
+              "tick": 0,
+              "order": 0,
+              "simTime": 0,
+              "result": {
+                "requested": 480,
+                "added": 480,
+                "before": 29859,
+                "after": 30339,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              }
+            }
+          ]
+        },
+        "final": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 30339,
+          "fluidParticleCount": 28480,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0.3000000000000001,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 2,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "localImpactCount": 484,
+        "bodyDisplacement": 0.5302581798025318,
+        "bodyDisplacementVector": [
+          0.24699819087982178,
+          -0.46921810507774353,
+          -0.000028580427169799805
+        ],
+        "bodyDisplacementAlongAxis": 0.24699819087982178,
+        "bodyRotationDegrees": 14.262014320132934,
+        "baselineBodyDisplacement": null,
+        "baselineBodyDisplacementAlongAxis": null,
+        "bodyDisplacementDeltaAlongAxis": null,
+        "nonFinite": 0,
+        "stats": {
+          "avgRho": 0.9983938010893569,
+          "maxRho": 1.1640625,
+          "maxSpeed": 4.8955078125,
+          "frames": 0,
+          "ke": 277.638671875
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      },
+      "host": {
+        "state": {
+          "selectedId": "channel-drifting-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "channel-drifting-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 2,
+          "activeRunSequence": 2,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "worldDriver": "river-spline-flow-vector",
+            "solverFrame": "river-tangent-to-solver-positive-x"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "river-obstacle-near-field",
+              "revision": 2,
+              "hash": "fnv1a-1b6f9b1c"
+            },
+            "mapping": {
+              "worldDriver": "river-spline-flow-vector",
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8,
+              "solverVelocity": [
+                2.5,
+                0,
+                0
+              ],
+              "velocityScale": 0.9803921568627452,
+              "solverFrame": "river-tangent-to-solver-positive-x",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 480,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 0.35,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "river-obstacle-near-field",
+              "sceneContractHash": "fnv1a-1b6f9b1c",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.30000000000000004,
+                      0.76,
+                      0.43
+                    ],
+                    "counts": [
+                      10,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      2.5,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 480,
+                    "added": 480,
+                    "before": 29859,
+                    "after": 30339,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30339,
+              "fluidParticleCount": 28480,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 484,
+            "bodyDisplacement": 0.5302581798025318,
+            "bodyDisplacementVector": [
+              0.24699819087982178,
+              -0.46921810507774353,
+              -0.000028580427169799805
+            ],
+            "bodyDisplacementAlongAxis": 0.24699819087982178,
+            "bodyRotationDegrees": 14.262014320132934,
+            "baselineBodyDisplacement": null,
+            "baselineBodyDisplacementAlongAxis": null,
+            "bodyDisplacementDeltaAlongAxis": null,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9983938010893569,
+              "maxRho": 1.1640625,
+              "maxSpeed": 4.8955078125,
+              "frames": 0,
+              "ke": 277.638671875
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 river-obstacle-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "480 / 480",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    },
+    {
+      "scenario": {
+        "presetId": "surface-rescue-ring",
+        "shortId": "uplift",
+        "contractId": "ocean-wave-uplift-near-field",
+        "shape": "torus",
+        "density": 0.22,
+        "particles": 640,
+        "ticks": 36
+      },
+      "result": {
+        "bridgeVersion": "particles4all-scene-runner-v1",
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "ocean-wave-uplift-near-field",
+          "revision": 2,
+          "hash": "fnv1a-24c48c8f"
+        },
+        "mapping": {
+          "worldDriver": "ocean-surface-vertical-velocity",
+          "seaState": 1,
+          "probeXWorldUnits": 0,
+          "probeZWorldUnits": 0,
+          "probeTimeSeconds": 5,
+          "surfaceHeightWorldUnits": -0.147820841207212,
+          "surfaceNormalX": 0.07791067614459625,
+          "surfaceNormalY": 0.919796330722049,
+          "surfaceNormalZ": 0.38458371849695727,
+          "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+          "maxVerticalEnvelopeWorldUnits": 0.897,
+          "solverVelocity": [
+            0,
+            4,
+            0
+          ],
+          "velocityScale": 2.428710547014972,
+          "solverFrame": "ocean-up-to-solver-positive-y",
+          "crossScaleTruthLevel": "T2 mapped input",
+          "localTruthLevel": "T3 local PBF / rigid coupling"
+        },
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "initial": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29232,
+          "fluidParticleCount": 28000,
+          "rigidParticleCount": 1232,
+          "bodyCount": 1,
+          "simTime": 0,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "packet": {
+          "count": 640,
+          "config": {
+            "origin": [
+              0.675,
+              0.44,
+              0.43
+            ],
+            "counts": [
+              8,
+              10,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              0,
+              4,
+              0
+            ]
+          }
+        },
+        "bodyProfile": {
+          "id": 1,
+          "shape": "torus",
+          "density": 0.22,
+          "size": 0.15,
+          "sceneRole": "floating-ring-probe"
+        },
+        "plan": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "sceneId": "ocean-wave-uplift-near-field",
+          "sceneContractHash": "fnv1a-24c48c8f",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+          "reset": true,
+          "ticks": 36,
+          "packets": [
+            {
+              "id": "ocean-rising-surface-packet",
+              "tick": 0,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            }
+          ],
+          "interactionRegion": {
+            "center": [
+              0.75,
+              0.5
+            ],
+            "radius": 0.22,
+            "minimumY": 0.15
+          }
+        },
+        "injection": {
+          "requested": 640,
+          "added": 640,
+          "before": 29232,
+          "after": 29872,
+          "capacity": 57232,
+          "availableBefore": 28000,
+          "clamped": false
+        },
+        "step": {
+          "requestedTicks": 36,
+          "actualTicks": 36,
+          "stepDt": 0.008333333333333333,
+          "startTime": 0,
+          "endTime": 0.3000000000000001,
+          "reset": false,
+          "history": [
+            {
+              "id": "ocean-rising-surface-packet",
+              "type": "injectFluid",
+              "tick": 0,
+              "order": 0,
+              "simTime": 0,
+              "result": {
+                "requested": 640,
+                "added": 640,
+                "before": 29232,
+                "after": 29872,
+                "capacity": 57232,
+                "availableBefore": 28000,
+                "clamped": false
+              }
+            }
+          ]
+        },
+        "final": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29872,
+          "fluidParticleCount": 28640,
+          "rigidParticleCount": 1232,
+          "bodyCount": 1,
+          "simTime": 0.3000000000000001,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 3,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "localImpactCount": 496,
+        "bodyDisplacement": 0.43915131488984477,
+        "bodyDisplacementVector": [
+          -0.02608555555343628,
+          -0.43837589025497437,
+          0.0000020265579223632812
+        ],
+        "bodyDisplacementAlongAxis": -0.43837589025497437,
+        "bodyRotationDegrees": 1.198446445087598,
+        "baselineBodyDisplacement": 0.4536653461418829,
+        "baselineBodyDisplacementAlongAxis": -0.4536653459072113,
+        "bodyDisplacementDeltaAlongAxis": 0.015289455652236938,
+        "nonFinite": 0,
+        "stats": {
+          "avgRho": 0.9908526379217997,
+          "maxRho": 1.173828125,
+          "maxSpeed": 3.6474609375,
+          "frames": 0,
+          "ke": 223.5830078125
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      },
+      "host": {
+        "state": {
+          "selectedId": "surface-rescue-ring",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "surface-rescue-ring",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 3,
+          "activeRunSequence": 3,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "surface-rescue-ring",
+            "shortId": "uplift",
+            "contractId": "ocean-wave-uplift-near-field",
+            "contractHash": "fnv1a-24c48c8f",
+            "nativeBody": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "worldDriver": "ocean-surface-vertical-velocity",
+            "solverFrame": "ocean-up-to-solver-positive-y"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "ocean-wave-uplift-near-field",
+              "revision": 2,
+              "hash": "fnv1a-24c48c8f"
+            },
+            "mapping": {
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "seaState": 1,
+              "probeXWorldUnits": 0,
+              "probeZWorldUnits": 0,
+              "probeTimeSeconds": 5,
+              "surfaceHeightWorldUnits": -0.147820841207212,
+              "surfaceNormalX": 0.07791067614459625,
+              "surfaceNormalY": 0.919796330722049,
+              "surfaceNormalZ": 0.38458371849695727,
+              "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+              "maxVerticalEnvelopeWorldUnits": 0.897,
+              "solverVelocity": [
+                0,
+                4,
+                0
+              ],
+              "velocityScale": 2.428710547014972,
+              "solverFrame": "ocean-up-to-solver-positive-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29232,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 640,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "torus",
+              "density": 0.22,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "ocean-wave-uplift-near-field",
+              "sceneContractHash": "fnv1a-24c48c8f",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.44,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      10,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      4,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 640,
+                    "added": 640,
+                    "before": 29232,
+                    "after": 29872,
+                    "capacity": 57232,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29872,
+              "fluidParticleCount": 28640,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 496,
+            "bodyDisplacement": 0.43915131488984477,
+            "bodyDisplacementVector": [
+              -0.02608555555343628,
+              -0.43837589025497437,
+              0.0000020265579223632812
+            ],
+            "bodyDisplacementAlongAxis": -0.43837589025497437,
+            "bodyRotationDegrees": 1.198446445087598,
+            "baselineBodyDisplacement": 0.4536653461418829,
+            "baselineBodyDisplacementAlongAxis": -0.4536653459072113,
+            "bodyDisplacementDeltaAlongAxis": 0.015289455652236938,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9908526379217997,
+              "maxRho": 1.173828125,
+              "maxSpeed": 3.6474609375,
+              "frames": 0,
+              "ke": 223.5830078125
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "runSequence": 3
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "passed": true,
+              "runSequence": 3
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 ocean-wave-uplift-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "640 / 640",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "before": {
+        "selectedId": "spillway-impact-block",
+        "phase": "complete",
+        "runtimeSlots": 1,
+        "runtimeLoaded": true,
+        "runtimePresetId": "spillway-impact-block",
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 1,
+        "activeRunSequence": 1,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "spillway-impact-block",
+          "shortId": "impact",
+          "contractId": "waterfall-impact-near-field",
+          "contractHash": "fnv1a-9bf4aa68",
+          "nativeBody": {
+            "shape": "box",
+            "density": 2.2,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "dense-impact-block"
+          },
+          "worldDriver": "free-fall-impact-speed",
+          "solverFrame": "world-down-to-solver-negative-y"
+        },
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "waterfall-impact-near-field",
+            "revision": 2,
+            "hash": "fnv1a-9bf4aa68"
+          },
+          "mapping": {
+            "worldDriver": "free-fall-impact-speed",
+            "gravityMetersPerSecond2": 9.81,
+            "worldDropMeters": 16.8,
+            "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+            "solverVelocity": [
+              0,
+              -2.5,
+              0
+            ],
+            "velocityScale": 0.13770061067998812,
+            "solverFrame": "world-down-to-solver-negative-y",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29859,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 384,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "box",
+            "density": 2.2,
+            "size": 0.15,
+            "sceneRole": "dense-impact-block"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "waterfall-impact-near-field",
+            "sceneContractHash": "fnv1a-9bf4aa68",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 30,
+            "packets": [
+              {
+                "id": "waterfall-impact-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.18,
+              "minimumY": 0.25
+            }
+          },
+          "injection": {
+            "requested": 384,
+            "added": 384,
+            "before": 29859,
+            "after": 30243,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 30,
+            "actualTicks": 30,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.24999999999999997,
+            "reset": false,
+            "history": [
+              {
+                "id": "waterfall-impact-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 384,
+                  "added": 384,
+                  "before": 29859,
+                  "after": 30243,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 30243,
+            "fluidParticleCount": 28384,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0.24999999999999997,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 178,
+          "bodyDisplacement": 0.33220263337998124,
+          "bodyDisplacementVector": [
+            -0.0025700926780700684,
+            -0.33219268918037415,
+            -0.0000387728214263916
+          ],
+          "bodyDisplacementAlongAxis": 0.33219268918037415,
+          "bodyRotationDegrees": 5.442729431986291,
+          "baselineBodyDisplacement": 0.31679305436048805,
+          "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+          "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 1.003840086703948,
+            "maxRho": 1.1904296875,
+            "maxSpeed": 4.40625,
+            "frames": 0,
+            "ke": 201.9755859375
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          }
+        },
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          }
+        ],
+        "iframeHasSource": true,
+        "horizontalOverflow": 0
+      },
+      "after": {
+        "selectedId": "channel-drifting-block",
+        "phase": "idle",
+        "runtimeSlots": 0,
+        "runtimeLoaded": false,
+        "runtimePresetId": null,
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 1,
+        "activeRunSequence": null,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "channel-drifting-block",
+          "shortId": "drift",
+          "contractId": "river-obstacle-near-field",
+          "contractHash": "fnv1a-1b6f9b1c",
+          "nativeBody": {
+            "shape": "box",
+            "density": 0.35,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "worldDriver": "river-spline-flow-vector",
+          "solverFrame": "river-tangent-to-solver-positive-x"
+        },
+        "result": null,
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          }
+        ],
+        "iframeHasSource": false,
+        "horizontalOverflow": 0
+      },
+      "frameSrc": null
+    },
+    {
+      "before": {
+        "selectedId": "channel-drifting-block",
+        "phase": "complete",
+        "runtimeSlots": 1,
+        "runtimeLoaded": true,
+        "runtimePresetId": "channel-drifting-block",
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 2,
+        "activeRunSequence": 2,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "channel-drifting-block",
+          "shortId": "drift",
+          "contractId": "river-obstacle-near-field",
+          "contractHash": "fnv1a-1b6f9b1c",
+          "nativeBody": {
+            "shape": "box",
+            "density": 0.35,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "worldDriver": "river-spline-flow-vector",
+          "solverFrame": "river-tangent-to-solver-positive-x"
+        },
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "river-obstacle-near-field",
+            "revision": 2,
+            "hash": "fnv1a-1b6f9b1c"
+          },
+          "mapping": {
+            "worldDriver": "river-spline-flow-vector",
+            "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+            "sampleDistanceWorldUnits": 35.29949085569636,
+            "sampleTangentX": -0.617162205437667,
+            "sampleTangentZ": 0.7868359499789743,
+            "riverWidthWorldUnits": 6.8,
+            "solverVelocity": [
+              2.5,
+              0,
+              0
+            ],
+            "velocityScale": 0.9803921568627452,
+            "solverFrame": "river-tangent-to-solver-positive-x",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29859,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 480,
+            "config": {
+              "origin": [
+                0.30000000000000004,
+                0.76,
+                0.43
+              ],
+              "counts": [
+                10,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                2.5,
+                0,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "box",
+            "density": 0.35,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "river-obstacle-near-field",
+            "sceneContractHash": "fnv1a-1b6f9b1c",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 36,
+            "packets": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.30000000000000004,
+                    0.76,
+                    0.43
+                  ],
+                  "counts": [
+                    10,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    2.5,
+                    0,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.22,
+              "minimumY": 0.15
+            }
+          },
+          "injection": {
+            "requested": 480,
+            "added": 480,
+            "before": 29859,
+            "after": 30339,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 36,
+            "actualTicks": 36,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.3000000000000001,
+            "reset": false,
+            "history": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 480,
+                  "added": 480,
+                  "before": 29859,
+                  "after": 30339,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 30339,
+            "fluidParticleCount": 28480,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0.3000000000000001,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 484,
+          "bodyDisplacement": 0.5302581798025318,
+          "bodyDisplacementVector": [
+            0.24699819087982178,
+            -0.46921810507774353,
+            -0.000028580427169799805
+          ],
+          "bodyDisplacementAlongAxis": 0.24699819087982178,
+          "bodyRotationDegrees": 14.262014320132934,
+          "baselineBodyDisplacement": null,
+          "baselineBodyDisplacementAlongAxis": null,
+          "bodyDisplacementDeltaAlongAxis": null,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 0.9983938010893569,
+            "maxRho": 1.1640625,
+            "maxSpeed": 4.8955078125,
+            "frames": 0,
+            "ke": 277.638671875
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "rigidRotationResponse": true,
+            "passed": true
+          }
+        },
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "runSequence": 2
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "passed": true,
+            "runSequence": 2
+          }
+        ],
+        "iframeHasSource": true,
+        "horizontalOverflow": 0
+      },
+      "after": {
+        "selectedId": "surface-rescue-ring",
+        "phase": "idle",
+        "runtimeSlots": 0,
+        "runtimeLoaded": false,
+        "runtimePresetId": null,
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 2,
+        "activeRunSequence": null,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "surface-rescue-ring",
+          "shortId": "uplift",
+          "contractId": "ocean-wave-uplift-near-field",
+          "contractHash": "fnv1a-24c48c8f",
+          "nativeBody": {
+            "shape": "torus",
+            "density": 0.22,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "worldDriver": "ocean-surface-vertical-velocity",
+          "solverFrame": "ocean-up-to-solver-positive-y"
+        },
+        "result": null,
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "runSequence": 2
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "passed": true,
+            "runSequence": 2
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring"
+          }
+        ],
+        "iframeHasSource": false,
+        "horizontalOverflow": 0
+      },
+      "frameSrc": null
+    }
+  ],
+  "checks": [
+    {
+      "name": "host.status200",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "host.runtimeApi",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run.impact.originalContract",
+      "passed": true,
+      "detail": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "waterfall-impact-near-field",
+        "revision": 2,
+        "hash": "fnv1a-9bf4aa68"
+      }
+    },
+    {
+      "name": "run.impact.nativeBody",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "shape": "box",
+        "density": 2.2,
+        "size": 0.15,
+        "sceneRole": "dense-impact-block"
+      }
+    },
+    {
+      "name": "run.impact.particles",
+      "passed": true,
+      "detail": {
+        "requested": 384,
+        "added": 384,
+        "before": 29859,
+        "after": 30243,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "run.impact.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.24999999999999997,
+        "reset": false,
+        "history": [
+          {
+            "id": "waterfall-impact-packet",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 384,
+              "added": 384,
+              "before": 29859,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "run.impact.accepted",
+      "passed": true,
+      "detail": {
+        "nonFinite": 0,
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "name": "run.impact.singleSlot",
+      "passed": true,
+      "detail": {
+        "selectedId": "spillway-impact-block",
+        "phase": "complete",
+        "runtimeSlots": 1,
+        "runtimeLoaded": true,
+        "runtimePresetId": "spillway-impact-block",
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 1,
+        "activeRunSequence": 1,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "spillway-impact-block",
+          "shortId": "impact",
+          "contractId": "waterfall-impact-near-field",
+          "contractHash": "fnv1a-9bf4aa68",
+          "nativeBody": {
+            "shape": "box",
+            "density": 2.2,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "dense-impact-block"
+          },
+          "worldDriver": "free-fall-impact-speed",
+          "solverFrame": "world-down-to-solver-negative-y"
+        },
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "waterfall-impact-near-field",
+            "revision": 2,
+            "hash": "fnv1a-9bf4aa68"
+          },
+          "mapping": {
+            "worldDriver": "free-fall-impact-speed",
+            "gravityMetersPerSecond2": 9.81,
+            "worldDropMeters": 16.8,
+            "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+            "solverVelocity": [
+              0,
+              -2.5,
+              0
+            ],
+            "velocityScale": 0.13770061067998812,
+            "solverFrame": "world-down-to-solver-negative-y",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29859,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 384,
+            "config": {
+              "origin": [
+                0.675,
+                0.86,
+                0.43
+              ],
+              "counts": [
+                8,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                -2.5,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "box",
+            "density": 2.2,
+            "size": 0.15,
+            "sceneRole": "dense-impact-block"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "waterfall-impact-near-field",
+            "sceneContractHash": "fnv1a-9bf4aa68",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 30,
+            "packets": [
+              {
+                "id": "waterfall-impact-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.86,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    -2.5,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.18,
+              "minimumY": 0.25
+            }
+          },
+          "injection": {
+            "requested": 384,
+            "added": 384,
+            "before": 29859,
+            "after": 30243,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 30,
+            "actualTicks": 30,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.24999999999999997,
+            "reset": false,
+            "history": [
+              {
+                "id": "waterfall-impact-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 384,
+                  "added": 384,
+                  "before": 29859,
+                  "after": 30243,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 30243,
+            "fluidParticleCount": 28384,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0.24999999999999997,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 178,
+          "bodyDisplacement": 0.33220263337998124,
+          "bodyDisplacementVector": [
+            -0.0025700926780700684,
+            -0.33219268918037415,
+            -0.0000387728214263916
+          ],
+          "bodyDisplacementAlongAxis": 0.33219268918037415,
+          "bodyRotationDegrees": 5.442729431986291,
+          "baselineBodyDisplacement": 0.31679305436048805,
+          "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+          "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 1.003840086703948,
+            "maxRho": 1.1904296875,
+            "maxSpeed": 4.40625,
+            "frames": 0,
+            "ke": 201.9755859375
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "passed": true
+          }
+        },
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          }
+        ],
+        "iframeHasSource": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "run.impact.truthfulUi",
+      "passed": true,
+      "detail": {
+        "state": {
+          "selectedId": "spillway-impact-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "spillway-impact-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 1,
+          "activeRunSequence": 1,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "worldDriver": "free-fall-impact-speed",
+            "solverFrame": "world-down-to-solver-negative-y"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "waterfall-impact-near-field",
+              "revision": 2,
+              "hash": "fnv1a-9bf4aa68"
+            },
+            "mapping": {
+              "worldDriver": "free-fall-impact-speed",
+              "gravityMetersPerSecond2": 9.81,
+              "worldDropMeters": 16.8,
+              "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+              "solverVelocity": [
+                0,
+                -2.5,
+                0
+              ],
+              "velocityScale": 0.13770061067998812,
+              "solverFrame": "world-down-to-solver-negative-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 384,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.86,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  -2.5,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 2.2,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "waterfall-impact-near-field",
+              "sceneContractHash": "fnv1a-9bf4aa68",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 30,
+              "packets": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.86,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      -2.5,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.18,
+                "minimumY": 0.25
+              }
+            },
+            "injection": {
+              "requested": 384,
+              "added": 384,
+              "before": 29859,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 30,
+              "actualTicks": 30,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.24999999999999997,
+              "reset": false,
+              "history": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 384,
+                    "added": 384,
+                    "before": 29859,
+                    "after": 30243,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30243,
+              "fluidParticleCount": 28384,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.24999999999999997,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 178,
+            "bodyDisplacement": 0.33220263337998124,
+            "bodyDisplacementVector": [
+              -0.0025700926780700684,
+              -0.33219268918037415,
+              -0.0000387728214263916
+            ],
+            "bodyDisplacementAlongAxis": 0.33219268918037415,
+            "bodyRotationDegrees": 5.442729431986291,
+            "baselineBodyDisplacement": 0.31679305436048805,
+            "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+            "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 1.003840086703948,
+              "maxRho": 1.1904296875,
+              "maxSpeed": 4.40625,
+              "frames": 0,
+              "ke": 201.9755859375
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 waterfall-impact-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "384 / 384",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    },
+    {
+      "name": "lifecycle.autoUnload.drift",
+      "passed": true,
+      "detail": {
+        "before": {
+          "selectedId": "spillway-impact-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "spillway-impact-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 1,
+          "activeRunSequence": 1,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "worldDriver": "free-fall-impact-speed",
+            "solverFrame": "world-down-to-solver-negative-y"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "waterfall-impact-near-field",
+              "revision": 2,
+              "hash": "fnv1a-9bf4aa68"
+            },
+            "mapping": {
+              "worldDriver": "free-fall-impact-speed",
+              "gravityMetersPerSecond2": 9.81,
+              "worldDropMeters": 16.8,
+              "physicalImpactSpeedMetersPerSecond": 18.155329795957993,
+              "solverVelocity": [
+                0,
+                -2.5,
+                0
+              ],
+              "velocityScale": 0.13770061067998812,
+              "solverFrame": "world-down-to-solver-negative-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 384,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.86,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  -2.5,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 2.2,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "waterfall-impact-near-field",
+              "sceneContractHash": "fnv1a-9bf4aa68",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 30,
+              "packets": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.86,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      -2.5,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.18,
+                "minimumY": 0.25
+              }
+            },
+            "injection": {
+              "requested": 384,
+              "added": 384,
+              "before": 29859,
+              "after": 30243,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 30,
+              "actualTicks": 30,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.24999999999999997,
+              "reset": false,
+              "history": [
+                {
+                  "id": "waterfall-impact-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 384,
+                    "added": 384,
+                    "before": 29859,
+                    "after": 30243,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30243,
+              "fluidParticleCount": 28384,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.24999999999999997,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 178,
+            "bodyDisplacement": 0.33220263337998124,
+            "bodyDisplacementVector": [
+              -0.0025700926780700684,
+              -0.33219268918037415,
+              -0.0000387728214263916
+            ],
+            "bodyDisplacementAlongAxis": 0.33219268918037415,
+            "bodyRotationDegrees": 5.442729431986291,
+            "baselineBodyDisplacement": 0.31679305436048805,
+            "baselineBodyDisplacementAlongAxis": 0.3167930543422699,
+            "bodyDisplacementDeltaAlongAxis": 0.015399634838104248,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 1.003840086703948,
+              "maxRho": 1.1904296875,
+              "maxSpeed": 4.40625,
+              "frames": 0,
+              "ke": 201.9755859375
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "after": {
+          "selectedId": "channel-drifting-block",
+          "phase": "idle",
+          "runtimeSlots": 0,
+          "runtimeLoaded": false,
+          "runtimePresetId": null,
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 1,
+          "activeRunSequence": null,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "worldDriver": "river-spline-flow-vector",
+            "solverFrame": "river-tangent-to-solver-positive-x"
+          },
+          "result": null,
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            }
+          ],
+          "iframeHasSource": false,
+          "horizontalOverflow": 0
+        },
+        "frameSrc": null
+      }
+    },
+    {
+      "name": "run.drift.originalContract",
+      "passed": true,
+      "detail": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "river-obstacle-near-field",
+        "revision": 2,
+        "hash": "fnv1a-1b6f9b1c"
+      }
+    },
+    {
+      "name": "run.drift.nativeBody",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "shape": "box",
+        "density": 0.35,
+        "size": 0.15,
+        "sceneRole": "drifting-debris-block"
+      }
+    },
+    {
+      "name": "run.drift.particles",
+      "passed": true,
+      "detail": {
+        "requested": 480,
+        "added": 480,
+        "before": 29859,
+        "after": 30339,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "run.drift.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 36,
+        "actualTicks": 36,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.3000000000000001,
+        "reset": false,
+        "history": [
+          {
+            "id": "river-tangent-inflow-packet",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "run.drift.accepted",
+      "passed": true,
+      "detail": {
+        "nonFinite": 0,
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "name": "run.drift.singleSlot",
+      "passed": true,
+      "detail": {
+        "selectedId": "channel-drifting-block",
+        "phase": "complete",
+        "runtimeSlots": 1,
+        "runtimeLoaded": true,
+        "runtimePresetId": "channel-drifting-block",
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 2,
+        "activeRunSequence": 2,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "channel-drifting-block",
+          "shortId": "drift",
+          "contractId": "river-obstacle-near-field",
+          "contractHash": "fnv1a-1b6f9b1c",
+          "nativeBody": {
+            "shape": "box",
+            "density": 0.35,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "worldDriver": "river-spline-flow-vector",
+          "solverFrame": "river-tangent-to-solver-positive-x"
+        },
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "river-obstacle-near-field",
+            "revision": 2,
+            "hash": "fnv1a-1b6f9b1c"
+          },
+          "mapping": {
+            "worldDriver": "river-spline-flow-vector",
+            "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+            "sampleDistanceWorldUnits": 35.29949085569636,
+            "sampleTangentX": -0.617162205437667,
+            "sampleTangentZ": 0.7868359499789743,
+            "riverWidthWorldUnits": 6.8,
+            "solverVelocity": [
+              2.5,
+              0,
+              0
+            ],
+            "velocityScale": 0.9803921568627452,
+            "solverFrame": "river-tangent-to-solver-positive-x",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29859,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 480,
+            "config": {
+              "origin": [
+                0.30000000000000004,
+                0.76,
+                0.43
+              ],
+              "counts": [
+                10,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                2.5,
+                0,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "box",
+            "density": 0.35,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "river-obstacle-near-field",
+            "sceneContractHash": "fnv1a-1b6f9b1c",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 36,
+            "packets": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.30000000000000004,
+                    0.76,
+                    0.43
+                  ],
+                  "counts": [
+                    10,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    2.5,
+                    0,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.22,
+              "minimumY": 0.15
+            }
+          },
+          "injection": {
+            "requested": 480,
+            "added": 480,
+            "before": 29859,
+            "after": 30339,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 36,
+            "actualTicks": 36,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.3000000000000001,
+            "reset": false,
+            "history": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 480,
+                  "added": 480,
+                  "before": 29859,
+                  "after": 30339,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 30339,
+            "fluidParticleCount": 28480,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0.3000000000000001,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 484,
+          "bodyDisplacement": 0.5302581798025318,
+          "bodyDisplacementVector": [
+            0.24699819087982178,
+            -0.46921810507774353,
+            -0.000028580427169799805
+          ],
+          "bodyDisplacementAlongAxis": 0.24699819087982178,
+          "bodyRotationDegrees": 14.262014320132934,
+          "baselineBodyDisplacement": null,
+          "baselineBodyDisplacementAlongAxis": null,
+          "bodyDisplacementDeltaAlongAxis": null,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 0.9983938010893569,
+            "maxRho": 1.1640625,
+            "maxSpeed": 4.8955078125,
+            "frames": 0,
+            "ke": 277.638671875
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "rigidRotationResponse": true,
+            "passed": true
+          }
+        },
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "runSequence": 2
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "passed": true,
+            "runSequence": 2
+          }
+        ],
+        "iframeHasSource": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "run.drift.truthfulUi",
+      "passed": true,
+      "detail": {
+        "state": {
+          "selectedId": "channel-drifting-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "channel-drifting-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 2,
+          "activeRunSequence": 2,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "worldDriver": "river-spline-flow-vector",
+            "solverFrame": "river-tangent-to-solver-positive-x"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "river-obstacle-near-field",
+              "revision": 2,
+              "hash": "fnv1a-1b6f9b1c"
+            },
+            "mapping": {
+              "worldDriver": "river-spline-flow-vector",
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8,
+              "solverVelocity": [
+                2.5,
+                0,
+                0
+              ],
+              "velocityScale": 0.9803921568627452,
+              "solverFrame": "river-tangent-to-solver-positive-x",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 480,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 0.35,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "river-obstacle-near-field",
+              "sceneContractHash": "fnv1a-1b6f9b1c",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.30000000000000004,
+                      0.76,
+                      0.43
+                    ],
+                    "counts": [
+                      10,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      2.5,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 480,
+                    "added": 480,
+                    "before": 29859,
+                    "after": 30339,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30339,
+              "fluidParticleCount": 28480,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 484,
+            "bodyDisplacement": 0.5302581798025318,
+            "bodyDisplacementVector": [
+              0.24699819087982178,
+              -0.46921810507774353,
+              -0.000028580427169799805
+            ],
+            "bodyDisplacementAlongAxis": 0.24699819087982178,
+            "bodyRotationDegrees": 14.262014320132934,
+            "baselineBodyDisplacement": null,
+            "baselineBodyDisplacementAlongAxis": null,
+            "bodyDisplacementDeltaAlongAxis": null,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9983938010893569,
+              "maxRho": 1.1640625,
+              "maxSpeed": 4.8955078125,
+              "frames": 0,
+              "ke": 277.638671875
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 river-obstacle-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "480 / 480",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    },
+    {
+      "name": "lifecycle.autoUnload.uplift",
+      "passed": true,
+      "detail": {
+        "before": {
+          "selectedId": "channel-drifting-block",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "channel-drifting-block",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 2,
+          "activeRunSequence": 2,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "worldDriver": "river-spline-flow-vector",
+            "solverFrame": "river-tangent-to-solver-positive-x"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "river-obstacle-near-field",
+              "revision": 2,
+              "hash": "fnv1a-1b6f9b1c"
+            },
+            "mapping": {
+              "worldDriver": "river-spline-flow-vector",
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8,
+              "solverVelocity": [
+                2.5,
+                0,
+                0
+              ],
+              "velocityScale": 0.9803921568627452,
+              "solverFrame": "river-tangent-to-solver-positive-x",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 480,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 0.35,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "river-obstacle-near-field",
+              "sceneContractHash": "fnv1a-1b6f9b1c",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.30000000000000004,
+                      0.76,
+                      0.43
+                    ],
+                    "counts": [
+                      10,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      2.5,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 480,
+                    "added": 480,
+                    "before": 29859,
+                    "after": 30339,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30339,
+              "fluidParticleCount": 28480,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 484,
+            "bodyDisplacement": 0.5302581798025318,
+            "bodyDisplacementVector": [
+              0.24699819087982178,
+              -0.46921810507774353,
+              -0.000028580427169799805
+            ],
+            "bodyDisplacementAlongAxis": 0.24699819087982178,
+            "bodyRotationDegrees": 14.262014320132934,
+            "baselineBodyDisplacement": null,
+            "baselineBodyDisplacementAlongAxis": null,
+            "bodyDisplacementDeltaAlongAxis": null,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9983938010893569,
+              "maxRho": 1.1640625,
+              "maxSpeed": 4.8955078125,
+              "frames": 0,
+              "ke": 277.638671875
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "after": {
+          "selectedId": "surface-rescue-ring",
+          "phase": "idle",
+          "runtimeSlots": 0,
+          "runtimeLoaded": false,
+          "runtimePresetId": null,
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 2,
+          "activeRunSequence": null,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "surface-rescue-ring",
+            "shortId": "uplift",
+            "contractId": "ocean-wave-uplift-near-field",
+            "contractHash": "fnv1a-24c48c8f",
+            "nativeBody": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "worldDriver": "ocean-surface-vertical-velocity",
+            "solverFrame": "ocean-up-to-solver-positive-y"
+          },
+          "result": null,
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            }
+          ],
+          "iframeHasSource": false,
+          "horizontalOverflow": 0
+        },
+        "frameSrc": null
+      }
+    },
+    {
+      "name": "run.uplift.originalContract",
+      "passed": true,
+      "detail": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "ocean-wave-uplift-near-field",
+        "revision": 2,
+        "hash": "fnv1a-24c48c8f"
+      }
+    },
+    {
+      "name": "run.uplift.nativeBody",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "shape": "torus",
+        "density": 0.22,
+        "size": 0.15,
+        "sceneRole": "floating-ring-probe"
+      }
+    },
+    {
+      "name": "run.uplift.particles",
+      "passed": true,
+      "detail": {
+        "requested": 640,
+        "added": 640,
+        "before": 29232,
+        "after": 29872,
+        "capacity": 57232,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "run.uplift.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 36,
+        "actualTicks": 36,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.3000000000000001,
+        "reset": false,
+        "history": [
+          {
+            "id": "ocean-rising-surface-packet",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "run.uplift.accepted",
+      "passed": true,
+      "detail": {
+        "nonFinite": 0,
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "name": "run.uplift.singleSlot",
+      "passed": true,
+      "detail": {
+        "selectedId": "surface-rescue-ring",
+        "phase": "complete",
+        "runtimeSlots": 1,
+        "runtimeLoaded": true,
+        "runtimePresetId": "surface-rescue-ring",
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 3,
+        "activeRunSequence": 3,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "surface-rescue-ring",
+          "shortId": "uplift",
+          "contractId": "ocean-wave-uplift-near-field",
+          "contractHash": "fnv1a-24c48c8f",
+          "nativeBody": {
+            "shape": "torus",
+            "density": 0.22,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "worldDriver": "ocean-surface-vertical-velocity",
+          "solverFrame": "ocean-up-to-solver-positive-y"
+        },
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "ocean-wave-uplift-near-field",
+            "revision": 2,
+            "hash": "fnv1a-24c48c8f"
+          },
+          "mapping": {
+            "worldDriver": "ocean-surface-vertical-velocity",
+            "seaState": 1,
+            "probeXWorldUnits": 0,
+            "probeZWorldUnits": 0,
+            "probeTimeSeconds": 5,
+            "surfaceHeightWorldUnits": -0.147820841207212,
+            "surfaceNormalX": 0.07791067614459625,
+            "surfaceNormalY": 0.919796330722049,
+            "surfaceNormalZ": 0.38458371849695727,
+            "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+            "maxVerticalEnvelopeWorldUnits": 0.897,
+            "solverVelocity": [
+              0,
+              4,
+              0
+            ],
+            "velocityScale": 2.428710547014972,
+            "solverFrame": "ocean-up-to-solver-positive-y",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29232,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1232,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 640,
+            "config": {
+              "origin": [
+                0.675,
+                0.44,
+                0.43
+              ],
+              "counts": [
+                8,
+                10,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                0,
+                4,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "torus",
+            "density": 0.22,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "ocean-wave-uplift-near-field",
+            "sceneContractHash": "fnv1a-24c48c8f",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 36,
+            "packets": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.675,
+                    0.44,
+                    0.43
+                  ],
+                  "counts": [
+                    8,
+                    10,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    0,
+                    4,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.22,
+              "minimumY": 0.15
+            }
+          },
+          "injection": {
+            "requested": 640,
+            "added": 640,
+            "before": 29232,
+            "after": 29872,
+            "capacity": 57232,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 36,
+            "actualTicks": 36,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.3000000000000001,
+            "reset": false,
+            "history": [
+              {
+                "id": "ocean-rising-surface-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 640,
+                  "added": 640,
+                  "before": 29232,
+                  "after": 29872,
+                  "capacity": 57232,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29872,
+            "fluidParticleCount": 28640,
+            "rigidParticleCount": 1232,
+            "bodyCount": 1,
+            "simTime": 0.3000000000000001,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 3,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 496,
+          "bodyDisplacement": 0.43915131488984477,
+          "bodyDisplacementVector": [
+            -0.02608555555343628,
+            -0.43837589025497437,
+            0.0000020265579223632812
+          ],
+          "bodyDisplacementAlongAxis": -0.43837589025497437,
+          "bodyRotationDegrees": 1.198446445087598,
+          "baselineBodyDisplacement": 0.4536653461418829,
+          "baselineBodyDisplacementAlongAxis": -0.4536653459072113,
+          "bodyDisplacementDeltaAlongAxis": 0.015289455652236938,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 0.9908526379217997,
+            "maxRho": 1.173828125,
+            "maxSpeed": 3.6474609375,
+            "frames": 0,
+            "ke": 223.5830078125
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "rigidRotationResponse": true,
+            "passed": true
+          }
+        },
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "runSequence": 2
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "passed": true,
+            "runSequence": 2
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "runSequence": 3
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "passed": true,
+            "runSequence": 3
+          }
+        ],
+        "iframeHasSource": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "run.uplift.truthfulUi",
+      "passed": true,
+      "detail": {
+        "state": {
+          "selectedId": "surface-rescue-ring",
+          "phase": "complete",
+          "runtimeSlots": 1,
+          "runtimeLoaded": true,
+          "runtimePresetId": "surface-rescue-ring",
+          "maxObservedRuntimeSlots": 1,
+          "completedRuns": 3,
+          "activeRunSequence": 3,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "surface-rescue-ring",
+            "shortId": "uplift",
+            "contractId": "ocean-wave-uplift-near-field",
+            "contractHash": "fnv1a-24c48c8f",
+            "nativeBody": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "worldDriver": "ocean-surface-vertical-velocity",
+            "solverFrame": "ocean-up-to-solver-positive-y"
+          },
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "ocean-wave-uplift-near-field",
+              "revision": 2,
+              "hash": "fnv1a-24c48c8f"
+            },
+            "mapping": {
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "seaState": 1,
+              "probeXWorldUnits": 0,
+              "probeZWorldUnits": 0,
+              "probeTimeSeconds": 5,
+              "surfaceHeightWorldUnits": -0.147820841207212,
+              "surfaceNormalX": 0.07791067614459625,
+              "surfaceNormalY": 0.919796330722049,
+              "surfaceNormalZ": 0.38458371849695727,
+              "verticalVelocityWorldUnitsPerSecond": 1.6469644787091795,
+              "maxVerticalEnvelopeWorldUnits": 0.897,
+              "solverVelocity": [
+                0,
+                4,
+                0
+              ],
+              "velocityScale": 2.428710547014972,
+              "solverFrame": "ocean-up-to-solver-positive-y",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29232,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 640,
+              "config": {
+                "origin": [
+                  0.675,
+                  0.44,
+                  0.43
+                ],
+                "counts": [
+                  8,
+                  10,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  0,
+                  4,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "torus",
+              "density": 0.22,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "ocean-wave-uplift-near-field",
+              "sceneContractHash": "fnv1a-24c48c8f",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.675,
+                      0.44,
+                      0.43
+                    ],
+                    "counts": [
+                      8,
+                      10,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      0,
+                      4,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 640,
+              "added": 640,
+              "before": 29232,
+              "after": 29872,
+              "capacity": 57232,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "ocean-rising-surface-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 640,
+                    "added": 640,
+                    "before": 29232,
+                    "after": 29872,
+                    "capacity": 57232,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29872,
+              "fluidParticleCount": 28640,
+              "rigidParticleCount": 1232,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 3,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 496,
+            "bodyDisplacement": 0.43915131488984477,
+            "bodyDisplacementVector": [
+              -0.02608555555343628,
+              -0.43837589025497437,
+              0.0000020265579223632812
+            ],
+            "bodyDisplacementAlongAxis": -0.43837589025497437,
+            "bodyRotationDegrees": 1.198446445087598,
+            "baselineBodyDisplacement": 0.4536653461418829,
+            "baselineBodyDisplacementAlongAxis": -0.4536653459072113,
+            "bodyDisplacementDeltaAlongAxis": 0.015289455652236938,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9908526379217997,
+              "maxRho": 1.173828125,
+              "maxSpeed": 3.6474609375,
+              "frames": 0,
+              "ke": 223.5830078125
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "runSequence": 1
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "spillway-impact-block",
+              "passed": true,
+              "runSequence": 1
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "runSequence": 2
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "channel-drifting-block",
+              "passed": true,
+              "runSequence": 2
+            },
+            {
+              "event": "idle",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block",
+              "reason": "preset-switch"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "loading",
+              "phase": "loading",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1"
+            },
+            {
+              "event": "ready",
+              "phase": "ready",
+              "slots": 1,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "running",
+              "phase": "running",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "runSequence": 3
+            },
+            {
+              "event": "complete",
+              "phase": "complete",
+              "slots": 1,
+              "presetId": "surface-rescue-ring",
+              "passed": true,
+              "runSequence": 3
+            }
+          ],
+          "iframeHasSource": true,
+          "horizontalOverflow": 0
+        },
+        "liveState": "PASSED",
+        "liveConclusion": "当前 ocean-wave-uplift-near-field 已通过全部契约检查；这是原库 Runtime 的本次实际输出。",
+        "liveInjected": "640 / 640",
+        "runtimeBadge": "COMPLETE",
+        "frameVisible": "visible",
+        "overflow": 0
+      }
+    },
+    {
+      "name": "lifecycle.manualUnload",
+      "passed": true,
+      "detail": {
+        "selectedId": "surface-rescue-ring",
+        "phase": "idle",
+        "runtimeSlots": 0,
+        "runtimeLoaded": false,
+        "runtimePresetId": null,
+        "maxObservedRuntimeSlots": 1,
+        "completedRuns": 3,
+        "activeRunSequence": null,
+        "revision": 3,
+        "selectedPreset": {
+          "id": "surface-rescue-ring",
+          "shortId": "uplift",
+          "contractId": "ocean-wave-uplift-near-field",
+          "contractHash": "fnv1a-24c48c8f",
+          "nativeBody": {
+            "shape": "torus",
+            "density": 0.22,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "floating-ring-probe"
+          },
+          "worldDriver": "ocean-surface-vertical-velocity",
+          "solverFrame": "ocean-up-to-solver-positive-y"
+        },
+        "result": null,
+        "error": null,
+        "lifecycle": [
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "spillway-impact-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "runSequence": 1
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "spillway-impact-block",
+            "passed": true,
+            "runSequence": 1
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "spillway-impact-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "channel-drifting-block"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "runSequence": 2
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "channel-drifting-block",
+            "passed": true,
+            "runSequence": 2
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "channel-drifting-block",
+            "reason": "preset-switch"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "preset-selected",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "loading",
+            "phase": "loading",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1"
+          },
+          {
+            "event": "ready",
+            "phase": "ready",
+            "slots": 1,
+            "presetId": "surface-rescue-ring"
+          },
+          {
+            "event": "running",
+            "phase": "running",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "runSequence": 3
+          },
+          {
+            "event": "complete",
+            "phase": "complete",
+            "slots": 1,
+            "presetId": "surface-rescue-ring",
+            "passed": true,
+            "runSequence": 3
+          },
+          {
+            "event": "idle",
+            "phase": "idle",
+            "slots": 0,
+            "presetId": "surface-rescue-ring",
+            "reason": "manual"
+          }
+        ],
+        "iframeHasSource": false,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "lifecycle.neverMoreThanOne",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "browser.noConsoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "browser.noPageErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "browser.noFailedRequests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "passed": true,
+  "manualUnload": {
+    "selectedId": "surface-rescue-ring",
+    "phase": "idle",
+    "runtimeSlots": 0,
+    "runtimeLoaded": false,
+    "runtimePresetId": null,
+    "maxObservedRuntimeSlots": 1,
+    "completedRuns": 3,
+    "activeRunSequence": null,
+    "revision": 3,
+    "selectedPreset": {
+      "id": "surface-rescue-ring",
+      "shortId": "uplift",
+      "contractId": "ocean-wave-uplift-near-field",
+      "contractHash": "fnv1a-24c48c8f",
+      "nativeBody": {
+        "shape": "torus",
+        "density": 0.22,
+        "startY": 0.76,
+        "size": 0.15,
+        "sceneRole": "floating-ring-probe"
+      },
+      "worldDriver": "ocean-surface-vertical-velocity",
+      "solverFrame": "ocean-up-to-solver-positive-y"
+    },
+    "result": null,
+    "error": null,
+    "lifecycle": [
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "spillway-impact-block"
+      },
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "spillway-impact-block"
+      },
+      {
+        "event": "loading",
+        "phase": "loading",
+        "slots": 1,
+        "presetId": "spillway-impact-block",
+        "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:2.2:0.76&bodysize=0.15&timing=1"
+      },
+      {
+        "event": "ready",
+        "phase": "ready",
+        "slots": 1,
+        "presetId": "spillway-impact-block"
+      },
+      {
+        "event": "running",
+        "phase": "running",
+        "slots": 1,
+        "presetId": "spillway-impact-block",
+        "runSequence": 1
+      },
+      {
+        "event": "complete",
+        "phase": "complete",
+        "slots": 1,
+        "presetId": "spillway-impact-block",
+        "passed": true,
+        "runSequence": 1
+      },
+      {
+        "event": "idle",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "spillway-impact-block",
+        "reason": "preset-switch"
+      },
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "channel-drifting-block"
+      },
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "channel-drifting-block"
+      },
+      {
+        "event": "loading",
+        "phase": "loading",
+        "slots": 1,
+        "presetId": "channel-drifting-block",
+        "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1"
+      },
+      {
+        "event": "ready",
+        "phase": "ready",
+        "slots": 1,
+        "presetId": "channel-drifting-block"
+      },
+      {
+        "event": "running",
+        "phase": "running",
+        "slots": 1,
+        "presetId": "channel-drifting-block",
+        "runSequence": 2
+      },
+      {
+        "event": "complete",
+        "phase": "complete",
+        "slots": 1,
+        "presetId": "channel-drifting-block",
+        "passed": true,
+        "runSequence": 2
+      },
+      {
+        "event": "idle",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "channel-drifting-block",
+        "reason": "preset-switch"
+      },
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "surface-rescue-ring"
+      },
+      {
+        "event": "preset-selected",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "surface-rescue-ring"
+      },
+      {
+        "event": "loading",
+        "phase": "loading",
+        "slots": 1,
+        "presetId": "surface-rescue-ring",
+        "engineUrl": "../../particles4all/engine/?preset=small&view=particles&particles=28000&body=torus:0.22:0.76&bodysize=0.15&timing=1"
+      },
+      {
+        "event": "ready",
+        "phase": "ready",
+        "slots": 1,
+        "presetId": "surface-rescue-ring"
+      },
+      {
+        "event": "running",
+        "phase": "running",
+        "slots": 1,
+        "presetId": "surface-rescue-ring",
+        "runSequence": 3
+      },
+      {
+        "event": "complete",
+        "phase": "complete",
+        "slots": 1,
+        "presetId": "surface-rescue-ring",
+        "passed": true,
+        "runSequence": 3
+      },
+      {
+        "event": "idle",
+        "phase": "idle",
+        "slots": 0,
+        "presetId": "surface-rescue-ring",
+        "reason": "manual"
+      }
+    ],
+    "iframeHasSource": false,
+    "horizontalOverflow": 0
+  }
+}

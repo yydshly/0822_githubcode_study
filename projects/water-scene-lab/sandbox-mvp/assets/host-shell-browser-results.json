@@ -1,0 +1,656 @@
+{
+  "baseUrl": "http://127.0.0.1:8107/demos/water-scene-lab/sandbox/",
+  "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "browserVersion": "151.0.7922.170",
+  "passed": true,
+  "results": [
+    {
+      "id": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "state": {
+        "api": {
+          "selectedId": "spillway-impact-block",
+          "phase": "idle",
+          "runtimeSlots": 0,
+          "runtimeLoaded": false,
+          "runtimePresetId": null,
+          "maxObservedRuntimeSlots": 0,
+          "completedRuns": 0,
+          "activeRunSequence": null,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "worldDriver": "free-fall-impact-speed",
+            "solverFrame": "world-down-to-solver-negative-y"
+          },
+          "result": null,
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            }
+          ],
+          "iframeHasSource": false,
+          "horizontalOverflow": 0
+        },
+        "registry": [
+          {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            }
+          },
+          {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            }
+          },
+          {
+            "id": "surface-rescue-ring",
+            "shortId": "uplift",
+            "contractId": "ocean-wave-uplift-near-field",
+            "contractHash": "fnv1a-24c48c8f",
+            "nativeBody": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            }
+          }
+        ],
+        "title": "Interactive Water Sandbox｜Water Scene Lab",
+        "h1": "把原库能力放回\n真实使用场景。",
+        "workspaceHeight": 706,
+        "tabCount": 3,
+        "activeTabCount": 1,
+        "runtimeFrameSrc": null,
+        "truthText": "真实性边界只证明内部 solver 单位下的局部 PBF 与 Shape Matching 响应；不代表现实浮力、水工安全、结构载荷或 CFD。",
+        "horizontalOverflow": 0,
+        "ready": "true"
+      },
+      "selections": [
+        {
+          "state": {
+            "selectedId": "spillway-impact-block",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "spillway-impact-block",
+              "shortId": "impact",
+              "contractId": "waterfall-impact-near-field",
+              "contractHash": "fnv1a-9bf4aa68",
+              "nativeBody": {
+                "shape": "box",
+                "density": 2.2,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "worldDriver": "free-fall-impact-speed",
+              "solverFrame": "world-down-to-solver-negative-y"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "跌水冲击区",
+          "role": "dense-impact-block",
+          "sourceHref": "../waterfall/",
+          "activeTabs": 1
+        },
+        {
+          "state": {
+            "selectedId": "channel-drifting-block",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "channel-drifting-block",
+              "shortId": "drift",
+              "contractId": "river-obstacle-near-field",
+              "contractHash": "fnv1a-1b6f9b1c",
+              "nativeBody": {
+                "shape": "box",
+                "density": 0.35,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "drifting-debris-block"
+              },
+              "worldDriver": "river-spline-flow-vector",
+              "solverFrame": "river-tangent-to-solver-positive-x"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "channel-drifting-block"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "河道漂流区",
+          "role": "drifting-debris-block",
+          "sourceHref": "../river/",
+          "activeTabs": 1
+        },
+        {
+          "state": {
+            "selectedId": "surface-rescue-ring",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "surface-rescue-ring",
+              "shortId": "uplift",
+              "contractId": "ocean-wave-uplift-near-field",
+              "contractHash": "fnv1a-24c48c8f",
+              "nativeBody": {
+                "shape": "torus",
+                "density": 0.22,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "floating-ring-probe"
+              },
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "solverFrame": "ocean-up-to-solver-positive-y"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "channel-drifting-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "surface-rescue-ring"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "水面浮环区",
+          "role": "floating-ring-probe",
+          "sourceHref": "../ocean/",
+          "activeTabs": 1
+        }
+      ],
+      "keyboardState": {
+        "selectedId": "spillway-impact-block",
+        "focusedPresetId": "spillway-impact-block",
+        "outlineStyle": "solid",
+        "outlineWidth": "2px"
+      },
+      "checks": {
+        "status200": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "readableWorkspace": true,
+        "threePresets": true,
+        "selectionsMatch": true,
+        "keyboardSelection": true,
+        "visibleFocus": true,
+        "singleActiveTab": true,
+        "noRuntimeLoaded": true,
+        "noHorizontalOverflow": true,
+        "readyState": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "id": "compact-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": {
+        "api": {
+          "selectedId": "spillway-impact-block",
+          "phase": "idle",
+          "runtimeSlots": 0,
+          "runtimeLoaded": false,
+          "runtimePresetId": null,
+          "maxObservedRuntimeSlots": 0,
+          "completedRuns": 0,
+          "activeRunSequence": null,
+          "revision": 3,
+          "selectedPreset": {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            },
+            "worldDriver": "free-fall-impact-speed",
+            "solverFrame": "world-down-to-solver-negative-y"
+          },
+          "result": null,
+          "error": null,
+          "lifecycle": [
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "channel-drifting-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "surface-rescue-ring"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            },
+            {
+              "event": "preset-selected",
+              "phase": "idle",
+              "slots": 0,
+              "presetId": "spillway-impact-block"
+            }
+          ],
+          "iframeHasSource": false,
+          "horizontalOverflow": 0
+        },
+        "registry": [
+          {
+            "id": "spillway-impact-block",
+            "shortId": "impact",
+            "contractId": "waterfall-impact-near-field",
+            "contractHash": "fnv1a-9bf4aa68",
+            "nativeBody": {
+              "shape": "box",
+              "density": 2.2,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "dense-impact-block"
+            }
+          },
+          {
+            "id": "channel-drifting-block",
+            "shortId": "drift",
+            "contractId": "river-obstacle-near-field",
+            "contractHash": "fnv1a-1b6f9b1c",
+            "nativeBody": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            }
+          },
+          {
+            "id": "surface-rescue-ring",
+            "shortId": "uplift",
+            "contractId": "ocean-wave-uplift-near-field",
+            "contractHash": "fnv1a-24c48c8f",
+            "nativeBody": {
+              "shape": "torus",
+              "density": 0.22,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "floating-ring-probe"
+            }
+          }
+        ],
+        "title": "Interactive Water Sandbox｜Water Scene Lab",
+        "h1": "把原库能力放回\n真实使用场景。",
+        "workspaceHeight": 706,
+        "tabCount": 3,
+        "activeTabCount": 1,
+        "runtimeFrameSrc": null,
+        "truthText": "真实性边界只证明内部 solver 单位下的局部 PBF 与 Shape Matching 响应；不代表现实浮力、水工安全、结构载荷或 CFD。",
+        "horizontalOverflow": 0,
+        "ready": "true"
+      },
+      "selections": [
+        {
+          "state": {
+            "selectedId": "spillway-impact-block",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "spillway-impact-block",
+              "shortId": "impact",
+              "contractId": "waterfall-impact-near-field",
+              "contractHash": "fnv1a-9bf4aa68",
+              "nativeBody": {
+                "shape": "box",
+                "density": 2.2,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "dense-impact-block"
+              },
+              "worldDriver": "free-fall-impact-speed",
+              "solverFrame": "world-down-to-solver-negative-y"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "跌水冲击区",
+          "role": "dense-impact-block",
+          "sourceHref": "../waterfall/",
+          "activeTabs": 1
+        },
+        {
+          "state": {
+            "selectedId": "channel-drifting-block",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "channel-drifting-block",
+              "shortId": "drift",
+              "contractId": "river-obstacle-near-field",
+              "contractHash": "fnv1a-1b6f9b1c",
+              "nativeBody": {
+                "shape": "box",
+                "density": 0.35,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "drifting-debris-block"
+              },
+              "worldDriver": "river-spline-flow-vector",
+              "solverFrame": "river-tangent-to-solver-positive-x"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "channel-drifting-block"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "河道漂流区",
+          "role": "drifting-debris-block",
+          "sourceHref": "../river/",
+          "activeTabs": 1
+        },
+        {
+          "state": {
+            "selectedId": "surface-rescue-ring",
+            "phase": "idle",
+            "runtimeSlots": 0,
+            "runtimeLoaded": false,
+            "runtimePresetId": null,
+            "maxObservedRuntimeSlots": 0,
+            "completedRuns": 0,
+            "activeRunSequence": null,
+            "revision": 3,
+            "selectedPreset": {
+              "id": "surface-rescue-ring",
+              "shortId": "uplift",
+              "contractId": "ocean-wave-uplift-near-field",
+              "contractHash": "fnv1a-24c48c8f",
+              "nativeBody": {
+                "shape": "torus",
+                "density": 0.22,
+                "startY": 0.76,
+                "size": 0.15,
+                "sceneRole": "floating-ring-probe"
+              },
+              "worldDriver": "ocean-surface-vertical-velocity",
+              "solverFrame": "ocean-up-to-solver-positive-y"
+            },
+            "result": null,
+            "error": null,
+            "lifecycle": [
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "spillway-impact-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "channel-drifting-block"
+              },
+              {
+                "event": "preset-selected",
+                "phase": "idle",
+                "slots": 0,
+                "presetId": "surface-rescue-ring"
+              }
+            ],
+            "iframeHasSource": false,
+            "horizontalOverflow": 0
+          },
+          "title": "水面浮环区",
+          "role": "floating-ring-probe",
+          "sourceHref": "../ocean/",
+          "activeTabs": 1
+        }
+      ],
+      "keyboardState": {
+        "selectedId": "spillway-impact-block",
+        "focusedPresetId": "spillway-impact-block",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "checks": {
+        "status200": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "readableWorkspace": true,
+        "threePresets": true,
+        "selectionsMatch": true,
+        "keyboardSelection": true,
+        "visibleFocus": true,
+        "singleActiveTab": true,
+        "noRuntimeLoaded": true,
+        "noHorizontalOverflow": true,
+        "readyState": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    }
+  ]
+}

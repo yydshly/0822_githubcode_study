@@ -1,0 +1,1114 @@
+{
+  "protocol": {
+    "tiers": [
+      {
+        "name": "small",
+        "preset": "small",
+        "targetParticles": 28000,
+        "fixedTicks": 8
+      },
+      {
+        "name": "medium",
+        "preset": "medium",
+        "targetParticles": 100000,
+        "fixedTicks": 8
+      },
+      {
+        "name": "large",
+        "preset": "large",
+        "targetParticles": 300000,
+        "fixedTicks": 6
+      }
+    ],
+    "views": [
+      "particles",
+      "ssfr"
+    ],
+    "liveSimulationSeconds": 0.75,
+    "classification": {
+      "interactive": "fps >= 30",
+      "demonstrable": "10 <= fps < 30",
+      "notPractical": "fps < 10",
+      "unavailable": "runtime case failed"
+    },
+    "headless": true,
+    "browserLabel": "edge",
+    "executablePath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+  },
+  "environment": {
+    "cdpGpu": {
+      "gpu": {
+        "devices": [
+          {
+            "vendorId": 32902,
+            "deviceId": 42888,
+            "subSysId": 563941443,
+            "revision": 4,
+            "vendorString": "",
+            "deviceString": "Intel(R) UHD Graphics",
+            "driverVendor": "Intel",
+            "driverVersion": "32.0.101.6790"
+          },
+          {
+            "vendorId": 4318,
+            "deviceId": 10336,
+            "subSysId": 563941443,
+            "revision": 161,
+            "vendorString": "",
+            "deviceString": "NVIDIA GeForce RTX 4070 Laptop GPU",
+            "driverVendor": "",
+            "driverVersion": "32.0.15.7628"
+          },
+          {
+            "vendorId": 5140,
+            "deviceId": 140,
+            "subSysId": 0,
+            "revision": 0,
+            "vendorString": "",
+            "deviceString": "Microsoft Basic Render Driver",
+            "driverVendor": "",
+            "driverVersion": "10.0.26100.8972"
+          }
+        ],
+        "auxAttributes": {
+          "amdSwitchable": false,
+          "bgra8OverlaySupport": "SCALING",
+          "canSupportThreadedTextureMailbox": false,
+          "directComposition": true,
+          "directMLFeatureLevel": "Not supported",
+          "directRenderingVersion": "",
+          "displayType": "ANGLE_D3D11",
+          "dx12FeatureLevel": "Not supported",
+          "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_compressed_EAC_R11_signed_texture GL_OES_compressed_EAC_R11_unsigned_texture GL_OES_compressed_EAC_RG11_signed_texture GL_OES_compressed_EAC_RG11_unsigned_texture GL_OES_compressed_ETC2_RGB8_texture GL_OES_compressed_ETC2_RGBA8_texture GL_OES_compressed_ETC2_punchthroughA_RGBA8_texture GL_OES_compressed_ETC2_punchthroughA_sRGB8_alpha_texture GL_OES_compressed_ETC2_sRGB8_alpha8_texture GL_OES_compressed_ETC2_sRGB8_texture GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 GL_WEBGL_video_texture ",
+          "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+          "glRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.6790)",
+          "glResetNotificationStrategy": 33362,
+          "glVendor": "Google Inc. (Intel)",
+          "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.47017 git hash: cfa7ea10503c)",
+          "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+          "glWsVendor": "Google Inc. (Intel)",
+          "glWsVersion": "1.5 (ANGLE 2.1.47017 git hash: cfa7ea10503c)",
+          "inProcessGpu": false,
+          "initializationTime": 0.151792,
+          "isAsan": false,
+          "isClangCoverage": false,
+          "jpegDecodeAcceleratorSupported": false,
+          "maxMsaaSamples": "8",
+          "nv12OverlaySupport": "SCALING",
+          "optimus": false,
+          "p010OverlaySupport": "SOFTWARE",
+          "passthroughCmdDecoder": true,
+          "pixelShaderVersion": "5.0",
+          "playreadyHardwareDrmSupport": false,
+          "processCrashCount": 0,
+          "rgb10a2OverlaySupport": "SOFTWARE",
+          "sandboxed": false,
+          "skiaBackendType": "GaneshGL",
+          "subpixelFontRendering": true,
+          "supportsD3dSharedImages": false,
+          "supportsDirectML": false,
+          "supportsDx12": false,
+          "supportsOverlays": true,
+          "supportsVulkan": false,
+          "targetCpuBits": 64,
+          "vertexShaderVersion": "5.0",
+          "visibilityCallbackCallCount": 0,
+          "vulkanVersion": "Not supported",
+          "yuy2OverlaySupport": "SCALING"
+        },
+        "featureStatus": {
+          "2d_canvas": "enabled",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "enabled",
+          "multiple_raster_threads": "enabled_on",
+          "opengl": "enabled_on",
+          "rasterization": "enabled",
+          "raw_draw": "disabled_off_ok",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "enabled",
+          "video_encode": "enabled",
+          "webgl": "enabled",
+          "webgpu": "enabled",
+          "webnn": "disabled_off"
+        },
+        "driverBugWorkarounds": [
+          "disable_d3d12_av1_multi_ref_encoding",
+          "disable_d3d12_h264_encoder_non_reference_frames",
+          "disable_d3d12_hevc_encoding",
+          "disable_direct_composition_sw_video_overlays",
+          "disable_ms_video_super_resolution",
+          "disable_vp_auto_hdr",
+          "enable_webgl_timer_query_extensions",
+          "exit_on_context_lost",
+          "force_dcomp_triple_buffer_video_swap_chain",
+          "max_msaa_sample_count_4",
+          "msaa_is_slow",
+          "no_downscaled_overlay_promotion",
+          "supports_two_yuv_hardware_overlays",
+          "disabled_extension_GL_KHR_blend_equation_advanced",
+          "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+        ],
+        "videoDecoding": [],
+        "videoEncoding": []
+      },
+      "modelName": "",
+      "modelVersion": "",
+      "commandLine": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --enable-unsafe-webgpu --ignore-gpu-blocklist --disable-gpu-sandbox --user-data-dir=\"C:\\Users\\yun68\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-MXEDzo\" --remote-debugging-pipe --no-startup-window --noerrdialogs --flag-switches-begin --flag-switches-end --enable-unsafe-swiftshader"
+    }
+  },
+  "cases": [
+    {
+      "id": "small-particles",
+      "tier": "small",
+      "preset": "small",
+      "view": "particles",
+      "targetParticles": 28000,
+      "fixedTicks": 8,
+      "query": "preset=small&view=particles&particles=28000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 3022,
+      "fixed": {
+        "particleCount": 28000,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 2,
+        "iterations": 4,
+        "stepDt": 0.008333333333333333,
+        "actualTicks": 8,
+        "wallMs": 192.10000002384186,
+        "wallMsPerTick": 24.012500002980232,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 1197,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 28000,
+        "fluid": 28000,
+        "solid": 0,
+        "boundary": 20002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9906,
+        "maxRho": 1.166,
+        "maxSpeed": 3.271,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 66.523,
+          "simPasses": {
+            "predict": 0.7,
+            "grid": 1.237,
+            "solve": 47.916,
+            "finish": 16.623,
+            "stats": 0.047
+          },
+          "renderMs": 1.685,
+          "renderPasses": {
+            "draw": 1.685
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 17.595307917712805,
+        "rafFrames": 21,
+        "rafWallMs": 1193.5000000119217,
+        "timingText": "sim    77.80 ms  predict 1.12  grid 1.73  solve 56.13  finish 18.80  stats 0.03\nrender 1.36 ms  draw 1.36",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 0.991  max 1.166 (x rest)\nmax speed 3.27 m/s   KE 190.9 J\n2 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 13332,
+      "classification": "demonstrable"
+    },
+    {
+      "id": "small-ssfr",
+      "tier": "small",
+      "preset": "small",
+      "view": "ssfr",
+      "targetParticles": 28000,
+      "fixedTicks": 8,
+      "query": "preset=small&view=ssfr&particles=28000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 11610,
+      "fixed": {
+        "particleCount": 28000,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 2,
+        "iterations": 4,
+        "stepDt": 0.008333333333333333,
+        "actualTicks": 8,
+        "wallMs": 266.60000002384186,
+        "wallMsPerTick": 33.32500000298023,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 1265,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 28000,
+        "fluid": 28000,
+        "solid": 0,
+        "boundary": 20002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9952,
+        "maxRho": 1.224,
+        "maxSpeed": 3.904,
+        "simTime": 0.83,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 61.755,
+          "simPasses": {
+            "predict": 0.81,
+            "grid": 1.577,
+            "solve": 43.913,
+            "finish": 15.405,
+            "stats": 0.051
+          },
+          "renderMs": 15.14,
+          "renderPasses": {
+            "aniso": 5.13,
+            "solidT": 0.002,
+            "depth": 2.968,
+            "thick": 2.36,
+            "thickblur": 0.358,
+            "copy": 0.058,
+            "filter": 2.216,
+            "composite": 2.048
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 15.080561949361066,
+        "rafFrames": 19,
+        "rafWallMs": 1259.8999999999996,
+        "timingText": "sim    86.66 ms  predict 1.04  grid 1.93  solve 65.15  finish 18.52  stats 0.03\nrender 16.69 ms  aniso 3.06  solidT 0.00  depth 7.95  thick 1.80  thickblur 0.19  copy 0.05  filter 1.35  composite 2.28",
+        "statsText": "20.0 fps   t = 0.83 s\ndensity avg 0.995  max 1.224 (x rest)\nmax speed 3.90 m/s   KE 212.5 J\n2 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 13554,
+      "classification": "demonstrable"
+    },
+    {
+      "id": "medium-particles",
+      "tier": "medium",
+      "preset": "medium",
+      "view": "particles",
+      "targetParticles": 100000,
+      "fixedTicks": 8,
+      "query": "preset=medium&view=particles&particles=100000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 11919,
+      "fixed": {
+        "particleCount": 100000,
+        "fluidParticleCount": 100000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 4,
+        "iterations": 4,
+        "stepDt": 0.004166666666666667,
+        "actualTicks": 8,
+        "wallMs": 372.2999999523163,
+        "wallMsPerTick": 46.537499994039536,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 6779,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 100000,
+        "fluid": 100000,
+        "solid": 0,
+        "boundary": 41252,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9942,
+        "maxRho": 1.075,
+        "maxSpeed": 4.283,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 363.491,
+          "simPasses": {
+            "predict": 5.392,
+            "grid": 7.784,
+            "solve": 248.12,
+            "finish": 102.097,
+            "stats": 0.098
+          },
+          "renderMs": 4.289,
+          "renderPasses": {
+            "draw": 4.289
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 2.954908102352813,
+        "rafFrames": 20,
+        "rafWallMs": 6768.4000000119195,
+        "timingText": "sim    609.65 ms  predict 11.52  grid 12.28  solve 417.78  finish 167.98  stats 0.08\nrender 3.17 ms  draw 3.17",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 0.994  max 1.075 (x rest)\nmax speed 4.28 m/s   KE 1330.7 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 20097,
+      "classification": "not-practical"
+    },
+    {
+      "id": "medium-ssfr",
+      "tier": "medium",
+      "preset": "medium",
+      "view": "ssfr",
+      "targetParticles": 100000,
+      "fixedTicks": 8,
+      "query": "preset=medium&view=ssfr&particles=100000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 1452,
+      "fixed": {
+        "particleCount": 100000,
+        "fluidParticleCount": 100000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 4,
+        "iterations": 4,
+        "stepDt": 0.004166666666666667,
+        "actualTicks": 8,
+        "wallMs": 678.5999999642372,
+        "wallMsPerTick": 84.82499999552965,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 7263,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 100000,
+        "fluid": 100000,
+        "solid": 0,
+        "boundary": 41252,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9966,
+        "maxRho": 1.09,
+        "maxSpeed": 4.198,
+        "simTime": 0.83,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 419.421,
+          "simPasses": {
+            "predict": 4.181,
+            "grid": 10.939,
+            "solve": 285.526,
+            "finish": 118.657,
+            "stats": 0.118
+          },
+          "renderMs": 47.788,
+          "renderPasses": {
+            "aniso": 14.398,
+            "solidT": 0.006,
+            "depth": 17.585,
+            "thick": 5.835,
+            "thickblur": 0.769,
+            "copy": 0.631,
+            "filter": 6.546,
+            "composite": 2.019
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 2.342824067689985,
+        "rafFrames": 17,
+        "rafWallMs": 7256.200000011922,
+        "timingText": "sim    580.56 ms  predict 6.38  grid 18.30  solve 396.54  finish 159.25  stats 0.08\nrender 36.85 ms  aniso 11.50  solidT 0.00  depth 13.12  thick 4.12  thickblur 0.68  copy 0.17  filter 5.74  composite 1.53",
+        "statsText": "20.0 fps   t = 0.83 s\ndensity avg 0.997  max 1.090 (x rest)\nmax speed 4.20 m/s   KE 1191.1 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 20726,
+      "classification": "not-practical"
+    },
+    {
+      "id": "large-particles",
+      "tier": "large",
+      "preset": "large",
+      "view": "particles",
+      "targetParticles": 300000,
+      "fixedTicks": 6,
+      "query": "preset=large&view=particles&particles=300000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 2513,
+      "fixed": {
+        "particleCount": 300000,
+        "fluidParticleCount": 300000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 4,
+        "iterations": 4,
+        "stepDt": 0.004166666666666667,
+        "actualTicks": 6,
+        "wallMs": 978,
+        "wallMsPerTick": 163,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 21039,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 300000,
+        "fluid": 300000,
+        "solid": 0,
+        "boundary": 80002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 1.0029,
+        "maxRho": 1.124,
+        "maxSpeed": 5.304,
+        "simTime": 0.8,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 1286.549,
+          "simPasses": {
+            "predict": 9.73,
+            "grid": 24.944,
+            "solve": 877.374,
+            "finish": 373.934,
+            "stats": 0.567
+          },
+          "renderMs": 10.546,
+          "renderPasses": {
+            "draw": 10.546
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 0.9033294822955833,
+        "rafFrames": 19,
+        "rafWallMs": 21033.300000035764,
+        "timingText": "sim    1829.09 ms  predict 13.59  grid 36.29  solve 1238.91  finish 539.94  stats 0.37\nrender 7.16 ms  draw 7.16",
+        "statsText": "20.0 fps   t = 0.80 s\ndensity avg 1.003  max 1.124 (x rest)\nmax speed 5.30 m/s   KE 6081.8 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 32707,
+      "classification": "not-practical"
+    },
+    {
+      "id": "large-ssfr",
+      "tier": "large",
+      "preset": "large",
+      "view": "ssfr",
+      "targetParticles": 300000,
+      "fixedTicks": 6,
+      "query": "preset=large&view=ssfr&particles=300000&bodies=0&timing=1&report=999&timescale=1",
+      "status": "completed",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadMs": 1717,
+      "fixed": {
+        "particleCount": 300000,
+        "fluidParticleCount": 300000,
+        "rigidParticleCount": 0,
+        "bodyCount": 0,
+        "substeps": 4,
+        "iterations": 4,
+        "stepDt": 0.004166666666666667,
+        "actualTicks": 6,
+        "wallMs": 1659.800000011921,
+        "wallMsPerTick": 276.6333333353202,
+        "nonFinite": 0,
+        "webgpuContext": true,
+        "hasDevice": true,
+        "adapterLabel": "intel gen-12lp"
+      },
+      "liveWallMs": 24172,
+      "live": {
+        "adapter": "intel gen-12lp",
+        "particles": 300000,
+        "fluid": 300000,
+        "solid": 0,
+        "boundary": 80002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 1.0103,
+        "maxRho": 1.167,
+        "maxSpeed": 4.772,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 1530.639,
+          "simPasses": {
+            "predict": 11.377,
+            "grid": 29.779,
+            "solve": 1041.84,
+            "finish": 447.443,
+            "stats": 0.2
+          },
+          "renderMs": 151.453,
+          "renderPasses": {
+            "aniso": 54.556,
+            "solidT": 0.012,
+            "depth": 61.778,
+            "thick": 18.204,
+            "thickblur": 1.759,
+            "copy": 0.535,
+            "filter": 13.144,
+            "composite": 1.464
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 0.6620598336564871,
+        "rafFrames": 16,
+        "rafWallMs": 24167.00000003576,
+        "timingText": "sim    2008.58 ms  predict 20.41  grid 50.77  solve 1339.79  finish 597.42  stats 0.19\nrender 124.85 ms  aniso 48.59  solidT 0.00  depth 46.32  thick 18.70  thickblur 1.06  copy 0.20  filter 8.63  composite 1.34",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 1.010  max 1.167 (x rest)\nmax speed 4.77 m/s   KE 4276.3 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      },
+      "totalWallMs": 48094,
+      "classification": "not-practical"
+    }
+  ],
+  "checks": [
+    {
+      "name": "matrix.complete",
+      "passed": true,
+      "detail": [
+        "small-particles",
+        "small-ssfr",
+        "medium-particles",
+        "medium-ssfr",
+        "large-particles",
+        "large-ssfr"
+      ]
+    },
+    {
+      "name": "small-particles.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "small-particles.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "small-particles.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 8,
+        "actual": 8
+      }
+    },
+    {
+      "name": "small-particles.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "small-particles.count",
+      "passed": true,
+      "detail": {
+        "target": 28000,
+        "actual": 28000
+      }
+    },
+    {
+      "name": "small-particles.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 28000,
+        "fluid": 28000,
+        "solid": 0,
+        "boundary": 20002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9906,
+        "maxRho": 1.166,
+        "maxSpeed": 3.271,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 66.523,
+          "simPasses": {
+            "predict": 0.7,
+            "grid": 1.237,
+            "solve": 47.916,
+            "finish": 16.623,
+            "stats": 0.047
+          },
+          "renderMs": 1.685,
+          "renderPasses": {
+            "draw": 1.685
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 17.595307917712805,
+        "rafFrames": 21,
+        "rafWallMs": 1193.5000000119217,
+        "timingText": "sim    77.80 ms  predict 1.12  grid 1.73  solve 56.13  finish 18.80  stats 0.03\nrender 1.36 ms  draw 1.36",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 0.991  max 1.166 (x rest)\nmax speed 3.27 m/s   KE 190.9 J\n2 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "small-particles.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "small-ssfr.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "small-ssfr.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "small-ssfr.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 8,
+        "actual": 8
+      }
+    },
+    {
+      "name": "small-ssfr.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "small-ssfr.count",
+      "passed": true,
+      "detail": {
+        "target": 28000,
+        "actual": 28000
+      }
+    },
+    {
+      "name": "small-ssfr.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 28000,
+        "fluid": 28000,
+        "solid": 0,
+        "boundary": 20002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9952,
+        "maxRho": 1.224,
+        "maxSpeed": 3.904,
+        "simTime": 0.83,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 61.755,
+          "simPasses": {
+            "predict": 0.81,
+            "grid": 1.577,
+            "solve": 43.913,
+            "finish": 15.405,
+            "stats": 0.051
+          },
+          "renderMs": 15.14,
+          "renderPasses": {
+            "aniso": 5.13,
+            "solidT": 0.002,
+            "depth": 2.968,
+            "thick": 2.36,
+            "thickblur": 0.358,
+            "copy": 0.058,
+            "filter": 2.216,
+            "composite": 2.048
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 15.080561949361066,
+        "rafFrames": 19,
+        "rafWallMs": 1259.8999999999996,
+        "timingText": "sim    86.66 ms  predict 1.04  grid 1.93  solve 65.15  finish 18.52  stats 0.03\nrender 16.69 ms  aniso 3.06  solidT 0.00  depth 7.95  thick 1.80  thickblur 0.19  copy 0.05  filter 1.35  composite 2.28",
+        "statsText": "20.0 fps   t = 0.83 s\ndensity avg 0.995  max 1.224 (x rest)\nmax speed 3.90 m/s   KE 212.5 J\n2 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "small-ssfr.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "medium-particles.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "medium-particles.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "medium-particles.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 8,
+        "actual": 8
+      }
+    },
+    {
+      "name": "medium-particles.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "medium-particles.count",
+      "passed": true,
+      "detail": {
+        "target": 100000,
+        "actual": 100000
+      }
+    },
+    {
+      "name": "medium-particles.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 100000,
+        "fluid": 100000,
+        "solid": 0,
+        "boundary": 41252,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9942,
+        "maxRho": 1.075,
+        "maxSpeed": 4.283,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 363.491,
+          "simPasses": {
+            "predict": 5.392,
+            "grid": 7.784,
+            "solve": 248.12,
+            "finish": 102.097,
+            "stats": 0.098
+          },
+          "renderMs": 4.289,
+          "renderPasses": {
+            "draw": 4.289
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 2.954908102352813,
+        "rafFrames": 20,
+        "rafWallMs": 6768.4000000119195,
+        "timingText": "sim    609.65 ms  predict 11.52  grid 12.28  solve 417.78  finish 167.98  stats 0.08\nrender 3.17 ms  draw 3.17",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 0.994  max 1.075 (x rest)\nmax speed 4.28 m/s   KE 1330.7 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "medium-particles.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "medium-ssfr.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "medium-ssfr.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "medium-ssfr.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 8,
+        "actual": 8
+      }
+    },
+    {
+      "name": "medium-ssfr.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "medium-ssfr.count",
+      "passed": true,
+      "detail": {
+        "target": 100000,
+        "actual": 100000
+      }
+    },
+    {
+      "name": "medium-ssfr.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 100000,
+        "fluid": 100000,
+        "solid": 0,
+        "boundary": 41252,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 0.9966,
+        "maxRho": 1.09,
+        "maxSpeed": 4.198,
+        "simTime": 0.83,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 419.421,
+          "simPasses": {
+            "predict": 4.181,
+            "grid": 10.939,
+            "solve": 285.526,
+            "finish": 118.657,
+            "stats": 0.118
+          },
+          "renderMs": 47.788,
+          "renderPasses": {
+            "aniso": 14.398,
+            "solidT": 0.006,
+            "depth": 17.585,
+            "thick": 5.835,
+            "thickblur": 0.769,
+            "copy": 0.631,
+            "filter": 6.546,
+            "composite": 2.019
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 2.342824067689985,
+        "rafFrames": 17,
+        "rafWallMs": 7256.200000011922,
+        "timingText": "sim    580.56 ms  predict 6.38  grid 18.30  solve 396.54  finish 159.25  stats 0.08\nrender 36.85 ms  aniso 11.50  solidT 0.00  depth 13.12  thick 4.12  thickblur 0.68  copy 0.17  filter 5.74  composite 1.53",
+        "statsText": "20.0 fps   t = 0.83 s\ndensity avg 0.997  max 1.090 (x rest)\nmax speed 4.20 m/s   KE 1191.1 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "medium-ssfr.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "large-particles.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "large-particles.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "large-particles.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 6,
+        "actual": 6
+      }
+    },
+    {
+      "name": "large-particles.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "large-particles.count",
+      "passed": true,
+      "detail": {
+        "target": 300000,
+        "actual": 300000
+      }
+    },
+    {
+      "name": "large-particles.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 300000,
+        "fluid": 300000,
+        "solid": 0,
+        "boundary": 80002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 1.0029,
+        "maxRho": 1.124,
+        "maxSpeed": 5.304,
+        "simTime": 0.8,
+        "gpuError": null,
+        "timing": {
+          "frames": 18,
+          "simMs": 1286.549,
+          "simPasses": {
+            "predict": 9.73,
+            "grid": 24.944,
+            "solve": 877.374,
+            "finish": 373.934,
+            "stats": 0.567
+          },
+          "renderMs": 10.546,
+          "renderPasses": {
+            "draw": 10.546
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 0.9033294822955833,
+        "rafFrames": 19,
+        "rafWallMs": 21033.300000035764,
+        "timingText": "sim    1829.09 ms  predict 13.59  grid 36.29  solve 1238.91  finish 539.94  stats 0.37\nrender 7.16 ms  draw 7.16",
+        "statsText": "20.0 fps   t = 0.80 s\ndensity avg 1.003  max 1.124 (x rest)\nmax speed 5.30 m/s   KE 6081.8 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "large-particles.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "large-ssfr.recorded",
+      "passed": true,
+      "detail": "completed"
+    },
+    {
+      "name": "large-ssfr.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "large-ssfr.ticks",
+      "passed": true,
+      "detail": {
+        "requested": 6,
+        "actual": 6
+      }
+    },
+    {
+      "name": "large-ssfr.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "large-ssfr.count",
+      "passed": true,
+      "detail": {
+        "target": 300000,
+        "actual": 300000
+      }
+    },
+    {
+      "name": "large-ssfr.liveResult",
+      "passed": true,
+      "detail": {
+        "adapter": "intel gen-12lp",
+        "particles": 300000,
+        "fluid": 300000,
+        "solid": 0,
+        "boundary": 80002,
+        "bodies": 0,
+        "fps": 20,
+        "avgRho": 1.0103,
+        "maxRho": 1.167,
+        "maxSpeed": 4.772,
+        "simTime": 0.82,
+        "gpuError": null,
+        "timing": {
+          "frames": 16,
+          "simMs": 1530.639,
+          "simPasses": {
+            "predict": 11.377,
+            "grid": 29.779,
+            "solve": 1041.84,
+            "finish": 447.443,
+            "stats": 0.2
+          },
+          "renderMs": 151.453,
+          "renderPasses": {
+            "aniso": 54.556,
+            "solidT": 0.012,
+            "depth": 61.778,
+            "thick": 18.204,
+            "thickblur": 1.759,
+            "copy": 0.535,
+            "filter": 13.144,
+            "composite": 1.464
+          }
+        },
+        "reportedFps": 20,
+        "actualFps": 0.6620598336564871,
+        "rafFrames": 16,
+        "rafWallMs": 24167.00000003576,
+        "timingText": "sim    2008.58 ms  predict 20.41  grid 50.77  solve 1339.79  finish 597.42  stats 0.19\nrender 124.85 ms  aniso 48.59  solidT 0.00  depth 46.32  thick 18.70  thickblur 1.06  copy 0.20  filter 8.63  composite 1.34",
+        "statsText": "20.0 fps   t = 0.82 s\ndensity avg 1.010  max 1.167 (x rest)\nmax speed 4.77 m/s   KE 4276.3 J\n4 substeps x 4 iters",
+        "canvas": true,
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "large-ssfr.errors",
+      "passed": true,
+      "detail": {
+        "consoleErrors": [],
+        "pageErrors": []
+      }
+    }
+  ],
+  "gatePassed": true,
+  "allCasesOperational": true
+}

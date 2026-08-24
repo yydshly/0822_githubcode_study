@@ -1,0 +1,1542 @@
+{
+  "protocol": {
+    "ticks": 30,
+    "releaseTick": 15,
+    "packetCounts": [
+      5,
+      7,
+      8
+    ]
+  },
+  "runs": [
+    {
+      "label": "A-gate-clear",
+      "query": "preset=small&view=ssfr&particles=28000&body=box:1.35:0.82&bodysize=0.18&ssfrscale=0.5",
+      "packet": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      },
+      "schedule": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 32037,
+        "fluidParticleCount": 28280,
+        "rigidParticleCount": 3757,
+        "bodyCount": 1,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28280,
+        "corridorCount": 12,
+        "upstreamCount": 12,
+        "downstreamCount": 0,
+        "zP05": 0.3070753812789917,
+        "zP95": 0.7013159990310669,
+        "lateralWidth": 0.3942406177520752
+      },
+      "body": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8096131682395935,
+              0.4999999701976776
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              -0.00007733739039395005,
+              0,
+              0.00007733739039395005,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.7275264859199524,
+              0.5000007748603821
+            ],
+            "rot": [
+              0.9999999403953552,
+              -0.00038314872654154897,
+              -0.00004800379247171804,
+              0.0003831445355899632,
+              0.9999999403953552,
+              -0.00008811538282316178,
+              0.000048037552915047854,
+              0.00008809698920231313,
+              1
+            ]
+          }
+        }
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    {
+      "label": "B-gate-path-1",
+      "query": "preset=small&view=ssfr&particles=28000&body=box:1.35:0.45&bodysize=0.18&ssfrscale=0.5",
+      "packet": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      },
+      "schedule": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 32037,
+        "fluidParticleCount": 28280,
+        "rigidParticleCount": 3757,
+        "bodyCount": 1,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28280,
+        "corridorCount": 71,
+        "upstreamCount": 65,
+        "downstreamCount": 6,
+        "zP05": 0.3276619613170624,
+        "zP95": 0.6657311320304871,
+        "lateralWidth": 0.3380691707134247
+      },
+      "body": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501047253608704,
+              0.4395717680454254,
+              0.4999985992908478
+            ],
+            "rot": [
+              0.9999840259552002,
+              0.0056568654254078865,
+              0.00007294821261893958,
+              -0.005656864494085312,
+              0.9999840259552002,
+              -0.000006932728865649551,
+              -0.00007298625860130414,
+              0.000006519960152218118,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7480268478393555,
+              0.35673919320106506,
+              0.4999728798866272
+            ],
+            "rot": [
+              0.9999252557754517,
+              0.012222403660416603,
+              0.00022693720529787242,
+              -0.012222412042319775,
+              0.9999253153800964,
+              0.00003707345240400173,
+              -0.00022646712022833526,
+              -0.000039844402635935694,
+              1
+            ]
+          }
+        }
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    {
+      "label": "B-gate-path-2",
+      "query": "preset=small&view=ssfr&particles=28000&body=box:1.35:0.45&bodysize=0.18&ssfrscale=0.5",
+      "packet": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      },
+      "schedule": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 32037,
+        "fluidParticleCount": 28280,
+        "rigidParticleCount": 3757,
+        "bodyCount": 1,
+        "simTime": 0.24999999999999997,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "water": {
+        "count": 28280,
+        "corridorCount": 69,
+        "upstreamCount": 63,
+        "downstreamCount": 6,
+        "zP05": 0.325601190328598,
+        "zP95": 0.6671838760375977,
+        "lateralWidth": 0.34158268570899963
+      },
+      "body": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501049637794495,
+              0.4395718574523926,
+              0.49999839067459106
+            ],
+            "rot": [
+              0.9999839663505554,
+              0.005668641068041325,
+              0.00007292916416190565,
+              -0.005668640602380037,
+              0.9999839663505554,
+              -0.000006832107828813605,
+              -0.00007296672265511006,
+              0.0000064185887822532095,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.748023271560669,
+              0.3567444980144501,
+              0.4999736249446869
+            ],
+            "rot": [
+              0.9999234676361084,
+              0.012373685836791992,
+              0.0002388683205936104,
+              -0.012373669072985649,
+              0.9999234676361084,
+              -0.00006894191028550267,
+              -0.0002397031057626009,
+              0.00006598095933441073,
+              1
+            ]
+          }
+        }
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "A-gate-clear.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      }
+    },
+    {
+      "name": "A-gate-clear.injection",
+      "passed": true,
+      "detail": {
+        "requested": 280,
+        "added": 280,
+        "before": 31757,
+        "after": 32037,
+        "capacity": 59757,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "A-gate-clear.count",
+      "passed": true,
+      "detail": 28280
+    },
+    {
+      "name": "A-gate-clear.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      }
+    },
+    {
+      "name": "A-gate-clear.ids",
+      "passed": true,
+      "detail": [
+        "initial",
+        "hold",
+        "inject",
+        "pre-release",
+        "release",
+        "final-body"
+      ]
+    },
+    {
+      "name": "A-gate-clear.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "A-gate-clear.bodyIdentity",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8096131682395935,
+              0.4999999701976776
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              -0.00007733739039395005,
+              0,
+              0.00007733739039395005,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.7275264859199524,
+              0.5000007748603821
+            ],
+            "rot": [
+              0.9999999403953552,
+              -0.00038314872654154897,
+              -0.00004800379247171804,
+              0.0003831445355899632,
+              0.9999999403953552,
+              -0.00008811538282316178,
+              0.000048037552915047854,
+              0.00008809698920231313,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "A-gate-clear.held",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8199999928474426,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.8096131682395935,
+              0.4999999701976776
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              -0.00007733739039395005,
+              0,
+              0.00007733739039395005,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.82,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.7275264859199524,
+              0.5000007748603821
+            ],
+            "rot": [
+              0.9999999403953552,
+              -0.00038314872654154897,
+              -0.00004800379247171804,
+              0.0003831445355899632,
+              0.9999999403953552,
+              -0.00008811538282316178,
+              0.000048037552915047854,
+              0.00008809698920231313,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "A-gate-clear.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "B-gate-path-1.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      }
+    },
+    {
+      "name": "B-gate-path-1.injection",
+      "passed": true,
+      "detail": {
+        "requested": 280,
+        "added": 280,
+        "before": 31757,
+        "after": 32037,
+        "capacity": 59757,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "B-gate-path-1.count",
+      "passed": true,
+      "detail": 28280
+    },
+    {
+      "name": "B-gate-path-1.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-1.ids",
+      "passed": true,
+      "detail": [
+        "initial",
+        "hold",
+        "inject",
+        "pre-release",
+        "release",
+        "final-body"
+      ]
+    },
+    {
+      "name": "B-gate-path-1.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "B-gate-path-1.bodyIdentity",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501047253608704,
+              0.4395717680454254,
+              0.4999985992908478
+            ],
+            "rot": [
+              0.9999840259552002,
+              0.0056568654254078865,
+              0.00007294821261893958,
+              -0.005656864494085312,
+              0.9999840259552002,
+              -0.000006932728865649551,
+              -0.00007298625860130414,
+              0.000006519960152218118,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7480268478393555,
+              0.35673919320106506,
+              0.4999728798866272
+            ],
+            "rot": [
+              0.9999252557754517,
+              0.012222403660416603,
+              0.00022693720529787242,
+              -0.012222412042319775,
+              0.9999253153800964,
+              0.00003707345240400173,
+              -0.00022646712022833526,
+              -0.000039844402635935694,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-1.held",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501047253608704,
+              0.4395717680454254,
+              0.4999985992908478
+            ],
+            "rot": [
+              0.9999840259552002,
+              0.0056568654254078865,
+              0.00007294821261893958,
+              -0.005656864494085312,
+              0.9999840259552002,
+              -0.000006932728865649551,
+              -0.00007298625860130414,
+              0.000006519960152218118,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7480268478393555,
+              0.35673919320106506,
+              0.4999728798866272
+            ],
+            "rot": [
+              0.9999252557754517,
+              0.012222403660416603,
+              0.00022693720529787242,
+              -0.012222412042319775,
+              0.9999253153800964,
+              0.00003707345240400173,
+              -0.00022646712022833526,
+              -0.000039844402635935694,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-1.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "B-gate-path-2.packet",
+      "passed": true,
+      "detail": {
+        "config": {
+          "origin": [
+            0.52,
+            0.36,
+            0.43
+          ],
+          "counts": [
+            5,
+            7,
+            8
+          ],
+          "spacing": 0.02,
+          "velocity": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        "count": 280
+      }
+    },
+    {
+      "name": "B-gate-path-2.injection",
+      "passed": true,
+      "detail": {
+        "requested": 280,
+        "added": 280,
+        "before": 31757,
+        "after": 32037,
+        "capacity": 59757,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "B-gate-path-2.count",
+      "passed": true,
+      "detail": 28280
+    },
+    {
+      "name": "B-gate-path-2.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 30,
+        "actualTicks": 30,
+        "endTime": 0.24999999999999997,
+        "ids": [
+          "initial",
+          "hold",
+          "inject",
+          "pre-release",
+          "release",
+          "final-body"
+        ],
+        "injection": {
+          "requested": 280,
+          "added": 280,
+          "before": 31757,
+          "after": 32037,
+          "capacity": 59757,
+          "availableBefore": 28000,
+          "clamped": false
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-2.ids",
+      "passed": true,
+      "detail": [
+        "initial",
+        "hold",
+        "inject",
+        "pre-release",
+        "release",
+        "final-body"
+      ]
+    },
+    {
+      "name": "B-gate-path-2.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "B-gate-path-2.bodyIdentity",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501049637794495,
+              0.4395718574523926,
+              0.49999839067459106
+            ],
+            "rot": [
+              0.9999839663505554,
+              0.005668641068041325,
+              0.00007292916416190565,
+              -0.005668640602380037,
+              0.9999839663505554,
+              -0.000006832107828813605,
+              -0.00007296672265511006,
+              0.0000064185887822532095,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.748023271560669,
+              0.3567444980144501,
+              0.4999736249446869
+            ],
+            "rot": [
+              0.9999234676361084,
+              0.012373685836791992,
+              0.0002388683205936104,
+              -0.012373669072985649,
+              0.9999234676361084,
+              -0.00006894191028550267,
+              -0.0002397031057626009,
+              0.00006598095933441073,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-2.held",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.75,
+              0.44999998807907104,
+              0.5
+            ],
+            "rot": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "preRelease": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7501049637794495,
+              0.4395718574523926,
+              0.49999839067459106
+            ],
+            "rot": [
+              0.9999839663505554,
+              0.005668641068041325,
+              0.00007292916416190565,
+              -0.005668640602380037,
+              0.9999839663505554,
+              -0.000006832107828813605,
+              -0.00007296672265511006,
+              0.0000064185887822532095,
+              1
+            ]
+          }
+        },
+        "final": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.748023271560669,
+              0.3567444980144501,
+              0.4999736249446869
+            ],
+            "rot": [
+              0.9999234676361084,
+              0.012373685836791992,
+              0.0002388683205936104,
+              -0.012373669072985649,
+              0.9999234676361084,
+              -0.00006894191028550267,
+              -0.0002397031057626009,
+              0.00006598095933441073,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "B-gate-path-2.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "singleVariable.packet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "singleVariable.bodyShape",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "water.explainableDifference",
+      "passed": true,
+      "detail": {
+        "upstreamCount": 53,
+        "downstreamCount": 6,
+        "lateralWidth": -0.05617144703865051
+      }
+    },
+    {
+      "name": "repeat.water",
+      "passed": true,
+      "detail": {
+        "a": {
+          "count": 28280,
+          "corridorCount": 71,
+          "upstreamCount": 65,
+          "downstreamCount": 6,
+          "zP05": 0.3276619613170624,
+          "zP95": 0.6657311320304871,
+          "lateralWidth": 0.3380691707134247
+        },
+        "b": {
+          "count": 28280,
+          "corridorCount": 69,
+          "upstreamCount": 63,
+          "downstreamCount": 6,
+          "zP05": 0.325601190328598,
+          "zP95": 0.6671838760375977,
+          "lateralWidth": 0.34158268570899963
+        }
+      }
+    },
+    {
+      "name": "repeat.body",
+      "passed": true,
+      "detail": {
+        "a": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.7480268478393555,
+              0.35673919320106506,
+              0.4999728798866272
+            ],
+            "rot": [
+              0.9999252557754517,
+              0.012222403660416603,
+              0.00022693720529787242,
+              -0.012222412042319775,
+              0.9999253153800964,
+              0.00003707345240400173,
+              -0.00022646712022833526,
+              -0.000039844402635935694,
+              1
+            ]
+          }
+        },
+        "b": {
+          "id": 1,
+          "key": "body-1",
+          "shape": "box",
+          "size": 0.18,
+          "density": 1.35,
+          "particleCount": 3757,
+          "initialCentre": [
+            0.75,
+            0.45,
+            0.5
+          ],
+          "pose": {
+            "centre": [
+              0.748023271560669,
+              0.3567444980144501,
+              0.4999736249446869
+            ],
+            "rot": [
+              0.9999234676361084,
+              0.012373685836791992,
+              0.0002388683205936104,
+              -0.012373669072985649,
+              0.9999234676361084,
+              -0.00006894191028550267,
+              -0.0002397031057626009,
+              0.00006598095933441073,
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true,
+  "difference": {
+    "upstreamCount": 53,
+    "downstreamCount": 6,
+    "lateralWidth": -0.05617144703865051
+  }
+}

@@ -1,0 +1,916 @@
+{
+  "schemaVersion": "1.0",
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/ocean/",
+  "createdAt": "2026-08-24T03:32:32.388Z",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.170"
+  },
+  "passed": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "initial": {
+        "title": "Ocean MVP｜Water Scene Lab",
+        "bodyLength": 1044,
+        "renderState": "ready",
+        "h1": "同一艘船，\n两种海况。",
+        "resultRows": 6,
+        "truthBadge": "视觉航行响应代理",
+        "overflowX": 0,
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 540.8999999761581,
+          "frameTimeP50": 8.200000000000045,
+          "frameTimeP95": 20.799999999999955,
+          "measuredFrames": 153,
+          "drawCalls": 38,
+          "triangles": 43092,
+          "viewport": [
+            994,
+            925
+          ],
+          "dpr": 1,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": false,
+          "accumulator": 0,
+          "previewTick": 57.92639999999994,
+          "previewMotion": true,
+          "results": null,
+          "mobileVariant": "calm",
+          "cameraMode": "chase",
+          "probesVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "ocean-gerstner-v1",
+            "qualityTier": "balanced",
+            "firstFrameMs": 540.8999999761581,
+            "frameTimeP50": 8.200000000000045,
+            "frameTimeP95": 20.799999999999955,
+            "measuredFrames": 153,
+            "drawCalls": 38,
+            "triangles": 43092,
+            "viewport": [
+              994,
+              925
+            ],
+            "dpr": 1,
+            "renderedVariants": 2,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "calmUniforms": [
+          {
+            "directionX": -0.13917310096006544,
+            "directionZ": 0.9902680687415704,
+            "amplitude": 0.095,
+            "k": 0.3490658503988659,
+            "omega": 1.8504961476352428,
+            "phase": 0.37,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.08715574274765817,
+            "directionZ": 0.9961946980917455,
+            "amplitude": 0.0575,
+            "k": 0.5711986642890533,
+            "omega": 2.3671626257347875,
+            "phase": 2.11,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.3090169943749474,
+            "directionZ": 0.9510565162951535,
+            "amplitude": 0.035,
+            "k": 0.8975979010256552,
+            "omega": 2.9673953914269124,
+            "phase": 4.83,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.374606593415912,
+            "directionZ": 0.9271838545667874,
+            "amplitude": 0.02,
+            "k": 1.3962634015954636,
+            "omega": 3.7009922952704857,
+            "phase": 1.29,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.573576436351046,
+            "directionZ": 0.8191520442889918,
+            "amplitude": 0.01125,
+            "k": 2.243994752564138,
+            "omega": 4.691864077597964,
+            "phase": 5.57,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.6427876096865393,
+            "directionZ": 0.766044443118978,
+            "amplitude": 0.0055,
+            "k": 3.9269908169872414,
+            "omega": 6.206752767320835,
+            "phase": 3.46,
+            "q": 0.75
+          }
+        ],
+        "windUniforms": [
+          {
+            "directionX": -0.13917310096006544,
+            "directionZ": 0.9902680687415704,
+            "amplitude": 0.38,
+            "k": 0.3490658503988659,
+            "omega": 1.8504961476352428,
+            "phase": 0.37,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.08715574274765817,
+            "directionZ": 0.9961946980917455,
+            "amplitude": 0.23,
+            "k": 0.5711986642890533,
+            "omega": 2.3671626257347875,
+            "phase": 2.11,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.3090169943749474,
+            "directionZ": 0.9510565162951535,
+            "amplitude": 0.14,
+            "k": 0.8975979010256552,
+            "omega": 2.9673953914269124,
+            "phase": 4.83,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.374606593415912,
+            "directionZ": 0.9271838545667874,
+            "amplitude": 0.08,
+            "k": 1.3962634015954636,
+            "omega": 3.7009922952704857,
+            "phase": 1.29,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.573576436351046,
+            "directionZ": 0.8191520442889918,
+            "amplitude": 0.045,
+            "k": 2.243994752564138,
+            "omega": 4.691864077597964,
+            "phase": 5.57,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.6427876096865393,
+            "directionZ": 0.766044443118978,
+            "amplitude": 0.022,
+            "k": 3.9269908169872414,
+            "omega": 6.206752767320835,
+            "phase": 3.46,
+            "q": 0.75
+          }
+        ]
+      },
+      "pauseCheck": {
+        "started": true,
+        "advanced": true,
+        "stable": true,
+        "reset": true
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "ocean-gerstner-v1",
+          "factor": "seaState",
+          "contractHash": "fnv1a-4a2c196d",
+          "A": {
+            "caseId": "A",
+            "label": "平静海况",
+            "seaState": 0.25,
+            "contractHash": "fnv1a-4a2c196d",
+            "caseConfigHash": "fnv1a-8dcc4aea",
+            "resultDigest": "fnv1a-4c563629",
+            "resolved": {
+              "amplitudeScale": 0.25,
+              "totalSteepness": 0.1291423230090723,
+              "maxVerticalEnvelope": 0.22425,
+              "waveCount": 6
+            },
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "fieldQueryCount": 24000,
+            "metrics": {
+              "heightMean": -0.0027506738125860214,
+              "heightStd": 0.08158120310779976,
+              "crestP95": 0.14204308702991378,
+              "slopeP95": 0.09460447100441431,
+              "heaveRms": 0.05786268224113376,
+              "rollRmsDeg": 0.601458535788588,
+              "pitchRmsDeg": 1.7376644976248263,
+              "inverseResidualP95": 9.930136612989092e-16,
+              "inverseResidualMax": 7.119291619286993e-15,
+              "minJacobianDet": 0.8925100044060628,
+              "normalLengthErrorMax": 2.220446049250313e-16,
+              "inverseFailCount": 0,
+              "nonFiniteCount": 0,
+              "poseRmsDeg": 1.8388121917636644
+            },
+            "terminal": {
+              "time": 20,
+              "boatHeave": -0.06772082769575058,
+              "boatRollDeg": 0.49623611384825933,
+              "boatPitchDeg": -3.520206716157387,
+              "contactHeights": [
+                -0.17508637564174628,
+                -0.15720846641942446,
+                0.02751908138321399,
+                0.03389244989495446
+              ]
+            },
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "fieldQueryCount": true,
+              "noNonFinite": true,
+              "inverseSolved": true,
+              "inverseResidual": true,
+              "jacobianMargin": true,
+              "normalsUnit": true,
+              "steepnessSafe": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "有风涌浪",
+            "seaState": 1,
+            "contractHash": "fnv1a-4a2c196d",
+            "caseConfigHash": "fnv1a-90bb4847",
+            "resultDigest": "fnv1a-a85e5073",
+            "resolved": {
+              "amplitudeScale": 1,
+              "totalSteepness": 0.5165692920362892,
+              "maxVerticalEnvelope": 0.897,
+              "waveCount": 6
+            },
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "fieldQueryCount": 24000,
+            "metrics": {
+              "heightMean": -0.04108496200940156,
+              "heightStd": 0.3245757050363368,
+              "crestP95": 0.5596502319280576,
+              "slopeP95": 0.3837460466670937,
+              "heaveRms": 0.23014881086032363,
+              "rollRmsDeg": 2.3588296460663947,
+              "pitchRmsDeg": 6.81876153990667,
+              "inverseResidualP95": 2.6645352591003757e-15,
+              "inverseResidualMax": 5.904883742358415e-14,
+              "minJacobianDet": 0.586545620058977,
+              "normalLengthErrorMax": 4.440892098500626e-16,
+              "inverseFailCount": 0,
+              "nonFiniteCount": 0,
+              "poseRmsDeg": 7.215232930215911
+            },
+            "terminal": {
+              "time": 20,
+              "boatHeave": -0.3127466672435342,
+              "boatRollDeg": 2.300934786667641,
+              "boatPitchDeg": -13.64859387198126,
+              "contactHeights": [
+                -0.7569410841129822,
+                -0.6455871539557079,
+                0.07519506306323691,
+                0.07634650603131629
+              ]
+            },
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "fieldQueryCount": true,
+              "noNonFinite": true,
+              "inverseSolved": true,
+              "inverseResidual": true,
+              "jacobianMargin": true,
+              "normalsUnit": true,
+              "steepnessSafe": true
+            },
+            "passed": true
+          },
+          "ratios": {
+            "heightStd": 3.978559921547725,
+            "crestP95": 3.940003302027625,
+            "slopeP95": 4.0563204105775075,
+            "heaveRms": 3.9774998659967773,
+            "poseRmsDeg": 3.923855281433362
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "heightDifference": true,
+            "crestDifference": true,
+            "slopeDifference": true,
+            "heaveDifference": true,
+            "poseDifference": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 ocean-gerstner-v1 的固定输入与内部单位下，有风涌浪 B 产生了更高的水面变化和船体姿态运动量。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 540.8999999761581,
+          "frameTimeP50": 8.299999999999727,
+          "frameTimeP95": 20.799999999999955,
+          "measuredFrames": 271,
+          "drawCalls": 38,
+          "triangles": 43092,
+          "viewport": [
+            994,
+            925
+          ],
+          "dpr": 1,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        }
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          994,
+          925
+        ],
+        "uniqueColors": 66,
+        "luminanceVariance": 1239.0715013662323,
+        "center": "4,37,53,255"
+      },
+      "finalState": {
+        "phase": "complete",
+        "tick": 1200,
+        "mobileVariant": "calm",
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 540.8999999761581,
+          "frameTimeP50": 8.199999999999818,
+          "frameTimeP95": 16.995000000000218,
+          "measuredFrames": 360,
+          "drawCalls": 34,
+          "triangles": 42660,
+          "viewport": [
+            994,
+            925
+          ],
+          "dpr": 1,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "resultState": "8/8 通过",
+        "conclusion": "在 ocean-gerstner-v1 的固定输入与内部单位下，有风涌浪 B 产生了更高的水面变化和船体姿态运动量。 这不是现实风速或船舶安全结论。",
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "canvasNonBlank": true,
+        "resultRows": true,
+        "truthBoundary": true,
+        "uniformParity": true,
+        "reducedMotionStatic": true,
+        "pauseAndReset": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "commonContract": true,
+        "noNumericalFailures": true,
+        "resultRendered": true,
+        "mobileSwitch": true,
+        "frameBudget": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "initial": {
+        "title": "Ocean MVP｜Water Scene Lab",
+        "bodyLength": 958,
+        "renderState": "ready",
+        "h1": "同一艘船，\n两种海况。",
+        "resultRows": 6,
+        "truthBadge": "视觉航行响应代理",
+        "overflowX": 0,
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 66.79999995231628,
+          "frameTimeP50": 4.199999999999932,
+          "frameTimeP95": 4.300000000000068,
+          "measuredFrames": 360,
+          "drawCalls": 19,
+          "triangles": 12362,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 480,
+          "previewMotion": false,
+          "results": null,
+          "mobileVariant": "calm",
+          "cameraMode": "chase",
+          "probesVisible": true,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "ocean-gerstner-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 66.79999995231628,
+            "frameTimeP50": 4.199999999999932,
+            "frameTimeP95": 4.300000000000068,
+            "measuredFrames": 360,
+            "drawCalls": 19,
+            "triangles": 12362,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": true,
+            "fallbackActive": false
+          }
+        },
+        "calmUniforms": [
+          {
+            "directionX": -0.13917310096006544,
+            "directionZ": 0.9902680687415704,
+            "amplitude": 0.095,
+            "k": 0.3490658503988659,
+            "omega": 1.8504961476352428,
+            "phase": 0.37,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.08715574274765817,
+            "directionZ": 0.9961946980917455,
+            "amplitude": 0.0575,
+            "k": 0.5711986642890533,
+            "omega": 2.3671626257347875,
+            "phase": 2.11,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.3090169943749474,
+            "directionZ": 0.9510565162951535,
+            "amplitude": 0.035,
+            "k": 0.8975979010256552,
+            "omega": 2.9673953914269124,
+            "phase": 4.83,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.374606593415912,
+            "directionZ": 0.9271838545667874,
+            "amplitude": 0.02,
+            "k": 1.3962634015954636,
+            "omega": 3.7009922952704857,
+            "phase": 1.29,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.573576436351046,
+            "directionZ": 0.8191520442889918,
+            "amplitude": 0.01125,
+            "k": 2.243994752564138,
+            "omega": 4.691864077597964,
+            "phase": 5.57,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.6427876096865393,
+            "directionZ": 0.766044443118978,
+            "amplitude": 0.0055,
+            "k": 3.9269908169872414,
+            "omega": 6.206752767320835,
+            "phase": 3.46,
+            "q": 0.75
+          }
+        ],
+        "windUniforms": [
+          {
+            "directionX": -0.13917310096006544,
+            "directionZ": 0.9902680687415704,
+            "amplitude": 0.38,
+            "k": 0.3490658503988659,
+            "omega": 1.8504961476352428,
+            "phase": 0.37,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.08715574274765817,
+            "directionZ": 0.9961946980917455,
+            "amplitude": 0.23,
+            "k": 0.5711986642890533,
+            "omega": 2.3671626257347875,
+            "phase": 2.11,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.3090169943749474,
+            "directionZ": 0.9510565162951535,
+            "amplitude": 0.14,
+            "k": 0.8975979010256552,
+            "omega": 2.9673953914269124,
+            "phase": 4.83,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.374606593415912,
+            "directionZ": 0.9271838545667874,
+            "amplitude": 0.08,
+            "k": 1.3962634015954636,
+            "omega": 3.7009922952704857,
+            "phase": 1.29,
+            "q": 0.75
+          },
+          {
+            "directionX": 0.573576436351046,
+            "directionZ": 0.8191520442889918,
+            "amplitude": 0.045,
+            "k": 2.243994752564138,
+            "omega": 4.691864077597964,
+            "phase": 5.57,
+            "q": 0.75
+          },
+          {
+            "directionX": -0.6427876096865393,
+            "directionZ": 0.766044443118978,
+            "amplitude": 0.022,
+            "k": 3.9269908169872414,
+            "omega": 6.206752767320835,
+            "phase": 3.46,
+            "q": 0.75
+          }
+        ]
+      },
+      "pauseCheck": {
+        "started": false,
+        "advanced": false,
+        "stable": false,
+        "reset": false
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "ocean-gerstner-v1",
+          "factor": "seaState",
+          "contractHash": "fnv1a-4a2c196d",
+          "A": {
+            "caseId": "A",
+            "label": "平静海况",
+            "seaState": 0.25,
+            "contractHash": "fnv1a-4a2c196d",
+            "caseConfigHash": "fnv1a-8dcc4aea",
+            "resultDigest": "fnv1a-4c563629",
+            "resolved": {
+              "amplitudeScale": 0.25,
+              "totalSteepness": 0.1291423230090723,
+              "maxVerticalEnvelope": 0.22425,
+              "waveCount": 6
+            },
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "fieldQueryCount": 24000,
+            "metrics": {
+              "heightMean": -0.0027506738125860214,
+              "heightStd": 0.08158120310779976,
+              "crestP95": 0.14204308702991378,
+              "slopeP95": 0.09460447100441431,
+              "heaveRms": 0.05786268224113376,
+              "rollRmsDeg": 0.601458535788588,
+              "pitchRmsDeg": 1.7376644976248263,
+              "inverseResidualP95": 9.930136612989092e-16,
+              "inverseResidualMax": 7.119291619286993e-15,
+              "minJacobianDet": 0.8925100044060628,
+              "normalLengthErrorMax": 2.220446049250313e-16,
+              "inverseFailCount": 0,
+              "nonFiniteCount": 0,
+              "poseRmsDeg": 1.8388121917636644
+            },
+            "terminal": {
+              "time": 20,
+              "boatHeave": -0.06772082769575058,
+              "boatRollDeg": 0.49623611384825933,
+              "boatPitchDeg": -3.520206716157387,
+              "contactHeights": [
+                -0.17508637564174628,
+                -0.15720846641942446,
+                0.02751908138321399,
+                0.03389244989495446
+              ]
+            },
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "fieldQueryCount": true,
+              "noNonFinite": true,
+              "inverseSolved": true,
+              "inverseResidual": true,
+              "jacobianMargin": true,
+              "normalsUnit": true,
+              "steepnessSafe": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "有风涌浪",
+            "seaState": 1,
+            "contractHash": "fnv1a-4a2c196d",
+            "caseConfigHash": "fnv1a-90bb4847",
+            "resultDigest": "fnv1a-a85e5073",
+            "resolved": {
+              "amplitudeScale": 1,
+              "totalSteepness": 0.5165692920362892,
+              "maxVerticalEnvelope": 0.897,
+              "waveCount": 6
+            },
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "fieldQueryCount": 24000,
+            "metrics": {
+              "heightMean": -0.04108496200940156,
+              "heightStd": 0.3245757050363368,
+              "crestP95": 0.5596502319280576,
+              "slopeP95": 0.3837460466670937,
+              "heaveRms": 0.23014881086032363,
+              "rollRmsDeg": 2.3588296460663947,
+              "pitchRmsDeg": 6.81876153990667,
+              "inverseResidualP95": 2.6645352591003757e-15,
+              "inverseResidualMax": 5.904883742358415e-14,
+              "minJacobianDet": 0.586545620058977,
+              "normalLengthErrorMax": 4.440892098500626e-16,
+              "inverseFailCount": 0,
+              "nonFiniteCount": 0,
+              "poseRmsDeg": 7.215232930215911
+            },
+            "terminal": {
+              "time": 20,
+              "boatHeave": -0.3127466672435342,
+              "boatRollDeg": 2.300934786667641,
+              "boatPitchDeg": -13.64859387198126,
+              "contactHeights": [
+                -0.7569410841129822,
+                -0.6455871539557079,
+                0.07519506306323691,
+                0.07634650603131629
+              ]
+            },
+            "checks": {
+              "steps": true,
+              "measuredTicks": true,
+              "fieldQueryCount": true,
+              "noNonFinite": true,
+              "inverseSolved": true,
+              "inverseResidual": true,
+              "jacobianMargin": true,
+              "normalsUnit": true,
+              "steepnessSafe": true
+            },
+            "passed": true
+          },
+          "ratios": {
+            "heightStd": 3.978559921547725,
+            "crestP95": 3.940003302027625,
+            "slopeP95": 4.0563204105775075,
+            "heaveRms": 3.9774998659967773,
+            "poseRmsDeg": 3.923855281433362
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "distinctResolvedConfig": true,
+            "heightDifference": true,
+            "crestDifference": true,
+            "slopeDifference": true,
+            "heaveDifference": true,
+            "poseDifference": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 ocean-gerstner-v1 的固定输入与内部单位下，有风涌浪 B 产生了更高的水面变化和船体姿态运动量。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 66.79999995231628,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.300000000000182,
+          "measuredFrames": 360,
+          "drawCalls": 19,
+          "triangles": 12362,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        }
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 70,
+        "luminanceVariance": 1075.7882212020663,
+        "center": "2,36,52,255"
+      },
+      "finalState": {
+        "phase": "complete",
+        "tick": 1200,
+        "mobileVariant": "wind",
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "ocean-gerstner-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 66.79999995231628,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.300000000000182,
+          "measuredFrames": 360,
+          "drawCalls": 19,
+          "triangles": 12362,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "resultState": "8/8 通过",
+        "conclusion": "在 ocean-gerstner-v1 的固定输入与内部单位下，有风涌浪 B 产生了更高的水面变化和船体姿态运动量。 这不是现实风速或船舶安全结论。",
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "canvasNonBlank": true,
+        "resultRows": true,
+        "truthBoundary": true,
+        "uniformParity": true,
+        "reducedMotionStatic": true,
+        "pauseAndReset": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "commonContract": true,
+        "noNumericalFailures": true,
+        "resultRendered": true,
+        "mobileSwitch": true,
+        "frameBudget": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    }
+  ],
+  "fallback": {
+    "state": {
+      "renderState": "failed",
+      "fallbackVisible": true,
+      "reason": "已由验证参数强制进入 WebGL 回退。",
+      "retryVisible": true,
+      "overflowX": 0
+    },
+    "checks": {
+      "status200": true,
+      "failedState": true,
+      "fallbackVisible": true,
+      "reasonVisible": true,
+      "retryVisible": true,
+      "noHorizontalOverflow": true,
+      "noConsoleErrors": true,
+      "noPageErrors": true,
+      "noFailedRequests": true
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "passed": true
+  }
+}

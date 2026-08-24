@@ -4,3 +4,6 @@
 [submodule "projects/shuohao-skills/upstream"]
 	path = projects/shuohao-skills/upstream
 	url = https://github.com/eternityspring/shuohao-skills.git
+[submodule "projects/particles4all/upstream"]
+	path = projects/particles4all/upstream
+	url = https://github.com/matsuoka-601/Particles4All.git

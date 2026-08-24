@@ -1,0 +1,335 @@
+{
+  "protocol": {
+    "browserLabel": "edge",
+    "executablePath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "ticks": 120,
+    "runs": 2,
+    "scenario": "buoyancy/light"
+  },
+  "runs": [
+    {
+      "run": 1,
+      "before": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "step": {
+        "requestedTicks": 120,
+        "actualTicks": 120,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.9999999999999989
+      },
+      "after": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.9999999999999989,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "stats": {
+        "avgRho": 0.9621528535844712,
+        "maxRho": 0.9990234375,
+        "maxSpeed": 0.35546875,
+        "frames": 0,
+        "ke": 1.2802734375
+      },
+      "nonFinite": 0,
+      "wallMs": 1878.3999999761581,
+      "wallMsPerTick": 15.65333333313465,
+      "gpuError": null
+    },
+    {
+      "run": 2,
+      "before": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "step": {
+        "requestedTicks": 120,
+        "actualTicks": 120,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.9999999999999989
+      },
+      "after": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28341,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.9999999999999989,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "stats": {
+        "avgRho": 0.9621529569572351,
+        "maxRho": 0.9990234375,
+        "maxSpeed": 0.35546875,
+        "frames": 0,
+        "ke": 1.2802734375
+      },
+      "nonFinite": 0,
+      "wallMs": 1704.199999988079,
+      "wallMsPerTick": 14.201666666567325,
+      "gpuError": null
+    }
+  ],
+  "lifecycle": {
+    "supportBefore": {
+      "deterministicTicks": true,
+      "frozenSampling": true,
+      "directFluidInjection": true,
+      "fluidPacketGenerator": true,
+      "seededReset": false,
+      "scheduledEvents": true,
+      "directBodySampling": true,
+      "rigidBodyEvents": true,
+      "gpuDeviceDisposal": false
+    },
+    "disposedGuard": true,
+    "guardMessage": "Particles4All runtime adapter is disposed",
+    "frameUrl": "about:blank",
+    "explicitGpuDeviceDisposal": false
+  },
+  "checks": [
+    {
+      "name": "environment.webgpu",
+      "passed": true,
+      "detail": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "hasWebGPU": true,
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "runs.count",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "run1.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 120,
+        "actualTicks": 120,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.9999999999999989
+      }
+    },
+    {
+      "name": "run1.finitePositions",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run1.finiteStats",
+      "passed": true,
+      "detail": {
+        "avgRho": 0.9621528535844712,
+        "maxRho": 0.9990234375,
+        "maxSpeed": 0.35546875,
+        "frames": 0,
+        "ke": 1.2802734375
+      }
+    },
+    {
+      "name": "run1.countStable",
+      "passed": true,
+      "detail": {
+        "before": 28341,
+        "after": 28341
+      }
+    },
+    {
+      "name": "run1.gpuError",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 120,
+        "actualTicks": 120,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.9999999999999989
+      }
+    },
+    {
+      "name": "run2.finitePositions",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run2.finiteStats",
+      "passed": true,
+      "detail": {
+        "avgRho": 0.9621529569572351,
+        "maxRho": 0.9990234375,
+        "maxSpeed": 0.35546875,
+        "frames": 0,
+        "ke": 1.2802734375
+      }
+    },
+    {
+      "name": "run2.countStable",
+      "passed": true,
+      "detail": {
+        "before": 28341,
+        "after": 28341
+      }
+    },
+    {
+      "name": "run2.gpuError",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reset.countRepeatable",
+      "passed": true,
+      "detail": [
+        28341,
+        28341
+      ]
+    },
+    {
+      "name": "reset.simTimeRepeatable",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "dispose.guard",
+      "passed": true,
+      "detail": {
+        "supportBefore": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        },
+        "disposedGuard": true,
+        "guardMessage": "Particles4All runtime adapter is disposed",
+        "frameUrl": "about:blank",
+        "explicitGpuDeviceDisposal": false
+      }
+    },
+    {
+      "name": "dispose.unloaded",
+      "passed": true,
+      "detail": "about:blank"
+    },
+    {
+      "name": "dispose.gpuGapRecorded",
+      "passed": true,
+      "detail": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+    "hasWebGPU": true,
+    "adapterLabel": "intel gen-12lp",
+    "webgpuContext": true
+  }
+}

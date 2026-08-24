@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "checks": {
+    "http200": true,
+    "actualWebGpu": true,
+    "upstreamAccepted": true,
+    "highFlowBudget": true,
+    "everyTickSchedule": true,
+    "noRuntimeErrors": true
+  },
+  "errors": [],
+  "profile": {
+    "binCount": 12,
+    "bins": [
+      127,
+      75,
+      61,
+      83,
+      117,
+      107,
+      142,
+      144,
+      172,
+      172,
+      0,
+      0
+    ],
+    "occupiedBins": 10,
+    "coverageRatio": 0.8333333333333334,
+    "particleCount": 1200,
+    "lowestY": 0.2500658929347992,
+    "highestY": 0.8727470636367798,
+    "minimumX": 0.5711332559585571,
+    "maximumX": 0.9293807148933411,
+    "spanX": 0.35824745893478394,
+    "minimumZ": 0.322139173746109,
+    "maximumZ": 0.6754424571990967,
+    "spanZ": 0.35330328345298767,
+    "minimumY": 0.25,
+    "maximumY": 1
+  },
+  "injection": {
+    "requested": 5376,
+    "added": 5376,
+    "before": 29859,
+    "after": 35235,
+    "capacity": 57859,
+    "availableBefore": 28000,
+    "clamped": false
+  },
+  "engineQuery": "preset=small&view=ssfr&particles=28000&body=box%3A2.2%3A0.76&bodysize=0.15&timing=1"
+}

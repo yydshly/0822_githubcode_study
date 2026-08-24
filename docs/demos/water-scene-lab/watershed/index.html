@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Watershed Slice v3：同一上游流量驱动 River、瀑布、有限容量 Pool、Floodplain 蓄水与障碍改道的 T3 局部耦合场景。" />
+    <meta name="theme-color" content="#071710" />
+    <link rel="icon" href="data:," />
+    <title>Watershed Slice v3｜Water Scene Lab</title>
+    <link rel="stylesheet" href="../ocean/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.addEventListener('error', function (event) {
+        if (!document.body || document.body.dataset.renderState === 'ready') return;
+        document.body.dataset.renderState = 'failed';
+        var reason = document.querySelector('#fallback-reason');
+        if (reason) reason.textContent = event.message || '实时模块加载失败。';
+      });
+    </script>
+  </head>
+  <body data-render-state="loading">
+    <a class="skip-link" href="#experiment">跳到实验控制</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="返回 Water Scene Lab 路线台">
+        <span class="brand-mark" aria-hidden="true">WS</span>
+        <span class="brand-copy">
+          <small>WATER SCENE LAB / PROGRAM 01</small>
+          <strong>Watershed Slice v3</strong>
+        </span>
+      </a>
+      <div class="top-status">
+        <span class="runtime-dot" aria-hidden="true"></span>
+        <span id="runtime-label">正在建立连续山地水系</span>
+        <span class="truth-badge">T3 · ROUTING COUPLED</span>
+      </div>
+    </header>
+
+    <main class="lab-layout" id="experiment">
+      <section class="stage-card" aria-labelledby="scene-title">
+        <div class="watershed-intro-strip">
+          <div>
+            <p class="kicker">MOUNTAIN WATERSHED · ONE DRIVER</p>
+            <h1 id="scene-title">同一股来水，<em>贯穿河流、瀑布、水潭与洪泛地。</em></h1>
+          </div>
+          <p id="scene-intro">地形、河道、出口宽度、落差、重力、River/Pool 初始库存、Pool 容量、洪泛网格、边界出流、相机与时间轴固定；唯一输入是 <code>dischargeScale</code>。</p>
+        </div>
+
+        <div class="scene-viewport" id="scene-viewport">
+          <canvas id="watershed-canvas" aria-label="低流量和高流量驱动同一山地水系的同步三维对比">
+            当前浏览器不能显示实时三维画布，请查看页面中的模型读数与真实性说明。
+          </canvas>
+
+          <div class="loading-state" id="loading-state" role="status">
+            <span class="loading-ring" aria-hidden="true"></span>
+            <p>正在连接 River → Drop → Waterfall → Pool → Floodplain…</p>
+          </div>
+
+          <div class="fallback-state" id="fallback-state" role="alert">
+            <p class="kicker">REALTIME FALLBACK</p>
+            <h2>当前设备没有进入实时水系。</h2>
+            <p id="fallback-reason">WebGL2 初始化或着色器编译失败。</p>
+            <p>模型、固定 A/B 和质量预算仍可审阅；这里不会用预录画面冒充本设备的实时结果。</p>
+            <button type="button" id="retry-renderer">重试实时场景</button>
+          </div>
+
+          <div class="stage-topline" aria-hidden="true">
+            <span>T3 · INVENTORY → OVERFLOW → ROUTING</span>
+            <span>FIXED STEP · 60 HZ</span>
+            <span id="quality-label">QUALITY · —</span>
+          </div>
+
+          <div class="variant-label variant-a">
+            <span>A</span>
+            <div><strong id="variant-a-title">低来水</strong><small id="variant-a-q">Q = 3 m³/s</small></div>
+          </div>
+          <div class="variant-label variant-b">
+            <span>B</span>
+            <div><strong id="variant-b-title">高来水</strong><small id="variant-b-q">Q = 6 m³/s</small></div>
+          </div>
+          <div class="split-rule" aria-hidden="true"></div>
+
+          <div class="mobile-variant-tabs" aria-label="手机画布流量选择">
+            <button type="button" class="active" data-mobile-variant="low">A 低来水</button>
+            <button type="button" data-mobile-variant="high">B 高来水</button>
+          </div>
+
+          <div class="water-chain" aria-hidden="true">
+            <span>RIVER</span><i></i><span>DROP</span><i></i><span>WATERFALL</span><i></i><span>POOL</span><i></i><span>FLOODPLAIN</span>
+          </div>
+
+          <div class="live-hud" aria-label="实时运行读数">
+            <div><span>SIM TIME</span><strong id="hud-time">15.00 s</strong></div>
+            <div><span>STEP</span><strong id="hud-step">900 / 1200</strong></div>
+            <div><span>BUDGET ε</span><strong id="hud-budget">—</strong></div>
+            <div><span>DRAW</span><strong id="hud-draw">—</strong></div>
+          </div>
+        </div>
+
+        <div class="contract-strip">
+          <div><span>固定</span><strong id="fixed-contract">地形 · 河道 · 落差 · g · 库存 · Pool 容量 · Floodplain 网格与边界 · 相机</strong></div>
+          <div><span>唯一因子</span><strong id="factor-value">dischargeScale</strong></div>
+          <div><span>T3 溢流契约</span><code id="scenario-hash">—</code></div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="Watershed 实验控制与结果">
+        <div class="panel-heading">
+          <div>
+            <p class="kicker">INTEGRATION PROOF</p>
+            <h2 id="panel-title">上下游因果对照</h2>
+          </div>
+          <span class="phase-badge" id="phase-badge">预览</span>
+        </div>
+
+        <nav class="study-tabs" aria-label="Watershed 研究模式">
+          <a data-study="threshold" href="./">容量阈值 A/B</a>
+          <a data-study="barrier" href="?study=barrier">障碍路径 A/B</a>
+        </nav>
+
+        <p class="panel-intro" id="panel-intro">同步运行 1,200 个固定步（20 秒）。检查 River 扣减、约 1.916 秒在途延迟、Pool 沉积与 1,710 m³ 容量阈值；越过阈值的水必须进入 Floodplain 或从固定边界流出，系统总预算仍需闭合。</p>
+
+        <div class="run-progress" aria-label="实验进度"><span id="run-progress-fill"></span></div>
+        <div class="run-progress-labels"><span>A / B 同步起点</span><span id="progress-label">75%</span></div>
+
+        <div class="sea-cards flow-cards">
+          <article>
+            <div><span class="sea-index">A</span><strong id="case-a-title">低来水</strong></div>
+            <dl>
+              <div><dt>dischargeScale</dt><dd id="case-a-scale">0.50</dd></div>
+              <div><dt>流量 Q</dt><dd id="low-q">—</dd></div>
+            </dl>
+          </article>
+          <article>
+            <div><span class="sea-index sea-index-b">B</span><strong id="case-b-title">高来水</strong></div>
+            <dl>
+              <div><dt>dischargeScale</dt><dd id="case-b-scale">1.00</dd></div>
+              <div><dt>流量 Q</dt><dd id="high-q">—</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="primary-controls">
+          <button type="button" class="primary-button" id="run-ab"><span id="run-button-label">运行固定 A / B</span><span aria-hidden="true">→</span></button>
+          <button type="button" class="icon-button" id="pause-run" aria-label="暂停实验" title="暂停实验">Ⅱ</button>
+          <button type="button" class="icon-button" id="reset-run" aria-label="重置实验" title="重置实验">↺</button>
+        </div>
+
+        <div class="secondary-controls watershed-controls">
+          <button type="button" id="camera-toggle">镜头：全水系</button>
+          <button type="button" id="droplet-toggle" aria-pressed="true">水滴：开</button>
+          <button type="button" id="impact-toggle" aria-pressed="true">撞击层：开</button>
+          <button type="button" id="motion-toggle">运动：自动</button>
+        </div>
+
+        <section class="reading-section" aria-labelledby="reading-title">
+          <div class="subheading"><h3 id="reading-title">当前物理映射</h3><span>SI UNITS</span></div>
+          <div class="reading-grid">
+            <div><span>A 水幕厚度</span><strong id="low-thickness">—</strong></div>
+            <div><span>B 水幕厚度</span><strong id="high-thickness">—</strong></div>
+            <div><span>落水时间</span><strong id="fall-time">—</strong></div>
+            <div><span>撞击速度</span><strong id="impact-speed">—</strong></div>
+            <div><span>A Pool 上升</span><strong id="low-rise">—</strong></div>
+            <div><span>B Pool 上升</span><strong id="high-rise">—</strong></div>
+            <div><span>A River 剩余</span><strong id="low-river-volume">—</strong></div>
+            <div><span>B River 剩余</span><strong id="high-river-volume">—</strong></div>
+            <div><span>A 在途水量</span><strong id="low-airborne">—</strong></div>
+            <div><span>B 在途水量</span><strong id="high-airborne">—</strong></div>
+            <div><span>A 累计溢流</span><strong id="low-overflow">—</strong></div>
+            <div><span>B 累计溢流</span><strong id="high-overflow">—</strong></div>
+            <div><span>A 洪泛蓄水</span><strong id="low-flood-volume">—</strong></div>
+            <div><span>B 洪泛蓄水</span><strong id="high-flood-volume">—</strong></div>
+            <div><span>A 湿润格</span><strong id="low-wet-cells">—</strong></div>
+            <div><span>B 湿润格</span><strong id="high-wet-cells">—</strong></div>
+            <div><span>A 平均横向绕行</span><strong id="low-route-spread">—</strong></div>
+            <div><span>B 平均横向绕行</span><strong id="high-route-spread">—</strong></div>
+            <div><span>A 最远湿润行</span><strong id="low-route-row">—</strong></div>
+            <div><span>B 最远湿润行</span><strong id="high-route-row">—</strong></div>
+          </div>
+        </section>
+
+        <section class="result-section" aria-labelledby="result-title">
+          <div class="subheading"><h3 id="result-title">20 秒固定终点</h3><span id="result-state">模型已计算</span></div>
+          <div class="result-table" role="table" aria-label="Watershed A B 实验结果">
+            <div class="result-row result-head" role="row">
+              <span role="columnheader">指标</span><span role="columnheader">A</span><span role="columnheader">B</span><span role="columnheader">关系</span>
+            </div>
+            <div id="result-rows"></div>
+          </div>
+          <div class="bounded-conclusion pass" id="bounded-conclusion" aria-live="polite">
+            T3 结论：A 未越过 Pool 容量；B 越过容量后，溢流水进入 Floodplain 确定性蓄水格并从固定边界缓慢流出。River、在途、Pool、Floodplain 与全部外部输入/输出的总预算在模型容差内闭合。
+          </div>
+        </section>
+
+        <details class="method-details">
+          <summary>方法、映射关系与真实性边界</summary>
+          <div>
+            <p><strong>出口：</strong>速度由 <code>√(2gh)</code> 得到，水幕厚度由 <code>Q/(w·v)</code> 得到。</p>
+            <p><strong>瀑布：</strong>每个 60 Hz 步产生有限体积水包，经过 1.916 s 解析重力轨迹后沉积；画面水滴只采样这些水包，不决定质量。</p>
+            <p><strong>Pool：</strong>每步使用沉积 − 固定出流更新存量；泡沫、水雾和涟漪读取沉积事件，关闭效果不会改变水量。</p>
+            <p><strong>Floodplain：</strong>Pool 达到 1,710 m³ 后才溢流；12 × 7 网格按固定地势优先级蓄水，并使用固定边界出流。格子颜色和水深直接读取模型存量。</p>
+            <p><strong>障碍路径：</strong>障碍模式把第 2 行中央 8 格设为不可蓄水单元；路由优先级迫使水从两侧通道绕行。A/B 上游水量、溢流和边界完全相同。</p>
+            <p><strong>没有计算：</strong>Navier–Stokes/浅水方程、格间动量传播、空气耦合、岩壁任意碰撞、逐滴 SPH 质量、真实侵蚀、实测参数标定或真实洪水预测。</p>
+          </div>
+        </details>
+      </aside>
+    </main>
+
+    <section class="explain-grid" aria-label="原型目标、意义与下一步">
+      <article><span>01 · GOAL</span><h2>这里在做什么？</h2><p>把 River、Waterfall、有限容量 Pool 和 Floodplain 放回同一水系，验证“来水增加 → 水潭越限 → 下游受水”的完整因果链。</p></article>
+      <article><span>02 · VALUE</span><h2>它的意义是什么？</h2><p>项目不再只比较水的外观，而能表达容量、阈值、溢流、蓄水与边界输出；未来替换更高阶算法时，场景拓扑、单位和预算仍可复用。</p></article>
+      <article><span>03 · NEXT</span><h2>下一阶段做什么？</h2><p>用本轮障碍路径结果判断静态优先路由的边界；随后补充随时间变化的暴雨过程线与闸坝失效输入，再决定是否引入浅水方程和格间动量。</p></article>
+    </section>
+
+    <footer>
+      <p>Watershed Slice v3 · Water Scene Lab · 宏观场景驱动，T3 溢流、障碍路由与局部质量交换可审计。</p>
+      <a href="../">返回技术路线台 ↑</a>
+    </footer>
+
+    <noscript><div class="noscript-state">此页面需要 JavaScript 才能运行实时 Watershed Slice；模型方法与真实性边界仍可在上方文字中阅读。</div></noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

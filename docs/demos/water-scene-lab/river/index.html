@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="River MVP：在同一条弯曲河道中，对比全局固定方向场与样条切线方向场下的水纹和漂浮标记。" />
+    <meta name="theme-color" content="#071914" />
+    <link rel="icon" href="data:," />
+    <title>River MVP｜Water Scene Lab</title>
+    <link rel="stylesheet" href="../ocean/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.addEventListener('error', function (event) {
+        if (!document.body || document.body.dataset.renderState === 'ready') return;
+        document.body.dataset.renderState = 'failed';
+        var reason = document.querySelector('#fallback-reason');
+        if (reason) reason.textContent = event.message || '实时模块加载失败。';
+      });
+    </script>
+  </head>
+  <body data-render-state="loading">
+    <a class="skip-link" href="#experiment">跳到实验控制</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="返回 Water Scene Lab 路线台">
+        <span class="brand-mark" aria-hidden="true">WS</span>
+        <span class="brand-copy">
+          <small>WATER SCENE LAB / 02</small>
+          <strong>River MVP</strong>
+        </span>
+      </a>
+      <div class="top-status">
+        <span class="runtime-dot" aria-hidden="true"></span>
+        <span id="runtime-label">正在建立 WebGL 河道</span>
+        <span class="truth-badge">视觉流向代理</span>
+      </div>
+    </header>
+
+    <main class="lab-layout" id="experiment">
+      <section class="stage-card" aria-labelledby="scene-title">
+        <div class="river-intro-strip">
+          <div>
+            <p class="kicker">CONTROLLED CHANNEL · FLOW MODE</p>
+            <h1 id="scene-title">同一条河，<em>两种流向规则。</em></h1>
+          </div>
+          <p>河道、宽度、标量速度、标记、种子、相机和时间轴全部固定；唯一实验因子是 <code>flowMode</code>。</p>
+        </div>
+
+        <div class="scene-viewport" id="scene-viewport">
+          <canvas id="river-canvas" aria-label="全局固定方向场与样条切线方向场的同步三维河道对比">
+            当前浏览器不能显示实时三维画布，请查看页面中的实验指标与真实性说明。
+          </canvas>
+
+          <div class="loading-state" id="loading-state" role="status">
+            <span class="loading-ring" aria-hidden="true"></span>
+            <p>正在建立固定样条、方向场与漂浮标记…</p>
+          </div>
+
+          <div class="fallback-state" id="fallback-state" role="alert">
+            <p class="kicker">REALTIME FALLBACK</p>
+            <h2>当前设备没有进入实时河道。</h2>
+            <p id="fallback-reason">WebGL2 初始化或着色器编译失败。</p>
+            <p>实验协议、固定指标和真实性边界仍保留；这里不会用预录画面冒充本设备的实时结果。</p>
+            <button type="button" id="retry-renderer">重试实时场景</button>
+          </div>
+
+          <div class="stage-topline" aria-hidden="true">
+            <span>CATMULL-ROM × 8</span>
+            <span>FIXED STEP · 60 HZ</span>
+            <span id="quality-label">QUALITY · —</span>
+          </div>
+
+          <div class="variant-label variant-a">
+            <span>A</span>
+            <div><strong>全局固定方向</strong><small>UNIFORM WORLD</small></div>
+          </div>
+          <div class="variant-label variant-b">
+            <span>B</span>
+            <div><strong>样条切线方向</strong><small>SPLINE TANGENT</small></div>
+          </div>
+          <div class="split-rule" aria-hidden="true"></div>
+
+          <div class="mobile-variant-tabs" aria-label="手机画布流向规则选择">
+            <button type="button" class="active" data-mobile-variant="uniform">A 固定方向</button>
+            <button type="button" data-mobile-variant="guided">B 沿弯道</button>
+          </div>
+
+          <div class="river-orientation" aria-hidden="true">
+            <span>UPSTREAM</span><i></i><span>DOWNSTREAM</span>
+          </div>
+
+          <div class="live-hud" aria-label="实时读数">
+            <div><span>SIM TIME</span><strong id="hud-time">0.00 s</strong></div>
+            <div><span>STEP</span><strong id="hud-step">0 / 1200</strong></div>
+            <div><span>FRAME P50</span><strong id="hud-frame">—</strong></div>
+            <div><span>DRAW</span><strong id="hud-draw">—</strong></div>
+          </div>
+        </div>
+
+        <div class="contract-strip">
+          <div><span>固定</span><strong>河道 · 宽度 · 速度 · 标记 · 种子 · 相机 · 时间轴</strong></div>
+          <div><span>唯一因子</span><strong>flowMode</strong></div>
+          <div><span>契约哈希</span><code id="contract-hash">—</code></div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="实验控制与结果">
+        <div class="panel-heading">
+          <div>
+            <p class="kicker">PROOF MODE</p>
+            <h2>弯道方向一致性实验</h2>
+          </div>
+          <span class="phase-badge" id="phase-badge">准备</span>
+        </div>
+
+        <p class="panel-intro">同步运行 A 与 B 1,200 个固定步。水纹、方向箭头和漂浮标记读取同一规则，比较它们是否贴合河道切线。</p>
+
+        <div class="run-progress" aria-label="实验进度"><span id="run-progress-fill"></span></div>
+        <div class="run-progress-labels"><span>A / B 同步起点</span><span id="progress-label">0%</span></div>
+
+        <div class="sea-cards flow-cards">
+          <article>
+            <div><span class="sea-index">A</span><strong>固定方向</strong></div>
+            <dl>
+              <div><dt>规则</dt><dd>world +Z</dd></div>
+              <div><dt>标量速度</dt><dd id="uniform-speed">—</dd></div>
+            </dl>
+          </article>
+          <article>
+            <div><span class="sea-index sea-index-b">B</span><strong>沿弯道</strong></div>
+            <dl>
+              <div><dt>规则</dt><dd>spline tangent</dd></div>
+              <div><dt>标量速度</dt><dd id="guided-speed">—</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="primary-controls">
+          <button type="button" class="primary-button" id="run-ab"><span id="run-button-label">运行固定 A / B</span><span aria-hidden="true">→</span></button>
+          <button type="button" class="icon-button" id="pause-run" aria-label="暂停实验" title="暂停实验">Ⅱ</button>
+          <button type="button" class="icon-button" id="reset-run" aria-label="重置实验" title="重置实验">↺</button>
+        </div>
+
+        <div class="secondary-controls river-controls">
+          <button type="button" id="camera-toggle">镜头：全河段</button>
+          <button type="button" id="arrow-toggle" aria-pressed="true">方向箭头：开</button>
+          <button type="button" id="trail-toggle" aria-pressed="true">历史轨迹：开</button>
+          <button type="button" id="motion-toggle">运动：自动</button>
+        </div>
+
+        <section class="reading-section" aria-labelledby="reading-title">
+          <div class="subheading"><h3 id="reading-title">当前流向代理</h3><span id="reading-variant">A / B</span></div>
+          <div class="reading-grid">
+            <div><span>A 河道内</span><strong id="live-a-inside">—</strong></div>
+            <div><span>B 河道内</span><strong id="live-b-inside">—</strong></div>
+            <div><span>A 切线误差</span><strong id="live-a-heading">—</strong></div>
+            <div><span>B 切线误差</span><strong id="live-b-heading">—</strong></div>
+          </div>
+        </section>
+
+        <section class="result-section" aria-labelledby="result-title">
+          <div class="subheading"><h3 id="result-title">固定终点结果</h3><span id="result-state">等待运行</span></div>
+          <div class="result-table" role="table" aria-label="River A B 实验结果">
+            <div class="result-row result-head" role="row">
+              <span role="columnheader">指标</span><span role="columnheader">A</span><span role="columnheader">B</span><span role="columnheader">判断</span>
+            </div>
+            <div id="result-rows"></div>
+          </div>
+          <div class="bounded-conclusion" id="bounded-conclusion" aria-live="polite">
+            运行完成后，只判断固定方向场与样条切线场在本弯曲河道中的空间一致性。
+          </div>
+        </section>
+
+        <details class="method-details">
+          <summary>方法、共享输入与真实性边界</summary>
+          <div>
+            <p><strong>河道：</strong>8 个固定控制点构成 Catmull–Rom 中心线，左右岸由同一宽度生成。</p>
+            <p><strong>方向：</strong>A 始终使用世界 +Z，B 查询最近中心线切线；两侧速度模长完全相同。</p>
+            <p><strong>标记：</strong>8 个同起点漂浮标记读取各自方向场；离开河道后保留，不立即重生掩盖误差。</p>
+            <p><strong>没有计算：</strong>真实流速、流量、水深、压力、回流、闸门响应或质量守恒。</p>
+          </div>
+        </details>
+      </aside>
+    </main>
+
+    <section class="river-physics" id="river-physics" aria-labelledby="river-physics-title">
+      <header class="river-physics-header">
+        <div>
+          <p class="kicker">STAGE 02 · SHARED CONTRACT REUSE</p>
+          <h2 id="river-physics-title">原生低密度 box，形成沿流漂移与姿态响应</h2>
+        </div>
+        <p>上方样条河道负责宏观方向；这里把中段切线变换到局部 +X，使用 Particles4All 原生低密度 box。沿流平移不能由重力代替，旋转角来自原库 Shape Matching 姿态矩阵。</p>
+      </header>
+
+      <div class="river-physics-map" aria-label="River 宏观流向到 Particles4All 局部坐标映射">
+        <div><span>RIVER FLOW</span><strong id="river-physics-world-flow">—</strong><small>宏观样条速度代理</small></div>
+        <div><span>MID TANGENT</span><strong id="river-physics-tangent">—</strong><small>River sampleFlow 输入</small></div>
+        <div><span>LOCAL INFLOW</span><strong id="river-physics-solver-flow">—</strong><small>切线旋转到 solver +X</small></div>
+        <div><span>NATIVE BODY</span><strong id="river-physics-body-profile">—</strong><small>原库 shape / density</small></div>
+      </div>
+
+      <div class="river-physics-layout">
+        <div class="river-physics-viewport">
+          <iframe id="river-physics-frame" title="Particles4All River 沿流向障碍近场物理" allow="fullscreen"></iframe>
+          <div class="river-physics-placeholder" id="river-physics-placeholder">
+            <span>WEBGPU LOCAL FLOW LENS</span>
+            <strong>尚未加载共享近场执行器</strong>
+            <p>点击右侧运行后才创建 WebGPU 设备；宏观 River 预览会暂停，避免两个渲染器长期争用 GPU。</p>
+          </div>
+        </div>
+
+        <aside class="river-physics-console" aria-label="River Particles4All 复用控制">
+          <div class="river-physics-heading">
+            <div><span>运行状态</span><strong id="river-physics-status">等待加载</strong></div>
+            <code id="river-physics-contract">—</code>
+          </div>
+          <button type="button" class="primary-button" id="river-physics-run">加载并运行 River 近场契约 →</button>
+          <button type="button" id="river-physics-unload" disabled>卸载近场求解器</button>
+
+          <div class="river-physics-results" aria-live="polite">
+            <div><span>实际注入</span><strong id="river-physics-injected">—</strong></div>
+            <div><span>Solver ticks</span><strong id="river-physics-ticks">—</strong></div>
+            <div><span>沿流向位移</span><strong id="river-physics-body-motion">—</strong></div>
+            <div><span>非有限位置</span><strong id="river-physics-nonfinite">—</strong></div>
+            <div><span>Shape Matching 旋转</span><strong id="river-physics-body-rotation">—</strong></div>
+            <div><span>对象角色</span><strong id="river-physics-body-role">—</strong></div>
+          </div>
+
+          <p id="river-physics-conclusion" class="river-physics-conclusion">这里验证原生低密度 box 的沿流平移与姿态响应，不把它解释为真实木料、河床碰撞、流量或水深。</p>
+          <a id="river-physics-export" download="river-obstacle-near-field.scene.json">导出 River 场景契约 JSON ↓</a>
+          <a id="river-physics-open" href="../../particles4all/engine/" target="_blank" rel="noreferrer">全屏检查 Particles4All 原始运行时 ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="explain-grid" aria-label="原型意义与决策门">
+      <article><span>01 · MACRO</span><h2>River 仍由什么负责？</h2><p>样条河道、岸线、流向查询和远景表现继续由低成本 River Adapter 负责；PBF 不承担整条河的表面与传播。</p></article>
+      <article><span>02 · REUSE</span><h2>这次真正复用了什么？</h2><p>Waterfall 与 River 共用同一契约 Schema、Runtime Adapter 和 Scene Runner；只替换世界驱动、局部坐标帧、发射器和方向 Gate。</p></article>
+      <article><span>03 · LIMIT</span><h2>不能拿它做什么？</h2><p>不能据此推断现实流量、水位或洪峰传播；当前只证明局部沿流向自由液面和刚体响应可以由原库承接。</p></article>
+    </section>
+
+    <footer>
+      <p>River MVP · Water Scene Lab · 场景先于算法，证据先于结论。</p>
+      <a href="../">返回技术路线台 ↑</a>
+    </footer>
+
+    <noscript><div class="noscript-state">此页面需要 JavaScript 才能运行实时 River MVP；实验方法与真实性边界仍可在上方文字中阅读。</div></noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

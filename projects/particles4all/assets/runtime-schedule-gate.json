@@ -1,0 +1,718 @@
+{
+  "runs": [
+    {
+      "schedule": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999,
+        "history": [
+          {
+            "id": "inject-a",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": 8
+          },
+          {
+            "id": "sample-t0",
+            "type": "sample",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "sample-pre-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "inject-b",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 3,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": 8
+          },
+          {
+            "id": "sample-post-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 4,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": null
+          },
+          {
+            "id": "sample-final",
+            "type": "sample",
+            "tick": 12,
+            "order": 5,
+            "simTime": 0.09999999999999999,
+            "particleCount": 28357,
+            "added": null
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28357,
+        "fluidParticleCount": 28016,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "centroid": [
+        0.2820347572057463,
+        0.2106215051898035,
+        0.49981167471461285
+      ],
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true,
+      "scheduledEvents": true
+    },
+    {
+      "schedule": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999,
+        "history": [
+          {
+            "id": "inject-a",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": 8
+          },
+          {
+            "id": "sample-t0",
+            "type": "sample",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "sample-pre-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "inject-b",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 3,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": 8
+          },
+          {
+            "id": "sample-post-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 4,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": null
+          },
+          {
+            "id": "sample-final",
+            "type": "sample",
+            "tick": 12,
+            "order": 5,
+            "simTime": 0.09999999999999999,
+            "particleCount": 28357,
+            "added": null
+          }
+        ]
+      },
+      "final": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28357,
+        "fluidParticleCount": 28016,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      },
+      "nonFinite": 0,
+      "centroid": [
+        0.2820345703309651,
+        0.21062132395282154,
+        0.49981165086350027
+      ],
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true,
+      "scheduledEvents": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "run1.ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999,
+        "history": [
+          {
+            "id": "inject-a",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": 8
+          },
+          {
+            "id": "sample-t0",
+            "type": "sample",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "sample-pre-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "inject-b",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 3,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": 8
+          },
+          {
+            "id": "sample-post-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 4,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": null
+          },
+          {
+            "id": "sample-final",
+            "type": "sample",
+            "tick": 12,
+            "order": 5,
+            "simTime": 0.09999999999999999,
+            "particleCount": 28357,
+            "added": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "run1.endTime",
+      "passed": true,
+      "detail": 0.09999999999999999
+    },
+    {
+      "name": "run1.eventTimes",
+      "passed": true,
+      "detail": [
+        {
+          "id": "inject-a",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": 8
+        },
+        {
+          "id": "sample-t0",
+          "type": "sample",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "sample-pre-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 2,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "inject-b",
+          "type": "injectFluid",
+          "tick": 6,
+          "order": 3,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": 8
+        },
+        {
+          "id": "sample-post-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 4,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": null
+        },
+        {
+          "id": "sample-final",
+          "type": "sample",
+          "tick": 12,
+          "order": 5,
+          "simTime": 0.09999999999999999,
+          "particleCount": 28357,
+          "added": null
+        }
+      ]
+    },
+    {
+      "name": "run1.sameTickOrder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run1.counts",
+      "passed": true,
+      "detail": [
+        {
+          "id": "inject-a",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": 8
+        },
+        {
+          "id": "sample-t0",
+          "type": "sample",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "sample-pre-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 2,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "inject-b",
+          "type": "injectFluid",
+          "tick": 6,
+          "order": 3,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": 8
+        },
+        {
+          "id": "sample-post-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 4,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": null
+        },
+        {
+          "id": "sample-final",
+          "type": "sample",
+          "tick": 12,
+          "order": 5,
+          "simTime": 0.09999999999999999,
+          "particleCount": 28357,
+          "added": null
+        }
+      ]
+    },
+    {
+      "name": "run1.finalCount",
+      "passed": true,
+      "detail": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28357,
+        "fluidParticleCount": 28016,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      }
+    },
+    {
+      "name": "run1.nonFinite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run1.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "run1.support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999,
+        "history": [
+          {
+            "id": "inject-a",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": 8
+          },
+          {
+            "id": "sample-t0",
+            "type": "sample",
+            "tick": 0,
+            "order": 1,
+            "simTime": 0,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "sample-pre-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 2,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28349,
+            "added": null
+          },
+          {
+            "id": "inject-b",
+            "type": "injectFluid",
+            "tick": 6,
+            "order": 3,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": 8
+          },
+          {
+            "id": "sample-post-b",
+            "type": "sample",
+            "tick": 6,
+            "order": 4,
+            "simTime": 0.049999999999999996,
+            "particleCount": 28357,
+            "added": null
+          },
+          {
+            "id": "sample-final",
+            "type": "sample",
+            "tick": 12,
+            "order": 5,
+            "simTime": 0.09999999999999999,
+            "particleCount": 28357,
+            "added": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "run2.endTime",
+      "passed": true,
+      "detail": 0.09999999999999999
+    },
+    {
+      "name": "run2.eventTimes",
+      "passed": true,
+      "detail": [
+        {
+          "id": "inject-a",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": 8
+        },
+        {
+          "id": "sample-t0",
+          "type": "sample",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "sample-pre-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 2,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "inject-b",
+          "type": "injectFluid",
+          "tick": 6,
+          "order": 3,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": 8
+        },
+        {
+          "id": "sample-post-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 4,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": null
+        },
+        {
+          "id": "sample-final",
+          "type": "sample",
+          "tick": 12,
+          "order": 5,
+          "simTime": 0.09999999999999999,
+          "particleCount": 28357,
+          "added": null
+        }
+      ]
+    },
+    {
+      "name": "run2.sameTickOrder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "run2.counts",
+      "passed": true,
+      "detail": [
+        {
+          "id": "inject-a",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": 8
+        },
+        {
+          "id": "sample-t0",
+          "type": "sample",
+          "tick": 0,
+          "order": 1,
+          "simTime": 0,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "sample-pre-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 2,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28349,
+          "added": null
+        },
+        {
+          "id": "inject-b",
+          "type": "injectFluid",
+          "tick": 6,
+          "order": 3,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": 8
+        },
+        {
+          "id": "sample-post-b",
+          "type": "sample",
+          "tick": 6,
+          "order": 4,
+          "simTime": 0.049999999999999996,
+          "particleCount": 28357,
+          "added": null
+        },
+        {
+          "id": "sample-final",
+          "type": "sample",
+          "tick": 12,
+          "order": 5,
+          "simTime": 0.09999999999999999,
+          "particleCount": 28357,
+          "added": null
+        }
+      ]
+    },
+    {
+      "name": "run2.finalCount",
+      "passed": true,
+      "detail": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 28357,
+        "fluidParticleCount": 28016,
+        "rigidParticleCount": 341,
+        "bodyCount": 1,
+        "simTime": 0.09999999999999999,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 3,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      }
+    },
+    {
+      "name": "run2.nonFinite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "run2.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "run2.support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat.finalCount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat.centroid.0",
+      "passed": true,
+      "detail": {
+        "a": 0.2820347572057463,
+        "b": 0.2820345703309651
+      }
+    },
+    {
+      "name": "repeat.centroid.1",
+      "passed": true,
+      "detail": {
+        "a": 0.2106215051898035,
+        "b": 0.21062132395282154
+      }
+    },
+    {
+      "name": "repeat.centroid.2",
+      "passed": true,
+      "detail": {
+        "a": 0.49981167471461285,
+        "b": 0.49981165086350027
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

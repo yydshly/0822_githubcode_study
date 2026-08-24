@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0",
+  "modelSourceSha256": "f66c5b4a73aad83ec275f30a81921fd11d6aa8fad60753514ea01b91f0c02f27",
+  "contractHash": "fnv1a-4a2c196d",
+  "checks": {
+    "selfCheck": true,
+    "fixedProtocol": true,
+    "waveCount": true,
+    "analyticDerivatives": true,
+    "inverseAllValid": true,
+    "inverseRoundTrip": true,
+    "steepnessContract": true,
+    "invalidStateRejected": true,
+    "abPassed": true,
+    "repeatableDigest": true,
+    "commonContract": true,
+    "noNumericalFailures": true
+  },
+  "diagnostics": {
+    "derivativeErrorMax": 8.636635850933772e-11,
+    "inverseParameterErrorMax": 1.7763568394002505e-15,
+    "inverseHeightErrorMax": 1.1102230246251565e-16,
+    "inverseResidualMax": 1.7763568394002505e-15
+  },
+  "ab": {
+    "schemaVersion": "1.0",
+    "modelVersion": "ocean-gerstner-v1",
+    "factor": "seaState",
+    "contractHash": "fnv1a-4a2c196d",
+    "A": {
+      "caseId": "A",
+      "label": "平静海况",
+      "seaState": 0.25,
+      "contractHash": "fnv1a-4a2c196d",
+      "caseConfigHash": "fnv1a-8dcc4aea",
+      "resultDigest": "fnv1a-4c563629",
+      "resolved": {
+        "amplitudeScale": 0.25,
+        "totalSteepness": 0.1291423230090723,
+        "maxVerticalEnvelope": 0.22425,
+        "waveCount": 6
+      },
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "fieldQueryCount": 24000,
+      "metrics": {
+        "heightMean": -0.002750673812586022,
+        "heightStd": 0.08158120310779976,
+        "crestP95": 0.1420430870299138,
+        "slopeP95": 0.09460447100441434,
+        "heaveRms": 0.057862682241133764,
+        "rollRmsDeg": 0.601458535788588,
+        "pitchRmsDeg": 1.737664497624826,
+        "inverseResidualP95": 9.930136612989092e-16,
+        "inverseResidualMax": 7.119291619286993e-15,
+        "minJacobianDet": 0.8925100044060628,
+        "normalLengthErrorMax": 2.220446049250313e-16,
+        "inverseFailCount": 0,
+        "nonFiniteCount": 0,
+        "poseRmsDeg": 1.8388121917636646
+      },
+      "terminal": {
+        "time": 20,
+        "boatHeave": -0.06772082769575058,
+        "boatRollDeg": 0.4962361138482592,
+        "boatPitchDeg": -3.520206716157387,
+        "contactHeights": [
+          -0.17508637564174628,
+          -0.15720846641942446,
+          0.02751908138321399,
+          0.03389244989495446
+        ]
+      },
+      "checks": {
+        "steps": true,
+        "measuredTicks": true,
+        "fieldQueryCount": true,
+        "noNonFinite": true,
+        "inverseSolved": true,
+        "inverseResidual": true,
+        "jacobianMargin": true,
+        "normalsUnit": true,
+        "steepnessSafe": true
+      },
+      "passed": true
+    },
+    "B": {
+      "caseId": "B",
+      "label": "有风涌浪",
+      "seaState": 1,
+      "contractHash": "fnv1a-4a2c196d",
+      "caseConfigHash": "fnv1a-90bb4847",
+      "resultDigest": "fnv1a-a85e5073",
+      "resolved": {
+        "amplitudeScale": 1,
+        "totalSteepness": 0.5165692920362892,
+        "maxVerticalEnvelope": 0.897,
+        "waveCount": 6
+      },
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "fieldQueryCount": 24000,
+      "metrics": {
+        "heightMean": -0.04108496200940157,
+        "heightStd": 0.3245757050363368,
+        "crestP95": 0.5596502319280576,
+        "slopeP95": 0.3837460466670937,
+        "heaveRms": 0.23014881086032363,
+        "rollRmsDeg": 2.3588296460663947,
+        "pitchRmsDeg": 6.818761539906669,
+        "inverseResidualP95": 2.6645352591003757e-15,
+        "inverseResidualMax": 5.904883742358415e-14,
+        "minJacobianDet": 0.586545620058977,
+        "normalLengthErrorMax": 4.440892098500626e-16,
+        "inverseFailCount": 0,
+        "nonFiniteCount": 0,
+        "poseRmsDeg": 7.215232930215912
+      },
+      "terminal": {
+        "time": 20,
+        "boatHeave": -0.3127466672435342,
+        "boatRollDeg": 2.300934786667641,
+        "boatPitchDeg": -13.648593871981262,
+        "contactHeights": [
+          -0.7569410841129822,
+          -0.6455871539557079,
+          0.07519506306323691,
+          0.07634650603131629
+        ]
+      },
+      "checks": {
+        "steps": true,
+        "measuredTicks": true,
+        "fieldQueryCount": true,
+        "noNonFinite": true,
+        "inverseSolved": true,
+        "inverseResidual": true,
+        "jacobianMargin": true,
+        "normalsUnit": true,
+        "steepnessSafe": true
+      },
+      "passed": true
+    },
+    "ratios": {
+      "heightStd": 3.978559921547725,
+      "crestP95": 3.9400033020276246,
+      "slopeP95": 4.056320410577506,
+      "heaveRms": 3.977499865996777,
+      "poseRmsDeg": 3.923855281433362
+    },
+    "checks": {
+      "casesPassed": true,
+      "commonContract": true,
+      "distinctResolvedConfig": true,
+      "heightDifference": true,
+      "crestDifference": true,
+      "slopeDifference": true,
+      "heaveDifference": true,
+      "poseDifference": true
+    },
+    "passed": true,
+    "boundedConclusion": "在 ocean-gerstner-v1 的固定输入与内部单位下，有风涌浪 B 产生了更高的水面变化和船体姿态运动量。"
+  },
+  "passed": true
+}

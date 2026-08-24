@@ -1,0 +1,374 @@
+{
+  "runs": [
+    {
+      "label": "boundary-on",
+      "boundaryEnabled": true,
+      "paramsNoBoundary": false,
+      "originalBox": [
+        1.5,
+        1,
+        1
+      ],
+      "halfD": 0.01,
+      "boundaryBefore": {
+        "count": 20002,
+        "faces": [
+          2601,
+          2601,
+          3876,
+          3876,
+          3876,
+          3876
+        ],
+        "box": [
+          1.5,
+          1,
+          1
+        ]
+      },
+      "injection": {
+        "requested": 16,
+        "added": 16,
+        "before": 1000,
+        "after": 1016,
+        "capacity": 2000,
+        "availableBefore": 1000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999
+      },
+      "maxX": 1.4778972864151,
+      "nonFinite": 0,
+      "resized": {
+        "newBox": [
+          1.2000000000000002,
+          1,
+          1
+        ],
+        "boundaryAfter": {
+          "count": 17202,
+          "faces": [
+            2601,
+            2601,
+            3162,
+            3162,
+            3162,
+            3162
+          ],
+          "box": [
+            1.2000000000000002,
+            1,
+            1
+          ]
+        },
+        "maxAfterX": 1.1823179721832275,
+        "generation": 3
+      },
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    {
+      "label": "boundary-off",
+      "boundaryEnabled": false,
+      "paramsNoBoundary": true,
+      "originalBox": [
+        1.5,
+        1,
+        1
+      ],
+      "halfD": 0.01,
+      "boundaryBefore": {
+        "count": 20002,
+        "faces": [
+          2601,
+          2601,
+          3876,
+          3876,
+          3876,
+          3876
+        ],
+        "box": [
+          1.5,
+          1,
+          1
+        ]
+      },
+      "injection": {
+        "requested": 16,
+        "added": 16,
+        "before": 1000,
+        "after": 1016,
+        "capacity": 2000,
+        "availableBefore": 1000,
+        "clamped": false
+      },
+      "step": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999
+      },
+      "maxX": 1.4900000095367432,
+      "nonFinite": 0,
+      "resized": null,
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "boundary-on.sixFaces",
+      "passed": true,
+      "detail": {
+        "count": 20002,
+        "faces": [
+          2601,
+          2601,
+          3876,
+          3876,
+          3876,
+          3876
+        ],
+        "box": [
+          1.5,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "boundary-on.injected",
+      "passed": true,
+      "detail": {
+        "requested": 16,
+        "added": 16,
+        "before": 1000,
+        "after": 1016,
+        "capacity": 2000,
+        "availableBefore": 1000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "boundary-on.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999
+      }
+    },
+    {
+      "name": "boundary-on.clamped",
+      "passed": true,
+      "detail": {
+        "maxX": 1.4778972864151,
+        "limit": 1.49
+      }
+    },
+    {
+      "name": "boundary-on.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "boundary-on.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "boundary-off.sixFaces",
+      "passed": true,
+      "detail": {
+        "count": 20002,
+        "faces": [
+          2601,
+          2601,
+          3876,
+          3876,
+          3876,
+          3876
+        ],
+        "box": [
+          1.5,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "boundary-off.injected",
+      "passed": true,
+      "detail": {
+        "requested": 16,
+        "added": 16,
+        "before": 1000,
+        "after": 1016,
+        "capacity": 2000,
+        "availableBefore": 1000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "boundary-off.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 12,
+        "actualTicks": 12,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.09999999999999999
+      }
+    },
+    {
+      "name": "boundary-off.clamped",
+      "passed": true,
+      "detail": {
+        "maxX": 1.4900000095367432,
+        "limit": 1.49
+      }
+    },
+    {
+      "name": "boundary-off.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "boundary-off.webgpu",
+      "passed": true,
+      "detail": "intel gen-12lp"
+    },
+    {
+      "name": "boundaryToggle",
+      "passed": true,
+      "detail": {
+        "on": false,
+        "off": true
+      }
+    },
+    {
+      "name": "boundaryAllocationPersists",
+      "passed": true,
+      "detail": {
+        "on": 20002,
+        "off": 20002
+      }
+    },
+    {
+      "name": "offStillClamped",
+      "passed": true,
+      "detail": {
+        "maxX": 1.4900000095367432,
+        "limit": 1.49
+      }
+    },
+    {
+      "name": "resize.wholeShell",
+      "passed": true,
+      "detail": {
+        "newBox": [
+          1.2000000000000002,
+          1,
+          1
+        ],
+        "boundaryAfter": {
+          "count": 17202,
+          "faces": [
+            2601,
+            2601,
+            3162,
+            3162,
+            3162,
+            3162
+          ],
+          "box": [
+            1.2000000000000002,
+            1,
+            1
+          ]
+        },
+        "maxAfterX": 1.1823179721832275,
+        "generation": 3
+      }
+    },
+    {
+      "name": "resize.onlyXDimension",
+      "passed": true,
+      "detail": {
+        "newBox": [
+          1.2000000000000002,
+          1,
+          1
+        ],
+        "boundaryAfter": {
+          "count": 17202,
+          "faces": [
+            2601,
+            2601,
+            3162,
+            3162,
+            3162,
+            3162
+          ],
+          "box": [
+            1.2000000000000002,
+            1,
+            1
+          ]
+        },
+        "maxAfterX": 1.1823179721832275,
+        "generation": 3
+      }
+    },
+    {
+      "name": "resize.clampsAllParticles",
+      "passed": true,
+      "detail": {
+        "newBox": [
+          1.2000000000000002,
+          1,
+          1
+        ],
+        "boundaryAfter": {
+          "count": 17202,
+          "faces": [
+            2601,
+            2601,
+            3162,
+            3162,
+            3162,
+            3162
+          ],
+          "box": [
+            1.2000000000000002,
+            1,
+            1
+          ]
+        },
+        "maxAfterX": 1.1823179721832275,
+        "generation": 3
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

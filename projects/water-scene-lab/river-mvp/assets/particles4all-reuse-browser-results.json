@@ -1,0 +1,2032 @@
+{
+  "protocol": {
+    "baseUrl": "http://127.0.0.1:8107/demos/water-scene-lab/river/",
+    "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  "result": {
+    "bridgeVersion": "particles4all-scene-runner-v1",
+    "sceneContract": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "id": "river-obstacle-near-field",
+      "revision": 2,
+      "hash": "fnv1a-1b6f9b1c"
+    },
+    "mapping": {
+      "worldDriver": "river-spline-flow-vector",
+      "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+      "sampleDistanceWorldUnits": 35.29949085569636,
+      "sampleTangentX": -0.617162205437667,
+      "sampleTangentZ": 0.7868359499789743,
+      "riverWidthWorldUnits": 6.8,
+      "solverVelocity": [
+        2.5,
+        0,
+        0
+      ],
+      "velocityScale": 0.9803921568627452,
+      "solverFrame": "river-tangent-to-solver-positive-x",
+      "crossScaleTruthLevel": "T2 mapped input",
+      "localTruthLevel": "T3 local PBF / rigid coupling"
+    },
+    "environment": {
+      "adapterLabel": "intel gen-12lp",
+      "webgpuContext": true
+    },
+    "initial": {
+      "adapterVersion": 1,
+      "classification": "E1 runtime adapter",
+      "upstreamRuntime": true,
+      "particleCount": 29859,
+      "fluidParticleCount": 28000,
+      "rigidParticleCount": 1859,
+      "bodyCount": 1,
+      "simTime": 0,
+      "solverStepDt": 0.008333333333333333,
+      "generation": 2,
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    "packet": {
+      "count": 480,
+      "config": {
+        "origin": [
+          0.30000000000000004,
+          0.76,
+          0.43
+        ],
+        "counts": [
+          10,
+          6,
+          8
+        ],
+        "spacing": 0.02,
+        "velocity": [
+          2.5,
+          0,
+          0
+        ]
+      }
+    },
+    "bodyProfile": {
+      "id": 1,
+      "shape": "box",
+      "density": 0.35,
+      "size": 0.15,
+      "sceneRole": "drifting-debris-block"
+    },
+    "plan": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "sceneId": "river-obstacle-near-field",
+      "sceneContractHash": "fnv1a-1b6f9b1c",
+      "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+      "reset": true,
+      "ticks": 36,
+      "packets": [
+        {
+          "id": "river-tangent-inflow-packet",
+          "tick": 0,
+          "config": {
+            "origin": [
+              0.30000000000000004,
+              0.76,
+              0.43
+            ],
+            "counts": [
+              10,
+              6,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              2.5,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "interactionRegion": {
+        "center": [
+          0.75,
+          0.5
+        ],
+        "radius": 0.22,
+        "minimumY": 0.15
+      }
+    },
+    "injection": {
+      "requested": 480,
+      "added": 480,
+      "before": 29859,
+      "after": 30339,
+      "capacity": 57859,
+      "availableBefore": 28000,
+      "clamped": false
+    },
+    "step": {
+      "requestedTicks": 36,
+      "actualTicks": 36,
+      "stepDt": 0.008333333333333333,
+      "startTime": 0,
+      "endTime": 0.3000000000000001,
+      "reset": false,
+      "history": [
+        {
+          "id": "river-tangent-inflow-packet",
+          "type": "injectFluid",
+          "tick": 0,
+          "order": 0,
+          "simTime": 0,
+          "result": {
+            "requested": 480,
+            "added": 480,
+            "before": 29859,
+            "after": 30339,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          }
+        }
+      ]
+    },
+    "final": {
+      "adapterVersion": 1,
+      "classification": "E1 runtime adapter",
+      "upstreamRuntime": true,
+      "particleCount": 30339,
+      "fluidParticleCount": 28480,
+      "rigidParticleCount": 1859,
+      "bodyCount": 1,
+      "simTime": 0.3000000000000001,
+      "solverStepDt": 0.008333333333333333,
+      "generation": 2,
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    "localImpactCount": 487,
+    "bodyDisplacement": 0.5301666664464345,
+    "bodyDisplacementVector": [
+      0.24702930450439453,
+      -0.469098299741745,
+      -0.00004589557647705078
+    ],
+    "bodyDisplacementAlongAxis": 0.24702930450439453,
+    "bodyRotationDegrees": 14.265209254666104,
+    "baselineBodyDisplacement": null,
+    "baselineBodyDisplacementAlongAxis": null,
+    "bodyDisplacementDeltaAlongAxis": null,
+    "nonFinite": 0,
+    "stats": {
+      "avgRho": 0.9983613874159498,
+      "maxRho": 1.166015625,
+      "maxSpeed": 4.91015625,
+      "frames": 0,
+      "ke": 277.3740234375
+    },
+    "acceptance": {
+      "injectedParticles": true,
+      "solverTicks": true,
+      "finitePositions": true,
+      "bodyProfile": true,
+      "rigidResponse": true,
+      "directionalRigidResponse": true,
+      "webGpuContext": true,
+      "rigidRotationResponse": true,
+      "passed": true
+    }
+  },
+  "page": {
+    "title": "River MVP｜Water Scene Lab",
+    "state": {
+      "phase": "complete",
+      "result": {
+        "bridgeVersion": "particles4all-scene-runner-v1",
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "hash": "fnv1a-1b6f9b1c"
+        },
+        "mapping": {
+          "worldDriver": "river-spline-flow-vector",
+          "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+          "sampleDistanceWorldUnits": 35.29949085569636,
+          "sampleTangentX": -0.617162205437667,
+          "sampleTangentZ": 0.7868359499789743,
+          "riverWidthWorldUnits": 6.8,
+          "solverVelocity": [
+            2.5,
+            0,
+            0
+          ],
+          "velocityScale": 0.9803921568627452,
+          "solverFrame": "river-tangent-to-solver-positive-x",
+          "crossScaleTruthLevel": "T2 mapped input",
+          "localTruthLevel": "T3 local PBF / rigid coupling"
+        },
+        "environment": {
+          "adapterLabel": "intel gen-12lp",
+          "webgpuContext": true
+        },
+        "initial": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 29859,
+          "fluidParticleCount": 28000,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 2,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "packet": {
+          "count": 480,
+          "config": {
+            "origin": [
+              0.30000000000000004,
+              0.76,
+              0.43
+            ],
+            "counts": [
+              10,
+              6,
+              8
+            ],
+            "spacing": 0.02,
+            "velocity": [
+              2.5,
+              0,
+              0
+            ]
+          }
+        },
+        "bodyProfile": {
+          "id": 1,
+          "shape": "box",
+          "density": 0.35,
+          "size": 0.15,
+          "sceneRole": "drifting-debris-block"
+        },
+        "plan": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "sceneId": "river-obstacle-near-field",
+          "sceneContractHash": "fnv1a-1b6f9b1c",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+          "reset": true,
+          "ticks": 36,
+          "packets": [
+            {
+              "id": "river-tangent-inflow-packet",
+              "tick": 0,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "interactionRegion": {
+            "center": [
+              0.75,
+              0.5
+            ],
+            "radius": 0.22,
+            "minimumY": 0.15
+          }
+        },
+        "injection": {
+          "requested": 480,
+          "added": 480,
+          "before": 29859,
+          "after": 30339,
+          "capacity": 57859,
+          "availableBefore": 28000,
+          "clamped": false
+        },
+        "step": {
+          "requestedTicks": 36,
+          "actualTicks": 36,
+          "stepDt": 0.008333333333333333,
+          "startTime": 0,
+          "endTime": 0.3000000000000001,
+          "reset": false,
+          "history": [
+            {
+              "id": "river-tangent-inflow-packet",
+              "type": "injectFluid",
+              "tick": 0,
+              "order": 0,
+              "simTime": 0,
+              "result": {
+                "requested": 480,
+                "added": 480,
+                "before": 29859,
+                "after": 30339,
+                "capacity": 57859,
+                "availableBefore": 28000,
+                "clamped": false
+              }
+            }
+          ]
+        },
+        "final": {
+          "adapterVersion": 1,
+          "classification": "E1 runtime adapter",
+          "upstreamRuntime": true,
+          "particleCount": 30339,
+          "fluidParticleCount": 28480,
+          "rigidParticleCount": 1859,
+          "bodyCount": 1,
+          "simTime": 0.3000000000000001,
+          "solverStepDt": 0.008333333333333333,
+          "generation": 2,
+          "support": {
+            "deterministicTicks": true,
+            "frozenSampling": true,
+            "directFluidInjection": true,
+            "fluidPacketGenerator": true,
+            "seededReset": false,
+            "scheduledEvents": true,
+            "directBodySampling": true,
+            "rigidBodyEvents": true,
+            "gpuDeviceDisposal": false
+          }
+        },
+        "localImpactCount": 487,
+        "bodyDisplacement": 0.5301666664464345,
+        "bodyDisplacementVector": [
+          0.24702930450439453,
+          -0.469098299741745,
+          -0.00004589557647705078
+        ],
+        "bodyDisplacementAlongAxis": 0.24702930450439453,
+        "bodyRotationDegrees": 14.265209254666104,
+        "baselineBodyDisplacement": null,
+        "baselineBodyDisplacementAlongAxis": null,
+        "bodyDisplacementDeltaAlongAxis": null,
+        "nonFinite": 0,
+        "stats": {
+          "avgRho": 0.9983613874159498,
+          "maxRho": 1.166015625,
+          "maxSpeed": 4.91015625,
+          "frames": 0,
+          "ke": 277.3740234375
+        },
+        "acceptance": {
+          "injectedParticles": true,
+          "solverTicks": true,
+          "finitePositions": true,
+          "bodyProfile": true,
+          "rigidResponse": true,
+          "directionalRigidResponse": true,
+          "webGpuContext": true,
+          "rigidRotationResponse": true,
+          "passed": true
+        }
+      },
+      "error": null
+    },
+    "riverRuntime": {
+      "rendererReady": true,
+      "threeRevision": "185",
+      "modelVersion": "river-flowmap-v1",
+      "qualityTier": "balanced",
+      "firstFrameMs": 1964.8999999761581,
+      "analysisDurationMs": 177.69999998807907,
+      "frameTimeP50": 33.45000000000073,
+      "frameTimeP95": 75.02500000000009,
+      "maxFrameTime": 1270.8000000000002,
+      "longFrameCount": 36,
+      "measuredFrames": 216,
+      "drawCalls": 26,
+      "triangles": 9448,
+      "viewport": [
+        994,
+        805
+      ],
+      "dpr": 0.8,
+      "renderedVariants": 2,
+      "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "gpuVendor": "Google Inc. (Intel)",
+      "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "contextLostCount": 0,
+      "horizontalOverflow": 0,
+      "reducedMotion": false,
+      "fallbackActive": false
+    },
+    "sceneContract": {
+      "schema": "water-scene.particles4all-near-field/v1",
+      "id": "river-obstacle-near-field",
+      "revision": 2,
+      "title": "River Drifting Block / Particles4All Near-field Lens",
+      "sceneKind": "river-obstacle",
+      "targetPlatform": "desktop-browser",
+      "macroLayer": {
+        "role": "world-scale-water-representation",
+        "capability": "RiverFlowAdapter",
+        "modelVersion": "river-flowmap-v1",
+        "contractHash": "fnv1a-4b3a09ae"
+      },
+      "localPhysics": {
+        "provider": "Particles4All",
+        "adapter": "Particles4AllRuntimeAdapter",
+        "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+        "body": {
+          "shape": "box",
+          "density": 0.35,
+          "startY": 0.76,
+          "size": 0.15,
+          "sceneRole": "drifting-debris-block"
+        },
+        "loading": {
+          "mode": "lazy-on-demand",
+          "unloadable": true,
+          "pauseMacroPreviewWhileLoaded": true
+        }
+      },
+      "mapping": {
+        "world": {
+          "driver": "river-spline-flow-vector",
+          "parameters": {
+            "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+            "sampleDistanceWorldUnits": 35.29949085569636,
+            "sampleTangentX": -0.617162205437667,
+            "sampleTangentZ": 0.7868359499789743,
+            "riverWidthWorldUnits": 6.8
+          }
+        },
+        "solver": {
+          "velocityScale": 0.9803921568627452,
+          "frame": "river-tangent-to-solver-positive-x",
+          "units": "Particles4All solver-unit"
+        },
+        "truth": {
+          "crossScale": "T2 mapped input",
+          "local": "T3 local PBF / rigid coupling",
+          "boundary": "The local solver packet demonstrates directional obstacle response; it is not calibrated river discharge or depth."
+        }
+      },
+      "scenario": {
+        "reset": true,
+        "ticks": 36,
+        "emitters": [
+          {
+            "id": "river-tangent-inflow-packet",
+            "type": "fluid-block",
+            "tick": 0,
+            "origin": {
+              "space": "box-normalized",
+              "value": [
+                0.2,
+                0.76,
+                0.43
+              ]
+            },
+            "counts": [
+              10,
+              6,
+              8
+            ],
+            "spacing": {
+              "source": "runtime-spacing",
+              "multiplier": 1
+            },
+            "velocity": [
+              2.5,
+              0,
+              0
+            ]
+          }
+        ],
+        "probe": {
+          "interactionRegion": {
+            "center": {
+              "space": "box-normalized",
+              "value": [
+                0.5,
+                0.5
+              ]
+            },
+            "radius": {
+              "space": "solver-unit",
+              "value": 0.22
+            },
+            "minimumY": {
+              "space": "solver-unit",
+              "value": 0.15
+            }
+          },
+          "sampleFluidPositions": true,
+          "sampleRigidBodies": true
+        }
+      },
+      "acceptance": {
+        "requiredInjectedParticles": 480,
+        "requiredTicks": 36,
+        "maximumNonFinitePositions": 0,
+        "minimumBodyDisplacement": 0.005,
+        "bodyDisplacementAxis": [
+          1,
+          0,
+          0
+        ],
+        "minimumBodyDisplacementAlongAxis": 0.003,
+        "minimumBodyRotationDegrees": 0.5,
+        "requireWebGpuContext": true
+      }
+    },
+    "sceneContractHash": "fnv1a-1b6f9b1c",
+    "statusText": "River 复用证据已完成",
+    "conclusionText": "原生漂浮物 Gate 通过：Particles4All 实际加载 box / density 0.35；沿流位移 0.2470 u，Shape Matching 旋转 14.27°。",
+    "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22river-obstacle-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22River%20Drifting%20Block%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22river-obstacle%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22RiverFlowAdapter%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22river-flowmap-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4b3a09ae%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dbox%3A0.35%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22box%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.35%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22drifting-debris-block%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22river-spline-flow-vector%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22riverFlowSpeedWorldUnitsPerSecond%22%3A%202.55%2C%0A%20%20%20%20%20%20%20%20%22sampleDistanceWorldUnits%22%3A%2035.29949085569636%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentX%22%3A%20-0.617162205437667%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentZ%22%3A%200.7868359499789743%2C%0A%20%20%20%20%20%20%20%20%22riverWidthWorldUnits%22%3A%206.8%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%200.9803921568627452%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22river-tangent-to-solver-positive-x%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20local%20solver%20packet%20demonstrates%20directional%20obstacle%20response%3B%20it%20is%20not%20calibrated%20river%20discharge%20or%20depth.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22river-tangent-inflow-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.2%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.76%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%206%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%202.5%2C%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20480%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+    "placeholderHidden": true,
+    "bridgeVisible": true,
+    "horizontalOverflow": 0
+  },
+  "checks": [
+    {
+      "name": "source.upstreamRuntime",
+      "passed": true,
+      "detail": {
+        "adapterVersion": 1,
+        "classification": "E1 runtime adapter",
+        "upstreamRuntime": true,
+        "particleCount": 29859,
+        "fluidParticleCount": 28000,
+        "rigidParticleCount": 1859,
+        "bodyCount": 1,
+        "simTime": 0,
+        "solverStepDt": 0.008333333333333333,
+        "generation": 2,
+        "support": {
+          "deterministicTicks": true,
+          "frozenSampling": true,
+          "directFluidInjection": true,
+          "fluidPacketGenerator": true,
+          "seededReset": false,
+          "scheduledEvents": true,
+          "directBodySampling": true,
+          "rigidBodyEvents": true,
+          "gpuDeviceDisposal": false
+        }
+      }
+    },
+    {
+      "name": "source.webgpu",
+      "passed": true,
+      "detail": {
+        "adapterLabel": "intel gen-12lp",
+        "webgpuContext": true
+      }
+    },
+    {
+      "name": "reuse.sharedRunner",
+      "passed": true,
+      "detail": "particles4all-scene-runner-v1"
+    },
+    {
+      "name": "contract.riverScene",
+      "passed": true,
+      "detail": {
+        "result": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "hash": "fnv1a-1b6f9b1c"
+        },
+        "page": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "title": "River Drifting Block / Particles4All Near-field Lens",
+          "sceneKind": "river-obstacle",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "RiverFlowAdapter",
+            "modelVersion": "river-flowmap-v1",
+            "contractHash": "fnv1a-4b3a09ae"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "river-spline-flow-vector",
+              "parameters": {
+                "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+                "sampleDistanceWorldUnits": 35.29949085569636,
+                "sampleTangentX": -0.617162205437667,
+                "sampleTangentZ": 0.7868359499789743,
+                "riverWidthWorldUnits": 6.8
+              }
+            },
+            "solver": {
+              "velocityScale": 0.9803921568627452,
+              "frame": "river-tangent-to-solver-positive-x",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The local solver packet demonstrates directional obstacle response; it is not calibrated river discharge or depth."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "emitters": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.2,
+                    0.76,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 480,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              1,
+              0,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        }
+      }
+    },
+    {
+      "name": "contract.serializable",
+      "passed": true,
+      "detail": {
+        "schema": "water-scene.particles4all-near-field/v1",
+        "id": "river-obstacle-near-field",
+        "revision": 2,
+        "title": "River Drifting Block / Particles4All Near-field Lens",
+        "sceneKind": "river-obstacle",
+        "targetPlatform": "desktop-browser",
+        "macroLayer": {
+          "role": "world-scale-water-representation",
+          "capability": "RiverFlowAdapter",
+          "modelVersion": "river-flowmap-v1",
+          "contractHash": "fnv1a-4b3a09ae"
+        },
+        "localPhysics": {
+          "provider": "Particles4All",
+          "adapter": "Particles4AllRuntimeAdapter",
+          "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+          "body": {
+            "shape": "box",
+            "density": 0.35,
+            "startY": 0.76,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "loading": {
+            "mode": "lazy-on-demand",
+            "unloadable": true,
+            "pauseMacroPreviewWhileLoaded": true
+          }
+        },
+        "mapping": {
+          "world": {
+            "driver": "river-spline-flow-vector",
+            "parameters": {
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8
+            }
+          },
+          "solver": {
+            "velocityScale": 0.9803921568627452,
+            "frame": "river-tangent-to-solver-positive-x",
+            "units": "Particles4All solver-unit"
+          },
+          "truth": {
+            "crossScale": "T2 mapped input",
+            "local": "T3 local PBF / rigid coupling",
+            "boundary": "The local solver packet demonstrates directional obstacle response; it is not calibrated river discharge or depth."
+          }
+        },
+        "scenario": {
+          "reset": true,
+          "ticks": 36,
+          "emitters": [
+            {
+              "id": "river-tangent-inflow-packet",
+              "type": "fluid-block",
+              "tick": 0,
+              "origin": {
+                "space": "box-normalized",
+                "value": [
+                  0.2,
+                  0.76,
+                  0.43
+                ]
+              },
+              "counts": [
+                10,
+                6,
+                8
+              ],
+              "spacing": {
+                "source": "runtime-spacing",
+                "multiplier": 1
+              },
+              "velocity": [
+                2.5,
+                0,
+                0
+              ]
+            }
+          ],
+          "probe": {
+            "interactionRegion": {
+              "center": {
+                "space": "box-normalized",
+                "value": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "radius": {
+                "space": "solver-unit",
+                "value": 0.22
+              },
+              "minimumY": {
+                "space": "solver-unit",
+                "value": 0.15
+              }
+            },
+            "sampleFluidPositions": true,
+            "sampleRigidBodies": true
+          }
+        },
+        "acceptance": {
+          "requiredInjectedParticles": 480,
+          "requiredTicks": 36,
+          "maximumNonFinitePositions": 0,
+          "minimumBodyDisplacement": 0.005,
+          "bodyDisplacementAxis": [
+            1,
+            0,
+            0
+          ],
+          "minimumBodyDisplacementAlongAxis": 0.003,
+          "minimumBodyRotationDegrees": 0.5,
+          "requireWebGpuContext": true
+        }
+      }
+    },
+    {
+      "name": "mapping.riverDriver",
+      "passed": true,
+      "detail": {
+        "worldDriver": "river-spline-flow-vector",
+        "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+        "sampleDistanceWorldUnits": 35.29949085569636,
+        "sampleTangentX": -0.617162205437667,
+        "sampleTangentZ": 0.7868359499789743,
+        "riverWidthWorldUnits": 6.8,
+        "solverVelocity": [
+          2.5,
+          0,
+          0
+        ],
+        "velocityScale": 0.9803921568627452,
+        "solverFrame": "river-tangent-to-solver-positive-x",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "mapping.localFrame",
+      "passed": true,
+      "detail": {
+        "worldDriver": "river-spline-flow-vector",
+        "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+        "sampleDistanceWorldUnits": 35.29949085569636,
+        "sampleTangentX": -0.617162205437667,
+        "sampleTangentZ": 0.7868359499789743,
+        "riverWidthWorldUnits": 6.8,
+        "solverVelocity": [
+          2.5,
+          0,
+          0
+        ],
+        "velocityScale": 0.9803921568627452,
+        "solverFrame": "river-tangent-to-solver-positive-x",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "mapping.truthBoundary",
+      "passed": true,
+      "detail": {
+        "worldDriver": "river-spline-flow-vector",
+        "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+        "sampleDistanceWorldUnits": 35.29949085569636,
+        "sampleTangentX": -0.617162205437667,
+        "sampleTangentZ": 0.7868359499789743,
+        "riverWidthWorldUnits": 6.8,
+        "solverVelocity": [
+          2.5,
+          0,
+          0
+        ],
+        "velocityScale": 0.9803921568627452,
+        "solverFrame": "river-tangent-to-solver-positive-x",
+        "crossScaleTruthLevel": "T2 mapped input",
+        "localTruthLevel": "T3 local PBF / rigid coupling"
+      }
+    },
+    {
+      "name": "injection.count",
+      "passed": true,
+      "detail": {
+        "requested": 480,
+        "added": 480,
+        "before": 29859,
+        "after": 30339,
+        "capacity": 57859,
+        "availableBefore": 28000,
+        "clamped": false
+      }
+    },
+    {
+      "name": "solver.ticks",
+      "passed": true,
+      "detail": {
+        "requestedTicks": 36,
+        "actualTicks": 36,
+        "stepDt": 0.008333333333333333,
+        "startTime": 0,
+        "endTime": 0.3000000000000001,
+        "reset": false,
+        "history": [
+          {
+            "id": "river-tangent-inflow-packet",
+            "type": "injectFluid",
+            "tick": 0,
+            "order": 0,
+            "simTime": 0,
+            "result": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "solver.finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "rigid.directionalResponse",
+      "passed": true,
+      "detail": {
+        "vector": [
+          0.24702930450439453,
+          -0.469098299741745,
+          -0.00004589557647705078
+        ],
+        "alongAxis": 0.24702930450439453
+      }
+    },
+    {
+      "name": "rigid.nativeBodyProfile",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "shape": "box",
+        "density": 0.35,
+        "size": 0.15,
+        "sceneRole": "drifting-debris-block"
+      }
+    },
+    {
+      "name": "rigid.rotationResponse",
+      "passed": true,
+      "detail": 14.265209254666104
+    },
+    {
+      "name": "contract.acceptance",
+      "passed": true,
+      "detail": {
+        "injectedParticles": true,
+        "solverTicks": true,
+        "finitePositions": true,
+        "bodyProfile": true,
+        "rigidResponse": true,
+        "directionalRigidResponse": true,
+        "webGpuContext": true,
+        "rigidRotationResponse": true,
+        "passed": true
+      }
+    },
+    {
+      "name": "runtime.phase",
+      "passed": true,
+      "detail": {
+        "phase": "complete",
+        "result": {
+          "bridgeVersion": "particles4all-scene-runner-v1",
+          "sceneContract": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "id": "river-obstacle-near-field",
+            "revision": 2,
+            "hash": "fnv1a-1b6f9b1c"
+          },
+          "mapping": {
+            "worldDriver": "river-spline-flow-vector",
+            "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+            "sampleDistanceWorldUnits": 35.29949085569636,
+            "sampleTangentX": -0.617162205437667,
+            "sampleTangentZ": 0.7868359499789743,
+            "riverWidthWorldUnits": 6.8,
+            "solverVelocity": [
+              2.5,
+              0,
+              0
+            ],
+            "velocityScale": 0.9803921568627452,
+            "solverFrame": "river-tangent-to-solver-positive-x",
+            "crossScaleTruthLevel": "T2 mapped input",
+            "localTruthLevel": "T3 local PBF / rigid coupling"
+          },
+          "environment": {
+            "adapterLabel": "intel gen-12lp",
+            "webgpuContext": true
+          },
+          "initial": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 29859,
+            "fluidParticleCount": 28000,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "packet": {
+            "count": 480,
+            "config": {
+              "origin": [
+                0.30000000000000004,
+                0.76,
+                0.43
+              ],
+              "counts": [
+                10,
+                6,
+                8
+              ],
+              "spacing": 0.02,
+              "velocity": [
+                2.5,
+                0,
+                0
+              ]
+            }
+          },
+          "bodyProfile": {
+            "id": 1,
+            "shape": "box",
+            "density": 0.35,
+            "size": 0.15,
+            "sceneRole": "drifting-debris-block"
+          },
+          "plan": {
+            "schema": "water-scene.particles4all-near-field/v1",
+            "sceneId": "river-obstacle-near-field",
+            "sceneContractHash": "fnv1a-1b6f9b1c",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "reset": true,
+            "ticks": 36,
+            "packets": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "tick": 0,
+                "config": {
+                  "origin": [
+                    0.30000000000000004,
+                    0.76,
+                    0.43
+                  ],
+                  "counts": [
+                    10,
+                    6,
+                    8
+                  ],
+                  "spacing": 0.02,
+                  "velocity": [
+                    2.5,
+                    0,
+                    0
+                  ]
+                }
+              }
+            ],
+            "interactionRegion": {
+              "center": [
+                0.75,
+                0.5
+              ],
+              "radius": 0.22,
+              "minimumY": 0.15
+            }
+          },
+          "injection": {
+            "requested": 480,
+            "added": 480,
+            "before": 29859,
+            "after": 30339,
+            "capacity": 57859,
+            "availableBefore": 28000,
+            "clamped": false
+          },
+          "step": {
+            "requestedTicks": 36,
+            "actualTicks": 36,
+            "stepDt": 0.008333333333333333,
+            "startTime": 0,
+            "endTime": 0.3000000000000001,
+            "reset": false,
+            "history": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "injectFluid",
+                "tick": 0,
+                "order": 0,
+                "simTime": 0,
+                "result": {
+                  "requested": 480,
+                  "added": 480,
+                  "before": 29859,
+                  "after": 30339,
+                  "capacity": 57859,
+                  "availableBefore": 28000,
+                  "clamped": false
+                }
+              }
+            ]
+          },
+          "final": {
+            "adapterVersion": 1,
+            "classification": "E1 runtime adapter",
+            "upstreamRuntime": true,
+            "particleCount": 30339,
+            "fluidParticleCount": 28480,
+            "rigidParticleCount": 1859,
+            "bodyCount": 1,
+            "simTime": 0.3000000000000001,
+            "solverStepDt": 0.008333333333333333,
+            "generation": 2,
+            "support": {
+              "deterministicTicks": true,
+              "frozenSampling": true,
+              "directFluidInjection": true,
+              "fluidPacketGenerator": true,
+              "seededReset": false,
+              "scheduledEvents": true,
+              "directBodySampling": true,
+              "rigidBodyEvents": true,
+              "gpuDeviceDisposal": false
+            }
+          },
+          "localImpactCount": 487,
+          "bodyDisplacement": 0.5301666664464345,
+          "bodyDisplacementVector": [
+            0.24702930450439453,
+            -0.469098299741745,
+            -0.00004589557647705078
+          ],
+          "bodyDisplacementAlongAxis": 0.24702930450439453,
+          "bodyRotationDegrees": 14.265209254666104,
+          "baselineBodyDisplacement": null,
+          "baselineBodyDisplacementAlongAxis": null,
+          "bodyDisplacementDeltaAlongAxis": null,
+          "nonFinite": 0,
+          "stats": {
+            "avgRho": 0.9983613874159498,
+            "maxRho": 1.166015625,
+            "maxSpeed": 4.91015625,
+            "frames": 0,
+            "ke": 277.3740234375
+          },
+          "acceptance": {
+            "injectedParticles": true,
+            "solverTicks": true,
+            "finitePositions": true,
+            "bodyProfile": true,
+            "rigidResponse": true,
+            "directionalRigidResponse": true,
+            "webGpuContext": true,
+            "rigidRotationResponse": true,
+            "passed": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "name": "ui.desktopBridge",
+      "passed": true,
+      "detail": {
+        "title": "River MVP｜Water Scene Lab",
+        "state": {
+          "phase": "complete",
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "river-obstacle-near-field",
+              "revision": 2,
+              "hash": "fnv1a-1b6f9b1c"
+            },
+            "mapping": {
+              "worldDriver": "river-spline-flow-vector",
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8,
+              "solverVelocity": [
+                2.5,
+                0,
+                0
+              ],
+              "velocityScale": 0.9803921568627452,
+              "solverFrame": "river-tangent-to-solver-positive-x",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 480,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 0.35,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "river-obstacle-near-field",
+              "sceneContractHash": "fnv1a-1b6f9b1c",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.30000000000000004,
+                      0.76,
+                      0.43
+                    ],
+                    "counts": [
+                      10,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      2.5,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 480,
+                    "added": 480,
+                    "before": 29859,
+                    "after": 30339,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30339,
+              "fluidParticleCount": 28480,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 487,
+            "bodyDisplacement": 0.5301666664464345,
+            "bodyDisplacementVector": [
+              0.24702930450439453,
+              -0.469098299741745,
+              -0.00004589557647705078
+            ],
+            "bodyDisplacementAlongAxis": 0.24702930450439453,
+            "bodyRotationDegrees": 14.265209254666104,
+            "baselineBodyDisplacement": null,
+            "baselineBodyDisplacementAlongAxis": null,
+            "bodyDisplacementDeltaAlongAxis": null,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9983613874159498,
+              "maxRho": 1.166015625,
+              "maxSpeed": 4.91015625,
+              "frames": 0,
+              "ke": 277.3740234375
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null
+        },
+        "riverRuntime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 1964.8999999761581,
+          "analysisDurationMs": 177.69999998807907,
+          "frameTimeP50": 33.45000000000073,
+          "frameTimeP95": 75.02500000000009,
+          "maxFrameTime": 1270.8000000000002,
+          "longFrameCount": 36,
+          "measuredFrames": 216,
+          "drawCalls": 26,
+          "triangles": 9448,
+          "viewport": [
+            994,
+            805
+          ],
+          "dpr": 0.8,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "title": "River Drifting Block / Particles4All Near-field Lens",
+          "sceneKind": "river-obstacle",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "RiverFlowAdapter",
+            "modelVersion": "river-flowmap-v1",
+            "contractHash": "fnv1a-4b3a09ae"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "river-spline-flow-vector",
+              "parameters": {
+                "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+                "sampleDistanceWorldUnits": 35.29949085569636,
+                "sampleTangentX": -0.617162205437667,
+                "sampleTangentZ": 0.7868359499789743,
+                "riverWidthWorldUnits": 6.8
+              }
+            },
+            "solver": {
+              "velocityScale": 0.9803921568627452,
+              "frame": "river-tangent-to-solver-positive-x",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The local solver packet demonstrates directional obstacle response; it is not calibrated river discharge or depth."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "emitters": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.2,
+                    0.76,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 480,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              1,
+              0,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        },
+        "sceneContractHash": "fnv1a-1b6f9b1c",
+        "statusText": "River 复用证据已完成",
+        "conclusionText": "原生漂浮物 Gate 通过：Particles4All 实际加载 box / density 0.35；沿流位移 0.2470 u，Shape Matching 旋转 14.27°。",
+        "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22river-obstacle-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22River%20Drifting%20Block%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22river-obstacle%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22RiverFlowAdapter%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22river-flowmap-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4b3a09ae%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dbox%3A0.35%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22box%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.35%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22drifting-debris-block%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22river-spline-flow-vector%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22riverFlowSpeedWorldUnitsPerSecond%22%3A%202.55%2C%0A%20%20%20%20%20%20%20%20%22sampleDistanceWorldUnits%22%3A%2035.29949085569636%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentX%22%3A%20-0.617162205437667%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentZ%22%3A%200.7868359499789743%2C%0A%20%20%20%20%20%20%20%20%22riverWidthWorldUnits%22%3A%206.8%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%200.9803921568627452%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22river-tangent-to-solver-positive-x%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20local%20solver%20packet%20demonstrates%20directional%20obstacle%20response%3B%20it%20is%20not%20calibrated%20river%20discharge%20or%20depth.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22river-tangent-inflow-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.2%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.76%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%206%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%202.5%2C%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20480%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+        "placeholderHidden": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "ui.conclusion",
+      "passed": true,
+      "detail": {
+        "title": "River MVP｜Water Scene Lab",
+        "state": {
+          "phase": "complete",
+          "result": {
+            "bridgeVersion": "particles4all-scene-runner-v1",
+            "sceneContract": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "id": "river-obstacle-near-field",
+              "revision": 2,
+              "hash": "fnv1a-1b6f9b1c"
+            },
+            "mapping": {
+              "worldDriver": "river-spline-flow-vector",
+              "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+              "sampleDistanceWorldUnits": 35.29949085569636,
+              "sampleTangentX": -0.617162205437667,
+              "sampleTangentZ": 0.7868359499789743,
+              "riverWidthWorldUnits": 6.8,
+              "solverVelocity": [
+                2.5,
+                0,
+                0
+              ],
+              "velocityScale": 0.9803921568627452,
+              "solverFrame": "river-tangent-to-solver-positive-x",
+              "crossScaleTruthLevel": "T2 mapped input",
+              "localTruthLevel": "T3 local PBF / rigid coupling"
+            },
+            "environment": {
+              "adapterLabel": "intel gen-12lp",
+              "webgpuContext": true
+            },
+            "initial": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 29859,
+              "fluidParticleCount": 28000,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "packet": {
+              "count": 480,
+              "config": {
+                "origin": [
+                  0.30000000000000004,
+                  0.76,
+                  0.43
+                ],
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": 0.02,
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            },
+            "bodyProfile": {
+              "id": 1,
+              "shape": "box",
+              "density": 0.35,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "plan": {
+              "schema": "water-scene.particles4all-near-field/v1",
+              "sceneId": "river-obstacle-near-field",
+              "sceneContractHash": "fnv1a-1b6f9b1c",
+              "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+              "reset": true,
+              "ticks": 36,
+              "packets": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "tick": 0,
+                  "config": {
+                    "origin": [
+                      0.30000000000000004,
+                      0.76,
+                      0.43
+                    ],
+                    "counts": [
+                      10,
+                      6,
+                      8
+                    ],
+                    "spacing": 0.02,
+                    "velocity": [
+                      2.5,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ],
+              "interactionRegion": {
+                "center": [
+                  0.75,
+                  0.5
+                ],
+                "radius": 0.22,
+                "minimumY": 0.15
+              }
+            },
+            "injection": {
+              "requested": 480,
+              "added": 480,
+              "before": 29859,
+              "after": 30339,
+              "capacity": 57859,
+              "availableBefore": 28000,
+              "clamped": false
+            },
+            "step": {
+              "requestedTicks": 36,
+              "actualTicks": 36,
+              "stepDt": 0.008333333333333333,
+              "startTime": 0,
+              "endTime": 0.3000000000000001,
+              "reset": false,
+              "history": [
+                {
+                  "id": "river-tangent-inflow-packet",
+                  "type": "injectFluid",
+                  "tick": 0,
+                  "order": 0,
+                  "simTime": 0,
+                  "result": {
+                    "requested": 480,
+                    "added": 480,
+                    "before": 29859,
+                    "after": 30339,
+                    "capacity": 57859,
+                    "availableBefore": 28000,
+                    "clamped": false
+                  }
+                }
+              ]
+            },
+            "final": {
+              "adapterVersion": 1,
+              "classification": "E1 runtime adapter",
+              "upstreamRuntime": true,
+              "particleCount": 30339,
+              "fluidParticleCount": 28480,
+              "rigidParticleCount": 1859,
+              "bodyCount": 1,
+              "simTime": 0.3000000000000001,
+              "solverStepDt": 0.008333333333333333,
+              "generation": 2,
+              "support": {
+                "deterministicTicks": true,
+                "frozenSampling": true,
+                "directFluidInjection": true,
+                "fluidPacketGenerator": true,
+                "seededReset": false,
+                "scheduledEvents": true,
+                "directBodySampling": true,
+                "rigidBodyEvents": true,
+                "gpuDeviceDisposal": false
+              }
+            },
+            "localImpactCount": 487,
+            "bodyDisplacement": 0.5301666664464345,
+            "bodyDisplacementVector": [
+              0.24702930450439453,
+              -0.469098299741745,
+              -0.00004589557647705078
+            ],
+            "bodyDisplacementAlongAxis": 0.24702930450439453,
+            "bodyRotationDegrees": 14.265209254666104,
+            "baselineBodyDisplacement": null,
+            "baselineBodyDisplacementAlongAxis": null,
+            "bodyDisplacementDeltaAlongAxis": null,
+            "nonFinite": 0,
+            "stats": {
+              "avgRho": 0.9983613874159498,
+              "maxRho": 1.166015625,
+              "maxSpeed": 4.91015625,
+              "frames": 0,
+              "ke": 277.3740234375
+            },
+            "acceptance": {
+              "injectedParticles": true,
+              "solverTicks": true,
+              "finitePositions": true,
+              "bodyProfile": true,
+              "rigidResponse": true,
+              "directionalRigidResponse": true,
+              "webGpuContext": true,
+              "rigidRotationResponse": true,
+              "passed": true
+            }
+          },
+          "error": null
+        },
+        "riverRuntime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "river-flowmap-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 1964.8999999761581,
+          "analysisDurationMs": 177.69999998807907,
+          "frameTimeP50": 33.45000000000073,
+          "frameTimeP95": 75.02500000000009,
+          "maxFrameTime": 1270.8000000000002,
+          "longFrameCount": 36,
+          "measuredFrames": 216,
+          "drawCalls": 26,
+          "triangles": 9448,
+          "viewport": [
+            994,
+            805
+          ],
+          "dpr": 0.8,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "sceneContract": {
+          "schema": "water-scene.particles4all-near-field/v1",
+          "id": "river-obstacle-near-field",
+          "revision": 2,
+          "title": "River Drifting Block / Particles4All Near-field Lens",
+          "sceneKind": "river-obstacle",
+          "targetPlatform": "desktop-browser",
+          "macroLayer": {
+            "role": "world-scale-water-representation",
+            "capability": "RiverFlowAdapter",
+            "modelVersion": "river-flowmap-v1",
+            "contractHash": "fnv1a-4b3a09ae"
+          },
+          "localPhysics": {
+            "provider": "Particles4All",
+            "adapter": "Particles4AllRuntimeAdapter",
+            "engineQuery": "preset=small&view=particles&particles=28000&body=box:0.35:0.76&bodysize=0.15&timing=1",
+            "body": {
+              "shape": "box",
+              "density": 0.35,
+              "startY": 0.76,
+              "size": 0.15,
+              "sceneRole": "drifting-debris-block"
+            },
+            "loading": {
+              "mode": "lazy-on-demand",
+              "unloadable": true,
+              "pauseMacroPreviewWhileLoaded": true
+            }
+          },
+          "mapping": {
+            "world": {
+              "driver": "river-spline-flow-vector",
+              "parameters": {
+                "riverFlowSpeedWorldUnitsPerSecond": 2.55,
+                "sampleDistanceWorldUnits": 35.29949085569636,
+                "sampleTangentX": -0.617162205437667,
+                "sampleTangentZ": 0.7868359499789743,
+                "riverWidthWorldUnits": 6.8
+              }
+            },
+            "solver": {
+              "velocityScale": 0.9803921568627452,
+              "frame": "river-tangent-to-solver-positive-x",
+              "units": "Particles4All solver-unit"
+            },
+            "truth": {
+              "crossScale": "T2 mapped input",
+              "local": "T3 local PBF / rigid coupling",
+              "boundary": "The local solver packet demonstrates directional obstacle response; it is not calibrated river discharge or depth."
+            }
+          },
+          "scenario": {
+            "reset": true,
+            "ticks": 36,
+            "emitters": [
+              {
+                "id": "river-tangent-inflow-packet",
+                "type": "fluid-block",
+                "tick": 0,
+                "origin": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.2,
+                    0.76,
+                    0.43
+                  ]
+                },
+                "counts": [
+                  10,
+                  6,
+                  8
+                ],
+                "spacing": {
+                  "source": "runtime-spacing",
+                  "multiplier": 1
+                },
+                "velocity": [
+                  2.5,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "probe": {
+              "interactionRegion": {
+                "center": {
+                  "space": "box-normalized",
+                  "value": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                "radius": {
+                  "space": "solver-unit",
+                  "value": 0.22
+                },
+                "minimumY": {
+                  "space": "solver-unit",
+                  "value": 0.15
+                }
+              },
+              "sampleFluidPositions": true,
+              "sampleRigidBodies": true
+            }
+          },
+          "acceptance": {
+            "requiredInjectedParticles": 480,
+            "requiredTicks": 36,
+            "maximumNonFinitePositions": 0,
+            "minimumBodyDisplacement": 0.005,
+            "bodyDisplacementAxis": [
+              1,
+              0,
+              0
+            ],
+            "minimumBodyDisplacementAlongAxis": 0.003,
+            "minimumBodyRotationDegrees": 0.5,
+            "requireWebGpuContext": true
+          }
+        },
+        "sceneContractHash": "fnv1a-1b6f9b1c",
+        "statusText": "River 复用证据已完成",
+        "conclusionText": "原生漂浮物 Gate 通过：Particles4All 实际加载 box / density 0.35；沿流位移 0.2470 u，Shape Matching 旋转 14.27°。",
+        "exportHref": "data:application/json;charset=utf-8,%7B%0A%20%20%22schema%22%3A%20%22water-scene.particles4all-near-field%2Fv1%22%2C%0A%20%20%22id%22%3A%20%22river-obstacle-near-field%22%2C%0A%20%20%22revision%22%3A%202%2C%0A%20%20%22title%22%3A%20%22River%20Drifting%20Block%20%2F%20Particles4All%20Near-field%20Lens%22%2C%0A%20%20%22sceneKind%22%3A%20%22river-obstacle%22%2C%0A%20%20%22targetPlatform%22%3A%20%22desktop-browser%22%2C%0A%20%20%22macroLayer%22%3A%20%7B%0A%20%20%20%20%22role%22%3A%20%22world-scale-water-representation%22%2C%0A%20%20%20%20%22capability%22%3A%20%22RiverFlowAdapter%22%2C%0A%20%20%20%20%22modelVersion%22%3A%20%22river-flowmap-v1%22%2C%0A%20%20%20%20%22contractHash%22%3A%20%22fnv1a-4b3a09ae%22%0A%20%20%7D%2C%0A%20%20%22localPhysics%22%3A%20%7B%0A%20%20%20%20%22provider%22%3A%20%22Particles4All%22%2C%0A%20%20%20%20%22adapter%22%3A%20%22Particles4AllRuntimeAdapter%22%2C%0A%20%20%20%20%22engineQuery%22%3A%20%22preset%3Dsmall%26view%3Dparticles%26particles%3D28000%26body%3Dbox%3A0.35%3A0.76%26bodysize%3D0.15%26timing%3D1%22%2C%0A%20%20%20%20%22body%22%3A%20%7B%0A%20%20%20%20%20%20%22shape%22%3A%20%22box%22%2C%0A%20%20%20%20%20%20%22density%22%3A%200.35%2C%0A%20%20%20%20%20%20%22startY%22%3A%200.76%2C%0A%20%20%20%20%20%20%22size%22%3A%200.15%2C%0A%20%20%20%20%20%20%22sceneRole%22%3A%20%22drifting-debris-block%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22loading%22%3A%20%7B%0A%20%20%20%20%20%20%22mode%22%3A%20%22lazy-on-demand%22%2C%0A%20%20%20%20%20%20%22unloadable%22%3A%20true%2C%0A%20%20%20%20%20%20%22pauseMacroPreviewWhileLoaded%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22mapping%22%3A%20%7B%0A%20%20%20%20%22world%22%3A%20%7B%0A%20%20%20%20%20%20%22driver%22%3A%20%22river-spline-flow-vector%22%2C%0A%20%20%20%20%20%20%22parameters%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22riverFlowSpeedWorldUnitsPerSecond%22%3A%202.55%2C%0A%20%20%20%20%20%20%20%20%22sampleDistanceWorldUnits%22%3A%2035.29949085569636%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentX%22%3A%20-0.617162205437667%2C%0A%20%20%20%20%20%20%20%20%22sampleTangentZ%22%3A%200.7868359499789743%2C%0A%20%20%20%20%20%20%20%20%22riverWidthWorldUnits%22%3A%206.8%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22solver%22%3A%20%7B%0A%20%20%20%20%20%20%22velocityScale%22%3A%200.9803921568627452%2C%0A%20%20%20%20%20%20%22frame%22%3A%20%22river-tangent-to-solver-positive-x%22%2C%0A%20%20%20%20%20%20%22units%22%3A%20%22Particles4All%20solver-unit%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22truth%22%3A%20%7B%0A%20%20%20%20%20%20%22crossScale%22%3A%20%22T2%20mapped%20input%22%2C%0A%20%20%20%20%20%20%22local%22%3A%20%22T3%20local%20PBF%20%2F%20rigid%20coupling%22%2C%0A%20%20%20%20%20%20%22boundary%22%3A%20%22The%20local%20solver%20packet%20demonstrates%20directional%20obstacle%20response%3B%20it%20is%20not%20calibrated%20river%20discharge%20or%20depth.%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22scenario%22%3A%20%7B%0A%20%20%20%20%22reset%22%3A%20true%2C%0A%20%20%20%20%22ticks%22%3A%2036%2C%0A%20%20%20%20%22emitters%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22id%22%3A%20%22river-tangent-inflow-packet%22%2C%0A%20%20%20%20%20%20%20%20%22type%22%3A%20%22fluid-block%22%2C%0A%20%20%20%20%20%20%20%20%22tick%22%3A%200%2C%0A%20%20%20%20%20%20%20%20%22origin%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.2%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.76%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.43%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22counts%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%2010%2C%0A%20%20%20%20%20%20%20%20%20%206%2C%0A%20%20%20%20%20%20%20%20%20%208%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22spacing%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22source%22%3A%20%22runtime-spacing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22multiplier%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22velocity%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%202.5%2C%0A%20%20%20%20%20%20%20%20%20%200%2C%0A%20%20%20%20%20%20%20%20%20%200%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22probe%22%3A%20%7B%0A%20%20%20%20%20%20%22interactionRegion%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22center%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22box-normalized%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%0A%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22radius%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%22minimumY%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22space%22%3A%20%22solver-unit%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22value%22%3A%200.15%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22sampleFluidPositions%22%3A%20true%2C%0A%20%20%20%20%20%20%22sampleRigidBodies%22%3A%20true%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22acceptance%22%3A%20%7B%0A%20%20%20%20%22requiredInjectedParticles%22%3A%20480%2C%0A%20%20%20%20%22requiredTicks%22%3A%2036%2C%0A%20%20%20%20%22maximumNonFinitePositions%22%3A%200%2C%0A%20%20%20%20%22minimumBodyDisplacement%22%3A%200.005%2C%0A%20%20%20%20%22bodyDisplacementAxis%22%3A%20%5B%0A%20%20%20%20%20%201%2C%0A%20%20%20%20%20%200%2C%0A%20%20%20%20%20%200%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22minimumBodyDisplacementAlongAxis%22%3A%200.003%2C%0A%20%20%20%20%22minimumBodyRotationDegrees%22%3A%200.5%2C%0A%20%20%20%20%22requireWebGpuContext%22%3A%20true%0A%20%20%7D%0A%7D%0A",
+        "placeholderHidden": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": 0
+      }
+    },
+    {
+      "name": "consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pageErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "passed": true
+}

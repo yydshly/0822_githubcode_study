@@ -1,0 +1,96 @@
+{
+  "programId": "particles4all-research-extension",
+  "version": 2,
+  "updated": "2026-08-25",
+  "programStatus": "archived",
+  "archiveReason": "阶段研究、受控扩展、性能边界与长期价值判断均已完成；等待明确局部液体—刚体使用场景后再启动。",
+  "reopenPolicy": "先定义场景问题、必须能力、验收画面和目标设备性能预算，再从源库能力做单变量验证。",
+  "operatingMode": "plan-driven",
+  "macroGoal": "研究并扩展 Particles4All，判断其能否成为可复用的浏览器局部液体与刚体 WebGPU 运行时。",
+  "activeModule": null,
+  "activeWorkPackage": null,
+  "activeGate": null,
+  "forbiddenTracks": [
+    "standalone-ocean",
+    "standalone-river",
+    "standalone-watershed",
+    "standalone-flood",
+    "independent-fluid-solver"
+  ],
+  "modules": [
+    {
+      "id": "M0",
+      "name": "研究治理与范围",
+      "status": "completed",
+      "workPackages": [
+        { "id": "M0-WP1", "name": "固定范围、分类和停止规则", "status": "completed", "dependsOn": [] }
+      ]
+    },
+    {
+      "id": "M1",
+      "name": "原库能力与原理",
+      "status": "completed-baseline",
+      "workPackages": [
+        { "id": "M1-WP1", "name": "源码能力地图", "status": "completed", "dependsOn": ["M0-WP1"] },
+        { "id": "M1-WP2", "name": "原库运行与受控 A/B", "status": "completed", "dependsOn": ["M1-WP1"] }
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "可控运行与证据基础设施",
+      "status": "completed",
+      "workPackages": [
+        { "id": "M2-WP1", "name": "Runtime Adapter v1", "status": "completed", "dependsOn": ["M1-WP2"] },
+        { "id": "M2-WP2", "name": "硬件 WebGPU 等价 Gate", "status": "completed", "dependsOn": ["M2-WP1"] }
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "输入、事件与交互扩展",
+      "status": "completed",
+      "workPackages": [
+        { "id": "M3-WP1", "name": "受控 injectFluid API", "status": "completed", "dependsOn": ["M2-WP2"] },
+        { "id": "M3-WP2", "name": "整数 tick 事件队列", "status": "completed", "dependsOn": ["M3-WP1"] },
+        { "id": "M3-WP3", "name": "可序列化流体包生成器", "status": "completed", "dependsOn": ["M3-WP1"] },
+        { "id": "M3-WP4", "name": "刚体初态与交互事件", "status": "completed", "dependsOn": ["M3-WP2", "M3-WP3"] }
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "边界、碰撞与场景构造扩展",
+      "status": "conditional",
+      "workPackages": [
+        { "id": "M4-WP1", "name": "局部边界缺口审计", "status": "completed", "dependsOn": ["M5-S1"] },
+        { "id": "M4-WP2", "name": "复杂碰撞体可行性", "status": "cancelled", "dependsOn": ["M4-WP1"] }
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "场景验证矩阵",
+      "status": "completed",
+      "workPackages": [
+        { "id": "M5-S1", "name": "落水池局部冲击", "status": "completed", "dependsOn": ["M3-WP4"] },
+        { "id": "M5-S2", "name": "闸门与喷流", "status": "completed", "dependsOn": ["M5-S1"] },
+        { "id": "M5-S3", "name": "容器倾倒与溢流", "status": "completed", "dependsOn": ["M5-S2"] }
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "工程化与长期价值",
+      "status": "completed",
+      "workPackages": [
+        { "id": "M6-WP1", "name": "性能与兼容性矩阵", "status": "completed", "dependsOn": ["M5-S1"] },
+        { "id": "M6-WP2", "name": "组件化与上游贡献评估", "status": "completed", "dependsOn": ["M5-S2", "M6-WP1"] },
+        { "id": "M6-WP3", "name": "最终继续、包装、贡献或停止决策", "status": "completed", "dependsOn": ["M6-WP2"] }
+      ]
+    }
+  ],
+  "gates": [
+    { "id": "G1", "name": "原库真实性", "status": "passed" },
+    { "id": "G2", "name": "运行控制等价", "status": "passed" },
+    { "id": "G3", "name": "受控输入", "status": "passed" },
+    { "id": "G4", "name": "局部交互", "status": "passed" },
+    { "id": "G5", "name": "模块复用", "status": "passed" },
+    { "id": "G6", "name": "长期价值", "status": "passed" }
+  ]
+}

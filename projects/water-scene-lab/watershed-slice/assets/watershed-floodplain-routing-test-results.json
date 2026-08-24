@@ -1,0 +1,60 @@
+{
+  "createdAt": "2026-08-24T10:01:53.172Z",
+  "modelVersion": "mountain-watershed-overflow-v2",
+  "modelSha256": "2873af443bf297f0b609017635217d015af2594ef10fa237c84a74d5d05075dc",
+  "overflowContractHash": "fnv1a-8897a3a6",
+  "checks": {
+    "selfCheck": true,
+    "version": true,
+    "contractHashStable": true,
+    "fixedDuration": true,
+    "onlyRoutingModeDiffers": true,
+    "sameUpstreamInventory": true,
+    "sameAirborneVolume": true,
+    "sameDepositedVolume": true,
+    "samePoolState": true,
+    "sameOverflowInput": true,
+    "sameFloodplainStorage": true,
+    "sameBoundaryOutput": true,
+    "sameOverflowArrival": true,
+    "eightBarrierCells": true,
+    "blockedCellsStayDry": true,
+    "openCellsHaveNoBarriers": true,
+    "routeSignatureChanges": true,
+    "detourMovesWaterSideways": true,
+    "detourReachesFartherRow": true,
+    "detourChangesDownstreamReach": true,
+    "storageRepresented": true,
+    "cellDepthsBounded": true,
+    "globalBudgetsClosed": true,
+    "stepBudgetsClosed": true,
+    "deterministicReplay": true,
+    "invalidRoutingModeRejected": true
+  },
+  "diagnostics": {
+    "shared": {
+      "poolOverflowM3": 28.49999999981037,
+      "floodplainVolumeM3": 26.46249999981046,
+      "floodplainOutflowM3": 2.037499999999996,
+      "firstOverflowTick": 712
+    },
+    "open": {
+      "routingMode": "open-path",
+      "wetCellCount": 24,
+      "downstreamWetCellCount": 4,
+      "meanWetAbsXM": 5.599999999999999,
+      "maximumWetRow": 2,
+      "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-14-15-16-17-18-19-20-21-28-29-30-31"
+    },
+    "barrier": {
+      "routingMode": "barrier-detour",
+      "blockedCellCount": 8,
+      "wetCellCount": 25,
+      "downstreamWetCellCount": 9,
+      "meanWetAbsXM": 8.88,
+      "maximumWetRow": 3,
+      "wetRouteSignature": "0-1-2-3-4-5-6-7-8-9-10-11-12-13-22-23-24-25-26-27-32-33-34-35-37"
+    }
+  },
+  "passed": true
+}

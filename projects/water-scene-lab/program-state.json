@@ -1,0 +1,109 @@
+{
+  "programId": "water-scene-platform-desktop",
+  "version": 16,
+  "updated": "2026-08-25",
+  "programStatus": "archived",
+  "archiveReason": "场景探索、源库接入证据与边界判断已完成；停止继续扩张宏观水场景。",
+  "reopenPolicy": "仅由明确使用场景触发；先定义局部液体—刚体必须能力、验收画面与性能预算。",
+  "operatingMode": "macro-goal-driven",
+  "targetPlatform": "desktop-browser",
+  "macroGoal": "以 Particles4All 为近场液体—刚体物理核心，建立可组合、可验证、可横向复用的桌面水体场景技术基座。",
+  "activeStage": null,
+  "activeWorkPackage": null,
+  "activeGate": null,
+  "heldTracks": [
+    "mobile-browser",
+    "temporal-flood-hydrograph",
+    "independent-fluid-solver",
+    "generic-scene-editor",
+    "sandbox-cross-device-gate"
+  ],
+  "stages": [
+    { "id": "S0", "name": "能力勘探", "status": "completed" },
+    { "id": "S1", "name": "宏观目标与连接基线", "status": "completed" },
+    { "id": "S2", "name": "Watershed T2 映射", "status": "completed" },
+    { "id": "S3", "name": "局部质量传递", "status": "completed" },
+    { "id": "S4", "name": "Pool 沉积与状态表现", "status": "completed" },
+    { "id": "S5", "name": "Floodplain 历史代理", "status": "held" },
+    {
+      "id": "S6",
+      "name": "Particles4All 场景接入与横向复用",
+      "status": "completed",
+      "workPackages": [
+        { "id": "S6-WP1", "name": "Waterfall Particles4All 近场物理镜头", "status": "completed", "dependsOn": [] },
+        { "id": "S6-WP2", "name": "Waterfall 可序列化场景契约", "status": "completed", "dependsOn": ["S6-WP1"] },
+        { "id": "S6-WP3", "name": "River 近场交互横向复用", "status": "completed", "dependsOn": ["S6-WP2"] },
+        { "id": "S6-WP4", "name": "Coastal 近场交互横向复用", "status": "completed", "dependsOn": ["S6-WP3"] }
+      ]
+    },
+    {
+      "id": "S7",
+      "name": "跨场景能力评价与路线决策",
+      "status": "completed",
+      "workPackages": [
+        { "id": "S7-WP1", "name": "Waterfall / River / Ocean 复用矩阵与下一阶段决策", "status": "completed", "dependsOn": ["S6-WP4"] }
+      ]
+    },
+    {
+      "id": "S8",
+      "name": "Particles4All 原生刚体场景化",
+      "status": "completed",
+      "workPackages": [
+        { "id": "S8-WP1", "name": "Native Body Scene Contract", "status": "completed", "dependsOn": ["S7-WP1"] },
+        { "id": "S8-WP2", "name": "Waterfall 高密度原生对象响应", "status": "completed", "dependsOn": ["S8-WP1"] },
+        { "id": "S8-WP3", "name": "River 原生漂浮物响应", "status": "completed", "dependsOn": ["S8-WP2"] },
+        { "id": "S8-WP4", "name": "Ocean 原生浮环响应", "status": "completed", "dependsOn": ["S8-WP3"] },
+        { "id": "S8-WP5", "name": "被选对象场景跨设备复核", "status": "completed", "dependsOn": ["S8-WP4"] }
+      ]
+    },
+    {
+      "id": "S9",
+      "name": "场景价值目标与下一轮能力投资决策",
+      "status": "completed",
+      "workPackages": [
+        { "id": "S9-WP1", "name": "基于三场景证据定制下一宏观目标与能力模块", "status": "completed", "dependsOn": ["S8-WP5"] }
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "Interactive Water Sandbox 固定预设宿主",
+      "status": "held",
+      "workPackages": [
+        { "id": "S10-WP1", "name": "宿主页面壳与三预设导航", "status": "completed", "dependsOn": ["S9-WP1"] },
+        { "id": "S10-WP2", "name": "单运行槽与已有场景契约加载", "status": "completed", "dependsOn": ["S10-WP1"] },
+        { "id": "S10-WP3", "name": "证据引导、重置与卸载生命周期", "status": "completed", "dependsOn": ["S10-WP2"] },
+        { "id": "S10-WP4", "name": "桌面跨浏览器与跨 GPU Gate", "status": "held", "dependsOn": ["S10-WP3"] }
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "Particles4All 可观测场景效果研究",
+      "status": "completed-bounded",
+      "workPackages": [
+        { "id": "S11-WP1", "name": "Waterfall 单次注入与分时连续落水 A/B", "status": "completed", "dependsOn": ["S10-WP3"] },
+        { "id": "S11-WP2", "name": "Waterfall 原库粒子与表面显示路径 A/B", "status": "completed", "dependsOn": ["S11-WP1"] },
+        { "id": "S11-WP3", "name": "River 持续流向与漂浮物可见响应", "status": "cancelled-by-archive", "dependsOn": ["S11-WP2"] },
+        { "id": "S11-WP4", "name": "Ocean 局部上举与浮环可见响应", "status": "cancelled-by-archive", "dependsOn": ["S11-WP3"] }
+      ]
+    }
+  ],
+  "gates": [
+    { "id": "G0", "name": "宏观目标与桌面范围", "status": "passed" },
+    { "id": "G6", "name": "Waterfall 原库近场接入", "status": "passed" },
+    { "id": "G7", "name": "场景契约与复用准备", "status": "passed" },
+    { "id": "G8", "name": "River 第二场景横向复用", "status": "passed" },
+    { "id": "G9", "name": "Coastal 第三场景横向复用", "status": "passed" },
+    { "id": "G10", "name": "三场景价值与扩展路线决策", "status": "passed" },
+    { "id": "G11", "name": "Waterfall 场景对象差异化", "status": "passed" },
+    { "id": "G12", "name": "River 场景对象差异化", "status": "passed" },
+    { "id": "G13", "name": "Ocean 场景对象差异化", "status": "passed" },
+    { "id": "G14", "name": "原生对象场景跨设备复核", "status": "passed" },
+    { "id": "G15", "name": "下一目标必须由场景价值与原库能力共同驱动", "status": "passed" },
+    { "id": "G16", "name": "固定预设宿主壳与单 WebGPU 运行槽", "status": "passed" },
+    { "id": "G17", "name": "单 Runtime 生命周期与已有场景契约执行", "status": "passed" },
+    { "id": "G18", "name": "证据引导、可控重跑与错误恢复", "status": "passed" },
+    { "id": "G19", "name": "Sandbox 桌面跨浏览器与跨 GPU 稳定性", "status": "held" },
+    { "id": "G20", "name": "Waterfall 分时落水可观测差异", "status": "passed" },
+    { "id": "G21", "name": "Waterfall 原库表面显示连续性", "status": "passed-bounded" }
+  ]
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ocean MVP：以同一艘船、同一时间轴和同一相机，对比平静海况与有风涌浪下的水面和船体响应代理。" />
+    <meta name="theme-color" content="#061823" />
+    <link rel="icon" href="data:," />
+    <title>Ocean MVP｜Water Scene Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.addEventListener('error', function (event) {
+        if (!document.body || document.body.dataset.renderState === 'ready') return;
+        document.body.dataset.renderState = 'failed';
+        var reason = document.querySelector('#fallback-reason');
+        if (reason) reason.textContent = event.message || '实时模块加载失败。';
+      });
+    </script>
+  </head>
+  <body data-render-state="loading">
+    <a class="skip-link" href="#experiment">跳到实验控制</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="返回 Water Scene Lab 路线台">
+        <span class="brand-mark" aria-hidden="true">WS</span>
+        <span class="brand-copy">
+          <small>WATER SCENE LAB / 01</small>
+          <strong>Ocean MVP</strong>
+        </span>
+      </a>
+      <div class="top-status">
+        <span class="runtime-dot" aria-hidden="true"></span>
+        <span id="runtime-label">正在建立 WebGL 场景</span>
+        <span class="truth-badge">视觉航行响应代理</span>
+      </div>
+    </header>
+
+    <main class="lab-layout" id="experiment">
+      <section class="stage-card" aria-labelledby="scene-title">
+        <div class="scene-viewport" id="scene-viewport">
+          <canvas id="ocean-canvas" aria-label="平静海况与有风涌浪的同步三维对比场景">
+            当前浏览器不能显示实时三维画布，请查看页面中的实验指标与真实性说明。
+          </canvas>
+
+          <div class="loading-state" id="loading-state" role="status">
+            <span class="loading-ring" aria-hidden="true"></span>
+            <p>正在建立解析波面与四点船体采样…</p>
+          </div>
+
+          <div class="fallback-state" id="fallback-state" role="alert">
+            <p class="kicker">REALTIME FALLBACK</p>
+            <h2>当前设备没有进入实时海面。</h2>
+            <p id="fallback-reason">WebGL2 初始化或着色器编译失败。</p>
+            <p>页面仍保留实验方法、指标和真实性边界；这里不会用静态图伪装成本设备的实时结果。</p>
+            <button type="button" id="retry-renderer">重试实时场景</button>
+          </div>
+
+          <div class="stage-topline" aria-hidden="true">
+            <span>GERSTNER × 6</span>
+            <span>FIXED STEP · 60 HZ</span>
+            <span id="quality-label">QUALITY · —</span>
+          </div>
+
+          <div class="variant-label variant-a">
+            <span>A</span>
+            <div><strong>平静海况</strong><small>CALM WATER</small></div>
+          </div>
+          <div class="variant-label variant-b">
+            <span>B</span>
+            <div><strong>有风涌浪</strong><small>WIND SWELL</small></div>
+          </div>
+          <div class="split-rule" aria-hidden="true"></div>
+
+          <div class="mobile-variant-tabs" aria-label="手机画布海况选择">
+            <button type="button" class="active" data-mobile-variant="calm">A 平静</button>
+            <button type="button" data-mobile-variant="wind">B 风浪</button>
+          </div>
+
+          <div class="stage-copy">
+            <p class="kicker">CONTROLLED VOYAGE · SEA STATE</p>
+            <h1 id="scene-title">同一艘船，<br /><em>两种海况。</em></h1>
+            <p>船体、航向、速度、种子、相机与时间轴全部固定；唯一实验因子是 <code>seaState</code>，它公开派生波幅与陡峭度。</p>
+          </div>
+
+          <div class="live-hud" aria-label="实时读数">
+            <div><span>SIM TIME</span><strong id="hud-time">0.00 s</strong></div>
+            <div><span>STEP</span><strong id="hud-step">0 / 1200</strong></div>
+            <div><span>FRAME P50</span><strong id="hud-frame">—</strong></div>
+            <div><span>DRAW</span><strong id="hud-draw">—</strong></div>
+          </div>
+        </div>
+
+        <div class="contract-strip">
+          <div><span>固定</span><strong>船体 · 航向 · 速度 · 种子 · 相机 · 时间轴</strong></div>
+          <div><span>唯一因子</span><strong>seaState</strong></div>
+          <div><span>契约哈希</span><code id="contract-hash">—</code></div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="实验控制与结果">
+        <div class="panel-heading">
+          <div>
+            <p class="kicker">PROOF MODE</p>
+            <h2>航行稳定性实验</h2>
+          </div>
+          <span class="phase-badge" id="phase-badge">准备</span>
+        </div>
+
+        <p class="panel-intro">同步运行 A 与 B 1,200 个固定步。画面只负责解释差异，结论来自同一解析波函数的确定性采样。</p>
+
+        <div class="run-progress" aria-label="实验进度">
+          <span id="run-progress-fill"></span>
+        </div>
+        <div class="run-progress-labels"><span>A / B 同步起点</span><span id="progress-label">0%</span></div>
+
+        <div class="sea-cards">
+          <article>
+            <div><span class="sea-index">A</span><strong>平静</strong></div>
+            <dl>
+              <div><dt>幅度倍率</dt><dd id="calm-amplitude">—</dd></div>
+              <div><dt>总陡峭度</dt><dd id="calm-steepness">—</dd></div>
+            </dl>
+          </article>
+          <article>
+            <div><span class="sea-index sea-index-b">B</span><strong>风浪</strong></div>
+            <dl>
+              <div><dt>幅度倍率</dt><dd id="wind-amplitude">—</dd></div>
+              <div><dt>总陡峭度</dt><dd id="wind-steepness">—</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="primary-controls">
+          <button type="button" class="primary-button" id="run-ab">
+            <span id="run-button-label">运行固定 A / B</span><span aria-hidden="true">→</span>
+          </button>
+          <button type="button" class="icon-button" id="pause-run" aria-label="暂停实验" title="暂停实验">Ⅱ</button>
+          <button type="button" class="icon-button" id="reset-run" aria-label="重置实验" title="重置实验">↺</button>
+        </div>
+
+        <div class="secondary-controls">
+          <button type="button" id="camera-toggle">镜头：追航</button>
+          <button type="button" id="probe-toggle" aria-pressed="true">四点探针：开</button>
+          <button type="button" id="motion-toggle">运动：自动</button>
+        </div>
+
+        <section class="reading-section" aria-labelledby="reading-title">
+          <div class="subheading"><h3 id="reading-title">当前船体代理</h3><span id="reading-variant">A / B</span></div>
+          <div class="reading-grid">
+            <div><span>A 升沉</span><strong id="live-a-heave">—</strong></div>
+            <div><span>B 升沉</span><strong id="live-b-heave">—</strong></div>
+            <div><span>A 横滚</span><strong id="live-a-roll">—</strong></div>
+            <div><span>B 横滚</span><strong id="live-b-roll">—</strong></div>
+          </div>
+        </section>
+
+        <section class="result-section" aria-labelledby="result-title">
+          <div class="subheading"><h3 id="result-title">固定终点结果</h3><span id="result-state">等待运行</span></div>
+          <div class="result-table" role="table" aria-label="A B 实验结果">
+            <div class="result-row result-head" role="row">
+              <span role="columnheader">指标</span><span role="columnheader">A</span><span role="columnheader">B</span><span role="columnheader">B / A</span>
+            </div>
+            <div id="result-rows"></div>
+          </div>
+          <div class="bounded-conclusion" id="bounded-conclusion" aria-live="polite">
+            运行完成后，只在本固定模型范围内判断 B 是否产生更高的水面与船体运动量。
+          </div>
+        </section>
+
+        <details class="method-details">
+          <summary>方法、派生参数与真实性边界</summary>
+          <div>
+            <p><strong>波面：</strong>6 组方向性 Gerstner 波，共享解析位移、高度与动态法线参数。</p>
+            <p><strong>船体：</strong>四个角点调用同一 <code>sampleSurface</code>，得到升沉、俯仰、横滚视觉代理。</p>
+            <p><strong>没有模拟：</strong>阻力、推进器、船体压力积分、卷浪、船尾真实波场或完整船舶水动力学。</p>
+            <p><strong>内部单位：</strong>指标用于 A/B 相对比较，不解释为现实米制海况。</p>
+          </div>
+        </details>
+      </aside>
+    </main>
+
+    <section class="coastal-physics" id="coastal-physics" aria-labelledby="coastal-physics-title">
+      <header class="coastal-physics-header">
+        <div>
+          <p class="kicker">STAGE 03 · SHARED CONTRACT REUSE</p>
+          <h2 id="coastal-physics-title">Ocean 表面采样，驱动原生浮环上举与姿态响应</h2>
+        </div>
+        <p>上方 Gerstner 海面负责大尺度连续波形；这里在固定点读取垂向速度，映射成 Particles4All 的局部 +Y 粒子脉冲，并作用于原库低密度 torus。验收同时检查相对无注入基线的上举增量与浮环旋转，避免把重力运动误判为海浪作用。</p>
+      </header>
+
+      <div class="coastal-physics-map" aria-label="Ocean 宏观表面采样到 Particles4All 局部坐标映射">
+        <div><span>SURFACE HEIGHT</span><strong id="coastal-physics-height">—</strong><small>Ocean sampleSurface 输入</small></div>
+        <div><span>NATIVE BODY</span><strong id="coastal-physics-body-profile">—</strong><small>Particles4All 原生刚体参数</small></div>
+        <div><span>RISING SPEED</span><strong id="coastal-physics-world-velocity">—</strong><small>中心差分垂向速度</small></div>
+        <div><span>LOCAL PULSE</span><strong id="coastal-physics-solver-velocity">—</strong><small>映射到 solver +Y</small></div>
+      </div>
+
+      <div class="coastal-physics-layout">
+        <div class="coastal-physics-viewport">
+          <iframe id="coastal-physics-frame" title="Particles4All Ocean 海浪上举近场物理" allow="fullscreen"></iframe>
+          <div class="coastal-physics-placeholder" id="coastal-physics-placeholder">
+            <span>WEBGPU LOCAL WAVE LENS</span>
+            <strong>尚未加载共享近场执行器</strong>
+            <p>点击右侧运行后才创建 WebGPU 设备；宏观 Ocean 动画会暂停，完成后可卸载并恢复。</p>
+          </div>
+        </div>
+
+        <aside class="coastal-physics-console" aria-label="Ocean Particles4All 复用控制">
+          <div class="coastal-physics-heading">
+            <div><span>运行状态</span><strong id="coastal-physics-status">等待加载</strong></div>
+            <code id="coastal-physics-contract">—</code>
+          </div>
+          <button type="button" class="primary-button" id="coastal-physics-run">加载并运行 Ocean 近场契约 →</button>
+          <button type="button" id="coastal-physics-unload" disabled>卸载近场求解器</button>
+
+          <div class="coastal-physics-results" aria-live="polite">
+            <div><span>实际注入</span><strong id="coastal-physics-injected">—</strong></div>
+            <div><span>Solver ticks</span><strong id="coastal-physics-ticks">—</strong></div>
+            <div><span>相对基线上举</span><strong id="coastal-physics-body-motion">—</strong></div>
+            <div><span>浮环姿态变化</span><strong id="coastal-physics-body-rotation">—</strong></div>
+            <div><span>场景对象角色</span><strong id="coastal-physics-body-role">—</strong></div>
+            <div><span>非有限位置</span><strong id="coastal-physics-nonfinite">—</strong></div>
+          </div>
+
+          <p id="coastal-physics-conclusion" class="coastal-physics-conclusion">这里验证 Ocean 表面采样能否驱动 Particles4All 原生低密度浮环的上举与姿态响应；不把结果解释为现实浮力、波压或近岸淹没。</p>
+          <a id="coastal-physics-export" download="ocean-wave-uplift-near-field.scene.json">导出 Ocean 场景契约 JSON ↓</a>
+          <a id="coastal-physics-open" href="../../particles4all/engine/" target="_blank" rel="noreferrer">全屏检查 Particles4All 原始运行时 ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="explain-grid" aria-label="原型意义与决策门">
+      <article>
+        <span>01 · MACRO</span>
+        <h2>Ocean 仍由什么负责？</h2>
+        <p>大范围海面、远景波形与连续表面查询继续由解析波模型负责；PBF 只进入需要自由液面与刚体耦合的局部窗口。</p>
+      </article>
+      <article>
+        <span>02 · REUSE</span>
+        <h2>这次真正复用了什么？</h2>
+        <p>Waterfall、River、Ocean 共用同一契约 Schema、Runtime Adapter 和 Scene Runner；第三场景换用原生 torus 并增加基线差分与旋转 Gate，而不是增加另一套液体算法。</p>
+      </article>
+      <article>
+        <span>03 · LIMIT</span>
+        <h2>不能拿它做什么？</h2>
+        <p>不能据此判断真实浮力、波压、船舶安全、港口波场或近岸淹没；当前只证明宏观海面信号可以触发原库的局部液固响应。</p>
+      </article>
+    </section>
+
+    <footer>
+      <p>Ocean MVP · Water Scene Lab · 场景先于算法，证据先于结论。</p>
+      <a href="../">返回技术路线台 ↑</a>
+    </footer>
+
+    <noscript>
+      <div class="noscript-state">此页面需要 JavaScript 才能运行实时 Ocean MVP；实验方法与真实性边界仍可在上方文字中阅读。</div>
+    </noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

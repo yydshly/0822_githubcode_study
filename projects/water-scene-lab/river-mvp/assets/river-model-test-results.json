@@ -1,0 +1,253 @@
+{
+  "schemaVersion": "1.0",
+  "modelSourceSha256": "0710380f105cdd4edf598e6e2d6b1e31c29b394e892c7b5d8fe5cc9b0d34b17e",
+  "contractHash": "fnv1a-4b3a09ae",
+  "checks": {
+    "selfCheck": true,
+    "fixedProtocol": true,
+    "controlPoints": true,
+    "markerCount": true,
+    "pathLength": true,
+    "analyticTangents": true,
+    "tangentContinuity": true,
+    "orthonormalFrame": true,
+    "closestRoundTrip": true,
+    "arcLengthSampling": true,
+    "openPathEndpoint": true,
+    "openPathRejectsOverflow": true,
+    "endpointOutsideChannel": true,
+    "centerlineNoSelfIntersection": true,
+    "equalArcSpacing": true,
+    "shoreWidthStable": true,
+    "uniformDirectionConstant": true,
+    "guidedMatchesTangent": true,
+    "equalSpeedMagnitude": true,
+    "invalidModeRejected": true,
+    "markerDeterminism": true,
+    "initialMarkerParity": true,
+    "abPassed": true,
+    "repeatableDigest": true,
+    "commonContract": true,
+    "onlyFlowModeDiffers": true,
+    "noNumericalFailures": true
+  },
+  "diagnostics": {
+    "tangentErrorMax": 3.025770473549798e-9,
+    "tangentJoinAngleMaxDeg": 0.0020837478836984095,
+    "frameUnitErrorMax": 1.1102230246251565e-16,
+    "closestLateralErrorMax": 1.718167474962229e-8,
+    "reconstructedArcLength": 70.59904823097014,
+    "arcReconstructionError": 0.00006651957741610204,
+    "pathEndError": 0,
+    "nonAdjacentIntersectionCount": 0,
+    "equalArcStepMaxError": 0.00015786404730927517,
+    "shoreWidthErrorMax": 1.7763568394002505e-15,
+    "guidedDirectionErrorMax": 0,
+    "speedMagnitudeErrorMax": 4.440892098500626e-16,
+    "markerDeterminismErrorMax": 0,
+    "initialParityErrorMax": 0
+  },
+  "ab": {
+    "schemaVersion": "1.0",
+    "modelVersion": "river-flowmap-v1",
+    "factor": "flowMode",
+    "contractHash": "fnv1a-4b3a09ae",
+    "A": {
+      "caseId": "A",
+      "label": "全局固定方向场",
+      "factor": "flowMode",
+      "flowMode": "uniform_world",
+      "contractHash": "fnv1a-4b3a09ae",
+      "caseConfigHash": "fnv1a-4dddd998",
+      "resultDigest": "fnv1a-b098cc22",
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "queryCount": 7680,
+      "metrics": {
+        "tangentAlignmentMean": 0.7855554648407829,
+        "headingErrorP95Deg": 51.73084924030725,
+        "inChannelRate": 0.35260416666666666,
+        "laneErrorRms": 5.482020969738067,
+        "forwardSpeedMean": 2.003166435343993,
+        "lateralDistanceP95": 8.271724123096512,
+        "bankExitCount": 4972,
+        "nonFiniteCount": 0
+      },
+      "terminalMarkers": [
+        {
+          "id": "m0",
+          "x": 2.167067027742549,
+          "z": 21.379236729854945,
+          "lateral": -6.254228583467008,
+          "inChannel": false
+        },
+        {
+          "id": "m1",
+          "x": 0.6960840802260447,
+          "z": 23.85045208222484,
+          "lateral": -3.7494604466893735,
+          "inChannel": false
+        },
+        {
+          "id": "m2",
+          "x": -0.6183575940164999,
+          "z": 25.89251609679725,
+          "lateral": -1.5781063454397937,
+          "inChannel": true
+        },
+        {
+          "id": "m3",
+          "x": -1.4052491021450728,
+          "z": 28.147007002437164,
+          "lateral": 0.2606814479573181,
+          "inChannel": true
+        },
+        {
+          "id": "m4",
+          "x": -0.8855432101704237,
+          "z": 30.65728362920876,
+          "lateral": 1.0923872964501529,
+          "inChannel": true
+        },
+        {
+          "id": "m5",
+          "x": 0.5811268608328675,
+          "z": 32.86568212045683,
+          "lateral": 0.8663131246072802,
+          "inChannel": true
+        },
+        {
+          "id": "m6",
+          "x": 2.1112315387993545,
+          "z": 34.88439242269517,
+          "lateral": 0.49351072249717043,
+          "inChannel": false
+        },
+        {
+          "id": "m7",
+          "x": 3.0878280277283716,
+          "z": 36.59253530998873,
+          "lateral": 0.4570975656878886,
+          "inChannel": false
+        }
+      ],
+      "checks": {
+        "steps": true,
+        "measuredTicks": true,
+        "queryCount": true,
+        "noNonFinite": true,
+        "resultFinite": true
+      },
+      "passed": true
+    },
+    "B": {
+      "caseId": "B",
+      "label": "样条切线方向场",
+      "factor": "flowMode",
+      "flowMode": "spline_tangent",
+      "contractHash": "fnv1a-4b3a09ae",
+      "caseConfigHash": "fnv1a-44cad80e",
+      "resultDigest": "fnv1a-039e9609",
+      "ticks": 1200,
+      "measuredTicks": 960,
+      "queryCount": 7680,
+      "metrics": {
+        "tangentAlignmentMean": 1,
+        "headingErrorP95Deg": 0.0000014787793334710982,
+        "inChannelRate": 1,
+        "laneErrorRms": 1.1502984961823988e-8,
+        "forwardSpeedMean": 2.5499999999996303,
+        "lateralDistanceP95": 2.2500000006706626,
+        "bankExitCount": 0,
+        "nonFiniteCount": 0
+      },
+      "terminalMarkers": [
+        {
+          "id": "m0",
+          "x": -4.859566394117989,
+          "z": 12.63650815851146,
+          "lateral": -2.200000000000052,
+          "inChannel": true
+        },
+        {
+          "id": "m1",
+          "x": -5.5737169603089445,
+          "z": 14.333967194517983,
+          "lateral": -1.5500000048652933,
+          "inChannel": true
+        },
+        {
+          "id": "m2",
+          "x": -5.72593948947912,
+          "z": 16.66138438306719,
+          "lateral": -0.8500000014110938,
+          "inChannel": true
+        },
+        {
+          "id": "m3",
+          "x": -5.491216701676567,
+          "z": 19.17279358013763,
+          "lateral": -0.19999999998631054,
+          "inChannel": true
+        },
+        {
+          "id": "m4",
+          "x": -5.1814831529382825,
+          "z": 21.72725521897423,
+          "lateral": 0.4499999992322296,
+          "inChannel": true
+        },
+        {
+          "id": "m5",
+          "x": -4.588928902933244,
+          "z": 24.252006295419022,
+          "lateral": 1.049999991244866,
+          "inChannel": true
+        },
+        {
+          "id": "m6",
+          "x": -3.8700485613873665,
+          "z": 26.737951681184175,
+          "lateral": 1.6499999987253213,
+          "inChannel": true
+        },
+        {
+          "id": "m7",
+          "x": -3.283706844704885,
+          "z": 28.886044864160777,
+          "lateral": 2.2499999990599266,
+          "inChannel": true
+        }
+      ],
+      "checks": {
+        "steps": true,
+        "measuredTicks": true,
+        "queryCount": true,
+        "noNonFinite": true,
+        "resultFinite": true
+      },
+      "passed": true
+    },
+    "improvements": {
+      "alignmentGain": 0.21444453515921713,
+      "headingErrorReduction": 51.73084776152792,
+      "inChannelGain": 0.6473958333333334,
+      "laneErrorReduction": 5.482020958235082
+    },
+    "checks": {
+      "casesPassed": true,
+      "commonContract": true,
+      "distinctResolvedConfig": true,
+      "uniformShowsTurnMismatch": true,
+      "guidedAlignsToTangent": true,
+      "guidedHeadingError": true,
+      "guidedStaysInChannel": true,
+      "guidedReducesBankExit": true,
+      "guidedReducesLaneError": true,
+      "noNumericalFailures": true
+    },
+    "passed": true,
+    "boundedConclusion": "在 river-flowmap-v1 的固定弯曲河道与内部单位下，样条切线方向场 B 让视觉流向和漂浮标记更贴合河道切线，并减少离开河道的采样。"
+  },
+  "passed": true
+}

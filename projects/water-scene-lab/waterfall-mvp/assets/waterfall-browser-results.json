@@ -1,0 +1,2771 @@
+{
+  "schemaVersion": "1.0",
+  "targetUrl": "http://127.0.0.1:8107/demos/water-scene-lab/waterfall/",
+  "createdAt": "2026-08-24T05:00:42.787Z",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.170"
+  },
+  "testedSources": {
+    "app": {
+      "repositoryPath": "docs/demos/water-scene-lab/waterfall/app.js",
+      "sha256": "47d7f424c2f97c83d261f986db56460a73fd1e3221db61b1ca448137f031a490"
+    },
+    "html": {
+      "repositoryPath": "docs/demos/water-scene-lab/waterfall/index.html",
+      "sha256": "11295ea7c530a52202b7c0ac646062e89dd1c292bf17cdd8f614bbffa5279069"
+    },
+    "css": {
+      "repositoryPath": "docs/demos/water-scene-lab/waterfall/styles.css",
+      "sha256": "ab94b7add36477f187a6119232af4c23f2c0901fbf362790b7cf16167b598760"
+    },
+    "model": {
+      "repositoryPath": "docs/demos/water-scene-lab/waterfall/waterfall-model.mjs",
+      "sha256": "f135198adb68a9d1a0edf226290c0ae188acb6fc15ff22c3185d7b10bae82cf6"
+    },
+    "three": {
+      "repositoryPath": "docs/demos/shijing-dayu-immersive/vendor/three.module.js",
+      "sha256": "15a6b51a6a4902fd1d7b6bfc3a307864cb05c7459c3b476805127aea2d3cb2c1"
+    },
+    "browserTest": {
+      "repositoryPath": "projects/water-scene-lab/waterfall-mvp/tests/browser-smoke.cjs",
+      "sha256": "ac7b984aa92cb880a81a7bdb30523fde5220695fd40872b77d236bbd009f5046"
+    }
+  },
+  "apiAssumptions": {
+    "global": "window.__waterfallLab",
+    "methods": [
+      "getState",
+      "getRuntime",
+      "getLayerSnapshot",
+      "getLastResult",
+      "start",
+      "pause",
+      "reset",
+      "runVerification"
+    ],
+    "caseIds": [
+      "curtain",
+      "breakup"
+    ],
+    "fixedDifference": "breakupMode",
+    "supplementalLayer": "edge droplets + impact spray; foam/mist locked off in verification"
+  },
+  "passed": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "no-preference",
+      "expectedQuality": "balanced",
+      "frameBudgets": {
+        "p50": 22,
+        "p95": 50,
+        "max": 2000
+      },
+      "initial": {
+        "title": "Waterfall MVP｜Water Scene Lab",
+        "bodyLength": 1100,
+        "renderState": "ready",
+        "h1": "同一面水幕，粒子层值不值得？",
+        "truthBadge": "混合 VFX 代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getLayerSnapshot": true,
+          "getLastResult": true,
+          "start": true,
+          "pause": true,
+          "reset": true,
+          "runVerification": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 708.3000000119209,
+          "analysisDurationMs": 157.5999999642372,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 16.799999999999955,
+          "maxFrameTime": 45.799999999999955,
+          "longFrameCount": 0,
+          "measuredFrames": 191,
+          "drawCalls": 13,
+          "triangles": 21044,
+          "viewport": [
+            994,
+            759
+          ],
+          "dpr": 0.82,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": false,
+          "accumulator": 0,
+          "previewTick": 46.751100000000044,
+          "previewMotion": true,
+          "results": null,
+          "mobileVariant": "curtain",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "balanced",
+            "firstFrameMs": 708.3000000119209,
+            "analysisDurationMs": 157.5999999642372,
+            "frameTimeP50": 4.2000000000000455,
+            "frameTimeP95": 16.799999999999955,
+            "maxFrameTime": 45.799999999999955,
+            "longFrameCount": 0,
+            "measuredFrames": 191,
+            "drawCalls": 13,
+            "triangles": 21044,
+            "viewport": [
+              994,
+              759
+            ],
+            "dpr": 0.82,
+            "renderedVariants": 2,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "motionValue": 46.751100000000044,
+        "curtainLayers": {
+          "caseId": "A",
+          "breakupMode": "curtain_only",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 32,
+              "dropSegments": 120
+            },
+            "breakupMode": "curtain_only"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 32,
+            "dropSegments": 120
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0,
+          "visualPointCount": 0,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "breakupLayers": {
+          "caseId": "B",
+          "breakupMode": "hybrid_breakup",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 32,
+              "dropSegments": 120
+            },
+            "breakupMode": "hybrid_breakup"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 32,
+            "dropSegments": 120
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56,
+          "visualPointCount": 416,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "tabMetrics": [
+          {
+            "variant": "curtain",
+            "height": 0,
+            "width": 0,
+            "visible": false
+          },
+          {
+            "variant": "breakup",
+            "height": 0,
+            "width": 0,
+            "visible": false
+          }
+        ]
+      },
+      "layerEvidence": {
+        "curtain": {
+          "breakupMode": "curtain_only",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 32,
+            "dropSegments": 120
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0
+        },
+        "breakup": {
+          "breakupMode": "hybrid_breakup",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 32,
+            "dropSegments": 120
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56
+        },
+        "mainCurtainPresent": true,
+        "mainCurtainParity": true,
+        "modesDistinct": true,
+        "fixedInputDelta": [
+          "breakupMode"
+        ],
+        "onlyBreakupModeDiff": true,
+        "supplementalSplit": true,
+        "emitterBreakdown": true,
+        "anyEmitterBreakdown": true
+      },
+      "playback": {
+        "started": true,
+        "advanced": true,
+        "stable": true,
+        "reset": true
+      },
+      "mobileSwitch": {
+        "required": false,
+        "switched": true,
+        "target": null
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 708.3000000119209,
+          "analysisDurationMs": 157.5999999642372,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 16.504999999999995,
+          "maxFrameTime": 45.799999999999955,
+          "longFrameCount": 0,
+          "measuredFrames": 360,
+          "drawCalls": 13,
+          "triangles": 21044,
+          "viewport": [
+            994,
+            759
+          ],
+          "dpr": 0.82,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "fixedDiagnostics": {
+          "foamEnabled": false,
+          "mistEnabled": false
+        }
+      },
+      "fixedDiagnostics": {
+        "present": true,
+        "foam": false,
+        "mist": false,
+        "lockedOff": true
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          815,
+          645
+        ],
+        "uniqueColors": 87,
+        "luminanceVariance": 1436.329959983225
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 0.27720000000000306,
+          "previewMotion": true,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "waterfall-breakup-v1",
+            "factor": "breakupMode",
+            "curtainHash": "fnv1a-adc38d1c",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "breakupSpecHash": "fnv1a-b6b85ec7",
+            "configDifferences": [
+              "breakupMode"
+            ],
+            "A": {
+              "caseId": "A",
+              "label": "连续主水幕",
+              "factor": "breakupMode",
+              "breakupMode": "curtain_only",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-dc542e33",
+              "caseConfigHash": "fnv1a-dc542e33",
+              "resultDigest": "fnv1a-58a678a7",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 0,
+              "activeProxySampleCount": 0,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 0,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 1
+              },
+              "metrics": {
+                "layerCount": 1,
+                "activeProxyMean": 0,
+                "activeProxyP95": 0,
+                "activeProxyMax": 0,
+                "edgeActiveMean": 0,
+                "impactActiveMean": 0,
+                "edgeExpansionMean": 0,
+                "edgeExpansionP95": 0,
+                "impactOccupancyMean": 0,
+                "impactOccupancyP95": 0,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 0,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 0,
+                "edgeActiveCount": 0,
+                "impactActiveCount": 0,
+                "impactOccupancy": 0
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "主水幕 + 破碎粒子层",
+              "factor": "breakupMode",
+              "breakupMode": "hybrid_breakup",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-d9bed3b9",
+              "caseConfigHash": "fnv1a-d9bed3b9",
+              "resultDigest": "fnv1a-624b5038",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 99840,
+              "activeProxySampleCount": 66886,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 1,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 2
+              },
+              "metrics": {
+                "layerCount": 2,
+                "activeProxyMean": 69.67291666666667,
+                "activeProxyP95": 77,
+                "activeProxyMax": 85,
+                "edgeActiveMean": 31.210416666666667,
+                "impactActiveMean": 38.4625,
+                "edgeExpansionMean": 0.35947164894244504,
+                "edgeExpansionP95": 0.8245702365574992,
+                "impactOccupancyMean": 0.3570638020833333,
+                "impactOccupancyP95": 0.4375,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 76,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 76,
+                "edgeActiveCount": 33,
+                "impactActiveCount": 43,
+                "impactOccupancy": 0.375
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "increments": {
+              "layerCount": 1,
+              "activeProxyMean": 69.67291666666667,
+              "edgeExpansionMean": 0.35947164894244504,
+              "impactOccupancyMean": 0.3570638020833333,
+              "mistCoverageMean": 0
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "commonCurtainHash": true,
+              "identicalCurtainGeometry": true,
+              "distinctCaseHash": true,
+              "onlyBreakupModeDiffers": true,
+              "curtainOnlyHasNoIncrement": true,
+              "hybridAddsOneLayer": true,
+              "hybridHasVisibleIncrement": true,
+              "mistExcludedFromFixedAB": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+          },
+          "mobileVariant": "curtain",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "balanced",
+            "firstFrameMs": 708.3000000119209,
+            "analysisDurationMs": 157.5999999642372,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 8.30500000000018,
+            "maxFrameTime": 50.09999999999991,
+            "longFrameCount": 1,
+            "measuredFrames": 360,
+            "drawCalls": 13,
+            "triangles": 21044,
+            "viewport": [
+              994,
+              787
+            ],
+            "dpr": 0.82,
+            "renderedVariants": 2,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "balanced",
+          "firstFrameMs": 708.3000000119209,
+          "analysisDurationMs": 157.5999999642372,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 8.30500000000018,
+          "maxFrameTime": 50.09999999999991,
+          "longFrameCount": 1,
+          "measuredFrames": 360,
+          "drawCalls": 13,
+          "triangles": 21044,
+          "viewport": [
+            994,
+            787
+          ],
+          "dpr": 0.82,
+          "renderedVariants": 2,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "resultState": "11/11 通过",
+        "conclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。 这不是现实流量、压力、碰撞或质量守恒结论。",
+        "resultRows": 6,
+        "formalDiagnosticsDisabled": true,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "mainCurtainParity": true,
+        "onlyBreakupModeDiff": true,
+        "analysisCurtainParity": true,
+        "analysisOnlyBreakupMode": true,
+        "supplementalLayerSplit": true,
+        "twoEmitterBreakdownWhenExposed": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "explicitPlayback": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "foamMistLockedOff": true,
+        "noNumericalFailures": true,
+        "lastResultMatches": true,
+        "resultRendered": true,
+        "formalDiagnosticsDisabled": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "no-preference",
+      "expectedQuality": "fallback",
+      "frameBudgets": {
+        "p50": 33,
+        "p95": 66,
+        "max": 2000
+      },
+      "initial": {
+        "title": "Waterfall MVP｜Water Scene Lab",
+        "bodyLength": 991,
+        "renderState": "ready",
+        "h1": "同一面水幕，粒子层值不值得？",
+        "truthBadge": "混合 VFX 代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getLayerSnapshot": true,
+          "getLastResult": true,
+          "start": true,
+          "pause": true,
+          "reset": true,
+          "runVerification": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 157.10000002384186,
+          "analysisDurationMs": 80.90000003576279,
+          "frameTimeP50": 4.2000000000000455,
+          "frameTimeP95": 4.29999999999996,
+          "maxFrameTime": 41.69999999999999,
+          "longFrameCount": 0,
+          "measuredFrames": 360,
+          "drawCalls": 6,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": false,
+          "accumulator": 0,
+          "previewTick": 59.26470000000004,
+          "previewMotion": true,
+          "results": null,
+          "mobileVariant": "curtain",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 157.10000002384186,
+            "analysisDurationMs": 80.90000003576279,
+            "frameTimeP50": 4.2000000000000455,
+            "frameTimeP95": 4.29999999999996,
+            "maxFrameTime": 41.69999999999999,
+            "longFrameCount": 0,
+            "measuredFrames": 360,
+            "drawCalls": 6,
+            "triangles": 4602,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "motionValue": 59.26470000000004,
+        "curtainLayers": {
+          "caseId": "A",
+          "breakupMode": "curtain_only",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 20,
+              "dropSegments": 72
+            },
+            "breakupMode": "curtain_only"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0,
+          "visualPointCount": 0,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "breakupLayers": {
+          "caseId": "B",
+          "breakupMode": "hybrid_breakup",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 20,
+              "dropSegments": 72
+            },
+            "breakupMode": "hybrid_breakup"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56,
+          "visualPointCount": 208,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "tabMetrics": [
+          {
+            "variant": "curtain",
+            "height": 44,
+            "width": 62.453125,
+            "visible": true
+          },
+          {
+            "variant": "breakup",
+            "height": 44,
+            "width": 62.453125,
+            "visible": true
+          }
+        ]
+      },
+      "layerEvidence": {
+        "curtain": {
+          "breakupMode": "curtain_only",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0
+        },
+        "breakup": {
+          "breakupMode": "hybrid_breakup",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56
+        },
+        "mainCurtainPresent": true,
+        "mainCurtainParity": true,
+        "modesDistinct": true,
+        "fixedInputDelta": [
+          "breakupMode"
+        ],
+        "onlyBreakupModeDiff": true,
+        "supplementalSplit": true,
+        "emitterBreakdown": true,
+        "anyEmitterBreakdown": true
+      },
+      "playback": {
+        "started": false,
+        "advanced": false,
+        "stable": false,
+        "reset": false
+      },
+      "mobileSwitch": {
+        "required": true,
+        "switched": true,
+        "target": "breakup"
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 157.10000002384186,
+          "analysisDurationMs": 80.90000003576279,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.2999999999999545,
+          "maxFrameTime": 41.69999999999999,
+          "longFrameCount": 0,
+          "measuredFrames": 360,
+          "drawCalls": 7,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "fixedDiagnostics": {
+          "foamEnabled": false,
+          "mistEnabled": false
+        }
+      },
+      "fixedDiagnostics": {
+        "present": true,
+        "foam": false,
+        "mist": false,
+        "lockedOff": true
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 84,
+        "luminanceVariance": 1441.1776755983346
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 73.42830000000025,
+          "previewMotion": true,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "waterfall-breakup-v1",
+            "factor": "breakupMode",
+            "curtainHash": "fnv1a-adc38d1c",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "breakupSpecHash": "fnv1a-b6b85ec7",
+            "configDifferences": [
+              "breakupMode"
+            ],
+            "A": {
+              "caseId": "A",
+              "label": "连续主水幕",
+              "factor": "breakupMode",
+              "breakupMode": "curtain_only",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-dc542e33",
+              "caseConfigHash": "fnv1a-dc542e33",
+              "resultDigest": "fnv1a-58a678a7",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 0,
+              "activeProxySampleCount": 0,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 0,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 1
+              },
+              "metrics": {
+                "layerCount": 1,
+                "activeProxyMean": 0,
+                "activeProxyP95": 0,
+                "activeProxyMax": 0,
+                "edgeActiveMean": 0,
+                "impactActiveMean": 0,
+                "edgeExpansionMean": 0,
+                "edgeExpansionP95": 0,
+                "impactOccupancyMean": 0,
+                "impactOccupancyP95": 0,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 0,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 0,
+                "edgeActiveCount": 0,
+                "impactActiveCount": 0,
+                "impactOccupancy": 0
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "主水幕 + 破碎粒子层",
+              "factor": "breakupMode",
+              "breakupMode": "hybrid_breakup",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-d9bed3b9",
+              "caseConfigHash": "fnv1a-d9bed3b9",
+              "resultDigest": "fnv1a-624b5038",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 99840,
+              "activeProxySampleCount": 66886,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 1,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 2
+              },
+              "metrics": {
+                "layerCount": 2,
+                "activeProxyMean": 69.67291666666667,
+                "activeProxyP95": 77,
+                "activeProxyMax": 85,
+                "edgeActiveMean": 31.210416666666667,
+                "impactActiveMean": 38.4625,
+                "edgeExpansionMean": 0.35947164894244504,
+                "edgeExpansionP95": 0.8245702365574992,
+                "impactOccupancyMean": 0.3570638020833333,
+                "impactOccupancyP95": 0.4375,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 76,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 76,
+                "edgeActiveCount": 33,
+                "impactActiveCount": 43,
+                "impactOccupancy": 0.375
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "increments": {
+              "layerCount": 1,
+              "activeProxyMean": 69.67291666666667,
+              "edgeExpansionMean": 0.35947164894244504,
+              "impactOccupancyMean": 0.3570638020833333,
+              "mistCoverageMean": 0
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "commonCurtainHash": true,
+              "identicalCurtainGeometry": true,
+              "distinctCaseHash": true,
+              "onlyBreakupModeDiffers": true,
+              "curtainOnlyHasNoIncrement": true,
+              "hybridAddsOneLayer": true,
+              "hybridHasVisibleIncrement": true,
+              "mistExcludedFromFixedAB": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+          },
+          "mobileVariant": "breakup",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 157.10000002384186,
+            "analysisDurationMs": 80.90000003576279,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 4.300000000000182,
+            "maxFrameTime": 91.60000000000036,
+            "longFrameCount": 1,
+            "measuredFrames": 360,
+            "drawCalls": 7,
+            "triangles": 4602,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": false,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 157.10000002384186,
+          "analysisDurationMs": 80.90000003576279,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.300000000000182,
+          "maxFrameTime": 91.60000000000036,
+          "longFrameCount": 1,
+          "measuredFrames": 360,
+          "drawCalls": 7,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": false,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "resultState": "11/11 通过",
+        "conclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。 这不是现实流量、压力、碰撞或质量守恒结论。",
+        "resultRows": 6,
+        "formalDiagnosticsDisabled": true,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "mainCurtainParity": true,
+        "onlyBreakupModeDiff": true,
+        "analysisCurtainParity": true,
+        "analysisOnlyBreakupMode": true,
+        "supplementalLayerSplit": true,
+        "twoEmitterBreakdownWhenExposed": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "explicitPlayback": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "foamMistLockedOff": true,
+        "noNumericalFailures": true,
+        "lastResultMatches": true,
+        "resultRendered": true,
+        "formalDiagnosticsDisabled": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile-reduce",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "expectedQuality": "fallback",
+      "frameBudgets": {
+        "p50": 33,
+        "p95": 66,
+        "max": 2000
+      },
+      "initial": {
+        "title": "Waterfall MVP｜Water Scene Lab",
+        "bodyLength": 991,
+        "renderState": "ready",
+        "h1": "同一面水幕，粒子层值不值得？",
+        "truthBadge": "混合 VFX 代理",
+        "overflowX": 0,
+        "resultRows": 6,
+        "apiMethods": {
+          "getState": true,
+          "getRuntime": true,
+          "getLayerSnapshot": true,
+          "getLastResult": true,
+          "start": true,
+          "pause": true,
+          "reset": true,
+          "runVerification": true
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 129.89999997615814,
+          "analysisDurationMs": 77.80000001192093,
+          "frameTimeP50": 12.699999988079071,
+          "frameTimeP95": 12.699999988079071,
+          "maxFrameTime": 12.699999988079071,
+          "longFrameCount": 0,
+          "measuredFrames": 1,
+          "drawCalls": 6,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "state": {
+          "phase": "idle",
+          "tick": 0,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 600,
+          "previewMotion": false,
+          "results": null,
+          "mobileVariant": "curtain",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 129.89999997615814,
+            "analysisDurationMs": 77.80000001192093,
+            "frameTimeP50": 12.699999988079071,
+            "frameTimeP95": 12.699999988079071,
+            "maxFrameTime": 12.699999988079071,
+            "longFrameCount": 0,
+            "measuredFrames": 1,
+            "drawCalls": 6,
+            "triangles": 4602,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": true,
+            "fallbackActive": false
+          }
+        },
+        "motionValue": 600,
+        "curtainLayers": {
+          "caseId": "A",
+          "breakupMode": "curtain_only",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 20,
+              "dropSegments": 72
+            },
+            "breakupMode": "curtain_only"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0,
+          "visualPointCount": 0,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "breakupLayers": {
+          "caseId": "B",
+          "breakupMode": "hybrid_breakup",
+          "fixedInputs": {
+            "mainCurtain": {
+              "analyticalModel": "curtain-parametric-v1",
+              "hash": "fnv1a-adc38d1c",
+              "width": 9.6,
+              "topY": 18,
+              "impactY": 1.2,
+              "drop": 16.8,
+              "bow": 0.58,
+              "widthSegments": 20,
+              "dropSegments": 72
+            },
+            "breakupMode": "hybrid_breakup"
+          },
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56,
+          "visualPointCount": 208,
+          "fixedDiagnostics": {
+            "foamEnabled": false,
+            "mistEnabled": false
+          }
+        },
+        "tabMetrics": [
+          {
+            "variant": "curtain",
+            "height": 44,
+            "width": 62.453125,
+            "visible": true
+          },
+          {
+            "variant": "breakup",
+            "height": 44,
+            "width": 62.453125,
+            "visible": true
+          }
+        ]
+      },
+      "layerEvidence": {
+        "curtain": {
+          "breakupMode": "curtain_only",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 0,
+          "edgeParticleCount": 0,
+          "impactParticleCount": 0
+        },
+        "breakup": {
+          "breakupMode": "hybrid_breakup",
+          "mainCurtain": {
+            "analyticalModel": "curtain-parametric-v1",
+            "hash": "fnv1a-adc38d1c",
+            "width": 9.6,
+            "topY": 18,
+            "impactY": 1.2,
+            "drop": 16.8,
+            "bow": 0.58,
+            "widthSegments": 20,
+            "dropSegments": 72
+          },
+          "supplementalCount": 104,
+          "edgeParticleCount": 48,
+          "impactParticleCount": 56
+        },
+        "mainCurtainPresent": true,
+        "mainCurtainParity": true,
+        "modesDistinct": true,
+        "fixedInputDelta": [
+          "breakupMode"
+        ],
+        "onlyBreakupModeDiff": true,
+        "supplementalSplit": true,
+        "emitterBreakdown": true,
+        "anyEmitterBreakdown": true
+      },
+      "playback": {
+        "started": true,
+        "advanced": true,
+        "stable": true,
+        "reset": true
+      },
+      "mobileSwitch": {
+        "required": true,
+        "switched": true,
+        "target": "breakup"
+      },
+      "verification": {
+        "analysis": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 129.89999997615814,
+          "analysisDurationMs": 77.80000001192093,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.400000000000069,
+          "maxFrameTime": 12.699999988079071,
+          "longFrameCount": 0,
+          "measuredFrames": 82,
+          "drawCalls": 7,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "fixedDiagnostics": {
+          "foamEnabled": false,
+          "mistEnabled": false
+        }
+      },
+      "fixedDiagnostics": {
+        "present": true,
+        "foam": false,
+        "mist": false,
+        "lockedOff": true
+      },
+      "canvasSample": {
+        "available": true,
+        "drawingBuffer": [
+          364,
+          455
+        ],
+        "uniqueColors": 84,
+        "luminanceVariance": 1441.1776755983346
+      },
+      "finalState": {
+        "state": {
+          "phase": "complete",
+          "tick": 1200,
+          "paused": true,
+          "accumulator": 0,
+          "previewTick": 600,
+          "previewMotion": false,
+          "results": {
+            "schemaVersion": "1.0",
+            "modelVersion": "waterfall-breakup-v1",
+            "factor": "breakupMode",
+            "curtainHash": "fnv1a-adc38d1c",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "breakupSpecHash": "fnv1a-b6b85ec7",
+            "configDifferences": [
+              "breakupMode"
+            ],
+            "A": {
+              "caseId": "A",
+              "label": "连续主水幕",
+              "factor": "breakupMode",
+              "breakupMode": "curtain_only",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-dc542e33",
+              "caseConfigHash": "fnv1a-dc542e33",
+              "resultDigest": "fnv1a-58a678a7",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 0,
+              "activeProxySampleCount": 0,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 0,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 1
+              },
+              "metrics": {
+                "layerCount": 1,
+                "activeProxyMean": 0,
+                "activeProxyP95": 0,
+                "activeProxyMax": 0,
+                "edgeActiveMean": 0,
+                "impactActiveMean": 0,
+                "edgeExpansionMean": 0,
+                "edgeExpansionP95": 0,
+                "impactOccupancyMean": 0,
+                "impactOccupancyP95": 0,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 0,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 0,
+                "edgeActiveCount": 0,
+                "impactActiveCount": 0,
+                "impactOccupancy": 0
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "B": {
+              "caseId": "B",
+              "label": "主水幕 + 破碎粒子层",
+              "factor": "breakupMode",
+              "breakupMode": "hybrid_breakup",
+              "curtainHash": "fnv1a-adc38d1c",
+              "curtainProbeDigest": "fnv1a-5b2f8b1a",
+              "sharedContractHash": "fnv1a-17ebbf07",
+              "contractHash": "fnv1a-17ebbf07",
+              "caseHash": "fnv1a-d9bed3b9",
+              "caseConfigHash": "fnv1a-d9bed3b9",
+              "resultDigest": "fnv1a-624b5038",
+              "ticks": 1200,
+              "measuredTicks": 960,
+              "curtainQueryCount": 4800,
+              "proxyQueryCount": 99840,
+              "activeProxySampleCount": 66886,
+              "layers": {
+                "curtainLayerCount": 1,
+                "breakupLayerCount": 1,
+                "foamLayerCount": 0,
+                "mistLayerCount": 0,
+                "fixedLayerCount": 2
+              },
+              "metrics": {
+                "layerCount": 2,
+                "activeProxyMean": 69.67291666666667,
+                "activeProxyP95": 77,
+                "activeProxyMax": 85,
+                "edgeActiveMean": 31.210416666666667,
+                "impactActiveMean": 38.4625,
+                "edgeExpansionMean": 0.35947164894244504,
+                "edgeExpansionP95": 0.8245702365574992,
+                "impactOccupancyMean": 0.3570638020833333,
+                "impactOccupancyP95": 0.4375,
+                "mistCoverageMean": 0,
+                "terminalActiveProxyCount": 76,
+                "nonFiniteCount": 0,
+                "lifetimeViolationCount": 0,
+                "boundsViolationCount": 0
+              },
+              "terminal": {
+                "time": 20,
+                "activeProxyCount": 76,
+                "edgeActiveCount": 33,
+                "impactActiveCount": 43,
+                "impactOccupancy": 0.375
+              },
+              "checks": {
+                "fixedProtocol": true,
+                "measuredTicks": true,
+                "curtainQueries": true,
+                "proxyQueries": true,
+                "layerContract": true,
+                "fixedExplorationOff": true,
+                "noNonFinite": true,
+                "lifetimeValid": true,
+                "boundsValid": true,
+                "expectedIncrement": true
+              },
+              "passed": true
+            },
+            "increments": {
+              "layerCount": 1,
+              "activeProxyMean": 69.67291666666667,
+              "edgeExpansionMean": 0.35947164894244504,
+              "impactOccupancyMean": 0.3570638020833333,
+              "mistCoverageMean": 0
+            },
+            "checks": {
+              "casesPassed": true,
+              "commonContract": true,
+              "commonCurtainHash": true,
+              "identicalCurtainGeometry": true,
+              "distinctCaseHash": true,
+              "onlyBreakupModeDiffers": true,
+              "curtainOnlyHasNoIncrement": true,
+              "hybridAddsOneLayer": true,
+              "hybridHasVisibleIncrement": true,
+              "mistExcludedFromFixedAB": true,
+              "noNumericalFailures": true
+            },
+            "passed": true,
+            "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+          },
+          "mobileVariant": "breakup",
+          "cameraMode": "proof",
+          "foamVisible": false,
+          "mistVisible": false,
+          "runtime": {
+            "rendererReady": true,
+            "threeRevision": "185",
+            "modelVersion": "waterfall-breakup-v1",
+            "qualityTier": "fallback",
+            "firstFrameMs": 129.89999997615814,
+            "analysisDurationMs": 77.80000001192093,
+            "frameTimeP50": 4.199999999999818,
+            "frameTimeP95": 4.400000000000046,
+            "maxFrameTime": 12.699999988079071,
+            "longFrameCount": 0,
+            "measuredFrames": 83,
+            "drawCalls": 7,
+            "triangles": 4602,
+            "viewport": [
+              364,
+              455
+            ],
+            "dpr": 1,
+            "renderedVariants": 1,
+            "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+            "gpuVendor": "Google Inc. (Intel)",
+            "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "contextLostCount": 0,
+            "horizontalOverflow": 0,
+            "reducedMotion": true,
+            "fallbackActive": false
+          }
+        },
+        "runtime": {
+          "rendererReady": true,
+          "threeRevision": "185",
+          "modelVersion": "waterfall-breakup-v1",
+          "qualityTier": "fallback",
+          "firstFrameMs": 129.89999997615814,
+          "analysisDurationMs": 77.80000001192093,
+          "frameTimeP50": 4.199999999999818,
+          "frameTimeP95": 4.400000000000046,
+          "maxFrameTime": 12.699999988079071,
+          "longFrameCount": 0,
+          "measuredFrames": 83,
+          "drawCalls": 7,
+          "triangles": 4602,
+          "viewport": [
+            364,
+            455
+          ],
+          "dpr": 1,
+          "renderedVariants": 1,
+          "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "contextLostCount": 0,
+          "horizontalOverflow": 0,
+          "reducedMotion": true,
+          "fallbackActive": false
+        },
+        "lastResult": {
+          "schemaVersion": "1.0",
+          "modelVersion": "waterfall-breakup-v1",
+          "factor": "breakupMode",
+          "curtainHash": "fnv1a-adc38d1c",
+          "sharedContractHash": "fnv1a-17ebbf07",
+          "contractHash": "fnv1a-17ebbf07",
+          "breakupSpecHash": "fnv1a-b6b85ec7",
+          "configDifferences": [
+            "breakupMode"
+          ],
+          "A": {
+            "caseId": "A",
+            "label": "连续主水幕",
+            "factor": "breakupMode",
+            "breakupMode": "curtain_only",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-dc542e33",
+            "caseConfigHash": "fnv1a-dc542e33",
+            "resultDigest": "fnv1a-58a678a7",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 0,
+            "activeProxySampleCount": 0,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 0,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 1
+            },
+            "metrics": {
+              "layerCount": 1,
+              "activeProxyMean": 0,
+              "activeProxyP95": 0,
+              "activeProxyMax": 0,
+              "edgeActiveMean": 0,
+              "impactActiveMean": 0,
+              "edgeExpansionMean": 0,
+              "edgeExpansionP95": 0,
+              "impactOccupancyMean": 0,
+              "impactOccupancyP95": 0,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 0,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 0,
+              "edgeActiveCount": 0,
+              "impactActiveCount": 0,
+              "impactOccupancy": 0
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "B": {
+            "caseId": "B",
+            "label": "主水幕 + 破碎粒子层",
+            "factor": "breakupMode",
+            "breakupMode": "hybrid_breakup",
+            "curtainHash": "fnv1a-adc38d1c",
+            "curtainProbeDigest": "fnv1a-5b2f8b1a",
+            "sharedContractHash": "fnv1a-17ebbf07",
+            "contractHash": "fnv1a-17ebbf07",
+            "caseHash": "fnv1a-d9bed3b9",
+            "caseConfigHash": "fnv1a-d9bed3b9",
+            "resultDigest": "fnv1a-624b5038",
+            "ticks": 1200,
+            "measuredTicks": 960,
+            "curtainQueryCount": 4800,
+            "proxyQueryCount": 99840,
+            "activeProxySampleCount": 66886,
+            "layers": {
+              "curtainLayerCount": 1,
+              "breakupLayerCount": 1,
+              "foamLayerCount": 0,
+              "mistLayerCount": 0,
+              "fixedLayerCount": 2
+            },
+            "metrics": {
+              "layerCount": 2,
+              "activeProxyMean": 69.67291666666667,
+              "activeProxyP95": 77,
+              "activeProxyMax": 85,
+              "edgeActiveMean": 31.210416666666667,
+              "impactActiveMean": 38.4625,
+              "edgeExpansionMean": 0.35947164894244504,
+              "edgeExpansionP95": 0.8245702365574992,
+              "impactOccupancyMean": 0.3570638020833333,
+              "impactOccupancyP95": 0.4375,
+              "mistCoverageMean": 0,
+              "terminalActiveProxyCount": 76,
+              "nonFiniteCount": 0,
+              "lifetimeViolationCount": 0,
+              "boundsViolationCount": 0
+            },
+            "terminal": {
+              "time": 20,
+              "activeProxyCount": 76,
+              "edgeActiveCount": 33,
+              "impactActiveCount": 43,
+              "impactOccupancy": 0.375
+            },
+            "checks": {
+              "fixedProtocol": true,
+              "measuredTicks": true,
+              "curtainQueries": true,
+              "proxyQueries": true,
+              "layerContract": true,
+              "fixedExplorationOff": true,
+              "noNonFinite": true,
+              "lifetimeValid": true,
+              "boundsValid": true,
+              "expectedIncrement": true
+            },
+            "passed": true
+          },
+          "increments": {
+            "layerCount": 1,
+            "activeProxyMean": 69.67291666666667,
+            "edgeExpansionMean": 0.35947164894244504,
+            "impactOccupancyMean": 0.3570638020833333,
+            "mistCoverageMean": 0
+          },
+          "checks": {
+            "casesPassed": true,
+            "commonContract": true,
+            "commonCurtainHash": true,
+            "identicalCurtainGeometry": true,
+            "distinctCaseHash": true,
+            "onlyBreakupModeDiffers": true,
+            "curtainOnlyHasNoIncrement": true,
+            "hybridAddsOneLayer": true,
+            "hybridHasVisibleIncrement": true,
+            "mistExcludedFromFixedAB": true,
+            "noNumericalFailures": true
+          },
+          "passed": true,
+          "boundedConclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。"
+        },
+        "resultState": "11/11 通过",
+        "conclusion": "在 waterfall-breakup-v1 的固定崖壁、主水幕与视觉速度下，B 仅通过一层破碎粒子增加了边缘扩展与落点占用；这是可重放的视觉代理，不代表真实流量或质量守恒。 这不是现实流量、压力、碰撞或质量守恒结论。",
+        "resultRows": 6,
+        "formalDiagnosticsDisabled": true,
+        "overflowX": 0,
+        "errorOverlay": false
+      },
+      "checks": {
+        "status200": true,
+        "hasContent": true,
+        "expectedTitle": true,
+        "expectedHero": true,
+        "rendererReady": true,
+        "threePinned": true,
+        "expectedQuality": true,
+        "expectedVariants": true,
+        "apiContract": true,
+        "canvasNonBlank": true,
+        "truthBoundary": true,
+        "mainCurtainParity": true,
+        "onlyBreakupModeDiff": true,
+        "analysisCurtainParity": true,
+        "analysisOnlyBreakupMode": true,
+        "supplementalLayerSplit": true,
+        "twoEmitterBreakdownWhenExposed": true,
+        "motionTelemetryAvailable": true,
+        "reducedMotionStatic": true,
+        "explicitPlayback": true,
+        "mobileSingleViewport": true,
+        "mobileTapTargets": true,
+        "mobileSwitch": true,
+        "deterministicAB": true,
+        "fixedEndpoint": true,
+        "foamMistLockedOff": true,
+        "noNumericalFailures": true,
+        "lastResultMatches": true,
+        "resultRendered": true,
+        "formalDiagnosticsDisabled": true,
+        "frameTelemetryComplete": true,
+        "frameP50Budget": true,
+        "frameP95Budget": true,
+        "frameMaximumBounded": true,
+        "noHorizontalOverflow": true,
+        "noErrorOverlay": true,
+        "noConsoleErrors": true,
+        "noPageErrors": true,
+        "noFailedRequests": true
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "passed": true
+    }
+  ],
+  "fallback": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "reducedMotion": "reduce",
+    "state": {
+      "renderState": "failed",
+      "bodyLength": 976,
+      "fallbackVisible": true,
+      "reason": "已由验证参数强制进入 WebGL 回退。",
+      "retryVisible": true,
+      "retryHeight": 46,
+      "overflowX": 0,
+      "errorOverlay": false
+    },
+    "checks": {
+      "status200": true,
+      "hasContent": true,
+      "failedState": true,
+      "fallbackVisible": true,
+      "reasonVisible": true,
+      "retryVisible": true,
+      "retryTapTarget": true,
+      "noHorizontalOverflow": true,
+      "noErrorOverlay": true,
+      "noConsoleErrors": true,
+      "noPageErrors": true,
+      "noFailedRequests": true
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "passed": true
+  }
+}

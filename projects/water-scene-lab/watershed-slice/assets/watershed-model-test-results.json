@@ -1,0 +1,313 @@
+{
+  "createdAt": "2026-08-24T10:01:51.721Z",
+  "modelVersion": "mountain-watershed-graph-v0",
+  "modelSha256": "2873af443bf297f0b609017635217d015af2594ef10fa237c84a74d5d05075dc",
+  "scenarioHash": "fnv1a-e3ae2d53",
+  "checks": {
+    "selfCheck": true,
+    "scenarioValid": true,
+    "nodeCount": true,
+    "edgeCount": true,
+    "topology": true,
+    "siUnits": true,
+    "truthLevel": true,
+    "fixedProtocol": true,
+    "stableScenarioHash": true,
+    "singleDriverRatios": true,
+    "gravityFlightTime": true,
+    "impactVelocity": true,
+    "visualSamplingDecoupled": true,
+    "budgetsClosed": true,
+    "highFlowRaisesPoolFaster": true,
+    "transferIdentity": true,
+    "invalidPortRejected": true,
+    "invalidScaleRejected": true,
+    "accumulatedBudgetsClosed": true,
+    "fixedDuration": true,
+    "expectedPoolRise": true,
+    "highFlowStorageDelta": true,
+    "visualCountDoesNotSetMass": true
+  },
+  "diagnostics": {
+    "caseA": {
+      "modelVersion": "mountain-watershed-graph-v0",
+      "scenarioHash": "fnv1a-e3ae2d53",
+      "truthLevel": "T2",
+      "dt": 0.016666666666666666,
+      "dischargeScale": 0.5,
+      "dischargeM3s": 3,
+      "outlet": {
+        "widthM": 6.8,
+        "velocityMps": 3.758510343207798,
+        "curtainThicknessM": 0.11738067220847445
+      },
+      "waterfall": {
+        "fallHeightM": 18,
+        "fallTimeS": 1.9156525704423026,
+        "horizontalTravelM": 7.199999999999999,
+        "verticalImpactVelocityMps": 18.79255171603899,
+        "impactVelocityMps": 19.164717582056877,
+        "visualSampleCount": 52,
+        "representedVolumePerSampleM3": 0.0009615384615384616
+      },
+      "pool": {
+        "previousVolumeM3": 1680,
+        "inflowM3": 0.05,
+        "outflowM3": 0.041666666666666664,
+        "nextVolumeM3": 1680.0083333333332,
+        "levelDeltaM": 0.00001984126984098111
+      },
+      "transfers": [
+        {
+          "sourceNode": "upper-river",
+          "targetNode": "main-waterfall",
+          "volumeRateM3s": 3,
+          "volumeM3": 0.05,
+          "meanVelocityMps": 3.758510343207798,
+          "widthM": 6.8,
+          "momentumProxy": 0.1879255171603899,
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666
+        },
+        {
+          "sourceNode": "main-waterfall",
+          "targetNode": "lower-pool",
+          "volumeRateM3s": 3,
+          "volumeM3": 0.05,
+          "meanVelocityMps": 19.164717582056877,
+          "widthM": 6.8,
+          "momentumProxy": 0.9582358791028439,
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666
+        }
+      ],
+      "budget": {
+        "externalInputM3": 0.05,
+        "externalOutputM3": 0.041666666666666664,
+        "storageDeltaM3": 0.008333333333212067,
+        "residualM3": 1.2127104875858663e-13
+      }
+    },
+    "caseB": {
+      "modelVersion": "mountain-watershed-graph-v0",
+      "scenarioHash": "fnv1a-e3ae2d53",
+      "truthLevel": "T2",
+      "dt": 0.016666666666666666,
+      "dischargeScale": 1,
+      "dischargeM3s": 6,
+      "outlet": {
+        "widthM": 6.8,
+        "velocityMps": 3.758510343207798,
+        "curtainThicknessM": 0.2347613444169489
+      },
+      "waterfall": {
+        "fallHeightM": 18,
+        "fallTimeS": 1.9156525704423026,
+        "horizontalTravelM": 7.199999999999999,
+        "verticalImpactVelocityMps": 18.79255171603899,
+        "impactVelocityMps": 19.164717582056877,
+        "visualSampleCount": 104,
+        "representedVolumePerSampleM3": 0.0009615384615384616
+      },
+      "pool": {
+        "previousVolumeM3": 1680,
+        "inflowM3": 0.1,
+        "outflowM3": 0.041666666666666664,
+        "nextVolumeM3": 1680.0583333333332,
+        "levelDeltaM": 0.00013888888888849188
+      },
+      "transfers": [
+        {
+          "sourceNode": "upper-river",
+          "targetNode": "main-waterfall",
+          "volumeRateM3s": 6,
+          "volumeM3": 0.1,
+          "meanVelocityMps": 3.758510343207798,
+          "widthM": 6.8,
+          "momentumProxy": 0.3758510343207798,
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666
+        },
+        {
+          "sourceNode": "main-waterfall",
+          "targetNode": "lower-pool",
+          "volumeRateM3s": 6,
+          "volumeM3": 0.1,
+          "meanVelocityMps": 19.164717582056877,
+          "widthM": 6.8,
+          "momentumProxy": 1.9164717582056878,
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666
+        }
+      ],
+      "budget": {
+        "externalInputM3": 0.1,
+        "externalOutputM3": 0.041666666666666664,
+        "storageDeltaM3": 0.05833333333316659,
+        "residualM3": 1.667485594047946e-13
+      }
+    },
+    "ratios": {
+      "discharge": 2,
+      "curtainThickness": 2,
+      "transferredVolume": 2
+    },
+    "accumulatedCases": {
+      "low": {
+        "modelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "truthLevel": "T2",
+        "dischargeScale": 0.5,
+        "totalTicks": 1200,
+        "durationS": 20,
+        "visualSampleCount": 52,
+        "initialPoolVolumeM3": 1680,
+        "finalPoolVolumeM3": 1689.9999999998545,
+        "poolLevelRiseM": 0.023809523809177335,
+        "totalInflowM3": 59.99999999999873,
+        "totalOutflowM3": 49.99999999999934,
+        "storageDeltaM3": 9.99999999985448,
+        "accumulatedResidualM3": 1.4552525851030396e-10,
+        "cumulativeBudgetResidualM3": 1.4490808553091483e-10,
+        "maxStepResidualM3": 1.2127104875858663e-13,
+        "finalStep": {
+          "modelVersion": "mountain-watershed-graph-v0",
+          "scenarioHash": "fnv1a-e3ae2d53",
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666,
+          "dischargeScale": 0.5,
+          "dischargeM3s": 3,
+          "outlet": {
+            "widthM": 6.8,
+            "velocityMps": 3.758510343207798,
+            "curtainThicknessM": 0.11738067220847445
+          },
+          "waterfall": {
+            "fallHeightM": 18,
+            "fallTimeS": 1.9156525704423026,
+            "horizontalTravelM": 7.199999999999999,
+            "verticalImpactVelocityMps": 18.79255171603899,
+            "impactVelocityMps": 19.164717582056877,
+            "visualSampleCount": 52,
+            "representedVolumePerSampleM3": 0.0009615384615384616
+          },
+          "pool": {
+            "previousVolumeM3": 1689.9916666665213,
+            "inflowM3": 0.05,
+            "outflowM3": 0.041666666666666664,
+            "nextVolumeM3": 1689.9999999998545,
+            "levelDeltaM": 0.00001984126984098111
+          },
+          "transfers": [
+            {
+              "sourceNode": "upper-river",
+              "targetNode": "main-waterfall",
+              "volumeRateM3s": 3,
+              "volumeM3": 0.05,
+              "meanVelocityMps": 3.758510343207798,
+              "widthM": 6.8,
+              "momentumProxy": 0.1879255171603899,
+              "truthLevel": "T2",
+              "dt": 0.016666666666666666
+            },
+            {
+              "sourceNode": "main-waterfall",
+              "targetNode": "lower-pool",
+              "volumeRateM3s": 3,
+              "volumeM3": 0.05,
+              "meanVelocityMps": 19.164717582056877,
+              "widthM": 6.8,
+              "momentumProxy": 0.9582358791028439,
+              "truthLevel": "T2",
+              "dt": 0.016666666666666666
+            }
+          ],
+          "budget": {
+            "externalInputM3": 0.05,
+            "externalOutputM3": 0.041666666666666664,
+            "storageDeltaM3": 0.008333333333212067,
+            "residualM3": 1.2127104875858663e-13
+          }
+        }
+      },
+      "high": {
+        "modelVersion": "mountain-watershed-graph-v0",
+        "scenarioHash": "fnv1a-e3ae2d53",
+        "truthLevel": "T2",
+        "dischargeScale": 1,
+        "totalTicks": 1200,
+        "durationS": 20,
+        "visualSampleCount": 104,
+        "initialPoolVolumeM3": 1680,
+        "finalPoolVolumeM3": 1749.9999999998,
+        "poolLevelRiseM": 0.16666666666619026,
+        "totalInflowM3": 119.99999999999746,
+        "totalOutflowM3": 49.99999999999934,
+        "storageDeltaM3": 69.99999999979991,
+        "accumulatedResidualM3": 2.0009827128575353e-10,
+        "cumulativeBudgetResidualM3": 1.9821300156763755e-10,
+        "maxStepResidualM3": 1.667485594047946e-13,
+        "finalStep": {
+          "modelVersion": "mountain-watershed-graph-v0",
+          "scenarioHash": "fnv1a-e3ae2d53",
+          "truthLevel": "T2",
+          "dt": 0.016666666666666666,
+          "dischargeScale": 1,
+          "dischargeM3s": 6,
+          "outlet": {
+            "widthM": 6.8,
+            "velocityMps": 3.758510343207798,
+            "curtainThicknessM": 0.2347613444169489
+          },
+          "waterfall": {
+            "fallHeightM": 18,
+            "fallTimeS": 1.9156525704423026,
+            "horizontalTravelM": 7.199999999999999,
+            "verticalImpactVelocityMps": 18.79255171603899,
+            "impactVelocityMps": 19.164717582056877,
+            "visualSampleCount": 104,
+            "representedVolumePerSampleM3": 0.0009615384615384616
+          },
+          "pool": {
+            "previousVolumeM3": 1749.9416666664667,
+            "inflowM3": 0.1,
+            "outflowM3": 0.041666666666666664,
+            "nextVolumeM3": 1749.9999999998,
+            "levelDeltaM": 0.00013888888888849188
+          },
+          "transfers": [
+            {
+              "sourceNode": "upper-river",
+              "targetNode": "main-waterfall",
+              "volumeRateM3s": 6,
+              "volumeM3": 0.1,
+              "meanVelocityMps": 3.758510343207798,
+              "widthM": 6.8,
+              "momentumProxy": 0.3758510343207798,
+              "truthLevel": "T2",
+              "dt": 0.016666666666666666
+            },
+            {
+              "sourceNode": "main-waterfall",
+              "targetNode": "lower-pool",
+              "volumeRateM3s": 6,
+              "volumeM3": 0.1,
+              "meanVelocityMps": 19.164717582056877,
+              "widthM": 6.8,
+              "momentumProxy": 1.9164717582056878,
+              "truthLevel": "T2",
+              "dt": 0.016666666666666666
+            }
+          ],
+          "budget": {
+            "externalInputM3": 0.1,
+            "externalOutputM3": 0.041666666666666664,
+            "storageDeltaM3": 0.05833333333316659,
+            "residualM3": 1.667485594047946e-13
+          }
+        }
+      }
+    }
+  },
+  "passed": true
+}

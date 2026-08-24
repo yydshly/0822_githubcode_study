@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "recordedAt": "2026-08-24T03:32:43.000Z",
+  "source": "Three sequential isolated executions of tests/browser-smoke.cjs; the last raw report remains ocean-browser-results.json.",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.170"
+  },
+  "gpu": "ANGLE / Intel(R) UHD Graphics / Direct3D11",
+  "isolatedRuns": [
+    {
+      "createdAt": "2026-08-24T03:31:41.694Z",
+      "desktop": { "p50Ms": 8.2, "p95Ms": 16.7, "firstFrameMs": 675.2 },
+      "mobile": { "p50Ms": 4.2, "p95Ms": 4.3, "firstFrameMs": 58.8 },
+      "passed": true
+    },
+    {
+      "createdAt": "2026-08-24T03:32:19.099Z",
+      "desktop": { "p50Ms": 8.3, "p95Ms": 20.9, "firstFrameMs": 603.8 },
+      "mobile": { "p50Ms": 4.2, "p95Ms": 4.4, "firstFrameMs": 208.8 },
+      "passed": true
+    },
+    {
+      "createdAt": "2026-08-24T03:32:32.388Z",
+      "desktop": { "p50Ms": 8.2, "p95Ms": 17.0, "firstFrameMs": 540.9 },
+      "mobile": { "p50Ms": 4.2, "p95Ms": 4.3, "firstFrameMs": 66.8 },
+      "passed": true
+    }
+  ],
+  "ranges": {
+    "desktopP50Ms": [8.2, 8.3],
+    "desktopP95Ms": [16.7, 20.9],
+    "mobileP50Ms": [4.2, 4.2],
+    "mobileP95Ms": [4.3, 4.4]
+  },
+  "contextObservation": {
+    "createdAt": "2026-08-24T03:21:44.927Z",
+    "desktopP50Ms": 20.7,
+    "desktopP95Ms": 41.6,
+    "mobileP50Ms": 8.4,
+    "mobileP95Ms": 29.0,
+    "note": "Observed before isolated repeats and near other verification activity; retained as a contention/context warning, not discarded."
+  },
+  "decision": "continue Ocean baseline / hold FFT"
+}

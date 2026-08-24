@@ -1,0 +1,367 @@
+:root {
+  --bg: #06141a;
+  --panel: #09242c;
+  --panel-soft: #0b2d36;
+  --cyan: #84e8eb;
+  --cyan-pale: #d8fbf4;
+  --blue: #82aaff;
+  --lime: #d8f7bd;
+  --amber: #ffd27f;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 6%, rgba(101, 182, 197, 0.14), transparent 32rem),
+    linear-gradient(180deg, #09202a, var(--bg) 44%);
+}
+
+.brand-mark {
+  background: linear-gradient(135deg, #ddfff7, #7fdde7);
+}
+
+.stage-card {
+  grid-template-rows: auto minmax(700px, 1fr) auto;
+}
+
+.waterfall-intro-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 30px;
+  align-items: end;
+  padding: 20px 24px 19px;
+  background: linear-gradient(110deg, rgba(8, 37, 45, 0.98), rgba(6, 27, 35, 0.98));
+  border-bottom: 1px solid var(--line);
+}
+
+.waterfall-intro-strip h1 {
+  margin: 7px 0 0;
+  font-size: clamp(30px, 3.35vw, 47px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.waterfall-intro-strip h1 em {
+  color: var(--cyan-pale);
+  font-style: normal;
+}
+
+.waterfall-intro-strip > p {
+  margin: 0;
+  color: #9cb8bd;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.scene-viewport {
+  background:
+    linear-gradient(180deg, rgba(73, 103, 111, 0.42), rgba(7, 27, 34, 0.93)),
+    #17323a;
+}
+
+#waterfall-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+
+.drop-orientation {
+  position: absolute;
+  z-index: 4;
+  bottom: 24px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(222, 249, 246, 0.72);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+}
+
+.drop-orientation i {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(var(--cyan), transparent);
+}
+
+.waterfall-controls {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.waterfall-cards article:first-child {
+  border-color: rgba(255, 210, 127, 0.20);
+}
+
+.waterfall-cards article:last-child {
+  border-color: rgba(132, 232, 235, 0.27);
+}
+
+.ratio-warn {
+  color: var(--amber) !important;
+}
+
+.ratio-pass {
+  color: var(--cyan-pale) !important;
+}
+
+.physics-bridge {
+  margin: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(9, 36, 44, 0.98), rgba(5, 22, 29, 0.98));
+}
+
+.physics-bridge-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 48px;
+  align-items: end;
+  padding: 28px 30px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.physics-bridge-header h2 {
+  max-width: 820px;
+  margin: 7px 0 0;
+  color: var(--white);
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.physics-bridge-header > p {
+  margin: 0;
+  color: #9cb8bd;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.physics-map {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+}
+
+.physics-map > div {
+  min-width: 0;
+  padding: 18px 24px;
+  border-right: 1px solid var(--line);
+}
+
+.physics-map > div:last-child {
+  border-right: 0;
+}
+
+.physics-map span,
+.physics-map small,
+.physics-console-heading span,
+.physics-results span {
+  display: block;
+  color: #6f969d;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.physics-map strong {
+  display: block;
+  margin: 5px 0 3px;
+  color: var(--cyan-pale);
+  font-size: 16px;
+}
+
+.physics-map small {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.physics-bridge-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.45fr);
+  min-height: 560px;
+}
+
+.physics-viewport {
+  position: relative;
+  min-height: 560px;
+  background: #050d11;
+  border-right: 1px solid var(--line);
+}
+
+#physics-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  border: 0;
+  background: #050d11;
+}
+
+.physics-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 40px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(70, 185, 202, 0.16), transparent 18rem),
+    linear-gradient(160deg, #0a2730, #06161c);
+}
+
+.physics-placeholder[hidden] {
+  display: none;
+}
+
+.physics-placeholder span {
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.physics-placeholder strong {
+  margin-top: 12px;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.physics-placeholder p {
+  max-width: 470px;
+  margin: 10px 0 0;
+  color: #86a8ae;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.physics-console {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+}
+
+.physics-console-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.physics-console-heading strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.physics-console-heading code {
+  color: #7fa3aa;
+  font-size: 9px;
+}
+
+.physics-console button {
+  min-height: 48px;
+}
+
+.physics-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.physics-results > div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(5, 23, 29, 0.72);
+}
+
+.physics-results strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--cyan-pale);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.physics-conclusion {
+  margin: 4px 0 0;
+  padding: 14px;
+  color: #a9c3c7;
+  font-size: 10px;
+  line-height: 1.7;
+  border: 1px solid rgba(132, 232, 235, 0.18);
+  border-radius: 10px;
+  background: rgba(7, 38, 43, 0.62);
+}
+
+.physics-conclusion.pass {
+  color: var(--lime);
+  border-color: rgba(216, 247, 189, 0.28);
+}
+
+.physics-console a {
+  color: var(--cyan);
+  font-size: 10px;
+  text-decoration: none;
+}
+
+#physics-export {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1180px) {
+  .stage-card {
+    grid-template-rows: auto minmax(620px, 70svh) auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .waterfall-intro-strip {
+    display: block;
+    padding: 18px 16px;
+  }
+
+  .waterfall-intro-strip h1 {
+    font-size: clamp(31px, 8.8vw, 42px);
+  }
+
+  .waterfall-intro-strip > p {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+
+  .scene-viewport {
+    aspect-ratio: 4 / 5;
+  }
+
+  .mobile-variant-tabs button {
+    min-height: 44px;
+  }
+
+  .drop-orientation {
+    display: none;
+  }
+
+  .waterfall-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .waterfall-controls button {
+    min-height: 44px;
+  }
+}
