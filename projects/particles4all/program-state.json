@@ -5,6 +5,12 @@
   "programStatus": "archived",
   "archiveReason": "阶段研究、受控扩展、性能边界与长期价值判断均已完成；等待明确局部液体—刚体使用场景后再启动。",
   "reopenPolicy": "先定义场景问题、必须能力、验收画面和目标设备性能预算，再从源库能力做单变量验证。",
+  "scenePrototype": {
+    "id": "water-ring-game",
+    "status": "active",
+    "started": "2026-08-25",
+    "goal": "验证固定上游水体、原生 torus 刚体和受控喷流能否形成网页水中套圈玩法。"
+  },
   "operatingMode": "plan-driven",
   "macroGoal": "研究并扩展 Particles4All，判断其能否成为可复用的浏览器局部液体与刚体 WebGPU 运行时。",
   "activeModule": null,

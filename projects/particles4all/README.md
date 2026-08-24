@@ -22,8 +22,9 @@
 | 当前组件/上游评估 | [`COMPONENT_UPSTREAM_ASSESSMENT.md`](COMPONENT_UPSTREAM_ASSESSMENT.md) |
 | 最终技术决策 | [`FINAL_DECISION.md`](FINAL_DECISION.md) |
 | 阶段归档总结 | [`ARCHIVE_SUMMARY.md`](ARCHIVE_SUMMARY.md) |
+| 场景重启样例 | [`WATER_RING_GAME.md`](WATER_RING_GAME.md) |
 
-本项目已完成阶段研究并暂时归档：研究 Particles4All 原库能力，基于原算法做受控扩展，再判断适用场景与长期价值。[Water Scene Lab](../water-scene-lab/README.md) 同步作为历史场景探索和候选外围资产归档。后续仅在出现明确的局部液体—刚体使用场景时重新启动。
+基础研究已经归档；当前只因“网页水中套圈”这一明确局部液体—刚体场景进入受限原型验证。它复用固定上游、Runtime Adapter 和 torus 刚体，不恢复宏观水场景扩张。[Water Scene Lab](../water-scene-lab/README.md) 继续作为历史场景探索归档。
 
 项目采用计划驱动模式，并已完成 M0–M6。最终选择是保留研究基线与内部 Adapter 工具包、准备一个慢帧 FPS 上游候选补丁，同时停止复杂容器、宏观水环境和通用实时 SDK 扩展。最终适用场景、边界和重启条件见 [`ARCHIVE_SUMMARY.md`](ARCHIVE_SUMMARY.md)。
 

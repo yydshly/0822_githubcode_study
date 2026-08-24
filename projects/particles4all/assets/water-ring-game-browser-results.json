@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "checks": {
+    "http200": true,
+    "sourceRuntime": true,
+    "fiveNativeTorus": true,
+    "realFluidInjection": true,
+    "observableBodyMotion": true,
+    "visibleRingState": true,
+    "projectedGameTarget": true,
+    "playableScoreLoop": true,
+    "displayEvidenceSwitch": true,
+    "mobileLayout": true,
+    "browserClean": true
+  },
+  "initial": {
+    "description": {
+      "adapterVersion": 1,
+      "classification": "E1 runtime adapter",
+      "upstreamRuntime": true,
+      "particleCount": 14980,
+      "fluidParticleCount": 14000,
+      "rigidParticleCount": 980,
+      "bodyCount": 5,
+      "simTime": 0.03333333333333333,
+      "solverStepDt": 0.008333333333333333,
+      "generation": 1,
+      "support": {
+        "deterministicTicks": true,
+        "frozenSampling": true,
+        "directFluidInjection": true,
+        "fluidPacketGenerator": true,
+        "seededReset": false,
+        "scheduledEvents": true,
+        "directBodySampling": true,
+        "rigidBodyEvents": true,
+        "gpuDeviceDisposal": false
+      }
+    },
+    "bodyShapes": [
+      "torus",
+      "torus",
+      "torus",
+      "torus",
+      "torus"
+    ],
+    "bodyCentres": [
+      [
+        0.36000001430511475,
+        0.17000000178813934,
+        0.5
+      ],
+      [
+        0.5550000071525574,
+        0.1899999976158142,
+        0.5
+      ],
+      [
+        0.75,
+        0.20999999344348907,
+        0.5
+      ],
+      [
+        0.9449999928474426,
+        0.23000000417232513,
+        0.5
+      ],
+      [
+        1.1399999856948853,
+        0.25,
+        0.5
+      ]
+    ],
+    "canvasWebgpu": true
+  },
+  "afterJets": {
+    "shots": 3,
+    "score": 5,
+    "fluidAdded": 637,
+    "maxLift": 0,
+    "maxTravel": 0.7272406117057005,
+    "particleCount": 15617,
+    "bodyCentres": [
+      [
+        1.0790691375732422,
+        0.09629859030246735,
+        0.57991623878479
+      ],
+      [
+        1.267861247062683,
+        0.0877893939614296,
+        0.49477091431617737
+      ],
+      [
+        1.3339295387268066,
+        0.10441303253173828,
+        0.5764962434768677
+      ],
+      [
+        1.3913993835449219,
+        0.10668293386697769,
+        0.663418173789978
+      ],
+      [
+        1.3827910423278809,
+        0.05624464526772499,
+        0.3600081205368042
+      ]
+    ],
+    "ringCards": 5,
+    "targetProjected": true,
+    "status": "圆环 1 进入目标区域：本次命中来自源库刚体位置，不是预设动画。"
+  },
+  "switched": {
+    "view": "particles",
+    "frameSrc": "../engine/?preset=small&view=particles&particles=14000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&ssfrscale=0.45&ssfrradius=0.72&timing=0&game=water-ring&generation=2",
+    "active": "particles"
+  },
+  "mobile": {
+    "overflow": 0,
+    "controlsVisible": true
+  },
+  "consoleErrors": [],
+  "failedRequests": []
+}

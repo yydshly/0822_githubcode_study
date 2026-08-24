@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="基于 Particles4All 原生水体与 torus 刚体的网页水中套圈互动原型。" />
+  <title>水中套圈｜Particles4All 场景原型</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../"><span>PA</span><strong>Particles4All<br />场景原型</strong></a>
+    <nav aria-label="页面导航"><a href="#game">开始游戏</a><a href="#mapping">能力映射</a><a href="#boundary">当前边界</a></nav>
+    <a class="source-link" href="https://github.com/matsuoka-601/Particles4All" target="_blank" rel="noreferrer">GitHub 源库 ↗</a>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="kicker">SCENE PROTOTYPE · WEBGPU WATER RING TOSS</p>
+        <h1>把小时候的<br /><em>水中套圈</em><br />放进网页。</h1>
+      </div>
+      <div class="hero-note">
+        <p>按下水压按钮，让真实粒子水流推动原生圆环。目标不是重新发明水，而是验证 Particles4All 能否从算法演示转化为可玩的局部液体互动。</p>
+        <div class="legend"><span class="u0">U0 源库</span><span class="e1">E1 喷流扩展</span><span class="g1">G1 游戏逻辑</span></div>
+      </div>
+    </section>
+
+    <section id="game" class="game-shell shell" aria-labelledby="game-title">
+      <header class="game-head">
+        <div><p class="kicker">PLAYABLE PROOF</p><h2 id="game-title">水压套圈机</h2></div>
+        <div class="scoreboard" aria-live="polite"><span>命中</span><strong id="score">0</strong><small>/ 5</small></div>
+      </header>
+
+      <div class="game-layout">
+        <div class="tank-card">
+          <div class="tank-toolbar">
+            <span id="runtime-state" data-state="loading">正在连接 WebGPU Runtime</span>
+            <div class="view-switch" role="group" aria-label="显示方式">
+              <button type="button" data-view="ssfr" aria-pressed="true">水面</button>
+              <button type="button" data-view="particles" aria-pressed="false">粒子证据</button>
+            </div>
+          </div>
+          <div class="tank-window">
+            <iframe id="runtime-frame" title="Particles4All 水中套圈 WebGPU Runtime" allow="fullscreen"></iframe>
+            <div id="target-rack" class="target-rack" aria-hidden="true">
+              <span class="rack-label">目标支架 · 判定层</span>
+              <i></i><i></i><i></i>
+              <b></b>
+            </div>
+            <div class="jet jet-left" aria-hidden="true">L</div>
+            <div class="jet jet-center" aria-hidden="true">↑</div>
+            <div class="jet jet-right" aria-hidden="true">R</div>
+            <div id="loading-cover" class="loading-cover"><span></span><p>正在创建源库粒子场景…</p></div>
+            <div id="celebration" class="celebration" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <aside class="control-card">
+          <p class="control-kicker">WATER PRESSURE CONTROL</p>
+          <h3>用水流抬起圆环</h3>
+          <p class="control-copy">每次按压都会向源库 Runtime 注入一小束流体粒子。圆环进入右侧目标区后计分。</p>
+
+          <div class="pressure-controls">
+            <button id="jet-left" class="pressure pressure-blue" type="button" disabled><span>A</span><strong>左侧喷流</strong><small>向右上推动</small></button>
+            <button id="jet-up" class="pressure pressure-yellow" type="button" disabled><span>S</span><strong>中心上举</strong><small>抬升圆环</small></button>
+            <button id="jet-right" class="pressure pressure-red" type="button" disabled><span>D</span><strong>右侧喷流</strong><small>向左上推动</small></button>
+          </div>
+
+          <button id="guided-demo" class="guided" type="button" disabled>播放一次摇晃演示</button>
+          <button id="reset-game" class="reset" type="button">重新装水与圆环 <kbd>R</kbd></button>
+
+          <dl class="live-stats">
+            <div><dt>水压次数</dt><dd id="shot-count">0</dd></div>
+            <div><dt>新增流体</dt><dd id="fluid-added">0</dd></div>
+            <div><dt>最大抬升</dt><dd id="max-lift">—</dd></div>
+            <div><dt>圆环位移</dt><dd id="max-travel">—</dd></div>
+          </dl>
+          <p id="game-status" class="game-status" role="status" aria-live="polite">等待源库 Runtime。</p>
+        </aside>
+      </div>
+
+      <div id="ring-strip" class="ring-strip" aria-label="圆环实时状态"></div>
+    </section>
+
+    <section id="mapping" class="section shell">
+      <div class="section-heading"><div><p class="kicker">CAPABILITY MAPPING</p><h2>这个游戏实际用了什么？</h2></div><p>页面不是独立伪造水动画。每一层都标出来源，方便继续判断产品价值。</p></div>
+      <div class="mapping-grid">
+        <article><span class="label u0">U0 · 源库原生</span><h3>水与圆环</h3><p>PBF 水体、原生 torus 刚体、Shape Matching、浮力、碰撞和 SSFR 表面都由固定上游运行时产生。</p></article>
+        <article><span class="label e1">E1 · 已有 Adapter</span><h3>水压按钮</h3><p>按钮使用受控流体包注入 API，把点击映射成有方向的局部喷流，并读取圆环真实位置与位移。</p></article>
+        <article><span class="label g1">G1 · 新增玩法</span><h3>目标与计分</h3><p>支架图形、目标区域、命中反馈、键盘操作和演示节奏属于网页游戏层，不冒充源库物理能力。</p></article>
+      </div>
+    </section>
+
+    <section id="boundary" class="boundary shell">
+      <div><p class="kicker">CURRENT BOUNDARY</p><h2>这是“可玩性验证”，还不是最终玩具模拟。</h2></div>
+      <ul><li>圆环受水推动和姿态变化是真实源库计算。</li><li>当前支架是目标判定层，尚未完成细支架的粒子碰撞与稳定挂接。</li><li>命中表示圆环进入目标空间，不等于已经证明真实穿杆过程。</li><li>若位移与命中节奏成立，下一步才值得研究静态支架碰撞体。</li></ul>
+      <a href="../">返回完整源库能力实验台 →</a>
+    </section>
+  </main>
+
+  <footer class="shell"><span>Particles4All fixed upstream · MIT · f0ab7c2</span><span>场景原型 · Desktop WebGPU</span></footer>
+  <noscript>此互动原型需要 JavaScript 和支持 WebGPU 的桌面浏览器。</noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
