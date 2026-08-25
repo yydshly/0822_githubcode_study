@@ -83,7 +83,8 @@ struct StaticCollider {
 
 fn radialNormal(v: vec2f) -> vec2f {
   let d = length(v);
-  return select(vec2f(1.0, 0.0), v / d, d > 1.0e-7);
+  if (d > 1.0e-7) { return v / d; }
+  return vec2f(1.0, 0.0);
 }
 
 fn collideBase(pin: vec3f) -> vec3f {
@@ -96,7 +97,12 @@ fn collideBase(pin: vec3f) -> vec3f {
     let sideDepth = radius - radial;
     let topDepth = top - p.y;
     if (topDepth <= sideDepth) { p.y = top; }
-    else { p.xz += radialNormal(delta) * sideDepth; }
+    else {
+      // Multi-component swizzles are values in core WGSL and cannot be assigned.
+      // Rebuild the vector so this works without the optional swizzle_assignment feature.
+      let corrected = p.xz + radialNormal(delta) * sideDepth;
+      p = vec3f(corrected.x, p.y, corrected.y);
+    }
   }
   return p;
 }
@@ -112,7 +118,10 @@ fn collidePost(pin: vec3f) -> vec3f {
     let sideDepth = radius - radial;
     let topDepth = top - p.y;
     if (topDepth <= sideDepth) { p.y = top; }
-    else { p.xz += radialNormal(delta) * sideDepth; }
+    else {
+      let corrected = p.xz + radialNormal(delta) * sideDepth;
+      p = vec3f(corrected.x, p.y, corrected.y);
+    }
   }
   return p;
 }
@@ -123,7 +132,8 @@ fn collideCap(pin: vec3f) -> vec3f {
   let dist = length(delta);
   let radius = C.cap.w + C.extra.x;
   if (dist < radius) {
-    let normal = select(vec3f(0.0, 1.0, 0.0), delta / dist, dist > 1.0e-7);
+    var normal = vec3f(0.0, 1.0, 0.0);
+    if (dist > 1.0e-7) { normal = delta / dist; }
     p = C.cap.xyz + normal * radius;
   }
   return p;
