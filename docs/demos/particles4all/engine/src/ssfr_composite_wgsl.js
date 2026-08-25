@@ -115,7 +115,7 @@ fn traceBodies(ro: vec3f, rd: vec3f, tMax: f32) -> BodyTrace {
   o.col = vec3f(0.8);
   if (C.bodyCount == 0) { return o; }
   var t = 1.0e-4;
-  for (var i = 0; i < 96; i++) {
+  for (var i = 0; i < 64; i++) {
     let p = ro + rd * t;
     let s = bodyScene(p);
     if (s.dist < 5.0e-5) {

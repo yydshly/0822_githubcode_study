@@ -52,7 +52,7 @@ function engineUrl() {
   const params = new URLSearchParams({
     preset: 'small', view: state.view, particles: '14000', body: source.bodies, bodysize: '0.078',
     radius: '0.42', speedmax: '6', timescale: '0.82', tension: '0.55',
-    substeps: '1', iters: '3', ssfrscale: '0.32', ssfrradius: '0.72',
+    substeps: '1', iters: '2', ssfrscale: '0.32', ssfrradius: '0.72', ssfriters: '1',
     timing: '0', game: 'water-ring', generation: String(state.generation)
   });
   return `${source.runtime}?${params}`;

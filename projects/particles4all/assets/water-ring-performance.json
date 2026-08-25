@@ -1,0 +1,288 @@
+{
+  "protocol": {
+    "viewport": [
+      980,
+      650
+    ],
+    "common": {
+      "preset": "small",
+      "view": "ssfr",
+      "particles": "14000",
+      "body": "torus:0.38:0.17,torus:0.42:0.19,torus:0.46:0.21,torus:0.50:0.23,torus:0.54:0.25",
+      "bodysize": "0.078",
+      "radius": "0.42",
+      "speedmax": "6",
+      "timescale": "0.82",
+      "tension": "0.55",
+      "substeps": "1",
+      "iters": "3",
+      "ssfrscale": "0.32",
+      "ssfrradius": "0.72",
+      "timing": "1",
+      "game": "water-ring",
+      "report": "999"
+    },
+    "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "generatedAt": "2026-08-25T04:09:47.980Z",
+  "results": [
+    {
+      "id": "warmup",
+      "params": {},
+      "status": "completed",
+      "elapsedMs": 7441,
+      "frames": 59,
+      "wallMs": 1240.1000000238419,
+      "fps": 47.57680832099482,
+      "particles": 14980,
+      "simGpuMs": 8.309,
+      "renderGpuMs": 12.985,
+      "simPasses": {
+        "predict": 0.213,
+        "grid": 0.26,
+        "bodies": 0.053,
+        "solve": 5.15,
+        "collisionPose": 0.162,
+        "finish": 2.445,
+        "stats": 0.025
+      },
+      "renderPasses": {
+        "pack": 0.006,
+        "aniso": 1.762,
+        "solidT": 2.574,
+        "depth": 0.695,
+        "thick": 0.58,
+        "thickblur": 0.095,
+        "copy": 0.02,
+        "filter": 0.514,
+        "composite": 6.739
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "current",
+      "params": {},
+      "status": "completed",
+      "elapsedMs": 5482,
+      "frames": 52,
+      "wallMs": 1234.1000000357626,
+      "fps": 42.13596953123175,
+      "particles": 14980,
+      "simGpuMs": 10.899,
+      "renderGpuMs": 13.707,
+      "simPasses": {
+        "predict": 0.245,
+        "grid": 0.253,
+        "bodies": 0.063,
+        "solve": 6.817,
+        "collisionPose": 0.142,
+        "finish": 3.354,
+        "stats": 0.026
+      },
+      "renderPasses": {
+        "pack": 0.006,
+        "aniso": 1.916,
+        "solidT": 2.332,
+        "depth": 0.546,
+        "thick": 0.483,
+        "thickblur": 0.096,
+        "copy": 0.02,
+        "filter": 0.54,
+        "composite": 7.768
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "iterations-2",
+      "params": {
+        "iters": "2"
+      },
+      "status": "completed",
+      "elapsedMs": 5331,
+      "frames": 56,
+      "wallMs": 1182.9000000119213,
+      "fps": 47.341279904840334,
+      "particles": 14980,
+      "simGpuMs": 8.6,
+      "renderGpuMs": 14.131,
+      "simPasses": {
+        "predict": 0.23,
+        "grid": 0.217,
+        "bodies": 0.063,
+        "solve": 4.506,
+        "collisionPose": 0.109,
+        "finish": 3.449,
+        "stats": 0.027
+      },
+      "renderPasses": {
+        "pack": 0.007,
+        "aniso": 1.988,
+        "solidT": 2.345,
+        "depth": 0.506,
+        "thick": 0.515,
+        "thickblur": 0.098,
+        "copy": 0.021,
+        "filter": 0.567,
+        "composite": 8.083
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "iterations-2-filter-1",
+      "params": {
+        "iters": "2",
+        "ssfriters": "1"
+      },
+      "status": "completed",
+      "elapsedMs": 5419,
+      "frames": 59,
+      "wallMs": 1211.0999999880787,
+      "fps": 48.716043266931514,
+      "particles": 14980,
+      "simGpuMs": 8.277,
+      "renderGpuMs": 13.5,
+      "simPasses": {
+        "predict": 0.271,
+        "grid": 0.258,
+        "bodies": 0.067,
+        "solve": 4.255,
+        "collisionPose": 0.107,
+        "finish": 3.291,
+        "stats": 0.028
+      },
+      "renderPasses": {
+        "pack": 0.006,
+        "aniso": 1.853,
+        "solidT": 2.231,
+        "depth": 0.528,
+        "thick": 0.497,
+        "thickblur": 0.095,
+        "copy": 0.02,
+        "filter": 0.334,
+        "composite": 7.936
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "filter-1",
+      "params": {
+        "ssfriters": "1"
+      },
+      "status": "completed",
+      "elapsedMs": 5417,
+      "frames": 51,
+      "wallMs": 1188.5,
+      "fps": 42.91123264619268,
+      "particles": 14980,
+      "simGpuMs": 11.008,
+      "renderGpuMs": 13.641,
+      "simPasses": {
+        "predict": 0.304,
+        "grid": 0.239,
+        "bodies": 0.066,
+        "solve": 6.808,
+        "collisionPose": 0.14,
+        "finish": 3.426,
+        "stats": 0.027
+      },
+      "renderPasses": {
+        "pack": 0.007,
+        "aniso": 1.825,
+        "solidT": 2.304,
+        "depth": 0.519,
+        "thick": 0.48,
+        "thickblur": 0.094,
+        "copy": 0.018,
+        "filter": 0.313,
+        "composite": 8.08
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "filter-1-no-cleanup",
+      "params": {
+        "ssfriters": "1",
+        "ssfrcleanup": "0"
+      },
+      "status": "completed",
+      "elapsedMs": 5410,
+      "frames": 51,
+      "wallMs": 1184.1000000238419,
+      "fps": 43.07068659654853,
+      "particles": 14980,
+      "simGpuMs": 12.082,
+      "renderGpuMs": 13.722,
+      "simPasses": {
+        "predict": 0.346,
+        "grid": 0.243,
+        "bodies": 0.072,
+        "solve": 7.514,
+        "collisionPose": 0.218,
+        "finish": 3.662,
+        "stats": 0.026
+      },
+      "renderPasses": {
+        "pack": 0.007,
+        "aniso": 1.894,
+        "solidT": 2.31,
+        "depth": 0.522,
+        "thick": 0.482,
+        "thickblur": 0.129,
+        "copy": 0.025,
+        "filter": 0.136,
+        "composite": 8.218
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "filter-1-blur-4",
+      "params": {
+        "ssfriters": "1",
+        "ssfrthickblur": "4"
+      },
+      "status": "completed",
+      "elapsedMs": 5513,
+      "frames": 52,
+      "wallMs": 1239.8999999999996,
+      "fps": 41.938866037583686,
+      "particles": 14980,
+      "simGpuMs": 11.188,
+      "renderGpuMs": 13.558,
+      "simPasses": {
+        "predict": 0.27,
+        "grid": 0.216,
+        "bodies": 0.066,
+        "solve": 6.996,
+        "collisionPose": 0.221,
+        "finish": 3.392,
+        "stats": 0.027
+      },
+      "renderPasses": {
+        "pack": 0.007,
+        "aniso": 1.903,
+        "solidT": 2.339,
+        "depth": 0.569,
+        "thick": 0.483,
+        "thickblur": 0.039,
+        "copy": 0.024,
+        "filter": 0.32,
+        "composite": 7.873
+      },
+      "gpuError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    }
+  ]
+}

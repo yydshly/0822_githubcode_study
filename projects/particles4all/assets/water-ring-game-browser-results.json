@@ -197,11 +197,12 @@
     },
     "performanceProfile": {
       "substeps": 1,
-      "iterations": 3,
+      "iterations": 2,
       "ssfrScale": 0.32,
+      "ssfrFilterIterations": 1,
       "maxCatchUpFrames": 2
     },
-    "frameToken": "frame-1787629967105-0.050714560149600296",
+    "frameToken": "frame-1787631030520-0.02492419256061551",
     "bodyShapes": [
       "torus",
       "torus",
@@ -388,7 +389,7 @@
   "reliabilityRuns": [
     {
       "round": 1,
-      "elapsedMs": 8943,
+      "elapsedMs": 8951,
       "won": true,
       "pumpCycles": 12,
       "captureReason": "water-pump-guidance",
@@ -437,18 +438,18 @@
       "beforeReset": {
         "resetCount": 0,
         "generation": 1,
-        "frameToken": "frame-1787629967105-0.050714560149600296"
+        "frameToken": "frame-1787631030520-0.02492419256061551"
       },
       "afterReset": {
         "resetCount": 1,
         "generation": 1,
-        "frameToken": "frame-1787629967105-0.050714560149600296",
+        "frameToken": "frame-1787631030520-0.02492419256061551",
         "lastResetInPlace": true
       }
     },
     {
       "round": 2,
-      "elapsedMs": 9496,
+      "elapsedMs": 8862,
       "won": true,
       "pumpCycles": 12,
       "captureReason": "water-pump-guidance",
@@ -496,18 +497,18 @@
       "beforeReset": {
         "resetCount": 1,
         "generation": 1,
-        "frameToken": "frame-1787629967105-0.050714560149600296"
+        "frameToken": "frame-1787631030520-0.02492419256061551"
       },
       "afterReset": {
         "resetCount": 2,
         "generation": 1,
-        "frameToken": "frame-1787629967105-0.050714560149600296",
+        "frameToken": "frame-1787631030520-0.02492419256061551",
         "lastResetInPlace": true
       }
     },
     {
       "round": 3,
-      "elapsedMs": 10487,
+      "elapsedMs": 9154,
       "won": true,
       "pumpCycles": 12,
       "captureReason": "water-pump-guidance",
@@ -560,65 +561,65 @@
     "heldBodyId": 5,
     "heldAlign": true,
     "capturedCentre": [
-      1.22190523147583,
-      0.11993278563022614,
-      0.5017841458320618
+      1.2159444093704224,
+      0.11954042315483093,
+      0.5009196400642395
     ],
     "capturedSize": 0.078,
     "capturedRot": [
-      0.999998927116394,
-      0.00014688052760902792,
-      -0.0014600642025470734,
-      -0.0001426547532901168,
-      0.9999958276748657,
-      0.002893917728215456,
-      0.0014604830648750067,
-      -0.0028937063179910183,
-      0.9999947547912598
+      0.9999945163726807,
+      -0.0016164745902642608,
+      0.002893490483984351,
+      0.0016162905376404524,
+      0.9999986886978149,
+      0.00006595587183255702,
+      -0.0028935931622982025,
+      -0.00006127878441475332,
+      0.9999958276748657
     ],
-    "axisAlignment": 0.9999958276748657,
+    "axisAlignment": 0.9999986886978149,
     "seat": [
       1.214,
       0.1252,
       0.5
     ],
-    "seatDistance": 0.009665371604530829,
-    "contactGap": -0.001267214369773867,
-    "radialOffset": 0.021977769276242804,
-    "postClearance": -0.0001777692762428111,
+    "seatDistance": 0.0060545252261358,
+    "contactGap": -0.0016595768451690696,
+    "radialOffset": 0.015970908803802253,
+    "postClearance": 0.00582909119619774,
     "stableSamples": 2,
     "fluidAdded": 2160,
     "pumpCycles": 12,
     "pumpState": "已通关",
     "pumpLabel": "本局已完成",
-    "maxLift": 0.03860697150230408,
-    "maxTravel": 0.519202308991694,
+    "maxLift": 0.1520565152168274,
+    "maxTravel": 0.6642894461538232,
     "particleCount": 17140,
     "bodyCentres": [
       [
-        0.46499815583229065,
-        0.1327015608549118,
-        0.4597254991531372
+        0.4711868464946747,
+        0.11950013041496277,
+        0.455357164144516
       ],
       [
-        0.5438333749771118,
-        0.1291898638010025,
-        0.18120664358139038
+        0.7179460525512695,
+        0.11620145291090012,
+        0.6345196962356567
       ],
       [
-        0.5943290591239929,
-        0.11949550360441208,
-        0.7072699666023254
+        0.8978203535079956,
+        0.09833354502916336,
+        0.25658634305000305
       ],
       [
-        0.9216616153717041,
-        0.11378758400678635,
-        0.2120276838541031
+        0.8952668905258179,
+        0.09189090132713318,
+        0.7756709456443787
       ],
       [
-        1.22190523147583,
-        0.11993278563022614,
-        0.5017841458320618
+        1.2159444093704224,
+        0.11954042315483093,
+        0.5009196400642395
       ]
     ],
     "ringCards": 5,
@@ -770,7 +771,7 @@
       "postPenetrations": 0,
       "capPenetrations": 0
     },
-    "frameToken": "frame-1787629967105-0.050714560149600296",
+    "frameToken": "frame-1787631030520-0.02492419256061551",
     "status": "通关：圆环 5 已穿杆、落座并稳定贴合底座。按 R 可以再来一局。",
     "progressTitle": "通关 · 圆环 5 已挂住",
     "progressState": "complete",
@@ -800,8 +801,8 @@
   },
   "switched": {
     "view": "particles",
-    "frameSrc": "../engine/?preset=small&view=ssfr&particles=14000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&substeps=1&iters=3&ssfrscale=0.32&ssfrradius=0.72&timing=0&game=water-ring&generation=1",
-    "frameToken": "frame-1787629967105-0.050714560149600296",
+    "frameSrc": "../engine/?preset=small&view=ssfr&particles=14000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&substeps=1&iters=2&ssfrscale=0.32&ssfrradius=0.72&ssfriters=1&timing=0&game=water-ring&generation=1",
+    "frameToken": "frame-1787631030520-0.02492419256061551",
     "runtimeDisplay": 0,
     "active": "particles"
   },
