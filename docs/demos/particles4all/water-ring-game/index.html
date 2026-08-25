@@ -50,6 +50,10 @@
               <i></i>
               <b></b>
             </div>
+            <div id="play-progress" class="play-progress" data-state="idle" role="status" aria-live="polite">
+              <div><strong>等待启动</strong><span>点击“持续水泵”，让真实水流推动目标圆环</span></div>
+              <b><i></i></b>
+            </div>
             <div class="jet jet-left" aria-hidden="true">L</div>
             <div class="jet jet-center" aria-hidden="true">↑</div>
             <div class="jet jet-right" aria-hidden="true">R</div>
@@ -76,8 +80,8 @@
             <button id="jet-right" class="pressure pressure-red" type="button" disabled><span>D</span><strong>右侧喷流</strong><small>向左上推动</small></button>
           </div>
 
-          <button id="water-pump" class="pump" type="button" disabled><span>≈</span><strong>启动持续水泵</strong><small>连续真实喷流 · 再按停止</small></button>
-          <button id="guided-demo" class="guided" type="button" disabled>演示一局：把圆环挂上杆</button>
+          <button id="water-pump" class="pump" type="button" disabled><span>≈</span><strong>启动持续水泵并完成一局</strong><small>最多 12 次真实喷流 · 再按停止</small></button>
+          <button id="guided-demo" class="guided" type="button" disabled>查看手动水压组合演示</button>
           <button id="reset-game" class="reset" type="button">重新装水与圆环 <kbd>R</kbd></button>
 
           <dl class="live-stats">

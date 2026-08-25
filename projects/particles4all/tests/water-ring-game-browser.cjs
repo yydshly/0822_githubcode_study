@@ -12,7 +12,7 @@ const outputDir = path.resolve(__dirname, '../assets');
     executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     args: ['--enable-unsafe-webgpu', '--ignore-gpu-blocklist', '--disable-gpu-sandbox'],
   });
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
+  const context = await browser.newContext({ viewport: { width: 1366, height: 768 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
   page.setDefaultTimeout(90000);
   const consoleErrors = [];
@@ -37,9 +37,42 @@ const outputDir = path.resolve(__dirname, '../assets');
       };
     });
 
-    await page.locator('#water-pump').click();
-    await page.waitForFunction(() => window.__waterRingGame?.state?.pumpCycles > 0, null, { timeout: 10000 });
-    await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 24000 });
+    await page.evaluate(() => scrollTo(0, document.querySelector('#game').offsetTop));
+    await page.waitForTimeout(250);
+    const desktopLayout = await page.evaluate(() => {
+      const rect = selector => document.querySelector(selector).getBoundingClientRect();
+      const topbar = rect('.topbar');
+      const gameHead = rect('.game-head');
+      const pump = rect('#water-pump');
+      const progress = rect('#play-progress');
+      return {
+        headerCovered: topbar.bottom > gameHead.top && topbar.top <= gameHead.bottom,
+        pumpVisible: pump.top >= 0 && pump.bottom <= innerHeight,
+        progressVisible: progress.top >= 0 && progress.bottom <= innerHeight,
+        overflow: document.documentElement.scrollWidth - innerWidth,
+      };
+    });
+
+    const reliabilityRuns = [];
+    for (let round = 1; round <= 3; round += 1) {
+      if (round > 1) {
+        const generation = await page.evaluate(() => window.__waterRingGame.state.generation);
+        await page.locator('#reset-game').click();
+        await page.waitForFunction(previous => window.__waterRingGame?.state?.ready === true && window.__waterRingGame.state.generation > previous, generation, { timeout: 60000 });
+      }
+      const startedAt = Date.now();
+      await page.locator('#water-pump').click();
+      await page.waitForFunction(() => window.__waterRingGame?.state?.pumpCycles > 0, null, { timeout: 10000 });
+      await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
+      reliabilityRuns.push(await page.evaluate((payload) => ({
+        round: payload.round,
+        elapsedMs: Date.now() - payload.startedAt,
+        won: window.__waterRingGame.state.won,
+        pumpCycles: window.__waterRingGame.state.pumpCycles,
+        captureReason: window.__waterRingGame.state.capture?.reason,
+        eventTypes: window.__waterRingGame.state.events.map(event => event.type),
+      }), { round, startedAt }));
+    }
     const afterPlay = await page.evaluate(async () => {
       await window.__waterRingGame.sampleBodies();
       const game = window.__waterRingGame;
@@ -61,6 +94,7 @@ const outputDir = path.resolve(__dirname, '../assets');
         fluidAdded: game.state.fluidAdded,
         pumpCycles: game.state.pumpCycles,
         pumpState: document.querySelector('#pump-state')?.textContent,
+        pumpLabel: document.querySelector('#water-pump strong')?.textContent,
         maxLift: game.state.maxLift,
         maxTravel: game.state.maxTravel,
         particleCount: game.adapter.describe().particleCount,
@@ -68,6 +102,9 @@ const outputDir = path.resolve(__dirname, '../assets');
         ringCards: document.querySelectorAll('.ring-status').length,
         targetProjected: document.querySelector('#target-rack')?.dataset.projected === 'true',
         status: document.querySelector('#game-status')?.textContent,
+        progressTitle: document.querySelector('#play-progress strong')?.textContent,
+        progressState: document.querySelector('#play-progress')?.dataset.state,
+        eventTypes: game.state.events.map(event => event.type),
       };
     });
 
@@ -83,7 +120,7 @@ const outputDir = path.resolve(__dirname, '../assets');
     }));
     await page.screenshot({ path: path.join(outputDir, 'water-ring-game-390.png'), fullPage: true });
 
-    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.setViewportSize({ width: 1366, height: 768 });
     await page.locator('[data-view="particles"]').click();
     await page.waitForFunction(() => window.__waterRingGame?.state?.ready === true && window.__waterRingGame.state.view === 'particles');
     const switched = await page.evaluate(() => ({
@@ -99,18 +136,41 @@ const outputDir = path.resolve(__dirname, '../assets');
       fiveNativeTorus: initial.description.bodyCount === 5 && initial.bodyShapes.length === 5 && initial.bodyShapes.every(shape => shape === 'torus'),
       realFluidInjection: afterPlay.shots > 0 && afterPlay.fluidAdded > 0 && afterPlay.particleCount === initial.description.particleCount + afterPlay.fluidAdded,
       sustainedWaterPump: afterPlay.pumpCycles > 0 && afterPlay.pumpState === '已通关',
+      repeatableCompletion: reliabilityRuns.length === 3 && reliabilityRuns.every(run => run.won && run.elapsedMs < 20000 && run.eventTypes.includes('game-complete')),
+      noStartupRace: reliabilityRuns.every(run => run.eventTypes.indexOf('game-ready') >= 0 && run.eventTypes.indexOf('game-ready') < run.eventTypes.indexOf('pump-start') && !run.eventTypes.includes('pump-no-target')),
       observableBodyMotion: afterPlay.maxTravel > 0.09 || afterPlay.maxLift > 0.02,
       visibleRingState: afterPlay.ringCards === 5,
       projectedGameTarget: afterPlay.targetProjected,
       playableScoreLoop: afterPlay.won && afterPlay.score === 1 && afterPlay.phase === 'hang',
+      visibleCompletionFeedback: afterPlay.progressState === 'complete' && afterPlay.progressTitle.includes('通关') && afterPlay.pumpLabel === '本局已完成',
+      desktopUiClear: !desktopLayout.headerCovered && desktopLayout.pumpVisible && desktopLayout.progressVisible && desktopLayout.overflow <= 1,
       realTorusHeldOnPeg: afterPlay.capturedBodyId === afterPlay.heldBodyId && afterPlay.heldAlign && afterPlay.seatDistance < 0.05 && afterPlay.axisAlignment > 0.9,
       displayEvidenceSwitch: switched.view === 'particles' && switched.active === 'particles' && switched.frameSrc.includes('view=particles'),
       mobileLayout: mobile.overflow <= 1 && mobile.controlsVisible,
       browserClean: consoleErrors.length === 0 && failedRequests.length === 0,
     };
-    report = { passed: Object.values(checks).every(Boolean), checks, initial, afterPlay, switched, mobile, consoleErrors, failedRequests };
+    report = { passed: Object.values(checks).every(Boolean), checks, initial, desktopLayout, reliabilityRuns, afterPlay, switched, mobile, consoleErrors, failedRequests };
   } catch (error) {
-    report = { passed: false, error: error.message, stack: error.stack, consoleErrors, failedRequests };
+    let browserState = null;
+    try {
+      browserState = await page.evaluate(() => ({
+        state: window.__waterRingGame ? {
+          ready: window.__waterRingGame.state.ready,
+          playable: window.__waterRingGame.state.playable,
+          busy: window.__waterRingGame.state.busy,
+          won: window.__waterRingGame.state.won,
+          pumpActive: window.__waterRingGame.state.pumpActive,
+          pumpCycles: window.__waterRingGame.state.pumpCycles,
+          pumpTargetId: window.__waterRingGame.state.pumpTargetId,
+          error: window.__waterRingGame.state.error,
+          events: window.__waterRingGame.state.events,
+        } : null,
+        pumpDisabled: document.querySelector('#water-pump')?.disabled,
+        pumpText: document.querySelector('#water-pump strong')?.textContent,
+        status: document.querySelector('#game-status')?.textContent,
+      }));
+    } catch { /* Page may already be unavailable. */ }
+    report = { passed: false, error: error.message, stack: error.stack, browserState, consoleErrors, failedRequests };
   } finally {
     fs.writeFileSync(path.join(outputDir, 'water-ring-game-browser-results.json'), `${JSON.stringify(report, null, 2)}\n`);
     await browser.close();

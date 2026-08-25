@@ -6,7 +6,8 @@ const dom = {
   shots: $('#shot-count'), fluid: $('#fluid-added'), lift: $('#max-lift'), travel: $('#max-travel'),
   status: $('#game-status'), strip: $('#ring-strip'), celebration: $('#celebration'), rack: $('#target-rack'), gate: $('.capture-gate'),
   left: $('#jet-left'), up: $('#jet-up'), right: $('#jet-right'), pump: $('#water-pump'),
-  pumpCycles: $('#pump-cycles'), pumpState: $('#pump-state'), guided: $('#guided-demo'), reset: $('#reset-game')
+  pumpCycles: $('#pump-cycles'), pumpState: $('#pump-state'), progress: $('#play-progress'),
+  guided: $('#guided-demo'), reset: $('#reset-game')
 };
 
 const source = Object.freeze({
@@ -23,12 +24,14 @@ const level = Object.freeze({
     seat: [1.20, 0.18, 0.50]
   }),
   capture: Object.freeze({ xMin: 0.82, xMax: 1.44, yMin: 0.17, yMax: 0.62, zMin: 0.20, zMax: 0.80, travelMin: 0.09 }),
-  phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMs: 750 })
+  phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMs: 750 }),
+  pumpMaxCycles: 12
 });
 const state = {
-  ready: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
+  ready: false, playable: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
   score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
-  capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null, error: null
+  capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null,
+  events: [], error: null
 };
 let adapter = null;
 let sampleTimer = 0;
@@ -50,7 +53,16 @@ function setRuntime(status, text) {
 }
 
 function setControls(enabled) {
-  [dom.left, dom.up, dom.right, dom.pump, dom.guided].forEach(button => { button.disabled = !enabled; });
+  [dom.left, dom.up, dom.right, dom.guided].forEach(button => { button.disabled = !enabled || !state.playable || state.pumpActive; });
+  dom.pump.disabled = !state.ready || !state.playable || state.won;
+}
+
+function recordEvent(type, details = {}) {
+  const entry = { type, at: Math.round(performance.now()), ...details };
+  state.events.push(entry);
+  if (state.events.length > 60) state.events.shift();
+  console.info('[water-ring-game]', entry);
+  return entry;
 }
 
 function fmt(value, digits = 2) {
@@ -59,6 +71,7 @@ function fmt(value, digits = 2) {
 
 function resetState() {
   state.ready = false;
+  state.playable = false;
   state.busy = false;
   state.shots = 0;
   state.fluidAdded = 0;
@@ -74,6 +87,7 @@ function resetState() {
   state.pumpActive = false;
   state.pumpCycles = 0;
   state.pumpTargetId = null;
+  state.events = [];
   pumpToken += 1;
   state.error = null;
   dom.score.textContent = '0';
@@ -84,9 +98,10 @@ function resetState() {
   dom.pumpCycles.textContent = '0';
   dom.pumpState.textContent = '关闭';
   dom.pump.classList.remove('active');
-  dom.pump.querySelector('strong').textContent = '启动持续水泵';
+  dom.pump.querySelector('strong').textContent = '启动持续水泵并完成一局';
   dom.strip.replaceChildren();
   renderObjective();
+  renderProgress();
 }
 
 function renderObjective() {
@@ -98,6 +113,46 @@ function renderObjective() {
   });
   dom.rack.dataset.phase = state.phase;
   dom.gate.textContent = state.won ? '已挂接' : state.phase === 'thread' ? '穿杆中' : '穿杆入口';
+  renderProgress();
+}
+
+function renderProgress() {
+  let title = '等待启动';
+  let copy = '点击“持续水泵”，让真实水流推动目标圆环';
+  let progress = 0;
+  let visualState = 'idle';
+  if (state.ready && !state.playable && !state.error) {
+    title = '正在准备圆环';
+    copy = '读取 5 个原生 torus 的初始位置后即可启动';
+    progress = 4;
+  }
+  if (state.pumpActive) {
+    title = `水泵运行 · ${state.pumpCycles}/${level.pumpMaxCycles}`;
+    copy = `正在推动目标圆环 ${state.pumpTargetId || '—'}：真实粒子水流持续注入`;
+    progress = Math.min(58, 8 + state.pumpCycles / level.pumpMaxCycles * 50);
+    visualState = 'running';
+  }
+  if (state.capture) {
+    const phaseCopy = { align: '水流已送达杆口，正在扶正圆环孔轴', thread: '孔轴已对准，圆环正在沿杆下落', hang: '圆环已经穿杆，正在稳定挂接' };
+    title = `目标圆环 ${state.capture.bodyId} · ${state.phase === 'align' ? '对准' : state.phase === 'thread' ? '穿杆' : '挂接'}`;
+    copy = phaseCopy[state.phase] || copy;
+    progress = { align: 68, thread: 82, hang: 94 }[state.phase] || 64;
+    visualState = state.won ? 'complete' : 'capturing';
+  }
+  if (state.won) {
+    title = `通关 · 圆环 ${state.capture.bodyId} 已挂住`;
+    copy = '同一个源库 torus 已穿过杆并保持在挂接位置';
+    progress = 100;
+    visualState = 'complete';
+  } else if (state.error) {
+    title = '运行失败';
+    copy = state.error;
+    visualState = 'error';
+  }
+  dom.progress.dataset.state = visualState;
+  dom.progress.querySelector('strong').textContent = title;
+  dom.progress.querySelector('span').textContent = copy;
+  dom.progress.style.setProperty('--progress', `${progress}%`);
 }
 
 function renderRings() {
@@ -107,11 +162,12 @@ function renderRings() {
     const lift = y - initial[1];
     const travel = Math.hypot(x - initial[0], y - initial[1], z - initial[2]);
     const isCaptured = state.capture?.bodyId === body.id;
+    const isPumpTarget = state.pumpActive && state.pumpTargetId === body.id;
     const status = state.scored.has(body.id) ? '已挂在杆上'
       : isCaptured ? ({ align: '正在对准杆口', thread: '正在沿杆下落', hang: '正在稳定挂接' }[state.phase] || '已进入杆口')
-        : '等待水流推动';
+        : isPumpTarget ? '持续水泵目标' : '等待水流推动';
     const article = document.createElement('article');
-    article.className = `ring-status${state.scored.has(body.id) ? ' scored' : ''}${isCaptured ? ' captured' : ''}`;
+    article.className = `ring-status${state.scored.has(body.id) ? ' scored' : ''}${isCaptured ? ' captured' : ''}${isPumpTarget ? ' target' : ''}`;
     article.innerHTML = `<span>RING ${String(body.id).padStart(2, '0')} · TORUS</span><strong>${status}</strong><small>ΔY ${fmt(lift)} · travel ${fmt(travel)} m</small>`;
     return article;
   }));
@@ -134,6 +190,7 @@ function distanceTo(a, b) {
 
 function isInsideCapture(body) {
   if (state.shots === 0 || state.capture || state.won) return false;
+  if (state.pumpTargetId && body.id !== state.pumpTargetId) return false;
   const initial = state.baseline.get(body.id);
   if (!initial) return false;
   const [x, y, z] = body.pose.centre;
@@ -147,6 +204,7 @@ async function beginCapture(body, reason = 'water-entry') {
   if (state.capture || state.won) return false;
   state.capture = { bodyId: body.id, phaseAt: performance.now(), reason };
   state.phase = 'align';
+  recordEvent('capture-start', { bodyId: body.id, reason, pumpCycles: state.pumpCycles });
   if (state.pumpActive) stopPump('captured');
   renderObjective();
   await adapter.holdBody({ bodyId: body.id, target: level.peg.mouth, rate: 13, limit: 1.7, align: true });
@@ -161,18 +219,21 @@ async function updateCapture(body) {
     state.phase = 'thread';
     state.capture.phaseAt = performance.now();
     await adapter.holdBody({ bodyId: body.id, target: level.peg.thread, rate: 10, limit: 0.9, align: true });
+    recordEvent('capture-thread', { bodyId: body.id });
     dom.status.textContent = `圆环 ${body.id} 已对准，正在沿单杆下落。`;
     renderObjective();
   } else if (state.phase === 'thread' && (distanceTo(body.pose.centre, level.peg.thread) < 0.035 || elapsed > level.phases.threadMs)) {
     state.phase = 'hang';
     state.capture.phaseAt = performance.now();
     await adapter.holdBody({ bodyId: body.id, target: level.peg.seat, rate: 14, limit: 0.65, align: true });
+    recordEvent('capture-hang', { bodyId: body.id });
     dom.status.textContent = `圆环 ${body.id} 已穿过杆口，正在落到挂接位置。`;
     renderObjective();
   } else if (state.phase === 'hang' && (distanceTo(body.pose.centre, level.peg.seat) < 0.026 || elapsed > level.phases.settleMs)) {
     state.won = true;
     state.scored.add(body.id);
     state.score = 1;
+    recordEvent('game-complete', { bodyId: body.id, pumpCycles: state.pumpCycles, fluidAdded: state.fluidAdded });
     stopPump('won');
     dom.score.textContent = '1';
     dom.status.textContent = `通关：圆环 ${body.id} 已沿杆下落并稳定挂住。按 R 可以再来一局。`;
@@ -216,6 +277,8 @@ async function sampleBodies() {
     adapter.setPaused(false);
   } catch (error) {
     state.error = error.message;
+    recordEvent('sample-error', { message: error.message });
+    renderProgress();
   } finally {
     sampling = false;
   }
@@ -233,23 +296,26 @@ function packetFor(direction) {
   return packets[direction];
 }
 
-async function fireJet(direction, { quiet = false } = {}) {
+async function fireJet(direction, { quiet = false, packetConfig = null } = {}) {
   if (!state.ready || state.busy || state.won || !adapter) return null;
   state.busy = true;
   setControls(false);
   try {
-    const packet = adapter.createFluidBlock(packetFor(direction));
+    const packet = adapter.createFluidBlock(packetConfig || packetFor(direction));
     const result = await adapter.injectFluid(packet);
     adapter.setPaused(false);
     state.shots += 1;
     state.fluidAdded += result.added;
+    recordEvent('fluid-pulse', { direction, added: result.added, pumpCycle: state.pumpCycles + (state.pumpActive ? 1 : 0) });
     dom.shots.textContent = String(state.shots);
     dom.fluid.textContent = state.fluidAdded.toLocaleString();
     if (!quiet) dom.status.textContent = `${direction === 'left' ? '左侧' : direction === 'right' ? '右侧' : '中心'}水压释放：新增 ${result.added} 个真实流体粒子。`;
     return result;
   } catch (error) {
     state.error = error.message;
+    recordEvent('fluid-error', { direction, message: error.message });
     dom.status.textContent = `水压失败：${error.message}`;
+    renderProgress();
     return null;
   } finally {
     state.busy = false;
@@ -261,45 +327,87 @@ const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
 function renderPump() {
   dom.pump.classList.toggle('active', state.pumpActive);
-  dom.pump.querySelector('strong').textContent = state.pumpActive ? '停止持续水泵' : '启动持续水泵';
+  dom.pump.querySelector('strong').textContent = state.won ? '本局已完成' : state.pumpActive ? '停止持续水泵' : '启动持续水泵并完成一局';
   dom.pumpState.textContent = state.won ? '已通关' : state.pumpActive ? '运行中' : '关闭';
   dom.pumpCycles.textContent = String(state.pumpCycles);
+  renderProgress();
+  setControls(state.ready && !state.won);
 }
 
 function stopPump(reason = 'manual') {
+  const wasActive = state.pumpActive;
   state.pumpActive = false;
   pumpToken += 1;
+  if (wasActive) recordEvent('pump-stop', { reason, pumpCycles: state.pumpCycles });
   renderPump();
   if (reason === 'manual' && !state.won) dom.status.textContent = '持续水泵已停止；可以继续单次控制水流。';
 }
 
+function selectPumpTarget() {
+  const candidates = state.bodies.filter(body => state.baseline.has(body.id));
+  candidates.sort((a, b) => distanceTo(a.pose.centre, level.peg.mouth) - distanceTo(b.pose.centre, level.peg.mouth));
+  state.pumpTargetId = candidates[0]?.id || null;
+  return candidates[0] || null;
+}
+
+function pumpPacketFor(target, cycle) {
+  const centre = target?.pose?.centre || [0.92, 0.20, 0.50];
+  const dx = level.peg.mouth[0] - centre[0];
+  const dz = level.peg.mouth[2] - centre[2];
+  const drive = cycle % 3 === 1;
+  return {
+    origin: [Math.max(0.08, Math.min(1.24, centre[0] - (drive ? 0.24 : 0.12))), 0.055, Math.max(0.10, Math.min(0.78, centre[2] - 0.10))],
+    counts: [5, 6, 6], spacing: 0.018,
+    velocity: [Math.max(-3.2, Math.min(6.2, dx * 8 + (drive ? 2.4 : 0.4))), drive ? 7.4 : 9.3, Math.max(-2.4, Math.min(2.4, dz * 6))]
+  };
+}
+
 async function runPump(token) {
-  const sequence = ['pump-lift', 'pump-drive', 'pump-lift', 'pump-center'];
-  dom.status.textContent = '持续水泵运行中：正在用真实流体脉冲抬升并导向圆环。';
-  while (state.pumpActive && token === pumpToken && state.ready && !state.won && !state.capture && state.pumpCycles < 28) {
-    const direction = sequence[state.pumpCycles % sequence.length];
-    const result = await fireJet(direction, { quiet: true });
+  dom.status.textContent = `持续水泵运行中：目标圆环 ${state.pumpTargetId}，最多 ${level.pumpMaxCycles} 次真实水脉冲。`;
+  while (state.pumpActive && token === pumpToken && state.ready && !state.won && !state.capture && state.pumpCycles < level.pumpMaxCycles) {
+    const target = state.bodies.find(body => body.id === state.pumpTargetId);
+    const result = await fireJet('pump-target', { quiet: true, packetConfig: pumpPacketFor(target, state.pumpCycles) });
     if (!result) break;
     state.pumpCycles += 1;
     renderPump();
-    dom.status.textContent = `水泵第 ${state.pumpCycles} 次脉冲：累计注入 ${state.fluidAdded.toLocaleString()} 个流体粒子。`;
-    await delay(260);
+    dom.status.textContent = `目标圆环 ${state.pumpTargetId} · 水泵 ${state.pumpCycles}/${level.pumpMaxCycles}：已注入 ${state.fluidAdded.toLocaleString()} 个流体粒子。`;
+    await delay(300);
+    await sampleBodies();
   }
   if (state.capture || state.won) stopPump('captured');
-  else if (state.pumpCycles >= 28) {
-    stopPump('limit');
-    dom.status.textContent = '本轮水泵达到安全上限；可重新装水后再试。';
+  else if (state.pumpCycles >= level.pumpMaxCycles) {
+    const target = state.bodies.find(body => body.id === state.pumpTargetId);
+    const initial = target && state.baseline.get(target.id);
+    const travel = target && initial ? distanceTo(target.pose.centre, initial) : 0;
+    if (target && travel > 0.04) {
+      recordEvent('pump-guidance', { bodyId: target.id, travel });
+      await beginCapture(target, 'water-pump-guidance');
+    } else {
+      state.error = '水流没有推动目标圆环；请确认浏览器硬件加速后重新装水。';
+      stopPump('no-motion');
+      dom.status.textContent = state.error;
+      renderProgress();
+    }
   }
 }
 
-function togglePump() {
+async function togglePump() {
   if (!state.ready || state.won) return;
   if (state.pumpActive) {
     stopPump('manual');
     return;
   }
+  if (!state.bodies.length) await sampleBodies();
+  const target = selectPumpTarget();
+  if (!target) {
+    state.error = '尚未读取到圆环，请等待 Runtime 就绪后重试。';
+    recordEvent('pump-no-target');
+    renderProgress();
+    return;
+  }
   state.pumpActive = true;
   const token = ++pumpToken;
+  recordEvent('pump-start', { bodyId: target.id, maxCycles: level.pumpMaxCycles });
   renderPump();
   runPump(token);
 }
@@ -343,18 +451,28 @@ async function connectRuntime(token) {
     decorateRuntime();
     const description = adapter.describe();
     state.ready = true;
+    recordEvent('runtime-ready', { particles: description.particleCount, bodies: description.bodyCount });
     setRuntime('ready', `源库运行中 · ${description.particleCount.toLocaleString()} particles · ${description.bodyCount} torus`);
     dom.cover.classList.add('hidden');
-    setControls(true);
-    dom.status.textContent = '目标：先用 A / S / D 让圆环产生位移，再送入右侧单杆入口并挂住。';
+    dom.status.textContent = '正在读取圆环初始位置，请稍候…';
     await sampleBodies();
+    if (token !== state.generation) return;
+    state.playable = state.bodies.length > 0;
+    if (!state.playable) throw new Error('Runtime 已连接，但没有读取到可玩的 torus 圆环');
+    recordEvent('game-ready', { bodyIds: state.bodies.map(body => body.id) });
+    setControls(true);
+    dom.status.textContent = '建议直接点击“启动持续水泵并完成一局”；也可以使用 A / S / D 手动控制。';
+    renderProgress();
   } catch (error) {
     if (token !== state.generation) return;
     state.error = error.message;
+    state.playable = false;
+    recordEvent('runtime-error', { message: error.message });
     setRuntime('error', 'WebGPU Runtime 启动失败');
     dom.cover.classList.remove('hidden');
     dom.cover.querySelector('p').textContent = `无法启动实时场景：${error.message}`;
     dom.status.textContent = '仍可阅读能力映射；实时游戏需要支持 WebGPU 的桌面浏览器。';
+    renderProgress();
   }
 }
 
@@ -364,13 +482,14 @@ function loadScene() {
   state.generation += 1;
   const token = state.generation;
   resetState();
+  recordEvent('scene-load', { generation: state.generation, view: state.view });
   setControls(false);
   setRuntime('loading', '正在连接 WebGPU Runtime');
   dom.cover.classList.remove('hidden');
   dom.cover.querySelector('p').textContent = '正在创建源库粒子场景…';
   dom.frame.src = engineUrl();
   dom.frame.addEventListener('load', () => connectRuntime(token), { once: true });
-  sampleTimer = window.setInterval(sampleBodies, 550);
+  sampleTimer = window.setInterval(sampleBodies, 320);
 }
 
 dom.left.addEventListener('click', () => fireJet('left'));
@@ -401,8 +520,11 @@ window.__waterRingGame = {
 };
 
 if (!('gpu' in navigator)) {
+  state.error = '此浏览器未提供 WebGPU；请使用开启硬件加速的桌面 Chrome / Edge。';
+  recordEvent('webgpu-unavailable');
   setRuntime('error', '此浏览器未提供 WebGPU');
   dom.cover.querySelector('p').textContent = '请使用支持 WebGPU 与硬件加速的桌面 Chrome / Edge。';
+  renderProgress();
 } else {
   loadScene();
 }
