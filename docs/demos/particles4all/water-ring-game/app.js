@@ -33,16 +33,16 @@ const level = Object.freeze({
     seat: [1.22 + geometry.seatRadialOffset,
       geometry.baseTop + geometry.ringTubeRadius + geometry.seatClearance, 0.75]
   }),
-  capture: Object.freeze({ radialMax: 0.33, yMin: 0.055, yMax: 0.62, travelMin: 0.12, minShots: 2 }),
+  capture: Object.freeze({ radialMax: 0.33, yMin: 0.055, yMax: 0.62, travelMin: 0.12, minFluidAdded: 650 }),
   phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMinMs: 520 }),
-  pumpMaxCycles: 12
+  pumpMaxCycles: 18
 });
 const state = {
   ready: false, playable: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
   score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
   capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null,
   events: [], error: null, resetCount: 0, apparatus: null, lastResetInPlace: false,
-  started: false, activeUntil: 0
+  started: false, activeUntil: 0, initialFluidCount: 0
 };
 let adapter = null;
 let sampleTimer = 0;
@@ -102,6 +102,7 @@ function resetState({ keepRuntime = false } = {}) {
   state.pumpTargetId = null;
   state.started = false;
   state.activeUntil = 0;
+  state.initialFluidCount = 0;
   state.events = [];
   pumpToken += 1;
   state.error = null;
@@ -202,7 +203,7 @@ function distanceTo(a, b) {
 }
 
 function isInsideCapture(body) {
-  if (!state.started || state.shots < level.capture.minShots || state.capture || state.won) return false;
+  if (!state.started || state.fluidAdded < level.capture.minFluidAdded || state.capture || state.won) return false;
   const initial = state.baseline.get(body.id);
   if (!initial) return false;
   const [x, y, z] = body.pose.centre;
@@ -308,6 +309,11 @@ async function sampleBodies() {
   if (!state.ready || state.busy || sampling || !adapter) return;
   sampling = true;
   try {
+    const description = adapter.describe();
+    if (!state.initialFluidCount) state.initialFluidCount = description.fluidParticleCount;
+    state.fluidAdded = Math.max(state.fluidAdded,
+      Math.max(0, description.fluidParticleCount - state.initialFluidCount));
+    dom.fluid.textContent = state.fluidAdded.toLocaleString();
     const result = await adapter.sampleBodies();
     state.bodies = result.bodies;
     for (const body of result.bodies) {
@@ -389,7 +395,10 @@ function stopPump(reason = 'manual') {
   const wasActive = state.pumpActive;
   state.pumpActive = false;
   pumpToken += 1;
-  try { adapter?.setPumpState(false, null); } catch { /* Runtime may be resetting. */ }
+  try {
+    adapter?.setWaterStream(false);
+    adapter?.setPumpState(false, null);
+  } catch { /* Runtime may be resetting. */ }
   if (wasActive) recordEvent('pump-stop', { reason, pumpCycles: state.pumpCycles });
   if (reason === 'won') state.activeUntil = 0;
   else if (!state.capture) state.activeUntil = Math.max(state.activeUntil, performance.now() + 1200);
@@ -405,46 +414,28 @@ function selectPumpTarget() {
   return candidates[0] || null;
 }
 
-function pumpPacketFor(target, cycle) {
-  const centre = target?.pose?.centre || [0.92, 0.20, 0.50];
-  const nozzles = [
-    { nozzle: 'left', point: [0.065, 0.122, 0.315] },
-    { nozzle: 'up', point: [0.614, 0.122, 0.315] },
-    { nozzle: 'right', point: [1.405, 0.122, 0.315] }
-  ];
-  // Select a nozzle behind the target's desired travel direction. Choosing the
-  // nearest nozzle can put the jet in front of the ring and push it away from
-  // the peg, which made the controls look active but mechanically ineffective.
-  const selected = centre[0] > level.peg.mouth[0] + 0.04
-    ? nozzles.find(item => item.nozzle === 'right')
-    : centre[0] < 0.80
-      ? nozzles.find(item => item.nozzle === 'left')
-      : nozzles.find(item => item.nozzle === 'up');
-  const aim = cycle % 3 === 1 ? level.peg.mouth : centre;
-  const dx = aim[0] - selected.point[0];
-  const dz = aim[2] - selected.point[2];
-  return {
-    nozzle: selected.nozzle,
-    origin: selected.point,
-    counts: [5, 6, 6], spacing: 0.018,
-    velocity: [Math.max(-5.8, Math.min(5.8, dx * 6.5)), cycle % 3 === 1 ? 7.6 : 9.3,
-      Math.max(-2.4, Math.min(2.4, dz * 6))]
-  };
-}
-
 async function runPump(token) {
-  dom.status.textContent = `持续水泵运行中：目标圆环 ${state.pumpTargetId}，最多 ${level.pumpMaxCycles} 次真实水脉冲。`;
+  dom.status.textContent = `持续水泵运行中：源库正在生成连续水流，目标圆环 ${state.pumpTargetId}。`;
   while (state.pumpActive && token === pumpToken && state.ready && !state.won && !state.capture && state.pumpCycles < level.pumpMaxCycles) {
-    const target = state.bodies.find(body => body.id === state.pumpTargetId);
-    const result = await fireJet('pump-target', { quiet: true, packetConfig: pumpPacketFor(target, state.pumpCycles) });
-    if (!result) break;
+    // Let the source stream form a readable continuous arc before evaluating
+    // capture; otherwise a fast ring hit can stop the pump while only a small
+    // detached droplet packet has reached the camera view.
+    await delay(500);
+    if (!state.pumpActive || token !== pumpToken) break;
     state.pumpCycles += 1;
-    renderPump();
-    dom.status.textContent = `目标圆环 ${state.pumpTargetId} · 水泵 ${state.pumpCycles}/${level.pumpMaxCycles}：已注入 ${state.fluidAdded.toLocaleString()} 个流体粒子。`;
-    await delay(300);
     await sampleBodies();
+    state.apparatus = adapter.describeApparatus();
+    renderPump();
+    dom.status.textContent = `连续水流 ${state.pumpCycles}/${level.pumpMaxCycles} · 已流入 ${state.fluidAdded.toLocaleString()} 个真实流体粒子。`;
+    if (!state.apparatus?.waterStream?.active) break;
   }
   if (state.capture || state.won) stopPump('captured');
+  else if (!state.apparatus?.waterStream?.active) {
+    stopPump('stream-complete');
+    dom.status.textContent = state.fluidAdded > 0
+      ? `连续水流已完成，共流入 ${state.fluidAdded.toLocaleString()} 个粒子；可以再次启动或用 A / S / D 微调。`
+      : '连续水流没有成功生成，请重新装水后再试。';
+  }
   else if (state.pumpCycles >= level.pumpMaxCycles) {
     const target = state.bodies.find(body => body.id === state.pumpTargetId);
     const initial = target && state.baseline.get(target.id);
@@ -473,8 +464,15 @@ async function togglePump() {
   }
   state.pumpActive = true;
   wakeSimulation(level.pumpMaxCycles * 700);
+  state.shots += 1;
+  dom.shots.textContent = String(state.shots);
+  adapter.setPumpState(true, 'left');
+  const stream = adapter.setWaterStream(true, {
+    budget: 4000, speed: 3.0, width: 0.08, height: 0.85, tilt: 0
+  });
   const token = ++pumpToken;
-  recordEvent('pump-start', { bodyId: target.id, maxCycles: level.pumpMaxCycles });
+  recordEvent('pump-start', { bodyId: target.id, maxCycles: level.pumpMaxCycles,
+    nozzle: 'left', streamRate: stream.waterStream?.rate, streamBudget: stream.waterStream?.remaining });
   renderPump();
   runPump(token);
 }
@@ -516,24 +514,29 @@ async function connectRuntime(token) {
     await adapter.connect();
     if (token !== state.generation) return;
     decorateRuntime();
-    const description = adapter.describe();
     state.apparatus = adapter.describeApparatus();
     if (!state.apparatus || state.apparatus.parts.length < 7) {
       throw new Error('场景装置未进入源库渲染通道');
     }
-    state.ready = true;
+    const description = adapter.describe();
     recordEvent('runtime-ready', { particles: description.particleCount, bodies: description.bodyCount,
       apparatusParts: state.apparatus.parts.length });
     setRuntime('ready', `源库运行中 · ${description.particleCount.toLocaleString()} particles · ${description.bodyCount} torus · ${state.apparatus.parts.length} 个场景装置`);
     dom.cover.classList.add('hidden');
-    dom.status.textContent = '正在读取圆环初始位置，请稍候…';
+    dom.status.textContent = '水体正在落入容器并形成自由表面…';
+    adapter.setPaused(false);
+    await delay(900);
+    adapter.setPaused(true);
+    if (token !== state.generation) return;
+    state.initialFluidCount = adapter.describe().fluidParticleCount;
+    state.ready = true;
     await sampleBodies();
     if (token !== state.generation) return;
     state.playable = state.bodies.length > 0;
     if (!state.playable) throw new Error('Runtime 已连接，但没有读取到可玩的 torus 圆环');
     recordEvent('game-ready', { bodyIds: state.bodies.map(body => body.id) });
     setControls(true);
-    dom.status.textContent = '场景已空闲暂停。点击水泵或使用 A / S / D 后才开始模拟；水泵不会自动通关。';
+    dom.status.textContent = '水体已就绪。启动水泵可看到源库连续水流；停止操作后场景自动降载。';
     renderProgress();
   } catch (error) {
     if (token !== state.generation) return;
@@ -585,6 +588,10 @@ async function resetGame() {
     adapter.setView(state.view);
     adapter.setPumpState(false, null);
     state.apparatus = adapter.describeApparatus();
+    adapter.setPaused(false);
+    await delay(700);
+    adapter.setPaused(true);
+    state.initialFluidCount = adapter.describe().fluidParticleCount;
     await sampleBodies();
     state.playable = state.bodies.length > 0;
     if (!state.playable) throw new Error('原地重置后没有读取到 torus 圆环');

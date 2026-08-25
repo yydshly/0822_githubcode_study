@@ -85,6 +85,7 @@ export class Particles4AllRuntimeAdapter {
       inPlaceViewSwitch: true,
       sceneApparatus: true,
       apparatusStateFeedback: true,
+      continuousWaterStream: true,
       staticAnalyticColliders: true,
       gpuDeviceDisposal: false
     });
@@ -136,6 +137,14 @@ export class Particles4AllRuntimeAdapter {
       throw new Error('Particles4All runtime does not expose scene apparatus state');
     }
     return apparatus.setPumpState(Boolean(active), nozzle);
+  }
+
+  setWaterStream(active, options = {}) {
+    const apparatus = this.window.__apparatus;
+    if (!apparatus || typeof apparatus.setWaterStream !== 'function') {
+      throw new Error('Particles4All runtime does not expose continuous water streaming');
+    }
+    return apparatus.setWaterStream(Boolean(active), options);
   }
 
   clearTimeRemainder() {

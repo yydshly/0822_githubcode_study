@@ -881,12 +881,37 @@ if (!navigator.gpu) {
         collider: waterRingCollider,
         pumpActive: apparatusState.pumpActive,
         activeNozzle: apparatusState.activeNozzle,
+        waterStream: {
+          active: ui.pouring,
+          remaining: ui.pourLeft,
+          rate: pourRatePerSecond(ui, ui.params.spacing),
+          speed: ui.pourSpeed,
+          width: ui.pourWidth,
+          height: ui.pourHeight,
+          tilt: ui.pourTilt,
+        },
         parts: solids.describeStatic(),
       }),
       setPumpState(active, nozzle = null) {
         apparatusState.pumpActive = Boolean(active);
         apparatusState.activeNozzle = active ? nozzle : null;
         solids.setStaticState(apparatusState);
+        return this.describe();
+      },
+      setWaterStream(active, options = {}) {
+        if (Number.isFinite(options.speed)) ui.pourSpeed = Math.max(0.5, Math.min(8, options.speed));
+        if (Number.isFinite(options.width)) ui.pourWidth = Math.max(0.04, Math.min(0.4, options.width));
+        if (Number.isFinite(options.height)) ui.pourHeight = Math.max(0.15, Math.min(0.95, options.height));
+        if (Number.isFinite(options.tilt)) ui.pourTilt = Math.max(0, Math.min(60, options.tilt));
+        if (active) {
+          const available = Math.max(0, sim.cap - sim.n);
+          const requested = Number.isFinite(options.budget) ? Math.max(1, Math.floor(options.budget)) : available;
+          ui.pourLeft = Math.min(available, requested);
+          ui.pourExtruded = 0;
+          ui.pourNextLayer = 0;
+        }
+        ui.pouring = Boolean(active) && ui.pourLeft > 0;
+        syncPour();
         return this.describe();
       },
     };

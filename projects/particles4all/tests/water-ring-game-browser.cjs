@@ -102,6 +102,7 @@ const outputDir = path.resolve(__dirname, '../assets');
 
     const reliabilityRuns = [];
     let pumpVisualEvidence = null;
+    let pumpVisualSnapshot = null;
     for (let round = 1; round <= 2; round += 1) {
       if (round > 1) {
         const beforeReset = await page.evaluate(() => ({
@@ -123,11 +124,23 @@ const outputDir = path.resolve(__dirname, '../assets');
       }
       const startedAt = Date.now();
       await page.locator('#water-pump').click();
-      await page.waitForFunction(() => window.__waterRingGame?.state?.pumpCycles > 0, null, { timeout: 10000 });
       if (round === 1) {
+        await page.waitForFunction(() => {
+          const game = window.__waterRingGame;
+          if (!game?.state?.pumpActive || !game.adapter.describeApparatus()?.waterStream?.active) return false;
+          return game.adapter.describe().fluidParticleCount - game.state.initialFluidCount >= 650;
+        }, null, { timeout: 10000 });
         pumpVisualEvidence = await page.evaluate(() => window.__waterRingGame.adapter.describeApparatus());
+        pumpVisualSnapshot = await page.evaluate(() => ({
+          active: window.__waterRingGame.state.pumpActive,
+          streamActive: window.__waterRingGame.adapter.describeApparatus()?.waterStream?.active,
+          runtimeFluidDelta: window.__waterRingGame.adapter.describe().fluidParticleCount -
+            window.__waterRingGame.state.initialFluidCount,
+        }));
         await page.screenshot({ path: path.join(outputDir, 'water-ring-game-pump-active.png') });
       }
+      await page.waitForFunction(() => window.__waterRingGame?.state?.pumpCycles > 0 ||
+        window.__waterRingGame?.state?.capture, null, { timeout: 10000 });
       await page.waitForFunction(() => window.__waterRingGame?.state?.pumpActive === false ||
         window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
       const beforeAssist = await page.evaluate(() => ({
@@ -158,7 +171,9 @@ const outputDir = path.resolve(__dirname, '../assets');
         pumpCycles: window.__waterRingGame.state.pumpCycles,
         captureReason: window.__waterRingGame.state.capture?.reason,
         eventTypes: window.__waterRingGame.state.events.map(event => event.type),
-        fluidNozzles: window.__waterRingGame.state.events.filter(event => event.type === 'fluid-pulse').map(event => event.nozzle),
+        fluidNozzles: window.__waterRingGame.state.events
+          .filter(event => event.type === 'fluid-pulse' || event.type === 'pump-start')
+          .map(event => event.nozzle).filter(Boolean),
       }), { round, startedAt, beforeAssist }));
     }
     const afterPlay = await page.evaluate(async () => {
@@ -286,7 +301,10 @@ const outputDir = path.resolve(__dirname, '../assets');
         (!run.beforeAssist.won || run.beforeAssist.capture?.reason === 'water-entry')),
       waterDrivenPlayable: completedRuns.every(run =>
         run.beforeAssist.capture?.reason === 'water-entry' &&
-        run.beforeAssist.pumpCycles < 12),
+        run.beforeAssist.pumpCycles < 18),
+      continuousWaterVisible: initial.description.support.continuousWaterStream === true &&
+        pumpVisualSnapshot?.active === true && pumpVisualSnapshot?.streamActive === true &&
+        pumpVisualSnapshot?.runtimeFluidDelta >= 650,
       repeatableCompletion: completedRuns.length === 2 && completedRuns.every(run => run.won &&
         run.elapsedMs < 30000 && run.eventTypes.includes('game-complete')),
       noStartupRace: completedRuns.every(run => {
@@ -323,7 +341,7 @@ const outputDir = path.resolve(__dirname, '../assets');
       browserClean: consoleErrors.length === 0 && failedRequests.length === 0,
     };
     report = { passed: Object.values(checks).every(Boolean), checks, initial, idleAfter, manualControl,
-      desktopLayout, pumpVisualEvidence, reliabilityRuns, afterPlay, switched, mobile, consoleErrors, failedRequests };
+      desktopLayout, pumpVisualEvidence, pumpVisualSnapshot, reliabilityRuns, afterPlay, switched, mobile, consoleErrors, failedRequests };
   } catch (error) {
     let browserState = null;
     try {
