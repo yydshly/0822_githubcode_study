@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="基于 Particles4All 原生水体与 torus 刚体的网页水中套圈互动原型。" />
+  <meta name="description" content="基于 Particles4All 原生水体与 torus 刚体的网页水中套圈能力验证；当前以连续注水演示流体驱动，后续可探索循环水压与容器摇晃。" />
   <title>水中套圈｜Particles4All 场景原型</title>
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="./styles.css" />
@@ -11,7 +11,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="../"><span>PA</span><strong>Particles4All<br />场景原型</strong></a>
-    <nav aria-label="页面导航"><a href="#game">开始游戏</a><a href="#mapping">能力映射</a><a href="#boundary">当前边界</a></nav>
+    <nav aria-label="页面导航"><a href="#game">演示</a><a href="#mapping">能力映射</a><a href="#direction">研究定位</a><a href="#boundary">当前边界</a></nav>
     <a class="source-link" href="https://github.com/matsuoka-601/Particles4All" target="_blank" rel="noreferrer">GitHub 源库 ↗</a>
   </header>
 
@@ -22,14 +22,14 @@
         <h1>把小时候的<br /><em>水中套圈</em><br />放进网页。</h1>
       </div>
       <div class="hero-note">
-        <p>按下水压按钮，让真实粒子水流推动原生圆环。目标不是重新发明水，而是验证 Particles4All 能否从算法演示转化为可玩的局部液体互动。</p>
+        <p>当前采用连续注水，让真实粒子水流推动原生圆环。这只是控制映射的一种验证：目标是判断 Particles4All 能否支撑局部液体互动，并为循环水压、密闭容器摇晃等后续路线保留证据。</p>
         <div class="legend"><span class="u0">U0 源库</span><span class="e1">E2 求解扩展</span><span class="g1">G1 游戏逻辑</span></div>
       </div>
     </section>
 
     <section id="game" class="game-shell shell" aria-labelledby="game-title">
       <header class="game-head">
-        <div><p class="kicker">PLAYABLE PROOF</p><h2 id="game-title">水压套圈机</h2></div>
+        <div><p class="kicker">PLAYABLE PROOF</p><h2 id="game-title">注水控制概念演示</h2></div>
         <div class="scoreboard" aria-live="polite"><span>挂环</span><strong id="score">0</strong><small>/ 1</small></div>
       </header>
 
@@ -57,7 +57,7 @@
         <aside class="control-card">
           <p class="control-kicker">WATER PRESSURE CONTROL</p>
           <h3>把一个圆环挂上杆</h3>
-          <p class="control-copy">先用水流抬升并推向右侧；只有圆环真正接近杆口后才会进入对准阶段。持续水泵只推动水体，不会自动判定通关。</p>
+          <p class="control-copy">这里用开放式连续注水验证“水能否驱动圆环”，不是密闭玩具的最终复刻。只有圆环真正接近杆口后才会进入对准阶段，水泵不会直接判定通关。</p>
 
           <ol id="objective-track" class="objective-track" aria-label="通关步骤">
             <li data-phase="lift" class="active">1 抬升</li>
@@ -100,9 +100,18 @@
       </div>
     </section>
 
+    <section id="direction" class="section shell">
+      <div class="section-heading"><div><p class="kicker">RESEARCH POSITIONING</p><h2>演示的是能力，不是把注水定为最终方案。</h2></div><p>小时候的实体玩具更接近“密闭水体 + 外部硬件动作”。当前网页先用最容易验证的注水输入建立能力基线，再比较更真实的控制映射。</p></div>
+      <div class="mapping-grid">
+        <article><span class="label u0">实体原型</span><h3>摇晃或按压硬件</h3><p>容器内水量基本不变；玩家摇晃容器、按压水囊或活塞，改变容器加速度、边界速度或局部压力，使圆环依靠惯性与水动力挂杆。</p></article>
+        <article><span class="label e1">当前验证</span><h3>开放式连续注水</h3><p>源库逐帧生成真实流体粒子并推动 torus 圆环，适合快速证明喷流、冲击、漂移和流体—刚体耦合。但它会增加场景水量，因此不能等同于密闭玩具。</p></article>
+        <article><span class="label g1">后续比较</span><h3>循环水压与容器摇晃</h3><p>路线一做等量进出水或活塞边界，保持总体水量；路线二把鼠标、手柄或设备姿态映射为容器加速度与移动边界，再比较自然度、性能和通关率。</p></article>
+      </div>
+    </section>
+
     <section id="boundary" class="boundary shell">
-      <div><p class="kicker">CURRENT BOUNDARY</p><h2>杆、底座和顶帽已有求解器碰撞；自动穿杆仍保留游戏引导。</h2></div>
-      <ul><li>抬升、冲击、漂移和圆环刚体姿态由源库计算。</li><li>杆、底座、泵体和喷口与水、圆环共用 3D 世界坐标；页面不使用 HTML 几何覆盖画布。</li><li>杆、底座和顶帽采用解析碰撞体，每轮在刚体形状匹配后投影穿透粒子，并按粒子半径保留表面间距。</li><li>当前自动对准与沿杆下落仍使用 Runtime 捕获引导，以保证游戏可完成；下一步可研究摩擦、反弹和取消捕获后的纯物理自由玩法。</li></ul>
+      <div><p class="kicker">CURRENT BOUNDARY</p><h2>当前证明了水能驱动圆环；尚未证明密闭玩具的完整物理。</h2></div>
+      <ul><li>连续水柱、冲击、漂移和圆环刚体姿态由源库计算；注水入口会真实增加粒子与总体水量。</li><li>杆、底座、泵体和喷口与水、圆环共用 3D 世界坐标；杆、底座和顶帽已有求解器解析碰撞。</li><li>实体玩具路线还需要质量守恒的循环水压，或把硬件摇晃映射为容器加速度、重力方向与移动边界。</li><li>当前自动对准与沿杆下落仍使用 Runtime 捕获引导；纯物理自由模式还需要摩擦、反弹、孔轴接触和通关率研究。</li></ul>
       <a href="../">返回完整源库能力实验台 →</a>
     </section>
   </main>
