@@ -34,6 +34,12 @@ const outputDir = path.resolve(__dirname, '../assets');
       return {
         description,
         apparatus,
+        performanceProfile: {
+          substeps: game.adapter.window.__sim.params.substeps,
+          iterations: game.adapter.window.__sim.params.iterations,
+          ssfrScale: game.adapter.window.__ssfr.renderScale,
+          maxCatchUpFrames: game.adapter.window.__sim.params.maxCatchUpFrames ?? 2,
+        },
         frameToken: game.adapter.window.__waterRingFrameToken,
         bodyShapes: bodySample.bodies.map(body => body.shape),
         bodyCentres: bodySample.bodies.map(body => body.pose.centre),
@@ -198,6 +204,10 @@ const outputDir = path.resolve(__dirname, '../assets');
       http200: response?.status() === 200,
       sourceRuntime: initial.canvasWebgpu && initial.description.upstreamRuntime,
       orientationTargetExtension: initial.description.support.bodyOrientationTargets,
+      balancedPerformanceProfile: initial.performanceProfile?.substeps === 1 &&
+        initial.performanceProfile?.iterations === 3 &&
+        initial.performanceProfile?.ssfrScale === 0.32 &&
+        initial.performanceProfile?.maxCatchUpFrames === 2,
       fiveNativeTorus: initial.description.bodyCount === 5 && initial.bodyShapes.length === 5 && initial.bodyShapes.every(shape => shape === 'torus'),
       realFluidInjection: afterPlay.shots > 0 && afterPlay.fluidAdded > 0 && afterPlay.particleCount === initial.description.particleCount + afterPlay.fluidAdded,
       sustainedWaterPump: afterPlay.pumpCycles > 0 && afterPlay.pumpState === '已通关',

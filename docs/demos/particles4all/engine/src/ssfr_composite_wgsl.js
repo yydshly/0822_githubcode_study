@@ -115,7 +115,7 @@ fn traceBodies(ro: vec3f, rd: vec3f, tMax: f32) -> BodyTrace {
   o.col = vec3f(0.8);
   if (C.bodyCount == 0) { return o; }
   var t = 1.0e-4;
-  for (var i = 0; i < 128; i++) {
+  for (var i = 0; i < 96; i++) {
     let p = ro + rd * t;
     let s = bodyScene(p);
     if (s.dist < 5.0e-5) {
@@ -287,7 +287,20 @@ fn fs(in: VsOut) -> @location(0) vec4f {
   let bodyInFront = tBody < length(p - ro);
 
   if (isEmptyZ(z) || bodyInFront) {
-    return vec4f(tonemap(sceneColor(ro, rd)), 1.0);
+    // bodyDepth already proved whether this camera ray can hit a solid. Avoid
+    // repeating an expensive SDF march for sky/floor pixels, which dominate
+    // the frame. Only reconstruct shading for pixels with a finite body hit.
+    if (tBody > 1.0e29) {
+      return vec4f(tonemap(background(ro, rd)), 1.0);
+    }
+    let front = traceBodies(ro, rd, min(60.0, tBody + 0.02));
+    if (front.t < 0.0) {
+      return vec4f(tonemap(background(ro, rd)), 1.0);
+    }
+    let frontP = ro + rd * front.t;
+    let frontCol = shadeBody(frontP, front.nrm, front.col, rd,
+      background(frontP + front.nrm * 1.0e-4, reflect(rd, front.nrm)));
+    return vec4f(tonemap(frontCol), 1.0);
   }
 
   let px = 2.0 / vec2f(lim);
@@ -318,14 +331,18 @@ fn fs(in: VsOut) -> @location(0) vec4f {
   if (dot(refrDir, refrDir) < 1.0e-8) { refrDir = reflect(rd, n); }
 
   let ro2 = p + refrDir * 1.0e-3;
-  let st = traceBodies(ro2, refrDir, 60.0);
   var hitCol : vec3f;
-  if (st.t >= 0.0) {
-    let sp = ro2 + refrDir * st.t;
-    hitCol = shadeBody(sp, st.nrm, st.col, refrDir, envReflect(reflect(refrDir, st.nrm)));
-    thick = min(thick, st.t);
-  } else {
-    hitCol = background(ro2, refrDir);
+  hitCol = background(ro2, refrDir);
+  // A refracted solid is only plausible when the body-depth prepass found a
+  // solid behind this water pixel. This rejects the majority of water pixels
+  // before the second SDF march while preserving submerged rings/apparatus.
+  if (tBody < 1.0e29) {
+    let st = traceBodies(ro2, refrDir, 60.0);
+    if (st.t >= 0.0) {
+      let sp = ro2 + refrDir * st.t;
+      hitCol = shadeBody(sp, st.nrm, st.col, refrDir, envReflect(reflect(refrDir, st.nrm)));
+      thick = min(thick, st.t);
+    }
   }
   let trans = hitCol * exp(-C.absorb * thick);
 

@@ -451,7 +451,11 @@ export class Sim {
     const dtTarget = (1 / 60) / base;
     this.timeBank = (this.timeBank || 0) + frameDt;
     let sub = Math.floor(this.timeBank / dtTarget + 1e-4);
-    const workCap = base * 8;
+    // Do not let a slow render frame create a simulation death spiral. Two
+    // frames of fixed-step debt preserve real-time motion down to ~30 fps;
+    // below that, excess debt is dropped instead of multiplying GPU work.
+    const catchUpFrames = Math.max(1, Math.min(8, p.maxCatchUpFrames ?? 2));
+    const workCap = base * catchUpFrames;
     if (sub > workCap) { sub = workCap; this.timeBank = 0; }
     else { this.timeBank -= sub * dtTarget; }
 
