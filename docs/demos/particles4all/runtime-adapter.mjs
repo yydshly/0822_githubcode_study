@@ -82,6 +82,9 @@ export class Particles4AllRuntimeAdapter {
       directBodySampling: true,
       rigidBodyEvents: true,
       bodyOrientationTargets: true,
+      inPlaceViewSwitch: true,
+      sceneApparatus: true,
+      apparatusStateFeedback: true,
       gpuDeviceDisposal: false
     });
   }
@@ -109,6 +112,29 @@ export class Particles4AllRuntimeAdapter {
     if (Boolean(win.__ui.paused) !== Boolean(paused)) {
       win.document?.getElementById('pause')?.click();
     }
+  }
+
+  setView(view) {
+    if (!['particles', 'mesh', 'ray', 'ssfr'].includes(view)) {
+      throw new TypeError('view must be particles, mesh, ray, or ssfr');
+    }
+    const setDisplay = this.window.__setDisplay;
+    if (typeof setDisplay !== 'function') throw new Error('Particles4All runtime does not expose in-place view switching');
+    return setDisplay(view);
+  }
+
+  describeApparatus() {
+    const apparatus = this.window.__apparatus;
+    if (!apparatus || typeof apparatus.describe !== 'function') return null;
+    return apparatus.describe();
+  }
+
+  setPumpState(active, nozzle = null) {
+    const apparatus = this.window.__apparatus;
+    if (!apparatus || typeof apparatus.setPumpState !== 'function') {
+      throw new Error('Particles4All runtime does not expose scene apparatus state');
+    }
+    return apparatus.setPumpState(Boolean(active), nozzle);
   }
 
   clearTimeRemainder() {

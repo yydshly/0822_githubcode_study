@@ -77,6 +77,10 @@ fn bodyDist(i: i32, p: vec3f) -> f32 {
     let t = vec2f(length(q.xz) - h.x, q.y);
     return length(t) - h.y;
   }
+  if (shape == 3) {
+    let d = abs(vec2f(length(q.xz), q.y)) - vec2f(h.x, h.y);
+    return min(max(d.x, d.y), 0.0) + length(max(d, vec2f(0.0)));
+  }
   let d = abs(q) - h;
   return length(max(d, vec3f(0.0))) + min(max(d.x, max(d.y, d.z)), 0.0);
 }

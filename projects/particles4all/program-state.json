@@ -7,10 +7,10 @@
   "reopenPolicy": "先定义场景问题、必须能力、验收画面和目标设备性能预算，再从源库能力做单变量验证。",
   "scenePrototype": {
     "id": "water-ring-game",
-    "status": "playable-single-peg",
+    "status": "playable-single-peg-integrated-apparatus",
     "started": "2026-08-25",
     "goal": "验证固定上游水体、原生 torus 刚体和受控喷流能否形成网页水中套圈玩法。",
-    "completedLoop": "圆环读取完成 -> 启用持续水泵 -> 最多 12 次目标自适应真实喷流 -> 水流抬升与位移 -> 单杆杆口捕获 -> 中心与孔轴对准 -> 穿杆 -> 下落 -> 稳定挂接",
+    "completedLoop": "圆环读取完成 -> 场景内固定喷口启用 -> 最多 12 次可见喷口真实喷流 -> 水流抬升与位移 -> 场景内单杆杆口捕获 -> 中心与孔轴对准 -> 穿杆 -> 下落 -> 稳定挂接 -> 原地重置",
     "nextGate": "用真实静态细杆碰撞替换游戏层刚体捕获约束"
   },
   "operatingMode": "plan-driven",

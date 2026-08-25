@@ -250,6 +250,24 @@ if (!navigator.gpu) {
 
     const q = new URLSearchParams(location.search);
 
+    const waterRingApparatus = q.get('game') === 'water-ring' ? [
+      { key: 'pump-rail', role: 'pump', shape: 'box', centre: [0.70, 0.028, 0.36],
+        halfExtents: [0.66, 0.028, 0.105], color: [0.10, 0.24, 0.30] },
+      { key: 'nozzle-left', role: 'nozzle', nozzle: 'left', shape: 'cylinder',
+        centre: [0.10, 0.060, 0.36], halfExtents: [0.048, 0.060, 0.048], color: [0.20, 0.55, 1.00] },
+      { key: 'nozzle-up', role: 'nozzle', nozzle: 'up', shape: 'cylinder',
+        centre: [0.65, 0.060, 0.36], halfExtents: [0.052, 0.060, 0.052], color: [1.00, 0.72, 0.18] },
+      { key: 'nozzle-right', role: 'nozzle', nozzle: 'right', shape: 'cylinder',
+        centre: [1.30, 0.060, 0.36], halfExtents: [0.048, 0.060, 0.048], color: [1.00, 0.28, 0.22] },
+      { key: 'peg-base', role: 'target', shape: 'cylinder', centre: [1.20, 0.045, 0.50],
+        halfExtents: [0.155, 0.045, 0.155], color: [0.95, 0.58, 0.10] },
+      { key: 'peg-post', role: 'target', shape: 'cylinder', centre: [1.20, 0.265, 0.50],
+        halfExtents: [0.025, 0.175, 0.025], color: [1.00, 0.76, 0.24] },
+      { key: 'peg-cap', role: 'target', shape: 'sphere', centre: [1.20, 0.455, 0.50],
+        halfExtents: [0.036, 0.036, 0.036], color: [1.00, 0.84, 0.38] },
+    ] : [];
+    const apparatusState = { pumpActive: false, activeNozzle: null };
+
     let qualityTouched = false;
 
     const startPreset = PRESETS[q.get('preset')] ? q.get('preset') : 'small';
@@ -410,7 +428,8 @@ if (!navigator.gpu) {
       sim.reset(ui.params);
       renderer.bindSim(sim);
       renderer.setBox(ui.params.box);
-      solids.build(sim);
+      solids.build(sim, waterRingApparatus);
+      solids.setStaticState(apparatusState);
 
       ui.pourBudget = sim.pourBudget;
       ui.pourLeft = sim.pourBudget;
@@ -559,6 +578,13 @@ if (!navigator.gpu) {
       syncGroups();
     };
     document.getElementById('viewmode').value = String(ui.display);
+    window.__setDisplay = view => {
+      const display = view === 'mesh' ? 1 : view === 'ray' ? 2 : view === 'ssfr' ? 3 : 0;
+      ui.display = display;
+      document.getElementById('viewmode').value = String(display);
+      syncGroups();
+      return { view, display };
+    };
     const raySurfaceSel = document.getElementById('raysurface');
     raySurfaceSel.value = String(ui.raySurface);
     raySurfaceSel.onchange = e => { ui.raySurface = Number(e.target.value); syncGroups(); };
@@ -821,6 +847,23 @@ if (!navigator.gpu) {
     window.__cam = cam;
     window.__box = ui.params.box;
     window.__ui = ui;
+    window.__apparatus = {
+      kind: 'E1 render apparatus',
+      physicalCollision: false,
+      describe: () => ({
+        kind: 'E1 render apparatus',
+        physicalCollision: false,
+        pumpActive: apparatusState.pumpActive,
+        activeNozzle: apparatusState.activeNozzle,
+        parts: solids.describeStatic(),
+      }),
+      setPumpState(active, nozzle = null) {
+        apparatusState.pumpActive = Boolean(active);
+        apparatusState.activeNozzle = active ? nozzle : null;
+        solids.setStaticState(apparatusState);
+        return this.describe();
+      },
+    };
     window.__screenRay = (u, v, a) => screenRay(cam, u, v, a);
 
     window.__project = (pt) => {

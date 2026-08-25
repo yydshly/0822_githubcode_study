@@ -10,10 +10,11 @@ export function bodyColor(shape) {
 }
 
 export function shapeId(shape) {
-  return shape === 'sphere' ? 1 : shape === 'torus' ? 2 : 0;
+  return shape === 'sphere' ? 1 : shape === 'torus' ? 2 : shape === 'cylinder' ? 3 : 0;
 }
 
 export function halfExtent(b) {
+  if (b.halfExtents) return b.halfExtents.slice(0, 3);
   const s = b.size;
   if (b.shape === 'sphere') return [s, s, s];
   if (b.shape === 'torus') return [s, 0.4 * s, 0.0];
@@ -81,6 +82,26 @@ function buildTorusMesh(R, r, major = 48, minor = 20) {
   return v;
 }
 
+function buildCylinderMesh(radius, halfHeight, slices = 32) {
+  const v = [];
+  const top = halfHeight;
+  const bottom = -halfHeight;
+  for (let i = 0; i < slices; i++) {
+    const a0 = 2 * Math.PI * i / slices;
+    const a1 = 2 * Math.PI * (i + 1) / slices;
+    const p00 = [radius * Math.cos(a0), bottom, radius * Math.sin(a0)];
+    const p01 = [radius * Math.cos(a1), bottom, radius * Math.sin(a1)];
+    const p11 = [radius * Math.cos(a1), top, radius * Math.sin(a1)];
+    const p10 = [radius * Math.cos(a0), top, radius * Math.sin(a0)];
+    const n0 = [Math.cos(a0), 0, Math.sin(a0)];
+    const n1 = [Math.cos(a1), 0, Math.sin(a1)];
+    pushQuadN(v, p00, p01, p11, p10, n0, n1, n1, n0);
+    pushTri(v, [0, top, 0], p10, p11);
+    pushTri(v, [0, bottom, 0], p01, p00);
+  }
+  return v;
+}
+
 export class Solids {
   constructor(device, format) {
     this.dev = device;
@@ -104,8 +125,14 @@ export class Solids {
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST });
   }
 
-  build(sim) {
-    const bodies = sim.scene.bodies;
+  build(sim, staticBodies = []) {
+    const dynamicBodies = sim.scene.bodies;
+    staticBodies = Array.from(staticBodies);
+    const bodies = [...dynamicBodies, ...staticBodies];
+    this.dynamicCount = dynamicBodies.length;
+    this.staticBodies = staticBodies;
+    this.staticStart = this.dynamicCount;
+    this.staticIndex = new Map(staticBodies.map((body, index) => [body.key, this.staticStart + index]));
     this.count = bodies.length;
     this.bind = null; this.packBind = null;
     this.gen++;
@@ -116,6 +143,7 @@ export class Solids {
       const h = halfExtent(b);
       const v = b.shape === 'sphere' ? buildSphereMesh(h[0])
               : b.shape === 'torus' ? buildTorusMesh(h[0], h[1])
+              : b.shape === 'cylinder' ? buildCylinderMesh(h[0], h[1])
               : buildBoxMesh(h);
       for (let k = 0; k < v.length; k += 6) {
         all.push(v[k], v[k + 1], v[k + 2], i, v[k + 3], v[k + 4], v[k + 5], 0);
@@ -129,7 +157,7 @@ export class Solids {
 
     const stat = new Float32Array(this.count * 8);
     bodies.forEach((b, i) => {
-      const h = halfExtent(b), c = bodyColor(b.shape);
+      const h = halfExtent(b), c = b.color || bodyColor(b.shape);
       stat.set([h[0], h[1], h[2], shapeId(b.shape)], i * 8);
       stat.set([c[0], c[1], c[2], 0], i * 8 + 4);
     });
@@ -140,12 +168,26 @@ export class Solids {
 
     this.packed?.destroy();
     this.packed = this.dev.createBuffer({ size: this.count * 6 * 16,
-      usage: GPUBufferUsage.STORAGE, label: 'bodiesPacked' });
-    this.dev.queue.writeBuffer(this.packUni, 0, new Uint32Array([this.count, 0, 0, 0]));
+      usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST, label: 'bodiesPacked' });
+    this.dev.queue.writeBuffer(this.packUni, 0, new Uint32Array([this.dynamicCount, 0, 0, 0]));
+
+    staticBodies.forEach((body, index) => {
+      const h = halfExtent(body);
+      const colour = body.color || bodyColor(body.shape);
+      const rot = body.rot || [1, 0, 0, 0, 1, 0, 0, 0, 1];
+      const data = new Float32Array(24);
+      data.set([body.centre[0], body.centre[1], body.centre[2], shapeId(body.shape)], 0);
+      data.set([h[0], h[1], h[2], 0], 4);
+      data.set([rot[0], rot[1], rot[2], 0], 8);
+      data.set([rot[3], rot[4], rot[5], 0], 12);
+      data.set([rot[6], rot[7], rot[8], 0], 16);
+      data.set([colour[0], colour[1], colour[2], 0], 20);
+      this.dev.queue.writeBuffer(this.packed, (this.staticStart + index) * 6 * 16, data);
+    });
   }
 
   pack(enc, sim) {
-    if (!this.count) return;
+    if (!this.dynamicCount) return;
     if (!this.packBind) {
       this.packBind = this.dev.createBindGroup({
         layout: this.pPack.getBindGroupLayout(0),
@@ -159,8 +201,36 @@ export class Solids {
     const pass = enc.beginComputePass(this.timer?.mark('pack'));
     pass.setPipeline(this.pPack);
     pass.setBindGroup(0, this.packBind);
-    pass.dispatchWorkgroups(Math.ceil(this.count / 64));
+    pass.dispatchWorkgroups(Math.ceil(this.dynamicCount / 64));
     pass.end();
+  }
+
+  setStaticState({ activeNozzle = null, pumpActive = false } = {}) {
+    for (const body of this.staticBodies || []) {
+      const index = this.staticIndex.get(body.key);
+      if (index == null) continue;
+      const base = body.color || bodyColor(body.shape);
+      const isNozzle = body.role === 'nozzle';
+      const active = isNozzle && body.nozzle === activeNozzle;
+      const colour = active
+        ? [Math.min(1, base[0] * 1.45 + 0.12), Math.min(1, base[1] * 1.45 + 0.12), Math.min(1, base[2] * 1.45 + 0.12)]
+        : pumpActive && isNozzle
+          ? [base[0] * 0.78, base[1] * 0.78, base[2] * 0.78]
+          : base;
+      this.dev.queue.writeBuffer(this.packed, index * 6 * 16 + 5 * 16,
+                                 new Float32Array([colour[0], colour[1], colour[2], 0]));
+    }
+  }
+
+  describeStatic() {
+    return (this.staticBodies || []).map(body => ({
+      key: body.key,
+      role: body.role || 'apparatus',
+      nozzle: body.nozzle || null,
+      shape: body.shape,
+      centre: body.centre.slice(),
+      halfExtents: halfExtent(body)
+    }));
   }
 
   draw(pass, viewUni) {

@@ -4,7 +4,7 @@ const $ = selector => document.querySelector(selector);
 const dom = {
   frame: $('#runtime-frame'), runtime: $('#runtime-state'), cover: $('#loading-cover'), score: $('#score'),
   shots: $('#shot-count'), fluid: $('#fluid-added'), lift: $('#max-lift'), travel: $('#max-travel'),
-  status: $('#game-status'), strip: $('#ring-strip'), celebration: $('#celebration'), rack: $('#target-rack'), gate: $('.capture-gate'),
+  status: $('#game-status'), strip: $('#ring-strip'), celebration: $('#celebration'),
   left: $('#jet-left'), up: $('#jet-up'), right: $('#jet-right'), pump: $('#water-pump'),
   pumpCycles: $('#pump-cycles'), pumpState: $('#pump-state'), progress: $('#play-progress'),
   guided: $('#guided-demo'), reset: $('#reset-game')
@@ -31,7 +31,7 @@ const state = {
   ready: false, playable: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
   score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
   capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null,
-  events: [], error: null
+  events: [], error: null, resetCount: 0, apparatus: null, lastResetInPlace: false
 };
 let adapter = null;
 let sampleTimer = 0;
@@ -69,8 +69,8 @@ function fmt(value, digits = 2) {
   return Number.isFinite(value) ? Number(value).toFixed(digits) : '—';
 }
 
-function resetState() {
-  state.ready = false;
+function resetState({ keepRuntime = false } = {}) {
+  state.ready = keepRuntime;
   state.playable = false;
   state.busy = false;
   state.shots = 0;
@@ -111,8 +111,6 @@ function renderObjective() {
     item.classList.toggle('active', index === current);
     item.classList.toggle('complete', index < current || (state.won && index === current));
   });
-  dom.rack.dataset.phase = state.phase;
-  dom.gate.textContent = state.won ? '已挂接' : state.phase === 'thread' ? '穿杆中' : '穿杆入口';
   renderProgress();
 }
 
@@ -243,18 +241,6 @@ async function updateCapture(body) {
   }
 }
 
-function syncTargetRack() {
-  const project = dom.frame.contentWindow?.__project;
-  if (typeof project !== 'function') return;
-  const point = project(level.peg.base);
-  if (!point) return;
-  dom.rack.style.left = `${Math.max(8, point.x - 60)}px`;
-  dom.rack.style.top = `${Math.max(30, point.y - 230)}px`;
-  dom.rack.style.right = 'auto';
-  dom.rack.style.bottom = 'auto';
-  dom.rack.dataset.projected = 'true';
-}
-
 async function sampleBodies() {
   if (!state.ready || state.busy || sampling || !adapter) return;
   sampling = true;
@@ -272,7 +258,6 @@ async function sampleBodies() {
     }
     dom.lift.textContent = `${fmt(state.maxLift)} m`;
     dom.travel.textContent = `${fmt(state.maxTravel)} m`;
-    syncTargetRack();
     renderRings();
     adapter.setPaused(false);
   } catch (error) {
@@ -286,12 +271,9 @@ async function sampleBodies() {
 
 function packetFor(direction) {
   const packets = {
-    left: { origin: [0.10, 0.07, 0.36], counts: [4, 7, 7], spacing: 0.018, velocity: [5.8, 7.2, 0.2] },
-    up: { origin: [0.65, 0.07, 0.36], counts: [5, 7, 7], spacing: 0.018, velocity: [0.2, 7.8, 0.1] },
-    right: { origin: [1.30, 0.07, 0.36], counts: [4, 7, 7], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] },
-    'pump-lift': { origin: [0.92, 0.055, 0.39], counts: [5, 6, 6], spacing: 0.018, velocity: [1.2, 9.2, 0.0] },
-    'pump-drive': { origin: [0.62, 0.065, 0.39], counts: [5, 6, 6], spacing: 0.018, velocity: [5.4, 7.1, 0.0] },
-    'pump-center': { origin: [1.08, 0.055, 0.39], counts: [4, 6, 6], spacing: 0.018, velocity: [0.2, 8.8, 0.0] }
+    left: { nozzle: 'left', origin: [0.065, 0.122, 0.315], counts: [4, 7, 6], spacing: 0.018, velocity: [5.8, 7.2, 0.2] },
+    up: { nozzle: 'up', origin: [0.614, 0.122, 0.315], counts: [5, 7, 6], spacing: 0.018, velocity: [0.2, 7.8, 0.1] },
+    right: { nozzle: 'right', origin: [1.265, 0.122, 0.315], counts: [4, 7, 6], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] }
   };
   return packets[direction];
 }
@@ -301,12 +283,17 @@ async function fireJet(direction, { quiet = false, packetConfig = null } = {}) {
   state.busy = true;
   setControls(false);
   try {
-    const packet = adapter.createFluidBlock(packetConfig || packetFor(direction));
+    const definition = packetConfig || packetFor(direction);
+    const nozzle = definition?.nozzle || (['left', 'up', 'right'].includes(direction) ? direction : null);
+    if (!definition) throw new Error(`没有为 ${direction} 配置场景喷口`);
+    adapter.setPumpState(true, nozzle);
+    const packet = adapter.createFluidBlock(definition);
     const result = await adapter.injectFluid(packet);
     adapter.setPaused(false);
     state.shots += 1;
     state.fluidAdded += result.added;
-    recordEvent('fluid-pulse', { direction, added: result.added, pumpCycle: state.pumpCycles + (state.pumpActive ? 1 : 0) });
+    recordEvent('fluid-pulse', { direction, nozzle, added: result.added,
+      pumpCycle: state.pumpCycles + (state.pumpActive ? 1 : 0) });
     dom.shots.textContent = String(state.shots);
     dom.fluid.textContent = state.fluidAdded.toLocaleString();
     if (!quiet) dom.status.textContent = `${direction === 'left' ? '左侧' : direction === 'right' ? '右侧' : '中心'}水压释放：新增 ${result.added} 个真实流体粒子。`;
@@ -318,6 +305,7 @@ async function fireJet(direction, { quiet = false, packetConfig = null } = {}) {
     renderProgress();
     return null;
   } finally {
+    try { adapter?.setPumpState(state.pumpActive, state.pumpActive ? nozzle : null); } catch { /* Runtime may be resetting. */ }
     state.busy = false;
     setControls(state.ready && !state.won);
   }
@@ -338,6 +326,7 @@ function stopPump(reason = 'manual') {
   const wasActive = state.pumpActive;
   state.pumpActive = false;
   pumpToken += 1;
+  try { adapter?.setPumpState(false, null); } catch { /* Runtime may be resetting. */ }
   if (wasActive) recordEvent('pump-stop', { reason, pumpCycles: state.pumpCycles });
   renderPump();
   if (reason === 'manual' && !state.won) dom.status.textContent = '持续水泵已停止；可以继续单次控制水流。';
@@ -352,13 +341,22 @@ function selectPumpTarget() {
 
 function pumpPacketFor(target, cycle) {
   const centre = target?.pose?.centre || [0.92, 0.20, 0.50];
-  const dx = level.peg.mouth[0] - centre[0];
-  const dz = level.peg.mouth[2] - centre[2];
-  const drive = cycle % 3 === 1;
+  const nozzles = [
+    { nozzle: 'left', point: [0.065, 0.122, 0.315] },
+    { nozzle: 'up', point: [0.614, 0.122, 0.315] },
+    { nozzle: 'right', point: [1.265, 0.122, 0.315] }
+  ];
+  const ranked = nozzles.sort((a, b) => Math.abs(a.point[0] - centre[0]) - Math.abs(b.point[0] - centre[0]));
+  const selected = cycle % 4 === 3 ? nozzles.find(item => item.nozzle === 'up') : ranked[0];
+  const aim = cycle % 3 === 1 ? level.peg.mouth : centre;
+  const dx = aim[0] - selected.point[0];
+  const dz = aim[2] - selected.point[2];
   return {
-    origin: [Math.max(0.08, Math.min(1.24, centre[0] - (drive ? 0.24 : 0.12))), 0.055, Math.max(0.10, Math.min(0.78, centre[2] - 0.10))],
+    nozzle: selected.nozzle,
+    origin: selected.point,
     counts: [5, 6, 6], spacing: 0.018,
-    velocity: [Math.max(-3.2, Math.min(6.2, dx * 8 + (drive ? 2.4 : 0.4))), drive ? 7.4 : 9.3, Math.max(-2.4, Math.min(2.4, dz * 6))]
+    velocity: [Math.max(-5.8, Math.min(5.8, dx * 6.5)), cycle % 3 === 1 ? 7.6 : 9.3,
+      Math.max(-2.4, Math.min(2.4, dz * 6))]
   };
 }
 
@@ -450,9 +448,14 @@ async function connectRuntime(token) {
     if (token !== state.generation) return;
     decorateRuntime();
     const description = adapter.describe();
+    state.apparatus = adapter.describeApparatus();
+    if (!state.apparatus || state.apparatus.parts.length < 7) {
+      throw new Error('场景装置未进入源库渲染通道');
+    }
     state.ready = true;
-    recordEvent('runtime-ready', { particles: description.particleCount, bodies: description.bodyCount });
-    setRuntime('ready', `源库运行中 · ${description.particleCount.toLocaleString()} particles · ${description.bodyCount} torus`);
+    recordEvent('runtime-ready', { particles: description.particleCount, bodies: description.bodyCount,
+      apparatusParts: state.apparatus.parts.length });
+    setRuntime('ready', `源库运行中 · ${description.particleCount.toLocaleString()} particles · ${description.bodyCount} torus · ${state.apparatus.parts.length} 个场景装置`);
     dom.cover.classList.add('hidden');
     dom.status.textContent = '正在读取圆环初始位置，请稍候…';
     await sampleBodies();
@@ -492,17 +495,73 @@ function loadScene() {
   sampleTimer = window.setInterval(sampleBodies, 320);
 }
 
+async function resetGame() {
+  if (!adapter || !state.ready) {
+    loadScene();
+    return;
+  }
+  window.clearInterval(sampleTimer);
+  state.ready = false;
+  stopPump('reset');
+  while (sampling) await delay(20);
+  resetState({ keepRuntime: true });
+  state.resetCount += 1;
+  state.lastResetInPlace = true;
+  recordEvent('scene-reset-in-place', { resetCount: state.resetCount, view: state.view });
+  setControls(false);
+  setRuntime('loading', '正在原地重新装水与圆环');
+  dom.status.textContent = '保留当前 WebGPU 页面与相机，正在重置源库模拟状态…';
+  try {
+    const description = await adapter.reset();
+    adapter.setView(state.view);
+    adapter.setPumpState(false, null);
+    state.apparatus = adapter.describeApparatus();
+    await sampleBodies();
+    state.playable = state.bodies.length > 0;
+    if (!state.playable) throw new Error('原地重置后没有读取到 torus 圆环');
+    recordEvent('game-ready-after-reset', { bodyIds: state.bodies.map(body => body.id),
+      particles: description.particleCount });
+    setRuntime('ready', `已原地重置 · ${description.particleCount.toLocaleString()} particles · 页面未刷新`);
+    dom.status.textContent = '新一局已就绪：WebGPU 页面、相机与 3D 装置均未重新加载。';
+    setControls(true);
+    renderProgress();
+  } catch (error) {
+    state.error = error.message;
+    state.playable = false;
+    recordEvent('reset-error', { message: error.message });
+    setRuntime('error', '原地重置失败');
+    dom.status.textContent = `重置失败：${error.message}`;
+    renderProgress();
+  } finally {
+    state.ready = Boolean(adapter && !adapter.disposed && !state.error);
+    sampleTimer = window.setInterval(sampleBodies, 320);
+  }
+}
+
+function switchView(view) {
+  state.view = view;
+  document.querySelectorAll('[data-view]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.view === view)));
+  if (!adapter || !state.ready) return;
+  try {
+    adapter.setView(view);
+    recordEvent('view-switch-in-place', { view });
+    setRuntime('ready', `${view === 'ssfr' ? '水面' : '粒子证据'}显示 · 页面未刷新`);
+  } catch (error) {
+    state.error = error.message;
+    recordEvent('view-error', { view, message: error.message });
+    renderProgress();
+  }
+}
+
 dom.left.addEventListener('click', () => fireJet('left'));
 dom.up.addEventListener('click', () => fireJet('up'));
 dom.right.addEventListener('click', () => fireJet('right'));
 dom.pump.addEventListener('click', togglePump);
 dom.guided.addEventListener('click', playGuidedDemo);
-dom.reset.addEventListener('click', loadScene);
+dom.reset.addEventListener('click', resetGame);
 
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
-  state.view = button.dataset.view;
-  document.querySelectorAll('[data-view]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-  loadScene();
+  switchView(button.dataset.view);
 }));
 
 window.addEventListener('keydown', event => {
@@ -511,11 +570,11 @@ window.addEventListener('keydown', event => {
   if (key === 'a') fireJet('left');
   if (key === 's') fireJet('up');
   if (key === 'd') fireJet('right');
-  if (key === 'r') loadScene();
+  if (key === 'r') resetGame();
 });
 
 window.__waterRingGame = {
-  source, level, state, loadScene, fireJet, togglePump, stopPump, playGuidedDemo, sampleBodies, beginCapture,
+  source, level, state, loadScene, resetGame, switchView, fireJet, togglePump, stopPump, playGuidedDemo, sampleBodies, beginCapture,
   get adapter() { return adapter; }
 };
 
