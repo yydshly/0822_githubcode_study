@@ -43,6 +43,14 @@ export class Sim {
       this.pipe.bodyDrag = dev.createComputePipeline({
         label: 'bodyDrag', layout: 'auto', compute: { module, entryPoint: 'main' } });
     }
+    {
+      const module = dev.createShaderModule({
+        code: S.staticCollisionWGSL, label: 'staticCollision',
+      });
+      this.pipe.staticCollision = dev.createComputePipeline({
+        label: 'staticCollision', layout: 'auto', compute: { module, entryPoint: 'main' },
+      });
+    }
     make('count', S.countWGSL);
     make('scanBlock', S.scanBlockWGSL);
     make('scanBlocks', S.scanBlocksWGSL);
@@ -211,6 +219,10 @@ export class Sim {
     this.heldRate = 10;
     this.heldLimit = 4;
     this.heldAlign = false;
+    this.staticCollisionUni = dev.createBuffer({ size: 64,
+      usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST });
+    this.staticCollisionF = new Float32Array(16);
+    this.configureStaticCollision(params.staticCollider);
     this.uniI = new Int32Array(this.uniF.buffer);
     this.buildBindGroups();
     this.uploadParams(1 / 240);
@@ -355,12 +367,37 @@ export class Sim {
                   { binding: 5, resource: { buffer: B['pos' + s] } },
                   { binding: 6, resource: { buffer: B['rest' + s] } }],
       });
+      g[`staticCollision${par}`] = this.dev.createBindGroup({
+        layout: this.pipe.staticCollision.getBindGroupLayout(0),
+        entries: [{ binding: 0, resource: { buffer: this.staticCollisionUni } },
+                  { binding: 1, resource: { buffer: B['pred' + s] } }],
+      });
     }
     g.bodyResolve = this.bg('bodyResolve', [
       B.bodyAccum, B.bodyCov, B.bodyCentre, B.bodyRot, B.bodyInfo]);
     g.bodyClear = this.bgNoUni('bodyClear', [B.bodyAccum, B.bodyCov, B.bodyIdxCount]);
     g.bodyRefLoad = this.bgNoUni('bodyRefLoad', [B.bodyRef, B.bodyCentre]);
     this.g = g;
+  }
+
+  configureStaticCollision(collider) {
+    const F = this.staticCollisionF;
+    F.fill(0);
+    this.staticCollisionEnabled = Boolean(collider?.enabled);
+    if (this.staticCollisionEnabled) {
+      const centre = collider.centre || [0, 0, 0];
+      const cap = collider.capCentre || centre;
+      F[0] = centre[0]; F[1] = centre[2];
+      F[2] = collider.postRadius || 0; F[3] = collider.postTop || 0;
+      F[4] = centre[0]; F[5] = centre[2];
+      F[6] = collider.baseRadius || 0; F[7] = collider.baseTop || 0;
+      F[8] = cap[0]; F[9] = cap[1]; F[10] = cap[2]; F[11] = collider.capRadius || 0;
+      F[12] = collider.particleRadius ?? 0.5 * this.params.spacing;
+      F[13] = collider.postBottom ?? collider.baseTop ?? 0;
+      F[14] = 1;
+      F[15] = this.n;
+    }
+    this.dev.queue.writeBuffer(this.staticCollisionUni, 0, F);
   }
 
   uploadParams(dt) {
@@ -533,6 +570,8 @@ export class Sim {
           stage('bCov', 'bodyCov', `bodyCov${par2}${pp}`, bG);
           stage('bResolve', 'bodyResolve', 'bodyResolve', 1);
           stage('bProject', 'bodyProject', `bodyProject${par2}${pp}`, bG);
+          if (this.staticCollisionEnabled)
+            stage('staticCollision', 'staticCollision', `staticCollision${pp}`, nG);
           continue;
         }
         if (this.nBodyParts > 0) {
@@ -555,7 +594,34 @@ export class Sim {
           passI.setBindGroup(0, this.g[`bodyProject${par2}${pp}`]);
           passI.dispatchWorkgroups(bG);
         }
+        if (this.staticCollisionEnabled) {
+          passI.setPipeline(this.pipe.staticCollision);
+          passI.setBindGroup(0, this.g[`staticCollision${pp}`]);
+          passI.dispatchWorkgroups(nG);
+        }
         passI.end();
+      }
+      // The collision pass intentionally runs after shape matching. Refresh the
+      // body pose from those corrected particles so ray/SSFR solid rendering
+      // uses the same collision-resolved position as the particle view.
+      if (this.staticCollisionEnabled && this.nBodyParts > 0) {
+        const posePass = enc.beginComputePass(T?.mark('collisionPose'));
+        posePass.setPipeline(this.pipe.bodyClear);
+        posePass.setBindGroup(0, this.g.bodyClear);
+        posePass.dispatchWorkgroups(bClearG);
+        posePass.setPipeline(this.pipe.bodyCentre);
+        posePass.setBindGroup(0, this.g[`bodyCentre${par2}${pp}`]);
+        posePass.dispatchWorkgroups(bG);
+        posePass.setPipeline(this.pipe.bodySeed);
+        posePass.setBindGroup(0, this.g.bodySeedRaw);
+        posePass.dispatchWorkgroups(1);
+        posePass.setPipeline(this.pipe.bodyCov);
+        posePass.setBindGroup(0, this.g[`bodyCov${par2}${pp}`]);
+        posePass.dispatchWorkgroups(bG);
+        posePass.setPipeline(this.pipe.bodyResolve);
+        posePass.setBindGroup(0, this.g.bodyResolve);
+        posePass.dispatchWorkgroups(1);
+        posePass.end();
       }
       this.predParity = pp;
 

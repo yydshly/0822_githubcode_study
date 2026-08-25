@@ -266,6 +266,18 @@ if (!navigator.gpu) {
       { key: 'peg-cap', role: 'target', shape: 'sphere', centre: [1.20, 0.455, 0.50],
         halfExtents: [0.036, 0.036, 0.036], color: [1.00, 0.84, 0.38] },
     ] : [];
+    const waterRingCollider = waterRingApparatus.length ? {
+      enabled: true,
+      model: 'analytic base cylinder + post cylinder + cap sphere',
+      centre: [1.20, 0, 0.50],
+      baseRadius: 0.155,
+      baseTop: 0.09,
+      postRadius: 0.025,
+      postBottom: 0.09,
+      postTop: 0.44,
+      capCentre: [1.20, 0.455, 0.50],
+      capRadius: 0.036,
+    } : null;
     const apparatusState = { pumpActive: false, activeNozzle: null };
 
     let qualityTouched = false;
@@ -425,6 +437,7 @@ if (!navigator.gpu) {
     }
 
     function applyScene() {
+      ui.params.staticCollider = waterRingCollider;
       sim.reset(ui.params);
       renderer.bindSim(sim);
       renderer.setBox(ui.params.box);
@@ -844,15 +857,28 @@ if (!navigator.gpu) {
       rb.unmap(); rb.destroy();
       return Array.from(out);
     };
+    window.__readU32Buf = async (buf, bytes) => {
+      const rb = device.createBuffer({ size: bytes,
+        usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST });
+      const e = device.createCommandEncoder();
+      e.copyBufferToBuffer(buf, 0, rb, 0, bytes);
+      device.queue.submit([e.finish()]);
+      await rb.mapAsync(GPUMapMode.READ);
+      const out = new Uint32Array(rb.getMappedRange().slice(0));
+      rb.unmap(); rb.destroy();
+      return Array.from(out);
+    };
     window.__cam = cam;
     window.__box = ui.params.box;
     window.__ui = ui;
     window.__apparatus = {
-      kind: 'E1 render apparatus',
-      physicalCollision: false,
+      kind: 'E2 solver-coupled apparatus',
+      physicalCollision: Boolean(waterRingCollider),
       describe: () => ({
-        kind: 'E1 render apparatus',
-        physicalCollision: false,
+        kind: 'E2 solver-coupled apparatus',
+        physicalCollision: Boolean(waterRingCollider),
+        collisionModel: waterRingCollider?.model || null,
+        collider: waterRingCollider,
         pumpActive: apparatusState.pumpActive,
         activeNozzle: apparatusState.activeNozzle,
         parts: solids.describeStatic(),

@@ -69,6 +69,80 @@ fn main(@builtin(global_invocation_id) gid: vec3u) {
 }
 `;
 
+// Scene-local analytic collision for apparatus that participates in the
+// particle solve instead of existing only in the renderer.
+export const staticCollisionWGSL = `
+struct StaticCollider {
+  post  : vec4f, // centre x/z, radius, top y
+  base  : vec4f, // centre x/z, radius, top y
+  cap   : vec4f, // centre xyz, radius
+  extra : vec4f, // particle radius, post bottom y, enabled, particle count
+}
+@group(0) @binding(0) var<uniform> C : StaticCollider;
+@group(0) @binding(1) var<storage, read_write> pred : array<vec4f>;
+
+fn radialNormal(v: vec2f) -> vec2f {
+  let d = length(v);
+  return select(vec2f(1.0, 0.0), v / d, d > 1.0e-7);
+}
+
+fn collideBase(pin: vec3f) -> vec3f {
+  var p = pin;
+  let delta = p.xz - C.base.xy;
+  let radial = length(delta);
+  let radius = C.base.z + C.extra.x;
+  let top = C.base.w + C.extra.x;
+  if (radial < radius && p.y < top) {
+    let sideDepth = radius - radial;
+    let topDepth = top - p.y;
+    if (topDepth <= sideDepth) { p.y = top; }
+    else { p.xz += radialNormal(delta) * sideDepth; }
+  }
+  return p;
+}
+
+fn collidePost(pin: vec3f) -> vec3f {
+  var p = pin;
+  let delta = p.xz - C.post.xy;
+  let radial = length(delta);
+  let radius = C.post.z + C.extra.x;
+  let bottom = C.extra.y - C.extra.x;
+  let top = C.post.w + C.extra.x;
+  if (radial < radius && p.y > bottom && p.y < top) {
+    let sideDepth = radius - radial;
+    let topDepth = top - p.y;
+    if (topDepth <= sideDepth) { p.y = top; }
+    else { p.xz += radialNormal(delta) * sideDepth; }
+  }
+  return p;
+}
+
+fn collideCap(pin: vec3f) -> vec3f {
+  var p = pin;
+  let delta = p - C.cap.xyz;
+  let dist = length(delta);
+  let radius = C.cap.w + C.extra.x;
+  if (dist < radius) {
+    let normal = select(vec3f(0.0, 1.0, 0.0), delta / dist, dist > 1.0e-7);
+    p = C.cap.xyz + normal * radius;
+  }
+  return p;
+}
+
+@compute @workgroup_size(256)
+fn main(@builtin(global_invocation_id) gid: vec3u) {
+  let i = gid.x;
+  if (C.extra.z < 0.5 || i >= u32(C.extra.w)) { return; }
+  var p = pred[i].xyz;
+  p = collideBase(p);
+  p = collidePost(p);
+  p = collideCap(p);
+  p = collideBase(p);
+  p = collidePost(p);
+  pred[i] = vec4f(p, 1.0);
+}
+`;
+
 export const velFromPosWGSL = `
 @group(0) @binding(1) var<storage, read>       pos  : array<vec4f>;
 @group(0) @binding(2) var<storage, read_write> vel  : array<vec4f>;

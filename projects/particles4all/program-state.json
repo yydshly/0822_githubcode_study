@@ -7,11 +7,11 @@
   "reopenPolicy": "先定义场景问题、必须能力、验收画面和目标设备性能预算，再从源库能力做单变量验证。",
   "scenePrototype": {
     "id": "water-ring-game",
-    "status": "playable-single-peg-integrated-apparatus",
+    "status": "playable-single-peg-solver-collision",
     "started": "2026-08-25",
     "goal": "验证固定上游水体、原生 torus 刚体和受控喷流能否形成网页水中套圈玩法。",
-    "completedLoop": "圆环读取完成 -> 场景内固定喷口启用 -> 最多 12 次可见喷口真实喷流 -> 水流抬升与位移 -> 场景内单杆杆口捕获 -> 中心与孔轴对准 -> 穿杆 -> 按几何尺寸沿杆落座 -> 连续稳定采样 -> 稳定挂接 -> 原地重置",
-    "nextGate": "用真实静态细杆碰撞替换游戏层刚体捕获约束"
+    "completedLoop": "圆环读取完成 -> 场景内固定喷口启用 -> 最多 12 次可见喷口真实喷流 -> 水流抬升与位移 -> 场景内单杆杆口捕获 -> 中心与孔轴对准 -> 求解器杆/底座/顶帽非穿透约束 -> 穿杆 -> 沿杆落座 -> GPU 粒子非穿透验收 -> 稳定挂接 -> 原地重置",
+    "nextGate": "增加接触摩擦与反弹参数，并提供关闭捕获引导的纯物理自由模式"
   },
   "operatingMode": "plan-driven",
   "macroGoal": "研究并扩展 Particles4All，判断其能否成为可复用的浏览器局部液体与刚体 WebGPU 运行时。",
@@ -66,10 +66,10 @@
     {
       "id": "M4",
       "name": "边界、碰撞与场景构造扩展",
-      "status": "conditional",
+      "status": "completed",
       "workPackages": [
         { "id": "M4-WP1", "name": "局部边界缺口审计", "status": "completed", "dependsOn": ["M5-S1"] },
-        { "id": "M4-WP2", "name": "复杂碰撞体可行性", "status": "cancelled", "dependsOn": ["M4-WP1"] }
+        { "id": "M4-WP2", "name": "解析静态碰撞体可行性", "status": "completed", "dependsOn": ["M4-WP1"] }
       ]
     },
     {

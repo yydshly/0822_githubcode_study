@@ -85,6 +85,7 @@ export class Particles4AllRuntimeAdapter {
       inPlaceViewSwitch: true,
       sceneApparatus: true,
       apparatusStateFeedback: true,
+      staticAnalyticColliders: true,
       gpuDeviceDisposal: false
     });
   }

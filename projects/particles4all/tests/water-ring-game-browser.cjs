@@ -100,6 +100,32 @@ const outputDir = path.resolve(__dirname, '../assets');
       await window.__waterRingGame.sampleBodies();
       const game = window.__waterRingGame;
       const captured = game.state.bodies.find(body => body.id === game.state.capture?.bodyId);
+      const sim = game.adapter.window.__sim;
+      const positions = await game.adapter.window.__readBuf(sim.livePos(), sim.n * 16);
+      const phases = await game.adapter.window.__readU32Buf(sim.buf[sim.parity === 0 ? 'bodyA' : 'bodyB'], sim.n * 16);
+      const collider = game.adapter.describeApparatus()?.collider;
+      const particleRadius = 0.5 * sim.params.spacing;
+      const collisionAudit = {
+        particleRadius,
+        capturedParticleCount: 0,
+        basePenetrations: 0,
+        postPenetrations: 0,
+        capPenetrations: 0,
+      };
+      for (let i = 0; i < sim.n; i += 1) {
+        if (phases[i * 4] !== game.state.capture?.bodyId) continue;
+        collisionAudit.capturedParticleCount += 1;
+        const x = positions[i * 4], y = positions[i * 4 + 1], z = positions[i * 4 + 2];
+        const radial = Math.hypot(x - collider.centre[0], z - collider.centre[2]);
+        const epsilon = 1e-4;
+        if (radial < collider.baseRadius + particleRadius - epsilon &&
+            y < collider.baseTop + particleRadius - epsilon) collisionAudit.basePenetrations += 1;
+        if (radial < collider.postRadius + particleRadius - epsilon &&
+            y > collider.postBottom - particleRadius + epsilon &&
+            y < collider.postTop + particleRadius - epsilon) collisionAudit.postPenetrations += 1;
+        const capDistance = Math.hypot(x - collider.capCentre[0], y - collider.capCentre[1], z - collider.capCentre[2]);
+        if (capDistance < collider.capRadius + particleRadius - epsilon) collisionAudit.capPenetrations += 1;
+      }
       return {
         shots: game.state.shots,
         score: game.state.score,
@@ -131,6 +157,7 @@ const outputDir = path.resolve(__dirname, '../assets');
         bodyCentres: game.state.bodies.map(body => body.pose.centre),
         ringCards: document.querySelectorAll('.ring-status').length,
         apparatus: game.adapter.describeApparatus(),
+        collisionAudit,
         frameToken: game.adapter.window.__waterRingFrameToken,
         status: document.querySelector('#game-status')?.textContent,
         progressTitle: document.querySelector('#play-progress strong')?.textContent,
@@ -161,6 +188,8 @@ const outputDir = path.resolve(__dirname, '../assets');
       runtimeDisplay: window.__waterRingGame.adapter.window.__ui.display,
       active: document.querySelector('[data-view][aria-pressed="true"]')?.dataset.view,
     }));
+    await page.waitForTimeout(250);
+    await page.screenshot({ path: path.join(outputDir, 'water-ring-game-collision-particles.png'), fullPage: true });
 
     const completedRuns = reliabilityRuns.filter(run => !run.reset);
     const resetRuns = reliabilityRuns.filter(run => run.reset);
@@ -182,7 +211,12 @@ const outputDir = path.resolve(__dirname, '../assets');
       inSceneApparatus: initial.apparatus?.parts?.length >= 7 &&
         initial.apparatus.parts.some(part => part.key === 'peg-post' && part.role === 'target') &&
         initial.apparatus.parts.filter(part => part.role === 'nozzle').length === 3 &&
-        afterPlay.apparatus?.physicalCollision === false,
+        afterPlay.apparatus?.physicalCollision === true &&
+        afterPlay.apparatus?.kind === 'E2 solver-coupled apparatus',
+      solverColliderNonPenetration: afterPlay.collisionAudit?.capturedParticleCount > 0 &&
+        afterPlay.collisionAudit.basePenetrations === 0 &&
+        afterPlay.collisionAudit.postPenetrations === 0 &&
+        afterPlay.collisionAudit.capPenetrations === 0,
       pumpMappedToVisibleNozzles: completedRuns.every(run => run.fluidNozzles.length > 0 &&
         run.fluidNozzles.every(nozzle => ['left', 'up', 'right'].includes(nozzle))) &&
         pumpVisualEvidence?.pumpActive === true && ['left', 'up', 'right'].includes(pumpVisualEvidence.activeNozzle),

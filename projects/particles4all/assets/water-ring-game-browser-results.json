@@ -12,6 +12,7 @@
     "observableBodyMotion": true,
     "visibleRingState": true,
     "inSceneApparatus": true,
+    "solverColliderNonPenetration": true,
     "pumpMappedToVisibleNozzles": true,
     "playableScoreLoop": true,
     "visibleCompletionFeedback": true,
@@ -52,8 +53,29 @@
       }
     },
     "apparatus": {
-      "kind": "E1 render apparatus",
-      "physicalCollision": false,
+      "kind": "E2 solver-coupled apparatus",
+      "physicalCollision": true,
+      "collisionModel": "analytic base cylinder + post cylinder + cap sphere",
+      "collider": {
+        "enabled": true,
+        "model": "analytic base cylinder + post cylinder + cap sphere",
+        "centre": [
+          1.2,
+          0,
+          0.5
+        ],
+        "baseRadius": 0.155,
+        "baseTop": 0.09,
+        "postRadius": 0.025,
+        "postBottom": 0.09,
+        "postTop": 0.44,
+        "capCentre": [
+          1.2,
+          0.455,
+          0.5
+        ],
+        "capRadius": 0.036
+      },
       "pumpActive": false,
       "activeNozzle": null,
       "parts": [
@@ -171,7 +193,7 @@
         }
       ]
     },
-    "frameToken": "frame-1787627036111-0.9463020372141646",
+    "frameToken": "frame-1787628168148-0.11108095135421947",
     "bodyShapes": [
       "torus",
       "torus",
@@ -215,8 +237,29 @@
     "overflow": 0
   },
   "pumpVisualEvidence": {
-    "kind": "E1 render apparatus",
-    "physicalCollision": false,
+    "kind": "E2 solver-coupled apparatus",
+    "physicalCollision": true,
+    "collisionModel": "analytic base cylinder + post cylinder + cap sphere",
+    "collider": {
+      "enabled": true,
+      "model": "analytic base cylinder + post cylinder + cap sphere",
+      "centre": [
+        1.2,
+        0,
+        0.5
+      ],
+      "baseRadius": 0.155,
+      "baseTop": 0.09,
+      "postRadius": 0.025,
+      "postBottom": 0.09,
+      "postTop": 0.44,
+      "capCentre": [
+        1.2,
+        0.455,
+        0.5
+      ],
+      "capRadius": 0.036
+    },
     "pumpActive": true,
     "activeNozzle": "right",
     "parts": [
@@ -337,28 +380,16 @@
   "reliabilityRuns": [
     {
       "round": 1,
-      "elapsedMs": 18997,
+      "elapsedMs": 8034,
       "won": true,
-      "pumpCycles": 12,
-      "captureReason": "water-pump-guidance",
+      "pumpCycles": 1,
+      "captureReason": "water-entry",
       "eventTypes": [
         "scene-load",
         "runtime-ready",
         "game-ready",
         "pump-start",
         "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "pump-guidance",
         "capture-start",
         "pump-stop",
         "capture-thread",
@@ -366,18 +397,7 @@
         "game-complete"
       ],
       "fluidNozzles": [
-        "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up"
+        "right"
       ]
     },
     {
@@ -386,38 +406,27 @@
       "beforeReset": {
         "resetCount": 0,
         "generation": 1,
-        "frameToken": "frame-1787627036111-0.9463020372141646"
+        "frameToken": "frame-1787628168148-0.11108095135421947"
       },
       "afterReset": {
         "resetCount": 1,
         "generation": 1,
-        "frameToken": "frame-1787627036111-0.9463020372141646",
+        "frameToken": "frame-1787628168148-0.11108095135421947",
         "lastResetInPlace": true
       }
     },
     {
       "round": 2,
-      "elapsedMs": 18727,
+      "elapsedMs": 9732,
       "won": true,
-      "pumpCycles": 12,
-      "captureReason": "water-pump-guidance",
+      "pumpCycles": 2,
+      "captureReason": "water-entry",
       "eventTypes": [
         "scene-reset-in-place",
         "game-ready-after-reset",
         "pump-start",
         "fluid-pulse",
         "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "pump-guidance",
         "capture-start",
         "pump-stop",
         "capture-thread",
@@ -426,17 +435,7 @@
       ],
       "fluidNozzles": [
         "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up"
+        "right"
       ]
     },
     {
@@ -445,18 +444,18 @@
       "beforeReset": {
         "resetCount": 1,
         "generation": 1,
-        "frameToken": "frame-1787627036111-0.9463020372141646"
+        "frameToken": "frame-1787628168148-0.11108095135421947"
       },
       "afterReset": {
         "resetCount": 2,
         "generation": 1,
-        "frameToken": "frame-1787627036111-0.9463020372141646",
+        "frameToken": "frame-1787628168148-0.11108095135421947",
         "lastResetInPlace": true
       }
     },
     {
       "round": 3,
-      "elapsedMs": 16492,
+      "elapsedMs": 12978,
       "won": true,
       "pumpCycles": 12,
       "captureReason": "water-pump-guidance",
@@ -509,71 +508,92 @@
     "heldBodyId": 5,
     "heldAlign": true,
     "capturedCentre": [
-      1.2134324312210083,
-      0.12132933735847473,
-      0.4989415407180786
+      1.2202823162078857,
+      0.12002860009670258,
+      0.4988479018211365
     ],
     "capturedSize": 0.078,
     "capturedRot": [
-      0.9996358752250671,
-      -0.02697926014661789,
-      0.00047111508320085704,
-      0.026982326060533524,
-      0.9995985627174377,
-      -0.00864003598690033,
-      -0.00023782419157214463,
-      0.008649601601064205,
-      0.999962568283081
+      0.9999809265136719,
+      -0.002644574735313654,
+      -0.005583693273365498,
+      0.0026403148658573627,
+      0.9999961853027344,
+      -0.0007700815331190825,
+      0.0055857086554169655,
+      0.0007553241448476911,
+      0.9999841451644897
     ],
-    "axisAlignment": 0.9995985627174377,
+    "axisAlignment": 0.9999961853027344,
     "seat": [
       1.214,
       0.1252,
       0.5
     ],
-    "seatDistance": 0.004052715096681611,
-    "contactGap": 0.00012933735847472927,
-    "radialOffset": 0.013474069339238436,
-    "postClearance": 0.008325930660761557,
+    "seatDistance": 0.00821816306174498,
+    "contactGap": -0.0011713999032974265,
+    "radialOffset": 0.02031501122250261,
+    "postClearance": 0.001484988777497382,
     "stableSamples": 2,
     "fluidAdded": 2160,
     "pumpCycles": 12,
     "pumpState": "已通关",
     "pumpLabel": "本局已完成",
-    "maxLift": 0.051613420248031616,
-    "maxTravel": 0.8561968683157548,
+    "maxLift": 0.014368876814842224,
+    "maxTravel": 0.6608435149972696,
     "particleCount": 17140,
     "bodyCentres": [
       [
-        0.06560467183589935,
-        0.16536249220371246,
-        0.4961761236190796
+        0.4475753605365753,
+        0.1638835072517395,
+        0.6819156408309937
       ],
       [
-        0.6870837211608887,
-        0.14065442979335785,
-        0.5274776816368103
+        0.6076037883758545,
+        0.15057490766048431,
+        0.8305044174194336
       ],
       [
-        0.4047335982322693,
-        0.1366475522518158,
-        0.2724454998970032
+        0.6749064922332764,
+        0.1391029953956604,
+        0.2721329927444458
       ],
       [
-        1.1607887744903564,
-        0.10193190723657608,
-        0.725396990776062
+        0.46760040521621704,
+        0.1528259515762329,
+        0.1999565213918686
       ],
       [
-        1.2134324312210083,
-        0.12132933735847473,
-        0.4989415407180786
+        1.2202823162078857,
+        0.12002860009670258,
+        0.4988479018211365
       ]
     ],
     "ringCards": 5,
     "apparatus": {
-      "kind": "E1 render apparatus",
-      "physicalCollision": false,
+      "kind": "E2 solver-coupled apparatus",
+      "physicalCollision": true,
+      "collisionModel": "analytic base cylinder + post cylinder + cap sphere",
+      "collider": {
+        "enabled": true,
+        "model": "analytic base cylinder + post cylinder + cap sphere",
+        "centre": [
+          1.2,
+          0,
+          0.5
+        ],
+        "baseRadius": 0.155,
+        "baseTop": 0.09,
+        "postRadius": 0.025,
+        "postBottom": 0.09,
+        "postTop": 0.44,
+        "capCentre": [
+          1.2,
+          0.455,
+          0.5
+        ],
+        "capRadius": 0.036
+      },
       "pumpActive": false,
       "activeNozzle": null,
       "parts": [
@@ -691,7 +711,14 @@
         }
       ]
     },
-    "frameToken": "frame-1787627036111-0.9463020372141646",
+    "collisionAudit": {
+      "particleRadius": 0.01,
+      "capturedParticleCount": 196,
+      "basePenetrations": 0,
+      "postPenetrations": 0,
+      "capPenetrations": 0
+    },
+    "frameToken": "frame-1787628168148-0.11108095135421947",
     "status": "通关：圆环 5 已穿杆、落座并稳定贴合底座。按 R 可以再来一局。",
     "progressTitle": "通关 · 圆环 5 已挂住",
     "progressState": "complete",
@@ -722,7 +749,7 @@
   "switched": {
     "view": "particles",
     "frameSrc": "../engine/?preset=small&view=ssfr&particles=14000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&ssfrscale=0.45&ssfrradius=0.72&timing=0&game=water-ring&generation=1",
-    "frameToken": "frame-1787627036111-0.9463020372141646",
+    "frameToken": "frame-1787628168148-0.11108095135421947",
     "runtimeDisplay": 0,
     "active": "particles"
   },
