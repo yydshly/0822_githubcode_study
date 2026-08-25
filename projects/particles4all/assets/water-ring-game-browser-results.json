@@ -9,6 +9,7 @@
     "visibleRingState": true,
     "projectedGameTarget": true,
     "playableScoreLoop": true,
+    "realTorusHeldOnPeg": true,
     "displayEvidenceSwitch": true,
     "mobileLayout": true,
     "browserClean": true
@@ -22,7 +23,7 @@
       "fluidParticleCount": 14000,
       "rigidParticleCount": 980,
       "bodyCount": 5,
-      "simTime": 0.03333333333333333,
+      "simTime": 0,
       "solverStepDt": 0.008333333333333333,
       "generation": 1,
       "support": {
@@ -73,43 +74,59 @@
     ],
     "canvasWebgpu": true
   },
-  "afterJets": {
-    "shots": 3,
-    "score": 5,
-    "fluidAdded": 637,
-    "maxLift": 0,
-    "maxTravel": 0.7272406117057005,
-    "particleCount": 15617,
+  "afterPlay": {
+    "shots": 4,
+    "score": 1,
+    "won": true,
+    "phase": "hang",
+    "captureReason": "water-entry",
+    "capturedBodyId": 3,
+    "heldBodyId": 3,
+    "capturedCentre": [
+      1.1983758211135864,
+      0.1776631772518158,
+      0.5007471442222595
+    ],
+    "seat": [
+      1.2,
+      0.18,
+      0.5
+    ],
+    "seatDistance": 0.0029422647910000255,
+    "fluidAdded": 882,
+    "maxLift": 0.20110999047756195,
+    "maxTravel": 0.8553753625219092,
+    "particleCount": 15862,
     "bodyCentres": [
       [
-        1.0790691375732422,
-        0.09629859030246735,
-        0.57991623878479
+        0.8301489949226379,
+        0.14905089139938354,
+        0.4108034074306488
       ],
       [
-        1.267861247062683,
-        0.0877893939614296,
-        0.49477091431617737
+        0.8876588344573975,
+        0.14851166307926178,
+        0.6813806891441345
       ],
       [
-        1.3339295387268066,
-        0.10441303253173828,
-        0.5764962434768677
+        1.1983758211135864,
+        0.1776631772518158,
+        0.5007471442222595
       ],
       [
-        1.3913993835449219,
-        0.10668293386697769,
-        0.663418173789978
+        1.1812498569488525,
+        0.13644488155841827,
+        0.6819729208946228
       ],
       [
-        1.3827910423278809,
-        0.05624464526772499,
-        0.3600081205368042
+        0.8898631930351257,
+        0.1357228308916092,
+        0.18388687074184418
       ]
     ],
     "ringCards": 5,
     "targetProjected": true,
-    "status": "圆环 1 进入目标区域：本次命中来自源库刚体位置，不是预设动画。"
+    "status": "通关：圆环 3 已沿杆下落并稳定挂住。按 R 可以再来一局。"
   },
   "switched": {
     "view": "particles",

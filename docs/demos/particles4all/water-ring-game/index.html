@@ -30,7 +30,7 @@
     <section id="game" class="game-shell shell" aria-labelledby="game-title">
       <header class="game-head">
         <div><p class="kicker">PLAYABLE PROOF</p><h2 id="game-title">水压套圈机</h2></div>
-        <div class="scoreboard" aria-live="polite"><span>命中</span><strong id="score">0</strong><small>/ 5</small></div>
+        <div class="scoreboard" aria-live="polite"><span>挂环</span><strong id="score">0</strong><small>/ 1</small></div>
       </header>
 
       <div class="game-layout">
@@ -45,8 +45,9 @@
           <div class="tank-window">
             <iframe id="runtime-frame" title="Particles4All 水中套圈 WebGPU Runtime" allow="fullscreen"></iframe>
             <div id="target-rack" class="target-rack" aria-hidden="true">
-              <span class="rack-label">目标支架 · 判定层</span>
-              <i></i><i></i><i></i>
+              <span class="rack-label">单杆挂接目标</span>
+              <span class="capture-gate">穿杆入口</span>
+              <i></i>
               <b></b>
             </div>
             <div class="jet jet-left" aria-hidden="true">L</div>
@@ -59,8 +60,15 @@
 
         <aside class="control-card">
           <p class="control-kicker">WATER PRESSURE CONTROL</p>
-          <h3>用水流抬起圆环</h3>
-          <p class="control-copy">每次按压都会向源库 Runtime 注入一小束流体粒子。圆环进入右侧目标区后计分。</p>
+          <h3>把一个圆环挂上杆</h3>
+          <p class="control-copy">先用水流抬升并推向右侧；圆环进入杆口后会沿杆下落并稳定挂住，完成一个可玩的回合。</p>
+
+          <ol id="objective-track" class="objective-track" aria-label="通关步骤">
+            <li data-phase="lift" class="active">1 抬升</li>
+            <li data-phase="align">2 对准</li>
+            <li data-phase="thread">3 穿杆</li>
+            <li data-phase="hang">4 挂住</li>
+          </ol>
 
           <div class="pressure-controls">
             <button id="jet-left" class="pressure pressure-blue" type="button" disabled><span>A</span><strong>左侧喷流</strong><small>向右上推动</small></button>
@@ -68,7 +76,7 @@
             <button id="jet-right" class="pressure pressure-red" type="button" disabled><span>D</span><strong>右侧喷流</strong><small>向左上推动</small></button>
           </div>
 
-          <button id="guided-demo" class="guided" type="button" disabled>播放一次摇晃演示</button>
+          <button id="guided-demo" class="guided" type="button" disabled>演示一局：把圆环挂上杆</button>
           <button id="reset-game" class="reset" type="button">重新装水与圆环 <kbd>R</kbd></button>
 
           <dl class="live-stats">
@@ -89,13 +97,13 @@
       <div class="mapping-grid">
         <article><span class="label u0">U0 · 源库原生</span><h3>水与圆环</h3><p>PBF 水体、原生 torus 刚体、Shape Matching、浮力、碰撞和 SSFR 表面都由固定上游运行时产生。</p></article>
         <article><span class="label e1">E1 · 已有 Adapter</span><h3>水压按钮</h3><p>按钮使用受控流体包注入 API，把点击映射成有方向的局部喷流，并读取圆环真实位置与位移。</p></article>
-        <article><span class="label g1">G1 · 新增玩法</span><h3>目标与计分</h3><p>支架图形、目标区域、命中反馈、键盘操作和演示节奏属于网页游戏层，不冒充源库物理能力。</p></article>
+        <article><span class="label g1">G1 · 新增玩法</span><h3>穿杆与挂接</h3><p>圆环先由真实水流送入杆口；随后用刚体捕获约束完成对准、穿杆、下落和保持。它是明确标注的游戏机制，不冒充源库静态细杆碰撞。</p></article>
       </div>
     </section>
 
     <section id="boundary" class="boundary shell">
-      <div><p class="kicker">CURRENT BOUNDARY</p><h2>这是“可玩性验证”，还不是最终玩具模拟。</h2></div>
-      <ul><li>圆环受水推动和姿态变化是真实源库计算。</li><li>当前支架是目标判定层，尚未完成细支架的粒子碰撞与稳定挂接。</li><li>命中表示圆环进入目标空间，不等于已经证明真实穿杆过程。</li><li>若位移与命中节奏成立，下一步才值得研究静态支架碰撞体。</li></ul>
+      <div><p class="kicker">CURRENT BOUNDARY</p><h2>现在可以挂上；但挂接属于游戏约束。</h2></div>
+      <ul><li>抬升、冲击、漂移和圆环刚体姿态由源库计算。</li><li>圆环必须先被水流送入可见杆口，才会触发挂接。</li><li>对准、沿杆下落和保持使用 Runtime 刚体捕获约束，确保游戏目标可完成。</li><li>真正依靠静态细杆碰撞自然穿杆，仍是后续更高成本的物理扩展。</li></ul>
       <a href="../">返回完整源库能力实验台 →</a>
     </section>
   </main>

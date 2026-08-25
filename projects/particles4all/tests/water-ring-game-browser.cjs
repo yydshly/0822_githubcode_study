@@ -37,16 +37,26 @@ const outputDir = path.resolve(__dirname, '../assets');
       };
     });
 
-    await page.locator('#jet-left').click();
-    await page.locator('#jet-up').click();
-    await page.locator('#jet-left').click();
-    await page.waitForTimeout(2600);
-    const afterJets = await page.evaluate(async () => {
+    for (const selector of ['#jet-left', '#jet-up', '#jet-left', '#jet-up']) {
+      await page.locator(selector).click();
+      await page.waitForTimeout(380);
+    }
+    await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
+    const afterPlay = await page.evaluate(async () => {
       await window.__waterRingGame.sampleBodies();
       const game = window.__waterRingGame;
+      const captured = game.state.bodies.find(body => body.id === game.state.capture?.bodyId);
       return {
         shots: game.state.shots,
         score: game.state.score,
+        won: game.state.won,
+        phase: game.state.phase,
+        captureReason: game.state.capture?.reason,
+        capturedBodyId: game.state.capture?.bodyId,
+        heldBodyId: game.adapter.window.__sim.heldBody,
+        capturedCentre: captured?.pose.centre,
+        seat: game.level.peg.seat,
+        seatDistance: captured ? Math.hypot(...captured.pose.centre.map((value, index) => value - game.level.peg.seat[index])) : null,
         fluidAdded: game.state.fluidAdded,
         maxLift: game.state.maxLift,
         maxTravel: game.state.maxTravel,
@@ -83,16 +93,17 @@ const outputDir = path.resolve(__dirname, '../assets');
       http200: response?.status() === 200,
       sourceRuntime: initial.canvasWebgpu && initial.description.upstreamRuntime,
       fiveNativeTorus: initial.description.bodyCount === 5 && initial.bodyShapes.length === 5 && initial.bodyShapes.every(shape => shape === 'torus'),
-      realFluidInjection: afterJets.shots === 3 && afterJets.fluidAdded > 0 && afterJets.particleCount === initial.description.particleCount + afterJets.fluidAdded,
-      observableBodyMotion: afterJets.maxTravel > 0.005 || afterJets.maxLift > 0.005,
-      visibleRingState: afterJets.ringCards === 5,
-      projectedGameTarget: afterJets.targetProjected,
-      playableScoreLoop: afterJets.score >= 1,
+      realFluidInjection: afterPlay.shots > 0 && afterPlay.fluidAdded > 0 && afterPlay.particleCount === initial.description.particleCount + afterPlay.fluidAdded,
+      observableBodyMotion: afterPlay.maxTravel > 0.09 || afterPlay.maxLift > 0.02,
+      visibleRingState: afterPlay.ringCards === 5,
+      projectedGameTarget: afterPlay.targetProjected,
+      playableScoreLoop: afterPlay.won && afterPlay.score === 1 && afterPlay.phase === 'hang',
+      realTorusHeldOnPeg: afterPlay.capturedBodyId === afterPlay.heldBodyId && afterPlay.seatDistance < 0.05,
       displayEvidenceSwitch: switched.view === 'particles' && switched.active === 'particles' && switched.frameSrc.includes('view=particles'),
       mobileLayout: mobile.overflow <= 1 && mobile.controlsVisible,
       browserClean: consoleErrors.length === 0 && failedRequests.length === 0,
     };
-    report = { passed: Object.values(checks).every(Boolean), checks, initial, afterJets, switched, mobile, consoleErrors, failedRequests };
+    report = { passed: Object.values(checks).every(Boolean), checks, initial, afterPlay, switched, mobile, consoleErrors, failedRequests };
   } catch (error) {
     report = { passed: false, error: error.message, stack: error.stack, consoleErrors, failedRequests };
   } finally {

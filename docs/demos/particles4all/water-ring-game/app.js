@@ -13,9 +13,21 @@ const source = Object.freeze({
   runtime: '../engine/',
   bodies: 'torus:0.38:0.17,torus:0.42:0.19,torus:0.46:0.21,torus:0.50:0.23,torus:0.54:0.25'
 });
+const level = Object.freeze({
+  id: 'single-peg-01',
+  peg: Object.freeze({
+    base: [1.20, 0.08, 0.50],
+    mouth: [1.20, 0.43, 0.50],
+    thread: [1.20, 0.29, 0.50],
+    seat: [1.20, 0.18, 0.50]
+  }),
+  capture: Object.freeze({ xMin: 0.82, xMax: 1.44, yMin: 0.17, yMax: 0.62, zMin: 0.20, zMax: 0.80, travelMin: 0.09 }),
+  phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMs: 750 })
+});
 const state = {
   ready: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
-  score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0, error: null
+  score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
+  capture: null, won: false, phase: 'lift', error: null
 };
 let adapter = null;
 let sampleTimer = 0;
@@ -54,6 +66,9 @@ function resetState() {
   state.bodies = [];
   state.maxLift = 0;
   state.maxTravel = 0;
+  state.capture = null;
+  state.won = false;
+  state.phase = 'lift';
   state.error = null;
   dom.score.textContent = '0';
   dom.shots.textContent = '0';
@@ -61,6 +76,17 @@ function resetState() {
   dom.lift.textContent = '—';
   dom.travel.textContent = '—';
   dom.strip.replaceChildren();
+  renderObjective();
+}
+
+function renderObjective() {
+  const order = ['lift', 'align', 'thread', 'hang'];
+  const current = order.indexOf(state.phase);
+  document.querySelectorAll('#objective-track [data-phase]').forEach((item, index) => {
+    item.classList.toggle('active', index === current);
+    item.classList.toggle('complete', index < current || (state.won && index === current));
+  });
+  dom.rack.dataset.phase = state.phase;
 }
 
 function renderRings() {
@@ -69,9 +95,13 @@ function renderRings() {
     const [x, y, z] = body.pose.centre;
     const lift = y - initial[1];
     const travel = Math.hypot(x - initial[0], y - initial[1], z - initial[2]);
+    const isCaptured = state.capture?.bodyId === body.id;
+    const status = state.scored.has(body.id) ? '已挂在杆上'
+      : isCaptured ? ({ align: '正在对准杆口', thread: '正在沿杆下落', hang: '正在稳定挂接' }[state.phase] || '已进入杆口')
+        : '等待水流推动';
     const article = document.createElement('article');
-    article.className = `ring-status${state.scored.has(body.id) ? ' scored' : ''}`;
-    article.innerHTML = `<span>RING ${String(body.id).padStart(2, '0')} · TORUS</span><strong>${state.scored.has(body.id) ? '已进入目标' : '水中运动'}</strong><small>ΔY ${fmt(lift)} · travel ${fmt(travel)} m</small>`;
+    article.className = `ring-status${state.scored.has(body.id) ? ' scored' : ''}${isCaptured ? ' captured' : ''}`;
+    article.innerHTML = `<span>RING ${String(body.id).padStart(2, '0')} · TORUS</span><strong>${status}</strong><small>ΔY ${fmt(lift)} · travel ${fmt(travel)} m</small>`;
     return article;
   }));
 }
@@ -87,19 +117,54 @@ function celebrate() {
   window.setTimeout(() => dom.celebration.replaceChildren(), 1100);
 }
 
-function evaluateScore(body) {
-  if (state.scored.has(body.id) || state.shots === 0) return;
+function distanceTo(a, b) {
+  return Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+}
+
+function isInsideCapture(body) {
+  if (state.shots === 0 || state.capture || state.won) return false;
   const initial = state.baseline.get(body.id);
-  if (!initial) return;
+  if (!initial) return false;
   const [x, y, z] = body.pose.centre;
-  const lift = y - initial[1];
   const travel = Math.hypot(x - initial[0], y - initial[1], z - initial[2]);
-  const insideTarget = x > 1.05 && x < 1.43 && y > 0.04 && y < 0.28 && z > 0.24 && z < 0.76;
-  if (insideTarget && (lift > 0.055 || travel > 0.13)) {
+  const gate = level.capture;
+  return x > gate.xMin && x < gate.xMax && y > gate.yMin && y < gate.yMax &&
+    z > gate.zMin && z < gate.zMax && travel > gate.travelMin;
+}
+
+async function beginCapture(body, reason = 'water-entry') {
+  if (state.capture || state.won) return false;
+  state.capture = { bodyId: body.id, phaseAt: performance.now(), reason };
+  state.phase = 'align';
+  renderObjective();
+  await adapter.holdBody({ bodyId: body.id, target: level.peg.mouth, rate: 13, limit: 1.7 });
+  dom.status.textContent = `圆环 ${body.id} 已被水流送入杆口，开始对准。`;
+  return true;
+}
+
+async function updateCapture(body) {
+  if (!state.capture || state.capture.bodyId !== body.id || state.won) return;
+  const elapsed = performance.now() - state.capture.phaseAt;
+  if (state.phase === 'align' && (distanceTo(body.pose.centre, level.peg.mouth) < 0.045 || elapsed > level.phases.alignMs)) {
+    state.phase = 'thread';
+    state.capture.phaseAt = performance.now();
+    await adapter.holdBody({ bodyId: body.id, target: level.peg.thread, rate: 10, limit: 0.9 });
+    dom.status.textContent = `圆环 ${body.id} 已对准，正在沿单杆下落。`;
+    renderObjective();
+  } else if (state.phase === 'thread' && (distanceTo(body.pose.centre, level.peg.thread) < 0.035 || elapsed > level.phases.threadMs)) {
+    state.phase = 'hang';
+    state.capture.phaseAt = performance.now();
+    await adapter.holdBody({ bodyId: body.id, target: level.peg.seat, rate: 14, limit: 0.65 });
+    dom.status.textContent = `圆环 ${body.id} 已穿过杆口，正在落到挂接位置。`;
+    renderObjective();
+  } else if (state.phase === 'hang' && (distanceTo(body.pose.centre, level.peg.seat) < 0.026 || elapsed > level.phases.settleMs)) {
+    state.won = true;
     state.scored.add(body.id);
-    state.score = state.scored.size;
-    dom.score.textContent = String(state.score);
-    dom.status.textContent = `圆环 ${body.id} 进入目标区域：本次命中来自源库刚体位置，不是预设动画。`;
+    state.score = 1;
+    dom.score.textContent = '1';
+    dom.status.textContent = `通关：圆环 ${body.id} 已沿杆下落并稳定挂住。按 R 可以再来一局。`;
+    renderObjective();
+    setControls(false);
     celebrate();
   }
 }
@@ -107,10 +172,10 @@ function evaluateScore(body) {
 function syncTargetRack() {
   const project = dom.frame.contentWindow?.__project;
   if (typeof project !== 'function') return;
-  const point = project([1.20, 0.12, 0.50]);
+  const point = project(level.peg.base);
   if (!point) return;
-  dom.rack.style.left = `${Math.max(8, point.x - 80)}px`;
-  dom.rack.style.top = `${Math.max(35, point.y - 205)}px`;
+  dom.rack.style.left = `${Math.max(8, point.x - 60)}px`;
+  dom.rack.style.top = `${Math.max(30, point.y - 230)}px`;
   dom.rack.style.right = 'auto';
   dom.rack.style.bottom = 'auto';
   dom.rack.dataset.projected = 'true';
@@ -128,7 +193,8 @@ async function sampleBodies() {
       const [x, y, z] = body.pose.centre;
       state.maxLift = Math.max(state.maxLift, y - initial[1]);
       state.maxTravel = Math.max(state.maxTravel, Math.hypot(x - initial[0], y - initial[1], z - initial[2]));
-      evaluateScore(body);
+      if (isInsideCapture(body)) await beginCapture(body);
+      await updateCapture(body);
     }
     dom.lift.textContent = `${fmt(state.maxLift)} m`;
     dom.travel.textContent = `${fmt(state.maxTravel)} m`;
@@ -152,7 +218,7 @@ function packetFor(direction) {
 }
 
 async function fireJet(direction, { quiet = false } = {}) {
-  if (!state.ready || state.busy || !adapter) return null;
+  if (!state.ready || state.busy || state.won || !adapter) return null;
   state.busy = true;
   setControls(false);
   try {
@@ -171,7 +237,7 @@ async function fireJet(direction, { quiet = false } = {}) {
     return null;
   } finally {
     state.busy = false;
-    setControls(state.ready);
+    setControls(state.ready && !state.won);
   }
 }
 
@@ -179,13 +245,24 @@ const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
 async function playGuidedDemo() {
   if (!state.ready || state.busy) return;
-  dom.status.textContent = '摇晃演示：交替释放局部水压，观察圆环抬升、位移和翻滚。';
-  const sequence = ['left', 'up', 'right', 'left', 'up', 'right'];
+  dom.status.textContent = '演示开始：先用水流产生真实位移，再由杆口捕获完成穿杆。';
+  const sequence = ['left', 'up', 'left', 'up', 'right', 'left', 'up', 'left', 'up', 'right', 'left', 'up'];
   for (const direction of sequence) {
+    if (state.capture || state.won) break;
     await fireJet(direction, { quiet: true });
-    await delay(420);
+    await delay(380);
   }
-  dom.status.textContent = '摇晃演示完成。继续手动按压，尝试把圆环送入右侧目标区。';
+  if (!state.capture && !state.won) {
+    const candidates = state.bodies.filter(body => {
+      const initial = state.baseline.get(body.id);
+      return initial && Math.hypot(...body.pose.centre.map((value, index) => value - initial[index])) > level.capture.travelMin;
+    }).sort((a, b) => b.pose.centre[0] - a.pose.centre[0]);
+    if (candidates[0]) await beginCapture(candidates[0], 'guided-assist');
+  }
+  if (state.capture && !state.won) dom.status.textContent = '圆环已到达杆口；正在完成对准、穿杆和挂接。';
+  const deadline = performance.now() + 4500;
+  while (!state.won && performance.now() < deadline) await delay(120);
+  if (!state.won) dom.status.textContent = '尚未挂上：继续用 A / S / D 将圆环送向右侧杆口。';
 }
 
 function decorateRuntime() {
@@ -208,7 +285,7 @@ async function connectRuntime(token) {
     setRuntime('ready', `源库运行中 · ${description.particleCount.toLocaleString()} particles · ${description.bodyCount} torus`);
     dom.cover.classList.add('hidden');
     setControls(true);
-    dom.status.textContent = '按 A / S / D 或点击水压按钮，尝试推动圆环进入右侧目标区。';
+    dom.status.textContent = '目标：先用 A / S / D 让圆环产生位移，再送入右侧单杆入口并挂住。';
     await sampleBodies();
   } catch (error) {
     if (token !== state.generation) return;
@@ -257,7 +334,7 @@ window.addEventListener('keydown', event => {
 });
 
 window.__waterRingGame = {
-  source, state, loadScene, fireJet, playGuidedDemo, sampleBodies,
+  source, level, state, loadScene, fireJet, playGuidedDemo, sampleBodies, beginCapture,
   get adapter() { return adapter; }
 };
 

@@ -7,9 +7,11 @@
   "reopenPolicy": "先定义场景问题、必须能力、验收画面和目标设备性能预算，再从源库能力做单变量验证。",
   "scenePrototype": {
     "id": "water-ring-game",
-    "status": "active",
+    "status": "playable-single-peg",
     "started": "2026-08-25",
-    "goal": "验证固定上游水体、原生 torus 刚体和受控喷流能否形成网页水中套圈玩法。"
+    "goal": "验证固定上游水体、原生 torus 刚体和受控喷流能否形成网页水中套圈玩法。",
+    "completedLoop": "水流抬升与位移 -> 单杆杆口捕获 -> 对准 -> 穿杆 -> 下落 -> 稳定挂接",
+    "nextGate": "用真实静态细杆碰撞替换游戏层刚体捕获约束"
   },
   "operatingMode": "plan-driven",
   "macroGoal": "研究并扩展 Particles4All，判断其能否成为可复用的浏览器局部液体与刚体 WebGPU 运行时。",
