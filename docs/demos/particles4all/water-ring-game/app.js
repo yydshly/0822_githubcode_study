@@ -20,20 +20,20 @@ const geometry = Object.freeze({
   ringTubeRadius: 0.078 * 0.4,
   postRadius: 0.025,
   baseTop: 0.09,
-  seatClearance: 0.004,
+  seatClearance: 0.011,
   seatRadialOffset: 0.014
 });
 const level = Object.freeze({
   id: 'single-peg-01',
   geometry,
   peg: Object.freeze({
-    base: [1.20, 0.045, 0.50],
-    mouth: [1.20, 0.43, 0.50],
-    thread: [1.20, 0.29, 0.50],
-    seat: [1.20 + geometry.seatRadialOffset,
-      geometry.baseTop + geometry.ringTubeRadius + geometry.seatClearance, 0.50]
+    base: [1.22, 0.045, 0.75],
+    mouth: [1.22, 0.535, 0.75],
+    thread: [1.22, 0.29, 0.75],
+    seat: [1.22 + geometry.seatRadialOffset,
+      geometry.baseTop + geometry.ringTubeRadius + geometry.seatClearance, 0.75]
   }),
-  capture: Object.freeze({ xMin: 0.82, xMax: 1.44, yMin: 0.17, yMax: 0.62, zMin: 0.20, zMax: 0.80, travelMin: 0.09 }),
+  capture: Object.freeze({ radialMax: 0.33, yMin: 0.055, yMax: 0.62, travelMin: 0.12, minShots: 2 }),
   phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMinMs: 520 }),
   pumpMaxCycles: 12
 });
@@ -41,7 +41,8 @@ const state = {
   ready: false, playable: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
   score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
   capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null,
-  events: [], error: null, resetCount: 0, apparatus: null, lastResetInPlace: false
+  events: [], error: null, resetCount: 0, apparatus: null, lastResetInPlace: false,
+  started: false, activeUntil: 0
 };
 let adapter = null;
 let sampleTimer = 0;
@@ -50,9 +51,10 @@ let pumpToken = 0;
 
 function engineUrl() {
   const params = new URLSearchParams({
-    preset: 'small', view: state.view, particles: '14000', body: source.bodies, bodysize: '0.078',
+    preset: 'small', view: state.view, particles: '10000', body: source.bodies, bodysize: '0.078',
     radius: '0.42', speedmax: '6', timescale: '0.82', tension: '0.55',
     substeps: '1', iters: '2', ssfrscale: '0.32', ssfrradius: '0.72', ssfriters: '1',
+    fpslimit: '30', idlefps: '5', camera: '-1.35,0.42,1.55,0.82,0.24,0.55',
     timing: '0', game: 'water-ring', generation: String(state.generation)
   });
   return `${source.runtime}?${params}`;
@@ -98,6 +100,8 @@ function resetState({ keepRuntime = false } = {}) {
   state.pumpActive = false;
   state.pumpCycles = 0;
   state.pumpTargetId = null;
+  state.started = false;
+  state.activeUntil = 0;
   state.events = [];
   pumpToken += 1;
   state.error = null;
@@ -109,7 +113,7 @@ function resetState({ keepRuntime = false } = {}) {
   dom.pumpCycles.textContent = '0';
   dom.pumpState.textContent = '关闭';
   dom.pump.classList.remove('active');
-  dom.pump.querySelector('strong').textContent = '启动持续水泵并完成一局';
+  dom.pump.querySelector('strong').textContent = '启动持续水泵';
   dom.strip.replaceChildren();
   renderObjective();
   renderProgress();
@@ -198,15 +202,31 @@ function distanceTo(a, b) {
 }
 
 function isInsideCapture(body) {
-  if (state.shots === 0 || state.capture || state.won) return false;
-  if (state.pumpTargetId && body.id !== state.pumpTargetId) return false;
+  if (!state.started || state.shots < level.capture.minShots || state.capture || state.won) return false;
   const initial = state.baseline.get(body.id);
   if (!initial) return false;
   const [x, y, z] = body.pose.centre;
   const travel = Math.hypot(x - initial[0], y - initial[1], z - initial[2]);
   const gate = level.capture;
-  return x > gate.xMin && x < gate.xMax && y > gate.yMin && y < gate.yMax &&
-    z > gate.zMin && z < gate.zMax && travel > gate.travelMin;
+  const radial = Math.hypot(x - level.peg.mouth[0], z - level.peg.mouth[2]);
+  return radial < gate.radialMax && y > gate.yMin && y < gate.yMax && travel > gate.travelMin;
+}
+
+function simulationShouldRun() {
+  return state.pumpActive || Boolean(state.capture && !state.won) || performance.now() < state.activeUntil;
+}
+
+function wakeSimulation(durationMs = 1800) {
+  state.started = true;
+  state.activeUntil = Math.max(state.activeUntil, performance.now() + durationMs);
+  adapter?.setPaused(false);
+}
+
+function syncSimulationActivity() {
+  if (!adapter || !state.ready) return false;
+  const running = simulationShouldRun();
+  adapter.setPaused(!running);
+  return running;
 }
 
 async function beginCapture(body, reason = 'water-entry') {
@@ -218,6 +238,7 @@ async function beginCapture(body, reason = 'water-entry') {
   if (state.pumpActive) stopPump('captured');
   renderObjective();
   await adapter.holdBody({ bodyId: body.id, target: level.peg.mouth, rate: 13, limit: 1.7, align: true });
+  syncSimulationActivity();
   dom.status.textContent = `圆环 ${body.id} 已被水流送入杆口，开始对准。`;
   return true;
 }
@@ -301,7 +322,7 @@ async function sampleBodies() {
     dom.lift.textContent = `${fmt(state.maxLift)} m`;
     dom.travel.textContent = `${fmt(state.maxTravel)} m`;
     renderRings();
-    adapter.setPaused(false);
+    syncSimulationActivity();
   } catch (error) {
     state.error = error.message;
     recordEvent('sample-error', { message: error.message });
@@ -315,7 +336,7 @@ function packetFor(direction) {
   const packets = {
     left: { nozzle: 'left', origin: [0.065, 0.122, 0.315], counts: [4, 7, 6], spacing: 0.018, velocity: [5.8, 7.2, 0.2] },
     up: { nozzle: 'up', origin: [0.614, 0.122, 0.315], counts: [5, 7, 6], spacing: 0.018, velocity: [0.2, 7.8, 0.1] },
-    right: { nozzle: 'right', origin: [1.265, 0.122, 0.315], counts: [4, 7, 6], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] }
+    right: { nozzle: 'right', origin: [1.405, 0.122, 0.315], counts: [4, 7, 6], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] }
   };
   return packets[direction];
 }
@@ -331,7 +352,7 @@ async function fireJet(direction, { quiet = false, packetConfig = null } = {}) {
     adapter.setPumpState(true, nozzle);
     const packet = adapter.createFluidBlock(definition);
     const result = await adapter.injectFluid(packet);
-    adapter.setPaused(false);
+    wakeSimulation();
     state.shots += 1;
     state.fluidAdded += result.added;
     recordEvent('fluid-pulse', { direction, nozzle, added: result.added,
@@ -357,7 +378,7 @@ const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
 function renderPump() {
   dom.pump.classList.toggle('active', state.pumpActive);
-  dom.pump.querySelector('strong').textContent = state.won ? '本局已完成' : state.pumpActive ? '停止持续水泵' : '启动持续水泵并完成一局';
+  dom.pump.querySelector('strong').textContent = state.won ? '本局已完成' : state.pumpActive ? '停止持续水泵' : '启动持续水泵';
   dom.pumpState.textContent = state.won ? '已通关' : state.pumpActive ? '运行中' : '关闭';
   dom.pumpCycles.textContent = String(state.pumpCycles);
   renderProgress();
@@ -370,6 +391,9 @@ function stopPump(reason = 'manual') {
   pumpToken += 1;
   try { adapter?.setPumpState(false, null); } catch { /* Runtime may be resetting. */ }
   if (wasActive) recordEvent('pump-stop', { reason, pumpCycles: state.pumpCycles });
+  if (reason === 'won') state.activeUntil = 0;
+  else if (!state.capture) state.activeUntil = Math.max(state.activeUntil, performance.now() + 1200);
+  syncSimulationActivity();
   renderPump();
   if (reason === 'manual' && !state.won) dom.status.textContent = '持续水泵已停止；可以继续单次控制水流。';
 }
@@ -386,10 +410,16 @@ function pumpPacketFor(target, cycle) {
   const nozzles = [
     { nozzle: 'left', point: [0.065, 0.122, 0.315] },
     { nozzle: 'up', point: [0.614, 0.122, 0.315] },
-    { nozzle: 'right', point: [1.265, 0.122, 0.315] }
+    { nozzle: 'right', point: [1.405, 0.122, 0.315] }
   ];
-  const ranked = nozzles.sort((a, b) => Math.abs(a.point[0] - centre[0]) - Math.abs(b.point[0] - centre[0]));
-  const selected = cycle % 4 === 3 ? nozzles.find(item => item.nozzle === 'up') : ranked[0];
+  // Select a nozzle behind the target's desired travel direction. Choosing the
+  // nearest nozzle can put the jet in front of the ring and push it away from
+  // the peg, which made the controls look active but mechanically ineffective.
+  const selected = centre[0] > level.peg.mouth[0] + 0.04
+    ? nozzles.find(item => item.nozzle === 'right')
+    : centre[0] < 0.80
+      ? nozzles.find(item => item.nozzle === 'left')
+      : nozzles.find(item => item.nozzle === 'up');
   const aim = cycle % 3 === 1 ? level.peg.mouth : centre;
   const dx = aim[0] - selected.point[0];
   const dz = aim[2] - selected.point[2];
@@ -419,15 +449,11 @@ async function runPump(token) {
     const target = state.bodies.find(body => body.id === state.pumpTargetId);
     const initial = target && state.baseline.get(target.id);
     const travel = target && initial ? distanceTo(target.pose.centre, initial) : 0;
-    if (target && travel > 0.04) {
-      recordEvent('pump-guidance', { bodyId: target.id, travel });
-      await beginCapture(target, 'water-pump-guidance');
-    } else {
-      state.error = '水流没有推动目标圆环；请确认浏览器硬件加速后重新装水。';
-      stopPump('no-motion');
-      dom.status.textContent = state.error;
-      renderProgress();
-    }
+    recordEvent('pump-limit', { bodyId: target?.id || null, travel });
+    stopPump('limit');
+    dom.status.textContent = travel > 0.04
+      ? '水泵已完成一轮推动，但不会自动套环；继续用 A / S / D 调整圆环。'
+      : '水流尚未明显推动目标圆环；请用中心上举或重新装水后再试。';
   }
 }
 
@@ -446,6 +472,7 @@ async function togglePump() {
     return;
   }
   state.pumpActive = true;
+  wakeSimulation(level.pumpMaxCycles * 700);
   const token = ++pumpToken;
   recordEvent('pump-start', { bodyId: target.id, maxCycles: level.pumpMaxCycles });
   renderPump();
@@ -506,7 +533,7 @@ async function connectRuntime(token) {
     if (!state.playable) throw new Error('Runtime 已连接，但没有读取到可玩的 torus 圆环');
     recordEvent('game-ready', { bodyIds: state.bodies.map(body => body.id) });
     setControls(true);
-    dom.status.textContent = '建议直接点击“启动持续水泵并完成一局”；也可以使用 A / S / D 手动控制。';
+    dom.status.textContent = '场景已空闲暂停。点击水泵或使用 A / S / D 后才开始模拟；水泵不会自动通关。';
     renderProgress();
   } catch (error) {
     if (token !== state.generation) return;

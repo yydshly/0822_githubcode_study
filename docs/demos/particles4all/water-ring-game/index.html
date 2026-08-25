@@ -57,7 +57,7 @@
         <aside class="control-card">
           <p class="control-kicker">WATER PRESSURE CONTROL</p>
           <h3>把一个圆环挂上杆</h3>
-          <p class="control-copy">先用水流抬升并推向右侧；圆环进入杆口后会沿杆下落，贴合底座接触面并稳定挂住，完成一个可玩的回合。</p>
+          <p class="control-copy">先用水流抬升并推向右侧；只有圆环真正接近杆口后才会进入对准阶段。持续水泵只推动水体，不会自动判定通关。</p>
 
           <ol id="objective-track" class="objective-track" aria-label="通关步骤">
             <li data-phase="lift" class="active">1 抬升</li>
@@ -72,8 +72,8 @@
             <button id="jet-right" class="pressure pressure-red" type="button" disabled><span>D</span><strong>右侧喷流</strong><small>向左上推动</small></button>
           </div>
 
-          <button id="water-pump" class="pump" type="button" disabled><span>≈</span><strong>启动持续水泵并完成一局</strong><small>最多 12 次真实喷流 · 再按停止</small></button>
-          <button id="guided-demo" class="guided" type="button" disabled>查看手动水压组合演示</button>
+          <button id="water-pump" class="pump" type="button" disabled><span>≈</span><strong>启动持续水泵</strong><small>最多 12 次真实喷流 · 不会自动套环</small></button>
+          <button id="guided-demo" class="guided" type="button" disabled>教学辅助演示（自动对准）</button>
           <button id="reset-game" class="reset" type="button">重新装水与圆环 <kbd>R</kbd></button>
 
           <dl class="live-stats">

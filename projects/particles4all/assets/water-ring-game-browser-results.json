@@ -5,9 +5,14 @@
     "sourceRuntime": true,
     "orientationTargetExtension": true,
     "balancedPerformanceProfile": true,
+    "separatedInitialState": true,
+    "idleLoadShedding": true,
     "fiveNativeTorus": true,
+    "manualWaterControl": true,
     "realFluidInjection": true,
     "sustainedWaterPump": true,
+    "noScriptedPumpCompletion": true,
+    "waterDrivenPlayable": true,
     "repeatableCompletion": true,
     "noStartupRace": true,
     "observableBodyMotion": true,
@@ -30,8 +35,8 @@
       "adapterVersion": 2,
       "classification": "E1 runtime adapter",
       "upstreamRuntime": true,
-      "particleCount": 14980,
-      "fluidParticleCount": 14000,
+      "particleCount": 10980,
+      "fluidParticleCount": 10000,
       "rigidParticleCount": 980,
       "bodyCount": 5,
       "simTime": 0,
@@ -62,19 +67,19 @@
         "enabled": true,
         "model": "analytic base cylinder + post cylinder + cap sphere",
         "centre": [
-          1.2,
+          1.22,
           0,
-          0.5
+          0.75
         ],
-        "baseRadius": 0.155,
+        "baseRadius": 0.145,
         "baseTop": 0.09,
         "postRadius": 0.025,
         "postBottom": 0.09,
         "postTop": 0.44,
         "capCentre": [
-          1.2,
+          1.22,
           0.455,
-          0.5
+          0.75
         ],
         "capRadius": 0.036
       },
@@ -87,12 +92,12 @@
           "nozzle": null,
           "shape": "box",
           "centre": [
-            0.7,
+            0.74,
             0.028,
             0.36
           ],
           "halfExtents": [
-            0.66,
+            0.7,
             0.028,
             0.105
           ]
@@ -135,14 +140,14 @@
           "nozzle": "right",
           "shape": "cylinder",
           "centre": [
-            1.3,
+            1.44,
             0.06,
             0.36
           ],
           "halfExtents": [
-            0.048,
+            0.04,
             0.06,
-            0.048
+            0.04
           ]
         },
         {
@@ -151,14 +156,14 @@
           "nozzle": null,
           "shape": "cylinder",
           "centre": [
-            1.2,
+            1.22,
             0.045,
-            0.5
+            0.75
           ],
           "halfExtents": [
-            0.155,
+            0.145,
             0.045,
-            0.155
+            0.145
           ]
         },
         {
@@ -167,9 +172,9 @@
           "nozzle": null,
           "shape": "cylinder",
           "centre": [
-            1.2,
+            1.22,
             0.265,
-            0.5
+            0.75
           ],
           "halfExtents": [
             0.025,
@@ -183,9 +188,9 @@
           "nozzle": null,
           "shape": "sphere",
           "centre": [
-            1.2,
+            1.22,
             0.455,
-            0.5
+            0.75
           ],
           "halfExtents": [
             0.036,
@@ -200,9 +205,13 @@
       "iterations": 2,
       "ssfrScale": 0.32,
       "ssfrFilterIterations": 1,
-      "maxCatchUpFrames": 2
+      "maxCatchUpFrames": 2,
+      "frameRateLimits": {
+        "active": 30,
+        "idle": 5
+      }
     },
-    "frameToken": "frame-1787631030520-0.02492419256061551",
+    "frameToken": "frame-1787632697478-0.9102848225407978",
     "bodyShapes": [
       "torus",
       "torus",
@@ -237,7 +246,34 @@
         0.5
       ]
     ],
+    "closestPegDistance": 0.26248809932798584,
+    "idlePaused": true,
+    "simTime": 0,
+    "capture": null,
+    "won": false,
     "canvasWebgpu": true
+  },
+  "idleAfter": {
+    "paused": true,
+    "simTime": 0,
+    "capture": null,
+    "won": false,
+    "shots": 0
+  },
+  "manualControl": {
+    "shots": 1,
+    "fluidAdded": 210,
+    "particleCount": 11190,
+    "started": true,
+    "capture": null,
+    "won": false,
+    "paused": false,
+    "eventTypes": [
+      "scene-load",
+      "runtime-ready",
+      "game-ready",
+      "fluid-pulse"
+    ]
   },
   "desktopLayout": {
     "headerCovered": false,
@@ -253,24 +289,24 @@
       "enabled": true,
       "model": "analytic base cylinder + post cylinder + cap sphere",
       "centre": [
-        1.2,
+        1.22,
         0,
-        0.5
+        0.75
       ],
-      "baseRadius": 0.155,
+      "baseRadius": 0.145,
       "baseTop": 0.09,
       "postRadius": 0.025,
       "postBottom": 0.09,
       "postTop": 0.44,
       "capCentre": [
-        1.2,
+        1.22,
         0.455,
-        0.5
+        0.75
       ],
       "capRadius": 0.036
     },
     "pumpActive": true,
-    "activeNozzle": "right",
+    "activeNozzle": "up",
     "parts": [
       {
         "key": "pump-rail",
@@ -278,12 +314,12 @@
         "nozzle": null,
         "shape": "box",
         "centre": [
-          0.7,
+          0.74,
           0.028,
           0.36
         ],
         "halfExtents": [
-          0.66,
+          0.7,
           0.028,
           0.105
         ]
@@ -326,14 +362,14 @@
         "nozzle": "right",
         "shape": "cylinder",
         "centre": [
-          1.3,
+          1.44,
           0.06,
           0.36
         ],
         "halfExtents": [
-          0.048,
+          0.04,
           0.06,
-          0.048
+          0.04
         ]
       },
       {
@@ -342,14 +378,14 @@
         "nozzle": null,
         "shape": "cylinder",
         "centre": [
-          1.2,
+          1.22,
           0.045,
-          0.5
+          0.75
         ],
         "halfExtents": [
-          0.155,
+          0.145,
           0.045,
-          0.155
+          0.145
         ]
       },
       {
@@ -358,9 +394,9 @@
         "nozzle": null,
         "shape": "cylinder",
         "centre": [
-          1.2,
+          1.22,
           0.265,
-          0.5
+          0.75
         ],
         "halfExtents": [
           0.025,
@@ -374,9 +410,9 @@
         "nozzle": null,
         "shape": "sphere",
         "centre": [
-          1.2,
+          1.22,
           0.455,
-          0.5
+          0.75
         ],
         "halfExtents": [
           0.036,
@@ -389,28 +425,96 @@
   "reliabilityRuns": [
     {
       "round": 1,
-      "elapsedMs": 8951,
+      "elapsedMs": 3543,
+      "beforeAssist": {
+        "won": false,
+        "capture": {
+          "bodyId": 3,
+          "phaseAt": 9287.799999952316,
+          "reason": "water-entry",
+          "lastCentre": [
+            1.2013531923294067,
+            0.10064414143562317,
+            0.485462486743927
+          ],
+          "stableSamples": 0
+        },
+        "pumpCycles": 3,
+        "pumpTargetId": 5,
+        "maxTravel": 0.46463937186379634,
+        "bodies": [
+          {
+            "id": 1,
+            "centre": [
+              0.646271288394928,
+              0.08475556969642639,
+              0.5228189826011658
+            ],
+            "radialToPeg": 0.6170703762022492,
+            "travel": 0.2995639523350497
+          },
+          {
+            "id": 2,
+            "centre": [
+              0.9882832765579224,
+              0.0747382715344429,
+              0.4340416491031647
+            ],
+            "radialToPeg": 0.3918192433050986,
+            "travel": 0.4531778470963571
+          },
+          {
+            "id": 3,
+            "centre": [
+              1.2013531923294067,
+              0.10064414143562317,
+              0.485462486743927
+            ],
+            "radialToPeg": 0.2651938901181758,
+            "travel": 0.46463937186379634
+          },
+          {
+            "id": 4,
+            "centre": [
+              1.3130874633789062,
+              0.08705558627843857,
+              0.41226404905319214
+            ],
+            "radialToPeg": 0.35032962820786917,
+            "travel": 0.40449856570550885
+          },
+          {
+            "id": 5,
+            "centre": [
+              1.38194739818573,
+              0.04519769176840782,
+              0.4208276867866516
+            ],
+            "radialToPeg": 0.36685333795040515,
+            "travel": 0.3267273956183589
+          }
+        ],
+        "eventTypes": [
+          "scene-reset-in-place",
+          "game-ready-after-reset",
+          "pump-start",
+          "fluid-pulse",
+          "fluid-pulse",
+          "fluid-pulse",
+          "capture-start",
+          "pump-stop"
+        ]
+      },
       "won": true,
-      "pumpCycles": 12,
-      "captureReason": "water-pump-guidance",
+      "pumpCycles": 3,
+      "captureReason": "water-entry",
       "eventTypes": [
-        "scene-load",
-        "runtime-ready",
-        "game-ready",
+        "scene-reset-in-place",
+        "game-ready-after-reset",
         "pump-start",
         "fluid-pulse",
         "fluid-pulse",
         "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "pump-guidance",
         "capture-start",
         "pump-stop",
         "capture-thread",
@@ -418,100 +522,111 @@
         "game-complete"
       ],
       "fluidNozzles": [
-        "right",
-        "right",
-        "right",
         "up",
-        "right",
-        "right",
-        "right",
         "up",
-        "right",
-        "right",
-        "right",
-        "up"
+        "right"
       ]
     },
     {
       "round": "2-reset",
       "reset": true,
       "beforeReset": {
-        "resetCount": 0,
-        "generation": 1,
-        "frameToken": "frame-1787631030520-0.02492419256061551"
-      },
-      "afterReset": {
         "resetCount": 1,
         "generation": 1,
-        "frameToken": "frame-1787631030520-0.02492419256061551",
+        "frameToken": "frame-1787632697478-0.9102848225407978"
+      },
+      "afterReset": {
+        "resetCount": 2,
+        "generation": 1,
+        "frameToken": "frame-1787632697478-0.9102848225407978",
         "lastResetInPlace": true
       }
     },
     {
       "round": 2,
-      "elapsedMs": 8862,
-      "won": true,
-      "pumpCycles": 12,
-      "captureReason": "water-pump-guidance",
-      "eventTypes": [
-        "scene-reset-in-place",
-        "game-ready-after-reset",
-        "pump-start",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "pump-guidance",
-        "capture-start",
-        "pump-stop",
-        "capture-thread",
-        "capture-hang",
-        "game-complete"
-      ],
-      "fluidNozzles": [
-        "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up",
-        "right",
-        "right",
-        "right",
-        "up"
-      ]
-    },
-    {
-      "round": "3-reset",
-      "reset": true,
-      "beforeReset": {
-        "resetCount": 1,
-        "generation": 1,
-        "frameToken": "frame-1787631030520-0.02492419256061551"
+      "elapsedMs": 3536,
+      "beforeAssist": {
+        "won": false,
+        "capture": {
+          "bodyId": 3,
+          "phaseAt": 12920.099999964237,
+          "reason": "water-entry",
+          "lastCentre": [
+            1.190635323524475,
+            0.09314097464084625,
+            0.4842393696308136
+          ],
+          "stableSamples": 0
+        },
+        "pumpCycles": 3,
+        "pumpTargetId": 5,
+        "maxTravel": 0.4561402372984315,
+        "bodies": [
+          {
+            "id": 1,
+            "centre": [
+              0.6134344339370728,
+              0.08737116307020187,
+              0.5308697819709778
+            ],
+            "radialToPeg": 0.6449339798666885,
+            "travel": 0.2683458095089208
+          },
+          {
+            "id": 2,
+            "centre": [
+              0.9880677461624146,
+              0.0826025903224945,
+              0.43777963519096375
+            ],
+            "radialToPeg": 0.3889397467110682,
+            "travel": 0.4505033223644489
+          },
+          {
+            "id": 3,
+            "centre": [
+              1.190635323524475,
+              0.09314097464084625,
+              0.4842393696308136
+            ],
+            "radialToPeg": 0.2673780037301864,
+            "travel": 0.4561402372984315
+          },
+          {
+            "id": 4,
+            "centre": [
+              1.2655843496322632,
+              0.06730707734823227,
+              0.39203113317489624
+            ],
+            "radialToPeg": 0.3608595884100148,
+            "travel": 0.3753672794174044
+          },
+          {
+            "id": 5,
+            "centre": [
+              1.385416865348816,
+              0.04199971258640289,
+              0.44886064529418945
+            ],
+            "radialToPeg": 0.3435806314309063,
+            "travel": 0.3257434542441914
+          }
+        ],
+        "eventTypes": [
+          "scene-reset-in-place",
+          "game-ready-after-reset",
+          "pump-start",
+          "fluid-pulse",
+          "fluid-pulse",
+          "fluid-pulse",
+          "capture-start",
+          "pump-stop"
+        ]
       },
-      "afterReset": {
-        "resetCount": 2,
-        "generation": 1,
-        "frameToken": "frame-1787631030520-0.02492419256061551",
-        "lastResetInPlace": true
-      }
-    },
-    {
-      "round": 3,
-      "elapsedMs": 9154,
       "won": true,
-      "pumpCycles": 12,
-      "captureReason": "water-pump-guidance",
+      "pumpCycles": 3,
+      "captureReason": "water-entry",
       "eventTypes": [
         "scene-reset-in-place",
         "game-ready-after-reset",
@@ -519,16 +634,6 @@
         "fluid-pulse",
         "fluid-pulse",
         "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "fluid-pulse",
-        "pump-guidance",
         "capture-start",
         "pump-stop",
         "capture-thread",
@@ -536,90 +641,81 @@
         "game-complete"
       ],
       "fluidNozzles": [
-        "right",
-        "right",
-        "right",
         "up",
-        "right",
-        "right",
-        "right",
         "up",
-        "right",
-        "right",
-        "right",
         "up"
       ]
     }
   ],
   "afterPlay": {
-    "shots": 12,
+    "shots": 3,
     "score": 1,
     "won": true,
     "phase": "hang",
-    "captureReason": "water-pump-guidance",
-    "capturedBodyId": 5,
-    "heldBodyId": 5,
+    "captureReason": "water-entry",
+    "capturedBodyId": 3,
+    "heldBodyId": 3,
     "heldAlign": true,
     "capturedCentre": [
-      1.2159444093704224,
-      0.11954042315483093,
-      0.5009196400642395
+      1.2365089654922485,
+      0.1317838430404663,
+      0.7507731318473816
     ],
     "capturedSize": 0.078,
     "capturedRot": [
-      0.9999945163726807,
-      -0.0016164745902642608,
-      0.002893490483984351,
-      0.0016162905376404524,
-      0.9999986886978149,
-      0.00006595587183255702,
-      -0.0028935931622982025,
-      -0.00006127878441475332,
-      0.9999958276748657
+      0.9998618364334106,
+      0.016525134444236755,
+      -0.0017854208126664162,
+      -0.01653573289513588,
+      0.9998446702957153,
+      -0.006093529984354973,
+      0.0016844472847878933,
+      0.006122211460024118,
+      0.9999798536300659
     ],
-    "axisAlignment": 0.9999986886978149,
+    "axisAlignment": 0.9998446702957153,
     "seat": [
-      1.214,
-      0.1252,
-      0.5
+      1.234,
+      0.1322,
+      0.75
     ],
-    "seatDistance": 0.0060545252261358,
-    "contactGap": -0.0016595768451690696,
-    "radialOffset": 0.015970908803802253,
-    "postClearance": 0.00582909119619774,
+    "seatDistance": 0.0026581623934022573,
+    "contactGap": 0.010583843040466306,
+    "radialOffset": 0.016527058857452207,
+    "postClearance": 0.005272941142547786,
     "stableSamples": 2,
-    "fluidAdded": 2160,
-    "pumpCycles": 12,
+    "fluidAdded": 540,
+    "pumpCycles": 3,
     "pumpState": "已通关",
     "pumpLabel": "本局已完成",
-    "maxLift": 0.1520565152168274,
-    "maxTravel": 0.6642894461538232,
-    "particleCount": 17140,
+    "maxLift": 0.3025066703557968,
+    "maxTravel": 0.7064351228951373,
+    "particleCount": 11520,
     "bodyCentres": [
       [
-        0.4711868464946747,
-        0.11950013041496277,
-        0.455357164144516
+        0.7511143684387207,
+        0.08903773128986359,
+        0.4517013430595398
       ],
       [
-        0.7179460525512695,
-        0.11620145291090012,
-        0.6345196962356567
+        0.9665799736976624,
+        0.08722932636737823,
+        0.4830189049243927
       ],
       [
-        0.8978203535079956,
-        0.09833354502916336,
-        0.25658634305000305
+        1.2365089654922485,
+        0.1317838430404663,
+        0.7507731318473816
       ],
       [
-        0.8952668905258179,
-        0.09189090132713318,
-        0.7756709456443787
+        1.1465765237808228,
+        0.07917211204767227,
+        0.23147918283939362
       ],
       [
-        1.2159444093704224,
-        0.11954042315483093,
-        0.5009196400642395
+        1.2547389268875122,
+        0.07234400510787964,
+        0.4594004452228546
       ]
     ],
     "ringCards": 5,
@@ -631,19 +727,19 @@
         "enabled": true,
         "model": "analytic base cylinder + post cylinder + cap sphere",
         "centre": [
-          1.2,
+          1.22,
           0,
-          0.5
+          0.75
         ],
-        "baseRadius": 0.155,
+        "baseRadius": 0.145,
         "baseTop": 0.09,
         "postRadius": 0.025,
         "postBottom": 0.09,
         "postTop": 0.44,
         "capCentre": [
-          1.2,
+          1.22,
           0.455,
-          0.5
+          0.75
         ],
         "capRadius": 0.036
       },
@@ -656,12 +752,12 @@
           "nozzle": null,
           "shape": "box",
           "centre": [
-            0.7,
+            0.74,
             0.028,
             0.36
           ],
           "halfExtents": [
-            0.66,
+            0.7,
             0.028,
             0.105
           ]
@@ -704,14 +800,14 @@
           "nozzle": "right",
           "shape": "cylinder",
           "centre": [
-            1.3,
+            1.44,
             0.06,
             0.36
           ],
           "halfExtents": [
-            0.048,
+            0.04,
             0.06,
-            0.048
+            0.04
           ]
         },
         {
@@ -720,14 +816,14 @@
           "nozzle": null,
           "shape": "cylinder",
           "centre": [
-            1.2,
+            1.22,
             0.045,
-            0.5
+            0.75
           ],
           "halfExtents": [
-            0.155,
+            0.145,
             0.045,
-            0.155
+            0.145
           ]
         },
         {
@@ -736,9 +832,9 @@
           "nozzle": null,
           "shape": "cylinder",
           "centre": [
-            1.2,
+            1.22,
             0.265,
-            0.5
+            0.75
           ],
           "halfExtents": [
             0.025,
@@ -752,9 +848,9 @@
           "nozzle": null,
           "shape": "sphere",
           "centre": [
-            1.2,
+            1.22,
             0.455,
-            0.5
+            0.75
           ],
           "halfExtents": [
             0.036,
@@ -771,9 +867,9 @@
       "postPenetrations": 0,
       "capPenetrations": 0
     },
-    "frameToken": "frame-1787631030520-0.02492419256061551",
-    "status": "通关：圆环 5 已穿杆、落座并稳定贴合底座。按 R 可以再来一局。",
-    "progressTitle": "通关 · 圆环 5 已挂住",
+    "frameToken": "frame-1787632697478-0.9102848225407978",
+    "status": "通关：圆环 3 已穿杆、落座并稳定贴合底座。按 R 可以再来一局。",
+    "progressTitle": "通关 · 圆环 3 已挂住",
     "progressState": "complete",
     "eventTypes": [
       "scene-reset-in-place",
@@ -782,16 +878,6 @@
       "fluid-pulse",
       "fluid-pulse",
       "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "fluid-pulse",
-      "pump-guidance",
       "capture-start",
       "pump-stop",
       "capture-thread",
@@ -801,8 +887,8 @@
   },
   "switched": {
     "view": "particles",
-    "frameSrc": "../engine/?preset=small&view=ssfr&particles=14000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&substeps=1&iters=2&ssfrscale=0.32&ssfrradius=0.72&ssfriters=1&timing=0&game=water-ring&generation=1",
-    "frameToken": "frame-1787631030520-0.02492419256061551",
+    "frameSrc": "../engine/?preset=small&view=ssfr&particles=10000&body=torus%3A0.38%3A0.17%2Ctorus%3A0.42%3A0.19%2Ctorus%3A0.46%3A0.21%2Ctorus%3A0.50%3A0.23%2Ctorus%3A0.54%3A0.25&bodysize=0.078&radius=0.42&speedmax=6&timescale=0.82&tension=0.55&substeps=1&iters=2&ssfrscale=0.32&ssfrradius=0.72&ssfriters=1&fpslimit=30&idlefps=5&camera=-1.35%2C0.42%2C1.55%2C0.82%2C0.24%2C0.55&timing=0&game=water-ring&generation=1",
+    "frameToken": "frame-1787632697478-0.9102848225407978",
     "runtimeDisplay": 0,
     "active": "particles"
   },

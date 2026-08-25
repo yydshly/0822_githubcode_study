@@ -251,31 +251,31 @@ if (!navigator.gpu) {
     const q = new URLSearchParams(location.search);
 
     const waterRingApparatus = q.get('game') === 'water-ring' ? [
-      { key: 'pump-rail', role: 'pump', shape: 'box', centre: [0.70, 0.028, 0.36],
-        halfExtents: [0.66, 0.028, 0.105], color: [0.10, 0.24, 0.30] },
+      { key: 'pump-rail', role: 'pump', shape: 'box', centre: [0.74, 0.028, 0.36],
+        halfExtents: [0.70, 0.028, 0.105], color: [0.10, 0.24, 0.30] },
       { key: 'nozzle-left', role: 'nozzle', nozzle: 'left', shape: 'cylinder',
         centre: [0.10, 0.060, 0.36], halfExtents: [0.048, 0.060, 0.048], color: [0.20, 0.55, 1.00] },
       { key: 'nozzle-up', role: 'nozzle', nozzle: 'up', shape: 'cylinder',
         centre: [0.65, 0.060, 0.36], halfExtents: [0.052, 0.060, 0.052], color: [1.00, 0.72, 0.18] },
       { key: 'nozzle-right', role: 'nozzle', nozzle: 'right', shape: 'cylinder',
-        centre: [1.30, 0.060, 0.36], halfExtents: [0.048, 0.060, 0.048], color: [1.00, 0.28, 0.22] },
-      { key: 'peg-base', role: 'target', shape: 'cylinder', centre: [1.20, 0.045, 0.50],
-        halfExtents: [0.155, 0.045, 0.155], color: [0.95, 0.58, 0.10] },
-      { key: 'peg-post', role: 'target', shape: 'cylinder', centre: [1.20, 0.265, 0.50],
+        centre: [1.44, 0.060, 0.36], halfExtents: [0.040, 0.060, 0.040], color: [1.00, 0.28, 0.22] },
+      { key: 'peg-base', role: 'target', shape: 'cylinder', centre: [1.22, 0.045, 0.75],
+        halfExtents: [0.145, 0.045, 0.145], color: [0.95, 0.58, 0.10] },
+      { key: 'peg-post', role: 'target', shape: 'cylinder', centre: [1.22, 0.265, 0.75],
         halfExtents: [0.025, 0.175, 0.025], color: [1.00, 0.76, 0.24] },
-      { key: 'peg-cap', role: 'target', shape: 'sphere', centre: [1.20, 0.455, 0.50],
+      { key: 'peg-cap', role: 'target', shape: 'sphere', centre: [1.22, 0.455, 0.75],
         halfExtents: [0.036, 0.036, 0.036], color: [1.00, 0.84, 0.38] },
     ] : [];
     const waterRingCollider = waterRingApparatus.length ? {
       enabled: true,
       model: 'analytic base cylinder + post cylinder + cap sphere',
-      centre: [1.20, 0, 0.50],
-      baseRadius: 0.155,
+      centre: [1.22, 0, 0.75],
+      baseRadius: 0.145,
       baseTop: 0.09,
       postRadius: 0.025,
       postBottom: 0.09,
       postTop: 0.44,
-      capCentre: [1.20, 0.455, 0.50],
+      capCentre: [1.22, 0.455, 0.75],
       capRadius: 0.036,
     } : null;
     const apparatusState = { pumpActive: false, activeNozzle: null };
@@ -1010,10 +1010,20 @@ if (!navigator.gpu) {
       setPaused(true);
     }
 
+    const activeFrameLimit = Math.max(0, qNum('fpslimit', 0));
+    const idleFrameLimit = Math.max(0, qNum('idlefps', activeFrameLimit));
+    window.__frameRateLimits = { active: activeFrameLimit, idle: idleFrameLimit };
+    let lastPresented = 0;
     let last = performance.now();
     let fpsAcc = 0, fpsN = 0, shown = 0;
     let frames = 0;
     function frame(now) {
+      const frameLimit = ui.paused ? idleFrameLimit : activeFrameLimit;
+      if (frameLimit > 0 && lastPresented > 0 && now - lastPresented < 1000 / frameLimit - 0.5) {
+        requestAnimationFrame(frame);
+        return;
+      }
+      lastPresented = now;
       resize();
 
       const dt = Math.max(0, Math.min((now - last) / 1000, 0.05));

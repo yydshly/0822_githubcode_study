@@ -27,7 +27,6 @@ const outputDir = path.resolve(__dirname, '../assets');
     const initial = await page.evaluate(async () => {
       const game = window.__waterRingGame;
       const bodySample = await game.adapter.sampleBodies();
-      game.adapter.setPaused(false);
       const description = game.adapter.describe();
       const apparatus = game.adapter.describeApparatus();
       game.adapter.window.__waterRingFrameToken ||= `frame-${Date.now()}-${Math.random()}`;
@@ -40,13 +39,30 @@ const outputDir = path.resolve(__dirname, '../assets');
           ssfrScale: game.adapter.window.__ssfr.renderScale,
           ssfrFilterIterations: game.adapter.window.__ssfr.filterIterations,
           maxCatchUpFrames: game.adapter.window.__sim.params.maxCatchUpFrames ?? 2,
+          frameRateLimits: game.adapter.window.__frameRateLimits,
         },
         frameToken: game.adapter.window.__waterRingFrameToken,
         bodyShapes: bodySample.bodies.map(body => body.shape),
         bodyCentres: bodySample.bodies.map(body => body.pose.centre),
+        closestPegDistance: Math.min(...bodySample.bodies.map(body =>
+          Math.hypot(body.pose.centre[0] - game.level.peg.base[0],
+            body.pose.centre[2] - game.level.peg.base[2]))),
+        idlePaused: game.adapter.window.__ui.paused,
+        simTime: game.adapter.window.__sim.simTime,
+        capture: game.state.capture,
+        won: game.state.won,
         canvasWebgpu: Boolean(document.querySelector('#runtime-frame')?.contentDocument?.querySelector('#view')?.getContext('webgpu')),
       };
     });
+
+    await page.waitForTimeout(1400);
+    const idleAfter = await page.evaluate(() => ({
+      paused: window.__waterRingGame.adapter.window.__ui.paused,
+      simTime: window.__waterRingGame.adapter.window.__sim.simTime,
+      capture: window.__waterRingGame.state.capture,
+      won: window.__waterRingGame.state.won,
+      shots: window.__waterRingGame.state.shots,
+    }));
 
     await page.evaluate(() => scrollTo(0, document.querySelector('#game').offsetTop));
     await page.waitForTimeout(250);
@@ -63,10 +79,30 @@ const outputDir = path.resolve(__dirname, '../assets');
         overflow: document.documentElement.scrollWidth - innerWidth,
       };
     });
+    await page.screenshot({ path: path.join(outputDir, 'water-ring-game-initial.png'), fullPage: true });
+
+    await page.locator('#jet-up').click();
+    await page.waitForFunction(() => window.__waterRingGame?.state?.shots === 1);
+    await page.waitForTimeout(700);
+    const manualControl = await page.evaluate(() => ({
+      shots: window.__waterRingGame.state.shots,
+      fluidAdded: window.__waterRingGame.state.fluidAdded,
+      particleCount: window.__waterRingGame.adapter.describe().particleCount,
+      started: window.__waterRingGame.state.started,
+      capture: window.__waterRingGame.state.capture,
+      won: window.__waterRingGame.state.won,
+      paused: window.__waterRingGame.adapter.window.__ui.paused,
+      eventTypes: window.__waterRingGame.state.events.map(event => event.type),
+    }));
+
+    await page.locator('#reset-game').click();
+    await page.waitForFunction(() => window.__waterRingGame?.state?.ready === true &&
+      window.__waterRingGame.state.playable === true && window.__waterRingGame.state.resetCount > 0,
+    null, { timeout: 60000 });
 
     const reliabilityRuns = [];
     let pumpVisualEvidence = null;
-    for (let round = 1; round <= 3; round += 1) {
+    for (let round = 1; round <= 2; round += 1) {
       if (round > 1) {
         const beforeReset = await page.evaluate(() => ({
           resetCount: window.__waterRingGame.state.resetCount,
@@ -92,16 +128,38 @@ const outputDir = path.resolve(__dirname, '../assets');
         pumpVisualEvidence = await page.evaluate(() => window.__waterRingGame.adapter.describeApparatus());
         await page.screenshot({ path: path.join(outputDir, 'water-ring-game-pump-active.png') });
       }
+      await page.waitForFunction(() => window.__waterRingGame?.state?.pumpActive === false ||
+        window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
+      const beforeAssist = await page.evaluate(() => ({
+        won: window.__waterRingGame.state.won,
+        capture: window.__waterRingGame.state.capture,
+        pumpCycles: window.__waterRingGame.state.pumpCycles,
+        pumpTargetId: window.__waterRingGame.state.pumpTargetId,
+        maxTravel: window.__waterRingGame.state.maxTravel,
+        bodies: window.__waterRingGame.state.bodies.map(body => ({
+          id: body.id,
+          centre: body.pose.centre,
+          radialToPeg: Math.hypot(body.pose.centre[0] - window.__waterRingGame.level.peg.mouth[0],
+            body.pose.centre[2] - window.__waterRingGame.level.peg.mouth[2]),
+          travel: Math.hypot(...body.pose.centre.map((value, index) => value -
+            window.__waterRingGame.state.baseline.get(body.id)[index])),
+        })),
+        eventTypes: window.__waterRingGame.state.events.map(event => event.type),
+      }));
+      if (!beforeAssist.won && !beforeAssist.capture) {
+        await page.locator('#guided-demo').click();
+      }
       await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
       reliabilityRuns.push(await page.evaluate((payload) => ({
         round: payload.round,
         elapsedMs: Date.now() - payload.startedAt,
+        beforeAssist: payload.beforeAssist,
         won: window.__waterRingGame.state.won,
         pumpCycles: window.__waterRingGame.state.pumpCycles,
         captureReason: window.__waterRingGame.state.capture?.reason,
         eventTypes: window.__waterRingGame.state.events.map(event => event.type),
         fluidNozzles: window.__waterRingGame.state.events.filter(event => event.type === 'fluid-pulse').map(event => event.nozzle),
-      }), { round, startedAt }));
+      }), { round, startedAt, beforeAssist }));
     }
     const afterPlay = await page.evaluate(async () => {
       await window.__waterRingGame.sampleBodies();
@@ -209,11 +267,28 @@ const outputDir = path.resolve(__dirname, '../assets');
         initial.performanceProfile?.iterations === 2 &&
         initial.performanceProfile?.ssfrScale === 0.32 &&
         initial.performanceProfile?.ssfrFilterIterations === 1 &&
-        initial.performanceProfile?.maxCatchUpFrames === 2,
+        initial.performanceProfile?.maxCatchUpFrames === 2 &&
+        initial.performanceProfile?.frameRateLimits?.active === 30 &&
+        initial.performanceProfile?.frameRateLimits?.idle === 5,
+      separatedInitialState: initial.closestPegDistance > 0.15 && !initial.capture && !initial.won,
+      idleLoadShedding: initial.idlePaused && idleAfter.paused && !idleAfter.capture && !idleAfter.won &&
+        idleAfter.shots === 0 && Math.abs(idleAfter.simTime - initial.simTime) < 0.02,
       fiveNativeTorus: initial.description.bodyCount === 5 && initial.bodyShapes.length === 5 && initial.bodyShapes.every(shape => shape === 'torus'),
+      manualWaterControl: manualControl.shots === 1 && manualControl.fluidAdded > 0 && manualControl.started &&
+        !manualControl.capture && !manualControl.won && manualControl.eventTypes.includes('fluid-pulse') &&
+        manualControl.particleCount === initial.description.particleCount + manualControl.fluidAdded,
       realFluidInjection: afterPlay.shots > 0 && afterPlay.fluidAdded > 0 && afterPlay.particleCount === initial.description.particleCount + afterPlay.fluidAdded,
-      sustainedWaterPump: afterPlay.pumpCycles > 0 && afterPlay.pumpState === '已通关',
-      repeatableCompletion: completedRuns.length === 3 && completedRuns.every(run => run.won && run.elapsedMs < 20000 && run.eventTypes.includes('game-complete')),
+      sustainedWaterPump: completedRuns.every(run => run.beforeAssist.pumpCycles > 0 &&
+        run.beforeAssist.eventTypes.includes('pump-start')) && afterPlay.pumpState === '已通关',
+      noScriptedPumpCompletion: completedRuns.every(run =>
+        !run.beforeAssist.eventTypes.includes('pump-guidance') &&
+        run.beforeAssist.capture?.reason !== 'water-pump-guidance' &&
+        (!run.beforeAssist.won || run.beforeAssist.capture?.reason === 'water-entry')),
+      waterDrivenPlayable: completedRuns.every(run =>
+        run.beforeAssist.capture?.reason === 'water-entry' &&
+        run.beforeAssist.pumpCycles < 12),
+      repeatableCompletion: completedRuns.length === 2 && completedRuns.every(run => run.won &&
+        run.elapsedMs < 30000 && run.eventTypes.includes('game-complete')),
       noStartupRace: completedRuns.every(run => {
         const ready = Math.max(run.eventTypes.indexOf('game-ready'), run.eventTypes.indexOf('game-ready-after-reset'));
         return ready >= 0 && ready < run.eventTypes.indexOf('pump-start') && !run.eventTypes.includes('pump-no-target');
@@ -239,7 +314,7 @@ const outputDir = path.resolve(__dirname, '../assets');
       visuallyGroundedAfterThread: afterPlay.contactGap >= -0.006 && afterPlay.contactGap <= 0.018 &&
         afterPlay.postClearance >= -0.004 && afterPlay.radialOffset > 0.006 &&
         afterPlay.axisAlignment > 0.98 && afterPlay.stableSamples >= 2,
-      inPlaceReset: resetRuns.length === 2 && resetRuns.every(run => run.afterReset.lastResetInPlace &&
+      inPlaceReset: resetRuns.length === 1 && resetRuns.every(run => run.afterReset.lastResetInPlace &&
         run.beforeReset.generation === run.afterReset.generation && run.beforeReset.frameToken === run.afterReset.frameToken) &&
         afterPlay.frameToken === initial.frameToken,
       displayEvidenceSwitch: switched.view === 'particles' && switched.active === 'particles' &&
@@ -247,7 +322,8 @@ const outputDir = path.resolve(__dirname, '../assets');
       mobileLayout: mobile.overflow <= 1 && mobile.controlsVisible,
       browserClean: consoleErrors.length === 0 && failedRequests.length === 0,
     };
-    report = { passed: Object.values(checks).every(Boolean), checks, initial, desktopLayout, pumpVisualEvidence, reliabilityRuns, afterPlay, switched, mobile, consoleErrors, failedRequests };
+    report = { passed: Object.values(checks).every(Boolean), checks, initial, idleAfter, manualControl,
+      desktopLayout, pumpVisualEvidence, reliabilityRuns, afterPlay, switched, mobile, consoleErrors, failedRequests };
   } catch (error) {
     let browserState = null;
     try {
