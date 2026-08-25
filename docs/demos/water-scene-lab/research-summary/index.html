@@ -16,6 +16,7 @@
       <a href="#capabilities">能力</a>
       <a href="#exploration">探索</a>
       <a href="#extensions">扩展与场景</a>
+      <a href="#reserve">后期储备</a>
     </nav>
     <a class="source-link" href="https://github.com/matsuoka-601/Particles4All" target="_blank" rel="noopener">GitHub 源库 ↗</a>
   </header>
@@ -129,6 +130,26 @@
         <div><p class="kicker">ARCHIVED · 2026-08-25</p><h3>保留为 WebGPU 局部液体—刚体研究基线。</h3></div>
         <p>最适合有限容器注水、喷流、局部冲击、浮沉和障碍互动。宏观河海只可把它作为近场模块；当前不包装成通用水体 SDK，也不把流域或工程水力学算作源库能力。</p>
         <a href="../../particles4all/">打开完整源库能力实验台 →</a>
+      </div>
+    </section>
+
+    <section class="section reserve" id="reserve">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">04 · PRODUCT & TECHNOLOGY RESERVE</p><h2>未来先判断产品，<br />再选择哪一种水。</h2></div><p>本清单是 2026-08-25 的选型储备，不代表恢复研发。只有局部三维体积流体与刚体双向作用不可替代时，才重新使用 Particles4All。</p></div>
+
+        <div class="reserve-grid">
+          <article><span>01 · GAME RULE</span><h3>水流解谜</h3><p>水是需要引导、分配和收集的规则资源。优先使用简化 2D 粒子与关卡逻辑。</p><a href="https://appsupport.disney.com/hc/en-us/articles/360000758626-Getting-Started-with-Where-s-My-Water" target="_blank" rel="noopener">Where's My Water? ↗</a><a href="https://www.pangeasoft.net/enigmo/files/Enigmo%20Instructions.pdf" target="_blank" rel="noopener">Enigmo ↗</a></article>
+          <article><span>02 · LOCAL VOLUME</span><h3>容器与互动玩具</h3><p>水推动圆环、浮具和机关。这里最接近 Particles4All，但要先定义封闭水压、容器摇晃或 IMU 输入。</p><a href="../../particles4all/water-ring-game/">水中套圈概念 ↗</a><a href="https://github.com/Victor2266/The-Fluid-Toy" target="_blank" rel="noopener">The Fluid Toy ↗</a></article>
+          <article><span>03 · WEB INTERACTION</span><h3>网页互动效果</h3><p>鼠标、触摸、摄像头或数据驱动的涟漪与流场，通常不需要昂贵的三维粒子求解。</p><a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation" target="_blank" rel="noopener">WebGL Fluid ↗</a><a href="https://github.com/aisparkedu/ripple" target="_blank" rel="noopener">手势 Ripple ↗</a></article>
+          <article><span>04 · SURFACE & WORLD</span><h3>泳池、河流与海洋</h3><p>水面观感用高度场或波谱；宏观水体用网格水深、样条、浅水模型和 LOD。</p><a href="https://github.com/jeantimex/threejs-water" target="_blank" rel="noopener">threejs-water ↗</a><a href="https://dev.epicgames.com/documentation/unreal-engine/water-system-in-unreal-engine" target="_blank" rel="noopener">Unreal Water ↗</a></article>
+          <article><span>05 · ENGINEERING</span><h3>工程仿真</h3><p>波浪、溃坝和结构冲击必须进入专业 SPH/CFD 路线，不能从本实验外推工程结论。</p><a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener">DualSPHysics ↗</a><a href="https://github.com/InteractiveComputerGraphics/PositionBasedDynamics" target="_blank" rel="noopener">PBD Library ↗</a></article>
+        </div>
+
+        <div class="selection-map">
+          <div><p class="kicker">FUTURE SELECTION RULE</p><h3>最低成本匹配问题。</h3><p>视觉水面 → Shader / 高度场；网页涟漪 → 2D GPU 流体；泳池浮动 → 水面模拟；倾倒、冲击与刚体耦合 → Particles4All / SPH / PIC-FLIP；河海 → 浅水、波谱与 LOD；工程结论 → 专业 CFD/SPH。</p></div>
+          <div><p class="kicker">RESTART GATE</p><h3>什么情况下重新启动？</h3><p>先写清产品目标、用户动作、验收画面、失败条件和设备预算。只有普通视觉水面无法满足，而局部三维液固耦合又是核心差异时，才恢复当前 Adapter 与实验台。</p></div>
+          <a href="https://github.com/yydshly/0822_githubcode_study/blob/main/projects/particles4all/WATER_PRODUCT_TECH_RESERVE.md" target="_blank" rel="noopener">查看完整产品与技术储备 ↗</a>
+        </div>
       </div>
     </section>
   </main>

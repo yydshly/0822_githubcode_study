@@ -22,13 +22,16 @@
 | 当前组件/上游评估 | [`COMPONENT_UPSTREAM_ASSESSMENT.md`](COMPONENT_UPSTREAM_ASSESSMENT.md) |
 | 最终技术决策 | [`FINAL_DECISION.md`](FINAL_DECISION.md) |
 | 阶段归档总结 | [`ARCHIVE_SUMMARY.md`](ARCHIVE_SUMMARY.md) |
+| 水产品与技术储备 | [`WATER_PRODUCT_TECH_RESERVE.md`](WATER_PRODUCT_TECH_RESERVE.md) |
 | 场景重启样例 | [`WATER_RING_GAME.md`](WATER_RING_GAME.md) |
 
-基础研究已经归档；当前只因“网页水中套圈”这一明确局部液体—刚体场景进入受限原型验证。它复用固定上游、Runtime Adapter 和 torus 刚体，不恢复宏观水场景扩张。[Water Scene Lab](../water-scene-lab/README.md) 继续作为历史场景探索归档。
+基础研究与“网页水中套圈”概念验证均已归档。套圈页面复用了固定上游、Runtime Adapter 和 torus 刚体，用于证明局部水流—刚体互动思路，不作为继续开发中的游戏。[Water Scene Lab](../water-scene-lab/README.md) 继续作为历史场景探索归档。
 
-水中套圈网页目前是能力概念演示，不把“持续注水”定义为最终产品方案。实体玩具可抽象为密闭水体受到按压或容器摇晃；当前先用源库连续注水通道验证水流—圆环耦合，后续只在明确场景需求下比较质量守恒的循环水压、移动容器边界和设备姿态输入。具体物理映射与验收边界见 [`WATER_RING_GAME.md`](WATER_RING_GAME.md)。
+水中套圈网页是能力概念演示，不把“持续注水”定义为最终产品方案。实体玩具可抽象为密闭水体受到按压或容器摇晃；已用源库连续注水通道验证水流—圆环耦合。只有出现明确产品需求时，才比较质量守恒的循环水压、移动容器边界和设备姿态输入。具体物理映射与验收边界见 [`WATER_RING_GAME.md`](WATER_RING_GAME.md)。
 
 项目采用计划驱动模式，并已完成 M0–M6。最终选择是保留研究基线与内部 Adapter 工具包、准备一个慢帧 FPS 上游候选补丁，同时停止复杂容器、宏观水环境和通用实时 SDK 扩展。最终适用场景、边界和重启条件见 [`ARCHIVE_SUMMARY.md`](ARCHIVE_SUMMARY.md)。
+
+后续产品、游戏与开源项目调研已经整理为 [`WATER_PRODUCT_TECH_RESERVE.md`](WATER_PRODUCT_TECH_RESERVE.md)。它把网页互动、水流解谜、容器玩具、河海环境和工程仿真分开，并提供未来选型决策树；该文档是储备清单，不代表恢复研发。
 
 ## 唯一研究路线
 

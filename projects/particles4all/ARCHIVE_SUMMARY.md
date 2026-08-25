@@ -60,6 +60,7 @@ Intel Gen-12LP 实测中，约 28K 粒子的 SSFR 只能作为演示档；100K �
 - [证据索引](EVIDENCE.md)
 - [Runtime Adapter 说明](RUNTIME_ADAPTER.md)
 - [场景与真实性矩阵](SCENARIOS.md)
+- [水相关产品、游戏与开源技术储备](WATER_PRODUCT_TECH_RESERVE.md)
 
 公开页面：
 
@@ -77,3 +78,5 @@ Intel Gen-12LP 实测中，约 28K 粒子的 SSFR 只能作为演示档；100K �
 5. 预期场景价值足以承担求解器、渲染、资产和跨设备测试成本。
 
 重启时先写一页“场景问题—必须能力—验收画面—性能预算”，再从现有实验台选择最接近的源库能力做单变量验证，不再从宏观水场景自由扩散。
+
+若需求只涉及网页涟漪、泳池水面、海洋、河流或工程计算，先按 [`WATER_PRODUCT_TECH_RESERVE.md`](WATER_PRODUCT_TECH_RESERVE.md) 的决策树选择对应技术，不默认恢复 Particles4All。
