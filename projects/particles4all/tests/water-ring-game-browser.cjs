@@ -37,11 +37,9 @@ const outputDir = path.resolve(__dirname, '../assets');
       };
     });
 
-    for (const selector of ['#jet-left', '#jet-up', '#jet-left', '#jet-up']) {
-      await page.locator(selector).click();
-      await page.waitForTimeout(380);
-    }
-    await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 20000 });
+    await page.locator('#water-pump').click();
+    await page.waitForFunction(() => window.__waterRingGame?.state?.pumpCycles > 0, null, { timeout: 10000 });
+    await page.waitForFunction(() => window.__waterRingGame?.state?.won === true, null, { timeout: 24000 });
     const afterPlay = await page.evaluate(async () => {
       await window.__waterRingGame.sampleBodies();
       const game = window.__waterRingGame;
@@ -54,10 +52,15 @@ const outputDir = path.resolve(__dirname, '../assets');
         captureReason: game.state.capture?.reason,
         capturedBodyId: game.state.capture?.bodyId,
         heldBodyId: game.adapter.window.__sim.heldBody,
+        heldAlign: game.adapter.window.__sim.heldAlign,
         capturedCentre: captured?.pose.centre,
+        capturedRot: captured?.pose.rot,
+        axisAlignment: captured ? Math.abs(captured.pose.rot[4]) : null,
         seat: game.level.peg.seat,
         seatDistance: captured ? Math.hypot(...captured.pose.centre.map((value, index) => value - game.level.peg.seat[index])) : null,
         fluidAdded: game.state.fluidAdded,
+        pumpCycles: game.state.pumpCycles,
+        pumpState: document.querySelector('#pump-state')?.textContent,
         maxLift: game.state.maxLift,
         maxTravel: game.state.maxTravel,
         particleCount: game.adapter.describe().particleCount,
@@ -92,13 +95,15 @@ const outputDir = path.resolve(__dirname, '../assets');
     const checks = {
       http200: response?.status() === 200,
       sourceRuntime: initial.canvasWebgpu && initial.description.upstreamRuntime,
+      orientationTargetExtension: initial.description.support.bodyOrientationTargets,
       fiveNativeTorus: initial.description.bodyCount === 5 && initial.bodyShapes.length === 5 && initial.bodyShapes.every(shape => shape === 'torus'),
       realFluidInjection: afterPlay.shots > 0 && afterPlay.fluidAdded > 0 && afterPlay.particleCount === initial.description.particleCount + afterPlay.fluidAdded,
+      sustainedWaterPump: afterPlay.pumpCycles > 0 && afterPlay.pumpState === '已通关',
       observableBodyMotion: afterPlay.maxTravel > 0.09 || afterPlay.maxLift > 0.02,
       visibleRingState: afterPlay.ringCards === 5,
       projectedGameTarget: afterPlay.targetProjected,
       playableScoreLoop: afterPlay.won && afterPlay.score === 1 && afterPlay.phase === 'hang',
-      realTorusHeldOnPeg: afterPlay.capturedBodyId === afterPlay.heldBodyId && afterPlay.seatDistance < 0.05,
+      realTorusHeldOnPeg: afterPlay.capturedBodyId === afterPlay.heldBodyId && afterPlay.heldAlign && afterPlay.seatDistance < 0.05 && afterPlay.axisAlignment > 0.9,
       displayEvidenceSwitch: switched.view === 'particles' && switched.active === 'particles' && switched.frameSrc.includes('view=particles'),
       mobileLayout: mobile.overflow <= 1 && mobile.controlsVisible,
       browserClean: consoleErrors.length === 0 && failedRequests.length === 0,

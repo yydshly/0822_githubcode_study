@@ -192,12 +192,18 @@ struct Drag {
   blend  : f32,
   limit  : f32,
   nBody  : u32,
+  align  : f32,
+  _pad0  : f32,
+  _pad1  : f32,
+  _pad2  : f32,
 }
 @group(0) @binding(0) var<uniform> D : Drag;
 @group(0) @binding(1) var<storage, read_write> vel    : array<vec4f>;
 @group(0) @binding(2) var<storage, read>       body   : array<vec4u>;
 @group(0) @binding(3) var<storage, read>       idx    : array<u32>;
 @group(0) @binding(4) var<storage, read>       centre : array<vec4f>;
+@group(0) @binding(5) var<storage, read>       pos    : array<vec4f>;
+@group(0) @binding(6) var<storage, read>       rest   : array<vec4f>;
 
 @compute @workgroup_size(256)
 fn main(@builtin(global_invocation_id) gid: vec3u) {
@@ -206,6 +212,10 @@ fn main(@builtin(global_invocation_id) gid: vec3u) {
   let i = idx[t];
   if (body[i].x != D.held) { return; }
   var vWant = (D.goal - centre[D.held - 1u].xyz) * D.rate;
+  if (D.align > 0.5) {
+    let desired = D.goal + rest[i].xyz;
+    vWant = (desired - pos[i].xyz) * D.rate;
+  }
   let sp = length(vWant);
   if (sp > D.limit) { vWant *= D.limit / sp; }
   let v = vel[i].xyz;

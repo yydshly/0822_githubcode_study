@@ -70,7 +70,7 @@ export class Particles4AllRuntimeAdapter {
     this.frame = frame;
     this.timeoutMs = timeoutMs;
     this.disposed = false;
-    this.version = 1;
+    this.version = 2;
     this.kind = 'E1 runtime adapter';
     this.support = Object.freeze({
       deterministicTicks: true,
@@ -81,6 +81,7 @@ export class Particles4AllRuntimeAdapter {
       scheduledEvents: true,
       directBodySampling: true,
       rigidBodyEvents: true,
+      bodyOrientationTargets: true,
       gpuDeviceDisposal: false
     });
   }
@@ -247,7 +248,7 @@ export class Particles4AllRuntimeAdapter {
     return { summary: this.describe(), bodies };
   }
 
-  async holdBody({ bodyId, target, rate = 12, limit = 1 } = {}) {
+  async holdBody({ bodyId, target, rate = 12, limit = 1, align = false } = {}) {
     await this.connect();
     if (!Number.isInteger(bodyId) || bodyId < 1 || bodyId > this.window.__sim.nBodies) {
       throw new RangeError(`bodyId must be between 1 and ${this.window.__sim.nBodies}`);
@@ -256,8 +257,8 @@ export class Particles4AllRuntimeAdapter {
     if (!Number.isFinite(rate) || rate <= 0) throw new TypeError('rate must be a positive finite number');
     if (!Number.isFinite(limit) || limit <= 0) throw new TypeError('limit must be a positive finite number');
     this.setPaused(true);
-    this.window.__sim.holdBody(bodyId, normalizedTarget, Number(rate), Number(limit));
-    return { bodyId, target: normalizedTarget, rate: Number(rate), limit: Number(limit), held: true };
+    this.window.__sim.holdBody(bodyId, normalizedTarget, Number(rate), Number(limit), Boolean(align));
+    return { bodyId, target: normalizedTarget, rate: Number(rate), limit: Number(limit), align: Boolean(align), held: true };
   }
 
   async releaseBody() {

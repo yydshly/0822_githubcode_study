@@ -3,8 +3,10 @@
   "checks": {
     "http200": true,
     "sourceRuntime": true,
+    "orientationTargetExtension": true,
     "fiveNativeTorus": true,
     "realFluidInjection": true,
+    "sustainedWaterPump": true,
     "observableBodyMotion": true,
     "visibleRingState": true,
     "projectedGameTarget": true,
@@ -16,7 +18,7 @@
   },
   "initial": {
     "description": {
-      "adapterVersion": 1,
+      "adapterVersion": 2,
       "classification": "E1 runtime adapter",
       "upstreamRuntime": true,
       "particleCount": 14980,
@@ -35,6 +37,7 @@
         "scheduledEvents": true,
         "directBodySampling": true,
         "rigidBodyEvents": true,
+        "bodyOrientationTargets": true,
         "gpuDeviceDisposal": false
       }
     },
@@ -75,58 +78,73 @@
     "canvasWebgpu": true
   },
   "afterPlay": {
-    "shots": 4,
+    "shots": 8,
     "score": 1,
     "won": true,
     "phase": "hang",
     "captureReason": "water-entry",
-    "capturedBodyId": 3,
-    "heldBodyId": 3,
+    "capturedBodyId": 2,
+    "heldBodyId": 2,
+    "heldAlign": true,
     "capturedCentre": [
-      1.1983758211135864,
-      0.1776631772518158,
-      0.5007471442222595
+      1.1998716592788696,
+      0.16837269067764282,
+      0.4996761679649353
     ],
+    "capturedRot": [
+      0.9999872446060181,
+      -0.003825636114925146,
+      0.003297545714303851,
+      0.003835946787148714,
+      0.9999877214431763,
+      -0.003126063384115696,
+      -0.0032855463214218616,
+      0.0031386730261147022,
+      0.9999896287918091
+    ],
+    "axisAlignment": 0.9999877214431763,
     "seat": [
       1.2,
       0.18,
       0.5
     ],
-    "seatDistance": 0.0029422647910000255,
-    "fluidAdded": 882,
-    "maxLift": 0.20110999047756195,
-    "maxTravel": 0.8553753625219092,
-    "particleCount": 15862,
+    "seatDistance": 0.011632525976992632,
+    "fluidAdded": 1368,
+    "pumpCycles": 8,
+    "pumpState": "已通关",
+    "maxLift": 0.21553298830986023,
+    "maxTravel": 0.7882789779194689,
+    "particleCount": 16348,
     "bodyCentres": [
       [
-        0.8301489949226379,
-        0.14905089139938354,
-        0.4108034074306488
+        0.8642539978027344,
+        0.1497628539800644,
+        0.6217429637908936
       ],
       [
-        0.8876588344573975,
-        0.14851166307926178,
-        0.6813806891441345
+        1.1998716592788696,
+        0.16837269067764282,
+        0.4996761679649353
       ],
       [
-        1.1983758211135864,
-        0.1776631772518158,
-        0.5007471442222595
+        0.7028415203094482,
+        0.15075057744979858,
+        0.31730884313583374
       ],
       [
-        1.1812498569488525,
-        0.13644488155841827,
-        0.6819729208946228
+        0.7987415194511414,
+        0.10141492635011673,
+        0.24936243891716003
       ],
       [
-        0.8898631930351257,
-        0.1357228308916092,
-        0.18388687074184418
+        1.0927751064300537,
+        0.13294248282909393,
+        0.6778271794319153
       ]
     ],
     "ringCards": 5,
     "targetProjected": true,
-    "status": "通关：圆环 3 已沿杆下落并稳定挂住。按 R 可以再来一局。"
+    "status": "通关：圆环 2 已沿杆下落并稳定挂住。按 R 可以再来一局。"
   },
   "switched": {
     "view": "particles",

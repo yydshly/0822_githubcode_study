@@ -202,14 +202,15 @@ export class Sim {
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST });
     this.rayF = new Float32Array(12);
 
-    this.dragUni = dev.createBuffer({ size: 32,
+    this.dragUni = dev.createBuffer({ size: 48,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST });
-    this.dragF = new Float32Array(8);
+    this.dragF = new Float32Array(12);
     this.dragU = new Uint32Array(this.dragF.buffer);
     this.heldBody = -1;
     this.heldTarget = [0, 0, 0];
     this.heldRate = 10;
     this.heldLimit = 4;
+    this.heldAlign = false;
     this.uniI = new Int32Array(this.uniF.buffer);
     this.buildBindGroups();
     this.uploadParams(1 / 240);
@@ -350,7 +351,9 @@ export class Sim {
                   { binding: 1, resource: { buffer: B['vel' + s] } },
                   { binding: 2, resource: { buffer: B['body' + s] } },
                   { binding: 3, resource: { buffer: B.bodyIdx } },
-                  { binding: 4, resource: { buffer: B.bodyCentre } }],
+                  { binding: 4, resource: { buffer: B.bodyCentre } },
+                  { binding: 5, resource: { buffer: B['pos' + s] } },
+                  { binding: 6, resource: { buffer: B['rest' + s] } }],
       });
     }
     g.bodyResolve = this.bg('bodyResolve', [
@@ -444,6 +447,7 @@ export class Sim {
       F[5] = 1 - Math.exp(-Math.max(dt, 0) / 0.02);
       F[6] = this.heldLimit;
       U[7] = this.nBodyParts;
+      F[8] = this.heldAlign ? 1 : 0;
       dev.queue.writeBuffer(this.dragUni, 0, F);
     }
 
@@ -665,11 +669,12 @@ export class Sim {
     this.dev.queue.submit([enc.finish()]);
   }
 
-  holdBody(body1Based, target, rate, limit) {
+  holdBody(body1Based, target, rate, limit, align = false) {
     this.heldBody = (body1Based >= 1 && body1Based <= this.nBodies) ? body1Based : -1;
     this.heldTarget = target;
     this.heldRate = rate;
     this.heldLimit = limit;
+    this.heldAlign = Boolean(align);
   }
 
   releaseBody() { this.heldBody = -1; }

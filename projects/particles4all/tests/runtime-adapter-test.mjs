@@ -33,11 +33,12 @@ const sim = {
     this.n += count;
     return count;
   },
-  holdBody(bodyId, target, rate, limit) {
+  holdBody(bodyId, target, rate, limit, align) {
     this.heldBody = bodyId;
     this.heldTarget = target;
     this.heldRate = rate;
     this.heldLimit = limit;
+    this.heldAlign = align;
   },
   releaseBody() { this.heldBody = -1; },
   livePos() { return 'positions'; },
@@ -63,6 +64,7 @@ assert.equal(adapter.describe().upstreamRuntime, true);
 assert.equal(adapter.describe().fluidParticleCount, 3);
 assert.equal(adapter.describe().support.fluidPacketGenerator, true);
 assert.equal(adapter.describe().support.rigidBodyEvents, true);
+assert.equal(adapter.describe().support.bodyOrientationTargets, true);
 
 const packet = createFluidBlock({
   origin: [1, 2, 3],
@@ -94,9 +96,11 @@ assert.deepEqual(bodyCatalog[0], {
 });
 const bodySample = await adapter.sampleBodies();
 assert.equal(bodySample.bodies[0].key, 'body-1');
-const held = await adapter.holdBody({ bodyId: 1, target: [1.2, 2, 3], rate: 10, limit: 2 });
+const held = await adapter.holdBody({ bodyId: 1, target: [1.2, 2, 3], rate: 10, limit: 2, align: true });
 assert.equal(held.held, true);
+assert.equal(held.align, true);
 assert.deepEqual(sim.heldTarget, [1.2, 2, 3]);
+assert.equal(sim.heldAlign, true);
 assert.equal((await adapter.releaseBody()).held, false);
 assert.equal(sim.heldBody, -1);
 await assert.rejects(() => adapter.holdBody({ bodyId: 2, target: [1, 2, 3] }), /between 1 and 1/);

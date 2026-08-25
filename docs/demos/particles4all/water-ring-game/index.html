@@ -76,6 +76,7 @@
             <button id="jet-right" class="pressure pressure-red" type="button" disabled><span>D</span><strong>右侧喷流</strong><small>向左上推动</small></button>
           </div>
 
+          <button id="water-pump" class="pump" type="button" disabled><span>≈</span><strong>启动持续水泵</strong><small>连续真实喷流 · 再按停止</small></button>
           <button id="guided-demo" class="guided" type="button" disabled>演示一局：把圆环挂上杆</button>
           <button id="reset-game" class="reset" type="button">重新装水与圆环 <kbd>R</kbd></button>
 
@@ -84,6 +85,8 @@
             <div><dt>新增流体</dt><dd id="fluid-added">0</dd></div>
             <div><dt>最大抬升</dt><dd id="max-lift">—</dd></div>
             <div><dt>圆环位移</dt><dd id="max-travel">—</dd></div>
+            <div><dt>水泵循环</dt><dd id="pump-cycles">0</dd></div>
+            <div><dt>水泵状态</dt><dd id="pump-state">关闭</dd></div>
           </dl>
           <p id="game-status" class="game-status" role="status" aria-live="polite">等待源库 Runtime。</p>
         </aside>
@@ -96,7 +99,7 @@
       <div class="section-heading"><div><p class="kicker">CAPABILITY MAPPING</p><h2>这个游戏实际用了什么？</h2></div><p>页面不是独立伪造水动画。每一层都标出来源，方便继续判断产品价值。</p></div>
       <div class="mapping-grid">
         <article><span class="label u0">U0 · 源库原生</span><h3>水与圆环</h3><p>PBF 水体、原生 torus 刚体、Shape Matching、浮力、碰撞和 SSFR 表面都由固定上游运行时产生。</p></article>
-        <article><span class="label e1">E1 · 已有 Adapter</span><h3>水压按钮</h3><p>按钮使用受控流体包注入 API，把点击映射成有方向的局部喷流，并读取圆环真实位置与位移。</p></article>
+        <article><span class="label e1">E1 · Runtime 扩展</span><h3>持续水泵与姿态目标</h3><p>水泵连续注入有方向的真实流体脉冲；圆环进入杆口后，刚体目标同时校正中心与孔轴方向，使杆能够穿过圆环孔。</p></article>
         <article><span class="label g1">G1 · 新增玩法</span><h3>穿杆与挂接</h3><p>圆环先由真实水流送入杆口；随后用刚体捕获约束完成对准、穿杆、下落和保持。它是明确标注的游戏机制，不冒充源库静态细杆碰撞。</p></article>
       </div>
     </section>

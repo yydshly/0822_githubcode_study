@@ -4,8 +4,9 @@ const $ = selector => document.querySelector(selector);
 const dom = {
   frame: $('#runtime-frame'), runtime: $('#runtime-state'), cover: $('#loading-cover'), score: $('#score'),
   shots: $('#shot-count'), fluid: $('#fluid-added'), lift: $('#max-lift'), travel: $('#max-travel'),
-  status: $('#game-status'), strip: $('#ring-strip'), celebration: $('#celebration'), rack: $('#target-rack'),
-  left: $('#jet-left'), up: $('#jet-up'), right: $('#jet-right'), guided: $('#guided-demo'), reset: $('#reset-game')
+  status: $('#game-status'), strip: $('#ring-strip'), celebration: $('#celebration'), rack: $('#target-rack'), gate: $('.capture-gate'),
+  left: $('#jet-left'), up: $('#jet-up'), right: $('#jet-right'), pump: $('#water-pump'),
+  pumpCycles: $('#pump-cycles'), pumpState: $('#pump-state'), guided: $('#guided-demo'), reset: $('#reset-game')
 };
 
 const source = Object.freeze({
@@ -27,11 +28,12 @@ const level = Object.freeze({
 const state = {
   ready: false, busy: false, view: 'ssfr', generation: 0, shots: 0, fluidAdded: 0,
   score: 0, scored: new Set(), baseline: new Map(), bodies: [], maxLift: 0, maxTravel: 0,
-  capture: null, won: false, phase: 'lift', error: null
+  capture: null, won: false, phase: 'lift', pumpActive: false, pumpCycles: 0, pumpTargetId: null, error: null
 };
 let adapter = null;
 let sampleTimer = 0;
 let sampling = false;
+let pumpToken = 0;
 
 function engineUrl() {
   const params = new URLSearchParams({
@@ -48,7 +50,7 @@ function setRuntime(status, text) {
 }
 
 function setControls(enabled) {
-  [dom.left, dom.up, dom.right, dom.guided].forEach(button => { button.disabled = !enabled; });
+  [dom.left, dom.up, dom.right, dom.pump, dom.guided].forEach(button => { button.disabled = !enabled; });
 }
 
 function fmt(value, digits = 2) {
@@ -69,12 +71,20 @@ function resetState() {
   state.capture = null;
   state.won = false;
   state.phase = 'lift';
+  state.pumpActive = false;
+  state.pumpCycles = 0;
+  state.pumpTargetId = null;
+  pumpToken += 1;
   state.error = null;
   dom.score.textContent = '0';
   dom.shots.textContent = '0';
   dom.fluid.textContent = '0';
   dom.lift.textContent = '—';
   dom.travel.textContent = '—';
+  dom.pumpCycles.textContent = '0';
+  dom.pumpState.textContent = '关闭';
+  dom.pump.classList.remove('active');
+  dom.pump.querySelector('strong').textContent = '启动持续水泵';
   dom.strip.replaceChildren();
   renderObjective();
 }
@@ -87,6 +97,7 @@ function renderObjective() {
     item.classList.toggle('complete', index < current || (state.won && index === current));
   });
   dom.rack.dataset.phase = state.phase;
+  dom.gate.textContent = state.won ? '已挂接' : state.phase === 'thread' ? '穿杆中' : '穿杆入口';
 }
 
 function renderRings() {
@@ -136,8 +147,9 @@ async function beginCapture(body, reason = 'water-entry') {
   if (state.capture || state.won) return false;
   state.capture = { bodyId: body.id, phaseAt: performance.now(), reason };
   state.phase = 'align';
+  if (state.pumpActive) stopPump('captured');
   renderObjective();
-  await adapter.holdBody({ bodyId: body.id, target: level.peg.mouth, rate: 13, limit: 1.7 });
+  await adapter.holdBody({ bodyId: body.id, target: level.peg.mouth, rate: 13, limit: 1.7, align: true });
   dom.status.textContent = `圆环 ${body.id} 已被水流送入杆口，开始对准。`;
   return true;
 }
@@ -148,19 +160,20 @@ async function updateCapture(body) {
   if (state.phase === 'align' && (distanceTo(body.pose.centre, level.peg.mouth) < 0.045 || elapsed > level.phases.alignMs)) {
     state.phase = 'thread';
     state.capture.phaseAt = performance.now();
-    await adapter.holdBody({ bodyId: body.id, target: level.peg.thread, rate: 10, limit: 0.9 });
+    await adapter.holdBody({ bodyId: body.id, target: level.peg.thread, rate: 10, limit: 0.9, align: true });
     dom.status.textContent = `圆环 ${body.id} 已对准，正在沿单杆下落。`;
     renderObjective();
   } else if (state.phase === 'thread' && (distanceTo(body.pose.centre, level.peg.thread) < 0.035 || elapsed > level.phases.threadMs)) {
     state.phase = 'hang';
     state.capture.phaseAt = performance.now();
-    await adapter.holdBody({ bodyId: body.id, target: level.peg.seat, rate: 14, limit: 0.65 });
+    await adapter.holdBody({ bodyId: body.id, target: level.peg.seat, rate: 14, limit: 0.65, align: true });
     dom.status.textContent = `圆环 ${body.id} 已穿过杆口，正在落到挂接位置。`;
     renderObjective();
   } else if (state.phase === 'hang' && (distanceTo(body.pose.centre, level.peg.seat) < 0.026 || elapsed > level.phases.settleMs)) {
     state.won = true;
     state.scored.add(body.id);
     state.score = 1;
+    stopPump('won');
     dom.score.textContent = '1';
     dom.status.textContent = `通关：圆环 ${body.id} 已沿杆下落并稳定挂住。按 R 可以再来一局。`;
     renderObjective();
@@ -212,7 +225,10 @@ function packetFor(direction) {
   const packets = {
     left: { origin: [0.10, 0.07, 0.36], counts: [4, 7, 7], spacing: 0.018, velocity: [5.8, 7.2, 0.2] },
     up: { origin: [0.65, 0.07, 0.36], counts: [5, 7, 7], spacing: 0.018, velocity: [0.2, 7.8, 0.1] },
-    right: { origin: [1.30, 0.07, 0.36], counts: [4, 7, 7], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] }
+    right: { origin: [1.30, 0.07, 0.36], counts: [4, 7, 7], spacing: 0.018, velocity: [-5.8, 7.2, -0.2] },
+    'pump-lift': { origin: [0.92, 0.055, 0.39], counts: [5, 6, 6], spacing: 0.018, velocity: [1.2, 9.2, 0.0] },
+    'pump-drive': { origin: [0.62, 0.065, 0.39], counts: [5, 6, 6], spacing: 0.018, velocity: [5.4, 7.1, 0.0] },
+    'pump-center': { origin: [1.08, 0.055, 0.39], counts: [4, 6, 6], spacing: 0.018, velocity: [0.2, 8.8, 0.0] }
   };
   return packets[direction];
 }
@@ -242,6 +258,51 @@ async function fireJet(direction, { quiet = false } = {}) {
 }
 
 const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms));
+
+function renderPump() {
+  dom.pump.classList.toggle('active', state.pumpActive);
+  dom.pump.querySelector('strong').textContent = state.pumpActive ? '停止持续水泵' : '启动持续水泵';
+  dom.pumpState.textContent = state.won ? '已通关' : state.pumpActive ? '运行中' : '关闭';
+  dom.pumpCycles.textContent = String(state.pumpCycles);
+}
+
+function stopPump(reason = 'manual') {
+  state.pumpActive = false;
+  pumpToken += 1;
+  renderPump();
+  if (reason === 'manual' && !state.won) dom.status.textContent = '持续水泵已停止；可以继续单次控制水流。';
+}
+
+async function runPump(token) {
+  const sequence = ['pump-lift', 'pump-drive', 'pump-lift', 'pump-center'];
+  dom.status.textContent = '持续水泵运行中：正在用真实流体脉冲抬升并导向圆环。';
+  while (state.pumpActive && token === pumpToken && state.ready && !state.won && !state.capture && state.pumpCycles < 28) {
+    const direction = sequence[state.pumpCycles % sequence.length];
+    const result = await fireJet(direction, { quiet: true });
+    if (!result) break;
+    state.pumpCycles += 1;
+    renderPump();
+    dom.status.textContent = `水泵第 ${state.pumpCycles} 次脉冲：累计注入 ${state.fluidAdded.toLocaleString()} 个流体粒子。`;
+    await delay(260);
+  }
+  if (state.capture || state.won) stopPump('captured');
+  else if (state.pumpCycles >= 28) {
+    stopPump('limit');
+    dom.status.textContent = '本轮水泵达到安全上限；可重新装水后再试。';
+  }
+}
+
+function togglePump() {
+  if (!state.ready || state.won) return;
+  if (state.pumpActive) {
+    stopPump('manual');
+    return;
+  }
+  state.pumpActive = true;
+  const token = ++pumpToken;
+  renderPump();
+  runPump(token);
+}
 
 async function playGuidedDemo() {
   if (!state.ready || state.busy) return;
@@ -315,6 +376,7 @@ function loadScene() {
 dom.left.addEventListener('click', () => fireJet('left'));
 dom.up.addEventListener('click', () => fireJet('up'));
 dom.right.addEventListener('click', () => fireJet('right'));
+dom.pump.addEventListener('click', togglePump);
 dom.guided.addEventListener('click', playGuidedDemo);
 dom.reset.addEventListener('click', loadScene);
 
@@ -334,7 +396,7 @@ window.addEventListener('keydown', event => {
 });
 
 window.__waterRingGame = {
-  source, level, state, loadScene, fireJet, playGuidedDemo, sampleBodies, beginCapture,
+  source, level, state, loadScene, fireJet, togglePump, stopPump, playGuidedDemo, sampleBodies, beginCapture,
   get adapter() { return adapter; }
 };
 
