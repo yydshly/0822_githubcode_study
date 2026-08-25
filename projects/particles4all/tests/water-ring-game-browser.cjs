@@ -110,10 +110,17 @@ const outputDir = path.resolve(__dirname, '../assets');
         heldBodyId: game.adapter.window.__sim.heldBody,
         heldAlign: game.adapter.window.__sim.heldAlign,
         capturedCentre: captured?.pose.centre,
+        capturedSize: captured?.size,
         capturedRot: captured?.pose.rot,
         axisAlignment: captured ? Math.abs(captured.pose.rot[4]) : null,
         seat: game.level.peg.seat,
         seatDistance: captured ? Math.hypot(...captured.pose.centre.map((value, index) => value - game.level.peg.seat[index])) : null,
+        contactGap: captured ? captured.pose.centre[1] - captured.size * 0.4 - game.level.geometry.baseTop : null,
+        radialOffset: captured ? Math.hypot(captured.pose.centre[0] - game.level.peg.base[0],
+          captured.pose.centre[2] - game.level.peg.base[2]) : null,
+        postClearance: captured ? captured.size - captured.size * 0.4 - game.level.geometry.postRadius -
+          Math.hypot(captured.pose.centre[0] - game.level.peg.base[0], captured.pose.centre[2] - game.level.peg.base[2]) : null,
+        stableSamples: game.state.capture?.stableSamples,
         fluidAdded: game.state.fluidAdded,
         pumpCycles: game.state.pumpCycles,
         pumpState: document.querySelector('#pump-state')?.textContent,
@@ -183,6 +190,9 @@ const outputDir = path.resolve(__dirname, '../assets');
       visibleCompletionFeedback: afterPlay.progressState === 'complete' && afterPlay.progressTitle.includes('通关') && afterPlay.pumpLabel === '本局已完成',
       desktopUiClear: !desktopLayout.headerCovered && desktopLayout.pumpVisible && desktopLayout.progressVisible && desktopLayout.overflow <= 1,
       realTorusHeldOnPeg: afterPlay.capturedBodyId === afterPlay.heldBodyId && afterPlay.heldAlign && afterPlay.seatDistance < 0.05 && afterPlay.axisAlignment > 0.9,
+      visuallyGroundedAfterThread: afterPlay.contactGap >= -0.006 && afterPlay.contactGap <= 0.018 &&
+        afterPlay.postClearance >= -0.004 && afterPlay.radialOffset > 0.006 &&
+        afterPlay.axisAlignment > 0.98 && afterPlay.stableSamples >= 2,
       inPlaceReset: resetRuns.length === 2 && resetRuns.every(run => run.afterReset.lastResetInPlace &&
         run.beforeReset.generation === run.afterReset.generation && run.beforeReset.frameToken === run.afterReset.frameToken) &&
         afterPlay.frameToken === initial.frameToken,
@@ -205,6 +215,10 @@ const outputDir = path.resolve(__dirname, '../assets');
           pumpCycles: window.__waterRingGame.state.pumpCycles,
           pumpTargetId: window.__waterRingGame.state.pumpTargetId,
           error: window.__waterRingGame.state.error,
+          capture: window.__waterRingGame.state.capture,
+          targetBody: window.__waterRingGame.state.bodies.find(body =>
+            body.id === window.__waterRingGame.state.capture?.bodyId),
+          seat: window.__waterRingGame.level.peg.seat,
           events: window.__waterRingGame.state.events,
         } : null,
         pumpDisabled: document.querySelector('#water-pump')?.disabled,

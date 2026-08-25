@@ -57,7 +57,7 @@
         <aside class="control-card">
           <p class="control-kicker">WATER PRESSURE CONTROL</p>
           <h3>把一个圆环挂上杆</h3>
-          <p class="control-copy">先用水流抬升并推向右侧；圆环进入杆口后会沿杆下落并稳定挂住，完成一个可玩的回合。</p>
+          <p class="control-copy">先用水流抬升并推向右侧；圆环进入杆口后会沿杆下落，贴合底座接触面并稳定挂住，完成一个可玩的回合。</p>
 
           <ol id="objective-track" class="objective-track" aria-label="通关步骤">
             <li data-phase="lift" class="active">1 抬升</li>
@@ -96,12 +96,12 @@
       <div class="mapping-grid">
         <article><span class="label u0">U0 · 源库原生</span><h3>水与圆环</h3><p>PBF 水体、原生 torus 刚体、Shape Matching、浮力、碰撞和 SSFR 表面都由固定上游运行时产生。</p></article>
         <article><span class="label e1">E1 · Runtime 扩展</span><h3>场景装置、持续水泵与姿态目标</h3><p>目标杆、底座、泵体和三枚喷口进入源库 WebGPU 固体渲染通道；每次水流从对应喷口坐标注入。圆环进入杆口后，刚体目标同时校正中心与孔轴方向。</p></article>
-        <article><span class="label g1">G1 · 新增玩法</span><h3>穿杆与挂接</h3><p>圆环先由真实水流送入杆口；随后用刚体捕获约束完成对准、穿杆、下落和保持。它是明确标注的游戏机制，不冒充源库静态细杆碰撞。</p></article>
+        <article><span class="label g1">G1 · 新增玩法</span><h3>穿杆、落座与挂接</h3><p>圆环先由真实水流送入杆口；随后用刚体捕获约束完成对准、穿杆和沿杆下落，并按圆环管半径与底座顶面计算接触位置。它是明确标注的游戏机制，不冒充源库静态细杆碰撞。</p></article>
       </div>
     </section>
 
     <section id="boundary" class="boundary shell">
-      <div><p class="kicker">CURRENT BOUNDARY</p><h2>现在可以挂上；但挂接属于游戏约束。</h2></div>
+      <div><p class="kicker">CURRENT BOUNDARY</p><h2>现在可以穿杆并落座；但挂接仍属于游戏约束。</h2></div>
       <ul><li>抬升、冲击、漂移和圆环刚体姿态由源库计算。</li><li>杆、底座、泵体和喷口已与水、圆环共用 3D 世界坐标；页面不再用 HTML 杆覆盖画布。</li><li>喷口目前是可见的渲染装置，水流从其位置注入；它们尚未作为内部边界粒子参与碰撞。</li><li>对准、沿杆下落和保持使用 Runtime 刚体捕获约束；真正依靠静态细杆碰撞自然穿杆仍是后续物理扩展。</li></ul>
       <a href="../">返回完整源库能力实验台 →</a>
     </section>

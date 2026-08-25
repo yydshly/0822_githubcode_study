@@ -15,16 +15,26 @@ const source = Object.freeze({
   runtime: '../engine/',
   bodies: 'torus:0.38:0.17,torus:0.42:0.19,torus:0.46:0.21,torus:0.50:0.23,torus:0.54:0.25'
 });
+const geometry = Object.freeze({
+  ringMajorRadius: 0.078,
+  ringTubeRadius: 0.078 * 0.4,
+  postRadius: 0.025,
+  baseTop: 0.09,
+  seatClearance: 0.004,
+  seatRadialOffset: 0.014
+});
 const level = Object.freeze({
   id: 'single-peg-01',
+  geometry,
   peg: Object.freeze({
-    base: [1.20, 0.08, 0.50],
+    base: [1.20, 0.045, 0.50],
     mouth: [1.20, 0.43, 0.50],
     thread: [1.20, 0.29, 0.50],
-    seat: [1.20, 0.18, 0.50]
+    seat: [1.20 + geometry.seatRadialOffset,
+      geometry.baseTop + geometry.ringTubeRadius + geometry.seatClearance, 0.50]
   }),
   capture: Object.freeze({ xMin: 0.82, xMax: 1.44, yMin: 0.17, yMax: 0.62, zMin: 0.20, zMax: 0.80, travelMin: 0.09 }),
-  phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMs: 750 }),
+  phases: Object.freeze({ alignMs: 900, threadMs: 900, settleMinMs: 520 }),
   pumpMaxCycles: 12
 });
 const state = {
@@ -131,7 +141,7 @@ function renderProgress() {
     visualState = 'running';
   }
   if (state.capture) {
-    const phaseCopy = { align: '水流已送达杆口，正在扶正圆环孔轴', thread: '孔轴已对准，圆环正在沿杆下落', hang: '圆环已经穿杆，正在稳定挂接' };
+    const phaseCopy = { align: '水流已送达杆口，正在扶正圆环孔轴', thread: '孔轴已对准，圆环正在沿杆下落', hang: '圆环已经穿杆，正在贴合底座接触面' };
     title = `目标圆环 ${state.capture.bodyId} · ${state.phase === 'align' ? '对准' : state.phase === 'thread' ? '穿杆' : '挂接'}`;
     copy = phaseCopy[state.phase] || copy;
     progress = { align: 68, thread: 82, hang: 94 }[state.phase] || 64;
@@ -139,7 +149,7 @@ function renderProgress() {
   }
   if (state.won) {
     title = `通关 · 圆环 ${state.capture.bodyId} 已挂住`;
-    copy = '同一个源库 torus 已穿过杆并保持在挂接位置';
+    copy = '同一个源库 torus 已穿过杆、落到底座并保持稳定';
     progress = 100;
     visualState = 'complete';
   } else if (state.error) {
@@ -200,7 +210,8 @@ function isInsideCapture(body) {
 
 async function beginCapture(body, reason = 'water-entry') {
   if (state.capture || state.won) return false;
-  state.capture = { bodyId: body.id, phaseAt: performance.now(), reason };
+  state.capture = { bodyId: body.id, phaseAt: performance.now(), reason,
+    lastCentre: [...body.pose.centre], stableSamples: 0 };
   state.phase = 'align';
   recordEvent('capture-start', { bodyId: body.id, reason, pumpCycles: state.pumpCycles });
   if (state.pumpActive) stopPump('captured');
@@ -223,18 +234,48 @@ async function updateCapture(body) {
   } else if (state.phase === 'thread' && (distanceTo(body.pose.centre, level.peg.thread) < 0.035 || elapsed > level.phases.threadMs)) {
     state.phase = 'hang';
     state.capture.phaseAt = performance.now();
-    await adapter.holdBody({ bodyId: body.id, target: level.peg.seat, rate: 14, limit: 0.65, align: true });
-    recordEvent('capture-hang', { bodyId: body.id });
-    dom.status.textContent = `圆环 ${body.id} 已穿过杆口，正在落到挂接位置。`;
+    state.capture.lastCentre = [...body.pose.centre];
+    state.capture.stableSamples = 0;
+    state.capture.holdTarget = [...level.peg.seat];
+    await adapter.holdBody({ bodyId: body.id, target: state.capture.holdTarget, rate: 10, limit: 0.48, align: true });
+    recordEvent('capture-hang', { bodyId: body.id, seat: [...level.peg.seat] });
+    dom.status.textContent = `圆环 ${body.id} 已穿过杆口，正在沿杆落到底座接触面。`;
     renderObjective();
-  } else if (state.phase === 'hang' && (distanceTo(body.pose.centre, level.peg.seat) < 0.026 || elapsed > level.phases.settleMs)) {
+  } else if (state.phase === 'hang') {
+    const movement = distanceTo(body.pose.centre, state.capture.lastCentre);
+    const seatDistance = distanceTo(body.pose.centre, level.peg.seat);
+    const contactGap = body.pose.centre[1] - geometry.ringTubeRadius - geometry.baseTop;
+    const radialOffset = Math.hypot(body.pose.centre[0] - level.peg.base[0],
+      body.pose.centre[2] - level.peg.base[2]);
+    const postClearance = geometry.ringMajorRadius - geometry.ringTubeRadius -
+      geometry.postRadius - radialOffset;
+    state.capture.lastCentre = [...body.pose.centre];
+    const visualContact = contactGap >= -0.004 && contactGap <= 0.012 && postClearance >= -0.002;
+    const inSeatZone = seatDistance < 0.010 && visualContact;
+    state.capture.stableSamples = movement < 0.008 && inSeatZone
+      ? state.capture.stableSamples + 1 : 0;
+    if (state.capture.stableSamples < 2 && !inSeatZone) {
+      state.capture.holdTarget = state.capture.holdTarget.map((value, index) => {
+        const correction = Math.max(-0.008, Math.min(0.008,
+          (level.peg.seat[index] - body.pose.centre[index]) * 0.65));
+        const margin = index === 1 ? 0.035 : 0.020;
+        return Math.max(level.peg.seat[index] - margin,
+          Math.min(level.peg.seat[index] + margin, value + correction));
+      });
+      await adapter.holdBody({ bodyId: body.id, target: state.capture.holdTarget,
+        rate: 10, limit: 0.42, align: true });
+    }
+    const visiblySettled = elapsed > level.phases.settleMinMs && state.capture.stableSamples >= 2;
+    if (!visiblySettled) return;
     state.won = true;
     state.scored.add(body.id);
     state.score = 1;
-    recordEvent('game-complete', { bodyId: body.id, pumpCycles: state.pumpCycles, fluidAdded: state.fluidAdded });
+    recordEvent('game-complete', { bodyId: body.id, pumpCycles: state.pumpCycles,
+      fluidAdded: state.fluidAdded, seatDistance, contactGap, radialOffset, postClearance,
+      stableSamples: state.capture.stableSamples });
     stopPump('won');
     dom.score.textContent = '1';
-    dom.status.textContent = `通关：圆环 ${body.id} 已沿杆下落并稳定挂住。按 R 可以再来一局。`;
+    dom.status.textContent = `通关：圆环 ${body.id} 已穿杆、落座并稳定贴合底座。按 R 可以再来一局。`;
     renderObjective();
     setControls(false);
     celebrate();
